@@ -1,0 +1,13 @@
+
+
+# Ignore Emacs saves
+\#*#
+
+# Ignore most of emacs.d
+configs/emacs.d/*
+*.elc
+
+# Keep important scripts
+!configs/emacs.d/init.el
+!configs/emacs.d/custom.el
+!configs/emacs.d/layers
