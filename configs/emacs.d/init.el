@@ -11,15 +11,13 @@
 (eval-when-compile
   (require 'use-package))
 
-(setq inhibit-splash-screen t
-	  inhibit-startup-message t
-	  inhibit-startup-echo-area-message t)
+(add-to-list 'load-path (expand-file-name "configs" user-emacs-directory))
 
-(menu-bar-mode -1)
-(toggle-scroll-bar -1)
-(tool-bar-mode -1)
+(add-to-list 'load-path (expand-file-name "configs/user-config.el" user-emacs-directory))
+(require 'user-config)
 
-(use-package key-chord)
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file 'noerror)
 
 (use-package evil
   :ensure t
@@ -76,40 +74,8 @@
 (use-package magit
   :ensure t)
 
-(use-package gtags
-  :ensure t)
-
 (use-package tiny-menu
   :ensure t)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
- '(custom-enabled-themes (quote (deeper-blue)))
- '(package-selected-packages
-   (quote
-	(flycheck helm-gtags evil-rebellion tiny-menu gtags magit evil-leader evil-surround use-package helm key-chord evil))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-(setq-default c-basic-offset 4
-                  tab-width 4
-                  indent-tabs-mode t)
-
-(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
-(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
-(setq backup-by-copying t)
-(setq delete-old-versions t
-  kept-new-versions 6
-  kept-old-versions 2
-  version-control t)
 
 ;;Exit insert mode by pressing j and then j quickly
 
