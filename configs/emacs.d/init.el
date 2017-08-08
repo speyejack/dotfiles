@@ -20,6 +20,7 @@
 (require 'init-projectile)
 (require 'init-restart-emacs)
 (require 'init-semantic)
+(require 'init-nlinum)
 
 (require 'init-magit)
 (require 'init-org)
