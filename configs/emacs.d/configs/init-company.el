@@ -26,7 +26,9 @@
 		   :config
 		   (require 'company-statistics)
 		   (company-statistics-mode 1))
-		 )
+
+		 (define-key company-active-map (kbd "C-j") 'company-select-next)
+		 (define-key company-active-map (kbd "C-k") 'company-select-previous))
 
 (provide 'init-company)
 ;;; init-company.el ends here
