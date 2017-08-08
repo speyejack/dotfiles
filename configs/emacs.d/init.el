@@ -13,11 +13,7 @@
 (require 'init-flycheck)
 (require 'init-yasnippet)
 (require 'init-tiny-menu)
-
-(use-package helm
-		 :ensure t
-		 :config
-		 (helm-mode 1))
+(require 'init-helm)
 
 (use-package smartparens
   :ensure t
