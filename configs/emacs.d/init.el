@@ -1,3 +1,8 @@
+;;; init.el --- Package description
+;;; Commentary:
+
+;;; Code:
+
 (package-initialize) ;; You might already have this line
 
 (add-to-list 'load-path (expand-file-name "configs" user-emacs-directory))
