@@ -9,9 +9,6 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)
 
-(use-package magit
-  :ensure t)
-
 (use-package flycheck
   :ensure t
   :config
@@ -38,5 +35,9 @@
 
 (require 'init-org)
 (require 'init-evil)
+(use-package magit
+  :ensure t
+  :config
+  (require 'evil-magit))
 (provide 'init)
 ;;; init.el ends here
