@@ -21,6 +21,7 @@
 (require 'init-restart-emacs)
 (require 'init-semantic)
 (require 'init-nlinum)
+(require 'init-popwin)
 
 (require 'init-magit)
 (require 'init-org)
