@@ -1,4 +1,4 @@
-[;;; init-use-package.el --- Package description
+;;; init-use-package.el --- Package description
 ;;; Commentary:
 
 ;;; Code:
@@ -10,4 +10,4 @@
   (require 'use-package))
 
 (provide 'init-use-package)
-;;; init-use-package.el ends here]
+;;; init-use-package.el ends here
