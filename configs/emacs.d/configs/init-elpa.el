@@ -1,4 +1,4 @@
-;;; package --- Summary
+;;; init-elpa --- Summary
 
 ;;; Commentary:
 

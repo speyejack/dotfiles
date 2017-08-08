@@ -1,4 +1,4 @@
-;;; package --- Summary
+;;; init-org --- Summary
 ;;; Commentary:
 
 ;;; Code:

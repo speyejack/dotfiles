@@ -1,3 +1,7 @@
+;;; init-evil.el --- Package description
+;;; Commentary:
+
+;;; Code:
 
 (use-package evil
   :ensure t
@@ -64,3 +68,4 @@
 	  "y"  'yank-to-x-clipboard)))
 
 (provide 'init-evil)
+;;; init-evil.el ends here

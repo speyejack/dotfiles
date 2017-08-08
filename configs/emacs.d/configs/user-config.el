@@ -1,3 +1,7 @@
+[;;; user-config.el --- Package description
+;;; Commentary:
+
+;;; Code:
 
 (setq inhibit-splash-screen t
 	  inhibit-startup-message t
@@ -18,5 +22,5 @@
   kept-new-versions 6
   kept-old-versions 2
   version-control t)
-
-(provide 'user-config)
+ (provide 'user-config)
+;;; user-config.el ends here]
