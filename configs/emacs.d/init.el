@@ -9,9 +9,6 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)
 
-(use-package tiny-menu
-  :ensure t)
-
 (use-package company
 		 :ensure t
 		 :config
