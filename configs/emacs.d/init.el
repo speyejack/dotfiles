@@ -6,9 +6,6 @@
 (require 'user-config)
 (require 'init-use-package)
 
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file 'noerror)
-
 (require 'init-company)
 (require 'init-flycheck)
 (require 'init-yasnippet)

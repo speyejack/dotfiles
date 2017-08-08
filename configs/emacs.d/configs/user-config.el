@@ -3,6 +3,9 @@
 
 ;;; Code:
 
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file 'noerror)
+
 (setq inhibit-splash-screen t
 	  inhibit-startup-message t
 	  inhibit-startup-echo-area-message t)
