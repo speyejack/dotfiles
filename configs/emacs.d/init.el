@@ -34,6 +34,7 @@
 (use-package magit
   :ensure t
   :config
-  (require 'evil-magit))
+  (require 'evil-magit)
+  (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode))
 (provide 'init)
 ;;; init.el ends here

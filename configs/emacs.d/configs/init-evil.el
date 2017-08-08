@@ -28,6 +28,13 @@
 	:config
 	(evil-smartparens-mode 1))
 
+  (use-package evil-snipe
+	:ensure t
+	:config
+	(require 'evil-snipe)
+	(evil-snipe-mode 1)
+	(evil-snipe-override-mode 1))
+
   (use-package evil-leader
 	:ensure t
 	:config
