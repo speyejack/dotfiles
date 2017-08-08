@@ -15,12 +15,6 @@
   (use-package evil-surround
 	:ensure t
 	:config
-	(global-evil-leader-mode))
-
-
-  (use-package evil-surround
-	:ensure t
-	:config
 	(global-evil-surround-mode 1))
 
   (use-package evil-smartparens
