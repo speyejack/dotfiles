@@ -5,12 +5,13 @@
 (use-package semantic
   :ensure t
   :config
+  (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
+  (semantic-mode 1)
+
   (use-package stickyfunc-enhance
 	:ensure t
 	:config
-  (require 'stickyfunc-enhance))
-  (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
-  (semantic-mode 1)
+	(require 'stickyfunc-enhance))
 
   (use-package srefactor
 	:ensure t
