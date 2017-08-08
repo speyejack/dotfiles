@@ -9,17 +9,6 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)
 
-(use-package yasnippet
-  :ensure t
-  :config
-  (require 'yasnippet)
-  (yas-global-mode 1)
-
-  (use-package helm-c-yasnippet
-	:ensure t
-	:config
-	(require 'helm-c-yasnippet)))
-
 (use-package tiny-menu
   :ensure t)
 
