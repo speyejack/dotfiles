@@ -9,10 +9,6 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)
 
-(use-package company
-		 :ensure t
-		 :config
-		 (global-company-mode 1))
 
 (use-package helm
 		 :ensure t
