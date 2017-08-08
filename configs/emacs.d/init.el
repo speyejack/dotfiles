@@ -16,12 +16,8 @@
 (require 'init-helm)
 (require 'init-smartparens)
 
+(require 'init-magit)
 (require 'init-org)
 (require 'init-evil)
-(use-package magit
-  :ensure t
-  :config
-  (require 'evil-magit)
-  (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode))
 (provide 'init)
 ;;; init.el ends here
