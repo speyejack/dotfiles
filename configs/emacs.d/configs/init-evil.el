@@ -9,12 +9,12 @@
   (evil-mode 1)
   (evil-define-key 'normal global-map (kbd "-")       'helm-find-files)
 
-  (use-package key-chord
+  (use-package evil-escape
 	:ensure t
 	:config
-	(setq key-chord-two-keys-delay 0.2)
-	(key-chord-define evil-insert-state-map "kj" 'evil-normal-state)
-	(key-chord-mode 1))
+	(setq-default evil-escape-key-sequence "jk")
+	(setq evil-escape-unordered-key-sequence 1)
+	(evil-escape-mode 1))
 
   (use-package evil-surround
 	:ensure t
