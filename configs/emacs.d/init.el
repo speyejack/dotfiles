@@ -14,12 +14,7 @@
 (require 'init-yasnippet)
 (require 'init-tiny-menu)
 (require 'init-helm)
-
-(use-package smartparens
-  :ensure t
-  :config
-  (smartparens-global-mode 1)
-  (require 'smartparens-config))
+(require 'init-smartparens)
 
 (require 'init-org)
 (require 'init-evil)
