@@ -5,14 +5,17 @@
 (use-package semantic
   :ensure t
   :config
-  (require 'srefactor)
-  (require 'stickyfunc-enhance)
+  (use-package stickyfunc-enhance
+	:ensure t
+	:config
+  (require 'stickyfunc-enhance))
   (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
   (semantic-mode 1)
 
   (use-package srefactor
 	:ensure t
 	:config
+	(require 'srefactor)
     (require 'srefactor-lisp)
     
     (define-key c-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
