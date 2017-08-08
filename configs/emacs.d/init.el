@@ -9,6 +9,10 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)
 
+(require 'init-company)
+(require 'init-flycheck)
+(require 'init-yasnippet)
+(require 'init-tiny-menu)
 
 (use-package helm
 		 :ensure t
