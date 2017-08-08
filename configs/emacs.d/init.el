@@ -19,6 +19,7 @@
 (require 'init-smartparens)
 (require 'init-projectile)
 (require 'init-restart-emacs)
+(require 'init-semantic)
 
 (require 'init-magit)
 (require 'init-org)
