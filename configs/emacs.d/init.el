@@ -9,10 +9,6 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)
 
-(use-package flycheck
-  :ensure t
-  :config
-  (global-flycheck-mode 1))
 
 (use-package tiny-menu
   :ensure t)
