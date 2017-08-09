@@ -24,6 +24,7 @@
 (require 'init-elpy)
 (require 'init-postip)
 (require 'init-popwin)
+(require 'init-volatile-highlights)
 (require 'init-hl-todo)
 (require 'init-flyspell)
 
