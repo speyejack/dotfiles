@@ -27,6 +27,7 @@
 (require 'init-volatile-highlights)
 (require 'init-hl-todo)
 (require 'init-flyspell)
+(require 'init-which-key)
 
 (require 'init-magit)
 (require 'init-org)
