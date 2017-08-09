@@ -23,6 +23,7 @@
 (require 'init-nlinum)
 (require 'init-elpy)
 (require 'init-popwin)
+(require 'init-flyspell)
 
 (require 'init-magit)
 (require 'init-org)
