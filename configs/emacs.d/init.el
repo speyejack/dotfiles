@@ -22,6 +22,7 @@
 (require 'init-semantic)
 (require 'init-nlinum)
 (require 'init-elpy)
+(require 'init-postip)
 (require 'init-popwin)
 (require 'init-flyspell)
 
