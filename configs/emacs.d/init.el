@@ -26,32 +26,10 @@
 			  (append dirs (get-directories dir)))))))
 
 (recursively-load-directory (expand-file-name "configs" user-emacs-directory))
-
 (require 'init-elpa)
 (require 'user-config)
 (require 'init-use-package)
 
-(require 'init-company)
-(require 'init-flycheck)
-(require 'init-yasnippet)
-(require 'init-tiny-menu)
-(require 'init-helm)
-(require 'init-smartparens)
-(require 'init-projectile)
-(require 'init-restart-emacs)
-(require 'init-semantic)
-(require 'init-nlinum)
-(require 'init-elpy)
-(require 'init-postip)
-(require 'init-popwin)
-(require 'init-volatile-highlights)
-(require 'init-hl-todo)
-(require 'init-flyspell)
-(require 'init-which-key)
-(require 'init-ycmd)
-
-(require 'init-magit)
-(require 'init-org)
-(require 'init-evil)
+(require 'init-configs-layer)
 (provide 'init)
 ;;; init.el ends here

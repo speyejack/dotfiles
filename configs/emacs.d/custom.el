@@ -9,7 +9,7 @@
  '(custom-enabled-themes (quote (deeper-blue)))
  '(package-selected-packages
    (quote
-	(helm-c-yasnippet evil-snipe evil-magit evil-escape yasnippet evil-smartparens-mode evil-smartparens evil-cleverparens evil-lisp-state company flycheck helm-gtags evil-rebellion tiny-menu gtags magit evil-leader evil-surround use-package helm key-chord evil))))
+	(geiser cython-mode pyenv-mode nose pytest company-anaconda hy-mode py-isort helm-pydoc yapfify pip-requirements live-py-mode lua-mode coffee-mode js2-refactor company-tern livid-mode web-beautify json-mode json-snatcher js-doc company-emacs-eclim flycheck-gometalinter go-rename company-go company-cabal company-ghc flycheck-haskell helm-hoogle hlint-refactor cmm-mode ghc intero company-ghci hindent engine-mode bbdb spaceline-all-the-icons spaceline smart-mode-line powerline-evil powerline rainbow-mode rainbow-delimiters imenu-list evil-visualstar evil-visual-mark-mode evil-tutor evil-terminal-cursor-changer evil-search-highlight-persist srefactor-lisp evil-bbdb $1 aggressive-indent which-key emacs-ycmd flyspell-correct-helm flyspell-correct hl-todo helm-descbinds volatile-highlights whichkey flycheck-pos-tip elpy popwin srefactor stickyfunc-enhance nlinum-relative restart-emacs evil-org org-evil org-projectile helm-projectile projectile helm-c-yasnippet evil-snipe evil-magit evil-escape yasnippet evil-smartparens-mode evil-smartparens evil-cleverparens evil-lisp-state company flycheck helm-gtags evil-rebellion tiny-menu gtags magit evil-leader evil-surround use-package helm key-chord evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
