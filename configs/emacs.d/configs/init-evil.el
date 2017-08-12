@@ -6,8 +6,8 @@
 (use-package evil
   :ensure t
   :config
-  (evil-mode 1)
   (evil-define-key 'normal global-map (kbd "-")       'helm-find-files)
+  (setq evil-magic 'very-magic)
 
   (use-package evil-escape
 	:ensure t
@@ -46,7 +46,7 @@
 	  "a=" 'my-align-single-equals
 	  "b"  'helm-mini             ;; Switch to another buffer
 	  "B"  'magit-blame-toggle
-	  "c"  'comment-dwim
+	  ;; Add evil nerd commentary
 	  "d"  'kill-this-buffer
 	  "D"  'open-current-line-in-codebase-search
 	  "f"  'helm-imenu            ;; Jump to function in buffer
@@ -65,7 +65,7 @@
 	  "T"  'gtags-find-tag
 	  "w"  'save-buffer
 	  "x"  'helm-M-x
-	  "y"  'yank-to-x-clipboard)))
-
+	  "y"  'yank-to-x-clipboard))
+  (evil-mode 1))
 (provide 'init-evil)
 ;;; init-evil.el ends here
