@@ -4,10 +4,41 @@
 ;;; Code:
 
 (defun jag--set-evil-leader-key-bindings ()
-  "Set up keybindings for evil-leader.")
+  "Set up keybindings for evil-leader."
+  (evil-leader/set-leader ",")
+  (evil-leader/set-key
+	","  'other-window
+	"."  'mode-line-other-buffer
+	":"  'eval-expression
+	"aa" 'align-regexp
+	"a=" 'my-align-single-equals
+	"b"  'helm-mini             ;; Switch to another buffer
+	"B"  'magit-blame-toggle
+	;; Add evil nerd commentary
+	"d"  'kill-this-buffer
+	"D"  'open-current-line-in-codebase-search
+	"f"  'helm-imenu            ;; Jump to function in buffer
+	"g"  'magit-status
+	"h"  'fontify-and-browse    ;; HTML-ize the buffer and browse the result
+	"l"  'whitespace-mode       ;; Show invisible characters
+	"nn" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
+	"nw" 'widen
+	"o"  'delete-other-windows  ;; C-w o
+	"p"  'helm-show-kill-ring
+	"s"  'ag-project            ;; Ag search from project's root
+	"r"  'chrome-reload
+	"R"  (lambda () (interactive) (font-lock-fontify-buffer) (redraw-display))
+	"S"  'delete-trailing-whitespace
+	"t"  'gtags-reindex
+	"T"  'gtags-find-tag
+	"w"  'save-buffer
+	"x"  'helm-M-x
+	"y"  'yank-to-x-clipboard))
+
 
 (defun jag--setup-evil-leader-config ()
-  "Set up personal configuation for evil-leader.")
+  "Set up personal configuation for evil-leader."
+  (global-evil-leader-mode))
 
 (defun jag--load-evil-leader-requires ()
   "Load required sub packages for evil-leader.")

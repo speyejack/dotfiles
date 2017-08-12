@@ -7,7 +7,8 @@
   "Set up keybindings for volatile-highlights.")
 
 (defun jag--setup-volatile-highlights-config ()
-  "Set up personal configuation for volatile-highlights.")
+  "Set up personal configuation for volatile-highlights."
+  (volatile-highlights-mode t))
 
 (defun jag--load-volatile-highlights-requires ()
   "Load required sub packages for volatile-highlights.")

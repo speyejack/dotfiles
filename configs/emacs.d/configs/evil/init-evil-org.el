@@ -7,7 +7,11 @@
   "Set up keybindings for evil-org.")
 
 (defun jag--setup-evil-org-config ()
-  "Set up personal configuation for evil-org.")
+  "Set up personal configuation for evil-org."
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (add-hook 'evil-org-mode-hook
+            (lambda ()
+              (evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading)))))
 
 (defun jag--load-evil-org-requires ()
   "Load required sub packages for evil-org.")

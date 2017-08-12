@@ -7,7 +7,8 @@
   "Set up keybindings for company-quickhelp.")
 
 (defun jag--setup-company-quickhelp-config ()
-  "Set up personal configuation for company-quickhelp.")
+  "Set up personal configuation for company-quickhelp."
+  (company-quickhelp-mode 1))
 
 (defun jag--load-company-quickhelp-requires ()
   "Load required sub packages for company-quickhelp.")

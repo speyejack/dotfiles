@@ -7,7 +7,8 @@
   "Set up keybindings for evil-surround.")
 
 (defun jag--setup-evil-surround-config ()
-  "Set up personal configuation for evil-surround.")
+  "Set up personal configuation for evil-surround."
+  (global-evil-surround-mode 1))
 
 (defun jag--load-evil-surround-requires ()
   "Load required sub packages for evil-surround.")

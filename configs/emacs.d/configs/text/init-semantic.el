@@ -7,7 +7,9 @@
   "Set up keybindings for semantic.")
 
 (defun jag--setup-semantic-config ()
-  "Set up personal configuation for semantic.")
+  "Set up personal configuation for semantic."
+  (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
+  (semantic-mode 1))
 
 (defun jag--load-semantic-requires ()
   "Load required sub packages for semantic.")

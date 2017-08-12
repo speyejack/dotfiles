@@ -7,7 +7,8 @@
   "Set up keybindings for evil-cleverparens.")
 
 (defun jag--setup-evil-cleverparens-config ()
-  "Set up personal configuation for evil-cleverparens.")
+  "Set up personal configuation for evil-cleverparens."
+  (evil-cleverparens-mode 1))
 
 (defun jag--load-evil-cleverparens-requires ()
   "Load required sub packages for evil-cleverparens.")

@@ -7,7 +7,9 @@
   "Set up keybindings for evil-snipe.")
 
 (defun jag--setup-evil-snipe-config ()
-  "Set up personal configuation for evil-snipe.")
+  "Set up personal configuation for evil-snipe."
+  (evil-snipe-mode 1)
+  (evil-snipe-override-mode 1))
 
 (defun jag--load-evil-snipe-requires ()
   "Load required sub packages for evil-snipe.")

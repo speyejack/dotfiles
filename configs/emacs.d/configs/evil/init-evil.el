@@ -4,10 +4,15 @@
 ;;; Code:
 
 (defun jag--set-evil-key-bindings ()
-  "Set up keybindings for evil.")
+  "Set up keybindings for evil."
+  (evil-define-key 'normal global-map (kbd "gh") 'evil-first-non-blank)
+  (evil-define-key 'normal global-map (kbd "gl") 'evil-end-of-line)
+  (evil-define-key 'normal global-map (kbd "-")  'helm-find-files))
 
 (defun jag--setup-evil-config ()
-  "Set up personal configuation for evil.")
+  "Set up personal configuation for evil."
+  (setq evil-magic 'very-magic)
+  (evil-mode 1))
 
 (defun jag--load-evil-requires ()
   "Load required sub packages for evil."

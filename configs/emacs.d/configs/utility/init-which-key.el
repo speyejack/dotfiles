@@ -7,7 +7,8 @@
   "Set up keybindings for which-key.")
 
 (defun jag--setup-which-key-config ()
-  "Set up personal configuation for which-key.")
+  "Set up personal configuation for which-key."
+  (which-key-mode))
 
 (defun jag--load-which-key-requires ()
   "Load required sub packages for which-key.")

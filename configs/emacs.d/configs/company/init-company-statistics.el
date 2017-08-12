@@ -7,7 +7,8 @@
   "Set up keybindings for company-statistics.")
 
 (defun jag--setup-company-statistics-config ()
-  "Set up personal configuation for company-statistics.")
+  "Set up personal configuation for company-statistics."
+  (company-statistics-mode 1))
 
 (defun jag--load-company-statistics-requires ()
   "Load required sub packages for company-statistics.")

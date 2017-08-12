@@ -7,7 +7,8 @@
   "Set up keybindings for yasnippet.")
 
 (defun jag--setup-yasnippet-config ()
-  "Set up personal configuation for yasnippet.")
+  "Set up personal configuation for yasnippet."
+  (yas-global-mode 1))
 
 (defun jag--load-yasnippet-requires ()
   "Load required sub packages for yasnippet.")

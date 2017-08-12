@@ -7,7 +7,8 @@
   "Set up keybindings for magit.")
 
 (defun jag--setup-magit-config ()
-  "Set up personal configuation for magit.")
+  "Set up personal configuation for magit."
+  (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode))
 
 (defun jag--load-magit-requires ()
   "Load required sub packages for magit.")

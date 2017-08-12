@@ -7,7 +7,8 @@
   "Set up keybindings for helm-descbinds.")
 
 (defun jag--setup-helm-descbinds-config ()
-  "Set up personal configuation for helm-descbinds.")
+  "Set up personal configuation for helm-descbinds."
+  (helm-descbinds-mode))
 
 (defun jag--load-helm-descbinds-requires ()
   "Load required sub packages for helm-descbinds.")

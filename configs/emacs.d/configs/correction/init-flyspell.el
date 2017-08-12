@@ -7,12 +7,12 @@
   "Set up keybindings for flyspell.")
 
 (defun jag--setup-flyspell-config ()
-  "Set up personal configuation for flyspell.")
+  "Set up personal configuation for flyspell."
+  (flyspell-mode 1))
 
 (defun jag--load-flyspell-requires ()
   "Load required sub packages for flyspell."
-  (require 'init-flyspell-correct)
-  (require 'init-flyspell-correct-helm))
+  (require 'init-flyspell-correct))
 
 (use-package flyspell
   :ensure t

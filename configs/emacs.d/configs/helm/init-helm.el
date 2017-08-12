@@ -4,10 +4,20 @@
 ;;; Code:
 
 (defun jag--set-helm-key-bindings ()
-  "Set up keybindings for helm.")
+  "Set up keybindings for helm."
+  (define-key helm-map (kbd "C-j") 'helm-next-line)
+  (define-key helm-map (kbd "C-k") 'helm-previous-line)
+  (define-key helm-map (kbd "C-u") 'helm-previous-page)
+  (define-key helm-map (kbd "C-d") 'helm-next-page)
+  (define-key helm-find-files-map (kbd "C-h") 'helm-find-files-up-one-level)
+  (define-key helm-find-files-map (kbd "C-l") 'helm-ff-RET)
+  (define-key global-map (kbd "C-x C-f") 'helm-find-files)
+  (define-key global-map (kbd "C-x C-b") 'helm-mini)
+  (define-key global-map (kbd "M-x") 'helm-M-x))
 
 (defun jag--setup-helm-config ()
-  "Set up personal configuation for helm.")
+  "Set up personal configuation for helm."
+  (helm-mode 1))
 
 (defun jag--load-helm-requires ()
   "Load required sub packages for helm."

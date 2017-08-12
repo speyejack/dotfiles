@@ -7,7 +7,8 @@
   "Set up keybindings for projectile.")
 
 (defun jag--setup-projectile-config ()
-  "Set up personal configuation for projectile.")
+  "Set up personal configuation for projectile."
+  (projectile-mode 1))
 
 (defun jag--load-projectile-requires ()
   "Load required sub packages for projectile.")

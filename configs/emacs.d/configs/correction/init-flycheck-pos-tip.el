@@ -7,7 +7,8 @@
   "Set up keybindings for flycheck-pos-tip.")
 
 (defun jag--setup-flycheck-pos-tip-config ()
-  "Set up personal configuation for flycheck-pos-tip.")
+  "Set up personal configuation for flycheck-pos-tip."
+	(flycheck-pos-tip-mode))
 
 (defun jag--load-flycheck-pos-tip-requires ()
   "Load required sub packages for flycheck-pos-tip.")

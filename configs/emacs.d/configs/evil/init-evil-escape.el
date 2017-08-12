@@ -4,10 +4,13 @@
 ;;; Code:
 
 (defun jag--set-evil-escape-key-bindings ()
-  "Set up keybindings for evil-escape.")
+  "Set up keybindings for evil-escape."
+  (setq-default evil-escape-key-sequence "jk"))
 
 (defun jag--setup-evil-escape-config ()
-  "Set up personal configuation for evil-escape.")
+  "Set up personal configuation for evil-escape."
+  (setq evil-escape-unordered-key-sequence 1)
+  (evil-escape-mode 1))
 
 (defun jag--load-evil-escape-requires ()
   "Load required sub packages for evil-escape.")

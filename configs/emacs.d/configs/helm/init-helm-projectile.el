@@ -7,7 +7,8 @@
   "Set up keybindings for helm-projectile.")
 
 (defun jag--setup-helm-projectile-config ()
-  "Set up personal configuation for helm-projectile.")
+  "Set up personal configuation for helm-projectile."
+  (helm-projectile-on))
 
 (defun jag--load-helm-projectile-requires ()
   "Load required sub packages for helm-projectile.")

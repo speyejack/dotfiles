@@ -7,7 +7,9 @@
   "Set up keybindings for nlinum-relative.")
 
 (defun jag--setup-nlinum-relative-config ()
-  "Set up personal configuation for nlinum-relative.")
+  "Set up personal configuation for nlinum-relative."
+  (nlinum-relative-setup-evil)
+  (add-hook 'prog-mode-hook 'nlinum-relative-mode))
 
 (defun jag--load-nlinum-relative-requires ()
   "Load required sub packages for nlinum-relative.")

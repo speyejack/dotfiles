@@ -7,7 +7,8 @@
   "Set up keybindings for company-ycmd.")
 
 (defun jag--setup-company-ycmd-config ()
-  "Set up personal configuation for company-ycmd.")
+  "Set up personal configuation for company-ycmd."
+	(company-ycmd-setup))
 
 (defun jag--load-company-ycmd-requires ()
   "Load required sub packages for company-ycmd.")

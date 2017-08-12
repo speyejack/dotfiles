@@ -7,7 +7,8 @@
   "Set up keybindings for flycheck.")
 
 (defun jag--setup-flycheck-config ()
-  "Set up personal configuation for flycheck.")
+  "Set up personal configuation for flycheck."
+  (global-flycheck-mode 1))
 
 (defun jag--load-flycheck-requires ()
   "Load required sub packages for flycheck."

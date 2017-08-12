@@ -4,10 +4,13 @@
 ;;; Code:
 
 (defun jag--set-company-key-bindings ()
-  "Set up keybindings for company.")
+  "Set up keybindings for company."
+  (define-key company-active-map (kbd "C-j") 'company-select-next)
+  (define-key company-active-map (kbd "C-k") 'company-select-previous)))
 
 (defun jag--setup-company-config ()
-  "Set up personal configuation for company.")
+  "Set up personal configuation for company."
+  (global-company-mode 1))
 
 (defun jag--load-company-requires ()
   "Load required sub packages for company."

@@ -7,7 +7,8 @@
   "Set up keybindings for popwin.")
 
 (defun jag--setup-popwin-config ()
-  "Set up personal configuation for popwin.")
+  "Set up personal configuation for popwin."
+  (popwin-mode 1))
 
 (defun jag--load-popwin-requires ()
   "Load required sub packages for popwin.")
