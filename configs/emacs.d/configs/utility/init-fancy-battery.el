@@ -7,7 +7,8 @@
   "Set up keybindings for fancy-battery.")
 
 (defun jag--setup-fancy-battery-config ()
-  "Set up personal configuation for fancy-battery.")
+  "Set up personal configuation for fancy-battery."
+  (add-hook 'after-init-hook 'fancy-battery-mode))
 
 (defun jag--load-fancy-battery-requires ()
   "Load required sub packages for fancy-battery.")

@@ -7,7 +7,6 @@
   "Load each package for directory."
   (require 'init-diminish)
   (require 'init-powerline)
-  (require 'init-smart-mode-line)
   (require 'init-spaceline))
 
 (jag--load-emacs-layer-requires)

@@ -7,7 +7,8 @@
   "Set up keybindings for powerline-evil.")
 
 (defun jag--setup-powerline-evil-config ()
-  "Set up personal configuation for powerline-evil.")
+  "Set up personal configuation for powerline-evil."
+  (powerline-default-theme))
 
 (defun jag--load-powerline-evil-requires ()
   "Load required sub packages for powerline-evil.")
