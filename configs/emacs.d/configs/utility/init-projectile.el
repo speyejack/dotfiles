@@ -15,6 +15,7 @@
 
 (use-package projectile
   :ensure t
+  :diminish 'projectile-mode
   :config
   (jag--load-projectile-requires)
   (jag--set-projectile-key-bindings)

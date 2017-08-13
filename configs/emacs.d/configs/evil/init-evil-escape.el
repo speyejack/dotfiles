@@ -17,6 +17,7 @@
 
 (use-package evil-escape
   :ensure t
+  :diminish 'evil-escape-mode
   :config
   (jag--load-evil-escape-requires)
   (jag--set-evil-escape-key-bindings)

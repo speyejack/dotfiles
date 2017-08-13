@@ -35,6 +35,7 @@
 
 (use-package helm
   :ensure t
+  :diminish 'helm-mode
   :config
   (jag--load-helm-requires)
   (jag--set-helm-key-bindings)

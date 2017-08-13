@@ -15,6 +15,7 @@
 
 (use-package which-key
   :ensure t
+  :diminish 'which-key-mode
   :config
   (jag--load-which-key-requires)
   (jag--set-which-key-key-bindings)

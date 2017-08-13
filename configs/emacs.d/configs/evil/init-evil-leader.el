@@ -45,6 +45,7 @@
 
 (use-package evil-leader
   :ensure t
+  :diminish 'global-evil-leader-mode
   :config
   (jag--load-evil-leader-requires)
   (jag--set-evil-leader-key-bindings)
