@@ -6,7 +6,7 @@
 (defun jag--set-company-key-bindings ()
   "Set up keybindings for company."
   (define-key company-active-map (kbd "C-j") 'company-select-next)
-  (define-key company-active-map (kbd "C-k") 'company-select-previous)))
+  (define-key company-active-map (kbd "C-k") 'company-select-previous))
 
 (defun jag--setup-company-config ()
   "Set up personal configuation for company."
