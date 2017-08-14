@@ -7,8 +7,7 @@
   "Set up keybindings for ycmd.")
 
 (defun jag--setup-ycmd-config ()
-  "Set up personal configuation for ycmd."
-  (add-hook 'after-init-hook 'global-ycmd-mode))
+  "Set up personal configuation for ycmd.")
 
 (defun jag--load-ycmd-requires ()
   "Load required sub packages for ycmd.")
