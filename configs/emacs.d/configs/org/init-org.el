@@ -4,7 +4,8 @@
 ;;; Code:
 
 (defun jag--set-org-key-bindings ()
-  "Set up keybindings for org.")
+  "Set up keybindings for org."
+  (define-key global-map (kbd "C-c c") 'my-org-task-capture))
 
 (defun jag--setup-org-config ()
   "Set up personal configuation for org."
@@ -20,12 +21,12 @@ SCHEDULED: %t")))
 	(org-capture nil "a"))
 
   (setq org-agenda-files '("~/Dropbox/notes/"))
-  (define-key global-map (kbd "C-c c") 'my-org-task-capture)
   (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
   (setq org-log-done (quote time)))
 
 (defun jag--load-org-requires ()
   "Load required sub packages for org."
+  (require 'init-org-projectile)
   (require 'init-org-bullets)
   (require 'init-org-pomodoro))
 
