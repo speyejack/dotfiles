@@ -9,7 +9,7 @@
 (defun jag--setup-elpy-config ()
   "Set up personal configuation for elpy."
   (setq elpy-modules (remove 'elpy-module-highlight-indentation elpy-modules))
-  (add-hook 'python-mode 'elpy-enable))
+  (add-hook 'python-mode-hook 'elpy-enable))
 
 (defun jag--load-elpy-requires ()
   "Load required sub packages for elpy.")
