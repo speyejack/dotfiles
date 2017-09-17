@@ -7,7 +7,8 @@
   "Set up keybindings for powerline.")
 
 (defun jag--setup-powerline-config ()
-  "Set up personal configuation for powerline.")
+  "Set up personal configuation for powerline."
+  (setq powerline-default-separator 'wave))
 
 (defun jag--load-powerline-requires ()
   "Load required sub packages for powerline."

@@ -8,7 +8,8 @@
 
 (defun jag--setup-fancy-battery-config ()
   "Set up personal configuation for fancy-battery."
-  (add-hook 'after-init-hook 'fancy-battery-mode))
+  (fancy-battery-mode)
+  (setq fancy-battery-show-percentage 1))
 
 (defun jag--load-fancy-battery-requires ()
   "Load required sub packages for fancy-battery.")

@@ -17,6 +17,7 @@
 	;; Add evil nerd commentary
 	"d"  'kill-this-buffer
 	"D"  'open-current-line-in-codebase-search
+	"e"  'evil-exchange
 	"f"  'helm-imenu            ;; Jump to function in buffer
 	"g"  'magit-status
 	"h"  'fontify-and-browse    ;; HTML-ize the buffer and browse the result
@@ -25,8 +26,10 @@
 	"nw" 'widen
 	"o"  'delete-other-windows  ;; C-w o
 	"p"  'helm-show-kill-ring
+	"Pp"  'helm-projectile-switch-project
+	"Pf"  'helm-projectile-find-file
 	"s"  'ag-project            ;; Ag search from project's root
-	"r"  'chrome-reload
+	"r"  (lambda () (interactive) (revert-buffer :ignore-auto :noconfirm))
 	"R"  (lambda () (interactive) (font-lock-fontify-buffer) (redraw-display))
 	"S"  'delete-trailing-whitespace
 	"t"  'gtags-reindex

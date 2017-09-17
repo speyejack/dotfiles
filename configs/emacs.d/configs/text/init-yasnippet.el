@@ -15,6 +15,7 @@
 
 (use-package yasnippet
   :ensure t
+  :diminish 'yas-global-mode
   :config
   (jag--load-yasnippet-requires)
   (jag--set-yasnippet-key-bindings)

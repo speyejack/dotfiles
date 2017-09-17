@@ -7,7 +7,8 @@
   "Set up keybindings for indent-guide.")
 
 (defun jag--setup-indent-guide-config ()
-  "Set up personal configuation for indent-guide.")
+  "Set up personal configuation for indent-guide."
+  (indent-guide-global-mode))
 
 (defun jag--load-indent-guide-requires ()
   "Load required sub packages for indent-guide.")

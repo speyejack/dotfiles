@@ -8,6 +8,7 @@
 
 (defun jag--setup-projectile-config ()
   "Set up personal configuation for projectile."
+  (setq projectile-completion-system 'helm)
   (projectile-mode 1))
 
 (defun jag--load-projectile-requires ()

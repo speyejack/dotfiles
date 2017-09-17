@@ -1,24 +1,25 @@
-;;; init-elpy-mode.el --- Package Description
+;;; init-elpy.el --- Package Description
 ;;; Commentary:
 
 ;;; Code:
 
-(defun jag--set-elpy-mode-key-bindings ()
-  "Set up keybindings for elpy-mode.")
+(defun jag--set-elpy-key-bindings ()
+  "Set up keybindings for elpy.")
 
-(defun jag--setup-elpy-mode-config ()
-  "Set up personal configuation for elpy-mode."
-  (elpy-enable))
+(defun jag--setup-elpy-config ()
+  "Set up personal configuation for elpy."
+  (setq elpy-modules (remove 'elpy-module-highlight-indentation elpy-modules))
+  (add-hook 'python-mode 'elpy-enable))
 
-(defun jag--load-elpy-mode-requires ()
-  "Load required sub packages for elpy-mode.")
+(defun jag--load-elpy-requires ()
+  "Load required sub packages for elpy.")
 
-(use-package elpy-mode
+(use-package elpy
   :ensure t
   :config
-  (jag--load-elpy-mode-requires)
-  (jag--set-elpy-mode-key-bindings)
-  (jag--setup-elpy-mode-config))
+  (jag--load-elpy-requires)
+  (jag--set-elpy-key-bindings)
+  (jag--setup-elpy-config))
 
-(provide 'init-elpy-mode)
-;;; init-elpy-mode.el ends here
+(provide 'init-elpy)
+;;; init-elpy.el ends here

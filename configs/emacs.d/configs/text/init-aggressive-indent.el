@@ -7,7 +7,8 @@
   "Set up keybindings for aggressive-indent.")
 
 (defun jag--setup-aggressive-indent-config ()
-  "Set up personal configuation for aggressive-indent.")
+  "Set up personal configuation for aggressive-indent."
+  (aggressive-indent-global-mode 1))
 
 (defun jag--load-aggressive-indent-requires ()
   "Load required sub packages for aggressive-indent.")

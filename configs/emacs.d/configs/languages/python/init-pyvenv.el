@@ -7,7 +7,8 @@
   "Set up keybindings for pyvenv.")
 
 (defun jag--setup-pyvenv-config ()
-  "Set up personal configuation for pyvenv.")
+  "Set up personal configuation for pyvenv."
+  (pyvenv-mode 1))
 
 (defun jag--load-pyvenv-requires ()
   "Load required sub packages for pyvenv.")

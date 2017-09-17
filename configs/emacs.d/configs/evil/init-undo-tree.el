@@ -14,6 +14,7 @@
 
 (use-package undo-tree
   :ensure t
+  :diminish 'undo-tree-mode
   :config
   (jag--load-undo-tree-requires)
   (jag--set-undo-tree-key-bindings)

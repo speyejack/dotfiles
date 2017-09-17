@@ -7,7 +7,8 @@
   "Set up keybindings for ws-butler.")
 
 (defun jag--setup-ws-butler-config ()
-  "Set up personal configuation for ws-butler.")
+  "Set up personal configuation for ws-butler."
+  (ws-butler-global-mode 1))
 
 (defun jag--load-ws-butler-requires ()
   "Load required sub packages for ws-butler.")
