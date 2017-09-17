@@ -14,6 +14,7 @@
 	"a=" 'my-align-single-equals
 	"b"  'helm-mini             ;; Switch to another buffer
 	"B"  'magit-blame-toggle
+	"c"  'evil-commentary
 	;; Add evil nerd commentary
 	"d"  'kill-this-buffer
 	"D"  'open-current-line-in-codebase-search
