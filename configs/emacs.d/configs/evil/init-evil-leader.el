@@ -35,6 +35,7 @@
 	"S"  'delete-trailing-whitespace
 	"t"  'gtags-reindex
 	"T"  'gtags-find-tag
+	"u"  'undo-tree-visualize
 	"w"  'save-buffer
 	"x"  'helm-M-x
 	"y"  'yank-to-x-clipboard))
