@@ -7,6 +7,7 @@
   "Load each package for directory."
   (require 'init-live-py-mode)
   (require 'init-pyvenv)
+  (require 'init-elpy)
   (require 'init-pip-requirements)
   (require 'init-yapfify)
   (require 'init-helm-pydoc)
