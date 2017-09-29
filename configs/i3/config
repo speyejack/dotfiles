@@ -148,6 +148,10 @@ bar {
 # Hide the borders of windows adjacent to the edges of the screen
 hide_edge_borders both
 
+assign [class="^Emacs"] → 1
+assign [class="^Gnome-terminal"] → 2
+assign [class="^Google-chrome"] → 3
+
 # Just don't let windows have edges at all!
 new_window 1pixel
 new_float 1pixel
