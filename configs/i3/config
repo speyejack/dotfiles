@@ -139,8 +139,10 @@ bindsym $mod+w mode "$mode_system"
 
 set $mode_volume Volume (k) Increase, (j) Decrease, (l) Mute off, (h) Mute on, (t) Toggle Mute
 mode "$mode_volume" {
-    bindsym k exec --no-startup-id $i3_path/i3volume increase
-    bindsym j exec --no-startup-id $i3_path/i3volume decrease
+    bindsym k exec --no-startup-id $i3_path/i3volume increase10
+    bindsym j exec --no-startup-id $i3_path/i3volume decrease10
+    bindsym Shift+k exec --no-startup-id $i3_path/i3volume increase1
+    bindsym Shift+j exec --no-startup-id $i3_path/i3volume decrease1
     bindsym h exec --no-startup-id $i3_path/i3volume mute
     bindsym l exec --no-startup-id $i3_path/i3volume nomute
     bindsym t exec --no-startup-id $i3_path/i3volume toggle
@@ -153,8 +155,10 @@ bindsym $mod+m mode "$mode_volume"
 
 set $mode_brightness Brightness (k) Increase, (j) Decrease, (h) Min Bright, (l) Max Bright, (Shift+g) Screen Off
 mode "$mode_brightness" {
-    bindsym k exec --no-startup-id $i3_path/i3brightness increase
-    bindsym j exec --no-startup-id $i3_path/i3brightness decrease
+    bindsym k exec --no-startup-id $i3_path/i3brightness increase10
+    bindsym j exec --no-startup-id $i3_path/i3brightness decrease10
+    bindsym Shift+k exec --no-startup-id $i3_path/i3brightness increase1
+    bindsym Shift+j exec --no-startup-id $i3_path/i3brightness decrease1
     bindsym h exec --no-startup-id $i3_path/i3brightness min
     bindsym l exec --no-startup-id $i3_path/i3brightness max
     bindsym Shift+g exec --no-startup-id $i3_path/i3brightness none
