@@ -139,10 +139,10 @@ bindsym $mod+w mode "$mode_system"
 
 set $mode_volume Volume (h) Mute on, (j) Decrease, (k) Increase, (l) Mute off, (t) Toggle Mute
 mode "$mode_volume" {
-    bindsym k exec --no-startup-id $i3_path/i3volume increase10
-    bindsym j exec --no-startup-id $i3_path/i3volume decrease10
-    bindsym Shift+k exec --no-startup-id $i3_path/i3volume increase1
-    bindsym Shift+j exec --no-startup-id $i3_path/i3volume decrease1
+    bindsym k exec --no-startup-id $i3_path/i3volume increase 10
+    bindsym j exec --no-startup-id $i3_path/i3volume decrease 10
+    bindsym Shift+k exec --no-startup-id $i3_path/i3volume increase 1
+    bindsym Shift+j exec --no-startup-id $i3_path/i3volume decrease 1
     bindsym h exec --no-startup-id $i3_path/i3volume mute
     bindsym l exec --no-startup-id $i3_path/i3volume nomute
     bindsym t exec --no-startup-id $i3_path/i3volume toggle

@@ -1,29 +1,25 @@
-#!/bin/sh
+#!/bin/bash
 
+amount=${2:0}
+device=alsa_output.pci-0000_00_1b.0.analog-stereo
 case "$1" in
-	increase10)
-		pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +10%
+	increase)
+		pactl set-sink-volume $device +$amount%
 		;;
-	decrease10)
-		pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -10%
-		;;
-	increase1)
-		pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +1%
-		;;
-	decrease1)
-		pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -1%
+	decrease)
+		pactl set-sink-volume $device -$amount%
 		;;
 	mute)
-		pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo on
+		pactl set-sink-mute $device on
 		;;
 	nomute)
-		pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo off
+		pactl set-sink-mute $device off
 		;;
 	toggle)
-		pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle
+		pactl set-sink-mute $device toggle
 		;;
 	*)
-        echo "Usage: $0 {increase|decrease|mute|nomute|toggle}"
+        echo "Usage: $0 {increase|decrease|mute|nomute|toggle} {amount}"
 		exit 2
 esac
 exit 0
