@@ -1,11 +1,17 @@
 #!/bin/sh
 
 case "$1" in
-	increase)
+	increase10)
 		xbacklight -inc 10%
 		;;
-	decrease)
+	decrease10)
 		xbacklight -dec 10%
+		;;
+	increase1)
+		xbacklight -inc 1%
+		;;
+	decrease1)
+		xbacklight -dec 1%
 		;;
 	max)
 		xbacklight -set 100%
