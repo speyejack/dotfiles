@@ -119,9 +119,9 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
+# Shutdown menu
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $i3_path/i3exit lock, mode "default"
@@ -137,6 +137,7 @@ mode "$mode_system" {
 }
 bindsym $mod+w mode "$mode_system"
 
+# Volume menu
 set $mode_volume Volume (h) Mute on, (j) Decrease, (k) Increase, (l) Mute off, (t) Toggle Mute
 mode "$mode_volume" {
     bindsym k exec --no-startup-id $i3_path/i3volume increase 10
@@ -153,6 +154,7 @@ mode "$mode_volume" {
 }
 bindsym $mod+m mode "$mode_volume"
 
+# Brightness menu
 set $mode_brightness Brightness (h) Min, (j) Decrease, (k) Increase, (l) Max, (Shift+g) Screen Off
 mode "$mode_brightness" {
     bindsym k exec --no-startup-id $i3_path/i3brightness increase 10
