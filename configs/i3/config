@@ -137,7 +137,7 @@ mode "$mode_system" {
 }
 bindsym $mod+w mode "$mode_system"
 
-set $mode_volume Volume (k) Increase, (j) Decrease, (l) Mute off, (h) Mute on, (t) Toggle Mute
+set $mode_volume Volume (h) Mute on, (j) Decrease, (k) Increase, (l) Mute off, (t) Toggle Mute
 mode "$mode_volume" {
     bindsym k exec --no-startup-id $i3_path/i3volume increase10
     bindsym j exec --no-startup-id $i3_path/i3volume decrease10
@@ -153,7 +153,7 @@ mode "$mode_volume" {
 }
 bindsym $mod+m mode "$mode_volume"
 
-set $mode_brightness Brightness (k) Increase, (j) Decrease, (h) Min Bright, (l) Max Bright, (Shift+g) Screen Off
+set $mode_brightness Brightness (h) Min Bright, (j) Decrease, (k) Increase, (l) Max Bright, (Shift+g) Screen Off
 mode "$mode_brightness" {
     bindsym k exec --no-startup-id $i3_path/i3brightness increase10
     bindsym j exec --no-startup-id $i3_path/i3brightness decrease10
