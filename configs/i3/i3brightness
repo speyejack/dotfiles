@@ -17,7 +17,7 @@ case "$1" in
 		xbacklight -set 0%
 		;;
 	*)
-        echo "Usage: $0 {increase|decrease|mute|toggle}"
+        echo "Usage: $0 {increase|decrease|max|min|none}"
 		exit 2
 esac
 exit 0

@@ -17,7 +17,7 @@ case "$1" in
 		pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle
 		;;
 	*)
-        echo "Usage: $0 {increase|decrease|mute|toggle}"
+        echo "Usage: $0 {increase|decrease|mute|nomute|toggle}"
 		exit 2
 esac
 exit 0
