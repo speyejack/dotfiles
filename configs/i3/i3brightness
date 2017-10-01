@@ -1,0 +1,23 @@
+#!/bin/sh
+
+case "$1" in
+	increase)
+		xbacklight -inc 10%
+		;;
+	decrease)
+		xbacklight -dec 10%
+		;;
+	max)
+		xbacklight -set 100%
+		;;
+	min)
+		xbacklight -set 1%
+		;;
+	none)
+		xbacklight -set 0%
+		;;
+	*)
+        echo "Usage: $0 {increase|decrease|mute|toggle}"
+		exit 2
+esac
+exit 0
