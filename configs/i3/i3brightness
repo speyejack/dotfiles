@@ -1,17 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
+amount=${2:0}
 case "$1" in
-	increase10)
-		xbacklight -inc 10%
+	increase)
+		xbacklight -inc $amount%
 		;;
-	decrease10)
-		xbacklight -dec 10%
-		;;
-	increase1)
-		xbacklight -inc 1%
-		;;
-	decrease1)
-		xbacklight -dec 1%
+	decrease)
+		xbacklight -dec $amount%
 		;;
 	max)
 		xbacklight -set 100%
@@ -23,7 +18,7 @@ case "$1" in
 		xbacklight -set 0%
 		;;
 	*)
-        echo "Usage: $0 {increase|decrease|max|min|none}"
+		echo "Usage: $0 {increase|decrease|max|min|none} {amount}"
 		exit 2
 esac
 exit 0
