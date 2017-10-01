@@ -10,6 +10,9 @@ case "$1" in
 	mute)
 		pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo on
 		;;
+	nomute)
+		pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo off
+		;;
 	toggle)
 		pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle
 		;;
