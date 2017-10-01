@@ -144,7 +144,6 @@ mode "$mode_volume" {
     bindsym h exec --no-startup-id $i3_path/i3volume mute
     bindsym l exec --no-startup-id $i3_path/i3volume nomute
     bindsym t exec --no-startup-id $i3_path/i3volume toggle
-	bindsym w exec pwd > $i3_path/file.out
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -159,7 +158,6 @@ mode "$mode_brightness" {
     bindsym h exec --no-startup-id $i3_path/i3brightness min
     bindsym l exec --no-startup-id $i3_path/i3brightness max
     bindsym Shift+g exec --no-startup-id $i3_path/i3brightness none
-	bindsym w exec pwd > $i3_path/file.out
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
