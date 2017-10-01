@@ -1,0 +1,20 @@
+#!/bin/sh
+
+case "$1" in
+	increase)
+		pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +10%
+		;;
+	decrease)
+		pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -10%
+		;;
+	mute)
+		pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo on
+		;;
+	toggle)
+		pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle
+		;;
+	*)
+        echo "Usage: $0 {increase|decrease|mute|toggle}"
+		exit 2
+esac
+exit 0
