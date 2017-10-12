@@ -8,6 +8,9 @@
 
 (defun jag--setup-evil-cleverparens-config ()
   "Set up personal configuation for evil-cleverparens."
+  (add-hook 'elisp-mode-hook 'evil-cleverparens)
+  (add-hook 'lisp-mode-hook 'evil-cleverparens)
+  (add-hook 'scheme-mode-hook 'evil-cleverparens)
   (evil-cleverparens-mode 1))
 
 (defun jag--load-evil-cleverparens-requires ()
