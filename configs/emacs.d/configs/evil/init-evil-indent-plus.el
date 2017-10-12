@@ -7,7 +7,8 @@
   "Set up keybindings for evil-indent-plus.")
 
 (defun jag--setup-evil-indent-plus-config ()
-  "Set up personal configuation for evil-indent-plus.")
+  "Set up personal configuation for evil-indent-plus."
+  (evil-indent-plus-default-bindings))
 
 (defun jag--load-evil-indent-plus-requires ()
   "Load required sub packages for evil-indent-plus.")
