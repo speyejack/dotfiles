@@ -7,7 +7,8 @@
   "Set up keybindings for evil-visualstar.")
 
 (defun jag--setup-evil-visualstar-config ()
-  "Set up personal configuation for evil-visualstar.")
+  "Set up personal configuation for evil-visualstar."
+  (global-evil-visualstar-mode 1))
 
 (defun jag--load-evil-visualstar-requires ()
   "Load required sub packages for evil-visualstar.")
