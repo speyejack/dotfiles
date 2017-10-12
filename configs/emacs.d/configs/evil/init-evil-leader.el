@@ -36,6 +36,7 @@
 	"t"  'gtags-reindex
 	"T"  'gtags-find-tag
 	"u"  'undo-tree-visualize
+	"v"  'centered-cursor-mode
 	"w"  'save-buffer
 	"x"  'helm-M-x
 	"y"  'yank-to-x-clipboard))
