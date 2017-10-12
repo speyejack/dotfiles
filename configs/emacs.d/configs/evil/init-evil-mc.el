@@ -7,7 +7,8 @@
   "Set up keybindings for evil-mc.")
 
 (defun jag--setup-evil-mc-config ()
-  "Set up personal configuation for evil-mc.")
+  "Set up personal configuation for evil-mc."
+  (global-evil-mc-mode))
 
 (defun jag--load-evil-mc-requires ()
   "Load required sub packages for evil-mc.")
