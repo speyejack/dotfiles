@@ -4,10 +4,24 @@
 ;;; Code:
 
 (defun jag--set-git-timemachine-key-bindings ()
-  "Set up keybindings for git-timemachine.")
+  "Set up keybindings for git-timemachine."
+  ;; Remove default timemachine mode bindings
+  (define-key git-timemachine-mode-map (kbd "n") nil)
+  (define-key git-timemachine-mode-map (kbd "p") nil)
+  (define-key git-timemachine-mode-map (kbd "w") nil)
+  (define-key git-timemachine-mode-map (kbd "W") nil)
+  ;; Add my own key bindings
+  (define-key git-timemachine-mode-map (kbd "J") 'git-timemachine-show-previous-revision)
+  (define-key git-timemachine-mode-map (kbd "K") 'git-timemachine-show-next-revision)
+  (define-key git-timemachine-mode-map (kbd "Y") 'git-timemachine-kill-revision)
+  (define-key git-timemachine-mode-map (kbd "q") 'git-timemachine-quit))
 
 (defun jag--setup-git-timemachine-config ()
-  "Set up personal configuation for git-timemachine.")
+  "Set up personal configuation for git-timemachine."
+
+  ;; Override evil keymap with timemachine's map
+  (eval-after-load 'git-timemachine
+	(lambda () (evil-make-intercept-map git-timemachine-mode-map 'normal))))
 
 (defun jag--load-git-timemachine-requires ()
   "Load required sub packages for git-timemachine.")

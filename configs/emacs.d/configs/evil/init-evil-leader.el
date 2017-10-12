@@ -21,7 +21,7 @@
 	"e"  'evil-exchange
 	"f"  'helm-imenu            ;; Jump to function in buffer
 	"g"  'magit-status
-	"h"  'fontify-and-browse    ;; HTML-ize the buffer and browse the result
+	"h"  'git-timemachine       ;; Open git timemachine
 	"l"  'whitespace-mode       ;; Show invisible characters
 	"nn" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
 	"nw" 'widen
