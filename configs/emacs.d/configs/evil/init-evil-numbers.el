@@ -4,7 +4,10 @@
 ;;; Code:
 
 (defun jag--set-evil-numbers-key-bindings ()
-  "Set up keybindings for evil-numbers.")
+  "Set up keybindings for evil-numbers."
+  (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
+  (define-key evil-normal-state-map (kbd "C-c =") 'evil-numbers/inc-at-pt)
+  (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt))
 
 (defun jag--setup-evil-numbers-config ()
   "Set up personal configuation for evil-numbers.")
