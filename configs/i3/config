@@ -205,3 +205,6 @@ assign [class="^Google-chrome"] → 3
 # Just don't let windows have edges at all!
 new_window 1pixel
 new_float 1pixel
+
+# TODO: check this repo for ideas:
+# https://github.com/vitiral/dotfiles/blob/master/config/i3/config
