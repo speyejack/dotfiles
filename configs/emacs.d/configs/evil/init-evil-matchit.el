@@ -8,7 +8,7 @@
 
 (defun jag--setup-evil-matchit-config ()
   "Set up personal configuation for evil-matchit."
-  (evil-matchit-mode 1))
+  (global-evil-matchit-mode 1))
 
 (defun jag--load-evil-matchit-requires ()
   "Load required sub packages for evil-matchit.")
