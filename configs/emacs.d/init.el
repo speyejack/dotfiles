@@ -5,6 +5,10 @@
 
 (package-initialize) ;; You might already have this line
 
+;; Some startup colors so im not blinded by defaults
+(set-background-color "#002B36")
+(set-foreground-color "#2AA198")
+(set-face-background 'mode-line "#073642")
 
 (defun get-directories (dir)
   "Return a list of all directories in a the given directory(DIR)."
