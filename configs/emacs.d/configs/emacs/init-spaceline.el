@@ -10,7 +10,6 @@
   "Set up personal configuation for spaceline."
   (require 'spaceline-config)
   (spaceline-spacemacs-theme)
-  (setq powerline-default-separator 'wave)
   (spaceline-toggle-global-on))
 
 (defun jag--load-spaceline-requires ()
