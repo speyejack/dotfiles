@@ -7,7 +7,8 @@
   "Set up keybindings for centered-cursor-mode.")
 
 (defun jag--setup-centered-cursor-mode-config ()
-  "Set up personal configuation for centered-cursor-mode.")
+  "Set up personal configuation for centered-cursor-mode."
+  (add-hook 'prog-mode-hook 'centered-cursor-mode))
 
 (defun jag--load-centered-cursor-mode-requires ()
   "Load required sub packages for centered-cursor-mode.")

@@ -7,10 +7,11 @@
   "Set up keybindings for auto-highlight-symbol.")
 
 (defun jag--setup-auto-highlight-symbol-config ()
-  "Set up personal configuation for auto-highlight-symbol.")
+  "Set up personal configuation for auto-highlight-symbol."
+  (add-hook 'prog-mode-hook 'auto-highlight-symbol-mode))
 
-(defun jag--load-auto-highlight-symbol-requires ()
-  "Load required sub packages for auto-highlight-symbol.")
+  (defun jag--load-auto-highlight-symbol-requires ()
+	"Load required sub packages for auto-highlight-symbol.")
 
 (use-package auto-highlight-symbol
   :ensure t

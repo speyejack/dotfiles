@@ -7,7 +7,8 @@
   "Set up keybindings for highlight-symbol.")
 
 (defun jag--setup-highlight-symbol-config ()
-  "Set up personal configuation for highlight-symbol.")
+  "Set up personal configuation for highlight-symbol."
+  (global-auto-highlight-symbol-mode 1))
 
 (defun jag--load-highlight-symbol-requires ()
   "Load required sub packages for highlight-symbol.")

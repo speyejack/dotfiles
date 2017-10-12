@@ -7,7 +7,8 @@
   "Set up keybindings for adaptive-wrap.")
 
 (defun jag--setup-adaptive-wrap-config ()
-  "Set up personal configuation for adaptive-wrap.")
+  "Set up personal configuation for adaptive-wrap."
+  (add-hook 'prog-mode-hook 'adaptive-wrap-prefix-mode))
 
 (defun jag--load-adaptive-wrap-requires ()
   "Load required sub packages for adaptive-wrap.")

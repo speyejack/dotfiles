@@ -7,7 +7,8 @@
   "Set up keybindings for rainbow-mode.")
 
 (defun jag--setup-rainbow-mode-config ()
-  "Set up personal configuation for rainbow-mode.")
+  "Set up personal configuation for rainbow-mode."
+  (add-hook 'prog-mode-hook 'rainbow-mode))
 
 (defun jag--load-rainbow-mode-requires ()
   "Load required sub packages for rainbow-mode.")

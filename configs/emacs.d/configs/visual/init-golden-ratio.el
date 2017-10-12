@@ -7,7 +7,8 @@
   "Set up keybindings for golden-ratio.")
 
 (defun jag--setup-golden-ratio-config ()
-  "Set up personal configuation for golden-ratio.")
+  "Set up personal configuation for golden-ratio."
+  (golden-ratio-mode 1))
 
 (defun jag--load-golden-ratio-requires ()
   "Load required sub packages for golden-ratio.")

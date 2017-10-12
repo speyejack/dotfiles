@@ -7,7 +7,8 @@
   "Set up keybindings for diff-hl.")
 
 (defun jag--setup-diff-hl-config ()
-  "Set up personal configuation for diff-hl.")
+  "Set up personal configuation for diff-hl."
+  (add-hook 'prog-mode-hook 'diff-hl-mode))
 
 (defun jag--load-diff-hl-requires ()
   "Load required sub packages for diff-hl.")

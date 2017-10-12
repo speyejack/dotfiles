@@ -7,7 +7,8 @@
   "Set up keybindings for highlight-parentheses.")
 
 (defun jag--setup-highlight-parentheses-config ()
-  "Set up personal configuation for highlight-parentheses.")
+  "Set up personal configuation for highlight-parentheses."
+  (global-highlight-parentheses-mode))
 
 (defun jag--load-highlight-parentheses-requires ()
   "Load required sub packages for highlight-parentheses.")

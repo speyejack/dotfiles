@@ -8,7 +8,7 @@
 
 (defun jag--setup-hl-todo-config ()
   "Set up personal configuation for hl-todo."
-  (hl-todo-mode))
+  (add-hook 'prog-mode-hook 'hl-todo-mode))
 
 (defun jag--load-hl-todo-requires ()
   "Load required sub packages for hl-todo.")

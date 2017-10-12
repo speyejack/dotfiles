@@ -7,10 +7,11 @@
   "Set up keybindings for highlight-numbers.")
 
 (defun jag--setup-highlight-numbers-config ()
-  "Set up personal configuation for highlight-numbers.")
+  "Set up personal configuation for highlight-numbers."
+  (add-hook 'prog-mode-hook 'highlight-numbers-mode))
 
-(defun jag--load-highlight-numbers-requires ()
-  "Load required sub packages for highlight-numbers.")
+  (defun jag--load-highlight-numbers-requires ()
+	"Load required sub packages for highlight-numbers.")
 
 (use-package highlight-numbers
   :ensure t
