@@ -9,5 +9,4 @@ configs/emacs.d/*
 
 # Keep important scripts
 !configs/emacs.d/init.el
-!configs/emacs.d/custom.el
 !configs/emacs.d/configs
