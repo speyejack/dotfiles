@@ -12,15 +12,11 @@ def fix_all_files(root_dir):
         list(files)
 
 def fix_file(filename):
-    try:
-        lines = get_lines(filename)
-        name = get_package_name(lines)
-        fix_use_package(lines, name)
-        add_hooks(lines, name)
-        # write_file("./test-file-out.el", lines)
-    except AttributeError as e:
-        print(filename)
-        raise e
+    lines = get_lines(filename)
+    name = get_package_name(lines)
+    fix_use_package(lines, name)
+    add_hooks(lines, name)
+    write_file(filename, lines)
 
 def get_lines(filename):
     lines = []
