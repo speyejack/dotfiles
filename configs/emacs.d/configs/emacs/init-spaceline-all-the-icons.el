@@ -16,6 +16,7 @@
 (use-package spaceline-all-the-icons
   :ensure t
   :after spaceline
+  :disabled
   :config
   (jag--load-spaceline-all-the-icons-requires)
   (jag--set-spaceline-all-the-icons-key-bindings)
