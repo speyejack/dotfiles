@@ -14,6 +14,7 @@
 
 (use-package evil-tutor
   :ensure t
+  :commands 'evil-tutor
   :config
   (jag--load-evil-tutor-requires)
   (jag--set-evil-tutor-key-bindings)

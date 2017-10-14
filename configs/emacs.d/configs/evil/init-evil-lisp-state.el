@@ -14,6 +14,8 @@
 
 (use-package evil-lisp-state
   :ensure t
+  :disabled
+  :commands 'evil-lisp-state
   :config
   (jag--load-evil-lisp-state-requires)
   (jag--set-evil-lisp-state-key-bindings)

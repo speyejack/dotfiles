@@ -16,7 +16,9 @@
 
 (use-package evil-snipe
   :ensure t
-  :diminish 'evil-snipe-mode
+  :after evil
+  :diminish evil-snipe-mode
+  :diminish evil-snipe-local-mode
   :config
   (jag--load-evil-snipe-requires)
   (jag--set-evil-snipe-key-bindings)

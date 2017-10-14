@@ -17,6 +17,7 @@
 
 (use-package evil-escape
   :ensure t
+  :after evil
   :diminish 'evil-escape-mode
   :config
   (jag--load-evil-escape-requires)

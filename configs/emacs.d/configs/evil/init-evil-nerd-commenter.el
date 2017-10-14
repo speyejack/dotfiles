@@ -14,6 +14,7 @@
 
 (use-package evil-nerd-commenter
   :ensure t
+  :disabled
   :config
   (jag--load-evil-nerd-commenter-requires)
   (jag--set-evil-nerd-commenter-key-bindings)

@@ -15,6 +15,8 @@
 
 (use-package evil-commentary
   :ensure t
+  :commands 'evil-commentary
+  :diminish evil-commentary-mode
   :config
   (jag--load-evil-commentary-requires)
   (jag--set-evil-commentary-key-bindings)

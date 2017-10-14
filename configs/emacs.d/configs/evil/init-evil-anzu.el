@@ -14,6 +14,7 @@
 
 (use-package evil-anzu
   :ensure t
+  :after evil
   :config
   (jag--load-evil-anzu-requires)
   (jag--set-evil-anzu-key-bindings)

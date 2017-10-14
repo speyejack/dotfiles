@@ -17,6 +17,7 @@
 
 (use-package evil-args
   :ensure t
+  :after evil
   :config
   (jag--load-evil-args-requires)
   (jag--set-evil-args-key-bindings)

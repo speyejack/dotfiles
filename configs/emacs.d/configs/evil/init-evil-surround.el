@@ -15,6 +15,7 @@
 
 (use-package evil-surround
   :ensure t
+  :after evil
   :config
   (jag--load-evil-surround-requires)
   (jag--set-evil-surround-key-bindings)

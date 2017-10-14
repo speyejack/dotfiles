@@ -14,6 +14,7 @@
 
 (use-package evil-exchange
   :ensure t
+  :commands 'evil-exchange
   :config
   (jag--load-evil-exchange-requires)
   (jag--set-evil-exchange-key-bindings)

@@ -18,6 +18,7 @@
 
 (use-package evil-org
   :ensure t
+  :commands 'evil-org-mode
   :config
   (jag--load-evil-org-requires)
   (jag--set-evil-org-key-bindings)

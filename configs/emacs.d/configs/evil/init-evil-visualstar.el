@@ -15,6 +15,7 @@
 
 (use-package evil-visualstar
   :ensure t
+  :after evil
   :config
   (jag--load-evil-visualstar-requires)
   (jag--set-evil-visualstar-key-bindings)

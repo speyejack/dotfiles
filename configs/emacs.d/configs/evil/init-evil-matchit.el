@@ -15,6 +15,7 @@
 
 (use-package evil-matchit
   :ensure t
+  :after evil
   :config
   (jag--load-evil-matchit-requires)
   (jag--set-evil-matchit-key-bindings)

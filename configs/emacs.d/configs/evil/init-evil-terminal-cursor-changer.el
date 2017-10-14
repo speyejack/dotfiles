@@ -14,6 +14,7 @@
 
 (use-package evil-terminal-cursor-changer
   :ensure t
+  :disabled
   :config
   (jag--load-evil-terminal-cursor-changer-requires)
   (jag--set-evil-terminal-cursor-changer-key-bindings)

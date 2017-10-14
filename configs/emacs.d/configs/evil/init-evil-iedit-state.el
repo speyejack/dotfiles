@@ -14,6 +14,7 @@
 
 (use-package evil-iedit-state
   :ensure t
+  :commands 'iedit-mode
   :config
   (jag--load-evil-iedit-state-requires)
   (jag--set-evil-iedit-state-key-bindings)

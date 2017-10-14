@@ -41,7 +41,6 @@
 	"x"  'helm-M-x
 	"y"  'yank-to-x-clipboard))
 
-
 (defun jag--setup-evil-leader-config ()
   "Set up personal configuation for evil-leader."
   (global-evil-leader-mode))
@@ -51,6 +50,7 @@
 
 (use-package evil-leader
   :ensure t
+  :after evil
   :diminish 'global-evil-leader-mode
   :config
   (jag--load-evil-leader-requires)

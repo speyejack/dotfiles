@@ -17,6 +17,7 @@
 
 (use-package evil-numbers
   :ensure t
+  :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
   :config
   (jag--load-evil-numbers-requires)
   (jag--set-evil-numbers-key-bindings)
