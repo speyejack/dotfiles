@@ -52,10 +52,10 @@ def add_hooks(lines, name):
         "  (jag--add-{}-other-hooks))",
         "",
         "(defun jag--add-{}-key-hooks ()",
-        "  \"Add key hooks to {}.\")",
+        "  \"Add keyboard hooks to {}.\")",
         "",
         "(defun jag--add-{}-other-hooks ()",
-        "  \"Add mode other to {}.\")"]
+        "  \"Add other hooks to {}.\")"]
 
     for line in reversed(new_lines):
         lines.insert(comment_end, line.format(name))
