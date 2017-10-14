@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-nerd-commenter-hooks ()
+  "Add hooks to evil-nerd-commenter."
+  (jag--add-evil-nerd-commenter-key-hooks)
+  (jag--add-evil-nerd-commenter-other-hooks))
+
+(defun jag--add-evil-nerd-commenter-key-hooks ()
+  "Add keyboard hooks to evil-nerd-commenter.")
+
+(defun jag--add-evil-nerd-commenter-other-hooks ()
+  "Add other hooks to evil-nerd-commenter.")
+
 (defun jag--set-evil-nerd-commenter-key-bindings ()
   "Set up keybindings for evil-nerd-commenter.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for evil-nerd-commenter.")
 
 (use-package evil-nerd-commenter
+  :init
+  (jag--load-evil-nerd-commenter-requires)
+  (jag--add-evil-nerd-commenter-hooks)
   :ensure t
   :config
-  (jag--load-evil-nerd-commenter-requires)
   (jag--set-evil-nerd-commenter-key-bindings)
   (jag--setup-evil-nerd-commenter-config))
 

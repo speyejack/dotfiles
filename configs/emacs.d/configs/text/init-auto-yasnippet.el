@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-auto-yasnippet-hooks ()
+  "Add hooks to auto-yasnippet."
+  (jag--add-auto-yasnippet-key-hooks)
+  (jag--add-auto-yasnippet-other-hooks))
+
+(defun jag--add-auto-yasnippet-key-hooks ()
+  "Add keyboard hooks to auto-yasnippet.")
+
+(defun jag--add-auto-yasnippet-other-hooks ()
+  "Add other hooks to auto-yasnippet.")
+
 (defun jag--set-auto-yasnippet-key-bindings ()
   "Set up keybindings for auto-yasnippet.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for auto-yasnippet.")
 
 (use-package auto-yasnippet
+  :init
+  (jag--load-auto-yasnippet-requires)
+  (jag--add-auto-yasnippet-hooks)
   :ensure t
   :config
-  (jag--load-auto-yasnippet-requires)
   (jag--set-auto-yasnippet-key-bindings)
   (jag--setup-auto-yasnippet-config))
 

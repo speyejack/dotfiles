@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-ghc-hooks ()
+  "Add hooks to ghc."
+  (jag--add-ghc-key-hooks)
+  (jag--add-ghc-other-hooks))
+
+(defun jag--add-ghc-key-hooks ()
+  "Add keyboard hooks to ghc.")
+
+(defun jag--add-ghc-other-hooks ()
+  "Add other hooks to ghc.")
+
 (defun jag--set-ghc-key-bindings ()
   "Set up keybindings for ghc.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for ghc.")
 
 (use-package ghc
+  :init
+  (jag--load-ghc-requires)
+  (jag--add-ghc-hooks)
   :ensure t
   :config
-  (jag--load-ghc-requires)
   (jag--set-ghc-key-bindings)
   (jag--setup-ghc-config))
 

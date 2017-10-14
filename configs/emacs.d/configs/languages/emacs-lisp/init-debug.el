@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-debug-hooks ()
+  "Add hooks to debug."
+  (jag--add-debug-key-hooks)
+  (jag--add-debug-other-hooks))
+
+(defun jag--add-debug-key-hooks ()
+  "Add keyboard hooks to debug.")
+
+(defun jag--add-debug-other-hooks ()
+  "Add other hooks to debug.")
+
 (defun jag--set-debug-key-bindings ()
   "Set up keybindings for debug.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for debug.")
 
 (use-package debug
+  :init
+  (jag--load-debug-requires)
+  (jag--add-debug-hooks)
   :ensure t
   :config
-  (jag--load-debug-requires)
   (jag--set-debug-key-bindings)
   (jag--setup-debug-config))
 

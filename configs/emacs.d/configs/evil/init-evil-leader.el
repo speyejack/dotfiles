@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-leader-hooks ()
+  "Add hooks to evil-leader."
+  (jag--add-evil-leader-key-hooks)
+  (jag--add-evil-leader-other-hooks))
+
+(defun jag--add-evil-leader-key-hooks ()
+  "Add keyboard hooks to evil-leader.")
+
+(defun jag--add-evil-leader-other-hooks ()
+  "Add other hooks to evil-leader.")
+
 (defun jag--set-evil-leader-key-bindings ()
   "Set up keybindings for evil-leader."
   (evil-leader/set-leader ",")
@@ -50,10 +61,12 @@
   "Load required sub packages for evil-leader.")
 
 (use-package evil-leader
+  :init
+  (jag--load-evil-leader-requires)
+  (jag--add-evil-leader-hooks)
   :ensure t
   :diminish 'global-evil-leader-mode
   :config
-  (jag--load-evil-leader-requires)
   (jag--set-evil-leader-key-bindings)
   (jag--setup-evil-leader-config))
 

@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-anaconda-mode-hooks ()
+  "Add hooks to anaconda-mode."
+  (jag--add-anaconda-mode-key-hooks)
+  (jag--add-anaconda-mode-other-hooks))
+
+(defun jag--add-anaconda-mode-key-hooks ()
+  "Add keyboard hooks to anaconda-mode.")
+
+(defun jag--add-anaconda-mode-other-hooks ()
+  "Add other hooks to anaconda-mode.")
+
 (defun jag--set-anaconda-mode-key-bindings ()
   "Set up keybindings for anaconda-mode.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for anaconda-mode.")
 
 (use-package anaconda-mode
+  :init
+  (jag--load-anaconda-mode-requires)
+  (jag--add-anaconda-mode-hooks)
   :ensure t
   :config
-  (jag--load-anaconda-mode-requires)
   (jag--set-anaconda-mode-key-bindings)
   (jag--setup-anaconda-mode-config))
 

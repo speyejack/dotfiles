@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-org-hooks ()
+  "Add hooks to evil-org."
+  (jag--add-evil-org-key-hooks)
+  (jag--add-evil-org-other-hooks))
+
+(defun jag--add-evil-org-key-hooks ()
+  "Add keyboard hooks to evil-org.")
+
+(defun jag--add-evil-org-other-hooks ()
+  "Add other hooks to evil-org.")
+
 (defun jag--set-evil-org-key-bindings ()
   "Set up keybindings for evil-org.")
 
@@ -17,9 +28,11 @@
   "Load required sub packages for evil-org.")
 
 (use-package evil-org
+  :init
+  (jag--load-evil-org-requires)
+  (jag--add-evil-org-hooks)
   :ensure t
   :config
-  (jag--load-evil-org-requires)
   (jag--set-evil-org-key-bindings)
   (jag--setup-evil-org-config))
 

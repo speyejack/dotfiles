@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-restart-emacs-hooks ()
+  "Add hooks to restart-emacs."
+  (jag--add-restart-emacs-key-hooks)
+  (jag--add-restart-emacs-other-hooks))
+
+(defun jag--add-restart-emacs-key-hooks ()
+  "Add keyboard hooks to restart-emacs.")
+
+(defun jag--add-restart-emacs-other-hooks ()
+  "Add other hooks to restart-emacs.")
+
 (defun jag--set-restart-emacs-key-bindings ()
   "Set up keybindings for restart-emacs.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for restart-emacs.")
 
 (use-package restart-emacs
+  :init
+  (jag--load-restart-emacs-requires)
+  (jag--add-restart-emacs-hooks)
   :ensure t
   :config
-  (jag--load-restart-emacs-requires)
   (jag--set-restart-emacs-key-bindings)
   (jag--setup-restart-emacs-config))
 

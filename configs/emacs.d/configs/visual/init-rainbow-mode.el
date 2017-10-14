@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-rainbow-mode-hooks ()
+  "Add hooks to rainbow-mode."
+  (jag--add-rainbow-mode-key-hooks)
+  (jag--add-rainbow-mode-other-hooks))
+
+(defun jag--add-rainbow-mode-key-hooks ()
+  "Add keyboard hooks to rainbow-mode.")
+
+(defun jag--add-rainbow-mode-other-hooks ()
+  "Add other hooks to rainbow-mode.")
+
 (defun jag--set-rainbow-mode-key-bindings ()
   "Set up keybindings for rainbow-mode.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for rainbow-mode.")
 
 (use-package rainbow-mode
+  :init
+  (jag--load-rainbow-mode-requires)
+  (jag--add-rainbow-mode-hooks)
   :ensure t
   :config
-  (jag--load-rainbow-mode-requires)
   (jag--set-rainbow-mode-key-bindings)
   (jag--setup-rainbow-mode-config))
 

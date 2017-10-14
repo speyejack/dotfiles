@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-go-rename-hooks ()
+  "Add hooks to go-rename."
+  (jag--add-go-rename-key-hooks)
+  (jag--add-go-rename-other-hooks))
+
+(defun jag--add-go-rename-key-hooks ()
+  "Add keyboard hooks to go-rename.")
+
+(defun jag--add-go-rename-other-hooks ()
+  "Add other hooks to go-rename.")
+
 (defun jag--set-go-rename-key-bindings ()
   "Set up keybindings for go-rename.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for go-rename.")
 
 (use-package go-rename
+  :init
+  (jag--load-go-rename-requires)
+  (jag--add-go-rename-hooks)
   :ensure t
   :config
-  (jag--load-go-rename-requires)
   (jag--set-go-rename-key-bindings)
   (jag--setup-go-rename-config))
 

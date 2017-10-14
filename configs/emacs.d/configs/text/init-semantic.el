@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-semantic-hooks ()
+  "Add hooks to semantic."
+  (jag--add-semantic-key-hooks)
+  (jag--add-semantic-other-hooks))
+
+(defun jag--add-semantic-key-hooks ()
+  "Add keyboard hooks to semantic.")
+
+(defun jag--add-semantic-other-hooks ()
+  "Add other hooks to semantic.")
+
 (defun jag--set-semantic-key-bindings ()
   "Set up keybindings for semantic.")
 
@@ -15,9 +26,11 @@
   "Load required sub packages for semantic.")
 
 (use-package semantic
+  :init
+  (jag--load-semantic-requires)
+  (jag--add-semantic-hooks)
   :ensure t
   :config
-  (jag--load-semantic-requires)
   (jag--set-semantic-key-bindings)
   (jag--setup-semantic-config))
 

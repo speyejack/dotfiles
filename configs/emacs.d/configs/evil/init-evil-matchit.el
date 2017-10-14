@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-matchit-hooks ()
+  "Add hooks to evil-matchit."
+  (jag--add-evil-matchit-key-hooks)
+  (jag--add-evil-matchit-other-hooks))
+
+(defun jag--add-evil-matchit-key-hooks ()
+  "Add keyboard hooks to evil-matchit.")
+
+(defun jag--add-evil-matchit-other-hooks ()
+  "Add other hooks to evil-matchit.")
+
 (defun jag--set-evil-matchit-key-bindings ()
   "Set up keybindings for evil-matchit.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for evil-matchit.")
 
 (use-package evil-matchit
+  :init
+  (jag--load-evil-matchit-requires)
+  (jag--add-evil-matchit-hooks)
   :ensure t
   :config
-  (jag--load-evil-matchit-requires)
   (jag--set-evil-matchit-key-bindings)
   (jag--setup-evil-matchit-config))
 

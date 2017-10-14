@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-helm-gtags-hooks ()
+  "Add hooks to helm-gtags."
+  (jag--add-helm-gtags-key-hooks)
+  (jag--add-helm-gtags-other-hooks))
+
+(defun jag--add-helm-gtags-key-hooks ()
+  "Add keyboard hooks to helm-gtags.")
+
+(defun jag--add-helm-gtags-other-hooks ()
+  "Add other hooks to helm-gtags.")
+
 (defun jag--set-helm-gtags-key-bindings ()
   "Set up keybindings for helm-gtags.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for helm-gtags.")
 
 (use-package helm-gtags
+  :init
+  (jag--load-helm-gtags-requires)
+  (jag--add-helm-gtags-hooks)
   :ensure t
   :config
-  (jag--load-helm-gtags-requires)
   (jag--set-helm-gtags-key-bindings)
   (jag--setup-helm-gtags-config))
 

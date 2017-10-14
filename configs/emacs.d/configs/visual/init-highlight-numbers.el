@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-highlight-numbers-hooks ()
+  "Add hooks to highlight-numbers."
+  (jag--add-highlight-numbers-key-hooks)
+  (jag--add-highlight-numbers-other-hooks))
+
+(defun jag--add-highlight-numbers-key-hooks ()
+  "Add keyboard hooks to highlight-numbers.")
+
+(defun jag--add-highlight-numbers-other-hooks ()
+  "Add other hooks to highlight-numbers.")
+
 (defun jag--set-highlight-numbers-key-bindings ()
   "Set up keybindings for highlight-numbers.")
 
@@ -14,9 +25,11 @@
 	"Load required sub packages for highlight-numbers.")
 
 (use-package highlight-numbers
+  :init
+  (jag--load-highlight-numbers-requires)
+  (jag--add-highlight-numbers-hooks)
   :ensure t
   :config
-  (jag--load-highlight-numbers-requires)
   (jag--set-highlight-numbers-key-bindings)
   (jag--setup-highlight-numbers-config))
 

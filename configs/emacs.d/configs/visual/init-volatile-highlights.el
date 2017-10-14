@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-volatile-highlights-hooks ()
+  "Add hooks to volatile-highlights."
+  (jag--add-volatile-highlights-key-hooks)
+  (jag--add-volatile-highlights-other-hooks))
+
+(defun jag--add-volatile-highlights-key-hooks ()
+  "Add keyboard hooks to volatile-highlights.")
+
+(defun jag--add-volatile-highlights-other-hooks ()
+  "Add other hooks to volatile-highlights.")
+
 (defun jag--set-volatile-highlights-key-bindings ()
   "Set up keybindings for volatile-highlights.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for volatile-highlights.")
 
 (use-package volatile-highlights
+  :init
+  (jag--load-volatile-highlights-requires)
+  (jag--add-volatile-highlights-hooks)
   :ensure t
   :config
-  (jag--load-volatile-highlights-requires)
   (jag--set-volatile-highlights-key-bindings)
   (jag--setup-volatile-highlights-config))
 

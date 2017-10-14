@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-ielm-hooks ()
+  "Add hooks to ielm."
+  (jag--add-ielm-key-hooks)
+  (jag--add-ielm-other-hooks))
+
+(defun jag--add-ielm-key-hooks ()
+  "Add keyboard hooks to ielm.")
+
+(defun jag--add-ielm-other-hooks ()
+  "Add other hooks to ielm.")
+
 (defun jag--set-ielm-key-bindings ()
   "Set up keybindings for ielm.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for ielm.")
 
 (use-package ielm
+  :init
+  (jag--load-ielm-requires)
+  (jag--add-ielm-hooks)
   :ensure t
   :config
-  (jag--load-ielm-requires)
   (jag--set-ielm-key-bindings)
   (jag--setup-ielm-config))
 

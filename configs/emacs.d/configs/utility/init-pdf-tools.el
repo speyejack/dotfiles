@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-pdf-tools-hooks ()
+  "Add hooks to pdf-tools."
+  (jag--add-pdf-tools-key-hooks)
+  (jag--add-pdf-tools-other-hooks))
+
+(defun jag--add-pdf-tools-key-hooks ()
+  "Add keyboard hooks to pdf-tools.")
+
+(defun jag--add-pdf-tools-other-hooks ()
+  "Add other hooks to pdf-tools.")
+
 (defun jag--set-pdf-tools-key-bindings ()
   "Set up keybindings for pdf-tools.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for pdf-tools.")
 
 (use-package pdf-tools
+  :init
+  (jag--load-pdf-tools-requires)
+  (jag--add-pdf-tools-hooks)
   :ensure t
   :config
-  (jag--load-pdf-tools-requires)
   (jag--set-pdf-tools-key-bindings)
   (jag--setup-pdf-tools-config))
 

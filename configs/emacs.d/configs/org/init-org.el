@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-org-hooks ()
+  "Add hooks to org."
+  (jag--add-org-key-hooks)
+  (jag--add-org-other-hooks))
+
+(defun jag--add-org-key-hooks ()
+  "Add keyboard hooks to org.")
+
+(defun jag--add-org-other-hooks ()
+  "Add other hooks to org.")
+
 (defun jag--set-org-key-bindings ()
   "Set up keybindings for org."
   (define-key global-map (kbd "C-c c") 'my-org-task-capture))
@@ -32,9 +43,11 @@ SCHEDULED: %t")))
   (require 'init-org-pomodoro))
 
 (use-package org
+  :init
+  (jag--load-org-requires)
+  (jag--add-org-hooks)
   :ensure t
   :config
-  (jag--load-org-requires)
   (jag--set-org-key-bindings)
   (jag--setup-org-config))
 

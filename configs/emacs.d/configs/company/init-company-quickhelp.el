@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-company-quickhelp-hooks ()
+  "Add hooks to company-quickhelp."
+  (jag--add-company-quickhelp-key-hooks)
+  (jag--add-company-quickhelp-other-hooks))
+
+(defun jag--add-company-quickhelp-key-hooks ()
+  "Add keyboard hooks to company-quickhelp.")
+
+(defun jag--add-company-quickhelp-other-hooks ()
+  "Add other hooks to company-quickhelp.")
+
 (defun jag--set-company-quickhelp-key-bindings ()
   "Set up keybindings for company-quickhelp.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for company-quickhelp.")
 
 (use-package company-quickhelp
+  :init
+  (jag--load-company-quickhelp-requires)
+  (jag--add-company-quickhelp-hooks)
   :ensure t
   :config
-  (jag--load-company-quickhelp-requires)
   (jag--set-company-quickhelp-key-bindings)
   (jag--setup-company-quickhelp-config))
 

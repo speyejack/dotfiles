@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-popwin-hooks ()
+  "Add hooks to popwin."
+  (jag--add-popwin-key-hooks)
+  (jag--add-popwin-other-hooks))
+
+(defun jag--add-popwin-key-hooks ()
+  "Add keyboard hooks to popwin.")
+
+(defun jag--add-popwin-other-hooks ()
+  "Add other hooks to popwin.")
+
 (defun jag--set-popwin-key-bindings ()
   "Set up keybindings for popwin.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for popwin.")
 
 (use-package popwin
+  :init
+  (jag--load-popwin-requires)
+  (jag--add-popwin-hooks)
   :ensure t
   :config
-  (jag--load-popwin-requires)
   (jag--set-popwin-key-bindings)
   (jag--setup-popwin-config))
 

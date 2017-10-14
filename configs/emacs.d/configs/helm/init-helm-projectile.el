@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-helm-projectile-hooks ()
+  "Add hooks to helm-projectile."
+  (jag--add-helm-projectile-key-hooks)
+  (jag--add-helm-projectile-other-hooks))
+
+(defun jag--add-helm-projectile-key-hooks ()
+  "Add keyboard hooks to helm-projectile.")
+
+(defun jag--add-helm-projectile-other-hooks ()
+  "Add other hooks to helm-projectile.")
+
 (defun jag--set-helm-projectile-key-bindings ()
   "Set up keybindings for helm-projectile.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for helm-projectile.")
 
 (use-package helm-projectile
+  :init
+  (jag--load-helm-projectile-requires)
+  (jag--add-helm-projectile-hooks)
   :ensure t
   :config
-  (jag--load-helm-projectile-requires)
   (jag--set-helm-projectile-key-bindings)
   (jag--setup-helm-projectile-config))
 

@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-fasd-hooks ()
+  "Add hooks to fasd."
+  (jag--add-fasd-key-hooks)
+  (jag--add-fasd-other-hooks))
+
+(defun jag--add-fasd-key-hooks ()
+  "Add keyboard hooks to fasd.")
+
+(defun jag--add-fasd-other-hooks ()
+  "Add other hooks to fasd.")
+
 (defun jag--set-fasd-key-bindings ()
   "Set up keybindings for fasd.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for fasd.")
 
 (use-package fasd
+  :init
+  (jag--load-fasd-requires)
+  (jag--add-fasd-hooks)
   :ensure t
   :config
-  (jag--load-fasd-requires)
   (jag--set-fasd-key-bindings)
   (jag--setup-fasd-config))
 

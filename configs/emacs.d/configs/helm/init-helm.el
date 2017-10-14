@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-helm-hooks ()
+  "Add hooks to helm."
+  (jag--add-helm-key-hooks)
+  (jag--add-helm-other-hooks))
+
+(defun jag--add-helm-key-hooks ()
+  "Add keyboard hooks to helm.")
+
+(defun jag--add-helm-other-hooks ()
+  "Add other hooks to helm.")
+
 (defun jag--set-helm-key-bindings ()
   "Set up keybindings for helm."
   (define-key helm-map (kbd "C-j") 'helm-next-line)
@@ -34,10 +45,12 @@
   (require 'init-helm-swoop))
 
 (use-package helm
+  :init
+  (jag--load-helm-requires)
+  (jag--add-helm-hooks)
   :ensure t
   :diminish 'helm-mode
   :config
-  (jag--load-helm-requires)
   (jag--set-helm-key-bindings)
   (jag--setup-helm-config))
 

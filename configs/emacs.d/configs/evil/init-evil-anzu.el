@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-anzu-hooks ()
+  "Add hooks to evil-anzu."
+  (jag--add-evil-anzu-key-hooks)
+  (jag--add-evil-anzu-other-hooks))
+
+(defun jag--add-evil-anzu-key-hooks ()
+  "Add keyboard hooks to evil-anzu.")
+
+(defun jag--add-evil-anzu-other-hooks ()
+  "Add other hooks to evil-anzu.")
+
 (defun jag--set-evil-anzu-key-bindings ()
   "Set up keybindings for evil-anzu.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for evil-anzu.")
 
 (use-package evil-anzu
+  :init
+  (jag--load-evil-anzu-requires)
+  (jag--add-evil-anzu-hooks)
   :ensure t
   :config
-  (jag--load-evil-anzu-requires)
   (jag--set-evil-anzu-key-bindings)
   (jag--setup-evil-anzu-config))
 

@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-spaceline-hooks ()
+  "Add hooks to spaceline."
+  (jag--add-spaceline-key-hooks)
+  (jag--add-spaceline-other-hooks))
+
+(defun jag--add-spaceline-key-hooks ()
+  "Add keyboard hooks to spaceline.")
+
+(defun jag--add-spaceline-other-hooks ()
+  "Add other hooks to spaceline.")
+
 (defun jag--set-spaceline-key-bindings ()
   "Set up keybindings for spaceline.")
 
@@ -17,9 +28,11 @@
   (require 'init-spaceline-all-the-icons))
 
 (use-package spaceline
+  :init
+  (jag--load-spaceline-requires)
+  (jag--add-spaceline-hooks)
   :ensure t
   :config
-  (jag--load-spaceline-requires)
   (jag--set-spaceline-key-bindings)
   (jag--setup-spaceline-config))
 

@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-eyebrowse-hooks ()
+  "Add hooks to eyebrowse."
+  (jag--add-eyebrowse-key-hooks)
+  (jag--add-eyebrowse-other-hooks))
+
+(defun jag--add-eyebrowse-key-hooks ()
+  "Add keyboard hooks to eyebrowse.")
+
+(defun jag--add-eyebrowse-other-hooks ()
+  "Add other hooks to eyebrowse.")
+
 (defun jag--set-eyebrowse-key-bindings ()
   "Set up keybindings for eyebrowse.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for eyebrowse.")
 
 (use-package eyebrowse
+  :init
+  (jag--load-eyebrowse-requires)
+  (jag--add-eyebrowse-hooks)
   :ensure t
   :config
-  (jag--load-eyebrowse-requires)
   (jag--set-eyebrowse-key-bindings)
   (jag--setup-eyebrowse-config))
 

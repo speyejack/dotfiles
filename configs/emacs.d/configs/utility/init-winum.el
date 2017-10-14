@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-winum-hooks ()
+  "Add hooks to winum."
+  (jag--add-winum-key-hooks)
+  (jag--add-winum-other-hooks))
+
+(defun jag--add-winum-key-hooks ()
+  "Add keyboard hooks to winum.")
+
+(defun jag--add-winum-other-hooks ()
+  "Add other hooks to winum.")
+
 (defun jag--set-winum-key-bindings ()
   "Set up keybindings for winum.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for winum.")
 
 (use-package winum
+  :init
+  (jag--load-winum-requires)
+  (jag--add-winum-hooks)
   :ensure t
   :config
-  (jag--load-winum-requires)
   (jag--set-winum-key-bindings)
   (jag--setup-winum-config))
 

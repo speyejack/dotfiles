@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-company-statistics-hooks ()
+  "Add hooks to company-statistics."
+  (jag--add-company-statistics-key-hooks)
+  (jag--add-company-statistics-other-hooks))
+
+(defun jag--add-company-statistics-key-hooks ()
+  "Add keyboard hooks to company-statistics.")
+
+(defun jag--add-company-statistics-other-hooks ()
+  "Add other hooks to company-statistics.")
+
 (defun jag--set-company-statistics-key-bindings ()
   "Set up keybindings for company-statistics.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for company-statistics.")
 
 (use-package company-statistics
+  :init
+  (jag--load-company-statistics-requires)
+  (jag--add-company-statistics-hooks)
   :ensure t
   :config
-  (jag--load-company-statistics-requires)
   (jag--set-company-statistics-key-bindings)
   (jag--setup-company-statistics-config))
 

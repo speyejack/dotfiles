@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-projectile-hooks ()
+  "Add hooks to projectile."
+  (jag--add-projectile-key-hooks)
+  (jag--add-projectile-other-hooks))
+
+(defun jag--add-projectile-key-hooks ()
+  "Add keyboard hooks to projectile.")
+
+(defun jag--add-projectile-other-hooks ()
+  "Add other hooks to projectile.")
+
 (defun jag--set-projectile-key-bindings ()
   "Set up keybindings for projectile.")
 
@@ -15,10 +26,12 @@
   "Load required sub packages for projectile.")
 
 (use-package projectile
+  :init
+  (jag--load-projectile-requires)
+  (jag--add-projectile-hooks)
   :ensure t
   :diminish 'projectile-mode
   :config
-  (jag--load-projectile-requires)
   (jag--set-projectile-key-bindings)
   (jag--setup-projectile-config))
 

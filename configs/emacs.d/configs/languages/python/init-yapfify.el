@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-yapfify-hooks ()
+  "Add hooks to yapfify."
+  (jag--add-yapfify-key-hooks)
+  (jag--add-yapfify-other-hooks))
+
+(defun jag--add-yapfify-key-hooks ()
+  "Add keyboard hooks to yapfify.")
+
+(defun jag--add-yapfify-other-hooks ()
+  "Add other hooks to yapfify.")
+
 (defun jag--set-yapfify-key-bindings ()
   "Set up keybindings for yapfify.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for yapfify.")
 
 (use-package yapfify
+  :init
+  (jag--load-yapfify-requires)
+  (jag--add-yapfify-hooks)
   :ensure t
   :config
-  (jag--load-yapfify-requires)
   (jag--set-yapfify-key-bindings)
   (jag--setup-yapfify-config))
 

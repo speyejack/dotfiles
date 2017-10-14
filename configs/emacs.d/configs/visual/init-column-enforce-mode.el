@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-column-enforce-mode-hooks ()
+  "Add hooks to column-enforce-mode."
+  (jag--add-column-enforce-mode-key-hooks)
+  (jag--add-column-enforce-mode-other-hooks))
+
+(defun jag--add-column-enforce-mode-key-hooks ()
+  "Add keyboard hooks to column-enforce-mode.")
+
+(defun jag--add-column-enforce-mode-other-hooks ()
+  "Add other hooks to column-enforce-mode.")
+
 (defun jag--set-column-enforce-mode-key-bindings ()
   "Set up keybindings for column-enforce-mode.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for column-enforce-mode.")
 
 (use-package column-enforce-mode
+  :init
+  (jag--load-column-enforce-mode-requires)
+  (jag--add-column-enforce-mode-hooks)
   :ensure t
   :config
-  (jag--load-column-enforce-mode-requires)
   (jag--set-column-enforce-mode-key-bindings)
   (jag--setup-column-enforce-mode-config))
 

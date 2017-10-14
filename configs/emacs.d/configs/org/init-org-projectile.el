@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-org-projectile-hooks ()
+  "Add hooks to org-projectile."
+  (jag--add-org-projectile-key-hooks)
+  (jag--add-org-projectile-other-hooks))
+
+(defun jag--add-org-projectile-key-hooks ()
+  "Add keyboard hooks to org-projectile.")
+
+(defun jag--add-org-projectile-other-hooks ()
+  "Add other hooks to org-projectile.")
+
 (defun jag--set-org-projectile-key-bindings ()
   "Set up keybindings for org-projectile."
   (define-key global-map (kbd "C-c n p") 'org-projectile-project-todo-completing-read))
@@ -17,9 +28,11 @@
   "Load required sub packages for org-projectile.")
 
 (use-package org-projectile
+  :init
+  (jag--load-org-projectile-requires)
+  (jag--add-org-projectile-hooks)
   :ensure t
   :config
-  (jag--load-org-projectile-requires)
   (jag--set-org-projectile-key-bindings)
   (jag--setup-org-projectile-config))
 

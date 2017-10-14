@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-diminish-hooks ()
+  "Add hooks to diminish."
+  (jag--add-diminish-key-hooks)
+  (jag--add-diminish-other-hooks))
+
+(defun jag--add-diminish-key-hooks ()
+  "Add keyboard hooks to diminish.")
+
+(defun jag--add-diminish-other-hooks ()
+  "Add other hooks to diminish.")
+
 (defun jag--set-diminish-key-bindings ()
   "Set up keybindings for diminish.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for diminish.")
 
 (use-package diminish
+  :init
+  (jag--load-diminish-requires)
+  (jag--add-diminish-hooks)
   :ensure t
   :config
-  (jag--load-diminish-requires)
   (jag--set-diminish-key-bindings)
   (jag--setup-diminish-config))
 

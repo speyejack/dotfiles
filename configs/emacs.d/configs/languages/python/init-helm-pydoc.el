@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-helm-pydoc-hooks ()
+  "Add hooks to helm-pydoc."
+  (jag--add-helm-pydoc-key-hooks)
+  (jag--add-helm-pydoc-other-hooks))
+
+(defun jag--add-helm-pydoc-key-hooks ()
+  "Add keyboard hooks to helm-pydoc.")
+
+(defun jag--add-helm-pydoc-other-hooks ()
+  "Add other hooks to helm-pydoc.")
+
 (defun jag--set-helm-pydoc-key-bindings ()
   "Set up keybindings for helm-pydoc.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for helm-pydoc.")
 
 (use-package helm-pydoc
+  :init
+  (jag--load-helm-pydoc-requires)
+  (jag--add-helm-pydoc-hooks)
   :ensure t
   :config
-  (jag--load-helm-pydoc-requires)
   (jag--set-helm-pydoc-key-bindings)
   (jag--setup-helm-pydoc-config))
 

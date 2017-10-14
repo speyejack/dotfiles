@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-auto-highlight-symbol-hooks ()
+  "Add hooks to auto-highlight-symbol."
+  (jag--add-auto-highlight-symbol-key-hooks)
+  (jag--add-auto-highlight-symbol-other-hooks))
+
+(defun jag--add-auto-highlight-symbol-key-hooks ()
+  "Add keyboard hooks to auto-highlight-symbol.")
+
+(defun jag--add-auto-highlight-symbol-other-hooks ()
+  "Add other hooks to auto-highlight-symbol.")
+
 (defun jag--set-auto-highlight-symbol-key-bindings ()
   "Set up keybindings for auto-highlight-symbol.")
 
@@ -14,9 +25,11 @@
 	"Load required sub packages for auto-highlight-symbol.")
 
 (use-package auto-highlight-symbol
+  :init
+  (jag--load-auto-highlight-symbol-requires)
+  (jag--add-auto-highlight-symbol-hooks)
   :ensure t
   :config
-  (jag--load-auto-highlight-symbol-requires)
   (jag--set-auto-highlight-symbol-key-bindings)
   (jag--setup-auto-highlight-symbol-config))
 

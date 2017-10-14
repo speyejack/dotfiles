@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-flyspell-hooks ()
+  "Add hooks to flyspell."
+  (jag--add-flyspell-key-hooks)
+  (jag--add-flyspell-other-hooks))
+
+(defun jag--add-flyspell-key-hooks ()
+  "Add keyboard hooks to flyspell.")
+
+(defun jag--add-flyspell-other-hooks ()
+  "Add other hooks to flyspell.")
+
 (defun jag--set-flyspell-key-bindings ()
   "Set up keybindings for flyspell.")
 
@@ -15,9 +26,11 @@
   (require 'init-flyspell-correct))
 
 (use-package flyspell
+  :init
+  (jag--load-flyspell-requires)
+  (jag--add-flyspell-hooks)
   :ensure t
   :config
-  (jag--load-flyspell-requires)
   (jag--set-flyspell-key-bindings)
   (jag--setup-flyspell-config))
 

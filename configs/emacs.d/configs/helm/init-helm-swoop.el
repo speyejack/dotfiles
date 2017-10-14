@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-helm-swoop-hooks ()
+  "Add hooks to helm-swoop."
+  (jag--add-helm-swoop-key-hooks)
+  (jag--add-helm-swoop-other-hooks))
+
+(defun jag--add-helm-swoop-key-hooks ()
+  "Add keyboard hooks to helm-swoop.")
+
+(defun jag--add-helm-swoop-other-hooks ()
+  "Add other hooks to helm-swoop.")
+
 (defun jag--set-helm-swoop-key-bindings ()
   "Set up keybindings for helm-swoop.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for helm-swoop.")
 
 (use-package helm-swoop
+  :init
+  (jag--load-helm-swoop-requires)
+  (jag--add-helm-swoop-hooks)
   :ensure t
   :config
-  (jag--load-helm-swoop-requires)
   (jag--set-helm-swoop-key-bindings)
   (jag--setup-helm-swoop-config))
 

@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-json-mode-hooks ()
+  "Add hooks to json-mode."
+  (jag--add-json-mode-key-hooks)
+  (jag--add-json-mode-other-hooks))
+
+(defun jag--add-json-mode-key-hooks ()
+  "Add keyboard hooks to json-mode.")
+
+(defun jag--add-json-mode-other-hooks ()
+  "Add other hooks to json-mode.")
+
 (defun jag--set-json-mode-key-bindings ()
   "Set up keybindings for json-mode.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for json-mode.")
 
 (use-package json-mode
+  :init
+  (jag--load-json-mode-requires)
+  (jag--add-json-mode-hooks)
   :ensure t
   :config
-  (jag--load-json-mode-requires)
   (jag--set-json-mode-key-bindings)
   (jag--setup-json-mode-config))
 

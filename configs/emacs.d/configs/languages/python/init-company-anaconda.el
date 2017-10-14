@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-company-anaconda-hooks ()
+  "Add hooks to company-anaconda."
+  (jag--add-company-anaconda-key-hooks)
+  (jag--add-company-anaconda-other-hooks))
+
+(defun jag--add-company-anaconda-key-hooks ()
+  "Add keyboard hooks to company-anaconda.")
+
+(defun jag--add-company-anaconda-other-hooks ()
+  "Add other hooks to company-anaconda.")
+
 (defun jag--set-company-anaconda-key-bindings ()
   "Set up keybindings for company-anaconda.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for company-anaconda.")
 
 (use-package company-anaconda
+  :init
+  (jag--load-company-anaconda-requires)
+  (jag--add-company-anaconda-hooks)
   :ensure t
   :config
-  (jag--load-company-anaconda-requires)
   (jag--set-company-anaconda-key-bindings)
   (jag--setup-company-anaconda-config))
 

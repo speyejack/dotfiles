@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-company-hooks ()
+  "Add hooks to company."
+  (jag--add-company-key-hooks)
+  (jag--add-company-other-hooks))
+
+(defun jag--add-company-key-hooks ()
+  "Add keyboard hooks to company.")
+
+(defun jag--add-company-other-hooks ()
+  "Add other hooks to company.")
+
 (defun jag--set-company-key-bindings ()
   "Set up keybindings for company."
   (define-key company-active-map (kbd "C-j") 'company-select-next)
@@ -19,9 +30,11 @@
   (require 'init-company-ycmd))
 
 (use-package company
+  :init
+  (jag--load-company-requires)
+  (jag--add-company-hooks)
   :ensure t
   :config
-  (jag--load-company-requires)
   (jag--set-company-key-bindings)
   (jag--setup-company-config))
 

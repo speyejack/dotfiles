@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-esh-help-hooks ()
+  "Add hooks to esh-help."
+  (jag--add-esh-help-key-hooks)
+  (jag--add-esh-help-other-hooks))
+
+(defun jag--add-esh-help-key-hooks ()
+  "Add keyboard hooks to esh-help.")
+
+(defun jag--add-esh-help-other-hooks ()
+  "Add other hooks to esh-help.")
+
 (defun jag--set-esh-help-key-bindings ()
   "Set up keybindings for esh-help.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for esh-help.")
 
 (use-package esh-help
+  :init
+  (jag--load-esh-help-requires)
+  (jag--add-esh-help-hooks)
   :ensure t
   :config
-  (jag--load-esh-help-requires)
   (jag--set-esh-help-key-bindings)
   (jag--setup-esh-help-config))
 

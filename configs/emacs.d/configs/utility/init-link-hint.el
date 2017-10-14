@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-link-hint-hooks ()
+  "Add hooks to link-hint."
+  (jag--add-link-hint-key-hooks)
+  (jag--add-link-hint-other-hooks))
+
+(defun jag--add-link-hint-key-hooks ()
+  "Add keyboard hooks to link-hint.")
+
+(defun jag--add-link-hint-other-hooks ()
+  "Add other hooks to link-hint.")
+
 (defun jag--set-link-hint-key-bindings ()
   "Set up keybindings for link-hint.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for link-hint.")
 
 (use-package link-hint
+  :init
+  (jag--load-link-hint-requires)
+  (jag--add-link-hint-hooks)
   :ensure t
   :config
-  (jag--load-link-hint-requires)
   (jag--set-link-hint-key-bindings)
   (jag--setup-link-hint-config))
 

@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-js-doc-hooks ()
+  "Add hooks to js-doc."
+  (jag--add-js-doc-key-hooks)
+  (jag--add-js-doc-other-hooks))
+
+(defun jag--add-js-doc-key-hooks ()
+  "Add keyboard hooks to js-doc.")
+
+(defun jag--add-js-doc-other-hooks ()
+  "Add other hooks to js-doc.")
+
 (defun jag--set-js-doc-key-bindings ()
   "Set up keybindings for js-doc.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for js-doc.")
 
 (use-package js-doc
+  :init
+  (jag--load-js-doc-requires)
+  (jag--add-js-doc-hooks)
   :ensure t
   :config
-  (jag--load-js-doc-requires)
   (jag--set-js-doc-key-bindings)
   (jag--setup-js-doc-config))
 

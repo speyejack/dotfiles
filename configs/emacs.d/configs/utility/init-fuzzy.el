@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-fuzzy-hooks ()
+  "Add hooks to fuzzy."
+  (jag--add-fuzzy-key-hooks)
+  (jag--add-fuzzy-other-hooks))
+
+(defun jag--add-fuzzy-key-hooks ()
+  "Add keyboard hooks to fuzzy.")
+
+(defun jag--add-fuzzy-other-hooks ()
+  "Add other hooks to fuzzy.")
+
 (defun jag--set-fuzzy-key-bindings ()
   "Set up keybindings for fuzzy.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for fuzzy.")
 
 (use-package fuzzy
+  :init
+  (jag--load-fuzzy-requires)
+  (jag--add-fuzzy-hooks)
   :ensure t
   :config
-  (jag--load-fuzzy-requires)
   (jag--set-fuzzy-key-bindings)
   (jag--setup-fuzzy-config))
 

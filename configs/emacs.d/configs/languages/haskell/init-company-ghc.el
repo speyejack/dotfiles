@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-company-ghc-hooks ()
+  "Add hooks to company-ghc."
+  (jag--add-company-ghc-key-hooks)
+  (jag--add-company-ghc-other-hooks))
+
+(defun jag--add-company-ghc-key-hooks ()
+  "Add keyboard hooks to company-ghc.")
+
+(defun jag--add-company-ghc-other-hooks ()
+  "Add other hooks to company-ghc.")
+
 (defun jag--set-company-ghc-key-bindings ()
   "Set up keybindings for company-ghc.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for company-ghc.")
 
 (use-package company-ghc
+  :init
+  (jag--load-company-ghc-requires)
+  (jag--add-company-ghc-hooks)
   :ensure t
   :config
-  (jag--load-company-ghc-requires)
   (jag--set-company-ghc-key-bindings)
   (jag--setup-company-ghc-config))
 

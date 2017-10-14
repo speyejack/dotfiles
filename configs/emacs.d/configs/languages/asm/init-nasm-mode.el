@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-nasm-mode-hooks ()
+  "Add hooks to nasm-mode."
+  (jag--add-nasm-mode-key-hooks)
+  (jag--add-nasm-mode-other-hooks))
+
+(defun jag--add-nasm-mode-key-hooks ()
+  "Add keyboard hooks to nasm-mode.")
+
+(defun jag--add-nasm-mode-other-hooks ()
+  "Add other hooks to nasm-mode.")
+
 (defun jag--set-nasm-mode-key-bindings ()
   "Set up keybindings for nasm-mode.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for nasm-mode.")
 
 (use-package nasm-mode
+  :init
+  (jag--load-nasm-mode-requires)
+  (jag--add-nasm-mode-hooks)
   :ensure t
   :config
-  (jag--load-nasm-mode-requires)
   (jag--set-nasm-mode-key-bindings)
   (jag--setup-nasm-mode-config))
 

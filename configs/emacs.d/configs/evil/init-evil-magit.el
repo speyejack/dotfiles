@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-magit-hooks ()
+  "Add hooks to evil-magit."
+  (jag--add-evil-magit-key-hooks)
+  (jag--add-evil-magit-other-hooks))
+
+(defun jag--add-evil-magit-key-hooks ()
+  "Add keyboard hooks to evil-magit.")
+
+(defun jag--add-evil-magit-other-hooks ()
+  "Add other hooks to evil-magit.")
+
 (defun jag--set-evil-magit-key-bindings ()
   "Set up keybindings for evil-magit.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for evil-magit.")
 
 (use-package evil-magit
+  :init
+  (jag--load-evil-magit-requires)
+  (jag--add-evil-magit-hooks)
   :ensure t
   :config
-  (jag--load-evil-magit-requires)
   (jag--set-evil-magit-key-bindings)
   (jag--setup-evil-magit-config))
 

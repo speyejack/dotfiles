@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-flycheck-hooks ()
+  "Add hooks to flycheck."
+  (jag--add-flycheck-key-hooks)
+  (jag--add-flycheck-other-hooks))
+
+(defun jag--add-flycheck-key-hooks ()
+  "Add keyboard hooks to flycheck.")
+
+(defun jag--add-flycheck-other-hooks ()
+  "Add other hooks to flycheck.")
+
 (defun jag--set-flycheck-key-bindings ()
   "Set up keybindings for flycheck.")
 
@@ -15,9 +26,11 @@
   (require 'init-flycheck-pos-tip))
 
 (use-package flycheck
+  :init
+  (jag--load-flycheck-requires)
+  (jag--add-flycheck-hooks)
   :ensure t
   :config
-  (jag--load-flycheck-requires)
   (jag--set-flycheck-key-bindings)
   (jag--setup-flycheck-config))
 

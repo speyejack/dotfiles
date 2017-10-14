@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-surround-hooks ()
+  "Add hooks to evil-surround."
+  (jag--add-evil-surround-key-hooks)
+  (jag--add-evil-surround-other-hooks))
+
+(defun jag--add-evil-surround-key-hooks ()
+  "Add keyboard hooks to evil-surround.")
+
+(defun jag--add-evil-surround-other-hooks ()
+  "Add other hooks to evil-surround.")
+
 (defun jag--set-evil-surround-key-bindings ()
   "Set up keybindings for evil-surround.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for evil-surround.")
 
 (use-package evil-surround
+  :init
+  (jag--load-evil-surround-requires)
+  (jag--add-evil-surround-hooks)
   :ensure t
   :config
-  (jag--load-evil-surround-requires)
   (jag--set-evil-surround-key-bindings)
   (jag--setup-evil-surround-config))
 

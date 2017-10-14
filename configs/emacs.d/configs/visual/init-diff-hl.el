@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-diff-hl-hooks ()
+  "Add hooks to diff-hl."
+  (jag--add-diff-hl-key-hooks)
+  (jag--add-diff-hl-other-hooks))
+
+(defun jag--add-diff-hl-key-hooks ()
+  "Add keyboard hooks to diff-hl.")
+
+(defun jag--add-diff-hl-other-hooks ()
+  "Add other hooks to diff-hl.")
+
 (defun jag--set-diff-hl-key-bindings ()
   "Set up keybindings for diff-hl.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for diff-hl.")
 
 (use-package diff-hl
+  :init
+  (jag--load-diff-hl-requires)
+  (jag--add-diff-hl-hooks)
   :ensure t
   :config
-  (jag--load-diff-hl-requires)
   (jag--set-diff-hl-key-bindings)
   (jag--setup-diff-hl-config))
 
