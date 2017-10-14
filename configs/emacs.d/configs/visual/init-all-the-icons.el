@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-all-the-icons-hooks ()
+  "Add hooks to all-the-icons."
+  (jag--add-all-the-icons-key-hooks)
+  (jag--add-all-the-icons-other-hooks))
+
+(defun jag--add-all-the-icons-key-hooks ()
+  "Add key hooks to all-the-icons.")
+
+(defun jag--add-all-the-icons-other-hooks ()
+  "Add mode other to all-the-icons.")
+
 (defun jag--set-all-the-icons-key-bindings ()
   "Set up keybindings for all-the-icons.")
 
@@ -14,9 +25,11 @@
   (require 'init-all-the-icons-dired))
 
 (use-package all-the-icons
+  :init
+  (jag--load-all-the-icons-requires)
+  (jag--add-all-the-icons-hooks)
   :ensure t
   :config
-  (jag--load-all-the-icons-requires)
   (jag--set-all-the-icons-key-bindings)
   (jag--setup-all-the-icons-config))
 

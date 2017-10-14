@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-helm-gitignore-hooks ()
+  "Add hooks to helm-gitignore."
+  (jag--add-helm-gitignore-key-hooks)
+  (jag--add-helm-gitignore-other-hooks))
+
+(defun jag--add-helm-gitignore-key-hooks ()
+  "Add key hooks to helm-gitignore.")
+
+(defun jag--add-helm-gitignore-other-hooks ()
+  "Add mode other to helm-gitignore.")
+
 (defun jag--set-helm-gitignore-key-bindings ()
   "Set up keybindings for helm-gitignore.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for helm-gitignore.")
 
 (use-package helm-gitignore
+  :init
+  (jag--load-helm-gitignore-requires)
+  (jag--add-helm-gitignore-hooks)
   :ensure t
   :config
-  (jag--load-helm-gitignore-requires)
   (jag--set-helm-gitignore-key-bindings)
   (jag--setup-helm-gitignore-config))
 

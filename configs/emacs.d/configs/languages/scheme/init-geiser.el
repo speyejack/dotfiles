@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-geiser-hooks ()
+  "Add hooks to geiser."
+  (jag--add-geiser-key-hooks)
+  (jag--add-geiser-other-hooks))
+
+(defun jag--add-geiser-key-hooks ()
+  "Add key hooks to geiser.")
+
+(defun jag--add-geiser-other-hooks ()
+  "Add mode other to geiser.")
+
 (defun jag--set-geiser-key-bindings ()
   "Set up keybindings for geiser.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for geiser.")
 
 (use-package geiser
+  :init
+  (jag--load-geiser-requires)
+  (jag--add-geiser-hooks)
   :ensure t
   :config
-  (jag--load-geiser-requires)
   (jag--set-geiser-key-bindings)
   (jag--setup-geiser-config))
 

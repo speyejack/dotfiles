@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-web-beautify-hooks ()
+  "Add hooks to web-beautify."
+  (jag--add-web-beautify-key-hooks)
+  (jag--add-web-beautify-other-hooks))
+
+(defun jag--add-web-beautify-key-hooks ()
+  "Add key hooks to web-beautify.")
+
+(defun jag--add-web-beautify-other-hooks ()
+  "Add mode other to web-beautify.")
+
 (defun jag--set-web-beautify-key-bindings ()
   "Set up keybindings for web-beautify.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for web-beautify.")
 
 (use-package web-beautify
+  :init
+  (jag--load-web-beautify-requires)
+  (jag--add-web-beautify-hooks)
   :ensure t
   :config
-  (jag--load-web-beautify-requires)
   (jag--set-web-beautify-key-bindings)
   (jag--setup-web-beautify-config))
 

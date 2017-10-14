@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-snipe-hooks ()
+  "Add hooks to evil-snipe."
+  (jag--add-evil-snipe-key-hooks)
+  (jag--add-evil-snipe-other-hooks))
+
+(defun jag--add-evil-snipe-key-hooks ()
+  "Add key hooks to evil-snipe.")
+
+(defun jag--add-evil-snipe-other-hooks ()
+  "Add mode other to evil-snipe.")
+
 (defun jag--set-evil-snipe-key-bindings ()
   "Set up keybindings for evil-snipe.")
 
@@ -15,10 +26,12 @@
   "Load required sub packages for evil-snipe.")
 
 (use-package evil-snipe
+  :init
+  (jag--load-evil-snipe-requires)
+  (jag--add-evil-snipe-hooks)
   :ensure t
   :diminish 'evil-snipe-mode
   :config
-  (jag--load-evil-snipe-requires)
   (jag--set-evil-snipe-key-bindings)
   (jag--setup-evil-snipe-config))
 

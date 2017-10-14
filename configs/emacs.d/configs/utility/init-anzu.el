@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-anzu-hooks ()
+  "Add hooks to anzu."
+  (jag--add-anzu-key-hooks)
+  (jag--add-anzu-other-hooks))
+
+(defun jag--add-anzu-key-hooks ()
+  "Add key hooks to anzu.")
+
+(defun jag--add-anzu-other-hooks ()
+  "Add mode other to anzu.")
+
 (defun jag--set-anzu-key-bindings ()
   "Set up keybindings for anzu.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for anzu.")
 
 (use-package anzu
+  :init
+  (jag--load-anzu-requires)
+  (jag--add-anzu-hooks)
   :ensure t
   :config
-  (jag--load-anzu-requires)
   (jag--set-anzu-key-bindings)
   (jag--setup-anzu-config))
 

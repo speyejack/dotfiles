@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-ediff-hooks ()
+  "Add hooks to ediff."
+  (jag--add-ediff-key-hooks)
+  (jag--add-ediff-other-hooks))
+
+(defun jag--add-ediff-key-hooks ()
+  "Add key hooks to ediff.")
+
+(defun jag--add-ediff-other-hooks ()
+  "Add mode other to ediff.")
+
 (defun jag--set-ediff-key-bindings ()
   "Set up keybindings for ediff.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for ediff.")
 
 (use-package ediff
+  :init
+  (jag--load-ediff-requires)
+  (jag--add-ediff-hooks)
   :ensure t
   :config
-  (jag--load-ediff-requires)
   (jag--set-ediff-key-bindings)
   (jag--setup-ediff-config))
 

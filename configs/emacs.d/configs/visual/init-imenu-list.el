@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-imenu-list-hooks ()
+  "Add hooks to imenu-list."
+  (jag--add-imenu-list-key-hooks)
+  (jag--add-imenu-list-other-hooks))
+
+(defun jag--add-imenu-list-key-hooks ()
+  "Add key hooks to imenu-list.")
+
+(defun jag--add-imenu-list-other-hooks ()
+  "Add mode other to imenu-list.")
+
 (defun jag--set-imenu-list-key-bindings ()
   "Set up keybindings for imenu-list.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for imenu-list.")
 
 (use-package imenu-list
+  :init
+  (jag--load-imenu-list-requires)
+  (jag--add-imenu-list-hooks)
   :ensure t
   :config
-  (jag--load-imenu-list-requires)
   (jag--set-imenu-list-key-bindings)
   (jag--setup-imenu-list-config))
 

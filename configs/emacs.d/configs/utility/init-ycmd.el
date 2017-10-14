@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-ycmd-hooks ()
+  "Add hooks to ycmd."
+  (jag--add-ycmd-key-hooks)
+  (jag--add-ycmd-other-hooks))
+
+(defun jag--add-ycmd-key-hooks ()
+  "Add key hooks to ycmd.")
+
+(defun jag--add-ycmd-other-hooks ()
+  "Add mode other to ycmd.")
+
 (defun jag--set-ycmd-key-bindings ()
   "Set up keybindings for ycmd.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for ycmd.")
 
 (use-package ycmd
+  :init
+  (jag--load-ycmd-requires)
+  (jag--add-ycmd-hooks)
   :ensure t
   :config
-  (jag--load-ycmd-requires)
   (jag--set-ycmd-key-bindings)
   (jag--setup-ycmd-config))
 

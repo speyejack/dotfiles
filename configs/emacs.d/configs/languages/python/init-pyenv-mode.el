@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-pyenv-mode-hooks ()
+  "Add hooks to pyenv-mode."
+  (jag--add-pyenv-mode-key-hooks)
+  (jag--add-pyenv-mode-other-hooks))
+
+(defun jag--add-pyenv-mode-key-hooks ()
+  "Add key hooks to pyenv-mode.")
+
+(defun jag--add-pyenv-mode-other-hooks ()
+  "Add mode other to pyenv-mode.")
+
 (defun jag--set-pyenv-mode-key-bindings ()
   "Set up keybindings for pyenv-mode.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for pyenv-mode.")
 
 (use-package pyenv-mode
+  :init
+  (jag--load-pyenv-mode-requires)
+  (jag--add-pyenv-mode-hooks)
   :ensure t
   :config
-  (jag--load-pyenv-mode-requires)
   (jag--set-pyenv-mode-key-bindings)
   (jag--setup-pyenv-mode-config))
 

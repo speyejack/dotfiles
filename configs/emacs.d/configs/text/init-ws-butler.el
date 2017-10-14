@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-ws-butler-hooks ()
+  "Add hooks to ws-butler."
+  (jag--add-ws-butler-key-hooks)
+  (jag--add-ws-butler-other-hooks))
+
+(defun jag--add-ws-butler-key-hooks ()
+  "Add key hooks to ws-butler.")
+
+(defun jag--add-ws-butler-other-hooks ()
+  "Add mode other to ws-butler.")
+
 (defun jag--set-ws-butler-key-bindings ()
   "Set up keybindings for ws-butler.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for ws-butler.")
 
 (use-package ws-butler
+  :init
+  (jag--load-ws-butler-requires)
+  (jag--add-ws-butler-hooks)
   :ensure t
   :config
-  (jag--load-ws-butler-requires)
   (jag--set-ws-butler-key-bindings)
   (jag--setup-ws-butler-config))
 

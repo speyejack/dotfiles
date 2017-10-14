@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-pos-tip-hooks ()
+  "Add hooks to pos-tip."
+  (jag--add-pos-tip-key-hooks)
+  (jag--add-pos-tip-other-hooks))
+
+(defun jag--add-pos-tip-key-hooks ()
+  "Add key hooks to pos-tip.")
+
+(defun jag--add-pos-tip-other-hooks ()
+  "Add mode other to pos-tip.")
+
 (defun jag--set-pos-tip-key-bindings ()
   "Set up keybindings for pos-tip.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for pos-tip.")
 
 (use-package pos-tip
+  :init
+  (jag--load-pos-tip-requires)
+  (jag--add-pos-tip-hooks)
   :ensure t
   :config
-  (jag--load-pos-tip-requires)
   (jag--set-pos-tip-key-bindings)
   (jag--setup-pos-tip-config))
 

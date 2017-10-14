@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-intero-hooks ()
+  "Add hooks to intero."
+  (jag--add-intero-key-hooks)
+  (jag--add-intero-other-hooks))
+
+(defun jag--add-intero-key-hooks ()
+  "Add key hooks to intero.")
+
+(defun jag--add-intero-other-hooks ()
+  "Add mode other to intero.")
+
 (defun jag--set-intero-key-bindings ()
   "Set up keybindings for intero.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for intero.")
 
 (use-package intero
+  :init
+  (jag--load-intero-requires)
+  (jag--add-intero-hooks)
   :ensure t
   :config
-  (jag--load-intero-requires)
   (jag--set-intero-key-bindings)
   (jag--setup-intero-config))
 

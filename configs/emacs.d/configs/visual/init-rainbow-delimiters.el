@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-rainbow-delimiters-hooks ()
+  "Add hooks to rainbow-delimiters."
+  (jag--add-rainbow-delimiters-key-hooks)
+  (jag--add-rainbow-delimiters-other-hooks))
+
+(defun jag--add-rainbow-delimiters-key-hooks ()
+  "Add key hooks to rainbow-delimiters.")
+
+(defun jag--add-rainbow-delimiters-other-hooks ()
+  "Add mode other to rainbow-delimiters.")
+
 (defun jag--set-rainbow-delimiters-key-bindings ()
   "Set up keybindings for rainbow-delimiters.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for rainbow-delimiters.")
 
 (use-package rainbow-delimiters
+  :init
+  (jag--load-rainbow-delimiters-requires)
+  (jag--add-rainbow-delimiters-hooks)
   :ensure t
   :config
-  (jag--load-rainbow-delimiters-requires)
   (jag--set-rainbow-delimiters-key-bindings)
   (jag--setup-rainbow-delimiters-config))
 

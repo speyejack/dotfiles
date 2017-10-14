@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-virtualenvwrapper-hooks ()
+  "Add hooks to virtualenvwrapper."
+  (jag--add-virtualenvwrapper-key-hooks)
+  (jag--add-virtualenvwrapper-other-hooks))
+
+(defun jag--add-virtualenvwrapper-key-hooks ()
+  "Add key hooks to virtualenvwrapper.")
+
+(defun jag--add-virtualenvwrapper-other-hooks ()
+  "Add mode other to virtualenvwrapper.")
+
 (defun jag--set-virtualenvwrapper-key-bindings ()
   "Set up keybindings for virtualenvwrapper.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for virtualenvwrapper.")
 
 (use-package virtualenvwrapper
+  :init
+  (jag--load-virtualenvwrapper-requires)
+  (jag--add-virtualenvwrapper-hooks)
   :ensure t
   :config
-  (jag--load-virtualenvwrapper-requires)
   (jag--set-virtualenvwrapper-key-bindings)
   (jag--setup-virtualenvwrapper-config))
 

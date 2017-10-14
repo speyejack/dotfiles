@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-magit-hooks ()
+  "Add hooks to magit."
+  (jag--add-magit-key-hooks)
+  (jag--add-magit-other-hooks))
+
+(defun jag--add-magit-key-hooks ()
+  "Add key hooks to magit.")
+
+(defun jag--add-magit-other-hooks ()
+  "Add mode other to magit.")
+
 (defun jag--set-magit-key-bindings ()
   "Set up keybindings for magit.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for magit.")
 
 (use-package magit
+  :init
+  (jag--load-magit-requires)
+  (jag--add-magit-hooks)
   :ensure t
   :config
-  (jag--load-magit-requires)
   (jag--set-magit-key-bindings)
   (jag--setup-magit-config))
 

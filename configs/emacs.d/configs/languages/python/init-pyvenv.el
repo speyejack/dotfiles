@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-pyvenv-hooks ()
+  "Add hooks to pyvenv."
+  (jag--add-pyvenv-key-hooks)
+  (jag--add-pyvenv-other-hooks))
+
+(defun jag--add-pyvenv-key-hooks ()
+  "Add key hooks to pyvenv.")
+
+(defun jag--add-pyvenv-other-hooks ()
+  "Add mode other to pyvenv.")
+
 (defun jag--set-pyvenv-key-bindings ()
   "Set up keybindings for pyvenv.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for pyvenv.")
 
 (use-package pyvenv
+  :init
+  (jag--load-pyvenv-requires)
+  (jag--add-pyvenv-hooks)
   :ensure t
   :config
-  (jag--load-pyvenv-requires)
   (jag--set-pyvenv-key-bindings)
   (jag--setup-pyvenv-config))
 

@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-helm-mode-manager-hooks ()
+  "Add hooks to helm-mode-manager."
+  (jag--add-helm-mode-manager-key-hooks)
+  (jag--add-helm-mode-manager-other-hooks))
+
+(defun jag--add-helm-mode-manager-key-hooks ()
+  "Add key hooks to helm-mode-manager.")
+
+(defun jag--add-helm-mode-manager-other-hooks ()
+  "Add mode other to helm-mode-manager.")
+
 (defun jag--set-helm-mode-manager-key-bindings ()
   "Set up keybindings for helm-mode-manager.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for helm-mode-manager.")
 
 (use-package helm-mode-manager
+  :init
+  (jag--load-helm-mode-manager-requires)
+  (jag--add-helm-mode-manager-hooks)
   :ensure t
   :config
-  (jag--load-helm-mode-manager-requires)
   (jag--set-helm-mode-manager-key-bindings)
   (jag--setup-helm-mode-manager-config))
 

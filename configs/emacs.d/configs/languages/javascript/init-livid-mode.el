@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-livid-mode-hooks ()
+  "Add hooks to livid-mode."
+  (jag--add-livid-mode-key-hooks)
+  (jag--add-livid-mode-other-hooks))
+
+(defun jag--add-livid-mode-key-hooks ()
+  "Add key hooks to livid-mode.")
+
+(defun jag--add-livid-mode-other-hooks ()
+  "Add mode other to livid-mode.")
+
 (defun jag--set-livid-mode-key-bindings ()
   "Set up keybindings for livid-mode.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for livid-mode.")
 
 (use-package livid-mode
+  :init
+  (jag--load-livid-mode-requires)
+  (jag--add-livid-mode-hooks)
   :ensure t
   :config
-  (jag--load-livid-mode-requires)
   (jag--set-livid-mode-key-bindings)
   (jag--setup-livid-mode-config))
 

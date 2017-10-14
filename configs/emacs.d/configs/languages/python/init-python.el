@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-python-hooks ()
+  "Add hooks to python."
+  (jag--add-python-key-hooks)
+  (jag--add-python-other-hooks))
+
+(defun jag--add-python-key-hooks ()
+  "Add key hooks to python.")
+
+(defun jag--add-python-other-hooks ()
+  "Add mode other to python.")
+
 (defun jag--set-python-key-bindings ()
   "Set up keybindings for python.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for python.")
 
 (use-package python
+  :init
+  (jag--load-python-requires)
+  (jag--add-python-hooks)
   :ensure t
   :config
-  (jag--load-python-requires)
   (jag--set-python-key-bindings)
   (jag--setup-python-config))
 

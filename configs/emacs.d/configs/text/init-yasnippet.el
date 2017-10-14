@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-yasnippet-hooks ()
+  "Add hooks to yasnippet."
+  (jag--add-yasnippet-key-hooks)
+  (jag--add-yasnippet-other-hooks))
+
+(defun jag--add-yasnippet-key-hooks ()
+  "Add key hooks to yasnippet.")
+
+(defun jag--add-yasnippet-other-hooks ()
+  "Add mode other to yasnippet.")
+
 (defun jag--set-yasnippet-key-bindings ()
   "Set up keybindings for yasnippet.")
 
@@ -14,10 +25,12 @@
   "Load required sub packages for yasnippet.")
 
 (use-package yasnippet
+  :init
+  (jag--load-yasnippet-requires)
+  (jag--add-yasnippet-hooks)
   :ensure t
   :diminish 'yas-global-mode
   :config
-  (jag--load-yasnippet-requires)
   (jag--set-yasnippet-key-bindings)
   (jag--setup-yasnippet-config))
 

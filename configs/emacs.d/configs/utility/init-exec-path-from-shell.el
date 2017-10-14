@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-exec-path-from-shell-hooks ()
+  "Add hooks to exec-path-from-shell."
+  (jag--add-exec-path-from-shell-key-hooks)
+  (jag--add-exec-path-from-shell-other-hooks))
+
+(defun jag--add-exec-path-from-shell-key-hooks ()
+  "Add key hooks to exec-path-from-shell.")
+
+(defun jag--add-exec-path-from-shell-other-hooks ()
+  "Add mode other to exec-path-from-shell.")
+
 (defun jag--set-exec-path-from-shell-key-bindings ()
   "Set up keybindings for exec-path-from-shell.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for exec-path-from-shell.")
 
 (use-package exec-path-from-shell
+  :init
+  (jag--load-exec-path-from-shell-requires)
+  (jag--add-exec-path-from-shell-hooks)
   :ensure t
   :config
-  (jag--load-exec-path-from-shell-requires)
   (jag--set-exec-path-from-shell-key-bindings)
   (jag--setup-exec-path-from-shell-config))
 

@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-company-ycmd-hooks ()
+  "Add hooks to company-ycmd."
+  (jag--add-company-ycmd-key-hooks)
+  (jag--add-company-ycmd-other-hooks))
+
+(defun jag--add-company-ycmd-key-hooks ()
+  "Add key hooks to company-ycmd.")
+
+(defun jag--add-company-ycmd-other-hooks ()
+  "Add mode other to company-ycmd.")
+
 (defun jag--set-company-ycmd-key-bindings ()
   "Set up keybindings for company-ycmd.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for company-ycmd.")
 
 (use-package company-ycmd
+  :init
+  (jag--load-company-ycmd-requires)
+  (jag--add-company-ycmd-hooks)
   :ensure t
   :config
-  (jag--load-company-ycmd-requires)
   (jag--set-company-ycmd-key-bindings)
   (jag--setup-company-ycmd-config))
 

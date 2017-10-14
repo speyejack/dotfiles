@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-coffee-mode-hooks ()
+  "Add hooks to coffee-mode."
+  (jag--add-coffee-mode-key-hooks)
+  (jag--add-coffee-mode-other-hooks))
+
+(defun jag--add-coffee-mode-key-hooks ()
+  "Add key hooks to coffee-mode.")
+
+(defun jag--add-coffee-mode-other-hooks ()
+  "Add mode other to coffee-mode.")
+
 (defun jag--set-coffee-mode-key-bindings ()
   "Set up keybindings for coffee-mode.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for coffee-mode.")
 
 (use-package coffee-mode
+  :init
+  (jag--load-coffee-mode-requires)
+  (jag--add-coffee-mode-hooks)
   :ensure t
   :config
-  (jag--load-coffee-mode-requires)
   (jag--set-coffee-mode-key-bindings)
   (jag--setup-coffee-mode-config))
 

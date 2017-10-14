@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-eclim-hooks ()
+  "Add hooks to eclim."
+  (jag--add-eclim-key-hooks)
+  (jag--add-eclim-other-hooks))
+
+(defun jag--add-eclim-key-hooks ()
+  "Add key hooks to eclim.")
+
+(defun jag--add-eclim-other-hooks ()
+  "Add mode other to eclim.")
+
 (defun jag--set-eclim-key-bindings ()
   "Set up keybindings for eclim.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for eclim.")
 
 (use-package eclim
+  :init
+  (jag--load-eclim-requires)
+  (jag--add-eclim-hooks)
   :ensure t
   :config
-  (jag--load-eclim-requires)
   (jag--set-eclim-key-bindings)
   (jag--setup-eclim-config))
 

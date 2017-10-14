@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-org-bullets-hooks ()
+  "Add hooks to org-bullets."
+  (jag--add-org-bullets-key-hooks)
+  (jag--add-org-bullets-other-hooks))
+
+(defun jag--add-org-bullets-key-hooks ()
+  "Add key hooks to org-bullets.")
+
+(defun jag--add-org-bullets-other-hooks ()
+  "Add mode other to org-bullets.")
+
 (defun jag--set-org-bullets-key-bindings ()
   "Set up keybindings for org-bullets.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for org-bullets.")
 
 (use-package org-bullets
+  :init
+  (jag--load-org-bullets-requires)
+  (jag--add-org-bullets-hooks)
   :ensure t
   :config
-  (jag--load-org-bullets-requires)
   (jag--set-org-bullets-key-bindings)
   (jag--setup-org-bullets-config))
 

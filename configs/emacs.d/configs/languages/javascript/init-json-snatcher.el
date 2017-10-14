@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-json-snatcher-hooks ()
+  "Add hooks to json-snatcher."
+  (jag--add-json-snatcher-key-hooks)
+  (jag--add-json-snatcher-other-hooks))
+
+(defun jag--add-json-snatcher-key-hooks ()
+  "Add key hooks to json-snatcher.")
+
+(defun jag--add-json-snatcher-other-hooks ()
+  "Add mode other to json-snatcher.")
+
 (defun jag--set-json-snatcher-key-bindings ()
   "Set up keybindings for json-snatcher.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for json-snatcher.")
 
 (use-package json-snatcher
+  :init
+  (jag--load-json-snatcher-requires)
+  (jag--add-json-snatcher-hooks)
   :ensure t
   :config
-  (jag--load-json-snatcher-requires)
   (jag--set-json-snatcher-key-bindings)
   (jag--setup-json-snatcher-config))
 

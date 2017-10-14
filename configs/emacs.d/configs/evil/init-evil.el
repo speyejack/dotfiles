@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-hooks ()
+  "Add hooks to evil."
+  (jag--add-evil-key-hooks)
+  (jag--add-evil-other-hooks))
+
+(defun jag--add-evil-key-hooks ()
+  "Add key hooks to evil.")
+
+(defun jag--add-evil-other-hooks ()
+  "Add mode other to evil.")
+
 (defun jag--set-evil-key-bindings ()
   "Set up keybindings for evil."
   (evil-define-key 'normal global-map (kbd "gh") 'evil-first-non-blank)
@@ -43,9 +54,11 @@
   (require 'init-undo-tree))
 
 (use-package evil
+  :init
+  (jag--load-evil-requires)
+  (jag--add-evil-hooks)
   :ensure t
   :config
-  (jag--load-evil-requires)
   (jag--set-evil-key-bindings)
   (jag--setup-evil-config))
 

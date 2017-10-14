@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-exchange-hooks ()
+  "Add hooks to evil-exchange."
+  (jag--add-evil-exchange-key-hooks)
+  (jag--add-evil-exchange-other-hooks))
+
+(defun jag--add-evil-exchange-key-hooks ()
+  "Add key hooks to evil-exchange.")
+
+(defun jag--add-evil-exchange-other-hooks ()
+  "Add mode other to evil-exchange.")
+
 (defun jag--set-evil-exchange-key-bindings ()
   "Set up keybindings for evil-exchange.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for evil-exchange.")
 
 (use-package evil-exchange
+  :init
+  (jag--load-evil-exchange-requires)
+  (jag--add-evil-exchange-hooks)
   :ensure t
   :config
-  (jag--load-evil-exchange-requires)
   (jag--set-evil-exchange-key-bindings)
   (jag--setup-evil-exchange-config))
 

@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-skewer-mode-hooks ()
+  "Add hooks to skewer-mode."
+  (jag--add-skewer-mode-key-hooks)
+  (jag--add-skewer-mode-other-hooks))
+
+(defun jag--add-skewer-mode-key-hooks ()
+  "Add key hooks to skewer-mode.")
+
+(defun jag--add-skewer-mode-other-hooks ()
+  "Add mode other to skewer-mode.")
+
 (defun jag--set-skewer-mode-key-bindings ()
   "Set up keybindings for skewer-mode.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for skewer-mode.")
 
 (use-package skewer-mode
+  :init
+  (jag--load-skewer-mode-requires)
+  (jag--add-skewer-mode-hooks)
   :ensure t
   :config
-  (jag--load-skewer-mode-requires)
   (jag--set-skewer-mode-key-bindings)
   (jag--setup-skewer-mode-config))
 

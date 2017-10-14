@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-which-key-hooks ()
+  "Add hooks to which-key."
+  (jag--add-which-key-key-hooks)
+  (jag--add-which-key-other-hooks))
+
+(defun jag--add-which-key-key-hooks ()
+  "Add key hooks to which-key.")
+
+(defun jag--add-which-key-other-hooks ()
+  "Add mode other to which-key.")
+
 (defun jag--set-which-key-key-bindings ()
   "Set up keybindings for which-key.")
 
@@ -14,10 +25,12 @@
   "Load required sub packages for which-key.")
 
 (use-package which-key
+  :init
+  (jag--load-which-key-requires)
+  (jag--add-which-key-hooks)
   :ensure t
   :diminish 'which-key-mode
   :config
-  (jag--load-which-key-requires)
   (jag--set-which-key-key-bindings)
   (jag--setup-which-key-config))
 

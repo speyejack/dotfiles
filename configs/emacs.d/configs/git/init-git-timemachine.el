@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-git-timemachine-hooks ()
+  "Add hooks to git-timemachine."
+  (jag--add-git-timemachine-key-hooks)
+  (jag--add-git-timemachine-other-hooks))
+
+(defun jag--add-git-timemachine-key-hooks ()
+  "Add key hooks to git-timemachine.")
+
+(defun jag--add-git-timemachine-other-hooks ()
+  "Add mode other to git-timemachine.")
+
 (defun jag--set-git-timemachine-key-bindings ()
   "Set up keybindings for git-timemachine."
   ;; Remove default timemachine mode bindings
@@ -27,9 +38,11 @@
   "Load required sub packages for git-timemachine.")
 
 (use-package git-timemachine
+  :init
+  (jag--load-git-timemachine-requires)
+  (jag--add-git-timemachine-hooks)
   :ensure t
   :config
-  (jag--load-git-timemachine-requires)
   (jag--set-git-timemachine-key-bindings)
   (jag--setup-git-timemachine-config))
 

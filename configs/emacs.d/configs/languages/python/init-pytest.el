@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-pytest-hooks ()
+  "Add hooks to pytest."
+  (jag--add-pytest-key-hooks)
+  (jag--add-pytest-other-hooks))
+
+(defun jag--add-pytest-key-hooks ()
+  "Add key hooks to pytest.")
+
+(defun jag--add-pytest-other-hooks ()
+  "Add mode other to pytest.")
+
 (defun jag--set-pytest-key-bindings ()
   "Set up keybindings for pytest.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for pytest.")
 
 (use-package pytest
+  :init
+  (jag--load-pytest-requires)
+  (jag--add-pytest-hooks)
   :ensure t
   :config
-  (jag--load-pytest-requires)
   (jag--set-pytest-key-bindings)
   (jag--setup-pytest-config))
 

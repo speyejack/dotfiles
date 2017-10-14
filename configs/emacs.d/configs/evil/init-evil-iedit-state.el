@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-iedit-state-hooks ()
+  "Add hooks to evil-iedit-state."
+  (jag--add-evil-iedit-state-key-hooks)
+  (jag--add-evil-iedit-state-other-hooks))
+
+(defun jag--add-evil-iedit-state-key-hooks ()
+  "Add key hooks to evil-iedit-state.")
+
+(defun jag--add-evil-iedit-state-other-hooks ()
+  "Add mode other to evil-iedit-state.")
+
 (defun jag--set-evil-iedit-state-key-bindings ()
   "Set up keybindings for evil-iedit-state.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for evil-iedit-state.")
 
 (use-package evil-iedit-state
+  :init
+  (jag--load-evil-iedit-state-requires)
+  (jag--add-evil-iedit-state-hooks)
   :ensure t
   :config
-  (jag--load-evil-iedit-state-requires)
   (jag--set-evil-iedit-state-key-bindings)
   (jag--setup-evil-iedit-state-config))
 

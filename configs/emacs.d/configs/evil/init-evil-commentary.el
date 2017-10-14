@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-commentary-hooks ()
+  "Add hooks to evil-commentary."
+  (jag--add-evil-commentary-key-hooks)
+  (jag--add-evil-commentary-other-hooks))
+
+(defun jag--add-evil-commentary-key-hooks ()
+  "Add key hooks to evil-commentary.")
+
+(defun jag--add-evil-commentary-other-hooks ()
+  "Add mode other to evil-commentary.")
+
 (defun jag--set-evil-commentary-key-bindings ()
   "Set up keybindings for evil-commentary.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for evil-commentary.")
 
 (use-package evil-commentary
+  :init
+  (jag--load-evil-commentary-requires)
+  (jag--add-evil-commentary-hooks)
   :ensure t
   :config
-  (jag--load-evil-commentary-requires)
   (jag--set-evil-commentary-key-bindings)
   (jag--setup-evil-commentary-config))
 

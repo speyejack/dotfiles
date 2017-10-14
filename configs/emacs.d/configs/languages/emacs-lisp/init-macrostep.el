@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-macrostep-hooks ()
+  "Add hooks to macrostep."
+  (jag--add-macrostep-key-hooks)
+  (jag--add-macrostep-other-hooks))
+
+(defun jag--add-macrostep-key-hooks ()
+  "Add key hooks to macrostep.")
+
+(defun jag--add-macrostep-other-hooks ()
+  "Add mode other to macrostep.")
+
 (defun jag--set-macrostep-key-bindings ()
   "Set up keybindings for macrostep.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for macrostep.")
 
 (use-package macrostep
+  :init
+  (jag--load-macrostep-requires)
+  (jag--add-macrostep-hooks)
   :ensure t
   :config
-  (jag--load-macrostep-requires)
   (jag--set-macrostep-key-bindings)
   (jag--setup-macrostep-config))
 

@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-indent-guide-hooks ()
+  "Add hooks to indent-guide."
+  (jag--add-indent-guide-key-hooks)
+  (jag--add-indent-guide-other-hooks))
+
+(defun jag--add-indent-guide-key-hooks ()
+  "Add key hooks to indent-guide.")
+
+(defun jag--add-indent-guide-other-hooks ()
+  "Add mode other to indent-guide.")
+
 (defun jag--set-indent-guide-key-bindings ()
   "Set up keybindings for indent-guide.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for indent-guide.")
 
 (use-package indent-guide
+  :init
+  (jag--load-indent-guide-requires)
+  (jag--add-indent-guide-hooks)
   :ensure t
   :config
-  (jag--load-indent-guide-requires)
   (jag--set-indent-guide-key-bindings)
   (jag--setup-indent-guide-config))
 

@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-haskell-mode-hooks ()
+  "Add hooks to haskell-mode."
+  (jag--add-haskell-mode-key-hooks)
+  (jag--add-haskell-mode-other-hooks))
+
+(defun jag--add-haskell-mode-key-hooks ()
+  "Add key hooks to haskell-mode.")
+
+(defun jag--add-haskell-mode-other-hooks ()
+  "Add mode other to haskell-mode.")
+
 (defun jag--set-haskell-mode-key-bindings ()
   "Set up keybindings for haskell-mode.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for haskell-mode.")
 
 (use-package haskell-mode
+  :init
+  (jag--load-haskell-mode-requires)
+  (jag--add-haskell-mode-hooks)
   :ensure t
   :config
-  (jag--load-haskell-mode-requires)
   (jag--set-haskell-mode-key-bindings)
   (jag--setup-haskell-mode-config))
 

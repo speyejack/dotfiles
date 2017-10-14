@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-s-hooks ()
+  "Add hooks to s."
+  (jag--add-s-key-hooks)
+  (jag--add-s-other-hooks))
+
+(defun jag--add-s-key-hooks ()
+  "Add key hooks to s.")
+
+(defun jag--add-s-other-hooks ()
+  "Add mode other to s.")
+
 (defun jag--set-s-key-bindings ()
   "Set up keybindings for s.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for s.")
 
 (use-package s
+  :init
+  (jag--load-s-requires)
+  (jag--add-s-hooks)
   :ensure t
   :config
-  (jag--load-s-requires)
   (jag--set-s-key-bindings)
   (jag--setup-s-config))
 

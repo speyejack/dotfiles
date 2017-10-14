@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-asm-mode-hooks ()
+  "Add hooks to asm-mode."
+  (jag--add-asm-mode-key-hooks)
+  (jag--add-asm-mode-other-hooks))
+
+(defun jag--add-asm-mode-key-hooks ()
+  "Add key hooks to asm-mode.")
+
+(defun jag--add-asm-mode-other-hooks ()
+  "Add mode other to asm-mode.")
+
 (defun jag--set-asm-mode-key-bindings ()
   "Set up keybindings for asm-mode.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for asm-mode.")
 
 (use-package asm-mode
+  :init
+  (jag--load-asm-mode-requires)
+  (jag--add-asm-mode-hooks)
   :ensure t
   :config
-  (jag--load-asm-mode-requires)
   (jag--set-asm-mode-key-bindings)
   (jag--setup-asm-mode-config))
 

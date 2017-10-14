@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-hlint-refactor-hooks ()
+  "Add hooks to hlint-refactor."
+  (jag--add-hlint-refactor-key-hooks)
+  (jag--add-hlint-refactor-other-hooks))
+
+(defun jag--add-hlint-refactor-key-hooks ()
+  "Add key hooks to hlint-refactor.")
+
+(defun jag--add-hlint-refactor-other-hooks ()
+  "Add mode other to hlint-refactor.")
+
 (defun jag--set-hlint-refactor-key-bindings ()
   "Set up keybindings for hlint-refactor.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for hlint-refactor.")
 
 (use-package hlint-refactor
+  :init
+  (jag--load-hlint-refactor-requires)
+  (jag--add-hlint-refactor-hooks)
   :ensure t
   :config
-  (jag--load-hlint-refactor-requires)
   (jag--set-hlint-refactor-key-bindings)
   (jag--setup-hlint-refactor-config))
 

@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-spaceline-all-the-icons-hooks ()
+  "Add hooks to spaceline-all-the-icons."
+  (jag--add-spaceline-all-the-icons-key-hooks)
+  (jag--add-spaceline-all-the-icons-other-hooks))
+
+(defun jag--add-spaceline-all-the-icons-key-hooks ()
+  "Add key hooks to spaceline-all-the-icons.")
+
+(defun jag--add-spaceline-all-the-icons-other-hooks ()
+  "Add mode other to spaceline-all-the-icons.")
+
 (defun jag--set-spaceline-all-the-icons-key-bindings ()
   "Set up keybindings for spaceline-all-the-icons.")
 
@@ -14,10 +25,12 @@
   "Load required sub packages for spaceline-all-the-icons.")
 
 (use-package spaceline-all-the-icons
+  :init
+  (jag--load-spaceline-all-the-icons-requires)
+  (jag--add-spaceline-all-the-icons-hooks)
   :ensure t
   :after spaceline
   :config
-  (jag--load-spaceline-all-the-icons-requires)
   (jag--set-spaceline-all-the-icons-key-bindings)
   (jag--setup-spaceline-all-the-icons-config))
 

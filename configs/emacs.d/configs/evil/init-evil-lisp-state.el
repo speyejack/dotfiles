@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-lisp-state-hooks ()
+  "Add hooks to evil-lisp-state."
+  (jag--add-evil-lisp-state-key-hooks)
+  (jag--add-evil-lisp-state-other-hooks))
+
+(defun jag--add-evil-lisp-state-key-hooks ()
+  "Add key hooks to evil-lisp-state.")
+
+(defun jag--add-evil-lisp-state-other-hooks ()
+  "Add mode other to evil-lisp-state.")
+
 (defun jag--set-evil-lisp-state-key-bindings ()
   "Set up keybindings for evil-lisp-state.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for evil-lisp-state.")
 
 (use-package evil-lisp-state
+  :init
+  (jag--load-evil-lisp-state-requires)
+  (jag--add-evil-lisp-state-hooks)
   :ensure t
   :config
-  (jag--load-evil-lisp-state-requires)
   (jag--set-evil-lisp-state-key-bindings)
   (jag--setup-evil-lisp-state-config))
 

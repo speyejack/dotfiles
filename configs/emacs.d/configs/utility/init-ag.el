@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-ag-hooks ()
+  "Add hooks to ag."
+  (jag--add-ag-key-hooks)
+  (jag--add-ag-other-hooks))
+
+(defun jag--add-ag-key-hooks ()
+  "Add key hooks to ag.")
+
+(defun jag--add-ag-other-hooks ()
+  "Add mode other to ag.")
+
 (defun jag--set-ag-key-bindings ()
   "Set up keybindings for ag.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for ag.")
 
 (use-package ag
+  :init
+  (jag--load-ag-requires)
+  (jag--add-ag-hooks)
   :ensure t
   :config
-  (jag--load-ag-requires)
   (jag--set-ag-key-bindings)
   (jag--setup-ag-config))
 

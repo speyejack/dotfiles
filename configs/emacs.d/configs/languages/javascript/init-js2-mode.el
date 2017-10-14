@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-js2-mode-hooks ()
+  "Add hooks to js2-mode."
+  (jag--add-js2-mode-key-hooks)
+  (jag--add-js2-mode-other-hooks))
+
+(defun jag--add-js2-mode-key-hooks ()
+  "Add key hooks to js2-mode.")
+
+(defun jag--add-js2-mode-other-hooks ()
+  "Add mode other to js2-mode.")
+
 (defun jag--set-js2-mode-key-bindings ()
   "Set up keybindings for js2-mode.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for js2-mode.")
 
 (use-package js2-mode
+  :init
+  (jag--load-js2-mode-requires)
+  (jag--add-js2-mode-hooks)
   :ensure t
   :config
-  (jag--load-js2-mode-requires)
   (jag--set-js2-mode-key-bindings)
   (jag--setup-js2-mode-config))
 

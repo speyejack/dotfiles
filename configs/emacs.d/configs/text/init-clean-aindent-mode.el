@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-clean-aindent-mode-hooks ()
+  "Add hooks to clean-aindent-mode."
+  (jag--add-clean-aindent-mode-key-hooks)
+  (jag--add-clean-aindent-mode-other-hooks))
+
+(defun jag--add-clean-aindent-mode-key-hooks ()
+  "Add key hooks to clean-aindent-mode.")
+
+(defun jag--add-clean-aindent-mode-other-hooks ()
+  "Add mode other to clean-aindent-mode.")
+
 (defun jag--set-clean-aindent-mode-key-bindings ()
   "Set up keybindings for clean-aindent-mode.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for clean-aindent-mode.")
 
 (use-package clean-aindent-mode
+  :init
+  (jag--load-clean-aindent-mode-requires)
+  (jag--add-clean-aindent-mode-hooks)
   :ensure t
   :config
-  (jag--load-clean-aindent-mode-requires)
   (jag--set-clean-aindent-mode-key-bindings)
   (jag--setup-clean-aindent-mode-config))
 

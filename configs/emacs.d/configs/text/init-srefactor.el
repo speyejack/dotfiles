@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-srefactor-hooks ()
+  "Add hooks to srefactor."
+  (jag--add-srefactor-key-hooks)
+  (jag--add-srefactor-other-hooks))
+
+(defun jag--add-srefactor-key-hooks ()
+  "Add key hooks to srefactor.")
+
+(defun jag--add-srefactor-other-hooks ()
+  "Add mode other to srefactor.")
+
 (defun jag--set-srefactor-key-bindings ()
   "Set up keybindings for srefactor."
   (define-key c-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
@@ -19,9 +30,11 @@
   "Load required sub packages for srefactor.")
 
 (use-package srefactor
+  :init
+  (jag--load-srefactor-requires)
+  (jag--add-srefactor-hooks)
   :ensure t
   :config
-  (jag--load-srefactor-requires)
   (jag--set-srefactor-key-bindings)
   (jag--setup-srefactor-config))
 

@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-auto-compile-hooks ()
+  "Add hooks to auto-compile."
+  (jag--add-auto-compile-key-hooks)
+  (jag--add-auto-compile-other-hooks))
+
+(defun jag--add-auto-compile-key-hooks ()
+  "Add key hooks to auto-compile.")
+
+(defun jag--add-auto-compile-other-hooks ()
+  "Add mode other to auto-compile.")
+
 (defun jag--set-auto-compile-key-bindings ()
   "Set up keybindings for auto-compile.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for auto-compile.")
 
 (use-package auto-compile
+  :init
+  (jag--load-auto-compile-requires)
+  (jag--add-auto-compile-hooks)
   :ensure t
   :config
-  (jag--load-auto-compile-requires)
   (jag--set-auto-compile-key-bindings)
   (jag--setup-auto-compile-config))
 

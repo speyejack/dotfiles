@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-spray-hooks ()
+  "Add hooks to spray."
+  (jag--add-spray-key-hooks)
+  (jag--add-spray-other-hooks))
+
+(defun jag--add-spray-key-hooks ()
+  "Add key hooks to spray.")
+
+(defun jag--add-spray-other-hooks ()
+  "Add mode other to spray.")
+
 (defun jag--set-spray-key-bindings ()
   "Set up keybindings for spray.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for spray.")
 
 (use-package spray
+  :init
+  (jag--load-spray-requires)
+  (jag--add-spray-hooks)
   :ensure t
   :config
-  (jag--load-spray-requires)
   (jag--set-spray-key-bindings)
   (jag--setup-spray-config))
 

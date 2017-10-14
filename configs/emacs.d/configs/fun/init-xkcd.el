@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-xkcd-hooks ()
+  "Add hooks to xkcd."
+  (jag--add-xkcd-key-hooks)
+  (jag--add-xkcd-other-hooks))
+
+(defun jag--add-xkcd-key-hooks ()
+  "Add key hooks to xkcd.")
+
+(defun jag--add-xkcd-other-hooks ()
+  "Add mode other to xkcd.")
+
 (defun jag--set-xkcd-key-bindings ()
   "Set up keybindings for xkcd.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for xkcd.")
 
 (use-package xkcd
+  :init
+  (jag--load-xkcd-requires)
+  (jag--add-xkcd-hooks)
   :ensure t
   :config
-  (jag--load-xkcd-requires)
   (jag--set-xkcd-key-bindings)
   (jag--setup-xkcd-config))
 

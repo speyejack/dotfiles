@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-hl-todo-hooks ()
+  "Add hooks to hl-todo."
+  (jag--add-hl-todo-key-hooks)
+  (jag--add-hl-todo-other-hooks))
+
+(defun jag--add-hl-todo-key-hooks ()
+  "Add key hooks to hl-todo.")
+
+(defun jag--add-hl-todo-other-hooks ()
+  "Add mode other to hl-todo.")
+
 (defun jag--set-hl-todo-key-bindings ()
   "Set up keybindings for hl-todo.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for hl-todo.")
 
 (use-package hl-todo
+  :init
+  (jag--load-hl-todo-requires)
+  (jag--add-hl-todo-hooks)
   :ensure t
   :config
-  (jag--load-hl-todo-requires)
   (jag--set-hl-todo-key-bindings)
   (jag--setup-hl-todo-config))
 

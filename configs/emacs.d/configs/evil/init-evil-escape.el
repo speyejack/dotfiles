@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-escape-hooks ()
+  "Add hooks to evil-escape."
+  (jag--add-evil-escape-key-hooks)
+  (jag--add-evil-escape-other-hooks))
+
+(defun jag--add-evil-escape-key-hooks ()
+  "Add key hooks to evil-escape.")
+
+(defun jag--add-evil-escape-other-hooks ()
+  "Add mode other to evil-escape.")
+
 (defun jag--set-evil-escape-key-bindings ()
   "Set up keybindings for evil-escape."
   (setq-default evil-escape-key-sequence "jk"))
@@ -16,10 +27,12 @@
   "Load required sub packages for evil-escape.")
 
 (use-package evil-escape
+  :init
+  (jag--load-evil-escape-requires)
+  (jag--add-evil-escape-hooks)
   :ensure t
   :diminish 'evil-escape-mode
   :config
-  (jag--load-evil-escape-requires)
   (jag--set-evil-escape-key-bindings)
   (jag--setup-evil-escape-config))
 

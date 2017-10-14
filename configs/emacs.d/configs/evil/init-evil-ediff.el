@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-evil-ediff-hooks ()
+  "Add hooks to evil-ediff."
+  (jag--add-evil-ediff-key-hooks)
+  (jag--add-evil-ediff-other-hooks))
+
+(defun jag--add-evil-ediff-key-hooks ()
+  "Add key hooks to evil-ediff.")
+
+(defun jag--add-evil-ediff-other-hooks ()
+  "Add mode other to evil-ediff.")
+
 (defun jag--set-evil-ediff-key-bindings ()
   "Set up keybindings for evil-ediff.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for evil-ediff.")
 
 (use-package evil-ediff
+  :init
+  (jag--load-evil-ediff-requires)
+  (jag--add-evil-ediff-hooks)
   :ensure t
   :config
-  (jag--load-evil-ediff-requires)
   (jag--set-evil-ediff-key-bindings)
   (jag--setup-evil-ediff-config))
 

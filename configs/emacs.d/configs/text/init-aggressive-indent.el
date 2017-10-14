@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-aggressive-indent-hooks ()
+  "Add hooks to aggressive-indent."
+  (jag--add-aggressive-indent-key-hooks)
+  (jag--add-aggressive-indent-other-hooks))
+
+(defun jag--add-aggressive-indent-key-hooks ()
+  "Add key hooks to aggressive-indent.")
+
+(defun jag--add-aggressive-indent-other-hooks ()
+  "Add mode other to aggressive-indent.")
+
 (defun jag--set-aggressive-indent-key-bindings ()
   "Set up keybindings for aggressive-indent.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for aggressive-indent.")
 
 (use-package aggressive-indent
+  :init
+  (jag--load-aggressive-indent-requires)
+  (jag--add-aggressive-indent-hooks)
   :ensure t
   :config
-  (jag--load-aggressive-indent-requires)
   (jag--set-aggressive-indent-key-bindings)
   (jag--setup-aggressive-indent-config))
 

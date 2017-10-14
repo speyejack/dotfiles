@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-powerline-evil-hooks ()
+  "Add hooks to powerline-evil."
+  (jag--add-powerline-evil-key-hooks)
+  (jag--add-powerline-evil-other-hooks))
+
+(defun jag--add-powerline-evil-key-hooks ()
+  "Add key hooks to powerline-evil.")
+
+(defun jag--add-powerline-evil-other-hooks ()
+  "Add mode other to powerline-evil.")
+
 (defun jag--set-powerline-evil-key-bindings ()
   "Set up keybindings for powerline-evil.")
 
@@ -14,9 +25,11 @@
   "Load required sub packages for powerline-evil.")
 
 (use-package powerline-evil
+  :init
+  (jag--load-powerline-evil-requires)
+  (jag--add-powerline-evil-hooks)
   :ensure t
   :config
-  (jag--load-powerline-evil-requires)
   (jag--set-powerline-evil-key-bindings)
   (jag--setup-powerline-evil-config))
 

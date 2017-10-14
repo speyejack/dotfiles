@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-fancy-battery-hooks ()
+  "Add hooks to fancy-battery."
+  (jag--add-fancy-battery-key-hooks)
+  (jag--add-fancy-battery-other-hooks))
+
+(defun jag--add-fancy-battery-key-hooks ()
+  "Add key hooks to fancy-battery.")
+
+(defun jag--add-fancy-battery-other-hooks ()
+  "Add mode other to fancy-battery.")
+
 (defun jag--set-fancy-battery-key-bindings ()
   "Set up keybindings for fancy-battery.")
 
@@ -15,9 +26,11 @@
   "Load required sub packages for fancy-battery.")
 
 (use-package fancy-battery
+  :init
+  (jag--load-fancy-battery-requires)
+  (jag--add-fancy-battery-hooks)
   :ensure t
   :config
-  (jag--load-fancy-battery-requires)
   (jag--set-fancy-battery-key-bindings)
   (jag--setup-fancy-battery-config))
 

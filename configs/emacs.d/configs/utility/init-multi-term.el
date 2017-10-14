@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-multi-term-hooks ()
+  "Add hooks to multi-term."
+  (jag--add-multi-term-key-hooks)
+  (jag--add-multi-term-other-hooks))
+
+(defun jag--add-multi-term-key-hooks ()
+  "Add key hooks to multi-term.")
+
+(defun jag--add-multi-term-other-hooks ()
+  "Add mode other to multi-term.")
+
 (defun jag--set-multi-term-key-bindings ()
   "Set up keybindings for multi-term.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for multi-term.")
 
 (use-package multi-term
+  :init
+  (jag--load-multi-term-requires)
+  (jag--add-multi-term-hooks)
   :ensure t
   :config
-  (jag--load-multi-term-requires)
   (jag--set-multi-term-key-bindings)
   (jag--setup-multi-term-config))
 

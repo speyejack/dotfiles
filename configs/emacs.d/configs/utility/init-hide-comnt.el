@@ -3,6 +3,17 @@
 
 ;;; Code:
 
+(defun jag--add-hide-comnt-hooks ()
+  "Add hooks to hide-comnt."
+  (jag--add-hide-comnt-key-hooks)
+  (jag--add-hide-comnt-other-hooks))
+
+(defun jag--add-hide-comnt-key-hooks ()
+  "Add key hooks to hide-comnt.")
+
+(defun jag--add-hide-comnt-other-hooks ()
+  "Add mode other to hide-comnt.")
+
 (defun jag--set-hide-comnt-key-bindings ()
   "Set up keybindings for hide-comnt.")
 
@@ -13,9 +24,11 @@
   "Load required sub packages for hide-comnt.")
 
 (use-package hide-comnt
+  :init
+  (jag--load-hide-comnt-requires)
+  (jag--add-hide-comnt-hooks)
   :ensure t
   :config
-  (jag--load-hide-comnt-requires)
   (jag--set-hide-comnt-key-bindings)
   (jag--setup-hide-comnt-config))
 
