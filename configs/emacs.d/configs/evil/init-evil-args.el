@@ -31,6 +31,7 @@
   (jag--load-evil-args-requires)
   (jag--add-evil-args-hooks)
   :ensure t
+  :after evil
   :config
   (jag--set-evil-args-key-bindings)
   (jag--setup-evil-args-config))

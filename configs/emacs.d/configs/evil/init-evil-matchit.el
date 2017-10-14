@@ -29,6 +29,7 @@
   (jag--load-evil-matchit-requires)
   (jag--add-evil-matchit-hooks)
   :ensure t
+  :after evil
   :config
   (jag--set-evil-matchit-key-bindings)
   (jag--setup-evil-matchit-config))

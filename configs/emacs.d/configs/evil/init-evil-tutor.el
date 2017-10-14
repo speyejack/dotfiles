@@ -28,6 +28,7 @@
   (jag--load-evil-tutor-requires)
   (jag--add-evil-tutor-hooks)
   :ensure t
+  :commands 'evil-tutor
   :config
   (jag--set-evil-tutor-key-bindings)
   (jag--setup-evil-tutor-config))

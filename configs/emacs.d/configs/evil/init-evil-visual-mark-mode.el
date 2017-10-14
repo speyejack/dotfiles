@@ -18,16 +18,18 @@
   "Set up keybindings for evil-visual-mark-mode.")
 
 (defun jag--setup-evil-visual-mark-mode-config ()
-  "Set up personal configuation for evil-visual-mark-mode.")
+  "Set up personal configuation for evil-visual-mark-mode."
+  (add-hook prog-mode-hook 'evil-visual-mark-mode))
 
-(defun jag--load-evil-visual-mark-mode-requires ()
-  "Load required sub packages for evil-visual-mark-mode.")
+  (defun jag--load-evil-visual-mark-mode-requires ()
+	"Load required sub packages for evil-visual-mark-mode.")
 
 (use-package evil-visual-mark-mode
   :init
   (jag--load-evil-visual-mark-mode-requires)
   (jag--add-evil-visual-mark-mode-hooks)
   :ensure t
+  :commands 'evil-visual-mark-mode
   :config
   (jag--set-evil-visual-mark-mode-key-bindings)
   (jag--setup-evil-visual-mark-mode-config))

@@ -32,6 +32,7 @@
   (jag--load-evil-org-requires)
   (jag--add-evil-org-hooks)
   :ensure t
+  :commands 'evil-org-mode
   :config
   (jag--set-evil-org-key-bindings)
   (jag--setup-evil-org-config))

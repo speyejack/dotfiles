@@ -1,4 +1,4 @@
-;;; init-evil-ediff.el --- Evil-keys-for-eDiff
+;; init-evil-ediff.el --- Evil-keys-for-eDiff
 ;;; Commentary:
 
 ;;; Code:
@@ -18,7 +18,8 @@
   "Set up keybindings for evil-ediff.")
 
 (defun jag--setup-evil-ediff-config ()
-  "Set up personal configuation for evil-ediff.")
+  "Set up personal configuation for evil-ediff."
+  (add-hook 'ediff-mode-hook 'evil-ediff-init))
 
 (defun jag--load-evil-ediff-requires ()
   "Load required sub packages for evil-ediff.")
@@ -28,6 +29,7 @@
   (jag--load-evil-ediff-requires)
   (jag--add-evil-ediff-hooks)
   :ensure t
+  :commands 'evil-ediff-init
   :config
   (jag--set-evil-ediff-key-bindings)
   (jag--setup-evil-ediff-config))

@@ -31,6 +31,7 @@
   (jag--load-evil-numbers-requires)
   (jag--add-evil-numbers-hooks)
   :ensure t
+  :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
   :config
   (jag--set-evil-numbers-key-bindings)
   (jag--setup-evil-numbers-config))

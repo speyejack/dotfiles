@@ -28,6 +28,7 @@
   (jag--load-evil-anzu-requires)
   (jag--add-evil-anzu-hooks)
   :ensure t
+  :after evil
   :config
   (jag--set-evil-anzu-key-bindings)
   (jag--setup-evil-anzu-config))

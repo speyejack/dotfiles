@@ -28,6 +28,7 @@
   (jag--load-evil-iedit-state-requires)
   (jag--add-evil-iedit-state-hooks)
   :ensure t
+  :commands 'iedit-mode
   :config
   (jag--set-evil-iedit-state-key-bindings)
   (jag--setup-evil-iedit-state-config))

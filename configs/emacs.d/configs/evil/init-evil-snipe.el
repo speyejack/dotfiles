@@ -30,7 +30,9 @@
   (jag--load-evil-snipe-requires)
   (jag--add-evil-snipe-hooks)
   :ensure t
-  :diminish 'evil-snipe-mode
+  :after evil
+  :diminish evil-snipe-mode
+  :diminish evil-snipe-local-mode
   :config
   (jag--set-evil-snipe-key-bindings)
   (jag--setup-evil-snipe-config))

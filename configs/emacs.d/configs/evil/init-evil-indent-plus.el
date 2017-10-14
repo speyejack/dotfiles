@@ -29,6 +29,7 @@
   (jag--load-evil-indent-plus-requires)
   (jag--add-evil-indent-plus-hooks)
   :ensure t
+  :commands (evil-indent-plus-i-indent evil-indent-plus-a-indent)
   :config
   (jag--set-evil-indent-plus-key-bindings)
   (jag--setup-evil-indent-plus-config))

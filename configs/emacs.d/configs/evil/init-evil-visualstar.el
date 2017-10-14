@@ -29,6 +29,7 @@
   (jag--load-evil-visualstar-requires)
   (jag--add-evil-visualstar-hooks)
   :ensure t
+  :after evil
   :config
   (jag--set-evil-visualstar-key-bindings)
   (jag--setup-evil-visualstar-config))

@@ -28,6 +28,7 @@
   (jag--load-evil-nerd-commenter-requires)
   (jag--add-evil-nerd-commenter-hooks)
   :ensure t
+  :disabled
   :config
   (jag--set-evil-nerd-commenter-key-bindings)
   (jag--setup-evil-nerd-commenter-config))

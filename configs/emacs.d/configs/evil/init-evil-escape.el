@@ -31,6 +31,7 @@
   (jag--load-evil-escape-requires)
   (jag--add-evil-escape-hooks)
   :ensure t
+  :after evil
   :diminish 'evil-escape-mode
   :config
   (jag--set-evil-escape-key-bindings)

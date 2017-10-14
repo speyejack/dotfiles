@@ -30,6 +30,7 @@
   (jag--add-spaceline-all-the-icons-hooks)
   :ensure t
   :after spaceline
+  :disabled
   :config
   (jag--set-spaceline-all-the-icons-key-bindings)
   (jag--setup-spaceline-all-the-icons-config))

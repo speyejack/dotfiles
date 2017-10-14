@@ -45,7 +45,6 @@
   (require 'init-evil-numbers)
   (require 'init-evil-org)
   (require 'init-evil-search-highlight-persist)
-  (require 'init-evil-snipe)
   (require 'init-evil-surround)
   (require 'init-evil-terminal-cursor-changer)
   (require 'init-evil-tutor)
