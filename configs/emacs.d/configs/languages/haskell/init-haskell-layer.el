@@ -6,18 +6,19 @@
 (defun jag--load-haskell-layer-requires ()
   "Load each package for directory."
   (add-hook 'haskell-mode-hook
-			(progn
-			  (require 'init-hindent)
-			  (require 'init-company-ghci)
-			  (require 'init-intero)
-			  (require 'init-ghc)
-			  (require 'init-cmm-mode)
-			  (require 'init-haskell-mode)
-			  (require 'init-hlint-refactor)
-			  (require 'init-helm-hoogle)
-			  (require 'init-flycheck-haskell)
-			  (require 'init-company-ghc)
-			  (require 'init-company-cabal))))
+			(lambda ()
+			  (progn
+				(require 'init-hindent)
+				(require 'init-company-ghci)
+				(require 'init-intero)
+				(require 'init-ghc)
+				(require 'init-cmm-mode)
+				(require 'init-haskell-mode)
+				(require 'init-hlint-refactor)
+				(require 'init-helm-hoogle)
+				(require 'init-flycheck-haskell)
+				(require 'init-company-ghc)
+				(require 'init-company-cabal)))))
 
 (jag--load-haskell-layer-requires)
 
