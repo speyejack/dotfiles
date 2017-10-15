@@ -9,7 +9,8 @@
   (jag--add-nlinum-relative-other-hooks))
 
 (defun jag--add-nlinum-relative-key-hooks ()
-  "Add keyboard hooks to nlinum-relative.")
+  "Add keyboard hooks to nlinum-relative."
+  (add-hook 'prog-mode-hook 'nlinum-relative-mode))
 
 (defun jag--add-nlinum-relative-other-hooks ()
   "Add other hooks to nlinum-relative.")
@@ -19,8 +20,7 @@
 
 (defun jag--setup-nlinum-relative-config ()
   "Set up personal configuation for nlinum-relative."
-  (nlinum-relative-setup-evil)
-  (add-hook 'prog-mode-hook 'nlinum-relative-mode))
+  (nlinum-relative-setup-evil))
 
 (defun jag--load-nlinum-relative-requires ()
   "Load required sub packages for nlinum-relative.")
@@ -30,7 +30,7 @@
   (jag--load-nlinum-relative-requires)
   (jag--add-nlinum-relative-hooks)
   :ensure t
-  :defer t
+  :commands 'nlinum-relative-mode
   :config
   (jag--set-nlinum-relative-key-bindings)
   (jag--setup-nlinum-relative-config))
