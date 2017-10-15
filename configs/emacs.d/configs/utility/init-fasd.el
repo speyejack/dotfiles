@@ -28,6 +28,7 @@
   (jag--load-fasd-requires)
   (jag--add-fasd-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-fasd-key-bindings)
   (jag--setup-fasd-config))

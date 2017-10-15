@@ -28,6 +28,7 @@
   (jag--load-mmm-mode-requires)
   (jag--add-mmm-mode-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-mmm-mode-key-bindings)
   (jag--setup-mmm-mode-config))

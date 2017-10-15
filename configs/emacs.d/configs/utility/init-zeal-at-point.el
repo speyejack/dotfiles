@@ -28,6 +28,7 @@
   (jag--load-zeal-at-point-requires)
   (jag--add-zeal-at-point-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-zeal-at-point-key-bindings)
   (jag--setup-zeal-at-point-config))

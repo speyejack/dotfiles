@@ -28,6 +28,7 @@
   (jag--load-desktop-requires)
   (jag--add-desktop-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-desktop-key-bindings)
   (jag--setup-desktop-config))

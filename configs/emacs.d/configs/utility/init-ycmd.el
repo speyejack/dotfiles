@@ -28,6 +28,7 @@
   (jag--load-ycmd-requires)
   (jag--add-ycmd-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-ycmd-key-bindings)
   (jag--setup-ycmd-config))

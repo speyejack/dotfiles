@@ -29,6 +29,7 @@
   (jag--load-eshell-requires)
   (jag--add-eshell-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-eshell-key-bindings)
   (jag--setup-eshell-config))

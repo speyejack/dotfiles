@@ -28,6 +28,7 @@
   (jag--load-ag-requires)
   (jag--add-ag-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-ag-key-bindings)
   (jag--setup-ag-config))

@@ -28,6 +28,7 @@
   (jag--load-link-hint-requires)
   (jag--add-link-hint-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-link-hint-key-bindings)
   (jag--setup-link-hint-config))

@@ -29,6 +29,7 @@
   (jag--load-which-key-requires)
   (jag--add-which-key-hooks)
   :ensure t
+  :defer t
   :diminish 'which-key-mode
   :config
   (jag--set-which-key-key-bindings)

@@ -28,6 +28,7 @@
   (jag--load-hide-comnt-requires)
   (jag--add-hide-comnt-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-hide-comnt-key-bindings)
   (jag--setup-hide-comnt-config))

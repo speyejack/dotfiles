@@ -29,6 +29,7 @@
   (jag--load-ace-link-requires)
   (jag--add-ace-link-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-ace-link-key-bindings)
   (jag--setup-ace-link-config))

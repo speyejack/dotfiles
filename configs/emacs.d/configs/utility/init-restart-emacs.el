@@ -28,6 +28,7 @@
   (jag--load-restart-emacs-requires)
   (jag--add-restart-emacs-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-restart-emacs-key-bindings)
   (jag--setup-restart-emacs-config))

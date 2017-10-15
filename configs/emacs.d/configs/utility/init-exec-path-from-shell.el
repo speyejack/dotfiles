@@ -28,6 +28,7 @@
   (jag--load-exec-path-from-shell-requires)
   (jag--add-exec-path-from-shell-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-exec-path-from-shell-key-bindings)
   (jag--setup-exec-path-from-shell-config))

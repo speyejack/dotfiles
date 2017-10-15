@@ -29,6 +29,7 @@
   (jag--load-avy-requires)
   (jag--add-avy-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-avy-key-bindings)
   (jag--setup-avy-config))

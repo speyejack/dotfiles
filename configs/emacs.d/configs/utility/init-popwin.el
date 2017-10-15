@@ -29,6 +29,7 @@
   (jag--load-popwin-requires)
   (jag--add-popwin-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-popwin-key-bindings)
   (jag--setup-popwin-config))

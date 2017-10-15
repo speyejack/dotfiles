@@ -30,6 +30,7 @@
   (jag--load-fancy-battery-requires)
   (jag--add-fancy-battery-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-fancy-battery-key-bindings)
   (jag--setup-fancy-battery-config))

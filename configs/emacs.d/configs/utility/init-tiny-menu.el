@@ -28,6 +28,7 @@
   (jag--load-tiny-menu-requires)
   (jag--add-tiny-menu-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-tiny-menu-key-bindings)
   (jag--setup-tiny-menu-config))

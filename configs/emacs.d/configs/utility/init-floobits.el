@@ -28,6 +28,7 @@
   (jag--load-floobits-requires)
   (jag--add-floobits-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-floobits-key-bindings)
   (jag--setup-floobits-config))

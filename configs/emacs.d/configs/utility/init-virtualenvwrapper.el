@@ -28,6 +28,7 @@
   (jag--load-virtualenvwrapper-requires)
   (jag--add-virtualenvwrapper-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-virtualenvwrapper-key-bindings)
   (jag--setup-virtualenvwrapper-config))

@@ -28,6 +28,7 @@
   (jag--load-multi-term-requires)
   (jag--add-multi-term-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-multi-term-key-bindings)
   (jag--setup-multi-term-config))

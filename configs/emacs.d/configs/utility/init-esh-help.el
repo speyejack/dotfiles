@@ -28,6 +28,7 @@
   (jag--load-esh-help-requires)
   (jag--add-esh-help-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-esh-help-key-bindings)
   (jag--setup-esh-help-config))

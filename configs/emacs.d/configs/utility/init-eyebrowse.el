@@ -28,6 +28,7 @@
   (jag--load-eyebrowse-requires)
   (jag--add-eyebrowse-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-eyebrowse-key-bindings)
   (jag--setup-eyebrowse-config))

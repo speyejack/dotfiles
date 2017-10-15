@@ -28,6 +28,7 @@
   (jag--load-winum-requires)
   (jag--add-winum-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-winum-key-bindings)
   (jag--setup-winum-config))

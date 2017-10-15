@@ -28,6 +28,7 @@
   (jag--load-zoom-frm-requires)
   (jag--add-zoom-frm-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-zoom-frm-key-bindings)
   (jag--setup-zoom-frm-config))

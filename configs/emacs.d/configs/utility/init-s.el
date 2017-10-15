@@ -28,6 +28,7 @@
   (jag--load-s-requires)
   (jag--add-s-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-s-key-bindings)
   (jag--setup-s-config))

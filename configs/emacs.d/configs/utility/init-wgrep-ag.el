@@ -28,6 +28,7 @@
   (jag--load-wgrep-ag-requires)
   (jag--add-wgrep-ag-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-wgrep-ag-key-bindings)
   (jag--setup-wgrep-ag-config))

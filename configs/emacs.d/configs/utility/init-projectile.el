@@ -30,6 +30,7 @@
   (jag--load-projectile-requires)
   (jag--add-projectile-hooks)
   :ensure t
+  :defer t
   :diminish 'projectile-mode
   :commands (projectile-find-file projectile-switch-project)
   :config

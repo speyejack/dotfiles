@@ -28,6 +28,7 @@
   (jag--load-ace-jump-helm-line-requires)
   (jag--add-ace-jump-helm-line-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-ace-jump-helm-line-key-bindings)
   (jag--setup-ace-jump-helm-line-config))

@@ -28,6 +28,7 @@
   (jag--load-pos-tip-requires)
   (jag--add-pos-tip-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-pos-tip-key-bindings)
   (jag--setup-pos-tip-config))

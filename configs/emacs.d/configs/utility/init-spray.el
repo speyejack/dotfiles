@@ -28,6 +28,7 @@
   (jag--load-spray-requires)
   (jag--add-spray-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-spray-key-bindings)
   (jag--setup-spray-config))

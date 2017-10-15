@@ -28,6 +28,7 @@
   (jag--load-open-junk-file-requires)
   (jag--add-open-junk-file-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-open-junk-file-key-bindings)
   (jag--setup-open-junk-file-config))

@@ -28,6 +28,7 @@
   (jag--load-fuzzy-requires)
   (jag--add-fuzzy-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-fuzzy-key-bindings)
   (jag--setup-fuzzy-config))

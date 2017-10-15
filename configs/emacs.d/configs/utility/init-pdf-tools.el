@@ -28,6 +28,7 @@
   (jag--load-pdf-tools-requires)
   (jag--add-pdf-tools-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-pdf-tools-key-bindings)
   (jag--setup-pdf-tools-config))

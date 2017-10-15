@@ -28,6 +28,7 @@
   (jag--load-persp-mode-requires)
   (jag--add-persp-mode-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-persp-mode-key-bindings)
   (jag--setup-persp-mode-config))
