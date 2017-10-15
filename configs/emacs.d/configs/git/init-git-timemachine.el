@@ -29,10 +29,9 @@
 
 (defun jag--setup-git-timemachine-config ()
   "Set up personal configuation for git-timemachine."
-
   ;; Override evil keymap with timemachine's map
-  (eval-after-load 'git-timemachine
-	(lambda () (evil-make-intercept-map git-timemachine-mode-map 'normal))))
+  (evil-make-intercept-map git-timemachine-mode-map 'normal)
+  (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
 
 (defun jag--load-git-timemachine-requires ()
   "Load required sub packages for git-timemachine.")
@@ -42,6 +41,8 @@
   (jag--load-git-timemachine-requires)
   (jag--add-git-timemachine-hooks)
   :ensure t
+  :defer t
+  ;; :commands 'git-timemachine
   :config
   (jag--set-git-timemachine-key-bindings)
   (jag--setup-git-timemachine-config))

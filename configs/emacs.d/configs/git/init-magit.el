@@ -29,6 +29,7 @@
   (jag--load-magit-requires)
   (jag--add-magit-hooks)
   :ensure t
+  :commands 'magit-status
   :config
   (jag--set-magit-key-bindings)
   (jag--setup-magit-config))
