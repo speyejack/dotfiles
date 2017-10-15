@@ -34,6 +34,7 @@
   (jag--load-srefactor-requires)
   (jag--add-srefactor-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-srefactor-key-bindings)
   (jag--setup-srefactor-config))

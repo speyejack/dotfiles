@@ -31,6 +31,7 @@
   (jag--add-projectile-hooks)
   :ensure t
   :diminish 'projectile-mode
+  :commands (projectile-find-file projectile-switch-project)
   :config
   (jag--set-projectile-key-bindings)
   (jag--setup-projectile-config))
