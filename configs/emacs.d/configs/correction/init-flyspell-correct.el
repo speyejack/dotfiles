@@ -30,6 +30,7 @@
   (jag--load-flyspell-correct-requires)
   (jag--add-flyspell-correct-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-flyspell-correct-key-bindings)
   (jag--setup-flyspell-correct-config))

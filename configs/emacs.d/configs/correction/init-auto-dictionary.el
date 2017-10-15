@@ -28,6 +28,7 @@
   (jag--load-auto-dictionary-requires)
   (jag--add-auto-dictionary-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-auto-dictionary-key-bindings)
   (jag--setup-auto-dictionary-config))

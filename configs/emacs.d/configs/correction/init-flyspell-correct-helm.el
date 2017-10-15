@@ -28,6 +28,7 @@
   (jag--load-flyspell-correct-helm-requires)
   (jag--add-flyspell-correct-helm-hooks)
   :ensure t
+  :after helm
   :config
   (jag--set-flyspell-correct-helm-key-bindings)
   (jag--setup-flyspell-correct-helm-config))

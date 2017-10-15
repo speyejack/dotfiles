@@ -30,6 +30,7 @@
   (jag--load-flycheck-requires)
   (jag--add-flycheck-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-flycheck-key-bindings)
   (jag--setup-flycheck-config))
