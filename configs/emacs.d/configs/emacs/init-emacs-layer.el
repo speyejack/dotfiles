@@ -8,7 +8,8 @@
   (require 'init-diminish)
   (require 'init-powerline)
   (require 'init-solarized-theme)
-  (require 'init-spaceline))
+  ;; (require 'init-spaceline)
+  )
 
 (jag--load-emacs-layer-requires)
 
