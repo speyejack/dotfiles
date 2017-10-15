@@ -30,8 +30,8 @@
   (jag--add-evil-commentary-hooks)
   :ensure t
   :defer t
-  :config
   :after evil
+  :config
   (jag--set-evil-commentary-key-bindings)
   (jag--setup-evil-commentary-config))
 
