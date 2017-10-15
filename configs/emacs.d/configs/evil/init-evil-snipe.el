@@ -32,6 +32,7 @@
   :after evil
   :defer t
   :diminish 'evil-snipe-mode
+  :diminish 'evil-snipe-local-mode
   :config
   (jag--set-evil-snipe-key-bindings)
   (jag--setup-evil-snipe-config))
