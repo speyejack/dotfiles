@@ -29,7 +29,9 @@
   (jag--load-evil-commentary-requires)
   (jag--add-evil-commentary-hooks)
   :ensure t
+  :defer t
   :config
+  :after evil
   (jag--set-evil-commentary-key-bindings)
   (jag--setup-evil-commentary-config))
 

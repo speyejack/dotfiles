@@ -9,7 +9,8 @@
   (jag--add-evil-numbers-other-hooks))
 
 (defun jag--add-evil-numbers-key-hooks ()
-  "Add keyboard hooks to evil-numbers.")
+  "Add keyboard hooks to evil-numbers."
+  )
 
 (defun jag--add-evil-numbers-other-hooks ()
   "Add other hooks to evil-numbers.")
@@ -31,6 +32,8 @@
   (jag--load-evil-numbers-requires)
   (jag--add-evil-numbers-hooks)
   :ensure t
+  :after evil
+  :defer t
   :config
   (jag--set-evil-numbers-key-bindings)
   (jag--setup-evil-numbers-config))

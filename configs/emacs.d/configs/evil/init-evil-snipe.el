@@ -19,8 +19,7 @@
 
 (defun jag--setup-evil-snipe-config ()
   "Set up personal configuation for evil-snipe."
-  (evil-snipe-mode 1)
-  (evil-snipe-override-mode 1))
+  (evil-snipe-mode 1))
 
 (defun jag--load-evil-snipe-requires ()
   "Load required sub packages for evil-snipe.")
@@ -30,6 +29,8 @@
   (jag--load-evil-snipe-requires)
   (jag--add-evil-snipe-hooks)
   :ensure t
+  :after evil
+  :defer t
   :diminish 'evil-snipe-mode
   :config
   (jag--set-evil-snipe-key-bindings)

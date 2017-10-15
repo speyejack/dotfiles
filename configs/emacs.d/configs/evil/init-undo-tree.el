@@ -29,6 +29,7 @@
   (jag--add-undo-tree-hooks)
   :ensure t
   :diminish 'undo-tree-mode
+  :commands 'undo-tree-visualize
   :config
   (jag--set-undo-tree-key-bindings)
   (jag--setup-undo-tree-config))

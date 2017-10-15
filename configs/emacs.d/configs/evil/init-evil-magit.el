@@ -9,7 +9,8 @@
   (jag--add-evil-magit-other-hooks))
 
 (defun jag--add-evil-magit-key-hooks ()
-  "Add keyboard hooks to evil-magit.")
+  "Add keyboard hooks to evil-magit."
+  (add-hook 'magit-mode-hook 'evil-local-mode))
 
 (defun jag--add-evil-magit-other-hooks ()
   "Add other hooks to evil-magit.")
@@ -18,16 +19,17 @@
   "Set up keybindings for evil-magit.")
 
 (defun jag--setup-evil-magit-config ()
-  "Set up personal configuation for evil-magit.")
+"Set up personal configuation for evil-magit.")
 
 (defun jag--load-evil-magit-requires ()
-  "Load required sub packages for evil-magit.")
+"Load required sub packages for evil-magit.")
 
 (use-package evil-magit
   :init
   (jag--load-evil-magit-requires)
   (jag--add-evil-magit-hooks)
   :ensure t
+  :after magit
   :config
   (jag--set-evil-magit-key-bindings)
   (jag--setup-evil-magit-config))

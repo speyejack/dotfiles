@@ -29,6 +29,8 @@
   (jag--load-evil-surround-requires)
   (jag--add-evil-surround-hooks)
   :ensure t
+  :after evil
+  :defer t
   :config
   (jag--set-evil-surround-key-bindings)
   (jag--setup-evil-surround-config))

@@ -1,5 +1,5 @@
 ;;; init-evil-anzu.el --- Search-counter-with-evil
-;;; Commentary:
+;;; Commentary: asdfsdf
 
 ;;; Code:
 
@@ -28,6 +28,8 @@
   (jag--load-evil-anzu-requires)
   (jag--add-evil-anzu-hooks)
   :ensure t
+  :commands 'evil-search-next
+  :after evil
   :config
   (jag--set-evil-anzu-key-bindings)
   (jag--setup-evil-anzu-config))

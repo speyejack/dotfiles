@@ -28,6 +28,7 @@
   (jag--load-evil-visual-mark-mode-requires)
   (jag--add-evil-visual-mark-mode-hooks)
   :ensure t
+  :disabled
   :config
   (jag--set-evil-visual-mark-mode-key-bindings)
   (jag--setup-evil-visual-mark-mode-config))

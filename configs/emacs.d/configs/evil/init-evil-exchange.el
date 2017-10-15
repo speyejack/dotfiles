@@ -28,6 +28,7 @@
   (jag--load-evil-exchange-requires)
   (jag--add-evil-exchange-hooks)
   :ensure t
+  :commands 'evil-exchange
   :config
   (jag--set-evil-exchange-key-bindings)
   (jag--setup-evil-exchange-config))

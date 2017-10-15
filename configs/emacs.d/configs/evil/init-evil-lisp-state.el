@@ -28,6 +28,7 @@
   (jag--load-evil-lisp-state-requires)
   (jag--add-evil-lisp-state-hooks)
   :ensure t
+  :commands 'evil-lisp-state
   :config
   (jag--set-evil-lisp-state-key-bindings)
   (jag--setup-evil-lisp-state-config))

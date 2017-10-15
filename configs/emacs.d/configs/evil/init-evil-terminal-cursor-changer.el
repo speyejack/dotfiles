@@ -28,6 +28,8 @@
   (jag--load-evil-terminal-cursor-changer-requires)
   (jag--add-evil-terminal-cursor-changer-hooks)
   :ensure t
+  :after evil
+  :defer t
   :config
   (jag--set-evil-terminal-cursor-changer-key-bindings)
   (jag--setup-evil-terminal-cursor-changer-config))

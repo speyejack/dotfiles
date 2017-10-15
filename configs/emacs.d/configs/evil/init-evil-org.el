@@ -9,7 +9,8 @@
   (jag--add-evil-org-other-hooks))
 
 (defun jag--add-evil-org-key-hooks ()
-  "Add keyboard hooks to evil-org.")
+  "Add keyboard hooks to evil-org."
+  (add-hook 'org-mode-hook 'evil-org-mode))
 
 (defun jag--add-evil-org-other-hooks ()
   "Add other hooks to evil-org.")
@@ -32,6 +33,7 @@
   (jag--load-evil-org-requires)
   (jag--add-evil-org-hooks)
   :ensure t
+  :commands 'evil-org-mode
   :config
   (jag--set-evil-org-key-bindings)
   (jag--setup-evil-org-config))

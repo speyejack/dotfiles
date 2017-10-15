@@ -28,6 +28,7 @@
   (jag--load-evil-search-highlight-persist-requires)
   (jag--add-evil-search-highlight-persist-hooks)
   :ensure t
+  :disabled
   :config
   (jag--set-evil-search-highlight-persist-key-bindings)
   (jag--setup-evil-search-highlight-persist-config))

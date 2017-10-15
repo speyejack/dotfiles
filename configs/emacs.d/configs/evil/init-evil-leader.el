@@ -19,6 +19,7 @@
   (evil-leader/set-leader ",")
   (evil-leader/set-key
 	","  'other-window
+	"/"  'helm-swoop
 	"."  'mode-line-other-buffer
 	":"  'eval-expression
 	"aa" 'align-regexp
@@ -33,6 +34,10 @@
 	"f"  'helm-imenu            ;; Jump to function in buffer
 	"g"  'magit-status
 	"h"  'git-timemachine       ;; Open git timemachine
+	"il" 'benchmark-init/show-durations-tabulated
+	"it" 'benchmark-init/show-durations-tree
+	"it" 'benchmark-init/show-durations-tree
+	"is" 'tabulated-list-sort
 	"l"  'whitespace-mode       ;; Show invisible characters
 	"nn" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
 	"nw" 'widen
@@ -42,7 +47,7 @@
 	"Pf"  'helm-projectile-find-file
 	"s"  'ag-project            ;; Ag search from project's root
 	"r"  (lambda () (interactive) (revert-buffer :ignore-auto :noconfirm))
-	"R"  (lambda () (interactive) (font-lock-fontify-buffer) (redraw-display))
+	"R"  'restart-emacs
 	"S"  'delete-trailing-whitespace
 	"t"  'gtags-reindex
 	"T"  'gtags-find-tag
@@ -66,6 +71,8 @@
   (jag--add-evil-leader-hooks)
   :ensure t
   :diminish 'global-evil-leader-mode
+  :after evil
+  :defer t
   :config
   (jag--set-evil-leader-key-bindings)
   (jag--setup-evil-leader-config))
