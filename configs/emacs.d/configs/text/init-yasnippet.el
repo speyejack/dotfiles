@@ -30,6 +30,7 @@
   (jag--add-yasnippet-hooks)
   :ensure t
   :diminish 'yas-global-mode
+  :diminish 'yas-minor-mode
   :config
   (jag--set-yasnippet-key-bindings)
   (jag--setup-yasnippet-config))

@@ -28,6 +28,7 @@
   (jag--load-xkcd-requires)
   (jag--add-xkcd-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-xkcd-key-bindings)
   (jag--setup-xkcd-config))

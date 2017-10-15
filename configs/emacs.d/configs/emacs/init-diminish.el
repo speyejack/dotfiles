@@ -18,7 +18,9 @@
   "Set up keybindings for diminish.")
 
 (defun jag--setup-diminish-config ()
-  "Set up personal configuation for diminish.")
+  "Set up personal configuation for diminish."
+
+  (diminish 'eldoc-mode))
 
 (defun jag--load-diminish-requires ()
   "Load required sub packages for diminish.")
@@ -28,6 +30,7 @@
   (jag--load-diminish-requires)
   (jag--add-diminish-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-diminish-key-bindings)
   (jag--setup-diminish-config))

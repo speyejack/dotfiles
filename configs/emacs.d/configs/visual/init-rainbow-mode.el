@@ -29,6 +29,7 @@
   (jag--load-rainbow-mode-requires)
   (jag--add-rainbow-mode-hooks)
   :ensure t
+  :diminish 'rainbow-mode
   :config
   (jag--set-rainbow-mode-key-bindings)
   (jag--setup-rainbow-mode-config))

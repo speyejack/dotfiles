@@ -29,6 +29,7 @@
   (jag--load-centered-cursor-mode-requires)
   (jag--add-centered-cursor-mode-hooks)
   :ensure t
+  :diminish 'centered-cursor-mode
   :config
   (jag--set-centered-cursor-mode-key-bindings)
   (jag--setup-centered-cursor-mode-config))

@@ -31,6 +31,7 @@
   (jag--add-flycheck-hooks)
   :ensure t
   :defer t
+  :diminish 'flycheck-mode
   :config
   (jag--set-flycheck-key-bindings)
   (jag--setup-flycheck-config))

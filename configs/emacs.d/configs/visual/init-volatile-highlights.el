@@ -29,6 +29,7 @@
   (jag--load-volatile-highlights-requires)
   (jag--add-volatile-highlights-hooks)
   :ensure t
+  :diminish 'volatile-highlights-mode
   :config
   (jag--set-volatile-highlights-key-bindings)
   (jag--setup-volatile-highlights-config))

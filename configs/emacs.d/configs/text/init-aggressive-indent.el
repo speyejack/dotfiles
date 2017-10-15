@@ -29,6 +29,7 @@
   (jag--load-aggressive-indent-requires)
   (jag--add-aggressive-indent-hooks)
   :ensure t
+  :diminish 'aggressive-indent-mode
   :config
   (jag--set-aggressive-indent-key-bindings)
   (jag--setup-aggressive-indent-config))

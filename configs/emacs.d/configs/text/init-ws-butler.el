@@ -29,6 +29,7 @@
   (jag--load-ws-butler-requires)
   (jag--add-ws-butler-hooks)
   :ensure t
+  :diminish 'ws-butler-mode
   :config
   (jag--set-ws-butler-key-bindings)
   (jag--setup-ws-butler-config))
