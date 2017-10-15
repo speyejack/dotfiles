@@ -31,6 +31,7 @@
   (jag--add-flyspell-hooks)
   :ensure t
   :defer t
+  :diminish 'flyspell-mode
   :config
   (jag--set-flyspell-key-bindings)
   (jag--setup-flyspell-config))
