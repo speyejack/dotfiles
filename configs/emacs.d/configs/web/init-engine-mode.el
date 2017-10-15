@@ -28,6 +28,7 @@
   (jag--load-engine-mode-requires)
   (jag--add-engine-mode-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-engine-mode-key-bindings)
   (jag--setup-engine-mode-config))

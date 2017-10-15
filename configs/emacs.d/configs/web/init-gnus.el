@@ -28,6 +28,7 @@
   (jag--load-gnus-requires)
   (jag--add-gnus-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-gnus-key-bindings)
   (jag--setup-gnus-config))

@@ -28,6 +28,7 @@
   (jag--load-bbdb-requires)
   (jag--add-bbdb-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-bbdb-key-bindings)
   (jag--setup-bbdb-config))
