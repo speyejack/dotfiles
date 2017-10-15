@@ -28,6 +28,7 @@
   (jag--load-ielm-requires)
   (jag--add-ielm-hooks)
   :ensure t
+  :commands 'ielm
   :config
   (jag--set-ielm-key-bindings)
   (jag--setup-ielm-config))

@@ -28,6 +28,7 @@
   (jag--load-edebug-requires)
   (jag--add-edebug-hooks)
   :ensure t
+  :commands 'edebug
   :config
   (jag--set-edebug-key-bindings)
   (jag--setup-edebug-config))

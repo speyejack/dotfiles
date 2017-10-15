@@ -28,6 +28,7 @@
   (jag--load-asm-mode-requires)
   (jag--add-asm-mode-hooks)
   :ensure t
+  :commands 'asm-mode
   :config
   (jag--set-asm-mode-key-bindings)
   (jag--setup-asm-mode-config))

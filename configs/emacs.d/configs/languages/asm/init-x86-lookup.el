@@ -28,6 +28,7 @@
   (jag--load-x86-lookup-requires)
   (jag--add-x86-lookup-hooks)
   :ensure t
+  :commands 'x86-lookup
   :config
   (jag--set-x86-lookup-key-bindings)
   (jag--setup-x86-lookup-config))

@@ -28,6 +28,7 @@
   (jag--load-nasm-mode-requires)
   (jag--add-nasm-mode-hooks)
   :ensure t
+  :commands 'nasm-mode
   :config
   (jag--set-nasm-mode-key-bindings)
   (jag--setup-nasm-mode-config))

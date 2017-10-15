@@ -28,6 +28,7 @@
   (jag--load-eclim-requires)
   (jag--add-eclim-hooks)
   :ensure t
+  :commands 'java-mode
   :config
   (jag--set-eclim-key-bindings)
   (jag--setup-eclim-config))

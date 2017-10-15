@@ -28,6 +28,8 @@
   (jag--load-company-go-requires)
   (jag--add-company-go-hooks)
   :ensure t
+  :after company
+  :commands 'go-mode
   :config
   (jag--set-company-go-key-bindings)
   (jag--setup-company-go-config))

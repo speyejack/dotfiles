@@ -28,6 +28,8 @@
   (jag--load-company-emacs-eclim-requires)
   (jag--add-company-emacs-eclim-hooks)
   :ensure t
+  :after company
+  :commands 'java-mode
   :config
   (jag--set-company-emacs-eclim-key-bindings)
   (jag--setup-company-emacs-eclim-config))

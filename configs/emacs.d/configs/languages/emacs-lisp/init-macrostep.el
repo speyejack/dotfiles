@@ -28,6 +28,7 @@
   (jag--load-macrostep-requires)
   (jag--add-macrostep-hooks)
   :ensure t
+  :commands 'macrostep-mode
   :config
   (jag--set-macrostep-key-bindings)
   (jag--setup-macrostep-config))

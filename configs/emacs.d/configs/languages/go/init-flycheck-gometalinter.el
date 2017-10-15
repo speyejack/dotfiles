@@ -28,6 +28,8 @@
   (jag--load-flycheck-gometalinter-requires)
   (jag--add-flycheck-gometalinter-hooks)
   :ensure t
+  :after flycheck
+  :commands 'go-mode
   :config
   (jag--set-flycheck-gometalinter-key-bindings)
   (jag--setup-flycheck-gometalinter-config))

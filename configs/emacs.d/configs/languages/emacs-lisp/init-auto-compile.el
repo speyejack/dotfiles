@@ -28,9 +28,10 @@
   (jag--load-auto-compile-requires)
   (jag--add-auto-compile-hooks)
   :ensure t
+  :commands (auto-compile-on-save-mode auto-compile-on-load-mode)
   :config
   (jag--set-auto-compile-key-bindings)
   (jag--setup-auto-compile-config))
 
-(provide 'init-auto-compile)
+  (provide 'init-auto-compile)
 ;;; init-auto-compile.el ends here

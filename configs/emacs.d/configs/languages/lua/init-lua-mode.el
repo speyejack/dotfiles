@@ -28,6 +28,7 @@
   (jag--load-lua-mode-requires)
   (jag--add-lua-mode-hooks)
   :ensure t
+  :commands 'lua-mode
   :config
   (jag--set-lua-mode-key-bindings)
   (jag--setup-lua-mode-config))

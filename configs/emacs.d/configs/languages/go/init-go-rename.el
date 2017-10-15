@@ -28,6 +28,7 @@
   (jag--load-go-rename-requires)
   (jag--add-go-rename-hooks)
   :ensure t
+  :commands 'go-mode
   :config
   (jag--set-go-rename-key-bindings)
   (jag--setup-go-rename-config))

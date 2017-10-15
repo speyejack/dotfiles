@@ -28,6 +28,7 @@
   (jag--load-geiser-requires)
   (jag--add-geiser-hooks)
   :ensure t
+  :commands 'geiser
   :config
   (jag--set-geiser-key-bindings)
   (jag--setup-geiser-config))

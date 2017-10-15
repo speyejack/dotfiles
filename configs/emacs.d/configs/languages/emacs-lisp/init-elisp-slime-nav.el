@@ -28,6 +28,7 @@
   (jag--load-elisp-slime-nav-requires)
   (jag--add-elisp-slime-nav-hooks)
   :ensure t
+  :commands 'elisp-slime-nav-mode
   :config
   (jag--set-elisp-slime-nav-key-bindings)
   (jag--setup-elisp-slime-nav-config))

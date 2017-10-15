@@ -28,6 +28,7 @@
   (jag--load-cmm-mode-requires)
   (jag--add-cmm-mode-hooks)
   :ensure t
+  :commands 'cmm-mode
   :config
   (jag--set-cmm-mode-key-bindings)
   (jag--setup-cmm-mode-config))

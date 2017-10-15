@@ -28,6 +28,7 @@
   (jag--load-go-mode-requires)
   (jag--add-go-mode-hooks)
   :ensure t
+  :commands 'go-mode
   :config
   (jag--set-go-mode-key-bindings)
   (jag--setup-go-mode-config))
