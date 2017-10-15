@@ -30,6 +30,7 @@
   (jag--load-semantic-requires)
   (jag--add-semantic-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-semantic-key-bindings)
   (jag--setup-semantic-config))

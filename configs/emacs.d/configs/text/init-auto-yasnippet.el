@@ -28,6 +28,7 @@
   (jag--load-auto-yasnippet-requires)
   (jag--add-auto-yasnippet-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-auto-yasnippet-key-bindings)
   (jag--setup-auto-yasnippet-config))

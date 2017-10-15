@@ -28,6 +28,7 @@
   (jag--load-origami-requires)
   (jag--add-origami-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-origami-key-bindings)
   (jag--setup-origami-config))

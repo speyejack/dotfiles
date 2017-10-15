@@ -28,6 +28,7 @@
   (jag--load-clean-aindent-mode-requires)
   (jag--add-clean-aindent-mode-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-clean-aindent-mode-key-bindings)
   (jag--setup-clean-aindent-mode-config))

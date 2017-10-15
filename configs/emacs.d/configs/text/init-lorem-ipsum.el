@@ -28,6 +28,7 @@
   (jag--load-lorem-ipsum-requires)
   (jag--add-lorem-ipsum-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-lorem-ipsum-key-bindings)
   (jag--setup-lorem-ipsum-config))

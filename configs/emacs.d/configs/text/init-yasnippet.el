@@ -29,6 +29,7 @@
   (jag--load-yasnippet-requires)
   (jag--add-yasnippet-hooks)
   :ensure t
+  :defer t
   :diminish 'yas-global-mode
   :diminish 'yas-minor-mode
   :config

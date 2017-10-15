@@ -28,6 +28,7 @@
   (jag--load-move-text-requires)
   (jag--add-move-text-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-move-text-key-bindings)
   (jag--setup-move-text-config))

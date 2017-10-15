@@ -29,6 +29,7 @@
   (jag--load-indent-guide-requires)
   (jag--add-indent-guide-hooks)
   :ensure t
+  :defer t
   :diminish 'indent-guide-mode
   :config
   (jag--set-indent-guide-key-bindings)
