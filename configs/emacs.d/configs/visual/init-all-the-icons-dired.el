@@ -28,6 +28,7 @@
   (jag--load-all-the-icons-dired-requires)
   (jag--add-all-the-icons-dired-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-all-the-icons-dired-key-bindings)
   (jag--setup-all-the-icons-dired-config))

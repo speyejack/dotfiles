@@ -29,6 +29,7 @@
   (jag--load-highlight-symbol-requires)
   (jag--add-highlight-symbol-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-highlight-symbol-key-bindings)
   (jag--setup-highlight-symbol-config))

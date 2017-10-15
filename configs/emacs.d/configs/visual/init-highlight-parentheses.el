@@ -29,6 +29,7 @@
   (jag--load-highlight-parentheses-requires)
   (jag--add-highlight-parentheses-hooks)
   :ensure t
+  :defer t
   :diminish 'highlight-parentheses-mode
   :config
   (jag--set-highlight-parentheses-key-bindings)

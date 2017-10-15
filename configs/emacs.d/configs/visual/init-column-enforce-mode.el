@@ -28,6 +28,7 @@
   (jag--load-column-enforce-mode-requires)
   (jag--add-column-enforce-mode-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-column-enforce-mode-key-bindings)
   (jag--setup-column-enforce-mode-config))

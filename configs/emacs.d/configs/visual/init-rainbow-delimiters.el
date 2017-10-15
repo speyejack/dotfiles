@@ -28,6 +28,7 @@
   (jag--load-rainbow-delimiters-requires)
   (jag--add-rainbow-delimiters-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-rainbow-delimiters-key-bindings)
   (jag--setup-rainbow-delimiters-config))

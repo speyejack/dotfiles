@@ -29,6 +29,7 @@
   (jag--load-hl-todo-requires)
   (jag--add-hl-todo-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-hl-todo-key-bindings)
   (jag--setup-hl-todo-config))

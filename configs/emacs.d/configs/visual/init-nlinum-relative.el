@@ -30,6 +30,7 @@
   (jag--load-nlinum-relative-requires)
   (jag--add-nlinum-relative-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-nlinum-relative-key-bindings)
   (jag--setup-nlinum-relative-config))

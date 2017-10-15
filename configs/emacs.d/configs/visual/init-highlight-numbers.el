@@ -29,6 +29,7 @@
   (jag--load-highlight-numbers-requires)
   (jag--add-highlight-numbers-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-highlight-numbers-key-bindings)
   (jag--setup-highlight-numbers-config))

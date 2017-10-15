@@ -29,6 +29,7 @@
   (jag--load-adaptive-wrap-requires)
   (jag--add-adaptive-wrap-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-adaptive-wrap-key-bindings)
   (jag--setup-adaptive-wrap-config))

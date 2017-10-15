@@ -28,6 +28,7 @@
   (jag--load-imenu-list-requires)
   (jag--add-imenu-list-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-imenu-list-key-bindings)
   (jag--setup-imenu-list-config))
