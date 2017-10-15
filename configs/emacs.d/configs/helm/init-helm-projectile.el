@@ -1,4 +1,4 @@
-;;; init-helm-projectile.el --- Package Description
+;;; init-helm-projectile.el --- Use projectile with helm
 ;;; Commentary:
 
 ;;; Code:
@@ -29,6 +29,7 @@
   (jag--load-helm-projectile-requires)
   (jag--add-helm-projectile-hooks)
   :ensure t
+  :commands 'helm-projectile
   :config
   (jag--set-helm-projectile-key-bindings)
   (jag--setup-helm-projectile-config))

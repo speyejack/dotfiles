@@ -1,4 +1,4 @@
-;;; init-helm-company.el --- Package Description
+;;; init-helm-company.el --- Use company with helm
 ;;; Commentary:
 
 ;;; Code:
@@ -16,8 +16,8 @@
 
 (defun jag--set-helm-company-key-bindings ()
   "Set up keybindings for helm-company."
-  (define-key company-mode-map (kbd "C-:") 'helm-company)
-  (define-key company-active-map (kbd "C-:") 'helm-company))
+  (define-key company-mode-map (kbd "C-'") 'helm-company)
+  (define-key company-active-map (kbd "C-'") 'helm-company))
 
 (defun jag--setup-helm-company-config ()
   "Set up personal configuation for helm-company.")
@@ -30,6 +30,7 @@
   (jag--load-helm-company-requires)
   (jag--add-helm-company-hooks)
   :ensure t
+  :commands 'helm-company
   :config
   (jag--set-helm-company-key-bindings)
   (jag--setup-helm-company-config))

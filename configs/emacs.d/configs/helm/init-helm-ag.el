@@ -1,4 +1,4 @@
-;;; init-helm-ag.el --- Package Description
+;;; init-helm-ag.el --- Use silver searcher (ag) with helm
 ;;; Commentary:
 
 ;;; Code:
@@ -28,6 +28,17 @@
   (jag--load-helm-ag-requires)
   (jag--add-helm-ag-hooks)
   :ensure t
+  :commands
+  (helm-ag
+   helm-do-ag
+   helm-ag-this-file
+   helm-do-ag-this-file
+   helm-ag-project-root
+   helm-do-ag-project-root
+   helm-ag-buffers
+   helm-do-ag-buffers
+   helm-ag-pop-stack
+   helm-ag-clear-stack)
   :config
   (jag--set-helm-ag-key-bindings)
   (jag--setup-helm-ag-config))

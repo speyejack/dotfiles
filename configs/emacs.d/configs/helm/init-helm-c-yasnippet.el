@@ -1,4 +1,4 @@
-;;; init-helm-c-yasnippet.el --- Package Description
+;;; init-helm-c-yasnippet.el --- Use yasnippet with helm
 ;;; Commentary:
 
 ;;; Code:
@@ -28,6 +28,7 @@
   (jag--load-helm-c-yasnippet-requires)
   (jag--add-helm-c-yasnippet-hooks)
   :ensure t
+  :commands 'helm-yas-complete
   :config
   (jag--set-helm-c-yasnippet-key-bindings)
   (jag--setup-helm-c-yasnippet-config))

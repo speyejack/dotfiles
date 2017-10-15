@@ -28,6 +28,7 @@
   (jag--load-helm-gitignore-requires)
   (jag--add-helm-gitignore-hooks)
   :ensure t
+  :commands 'helm-gitignore
   :config
   (jag--set-helm-gitignore-key-bindings)
   (jag--setup-helm-gitignore-config))

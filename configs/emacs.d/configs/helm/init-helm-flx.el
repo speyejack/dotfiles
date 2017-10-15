@@ -18,7 +18,10 @@
   "Set up keybindings for helm-flx.")
 
 (defun jag--setup-helm-flx-config ()
-  "Set up personal configuation for helm-flx.")
+  "Set up personal configuation for helm-flx."
+  (helm-flx-mode 1)
+  (setq helm-flx-for-helm-find-files t
+		helm-flx-for-helm-locate t))
 
 (defun jag--load-helm-flx-requires ()
   "Load required sub packages for helm-flx.")
@@ -28,6 +31,7 @@
   (jag--load-helm-flx-requires)
   (jag--add-helm-flx-hooks)
   :ensure t
+  :after helm
   :config
   (jag--set-helm-flx-key-bindings)
   (jag--setup-helm-flx-config))

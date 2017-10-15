@@ -9,7 +9,10 @@
   (jag--add-helm-other-hooks))
 
 (defun jag--add-helm-key-hooks ()
-  "Add keyboard hooks to helm.")
+  "Add keyboard hooks to helm."
+  (define-key global-map (kbd "C-x C-f") 'helm-find-files)
+  (define-key global-map (kbd "C-x C-b") 'helm-mini)
+  (define-key global-map (kbd "M-x") 'helm-M-x))
 
 (defun jag--add-helm-other-hooks ()
   "Add other hooks to helm.")
@@ -20,11 +23,11 @@
   (define-key helm-map (kbd "C-k") 'helm-previous-line)
   (define-key helm-map (kbd "C-u") 'helm-previous-page)
   (define-key helm-map (kbd "C-d") 'helm-next-page)
-  (define-key helm-find-files-map (kbd "C-h") 'helm-find-files-up-one-level)
-  (define-key helm-find-files-map (kbd "C-l") 'helm-ff-RET)
-  (define-key global-map (kbd "C-x C-f") 'helm-find-files)
-  (define-key global-map (kbd "C-x C-b") 'helm-mini)
-  (define-key global-map (kbd "M-x") 'helm-M-x))
+  (add-hook 'helm-find-files-after-init-hook
+			(lambda ()
+			  (progn
+				(define-key helm-find-files-map (kbd "C-h") 'helm-find-files-up-one-level)
+				(define-key helm-find-files-map (kbd "C-l") 'helm-ff-RET)))))
 
 (defun jag--setup-helm-config ()
   "Set up personal configuation for helm."
@@ -50,6 +53,11 @@
   (jag--add-helm-hooks)
   :ensure t
   :diminish 'helm-mode
+  :commands
+  (helm-mode
+   helm-M-x
+   helm-find-files
+   helm-mini)
   :config
   (jag--set-helm-key-bindings)
   (jag--setup-helm-config))

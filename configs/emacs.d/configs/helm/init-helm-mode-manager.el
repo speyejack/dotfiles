@@ -1,4 +1,4 @@
-;;; init-helm-mode-manager.el --- Package Description
+;;; init-helm-mode-manager.el --- Use helm to manage modes
 ;;; Commentary:
 
 ;;; Code:
@@ -28,9 +28,14 @@
   (jag--load-helm-mode-manager-requires)
   (jag--add-helm-mode-manager-hooks)
   :ensure t
+  :commands
+  (helm-switch-major-mode
+   helm-enable-minor-mode
+   helm-disable-minor-mode)
+
   :config
   (jag--set-helm-mode-manager-key-bindings)
   (jag--setup-helm-mode-manager-config))
 
-(provide 'init-helm-mode-manager)
+  (provide 'init-helm-mode-manager)
 ;;; init-helm-mode-manager.el ends here

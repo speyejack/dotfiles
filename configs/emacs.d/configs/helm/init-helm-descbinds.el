@@ -1,4 +1,4 @@
-;;; init-helm-descbinds.el --- Package Description
+;;; init-helm-descbinds.el --- Use describe key with helm
 ;;; Commentary:
 
 ;;; Code:
@@ -9,7 +9,8 @@
   (jag--add-helm-descbinds-other-hooks))
 
 (defun jag--add-helm-descbinds-key-hooks ()
-  "Add keyboard hooks to helm-descbinds.")
+  "Add keyboard hooks to helm-descbinds."
+  (bind-key (kbd "<help> k") 'helm-descbinds))
 
 (defun jag--add-helm-descbinds-other-hooks ()
   "Add other hooks to helm-descbinds.")
@@ -29,6 +30,7 @@
   (jag--load-helm-descbinds-requires)
   (jag--add-helm-descbinds-hooks)
   :ensure t
+  :commands 'helm-descbinds
   :config
   (jag--set-helm-descbinds-key-bindings)
   (jag--setup-helm-descbinds-config))

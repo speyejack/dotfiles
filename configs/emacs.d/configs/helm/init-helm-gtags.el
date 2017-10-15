@@ -1,4 +1,4 @@
-;;; init-helm-gtags.el --- Package Description
+;;; init-helm-gtags.el --- Use gtags with helm
 ;;; Commentary:
 
 ;;; Code:
@@ -28,6 +28,12 @@
   (jag--load-helm-gtags-requires)
   (jag--add-helm-gtags-hooks)
   :ensure t
+  :commands
+  (helm-gtags-mode
+   helm-gtags-find-tag
+   helm-gtags-create-tags
+   helm-gtags-update-tags)
+  :diminish helm-gtags-mode
   :config
   (jag--set-helm-gtags-key-bindings)
   (jag--setup-helm-gtags-config))

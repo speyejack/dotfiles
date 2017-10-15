@@ -1,4 +1,4 @@
-;;; init-helm-make.el --- Package Description
+;;; init-helm-make.el --- Use helm to interact with make files
 ;;; Commentary:
 
 ;;; Code:
@@ -28,6 +28,7 @@
   (jag--load-helm-make-requires)
   (jag--add-helm-make-hooks)
   :ensure t
+  :commands 'helm-make
   :config
   (jag--set-helm-make-key-bindings)
   (jag--setup-helm-make-config))

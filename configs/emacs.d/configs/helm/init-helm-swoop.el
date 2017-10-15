@@ -1,4 +1,4 @@
-;;; init-helm-swoop.el --- Package Description
+;;; init-helm-swoop.el --- Search map with helm
 ;;; Commentary:
 
 ;;; Code:
@@ -28,6 +28,7 @@
   (jag--load-helm-swoop-requires)
   (jag--add-helm-swoop-hooks)
   :ensure t
+  :commands 'helm-swoop
   :config
   (jag--set-helm-swoop-key-bindings)
   (jag--setup-helm-swoop-config))
