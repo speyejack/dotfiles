@@ -34,6 +34,7 @@
   (jag--load-company-requires)
   (jag--add-company-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-company-key-bindings)
   (jag--setup-company-config))

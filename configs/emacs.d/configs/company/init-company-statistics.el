@@ -29,6 +29,7 @@
   (jag--load-company-statistics-requires)
   (jag--add-company-statistics-hooks)
   :ensure t
+  :after company
   :config
   (jag--set-company-statistics-key-bindings)
   (jag--setup-company-statistics-config))

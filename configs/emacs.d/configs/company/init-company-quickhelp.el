@@ -29,6 +29,7 @@
   (jag--load-company-quickhelp-requires)
   (jag--add-company-quickhelp-hooks)
   :ensure t
+  :after company
   :config
   (jag--set-company-quickhelp-key-bindings)
   (jag--setup-company-quickhelp-config))

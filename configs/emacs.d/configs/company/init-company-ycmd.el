@@ -29,6 +29,7 @@
   (jag--load-company-ycmd-requires)
   (jag--add-company-ycmd-hooks)
   :ensure t
+  :defer t
   :config
   (jag--set-company-ycmd-key-bindings)
   (jag--setup-company-ycmd-config))
