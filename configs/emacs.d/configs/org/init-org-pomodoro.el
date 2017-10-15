@@ -28,6 +28,7 @@
   (jag--load-org-pomodoro-requires)
   (jag--add-org-pomodoro-hooks)
   :ensure t
+  :commands 'org-mode
   :config
   (jag--set-org-pomodoro-key-bindings)
   (jag--setup-org-pomodoro-config))

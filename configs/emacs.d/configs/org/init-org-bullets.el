@@ -28,6 +28,7 @@
   (jag--load-org-bullets-requires)
   (jag--add-org-bullets-hooks)
   :ensure t
+  :commands 'org-mode
   :config
   (jag--set-org-bullets-key-bindings)
   (jag--setup-org-bullets-config))

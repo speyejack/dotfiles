@@ -47,6 +47,7 @@ SCHEDULED: %t")))
   (jag--load-org-requires)
   (jag--add-org-hooks)
   :ensure t
+  :commands 'org-mode
   :config
   (jag--set-org-key-bindings)
   (jag--setup-org-config))

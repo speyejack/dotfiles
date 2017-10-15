@@ -32,6 +32,8 @@
   (jag--load-org-projectile-requires)
   (jag--add-org-projectile-hooks)
   :ensure t
+  :commands 'org-mode
+  :after projectile
   :config
   (jag--set-org-projectile-key-bindings)
   (jag--setup-org-projectile-config))
