@@ -29,7 +29,10 @@
   (jag--load-helm-projectile-requires)
   (jag--add-helm-projectile-hooks)
   :ensure t
-  :commands 'helm-projectile
+  :commands
+  (helm-projectile
+   helm-projectile-find-file
+   helm-projectile-switch-project)
   :config
   (jag--set-helm-projectile-key-bindings)
   (jag--setup-helm-projectile-config))

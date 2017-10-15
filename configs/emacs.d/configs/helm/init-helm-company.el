@@ -9,15 +9,15 @@
   (jag--add-helm-company-other-hooks))
 
 (defun jag--add-helm-company-key-hooks ()
-  "Add keyboard hooks to helm-company.")
+  "Add keyboard hooks to helm-company."
+  (define-key company-mode-map (kbd "C-'") 'helm-company)
+  (define-key company-active-map (kbd "C-'") 'helm-company))
 
 (defun jag--add-helm-company-other-hooks ()
   "Add other hooks to helm-company.")
 
 (defun jag--set-helm-company-key-bindings ()
-  "Set up keybindings for helm-company."
-  (define-key company-mode-map (kbd "C-'") 'helm-company)
-  (define-key company-active-map (kbd "C-'") 'helm-company))
+  "Set up keybindings for helm-company.")
 
 (defun jag--setup-helm-company-config ()
   "Set up personal configuation for helm-company.")
