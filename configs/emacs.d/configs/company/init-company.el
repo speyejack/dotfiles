@@ -1,3 +1,4 @@
+
 ;;; init-company.el --- Allows-for-code-completion
 ;;; Commentary:
 
@@ -16,6 +17,7 @@
 
 (defun jag--set-company-key-bindings ()
   "Set up keybindings for company."
+  (evil-make-intercept-map company-active-map 'normal)
   (define-key company-active-map (kbd "C-j") 'company-select-next)
   (define-key company-active-map (kbd "C-k") 'company-select-previous))
 
