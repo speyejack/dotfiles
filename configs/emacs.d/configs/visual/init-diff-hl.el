@@ -29,7 +29,8 @@
   (jag--load-diff-hl-requires)
   (jag--add-diff-hl-hooks)
   :ensure t
-  :defer t
+  :commands 'diff-hl-mode
+  :defer 1
   :config
   (jag--set-diff-hl-key-bindings)
   (jag--setup-diff-hl-config))

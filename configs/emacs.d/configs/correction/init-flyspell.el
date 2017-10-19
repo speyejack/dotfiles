@@ -30,7 +30,7 @@
   (jag--load-flyspell-requires)
   (jag--add-flyspell-hooks)
   :ensure t
-  :defer t
+  :defer 3
   :diminish 'flyspell-mode
   :config
   (jag--set-flyspell-key-bindings)

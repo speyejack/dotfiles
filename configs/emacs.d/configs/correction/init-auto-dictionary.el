@@ -28,7 +28,7 @@
   (jag--load-auto-dictionary-requires)
   (jag--add-auto-dictionary-hooks)
   :ensure t
-  :defer t
+  :after flyspell
   :config
   (jag--set-auto-dictionary-key-bindings)
   (jag--setup-auto-dictionary-config))

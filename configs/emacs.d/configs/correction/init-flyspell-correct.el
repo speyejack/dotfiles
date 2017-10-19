@@ -9,14 +9,19 @@
   (jag--add-flyspell-correct-other-hooks))
 
 (defun jag--add-flyspell-correct-key-hooks ()
-  "Add keyboard hooks to flyspell-correct.")
+  "Add keyboard hooks to flyspell-correct."
+  (add-hook 'flyspell-mode-hook
+			(lambda ()
+			  (progn
+				(define-key flyspell-mode-map (kbd "C-:") 'flyspell-correct-previous-word-generic)
+				(define-key flyspell-mode-map (kbd "C-;") 'flyspell-correct-next-word-generic)))))
 
 (defun jag--add-flyspell-correct-other-hooks ()
   "Add other hooks to flyspell-correct.")
 
 (defun jag--set-flyspell-correct-key-bindings ()
   "Set up keybindings for flyspell-correct."
-  (define-key flyspell-mode-map (kbd "C-;") 'flyspell-correct-previous-word-generic))
+  )
 
 (defun jag--setup-flyspell-correct-config ()
   "Set up personal configuation for flyspell-correct.")
@@ -30,7 +35,7 @@
   (jag--load-flyspell-correct-requires)
   (jag--add-flyspell-correct-hooks)
   :ensure t
-  :defer t
+  :commands 'flyspell-correct-previous-word-generic
   :config
   (jag--set-flyspell-correct-key-bindings)
   (jag--setup-flyspell-correct-config))

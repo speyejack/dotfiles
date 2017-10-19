@@ -29,7 +29,7 @@
   (jag--load-auto-highlight-symbol-requires)
   (jag--add-auto-highlight-symbol-hooks)
   :ensure t
-  :defer t
+  :commands 'auto-highlight-symbol-mode
   :diminish 'auto-highlight-symbol-mode
   :config
   (jag--set-auto-highlight-symbol-key-bindings)

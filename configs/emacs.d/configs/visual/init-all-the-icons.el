@@ -29,7 +29,7 @@
   (jag--load-all-the-icons-requires)
   (jag--add-all-the-icons-hooks)
   :ensure t
-  :defer t
+  :defer 2
   :config
   (jag--set-all-the-icons-key-bindings)
   (jag--setup-all-the-icons-config))

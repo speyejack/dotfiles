@@ -29,7 +29,7 @@
   (jag--load-flycheck-pos-tip-requires)
   (jag--add-flycheck-pos-tip-hooks)
   :ensure t
-  :defer t
+  :after flycheck
   :config
   (jag--set-flycheck-pos-tip-key-bindings)
   (jag--setup-flycheck-pos-tip-config))

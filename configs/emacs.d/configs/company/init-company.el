@@ -37,7 +37,7 @@
   (jag--add-company-hooks)
   :ensure t
   :diminish 'company-mode
-  :defer t
+  :defer 2
   :config
   (jag--set-company-key-bindings)
   (jag--setup-company-config))

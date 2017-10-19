@@ -9,8 +9,7 @@
   (jag--add-centered-cursor-mode-other-hooks))
 
 (defun jag--add-centered-cursor-mode-key-hooks ()
-  "Add keyboard hooks to centered-cursor-mode."
-  (add-hook 'fundamental-mode 'centered-cursor-mode))
+  "Add keyboard hooks to centered-cursor-mode.")
 
 (defun jag--add-centered-cursor-mode-other-hooks ()
   "Add other hooks to centered-cursor-mode.")
@@ -19,7 +18,8 @@
   "Set up keybindings for centered-cursor-mode.")
 
 (defun jag--setup-centered-cursor-mode-config ()
-  "Set up personal configuation for centered-cursor-mode.")
+  "Set up personal configuation for centered-cursor-mode."
+  (global-centered-cursor-mode))
 
 (defun jag--load-centered-cursor-mode-requires ()
   "Load required sub packages for centered-cursor-mode.")
@@ -29,6 +29,7 @@
   (jag--load-centered-cursor-mode-requires)
   (jag--add-centered-cursor-mode-hooks)
   :ensure t
+  :defer 1
   :commands 'centered-cursor-mode
   :diminish 'centered-cursor-mode
   :config

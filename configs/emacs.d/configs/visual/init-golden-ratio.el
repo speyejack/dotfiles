@@ -29,8 +29,8 @@
   (jag--load-golden-ratio-requires)
   (jag--add-golden-ratio-hooks)
   :ensure t
-  :defer t
-  :diminish 'golden-ratio-mode
+  :diminish golden-ratio-mode
+  :defer 1
   :config
   (jag--set-golden-ratio-key-bindings)
   (jag--setup-golden-ratio-config))

@@ -30,7 +30,7 @@
   (jag--load-diminish-requires)
   (jag--add-diminish-hooks)
   :ensure t
-  :defer t
+  :defer 1
   :config
   (jag--set-diminish-key-bindings)
   (jag--setup-diminish-config))
