@@ -1,0 +1,19 @@
+Host github-per
+	 User git
+	 HostName github.com
+	 IdentityFile ~/.ssh/id_per
+
+Host github-pro
+	 User git
+	 HostName github.com
+	 IdentityFile ~/.ssh/id_pro
+
+Host github-nau
+	 User git
+	 HostName github.com
+	 IdentityFile ~/.ssh/id_nau
+	 
+Host bitbucket-nau
+	 User git
+	 HostName bitbucket.com
+	 IdentityFile ~/.ssh/id_nau
