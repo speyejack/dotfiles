@@ -1,6 +1,6 @@
 ;;; init-evil-leader.el --- Adds-leader-key-to-evil
 ;;; Commentary:
-
+;;; TODO: consider replacing this with general.el - http://emacsist.com/10779
 ;;; Code:
 
 (defun jag--add-evil-leader-hooks ()

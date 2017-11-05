@@ -9,7 +9,12 @@
   (jag--add-projectile-other-hooks))
 
 (defun jag--add-projectile-key-hooks ()
-  "Add keyboard hooks to projectile.")
+  "Add keyboard hooks to projectile."
+  (defvar jag--projectile-keys (make-sparse-keymap)
+	"Key map for projectile")
+  (define-key jag--projectile-keys (kbd "p") 'helm-projectile-switch-project)
+  (define-key jag--projectile-keys (kbd "f") 'helm-projectile-find-file)
+  (define-key global-map (kbd "<projectile>") jag--projectile-keys))
 
 (defun jag--add-projectile-other-hooks ()
   "Add other hooks to projectile.")
@@ -30,7 +35,6 @@
   (jag--load-projectile-requires)
   (jag--add-projectile-hooks)
   :ensure t
-  :defer t
   :diminish 'projectile-mode
   :commands (projectile-find-file projectile-switch-project)
   :config

@@ -28,7 +28,7 @@
   (jag--load-anzu-requires)
   (jag--add-anzu-hooks)
   :ensure t
-  :defer t
+  :defer (evil-search-forward evil-search-backward)
   :config
   (jag--set-anzu-key-bindings)
   (jag--setup-anzu-config))

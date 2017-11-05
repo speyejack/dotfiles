@@ -23,6 +23,7 @@
 (defun jag--setup-evil-config ()
   "Set up personal configuation for evil."
   (setq evil-magic 'very-magic)
+  (remove 'doc-view-mode evil-emacs-state-modes)
   (evil-mode 1))
 
 (defun jag--load-evil-requires ()

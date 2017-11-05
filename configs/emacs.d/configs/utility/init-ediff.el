@@ -28,7 +28,7 @@
   (jag--load-ediff-requires)
   (jag--add-ediff-hooks)
   :ensure t
-  :defer t
+  :commands 'ediff-files
   :config
   (jag--set-ediff-key-bindings)
   (jag--setup-ediff-config))

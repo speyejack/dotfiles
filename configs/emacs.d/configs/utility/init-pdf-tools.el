@@ -12,10 +12,18 @@
   "Add keyboard hooks to pdf-tools.")
 
 (defun jag--add-pdf-tools-other-hooks ()
-  "Add other hooks to pdf-tools.")
+  "Add other hooks to pdf-tools."
+
+  (add-hook 'doc-view-mode-hook 'evil-local-mode)
+  )
 
 (defun jag--set-pdf-tools-key-bindings ()
-  "Set up keybindings for pdf-tools.")
+  "Set up keybindings for pdf-tools."
+  (bind-key (kbd "j") 'doc-view-next-line-or-next-page 'doc-view-mode-map)
+  (bind-key (kbd "k") 'doc-view-previous-line-or-previous-page 'doc-view-mode-map)
+  (bind-key (kbd "J") 'doc-view-next-page 'doc-view-mode-map)
+  (bind-key (kbd "K") 'doc-view-previous-page 'doc-view-mode-map)
+  )
 
 (defun jag--setup-pdf-tools-config ()
   "Set up personal configuation for pdf-tools.")
@@ -28,7 +36,7 @@
   (jag--load-pdf-tools-requires)
   (jag--add-pdf-tools-hooks)
   :ensure t
-  :defer t
+  :commands 'doc-view-mode
   :config
   (jag--set-pdf-tools-key-bindings)
   (jag--setup-pdf-tools-config))
