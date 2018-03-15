@@ -1,8 +1,8 @@
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
-export TERM="xterm-256color"
-export PROMPT='%15<..<%~%# '
+# export TERM="xterm-256color"
+export PROMPT='%15<..<%~# '
 export RPROMPT='%t'
 
 # Lines configured by zsh-newuser-install
@@ -39,7 +39,7 @@ bindkey jk vi-cmd-mode
 bindkey kj vi-cmd-mode
 
 alias togglevi='vi-toggle-normal'
-VINORMAL=true
+VINORMAL=false
 
 function vi-toggle-normal(){
 	if [ $VINORMAL = true ]; then
