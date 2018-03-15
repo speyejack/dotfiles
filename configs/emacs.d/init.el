@@ -33,8 +33,6 @@
 (require 'init-elpa)
 (require 'user-config)
 (require 'init-use-package)
-(benchmark-init/activate)
 (require 'init-configs-layer)
-(benchmark-init/deactivate)
 (provide 'init)
 ;;; init.el ends here
