@@ -1,0 +1,44 @@
+command=/usr/lib/i3blocks/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+# [mediaplayer]
+# instance=spotify
+# interval=5
+# signal=10
+
+[disk]
+label=HOME
+#instance=/mnt/data
+interval=30
+
+# [uptime]
+
+[cpu_usage]
+label=CPU
+interval=10
+min_width=CPU: 100.00%
+#separator=false
+
+[memory]
+instance=mem;free
+interval=30
+
+[wifi]
+# color=#00FF00
+instance=wlp1s0
+interval=10
+
+# [brightness]
+
+# [volume]
+
+[battery]
+label=BAT
+#label=⚡
+#instance=1
+interval=30
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=5
