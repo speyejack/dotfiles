@@ -189,7 +189,7 @@ bindsym $mod+c mode "$mode_hdmi"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command i3blocks
         set $barmod Mod1
         modifier $barmod
         mode hide
@@ -201,6 +201,7 @@ hide_edge_borders both
 assign [class="^Emacs"] → 1
 assign [class="^Gnome-terminal"] → 2
 assign [class="^Google-chrome"] → 3
+assign [class="^Firefox"] → 3
 
 # Just don't let windows have edges at all!
 new_window 1pixel
