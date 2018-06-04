@@ -7,6 +7,7 @@
   "Load each package for directory."
   (require 'init-auto-dictionary)
   (require 'init-flycheck)
+  (require 'init-helm-flycheck)
   (require 'init-flyspell))
 
 (jag--load-correction-layer-requires)

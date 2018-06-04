@@ -19,6 +19,7 @@
 
 (defun jag--setup-golden-ratio-config ()
   "Set up personal configuation for golden-ratio."
+  (add-to-list 'golden-ratio-exclude-buffer-names " *MINIMAP*")
   (golden-ratio-mode 1))
 
 (defun jag--load-golden-ratio-requires ()

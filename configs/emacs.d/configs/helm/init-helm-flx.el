@@ -1,4 +1,4 @@
-;;; init-helm-flx.el --- Package Description
+;;; init-helm-flx.el --- Better-Fuzzy-sorting-based-on-flx
 ;;; Commentary:
 
 ;;; Code:

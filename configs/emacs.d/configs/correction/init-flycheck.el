@@ -23,7 +23,8 @@
 
 (defun jag--load-flycheck-requires ()
   "Load required sub packages for flycheck."
-  (require 'init-flycheck-pos-tip))
+  (require 'init-flycheck-pos-tip)
+  (require 'init-helm-flycheck))
 
 (use-package flycheck
   :init

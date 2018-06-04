@@ -17,6 +17,7 @@
   (require 'init-highlight-symbol)
   (require 'init-hl-todo)
   (require 'init-imenu-list)
+  ;;(require 'init-minimap)
   (require 'init-nlinum-relative)
   (require 'init-rainbow-delimiters)
   (require 'init-rainbow-mode)
