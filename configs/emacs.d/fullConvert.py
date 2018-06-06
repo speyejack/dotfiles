@@ -58,8 +58,13 @@ def getPackages(wb):
         package['keywords'] = {}
         after = sheet.cell(row=i, column=6).value
         if after:
+            after = ' ' + after
+            if len(after.split(",")) > 1:
+                after = ' (' + ' '.join(list(map(strip, after.split(",")))) + ')'
             package['keywords']['after'] = after
         package['keywords']['hook'] = sheet.cell(row=i, column=7).value
+        package['keywords']['disabled'] = ' t'
+        package['keywords']['diminish'] = ''
         if header not in headers:
             headers[header] = []
         headers[header].append(package)
