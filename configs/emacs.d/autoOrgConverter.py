@@ -18,7 +18,8 @@ def splitIntoFunctions(fileStr):
 def getPackageDescription(fileStr):
     start = fileStr.find("---")
     end = fileStr.find("\n", start)
-    return fileStr[start + 3:end].replace("-", " ").strip()
+    desc = fileStr[start + 3:end].replace("-", " ").strip()
+    return desc if "Package Description" == desc else ""
 
 def getFileStr(filename):
     with open(filename, "r") as fh:
@@ -58,10 +59,8 @@ def getPackage(fileStr):
     package["keywords"] = {keyword: keywords[keyword] for keyword in keywords if keywords[keyword].strip()}
     return package
 
-def createPackageStr(package):
+def createUsePackageStr(package):
     pkgList = []
-    pkgList.append(";;; " + package["description"])
-    pkgList.append("")
     pkgList.append("(use-package " + package["name"])
     for keyword in [keyword for keyword in ["commands", "diminish", "after","init", "config"] if keyword in package["keywords"]]:
         keySec = package["keywords"][keyword]
@@ -75,4 +74,4 @@ def main():
     pkgStr = createPackageStr(package)
     print(pkgStr)
 
-main()
+# main()
