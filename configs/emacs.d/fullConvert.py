@@ -60,7 +60,7 @@ def getPackages(wb):
         if after:
             after = ' ' + after
             if len(after.split(",")) > 1:
-                after = ' (' + ' '.join(list(map(strip, after.split(",")))) + ')'
+                after = ' (' + ' '.join(list(map(lambda x: x.strip(), after.split(",")))) + ')'
             package['keywords']['after'] = after
         package['keywords']['hook'] = sheet.cell(row=i, column=7).value
         package['keywords']['disabled'] = ' t'

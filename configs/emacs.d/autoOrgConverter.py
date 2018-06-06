@@ -62,7 +62,7 @@ def getPackage(fileStr):
 def createUsePackageStr(package):
     pkgList = []
     pkgList.append("(use-package " + package["name"])
-    for keyword in [keyword for keyword in ["commands", "diminish", "after","init", "config"] if keyword in package["keywords"]]:
+    for keyword in [keyword for keyword in ["disabled", "commands", "diminish", "after","init", "config"] if keyword in package["keywords"]]:
         keySec = package["keywords"][keyword]
         pkgList.append("  :" + keyword + keySec)
     return '\n'.join(pkgList) + ')'
