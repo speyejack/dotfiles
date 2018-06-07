@@ -68,6 +68,7 @@ def getPackages(wb):
         if header not in headers:
             headers[header] = []
         headers[header].append(package)
+    
     return headers
 
 def createOrgPackageStr(package):
@@ -79,29 +80,50 @@ def createOrgPackageStr(package):
     app(package['description'])
     app("#+END_QUOTE")
     app("Source: [[" + package['site'] + "]]")
-    app("#+BEGIN_SRC emacs-lisp :angle ~/.emacs")
+    app("#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el")
     app(createUsePackageStr(package))
     app("#+END_SRC")
     return '\n'.join(strList)
-        
-def main():
-    # packages = collectAllPackages("./configs")
-    # changed = getChangedPackages(packages)
-    # packageNames = set(packages.keys())
 
-    wb = load_workbook('packages.xlsx')
+def mergePackage(wb_package, dir_package):
+    if dir_package is None:
+        return wb_package
+    for key in [key for key in wb_package if key != "keywords"]:
+        dir_package[key] = wb_package[key]
+    
+    for key in [key for key in wb_package['keywords']]:
+        dir_package['keywords'][key] = wb_package['keywords'][key]
+    return dir_package
+    
+def createOrg(config_root, wb_name, out_file):
+    dir_packages = collectAllPackages(config_root)
+    wb = load_workbook(wb_name)
     headers = getTopHeaders(wb)
     subheaders = getPackages(wb)
-    outString = ""
-    for header in ["General Packages"]:
+    outString = "#+TITLE: My emacs config\n"
+    for header in ["Setup", "Critical Packages", "General Packages", "Language Packages", "Config"]:
         outString += "* " + header + '\n'
-        for subheader in headers[header]:
-            outString += "** " + subheader + '\n'
-            for package in subheaders[subheader]:
-                outString += createOrgPackageStr(package) + '\n'
+        if header in headers:
+            for subheader in headers[header]:
+                outString += "** " + subheader + '\n'
+                for wb_package in subheaders[subheader]:
+                    try:
+                        dir_package = dir_packages[wb_package['name']]
+                    except KeyError:
+                        dir_package = None
+                    comb_package = mergePackage(wb_package, dir_package)
+                    outString += createOrgPackageStr(comb_package) + '\n'
 
-    with open("README.org","w") as fh:
+    with open(out_file,"w") as fh:
         fh.write(outString)
+
         
+def main():
+    config_root = "./configs"
+    wb_name = 'packages.xlsx'
+    out_file = "README.org"
+    createOrg(config_root, wb_name, out_file) 
+    # dir_packages = collectAllPackages(config_root)
+    # print(dir_packages['flyspell'])
 
 main()

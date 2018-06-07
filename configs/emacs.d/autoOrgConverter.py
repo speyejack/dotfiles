@@ -54,8 +54,8 @@ def getPackage(fileStr):
     for keyword in [keyword for keyword in ["ensure"] if keyword in keywords]:
         del keywords[keyword]
     package["name"] = packageName
-    keywords["init"] = '\n' + (funcBodies['key-hooks'] + '\n' + funcBodies['other-hooks']).rstrip()
-    keywords["config"] = '\n' + (funcBodies['key-bindings'] + '\n' + funcBodies['config']).rstrip()
+    keywords["init"] = '\n  ' + (funcBodies['key-hooks'] + '\n' + funcBodies['other-hooks']).strip()
+    keywords["config"] = '\n  ' + (funcBodies['key-bindings'] + '\n' + funcBodies['config']).strip()
     package["keywords"] = {keyword: keywords[keyword] for keyword in keywords if keywords[keyword].strip()}
     return package
 
