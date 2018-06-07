@@ -8,8 +8,7 @@ configs/emacs.d/*
 *.elc
 
 # Keep important scripts
-!configs/emacs.d/init.el
-!configs/emacs.d/configs
+!configs/emacs.d/init.org
 
 
 # SSH ignores
