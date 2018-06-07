@@ -1,6 +1,76 @@
 #+TITLE: My emacs config
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+#+END_SRC
 * Setup
+*** Package
+The require for emacs
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(require 'package)
+#+END_SRC
+*** Basic Theme
+Some nice setup colors so I don't get blinded by the sun that is regular emacs if theres an error
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(set-background-color "#002B36")
+(set-foreground-color "#2AA198")
+(set-face-background 'mode-line "#073642")
+#+END_SRC
+*** Basic Config
+Set up the custom file name
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file 'noerror)
+#+END_SRC
+Some basic inhibiters to prevent a bunch of annoying screens
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(setq inhibit-splash-screen t
+	  inhibit-startup-message t
+	  inhibit-startup-echo-area-message t)
+#+END_SRC
+Turn off the scroll bar and menu bar
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(menu-bar-mode -1)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
+#+END_SRC
+Turn on tab indention and set tab width
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(setq-default c-basic-offset 4
+                  tab-width 4
+                  indent-tabs-mode t)
+#+END_SRC
+Configure where auto saves go and several backup settings
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
+(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
+(setq backup-by-copying t)
+(setq delete-old-versions t
+  kept-new-versions 6
+  kept-old-versions 2
+  version-control t)
+#+END_SRC
+*** Archives
+Adding the elpa packages
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("elpy" . "https://jorgenschaefer.github.io/packages/"))
+#+END_SRC
 * Critical Packages
+*** use-package
+Download and require use package
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(unless (package-installed-p 'use-package)
+  (package-refresh-content)
+  (package-install 'use-package))
+
+(eval-when-compile
+  (require 'use-package))
+#+END_SRC
+Enable ensure for everything
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(setq use-package-always-ensure t)
+#+END_SRC
 ** Libraries
 *** dash
 #+BEGIN_QUOTE
@@ -41,236 +111,6 @@ Source: [[https://github.com/magnars/s.el]]
   :diminish)
 #+END_SRC
 * General Packages
-** Company
-*** company
-#+BEGIN_QUOTE
-Modular text completion framework
-#+END_QUOTE
-Source: [[https://github.com/company-mode/company-mode]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package company
-  :disabled t
-  :diminish
-  :config
-  (evil-make-intercept-map company-active-map 'normal)
-  (define-key company-active-map (kbd "C-j") 'company-select-next)
-  (define-key company-active-map (kbd "C-k") 'company-select-previous)
-  (global-company-mode 1))
-#+END_SRC
-*** company-quickhelp
-#+BEGIN_QUOTE
-Popup documentation for completion candidates
-#+END_QUOTE
-Source: [[https://github.com/expez/company-quickhelp]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package company-quickhelp
-  :disabled t
-  :diminish
-  :after company
-  :config
-  (company-quickhelp-mode 1))
-#+END_SRC
-*** company-statistics
-#+BEGIN_QUOTE
-Sort candidates using completion history
-#+END_QUOTE
-Source: [[https://github.com/company-mode/company-statistics]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package company-statistics
-  :disabled t
-  :diminish
-  :after company
-  :config
-  (company-statistics-mode 1))
-#+END_SRC
-*** company-ycmd
-#+BEGIN_QUOTE
-company-mode backend for ycmd
-#+END_QUOTE
-Source: [[https://github.com/abingham/emacs-ycmd]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package company-ycmd
-  :disabled t
-  :diminish
-  :after company
-  :config
-  (company-ycmd-setup))
-#+END_SRC
-** Correction
-*** auto-dictionary
-#+BEGIN_QUOTE
-automatic dictionary switcher for flyspell
-#+END_QUOTE
-Source: [[https://github.com/nschum/auto-dictionary-mode]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package auto-dictionary
-  :disabled t
-  :diminish
-  :after flyspell)
-#+END_SRC
-*** flycheck
-#+BEGIN_QUOTE
-On-the-fly syntax checking
-#+END_QUOTE
-Source: [[https://github.com/flycheck/flycheck]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package flycheck
-  :disabled t
-  :diminish
-  :config
-  (global-flycheck-mode 1))
-#+END_SRC
-*** flycheck-pos-tip
-#+BEGIN_QUOTE
-Display Flycheck errors in GUI tooltips
-#+END_QUOTE
-Source: [[https://github.com/flycheck/flycheck-pos-tip]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package flycheck-pos-tip
-  :disabled t
-  :diminish
-  :after flycheck
-  :config
-  (flycheck-pos-tip-mode))
-#+END_SRC
-*** helm-flycheck
-#+BEGIN_QUOTE
-Show flycheck errors with helm
-#+END_QUOTE
-Source: [[https://github.com/yasuyk/helm-flycheck]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package helm-flycheck
-  :disabled t
-  :diminish
-  :after flycheck)
-#+END_SRC
-*** flyspell
-#+BEGIN_QUOTE
-Adds spell check
-#+END_QUOTE
-Source: [[https://www.emacswiki.org/emacs/FlySpell]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package flyspell
-  :disabled t
-  :diminish
-  :config
-  (flyspell-mode 1))
-#+END_SRC
-*** flyspell-correct
-#+BEGIN_QUOTE
-correcting words with flyspell via custom interface
-#+END_QUOTE
-Source: [[https://github.com/d12frosted/flyspell-correct]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package flyspell-correct
-  :disabled t
-  :commands 'flyspell-correct-previous-word-generic
-  :diminish
-  :after flyspell
-  :init
-  (add-hook 'flyspell-mode-hook
-			(lambda ()
-			  (progn
-				(define-key flyspell-mode-map (kbd "C-:") 'flyspell-correct-previous-word-generic)
-				(define-key flyspell-mode-map (kbd "C-;") 'flyspell-correct-next-word-generic)))))
-#+END_SRC
-*** flyspell-correct-helm
-#+BEGIN_QUOTE
-correcting words with flyspell via helm interface
-#+END_QUOTE
-Source: [[https://github.com/d12frosted/flyspell-correct]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package flyspell-correct-helm
-  :disabled t
-  :diminish
-  :after (flyspell-correct helm))
-#+END_SRC
-** Emacs
-*** diminish
-#+BEGIN_QUOTE
-Diminished modes are minor modes with no modeline display
-#+END_QUOTE
-Source: [[https://github.com/myrjola/diminish.el]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package diminish
-  :disabled t
-  :diminish
-  :config
-  (diminish 'eldoc-mode))
-#+END_SRC
-*** powerline
-#+BEGIN_QUOTE
-Rewrite of Powerline
-#+END_QUOTE
-Source: [[https://github.com/milkypostman/powerline]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package powerline
-  :disabled t
-  :diminish
-  :config
-  (setq powerline-default-separator 'wave))
-#+END_SRC
-*** powerline-evil
-#+BEGIN_QUOTE
-Utilities for better Evil support for Powerline
-#+END_QUOTE
-Source: [[https://github.com/raugturi/powerline-evil]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package powerline-evil
-  :disabled t
-  :diminish
-  :config
-  (powerline-default-theme))
-#+END_SRC
-*** smart-mode-line
-#+BEGIN_QUOTE
-A color coded smart mode-line.
-#+END_QUOTE
-Source: [[https://github.com/Malabarba/smart-mode-line]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package smart-mode-line
-  :disabled t
-  :diminish)
-#+END_SRC
-*** solarized-theme
-#+BEGIN_QUOTE
-The Solarized color theme, ported to Emacs.
-#+END_QUOTE
-Source: [[https://github.com/bbatsov/solarized-emacs]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package solarized-theme
-  :disabled t
-  :diminish
-  :config
-  (load-theme 'solarized-dark t))
-#+END_SRC
-*** spaceline
-#+BEGIN_QUOTE
-Modeline configuration library for powerline
-#+END_QUOTE
-Source: [[https://github.com/TheBB/spaceline]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package spaceline
-  :disabled t
-  :diminish
-  :config
-  (require 'spaceline-config)
-  (spaceline-spacemacs-theme)
-  (spaceline-toggle-global-on))
-#+END_SRC
-*** spaceline-all-the-icons
-#+BEGIN_QUOTE
-A Spaceline theme using All The Icons
-#+END_QUOTE
-Source: [[https://github.com/domtronn/spaceline-all-the-icons.el]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package spaceline-all-the-icons
-  :disabled t
-  :diminish
-  :after spaceline
-  :config
-  (spaceline-all-the-icons-theme))
-#+END_SRC
 ** Evil
 *** evil
 #+BEGIN_QUOTE
@@ -669,56 +509,91 @@ Source: [[https://www.emacswiki.org/emacs/UndoTree]]
   :commands 'undo-tree-visualize
   :diminish)
 #+END_SRC
-** Fun
-*** xkcd
+** Emacs
+*** diminish
 #+BEGIN_QUOTE
-View xkcd from Emacs
+Diminished modes are minor modes with no modeline display
 #+END_QUOTE
-Source: [[https://github.com/vibhavp/emacs-xkcd]]
+Source: [[https://github.com/myrjola/diminish.el]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package xkcd
+(use-package diminish
   :disabled t
-  :commands 'xkcd
+  :diminish
+  :config
+  (diminish 'eldoc-mode))
+#+END_SRC
+*** powerline
+#+BEGIN_QUOTE
+Rewrite of Powerline
+#+END_QUOTE
+Source: [[https://github.com/milkypostman/powerline]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package powerline
+  :disabled t
+  :diminish
+  :config
+  (setq powerline-default-separator 'wave))
+#+END_SRC
+*** powerline-evil
+#+BEGIN_QUOTE
+Utilities for better Evil support for Powerline
+#+END_QUOTE
+Source: [[https://github.com/raugturi/powerline-evil]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package powerline-evil
+  :disabled t
+  :diminish
+  :config
+  (powerline-default-theme))
+#+END_SRC
+*** smart-mode-line
+#+BEGIN_QUOTE
+A color coded smart mode-line.
+#+END_QUOTE
+Source: [[https://github.com/Malabarba/smart-mode-line]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package smart-mode-line
+  :disabled t
   :diminish)
 #+END_SRC
-** Git
-*** git-timemachine
+*** solarized-theme
 #+BEGIN_QUOTE
-Walk through git revisions of a file
+The Solarized color theme, ported to Emacs.
 #+END_QUOTE
-Source: [[https://gitlab.com/pidu/git-timemachine]]
+Source: [[https://github.com/bbatsov/solarized-emacs]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package git-timemachine
+(use-package solarized-theme
   :disabled t
-  :commands 'git-timemachine
   :diminish
   :config
-  ;; Remove default timemachine mode bindings
-  (define-key git-timemachine-mode-map (kbd "n") nil)
-  (define-key git-timemachine-mode-map (kbd "p") nil)
-  (define-key git-timemachine-mode-map (kbd "w") nil)
-  (define-key git-timemachine-mode-map (kbd "W") nil)
-  ;; Add my own key bindings
-  (define-key git-timemachine-mode-map (kbd "J") 'git-timemachine-show-previous-revision)
-  (define-key git-timemachine-mode-map (kbd "K") 'git-timemachine-show-next-revision)
-  (define-key git-timemachine-mode-map (kbd "Y") 'git-timemachine-kill-revision)
-  (define-key git-timemachine-mode-map (kbd "q") 'git-timemachine-quit)
-  ;; Override evil keymap with timemachine's map
-  (evil-make-intercept-map git-timemachine-mode-map 'normal)
-  (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
+  (load-theme 'solarized-dark t))
 #+END_SRC
-*** magit
+*** spaceline
 #+BEGIN_QUOTE
-A Git porcelain inside Emacs.
+Modeline configuration library for powerline
 #+END_QUOTE
-Source: [[https://github.com/magit/magit]]
+Source: [[https://github.com/TheBB/spaceline]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package magit
+(use-package spaceline
   :disabled t
-  :commands 'magit-status
   :diminish
   :config
-  (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode))
+  (require 'spaceline-config)
+  (spaceline-spacemacs-theme)
+  (spaceline-toggle-global-on))
+#+END_SRC
+*** spaceline-all-the-icons
+#+BEGIN_QUOTE
+A Spaceline theme using All The Icons
+#+END_QUOTE
+Source: [[https://github.com/domtronn/spaceline-all-the-icons.el]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package spaceline-all-the-icons
+  :disabled t
+  :diminish
+  :after spaceline
+  :config
+  (spaceline-all-the-icons-theme))
 #+END_SRC
 ** Helm
 *** helm
@@ -929,6 +804,45 @@ Source: [[https://github.com/ShingoFukuyama/helm-swoop]]
   :diminish
   :after helm)
 #+END_SRC
+** Git
+*** git-timemachine
+#+BEGIN_QUOTE
+Walk through git revisions of a file
+#+END_QUOTE
+Source: [[https://gitlab.com/pidu/git-timemachine]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package git-timemachine
+  :disabled t
+  :commands 'git-timemachine
+  :diminish
+  :config
+  ;; Remove default timemachine mode bindings
+  (define-key git-timemachine-mode-map (kbd "n") nil)
+  (define-key git-timemachine-mode-map (kbd "p") nil)
+  (define-key git-timemachine-mode-map (kbd "w") nil)
+  (define-key git-timemachine-mode-map (kbd "W") nil)
+  ;; Add my own key bindings
+  (define-key git-timemachine-mode-map (kbd "J") 'git-timemachine-show-previous-revision)
+  (define-key git-timemachine-mode-map (kbd "K") 'git-timemachine-show-next-revision)
+  (define-key git-timemachine-mode-map (kbd "Y") 'git-timemachine-kill-revision)
+  (define-key git-timemachine-mode-map (kbd "q") 'git-timemachine-quit)
+  ;; Override evil keymap with timemachine's map
+  (evil-make-intercept-map git-timemachine-mode-map 'normal)
+  (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
+#+END_SRC
+*** magit
+#+BEGIN_QUOTE
+A Git porcelain inside Emacs.
+#+END_QUOTE
+Source: [[https://github.com/magit/magit]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package magit
+  :disabled t
+  :commands 'magit-status
+  :diminish
+  :config
+  (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode))
+#+END_SRC
 ** Org
 *** org
 #+BEGIN_QUOTE
@@ -998,6 +912,150 @@ Source: [[https://github.com/IvanMalison/org-projectile]]
   (setq org-projectile-projects-file "~/Dropbox/notes/projects.org")
   (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
   (push (org-projectile-project-todo-entry) org-capture-templates))
+#+END_SRC
+** Company
+*** company
+#+BEGIN_QUOTE
+Modular text completion framework
+#+END_QUOTE
+Source: [[https://github.com/company-mode/company-mode]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package company
+  :disabled t
+  :diminish
+  :config
+  (evil-make-intercept-map company-active-map 'normal)
+  (define-key company-active-map (kbd "C-j") 'company-select-next)
+  (define-key company-active-map (kbd "C-k") 'company-select-previous)
+  (global-company-mode 1))
+#+END_SRC
+*** company-quickhelp
+#+BEGIN_QUOTE
+Popup documentation for completion candidates
+#+END_QUOTE
+Source: [[https://github.com/expez/company-quickhelp]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package company-quickhelp
+  :disabled t
+  :diminish
+  :after company
+  :config
+  (company-quickhelp-mode 1))
+#+END_SRC
+*** company-statistics
+#+BEGIN_QUOTE
+Sort candidates using completion history
+#+END_QUOTE
+Source: [[https://github.com/company-mode/company-statistics]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package company-statistics
+  :disabled t
+  :diminish
+  :after company
+  :config
+  (company-statistics-mode 1))
+#+END_SRC
+*** company-ycmd
+#+BEGIN_QUOTE
+company-mode backend for ycmd
+#+END_QUOTE
+Source: [[https://github.com/abingham/emacs-ycmd]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package company-ycmd
+  :disabled t
+  :diminish
+  :after company
+  :config
+  (company-ycmd-setup))
+#+END_SRC
+** Correction
+*** auto-dictionary
+#+BEGIN_QUOTE
+automatic dictionary switcher for flyspell
+#+END_QUOTE
+Source: [[https://github.com/nschum/auto-dictionary-mode]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package auto-dictionary
+  :disabled t
+  :diminish
+  :after flyspell)
+#+END_SRC
+*** flycheck
+#+BEGIN_QUOTE
+On-the-fly syntax checking
+#+END_QUOTE
+Source: [[https://github.com/flycheck/flycheck]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package flycheck
+  :disabled t
+  :diminish
+  :config
+  (global-flycheck-mode 1))
+#+END_SRC
+*** flycheck-pos-tip
+#+BEGIN_QUOTE
+Display Flycheck errors in GUI tooltips
+#+END_QUOTE
+Source: [[https://github.com/flycheck/flycheck-pos-tip]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package flycheck-pos-tip
+  :disabled t
+  :diminish
+  :after flycheck
+  :config
+  (flycheck-pos-tip-mode))
+#+END_SRC
+*** helm-flycheck
+#+BEGIN_QUOTE
+Show flycheck errors with helm
+#+END_QUOTE
+Source: [[https://github.com/yasuyk/helm-flycheck]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package helm-flycheck
+  :disabled t
+  :diminish
+  :after flycheck)
+#+END_SRC
+*** flyspell
+#+BEGIN_QUOTE
+Adds spell check
+#+END_QUOTE
+Source: [[https://www.emacswiki.org/emacs/FlySpell]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package flyspell
+  :disabled t
+  :diminish
+  :config
+  (flyspell-mode 1))
+#+END_SRC
+*** flyspell-correct
+#+BEGIN_QUOTE
+correcting words with flyspell via custom interface
+#+END_QUOTE
+Source: [[https://github.com/d12frosted/flyspell-correct]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package flyspell-correct
+  :disabled t
+  :commands 'flyspell-correct-previous-word-generic
+  :diminish
+  :after flyspell
+  :init
+  (add-hook 'flyspell-mode-hook
+			(lambda ()
+			  (progn
+				(define-key flyspell-mode-map (kbd "C-:") 'flyspell-correct-previous-word-generic)
+				(define-key flyspell-mode-map (kbd "C-;") 'flyspell-correct-next-word-generic)))))
+#+END_SRC
+*** flyspell-correct-helm
+#+BEGIN_QUOTE
+correcting words with flyspell via helm interface
+#+END_QUOTE
+Source: [[https://github.com/d12frosted/flyspell-correct]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package flyspell-correct-helm
+  :disabled t
+  :diminish
+  :after (flyspell-correct helm))
 #+END_SRC
 ** Text
 *** aggressive-indent
@@ -1770,6 +1828,18 @@ Source: [[https://www.emacswiki.org/emacs/GnusTutorial]]
   :disabled t
   :diminish)
 #+END_SRC
+** Fun
+*** xkcd
+#+BEGIN_QUOTE
+View xkcd from Emacs
+#+END_QUOTE
+Source: [[https://github.com/vibhavp/emacs-xkcd]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package xkcd
+  :disabled t
+  :commands 'xkcd
+  :diminish)
+#+END_SRC
 * Language Packages
 ** Asm
 *** asm-mode
@@ -2326,4 +2396,3 @@ Source: [[https://github.com/JorisE/yapfify]]
   :disabled t
   :diminish)
 #+END_SRC
-* Config
