@@ -117,7 +117,6 @@ Extensible Vi layer for Emacs.
 Source: [[https://github.com/emacs-evil/evil]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (use-package evil
-  :mode text-mode
   :diminish
   :config
   (evil-define-key 'normal global-map (kbd "gh") 'evil-first-non-blank)
@@ -459,17 +458,6 @@ Source: [[https://github.com/7696122/evil-terminal-cursor-changer]]
   :diminish
   :after evil)
 #+END_SRC
-*** evil-tutor
-#+BEGIN_QUOTE
-Vimtutor adapted to Evil and wrapped in a major-mode
-#+END_QUOTE
-Source: [[https://github.com/syl20bnr/evil-tutor]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package evil-tutor
-  :disabled t
-  :diminish
-  :after evil)
-#+END_SRC
 *** evil-visual-mark-mode
 #+BEGIN_QUOTE
 Display evil marks on buffer
@@ -504,6 +492,16 @@ Source: [[https://www.emacswiki.org/emacs/UndoTree]]
   :disabled t
   :commands 'undo-tree-visualize
   :diminish)
+#+END_SRC
+*** evil-tutor
+#+BEGIN_QUOTE
+Vimtutor adapted to Evil and wrapped in a major-mode
+#+END_QUOTE
+Source: [[https://github.com/syl20bnr/evil-tutor]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package evil-tutor
+  :diminish
+  :after evil)
 #+END_SRC
 ** Emacs
 *** diminish
