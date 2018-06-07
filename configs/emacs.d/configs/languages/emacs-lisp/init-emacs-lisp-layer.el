@@ -8,7 +8,6 @@
   (require 'init-edebug)
   (require 'init-auto-compile)
   (require 'init-macrostep)
-  (require 'init-debug)
   (require 'init-elisp-slime-nav)
   (require 'init-ielm))
 
