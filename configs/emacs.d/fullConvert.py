@@ -121,7 +121,7 @@ def createOrg(config_root, wb_name, out_file):
 def main():
     config_root = "./configs"
     wb_name = 'packages.xlsx'
-    out_file = "README.org"
+    out_file = "init.org"
     createOrg(config_root, wb_name, out_file) 
     # dir_packages = collectAllPackages(config_root)
     # print(dir_packages['flyspell'])
