@@ -1,11 +1,9 @@
 #+TITLE: My emacs config
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-#+END_SRC
 * Setup
 *** Package
 The require for emacs
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(require 'package)
+(package-initialize)
 #+END_SRC
 *** Basic Theme
 Some nice setup colors so I don't get blinded by the sun that is regular emacs if theres an error
