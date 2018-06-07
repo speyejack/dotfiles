@@ -845,7 +845,6 @@ Emacs org mode
 Source: [[https://orgmode.org/]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (use-package org
-  :disabled t
   :commands 'org-mode
   :diminish
   :config
