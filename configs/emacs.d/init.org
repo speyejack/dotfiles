@@ -201,6 +201,36 @@ Source: [[https://github.com/cofi/evil-leader]]
 	"y"  'yank-to-x-clipboard)
   (global-evil-leader-mode))
 #+END_SRC
+*** evil-org
+#+BEGIN_QUOTE
+evil keybindings for org-mode
+#+END_QUOTE
+Source: [[https://github.com/Somelauw/evil-org-mode]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package evil-org
+  :commands 'evil-org-mode
+  :diminish
+  :after evil
+  :init
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  :config
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (add-hook 'evil-org-mode-hook
+            (lambda ()
+              (evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading)))))
+#+END_SRC
+*** evil-magit
+#+BEGIN_QUOTE
+evil-based key bindings for magit
+#+END_QUOTE
+Source: [[https://github.com/emacs-evil/evil-magit]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package evil-magit
+  :diminish
+  :after evil
+  :init
+  (add-hook 'magit-mode-hook 'evil-local-mode))
+#+END_SRC
 *** evil-anzu
 #+BEGIN_QUOTE
 anzu for evil-mode
@@ -333,19 +363,6 @@ Source: [[https://github.com/syl20bnr/evil-lisp-state]]
   :diminish
   :after evil)
 #+END_SRC
-*** evil-magit
-#+BEGIN_QUOTE
-evil-based key bindings for magit
-#+END_QUOTE
-Source: [[https://github.com/emacs-evil/evil-magit]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package evil-magit
-  :disabled t
-  :diminish
-  :after evil
-  :init
-  (add-hook 'magit-mode-hook 'evil-local-mode))
-#+END_SRC
 *** evil-matchit
 #+BEGIN_QUOTE
 Vim matchit ported to Evil
@@ -399,25 +416,6 @@ Source: [[https://github.com/cofi/evil-numbers]]
   (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "C-c =") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt))
-#+END_SRC
-*** evil-org
-#+BEGIN_QUOTE
-evil keybindings for org-mode
-#+END_QUOTE
-Source: [[https://github.com/Somelauw/evil-org-mode]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package evil-org
-  :disabled t
-  :commands 'evil-org-mode
-  :diminish
-  :after evil
-  :init
-  (add-hook 'org-mode-hook 'evil-org-mode)
-  :config
-  (add-hook 'org-mode-hook 'evil-org-mode)
-  (add-hook 'evil-org-mode-hook
-            (lambda ()
-              (evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading)))))
 #+END_SRC
 *** evil-search-highlight-persist
 #+BEGIN_QUOTE
