@@ -126,6 +126,16 @@ Source: [[https://github.com/emacs-evil/evil]]
   (remove 'doc-view-mode evil-emacs-state-modes)
   (evil-mode 1))
 #+END_SRC
+*** undo-tree
+#+BEGIN_QUOTE
+Vim undo tree
+#+END_QUOTE
+Source: [[https://www.emacswiki.org/emacs/UndoTree]]
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(use-package undo-tree
+  :commands 'undo-tree-visualize
+  :diminish)
+#+END_SRC
 *** evil-escape
 #+BEGIN_QUOTE
 Escape from anything with a customizable key sequence
