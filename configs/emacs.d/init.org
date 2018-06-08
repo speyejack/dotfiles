@@ -692,7 +692,6 @@ Sort helm candidates by flx score
 Source: [[https://github.com/PythonNut/helm-flx]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (use-package helm-flx
-  :disabled t
   :diminish
   :after helm
   :config
