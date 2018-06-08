@@ -1709,7 +1709,6 @@ cursor stays vertically centered
 Source: [[https://github.com/andre-r/centered-cursor-mode.el]]
 #+BEGIN_SRC emacs-lisp 
 (use-package centered-cursor-mode
-  :disabled t
   :commands 'centered-cursor-mode
   :diminish
   :config
