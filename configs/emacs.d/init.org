@@ -958,8 +958,9 @@ Modular text completion framework
 Source: [[https://github.com/company-mode/company-mode]]
 #+BEGIN_SRC emacs-lisp 
 (use-package company
-  :disabled t
   :diminish
+  :defer 5
+  :bind (:map company-active-map
   :config
   (evil-make-intercept-map company-active-map 'normal)
   (define-key company-active-map (kbd "C-j") 'company-select-next)
@@ -974,7 +975,6 @@ Popup documentation for completion candidates
 Source: [[https://github.com/expez/company-quickhelp]]
 #+BEGIN_SRC emacs-lisp 
 (use-package company-quickhelp
-  :disabled t
   :diminish
   :after company
   :config
@@ -988,7 +988,6 @@ Sort candidates using completion history
 Source: [[https://github.com/company-mode/company-statistics]]
 #+BEGIN_SRC emacs-lisp 
 (use-package company-statistics
-  :disabled t
   :diminish
   :after company
   :config
