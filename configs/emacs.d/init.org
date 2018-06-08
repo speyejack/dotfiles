@@ -210,8 +210,8 @@ Source: [[https://github.com/Somelauw/evil-org-mode]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (use-package evil-org
   :diminish
-  :after evil
-  :hook org-mode
+  :after (evil org)
+  :hook (org-mode . evil-org-mode)
   :config
   (add-hook 'evil-org-mode-hook
             (lambda ()
