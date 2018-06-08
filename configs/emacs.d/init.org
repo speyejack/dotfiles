@@ -6,6 +6,7 @@ The require for emacs
 #+BEGIN_SRC emacs-lisp 
 (package-initialize)
 #+END_SRC
+
 *** Basic Theme
 Some nice setup colors so I don't get blinded by the sun that is regular emacs if theres an error
 #+BEGIN_SRC emacs-lisp 
@@ -13,6 +14,7 @@ Some nice setup colors so I don't get blinded by the sun that is regular emacs i
 (set-foreground-color "#2AA198")
 (set-face-background 'mode-line "#073642")
 #+END_SRC
+
 *** Basic Config
 Set up the custom file name
 #+BEGIN_SRC emacs-lisp 
@@ -59,6 +61,7 @@ A temporary solution to having to tangling while configuring
 
 (add-hook 'after-save-hook #'my/tangle-dotfile)
 #+END_SRC
+
 *** Archives
 Adding the elpa packages
 #+BEGIN_SRC emacs-lisp 
@@ -94,6 +97,7 @@ Source: [[https://github.com/magnars/dash.el]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** pdf-tools
 #+BEGIN_QUOTE
 Support library for PDF documents.
@@ -112,6 +116,7 @@ Source: [[https://github.com/politza/pdf-tools]]
   (bind-key (kbd "J") 'doc-view-next-page 'doc-view-mode-map)
   (bind-key (kbd "K") 'doc-view-previous-page 'doc-view-mode-map))
 #+END_SRC
+
 *** s
 #+BEGIN_QUOTE
 The long lost Emacs string manipulation library.
@@ -140,6 +145,7 @@ Source: [[https://github.com/emacs-evil/evil]]
   (remove 'doc-view-mode evil-emacs-state-modes)
   (evil-mode 1))
 #+END_SRC
+
 *** undo-tree
 #+BEGIN_QUOTE
 Vim undo tree
@@ -150,6 +156,7 @@ Source: [[https://www.emacswiki.org/emacs/UndoTree]]
   :commands 'undo-tree-visualize
   :diminish)
 #+END_SRC
+
 *** evil-escape
 #+BEGIN_QUOTE
 Escape from anything with a customizable key sequence
@@ -164,6 +171,7 @@ Source: [[https://github.com/syl20bnr/evil-escape]]
   (setq evil-escape-unordered-key-sequence 1)
   (evil-escape-mode 1))
 #+END_SRC
+
 *** evil-leader
 #+BEGIN_QUOTE
 let there be <leader>
@@ -208,6 +216,7 @@ Source: [[https://github.com/cofi/evil-leader]]
 	"y"  'yank-to-x-clipboard)
   (global-evil-leader-mode))
 #+END_SRC
+
 *** evil-org
 #+BEGIN_QUOTE
 evil keybindings for org-mode
@@ -223,6 +232,7 @@ Source: [[https://github.com/Somelauw/evil-org-mode]]
             (lambda ()
               (evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading)))))
 #+END_SRC
+
 *** evil-magit
 #+BEGIN_QUOTE
 evil-based key bindings for magit
@@ -234,6 +244,7 @@ Source: [[https://github.com/emacs-evil/evil-magit]]
   :init
   (add-hook 'magit-mode-hook 'evil-local-mode))
 #+END_SRC
+
 *** evil-anzu
 #+BEGIN_QUOTE
 anzu for evil-mode
@@ -246,6 +257,7 @@ Source: [[https://github.com/syohex/emacs-evil-anzu]]
   :diminish
   :after evil)
 #+END_SRC
+
 *** evil-args
 #+BEGIN_QUOTE
 Motions and text objects for delimited arguments in Evil.
@@ -261,6 +273,7 @@ Source: [[https://github.com/wcsmith/evil-args]]
   (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
   (define-key evil-outer-text-objects-map "A" 'evil-outer-arg))
 #+END_SRC
+
 *** evil-cleverparens
 #+BEGIN_QUOTE
 Evil friendly minor-mode for editing lisp.
@@ -279,6 +292,7 @@ Source: [[https://github.com/luxbock/evil-cleverparens]]
   :config
   (evil-cleverparens-mode 1))
 #+END_SRC
+
 *** evil-commentary
 #+BEGIN_QUOTE
 Comment stuff out. A port of vim-commentary.
@@ -292,6 +306,7 @@ Source: [[https://github.com/linktohack/evil-commentary]]
   :config
   (evil-commentary-mode 1))
 #+END_SRC
+
 *** evil-ediff
 #+BEGIN_QUOTE
 Make ediff a little evil
@@ -306,6 +321,7 @@ Source: [[https://github.com/emacs-evil/evil-ediff]]
   :init
   (add-hook 'ediff-mode-hook 'evil-ediff-init))
 #+END_SRC
+
 *** evil-exchange
 #+BEGIN_QUOTE
 Exchange text more easily within Evil
@@ -318,6 +334,7 @@ Source: [[https://github.com/Dewdrops/evil-exchange]]
   :diminish
   :after evil)
 #+END_SRC
+
 *** evil-goggles
 #+BEGIN_QUOTE
 Add a visual hint to evil operations
@@ -329,6 +346,7 @@ Source: [[https://github.com/edkolev/evil-goggles]]
   :diminish
   :after evil)
 #+END_SRC
+
 *** evil-iedit-state
 #+BEGIN_QUOTE
 Evil states to interface iedit mode.
@@ -341,6 +359,7 @@ Source: [[https://github.com/syl20bnr/evil-iedit-state]]
   :diminish
   :after evil)
 #+END_SRC
+
 *** evil-indent-plus
 #+BEGIN_QUOTE
 Evil textobjects based on indentation
@@ -354,6 +373,7 @@ Source: [[https://github.com/TheBB/evil-indent-plus]]
   :config
   (evil-indent-plus-default-bindings))
 #+END_SRC
+
 *** evil-lisp-state
 #+BEGIN_QUOTE
 An evil state to edit Lisp code
@@ -366,6 +386,7 @@ Source: [[https://github.com/syl20bnr/evil-lisp-state]]
   :diminish
   :after evil)
 #+END_SRC
+
 *** evil-matchit
 #+BEGIN_QUOTE
 Vim matchit ported to Evil
@@ -380,6 +401,7 @@ Source: [[https://github.com/redguardtoo/evil-matchit]]
   :config
   (global-evil-matchit-mode 1))
 #+END_SRC
+
 *** evil-mc
 #+BEGIN_QUOTE
 Multiple cursors for evil-mode
@@ -394,6 +416,7 @@ Source: [[https://github.com/gabesoft/evil-mc]]
   :config
   (global-evil-mc-mode))
 #+END_SRC
+
 *** evil-nerd-commenter
 #+BEGIN_QUOTE
 Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
@@ -405,6 +428,7 @@ Source: [[https://github.com/redguardtoo/evil-nerd-commenter]]
   :diminish
   :after evil)
 #+END_SRC
+
 *** evil-numbers
 #+BEGIN_QUOTE
 increment/decrement numbers like in vim
@@ -420,6 +444,7 @@ Source: [[https://github.com/cofi/evil-numbers]]
   (define-key evil-normal-state-map (kbd "C-c =") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt))
 #+END_SRC
+
 *** evil-search-highlight-persist
 #+BEGIN_QUOTE
 Persistent highlights after search
@@ -431,6 +456,7 @@ Source: [[https://github.com/naclander/evil-search-highlight-persist]]
   :diminish
   :after evil)
 #+END_SRC
+
 *** evil-snipe
 #+BEGIN_QUOTE
 emulate vim-sneak & vim-seek
@@ -445,6 +471,7 @@ Source: [[https://github.com/hlissner/evil-snipe]]
   (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
   (evil-snipe-mode 1))
 #+END_SRC
+
 *** evil-surround
 #+BEGIN_QUOTE
 emulate surround.vim from Vim
@@ -458,6 +485,7 @@ Source: [[https://github.com/emacs-evil/evil-surround]]
   :config
   (global-evil-surround-mode 1))
 #+END_SRC
+
 *** evil-terminal-cursor-changer
 #+BEGIN_QUOTE
 Change cursor shape and color by evil state in terminal
@@ -469,6 +497,7 @@ Source: [[https://github.com/7696122/evil-terminal-cursor-changer]]
   :diminish
   :after evil)
 #+END_SRC
+
 *** evil-visual-mark-mode
 #+BEGIN_QUOTE
 Display evil marks on buffer
@@ -480,6 +509,7 @@ Source: [[https://github.com/roman/evil-visual-mark-mode]]
   :diminish
   :after evil)
 #+END_SRC
+
 *** evil-visualstar
 #+BEGIN_QUOTE
 Starts a * or # search from the visual selection
@@ -493,6 +523,7 @@ Source: [[https://github.com/bling/evil-visualstar]]
   :config
   (global-evil-visualstar-mode 1))
 #+END_SRC
+
 *** evil-tutor
 #+BEGIN_QUOTE
 Vimtutor adapted to Evil and wrapped in a major-mode
@@ -516,6 +547,7 @@ Source: [[https://github.com/myrjola/diminish.el]]
   :config
   (diminish 'eldoc-mode))
 #+END_SRC
+
 *** powerline
 #+BEGIN_QUOTE
 Rewrite of Powerline
@@ -527,6 +559,7 @@ Source: [[https://github.com/milkypostman/powerline]]
   :config
   (setq powerline-default-separator 'wave))
 #+END_SRC
+
 *** powerline-evil
 #+BEGIN_QUOTE
 Utilities for better Evil support for Powerline
@@ -538,6 +571,7 @@ Source: [[https://github.com/raugturi/powerline-evil]]
   :config
   (powerline-default-theme))
 #+END_SRC
+
 *** smart-mode-line
 #+BEGIN_QUOTE
 A color coded smart mode-line.
@@ -548,6 +582,7 @@ Source: [[https://github.com/Malabarba/smart-mode-line]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** solarized-theme
 #+BEGIN_QUOTE
 The Solarized color theme, ported to Emacs.
@@ -559,6 +594,7 @@ Source: [[https://github.com/bbatsov/solarized-emacs]]
   :config
   (load-theme 'solarized-dark t))
 #+END_SRC
+
 *** spaceline
 #+BEGIN_QUOTE
 Modeline configuration library for powerline
@@ -573,6 +609,7 @@ Source: [[https://github.com/TheBB/spaceline]]
   (spaceline-spacemacs-theme)
   (spaceline-toggle-global-on))
 #+END_SRC
+
 *** spaceline-all-the-icons
 #+BEGIN_QUOTE
 A Spaceline theme using All The Icons
@@ -616,6 +653,7 @@ Source: [[https://github.com/emacs-helm/helm]]
 				(define-key helm-find-files-map (kbd "C-l") 'helm-ff-RET))))
   (helm-mode 1))
 #+END_SRC
+
 *** helm-ag
 #+BEGIN_QUOTE
 the silver searcher with helm interface
@@ -638,6 +676,7 @@ Source: [[https://github.com/syohex/emacs-helm-ag]]
   :diminish
   :after helm)
 #+END_SRC
+
 *** helm-c-yasnippet
 #+BEGIN_QUOTE
 helm source for yasnippet.el
@@ -650,6 +689,7 @@ Source: [[https://github.com/emacs-jp/helm-c-yasnippet]]
   :diminish
   :after helm)
 #+END_SRC
+
 *** helm-company
 #+BEGIN_QUOTE
 Helm interface for company-mode
@@ -668,6 +708,7 @@ Source: [[https://github.com/Sodel-the-Vociferous/helm-company]]
 				(define-key company-mode-map (kbd "C-'") 'helm-company)
 				(define-key company-active-map (kbd "C-'") 'helm-company)))))
 #+END_SRC
+
 *** helm-descbinds
 #+BEGIN_QUOTE
 A convenient `describe-bindings' with `helm'
@@ -684,6 +725,7 @@ Source: [[https://github.com/emacs-helm/helm-descbinds]]
   :config
   (helm-descbinds-mode))
 #+END_SRC
+
 *** helm-flx
 #+BEGIN_QUOTE
 Sort helm candidates by flx score
@@ -698,6 +740,7 @@ Source: [[https://github.com/PythonNut/helm-flx]]
   (setq helm-flx-for-helm-find-files t
 		helm-flx-for-helm-locate t))
 #+END_SRC
+
 *** helm-gitignore
 #+BEGIN_QUOTE
 Generate .gitignore files with gitignore.io.
@@ -710,6 +753,7 @@ Source: [[https://github.com/jupl/helm-gitignore]]
   :diminish
   :after helm)
 #+END_SRC
+
 *** helm-google
 #+BEGIN_QUOTE
 Emacs Helm Interface for quick Google searches
@@ -721,6 +765,7 @@ Source: [[https://framagit.org/steckerhalter/helm-google]]
   :diminish
   :after helm)
 #+END_SRC
+
 *** helm-gtags
 #+BEGIN_QUOTE
 GNU GLOBAL helm interface
@@ -737,6 +782,7 @@ Source: [[https://github.com/syohex/emacs-helm-gtags]]
   :diminish
   :after helm)
 #+END_SRC
+
 *** helm-make
 #+BEGIN_QUOTE
 Select a Makefile target with helm
@@ -749,6 +795,7 @@ Source: [[https://github.com/abo-abo/helm-make]]
   :diminish
   :after helm)
 #+END_SRC
+
 *** helm-mode-manager
 #+BEGIN_QUOTE
 Select and toggle major and minor modes with helm
@@ -764,6 +811,7 @@ Source: [[https://github.com/istib/helm-mode-manager]]
   :diminish
   :after helm)
 #+END_SRC
+
 *** helm-projectile
 #+BEGIN_QUOTE
 Helm integration for Projectile
@@ -781,6 +829,7 @@ Source: [[https://github.com/bbatsov/helm-projectile]]
   :config
   (helm-projectile-on))
 #+END_SRC
+
 *** helm-swoop
 #+BEGIN_QUOTE
 Efficiently hopping squeezed lines powered by helm interface
@@ -819,6 +868,7 @@ Source: [[https://gitlab.com/pidu/git-timemachine]]
   (evil-make-intercept-map git-timemachine-mode-map 'normal)
   (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
 #+END_SRC
+
 *** magit
 #+BEGIN_QUOTE
 A Git porcelain inside Emacs.
@@ -857,6 +907,7 @@ SCHEDULED: %t")))
   (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
   (setq org-log-done (quote time)))
 #+END_SRC
+
 *** org-bullets
 #+BEGIN_QUOTE
 Show bullets in org-mode as UTF-8 characters
@@ -869,6 +920,7 @@ Source: [[https://github.com/emacsorphanage/org-bullets]]
   :diminish
   :after org)
 #+END_SRC
+
 *** org-pomodoro
 #+BEGIN_QUOTE
 Pomodoro implementation for org-mode.
@@ -881,6 +933,7 @@ Source: [[https://github.com/lolownia/org-pomodoro]]
   :diminish
   :after org)
 #+END_SRC
+
 *** org-projectile
 #+BEGIN_QUOTE
 Repository todo management for org-mode
@@ -914,6 +967,7 @@ Source: [[https://github.com/company-mode/company-mode]]
   (define-key company-active-map (kbd "C-k") 'company-select-previous)
   (global-company-mode 1))
 #+END_SRC
+
 *** company-quickhelp
 #+BEGIN_QUOTE
 Popup documentation for completion candidates
@@ -927,6 +981,7 @@ Source: [[https://github.com/expez/company-quickhelp]]
   :config
   (company-quickhelp-mode 1))
 #+END_SRC
+
 *** company-statistics
 #+BEGIN_QUOTE
 Sort candidates using completion history
@@ -940,6 +995,7 @@ Source: [[https://github.com/company-mode/company-statistics]]
   :config
   (company-statistics-mode 1))
 #+END_SRC
+
 *** company-ycmd
 #+BEGIN_QUOTE
 company-mode backend for ycmd
@@ -965,6 +1021,7 @@ Source: [[https://github.com/nschum/auto-dictionary-mode]]
   :diminish
   :after flyspell)
 #+END_SRC
+
 *** flycheck
 #+BEGIN_QUOTE
 On-the-fly syntax checking
@@ -977,6 +1034,7 @@ Source: [[https://github.com/flycheck/flycheck]]
   :config
   (global-flycheck-mode 1))
 #+END_SRC
+
 *** flycheck-pos-tip
 #+BEGIN_QUOTE
 Display Flycheck errors in GUI tooltips
@@ -990,6 +1048,7 @@ Source: [[https://github.com/flycheck/flycheck-pos-tip]]
   :config
   (flycheck-pos-tip-mode))
 #+END_SRC
+
 *** helm-flycheck
 #+BEGIN_QUOTE
 Show flycheck errors with helm
@@ -1001,6 +1060,7 @@ Source: [[https://github.com/yasuyk/helm-flycheck]]
   :diminish
   :after flycheck)
 #+END_SRC
+
 *** flyspell
 #+BEGIN_QUOTE
 Adds spell check
@@ -1013,6 +1073,7 @@ Source: [[https://www.emacswiki.org/emacs/FlySpell]]
   :config
   (flyspell-mode 1))
 #+END_SRC
+
 *** flyspell-correct
 #+BEGIN_QUOTE
 correcting words with flyspell via custom interface
@@ -1031,6 +1092,7 @@ Source: [[https://github.com/d12frosted/flyspell-correct]]
 				(define-key flyspell-mode-map (kbd "C-:") 'flyspell-correct-previous-word-generic)
 				(define-key flyspell-mode-map (kbd "C-;") 'flyspell-correct-next-word-generic)))))
 #+END_SRC
+
 *** flyspell-correct-helm
 #+BEGIN_QUOTE
 correcting words with flyspell via helm interface
@@ -1055,6 +1117,7 @@ Source: [[https://github.com/Malabarba/aggressive-indent-mode]]
   :config
   (aggressive-indent-global-mode 1))
 #+END_SRC
+
 *** auto-yasnippet
 #+BEGIN_QUOTE
 Quickly create disposable yasnippets
@@ -1065,6 +1128,7 @@ Source: [[https://github.com/abo-abo/auto-yasnippet]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** clean-aindent-mode
 #+BEGIN_QUOTE
 Simple indent and unindent, trims indent white-space
@@ -1075,6 +1139,7 @@ Source: [[https://github.com/pmarinov/clean-aindent-mode]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** expand-region
 #+BEGIN_QUOTE
 Increase selected region by semantic units.
@@ -1085,6 +1150,7 @@ Source: [[https://github.com/magnars/expand-region.el]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** indent-guide
 #+BEGIN_QUOTE
 show vertical lines to guide indentation
@@ -1097,6 +1163,7 @@ Source: [[https://github.com/zk-phi/indent-guide]]
   :config
   (indent-guide-global-mode))
 #+END_SRC
+
 *** lorem-ipsum
 #+BEGIN_QUOTE
 Insert dummy pseudo Latin text.
@@ -1107,6 +1174,7 @@ Source: [[https://github.com/jschaf/emacs-lorem-ipsum]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** move-text
 #+BEGIN_QUOTE
 Move current line or region with M-up or M-down.
@@ -1117,6 +1185,7 @@ Source: [[https://github.com/emacsfodder/move-text]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** origami
 #+BEGIN_QUOTE
 Flexible text folding
@@ -1127,6 +1196,7 @@ Source: [[https://github.com/gregsexton/origami.el]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** semantic
 #+BEGIN_QUOTE
 Allows for language aware editing
@@ -1140,6 +1210,7 @@ Source: [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Semantic.htm
   (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
   (semantic-mode 1))
 #+END_SRC
+
 *** srefactor
 #+BEGIN_QUOTE
 A refactoring tool based on Semantic parser framework
@@ -1157,6 +1228,7 @@ Source: [[https://github.com/tuhdo/semantic-refactor]]
   (global-set-key (kbd "M-RET d") 'srefactor-lisp-format-defun)
   (global-set-key (kbd "M-RET b") 'srefactor-lisp-format-buffer))
 #+END_SRC
+
 *** ws-butler
 #+BEGIN_QUOTE
 Unobtrusively remove trailing whitespace.
@@ -1169,6 +1241,7 @@ Source: [[https://github.com/lewang/ws-butler]]
   :config
   (ws-butler-global-mode 1))
 #+END_SRC
+
 *** yasnippet
 #+BEGIN_QUOTE
 Yet another snippet extension for Emacs.
@@ -1192,6 +1265,7 @@ Source: [[https://github.com/cute-jumper/ace-jump-helm-line]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** ace-link
 #+BEGIN_QUOTE
 Quickly follow links
@@ -1202,6 +1276,7 @@ Source: [[https://github.com/abo-abo/ace-link]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** ag
 #+BEGIN_QUOTE
 A front-end for ag ('the silver searcher'), the C ack replacement.
@@ -1212,6 +1287,7 @@ Source: [[https://github.com/Wilfred/ag.el]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** anzu
 #+BEGIN_QUOTE
 Show number of matches in mode-line while searching
@@ -1222,6 +1298,7 @@ Source: [[https://github.com/syohex/emacs-anzu]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** avy
 #+BEGIN_QUOTE
 Jump to arbitrary positions in visible text and select text quickly.
@@ -1232,6 +1309,7 @@ Source: [[https://github.com/abo-abo/avy]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** desktop
 #+BEGIN_QUOTE
 Saves previous session
@@ -1242,6 +1320,7 @@ Source: [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs
   :disabled t
   :diminish)
 #+END_SRC
+
 *** ediff
 #+BEGIN_QUOTE
 Easy diff between two files
@@ -1253,6 +1332,7 @@ Source: [[https://www.gnu.org/software/emacs/manual/html_node/ediff/]]
   :commands 'ediff-files
   :diminish)
 #+END_SRC
+
 *** esh-help
 #+BEGIN_QUOTE
 Add some help functions and support for Eshell
@@ -1263,6 +1343,7 @@ Source: [[https://github.com/tom-tan/esh-help]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** eshell
 #+BEGIN_QUOTE
 Adds several helpful functions to eShell
@@ -1273,6 +1354,7 @@ Source: [[https://www.gnu.org/software/emacs/manual/html_mono/eshell.html]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** exec-path-from-shell
 #+BEGIN_QUOTE
 Get environment variables such as $PATH from the shell
@@ -1283,6 +1365,7 @@ Source: [[https://github.com/purcell/exec-path-from-shell]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** eyebrowse
 #+BEGIN_QUOTE
 Easy window config switching
@@ -1293,6 +1376,7 @@ Source: [[https://github.com/wasamasa/eyebrowse]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** fancy-battery
 #+BEGIN_QUOTE
 Fancy battery display
@@ -1306,6 +1390,7 @@ Source: [[https://github.com/lunaryorn/fancy-battery.el]]
   (fancy-battery-mode)
   (setq fancy-battery-show-percentage 1))
 #+END_SRC
+
 *** fasd
 #+BEGIN_QUOTE
 Emacs integration for the command-line productivity booster `fasd'
@@ -1316,6 +1401,7 @@ Source: [[https://github.com/steckerhalter/emacs-fasd]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** floobits
 #+BEGIN_QUOTE
 Floobits plugin for real-time collaborative editing
@@ -1326,6 +1412,7 @@ Source: [[https://github.com/Floobits/floobits-emacs]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** fuzzy
 #+BEGIN_QUOTE
 Fuzzy Matching
@@ -1336,6 +1423,7 @@ Source: [[https://github.com/auto-complete/fuzzy-el]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** hide-comnt
 #+BEGIN_QUOTE
 Allows user to hide comments
@@ -1346,6 +1434,7 @@ Source: [[https://www.emacswiki.org/emacs/HideOrIgnoreComments#toc1]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** hydra
 #+BEGIN_QUOTE
 Make bindings that stick around.
@@ -1356,6 +1445,7 @@ Source: [[https://github.com/abo-abo/hydra]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** link-hint
 #+BEGIN_QUOTE
 Use avy to open, copy, etc. visible links.
@@ -1366,6 +1456,7 @@ Source: [[https://github.com/noctuid/link-hint.el]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** mmm-mode
 #+BEGIN_QUOTE
 Allows for multiple major modes
@@ -1376,6 +1467,7 @@ Source: [[https://github.com/purcell/mmm-mode]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** multi-term
 #+BEGIN_QUOTE
 Managing multiple terminal buffers in Emacs.
@@ -1386,6 +1478,7 @@ Source: [[https://github.com/emacsorphanage/multi-term]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** open-junk-file
 #+BEGIN_QUOTE
 Open a junk (memo) file to try-and-error
@@ -1396,6 +1489,7 @@ Source: [[https://github.com/rubikitch/open-junk-file]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** persp-mode
 #+BEGIN_QUOTE
 windows/buffers sets shared among frames + save/load.
@@ -1406,6 +1500,7 @@ Source: [[https://github.com/Bad-ptr/persp-mode.el]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** popwin
 #+BEGIN_QUOTE
 Popup Window Manager.
@@ -1418,6 +1513,7 @@ Source: [[https://github.com/m2ym/popwin-el]]
   :config
   (popwin-mode 1))
 #+END_SRC
+
 *** pos-tip
 #+BEGIN_QUOTE
 Show tooltip at point
@@ -1428,6 +1524,7 @@ Source: [[https://github.com/pitkali/pos-tip]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** projectile
 #+BEGIN_QUOTE
 Manage and navigate projects in Emacs easily
@@ -1448,6 +1545,7 @@ Source: [[https://github.com/bbatsov/projectile]]
   (setq projectile-completion-system 'helm)
   (projectile-mode 1))
 #+END_SRC
+
 *** restart-emacs
 #+BEGIN_QUOTE
 Restart emacs from within emacs
@@ -1458,6 +1556,7 @@ Source: [[https://github.com/iqbalansari/restart-emacs]]
   :commands 'restart-emacs
   :diminish)
 #+END_SRC
+
 *** spray
 #+BEGIN_QUOTE
 a speed reading mode
@@ -1468,6 +1567,7 @@ Source: [[https://gitlab.com/iankelling/spray]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** tiny-menu
 #+BEGIN_QUOTE
 Display tiny menus.
@@ -1478,6 +1578,7 @@ Source: [[https://github.com/aaronbieber/tiny-menu.el]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** virtualenvwrapper
 #+BEGIN_QUOTE
 a featureful virtualenv tool for Emacs
@@ -1488,6 +1589,7 @@ Source: [[https://github.com/porterjamesj/virtualenvwrapper.el]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** wgrep-ag
 #+BEGIN_QUOTE
 Writable ag buffer and apply the changes to files
@@ -1498,6 +1600,7 @@ Source: [[https://github.com/mhayashi1120/Emacs-wgrep]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** which-key
 #+BEGIN_QUOTE
 Display available keybindings in popup
@@ -1510,6 +1613,7 @@ Source: [[https://github.com/justbur/emacs-which-key]]
   :config
   (which-key-mode))
 #+END_SRC
+
 *** winum
 #+BEGIN_QUOTE
 Navigate windows and frames using numbers.
@@ -1520,6 +1624,7 @@ Source: [[https://github.com/deb0ch/emacs-winum]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** ycmd
 #+BEGIN_QUOTE
 emacs bindings to the ycmd completion server
@@ -1530,6 +1635,7 @@ Source: [[https://github.com/abingham/emacs-ycmd]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** zeal-at-point
 #+BEGIN_QUOTE
 Search the word at point with Zeal
@@ -1540,6 +1646,7 @@ Source: [[https://github.com/jinzhu/zeal-at-point]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** zoom-frm
 #+BEGIN_QUOTE
 Zoom font size
@@ -1564,6 +1671,7 @@ Source: [[http://elpa.gnu.org/packages/adaptive-wrap.html]]
   :config
   (add-hook 'prog-mode-hook 'adaptive-wrap-prefix-mode))
 #+END_SRC
+
 *** all-the-icons
 #+BEGIN_QUOTE
 A library for inserting Developer icons
@@ -1574,6 +1682,7 @@ Source: [[https://github.com/domtronn/all-the-icons.el]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** all-the-icons-dired
 #+BEGIN_QUOTE
 Shows icons for each file in dired mode
@@ -1584,6 +1693,7 @@ Source: [[https://github.com/jtbm37/all-the-icons-dired]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** auto-highlight-symbol
 #+BEGIN_QUOTE
 Automatic highlighting current symbol minor mode
@@ -1597,6 +1707,7 @@ Source: [[https://github.com/gennad/auto-highlight-symbol]]
   :config
   (add-hook 'prog-mode-hook 'auto-highlight-symbol-mode))
 #+END_SRC
+
 *** centered-cursor-mode
 #+BEGIN_QUOTE
 cursor stays vertically centered
@@ -1610,6 +1721,7 @@ Source: [[https://github.com/andre-r/centered-cursor-mode.el]]
   :config
   (global-centered-cursor-mode))
 #+END_SRC
+
 *** column-enforce-mode
 #+BEGIN_QUOTE
 Highlight text that extends beyond a  column
@@ -1621,6 +1733,7 @@ Source: [[https://github.com/jordonbiondo/column-enforce-mode]]
   :commands 'column-enforce-mode
   :diminish)
 #+END_SRC
+
 *** diff-hl
 #+BEGIN_QUOTE
 Highlight uncommitted changes using VC
@@ -1634,6 +1747,7 @@ Source: [[https://github.com/dgutov/diff-hl]]
   :config
   (add-hook 'prog-mode-hook 'diff-hl-mode))
 #+END_SRC
+
 *** golden-ratio
 #+BEGIN_QUOTE
 Automatic resizing of Emacs windows to the golden ratio
@@ -1647,6 +1761,7 @@ Source: [[https://github.com/roman/golden-ratio.el]]
   (add-to-list 'golden-ratio-exclude-buffer-names " *MINIMAP*")
   (golden-ratio-mode 1))
 #+END_SRC
+
 *** highlight-numbers
 #+BEGIN_QUOTE
 Highlight numbers in source code
@@ -1659,6 +1774,7 @@ Source: [[https://github.com/Fanael/highlight-numbers]]
   :config
   (add-hook 'prog-mode-hook 'highlight-numbers-mode))
 #+END_SRC
+
 *** highlight-parentheses
 #+BEGIN_QUOTE
 highlight surrounding parentheses
@@ -1671,6 +1787,7 @@ Source: [[https://github.com/tsdh/highlight-parentheses.el]]
   :config
   (global-highlight-parentheses-mode))
 #+END_SRC
+
 *** highlight-symbol
 #+BEGIN_QUOTE
 automatic and manual symbol highlighting
@@ -1683,6 +1800,7 @@ Source: [[https://github.com/nschum/highlight-symbol.el]]
   :config
   (global-auto-highlight-symbol-mode 1))
 #+END_SRC
+
 *** hl-todo
 #+BEGIN_QUOTE
 highlight TODO and similar keywords
@@ -1695,6 +1813,7 @@ Source: [[https://github.com/tarsius/hl-todo]]
   :config
   (add-hook 'prog-mode-hook 'hl-todo-mode))
 #+END_SRC
+
 *** imenu-list
 #+BEGIN_QUOTE
 Show imenu entries in a separate buffer
@@ -1705,6 +1824,7 @@ Source: [[https://github.com/bmag/imenu-list]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** minimap
 #+BEGIN_QUOTE
 Adds a minimap as a sidebar
@@ -1722,6 +1842,7 @@ Source: [[https://github.com/dengste/minimap]]
   (setq minimap-minimum-width 15)
   (setq minimap-window-location 'right))
 #+END_SRC
+
 *** nlinum-relative
 #+BEGIN_QUOTE
 Relative line number with nlinum
@@ -1737,6 +1858,7 @@ Source: [[https://github.com/CodeFalling/nlinum-relative]]
   :config
   (nlinum-relative-setup-evil))
 #+END_SRC
+
 *** rainbow-delimiters
 #+BEGIN_QUOTE
 Highlight brackets according to their depth
@@ -1747,6 +1869,7 @@ Source: [[https://github.com/Fanael/rainbow-delimiters]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** rainbow-mode
 #+BEGIN_QUOTE
 Colorize color names
@@ -1759,6 +1882,7 @@ Source: [[https://github.com/emacsmirror/rainbow-mode]]
   :config
   (add-hook 'prog-mode-hook 'rainbow-mode))
 #+END_SRC
+
 *** volatile-highlights
 #+BEGIN_QUOTE
 Minor mode for visual feedback on some operations.
@@ -1782,6 +1906,7 @@ Source: [[https://www.emacswiki.org/emacs/BbdbMode]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** engine-mode
 #+BEGIN_QUOTE
 Define and query search engines from within Emacs.
@@ -1792,6 +1917,7 @@ Source: [[https://github.com/hrs/engine-mode]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** google-this
 #+BEGIN_QUOTE
 A set of functions and bindings to google under point.
@@ -1802,6 +1928,7 @@ Source: [[https://github.com/Malabarba/emacs-google-this]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** gnus
 #+BEGIN_QUOTE
 Reading email from emacs
@@ -1837,6 +1964,7 @@ Source: [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Asm-Mode.htm
   :commands 'asm-mode
   :diminish)
 #+END_SRC
+
 *** nasm-mode
 #+BEGIN_QUOTE
 NASM x86 assembly major mode
@@ -1848,6 +1976,7 @@ Source: [[https://github.com/skeeto/nasm-mode]]
   :commands 'nasm-mode
   :diminish)
 #+END_SRC
+
 *** x86-lookup
 #+BEGIN_QUOTE
 jump to x86 instruction documentation
@@ -1871,6 +2000,7 @@ Source: [[https://github.com/emacscollective/auto-compile]]
   :commands (auto-compile-on-save-mode auto-compile-on-load-mode)
   :diminish)
 #+END_SRC
+
 *** edebug
 #+BEGIN_QUOTE
 Build in elisp debugger
@@ -1882,6 +2012,7 @@ Source: [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Edebug.html]
   :commands 'edebug
   :diminish)
 #+END_SRC
+
 *** elisp-slime-nav
 #+BEGIN_QUOTE
 Make M-. and M-, work in elisp like they do in slime
@@ -1893,6 +2024,7 @@ Source: [[https://github.com/purcell/elisp-slime-nav]]
   :commands 'elisp-slime-nav-mode
   :diminish)
 #+END_SRC
+
 *** ielm
 #+BEGIN_QUOTE
 Elisp Interperter
@@ -1904,6 +2036,7 @@ Source: [[https://www.emacswiki.org/emacs/InferiorEmacsLispMode]]
   :commands 'ielm
   :diminish)
 #+END_SRC
+
 *** macrostep
 #+BEGIN_QUOTE
 interactive macro expander
@@ -1928,6 +2061,7 @@ Source: [[https://github.com/nsf/gocode]]
   :diminish
   :after company)
 #+END_SRC
+
 *** flycheck-gometalinter
 #+BEGIN_QUOTE
 flycheck checker for gometalinter
@@ -1940,6 +2074,7 @@ Source: [[https://github.com/favadi/flycheck-gometalinter]]
   :diminish
   :after flycheck)
 #+END_SRC
+
 *** go-mode
 #+BEGIN_QUOTE
 Major mode for the Go programming language
@@ -1951,6 +2086,7 @@ Source: [[https://github.com/dominikh/go-mode.el]]
   :commands 'go-mode
   :diminish)
 #+END_SRC
+
 *** go-rename
 #+BEGIN_QUOTE
 Integration of the 'gorename' tool into Emacs.
@@ -1974,6 +2110,7 @@ Source: [[https://github.com/bgamari/cmm-mode]]
   :commands 'cmm-mode
   :diminish)
 #+END_SRC
+
 *** company-cabal
 #+BEGIN_QUOTE
 company-mode cabal backend
@@ -1985,6 +2122,7 @@ Source: [[https://github.com/iquiw/company-cabal]]
   :diminish
   :after company)
 #+END_SRC
+
 *** company-ghc
 #+BEGIN_QUOTE
 company-mode ghc-mod backend
@@ -1996,6 +2134,7 @@ Source: [[https://github.com/iquiw/company-ghc]]
   :diminish
   :after company)
 #+END_SRC
+
 *** company-ghci
 #+BEGIN_QUOTE
 company backend which uses the current ghci process.
@@ -2007,6 +2146,7 @@ Source: [[https://github.com/juiko/company-ghci]]
   :diminish
   :after company)
 #+END_SRC
+
 *** flycheck-haskell
 #+BEGIN_QUOTE
 Flycheck: Automatic Haskell configuration
@@ -2018,6 +2158,7 @@ Source: [[https://github.com/flycheck/flycheck-haskell]]
   :diminish
   :after flycheck)
 #+END_SRC
+
 *** ghc
 #+BEGIN_QUOTE
 Sub mode for Haskell mode
@@ -2028,6 +2169,7 @@ Source: [[https://github.com/DanielG/ghc-mod]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** haskell-mode
 #+BEGIN_QUOTE
 A Haskell editing mode
@@ -2038,6 +2180,7 @@ Source: [[https://github.com/haskell/haskell-mode]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** helm-hoogle
 #+BEGIN_QUOTE
 Use helm to navigate query results from Hoogle
@@ -2048,6 +2191,7 @@ Source: [[https://github.com/jwiegley/helm-hoogle]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** hindent
 #+BEGIN_QUOTE
 Indent haskell code using the "hindent" program
@@ -2058,6 +2202,7 @@ Source: [[https://github.com/chrisdone/hindent]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** hlint-refactor
 #+BEGIN_QUOTE
 Apply HLint suggestions
@@ -2068,6 +2213,7 @@ Source: [[https://github.com/mpickering/hlint-refactor-mode]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** intero
 #+BEGIN_QUOTE
 Complete development mode for Haskell
@@ -2090,6 +2236,7 @@ Source: [[https://github.com/emacs-eclim/emacs-eclim]]
   :commands 'java-mode
   :diminish)
 #+END_SRC
+
 *** eclim
 #+BEGIN_QUOTE
 An interface to the Eclipse IDE.
@@ -2112,6 +2259,7 @@ Source: [[https://github.com/defunkt/coffee-mode]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** company-tern
 #+BEGIN_QUOTE
 Tern backend for company-mode
@@ -2122,6 +2270,7 @@ Source: [[https://github.com/proofit404/company-tern]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** js-doc
 #+BEGIN_QUOTE
 Insert JsDoc style comment easily
@@ -2132,6 +2281,7 @@ Source: [[https://github.com/mooz/js-doc]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** js2-mode
 #+BEGIN_QUOTE
 Improved JavaScript editing mode
@@ -2142,6 +2292,7 @@ Source: [[https://github.com/mooz/js2-mode]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** js2-refactor
 #+BEGIN_QUOTE
 A JavaScript refactoring library for emacs.
@@ -2152,6 +2303,7 @@ Source: [[https://github.com/magnars/js2-refactor.el]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** json-mode
 #+BEGIN_QUOTE
 Major mode for editing JSON files.
@@ -2162,6 +2314,7 @@ Source: [[https://github.com/joshwnj/json-mode]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** json-snatcher
 #+BEGIN_QUOTE
 Grabs the path to JSON values in a JSON file
@@ -2172,6 +2325,7 @@ Source: [[https://github.com/Sterlingg/json-snatcher]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** livid-mode
 #+BEGIN_QUOTE
 Live browser eval of JavaScript every time a buffer changes
@@ -2182,6 +2336,7 @@ Source: [[https://github.com/pandeiro/livid-mode]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** skewer-mode
 #+BEGIN_QUOTE
 live browser JavaScript, CSS, and HTML interaction
@@ -2192,6 +2347,7 @@ Source: [[https://github.com/skeeto/skewer-mode]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** tern
 #+BEGIN_QUOTE
 Tern-powered JavaScript integration
@@ -2202,6 +2358,7 @@ Source: [[https://github.com/ternjs/tern]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** web-beautify
 #+BEGIN_QUOTE
 Format HTML, CSS and JavaScript/JSON
@@ -2235,6 +2392,7 @@ Source: [[https://github.com/proofit404/anaconda-mode]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** company-anaconda
 #+BEGIN_QUOTE
 Anaconda backend for company-mode
@@ -2245,6 +2403,7 @@ Source: [[https://github.com/proofit404/company-anaconda]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** cython-mode
 #+BEGIN_QUOTE
 Major mode for editing Cython files
@@ -2255,6 +2414,7 @@ Source: [[https://github.com/cython/cython]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** elpy
 #+BEGIN_QUOTE
 Emacs Python Development Environment
@@ -2268,6 +2428,7 @@ Source: [[https://github.com/jorgenschaefer/elpy]]
   (setq elpy-modules (remove 'elpy-module-highlight-indentation elpy-modules))
   (add-hook 'python-mode-hook 'elpy-mode))
 #+END_SRC
+
 *** helm-pydoc
 #+BEGIN_QUOTE
 pydoc with helm interface
@@ -2278,6 +2439,7 @@ Source: [[https://github.com/syohex/emacs-helm-pydoc]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** hy-mode
 #+BEGIN_QUOTE
 Major mode for Hylang
@@ -2288,6 +2450,7 @@ Source: [[https://github.com/hylang/hy-mode]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** live-py-mode
 #+BEGIN_QUOTE
 Live Coding in Python
@@ -2298,6 +2461,7 @@ Source: [[https://github.com/donkirkby/live-py-plugin]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** nose
 #+BEGIN_QUOTE
 Easy Python test running in Emacs
@@ -2308,6 +2472,7 @@ Source: [[https://bitbucket.com/durin42/nosemacs]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** pip-requirements
 #+BEGIN_QUOTE
 A major mode for editing pip requirements files.
@@ -2318,6 +2483,7 @@ Source: [[https://github.com/Wilfred/pip-requirements.el]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** py-isort
 #+BEGIN_QUOTE
 Use isort to sort the imports in a Python buffer
@@ -2328,6 +2494,7 @@ Source: [[https://github.com/paetzke/py-isort.el]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** pyenv-mode
 #+BEGIN_QUOTE
 Integrate pyenv with python-mode
@@ -2338,6 +2505,7 @@ Source: [[https://github.com/proofit404/pyenv-mode]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** pyvenv
 #+BEGIN_QUOTE
 Python virtual environment interface
@@ -2350,6 +2518,7 @@ Source: [[https://github.com/jorgenschaefer/pyvenv]]
   :config
   (pyvenv-mode 1))
 #+END_SRC
+
 *** pytest
 #+BEGIN_QUOTE
 Easy Python test running in Emacs
@@ -2360,6 +2529,7 @@ Source: [[https://github.com/ionrock/pytest-el]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** python
 #+BEGIN_QUOTE
 Python mode
@@ -2370,6 +2540,7 @@ Source: [[https://www.emacswiki.org/emacs/PythonProgrammingInEmacs]]
   :disabled t
   :diminish)
 #+END_SRC
+
 *** yapfify
 #+BEGIN_QUOTE
 (automatically) format python buffers using YAPF.
