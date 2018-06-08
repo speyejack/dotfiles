@@ -960,11 +960,7 @@ Source: [[https://github.com/company-mode/company-mode]]
 (use-package company
   :diminish
   :defer 5
-  :bind (:map company-active-map
   :config
-  (evil-make-intercept-map company-active-map 'normal)
-  (define-key company-active-map (kbd "C-j") 'company-select-next)
-  (define-key company-active-map (kbd "C-k") 'company-select-previous)
   (global-company-mode 1))
 #+END_SRC
 
@@ -1003,7 +999,7 @@ Source: [[https://github.com/abingham/emacs-ycmd]]
 (use-package company-ycmd
   :disabled t
   :diminish
-  :after company
+  :after (company ycmd)
   :config
   (company-ycmd-setup))
 #+END_SRC
