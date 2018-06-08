@@ -594,7 +594,6 @@ Helm is an Emacs incremental and narrowing framework
 Source: [[https://github.com/emacs-helm/helm]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (use-package helm
-  :disabled t
   :commands
   (helm-mode
    helm-M-x
