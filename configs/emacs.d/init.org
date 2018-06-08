@@ -497,6 +497,7 @@ Source: [[https://github.com/syl20bnr/evil-tutor]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (use-package evil-tutor
   :diminish
+  :commands evil-tutor-start
   :after evil)
 #+END_SRC
 ** Emacs
