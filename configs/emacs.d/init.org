@@ -821,11 +821,8 @@ A Git porcelain inside Emacs.
 Source: [[https://github.com/magit/magit]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (use-package magit
-  :disabled t
   :commands 'magit-status
-  :diminish
-  :config
-  (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode))
+  :diminish)
 #+END_SRC
 ** Org
 *** org
