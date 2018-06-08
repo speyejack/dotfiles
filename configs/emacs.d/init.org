@@ -1456,7 +1456,6 @@ Restart emacs from within emacs
 Source: [[https://github.com/iqbalansari/restart-emacs]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (use-package restart-emacs
-  :disabled t
   :commands 'restart-emacs
   :diminish)
 #+END_SRC
