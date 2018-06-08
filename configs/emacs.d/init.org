@@ -491,17 +491,6 @@ Source: [[https://github.com/bling/evil-visualstar]]
   :config
   (global-evil-visualstar-mode 1))
 #+END_SRC
-*** undo-tree
-#+BEGIN_QUOTE
-Vim undo tree
-#+END_QUOTE
-Source: [[https://www.emacswiki.org/emacs/UndoTree]]
-#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-(use-package undo-tree
-  :disabled t
-  :commands 'undo-tree-visualize
-  :diminish)
-#+END_SRC
 *** evil-tutor
 #+BEGIN_QUOTE
 Vimtutor adapted to Evil and wrapped in a major-mode
