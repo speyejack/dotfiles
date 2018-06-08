@@ -117,7 +117,7 @@ Extensible Vi layer for Emacs.
 Source: [[https://github.com/emacs-evil/evil]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (use-package evil
-  :diminish
+  :diminish evil-mode
   :config
   (evil-define-key 'normal global-map (kbd "gh") 'evil-first-non-blank)
   (evil-define-key 'normal global-map (kbd "gl") 'evil-end-of-line)
