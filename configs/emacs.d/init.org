@@ -59,7 +59,7 @@ Adding the elpa packages
 Download and require use package
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (unless (package-installed-p 'use-package)
-  (package-refresh-content)
+  (package-refresh-contents)
   (package-install 'use-package))
 
 (eval-when-compile
