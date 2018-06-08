@@ -661,7 +661,6 @@ the silver searcher with helm interface
 Source: [[https://github.com/syohex/emacs-helm-ag]]
 #+BEGIN_SRC emacs-lisp 
 (use-package helm-ag
-  :disabled t
   :commands
   (helm-ag
    helm-do-ag
@@ -1284,7 +1283,7 @@ A front-end for ag ('the silver searcher'), the C ack replacement.
 Source: [[https://github.com/Wilfred/ag.el]]
 #+BEGIN_SRC emacs-lisp 
 (use-package ag
-  :disabled t
+  :commands ag-project
   :diminish)
 #+END_SRC
 
