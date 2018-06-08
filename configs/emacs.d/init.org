@@ -437,6 +437,7 @@ Source: [[https://github.com/hlissner/evil-snipe]]
   :diminish
   :after evil
   :config
+  (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
   (evil-snipe-mode 1))
 #+END_SRC
 *** evil-surround
