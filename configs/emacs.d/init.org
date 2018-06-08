@@ -136,6 +136,7 @@ Extensible Vi layer for Emacs.
 Source: [[https://github.com/emacs-evil/evil]]
 #+BEGIN_SRC emacs-lisp 
 (use-package evil
+  :init (setq evil-want-integration nil)
   :diminish
   :config
   (evil-define-key 'normal global-map (kbd "gh") 'evil-first-non-blank)
@@ -243,6 +244,20 @@ Source: [[https://github.com/emacs-evil/evil-magit]]
   :after (evil magit)
   :init
   (add-hook 'magit-mode-hook 'evil-local-mode))
+#+END_SRC
+
+*** evil-collection
+#+BEGIN_QUOTE
+A set of keybindings for evil-mode 
+#+END_QUOTE
+Source: [[https://github.com/emacs-evil/evil-collection]]
+#+BEGIN_SRC emacs-lisp 
+(use-package evil-collection
+  :init
+  :diminish
+  :after evil
+  :config 
+  (evil-collection-init))
 #+END_SRC
 
 *** evil-anzu
