@@ -166,10 +166,7 @@ Source: [[https://github.com/cofi/evil-leader]]
 	"/"  'helm-swoop
 	"."  'mode-line-other-buffer
 	":"  'eval-expression
-	"aa" 'align-regexp
-	"a=" 'my-align-single-equals
 	"b"  'helm-mini             ;; Switch to another buffer
-	"B"  'magit-blame-toggle
 	"c"  'evil-commentary
 	;; Add evil nerd commentary
 	"d"  'kill-this-buffer
@@ -178,10 +175,7 @@ Source: [[https://github.com/cofi/evil-leader]]
 	"f"  'helm-imenu            ;; Jump to function in buffer
 	"g"  'magit-status
 	"h"  'git-timemachine       ;; Open git timemachine
-	"il" 'benchmark-init/show-durations-tabulated
-	"it" 'benchmark-init/show-durations-tree
-	"it" 'benchmark-init/show-durations-tree
-	"is" 'tabulated-list-sort
+	"i"  'use-package-report
 	"l"  'whitespace-mode       ;; Show invisible characters
 	"nn" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
 	"nw" 'widen
@@ -192,7 +186,6 @@ Source: [[https://github.com/cofi/evil-leader]]
 	"s"  'ag-project            ;; Ag search from project's root
 	"r"  (lambda () (interactive) (revert-buffer :ignore-auto :noconfirm))
 	"R"  'restart-emacs
-	"S"  'delete-trailing-whitespace
 	"t"  'gtags-reindex
 	"T"  'gtags-find-tag
 	"u"  'undo-tree-visualize
