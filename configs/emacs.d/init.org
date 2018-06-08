@@ -47,6 +47,17 @@ Configure where auto saves go and several backup settings
   kept-old-versions 2
   version-control t)
 #+END_SRC
+A temporary solution to having to tangling while configuring
+#+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(defun my/tangle-dotfile ()
+  "If the current file is in '~/.dotfiles', the code blocks are tangled"
+  (when (equal (buffer-file-name)
+               (expand-file-name "~/dotfiles/configs/emacs.d/init.org"))
+    (org-babel-tangle)
+    (message "Dotfile tangled")))
+
+(add-hook 'after-save-hook #'my/tangle-dotfile)
+#+END_SRC
 *** Archives
 Adding the elpa packages
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
