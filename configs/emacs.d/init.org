@@ -208,13 +208,10 @@ evil keybindings for org-mode
 Source: [[https://github.com/Somelauw/evil-org-mode]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (use-package evil-org
-  :commands 'evil-org-mode
   :diminish
   :after evil
-  :init
-  (add-hook 'org-mode-hook 'evil-org-mode)
+  :hook org-mode
   :config
-  (add-hook 'org-mode-hook 'evil-org-mode)
   (add-hook 'evil-org-mode-hook
             (lambda ()
               (evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading)))))
