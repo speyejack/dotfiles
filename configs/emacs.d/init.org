@@ -631,16 +631,12 @@ Helm is an Emacs incremental and narrowing framework
 Source: [[https://github.com/emacs-helm/helm]]
 #+BEGIN_SRC emacs-lisp 
 (use-package helm
-  :commands
-  (helm-mode
-   helm-M-x
-   helm-find-files
-   helm-mini)
   :diminish
+  :bind
+  (("C-x C-F" . helm-find-files)
+  ("C-x C-b" . helm-mini)
+  ("M-x" . 'helm-M-x))
   :init
-  (define-key global-map (kbd "C-x C-f") 'helm-find-files)
-  (define-key global-map (kbd "C-x C-b") 'helm-mini)
-  (define-key global-map (kbd "M-x") 'helm-M-x)
   :config
   (define-key helm-map (kbd "C-j") 'helm-next-line)
   (define-key helm-map (kbd "C-k") 'helm-previous-line)
