@@ -520,7 +520,6 @@ Rewrite of Powerline
 Source: [[https://github.com/milkypostman/powerline]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (use-package powerline
-  :disabled t
   :diminish
   :config
   (setq powerline-default-separator 'wave))
@@ -532,7 +531,6 @@ Utilities for better Evil support for Powerline
 Source: [[https://github.com/raugturi/powerline-evil]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (use-package powerline-evil
-  :disabled t
   :diminish
   :config
   (powerline-default-theme))
