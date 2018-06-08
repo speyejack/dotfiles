@@ -157,7 +157,6 @@ let there be <leader>
 Source: [[https://github.com/cofi/evil-leader]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (use-package evil-leader
-  :disabled t
   :diminish
   :config
   (evil-leader/set-leader ",")
