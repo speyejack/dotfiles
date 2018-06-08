@@ -554,7 +554,6 @@ The Solarized color theme, ported to Emacs.
 Source: [[https://github.com/bbatsov/solarized-emacs]]
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
 (use-package solarized-theme
-  :disabled t
   :diminish
   :config
   (load-theme 'solarized-dark t))
