@@ -38,6 +38,7 @@ Turn on tab indention and set tab width
 #+END_SRC
 Configure where auto saves go and several backup settings
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+(make-directory "~/.emacs.d/autosaves/" t)
 (setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
 (setq backup-by-copying t)
