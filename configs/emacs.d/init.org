@@ -357,9 +357,11 @@ Add a visual hint to evil operations
 Source: [[https://github.com/edkolev/evil-goggles]]
 #+BEGIN_SRC emacs-lisp 
 (use-package evil-goggles
-  :disabled t
   :diminish
-  :after evil)
+  :defer 10
+  :after evil
+  :config
+  (evil-goggles-mode))
 #+END_SRC
 
 *** evil-iedit-state
