@@ -1615,7 +1615,7 @@ Display available keybindings in popup
 Source: [[https://github.com/justbur/emacs-which-key]]
 #+BEGIN_SRC emacs-lisp 
 (use-package which-key
-  :disabled t
+  :defer 10
   :diminish
   :config
   (which-key-mode))
