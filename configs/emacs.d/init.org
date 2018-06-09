@@ -972,7 +972,7 @@ Source: [[https://github.com/company-mode/company-mode]]
 #+BEGIN_SRC emacs-lisp 
 (use-package company
   :diminish
-  :defer 5
+  :defer 15
   :config
   (global-company-mode 1))
 #+END_SRC
