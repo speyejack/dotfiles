@@ -844,10 +844,8 @@ Efficiently hopping squeezed lines powered by helm interface
 Source: [[https://github.com/ShingoFukuyama/helm-swoop]]
 #+BEGIN_SRC emacs-lisp 
 (use-package helm-swoop
-  :disabled t
   :commands 'helm-swoop
-  :diminish
-  :after helm)
+  :diminish)
 #+END_SRC
 ** Git
 *** magit
