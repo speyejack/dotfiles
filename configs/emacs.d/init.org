@@ -1852,12 +1852,10 @@ Relative line number with nlinum
 Source: [[https://github.com/CodeFalling/nlinum-relative]]
 #+BEGIN_SRC emacs-lisp 
 (use-package nlinum-relative
-  :disabled t
-  :commands 'nlinum-relative-mode
+  :defer 15
   :diminish
-  :init
-  (add-hook 'prog-mode-hook 'nlinum-relative-mode)
   :config
+  (nlinum-relative-mode t)
   (nlinum-relative-setup-evil))
 #+END_SRC
 
