@@ -1054,8 +1054,7 @@ Source: [[https://github.com/yasuyk/helm-flycheck]]
 #+BEGIN_SRC emacs-lisp 
 (use-package helm-flycheck
   :commands 'helm-flycheck
-  :diminish
-  :after flycheck)
+  :diminish)
 #+END_SRC
 
 *** flyspell
