@@ -739,10 +739,9 @@ Helm interface for company-mode
 Source: [[https://github.com/Sodel-the-Vociferous/helm-company]]
 #+BEGIN_SRC emacs-lisp 
 (use-package helm-company
-  :disabled t
   :commands 'helm-company
   :diminish
-  :after helm
+  :after (helm company)
   :init
   (add-hook 'company-mode-hook
 			(lambda ()
