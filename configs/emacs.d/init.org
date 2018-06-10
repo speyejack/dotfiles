@@ -411,8 +411,9 @@ Vim matchit ported to Evil
 Source: [[https://github.com/redguardtoo/evil-matchit]]
 #+BEGIN_SRC emacs-lisp 
 (use-package evil-matchit
-  :disabled t
   :commands 'evil-jump-item
+  :bind (:map evil-motion-state-map
+         ("%" . evilmi-jump-items))
   :diminish
   :after evil
   :config
