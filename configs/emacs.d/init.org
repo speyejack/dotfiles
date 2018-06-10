@@ -828,13 +828,11 @@ Helm integration for Projectile
 Source: [[https://github.com/bbatsov/helm-projectile]]
 #+BEGIN_SRC emacs-lisp 
 (use-package helm-projectile
-  :disabled t
   :commands
   (helm-projectile
    helm-projectile-find-file
    helm-projectile-switch-project)
   :diminish
-  :after helm
   :config
   (helm-projectile-on))
 #+END_SRC
@@ -1536,7 +1534,6 @@ Manage and navigate projects in Emacs easily
 Source: [[https://github.com/bbatsov/projectile]]
 #+BEGIN_SRC emacs-lisp 
 (use-package projectile
-  :disabled t
   :commands (projectile-find-file projectile-switch-project)
   :diminish
   :init
