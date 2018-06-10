@@ -497,8 +497,9 @@ emulate surround.vim from Vim
 Source: [[https://github.com/emacs-evil/evil-surround]]
 #+BEGIN_SRC emacs-lisp 
 (use-package evil-surround
-  :disabled t
   :diminish
+  :bind (:map evil-motion-state-map
+         ("s" . evil-surround-edit))
   :after evil
   :config
   (global-evil-surround-mode 1))
