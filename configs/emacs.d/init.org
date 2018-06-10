@@ -1672,11 +1672,10 @@ Wraps the buffer automatically and adapts the size without changing buffer
 Source: [[http://elpa.gnu.org/packages/adaptive-wrap.html]]
 #+BEGIN_SRC emacs-lisp 
 (use-package adaptive-wrap
-  :disabled t
-  :commands 'adaptive-wrap-prefix-mode
+  :defer 5
   :diminish
   :config
-  (add-hook 'prog-mode-hook 'adaptive-wrap-prefix-mode))
+  (adaptive-wrap-prefix-mode t))
 #+END_SRC
 
 *** all-the-icons
