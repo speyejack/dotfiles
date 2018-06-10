@@ -260,19 +260,6 @@ Source: [[https://github.com/emacs-evil/evil-collection]]
   (evil-collection-init))
 #+END_SRC
 
-*** evil-anzu
-#+BEGIN_QUOTE
-anzu for evil-mode
-#+END_QUOTE
-Source: [[https://github.com/syohex/emacs-evil-anzu]]
-#+BEGIN_SRC emacs-lisp 
-(use-package evil-anzu
-  :disabled t
-  :commands 'evil-search-next
-  :diminish
-  :after evil)
-#+END_SRC
-
 *** evil-args
 #+BEGIN_QUOTE
 Motions and text objects for delimited arguments in Evil.
@@ -289,25 +276,6 @@ Source: [[https://github.com/wcsmith/evil-args]]
     :after evil)
 #+END_SRC
 
-*** evil-cleverparens
-#+BEGIN_QUOTE
-Evil friendly minor-mode for editing lisp.
-#+END_QUOTE
-Source: [[https://github.com/luxbock/evil-cleverparens]]
-#+BEGIN_SRC emacs-lisp 
-(use-package evil-cleverparens
-  :disabled t
-  :commands 'evil-cleverparens-mode
-  :diminish
-  :after evil
-  :init
-  (add-hook 'elisp-mode-hook 'evil-cleverparens-mode)
-  (add-hook 'lisp-mode-hook 'evil-cleverparens-mode)
-  (add-hook 'scheme-mode-hook 'evil-cleverparens-mode)
-  :config
-  (evil-cleverparens-mode 1))
-#+END_SRC
-
 *** evil-commentary
 #+BEGIN_QUOTE
 Comment stuff out. A port of vim-commentary.
@@ -321,21 +289,6 @@ Source: [[https://github.com/linktohack/evil-commentary]]
   :after evil
   :config
   (evil-commentary-mode 1))
-#+END_SRC
-
-*** evil-ediff
-#+BEGIN_QUOTE
-Make ediff a little evil
-#+END_QUOTE
-Source: [[https://github.com/emacs-evil/evil-ediff]]
-#+BEGIN_SRC emacs-lisp 
-(use-package evil-ediff
-  :disabled t
-  :commands 'evil-ediff-init
-  :diminish
-  :after evil
-  :init
-  (add-hook 'ediff-mode-hook 'evil-ediff-init))
 #+END_SRC
 
 *** evil-exchange
@@ -362,6 +315,106 @@ Source: [[https://github.com/edkolev/evil-goggles]]
   :after evil
   :config
   (evil-goggles-mode))
+#+END_SRC
+
+*** evil-matchit
+#+BEGIN_QUOTE
+Vim matchit ported to Evil
+#+END_QUOTE
+Source: [[https://github.com/redguardtoo/evil-matchit]]
+#+BEGIN_SRC emacs-lisp 
+(use-package evil-matchit
+  :commands 'evil-jump-item
+  :bind (:map evil-motion-state-map
+         ("%" . evilmi-jump-items))
+  :diminish
+  :after evil
+  :config
+  (global-evil-matchit-mode 1))
+#+END_SRC
+*** evil-nerd-commenter
+#+BEGIN_QUOTE
+Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
+#+END_QUOTE
+Source: [[https://github.com/redguardtoo/evil-nerd-commenter]]
+#+BEGIN_SRC emacs-lisp 
+(use-package evil-nerd-commenter
+  :disabled t
+  :diminish
+  :after evil)
+#+END_SRC
+
+*** evil-surround
+#+BEGIN_QUOTE
+emulate surround.vim from Vim
+#+END_QUOTE
+Source: [[https://github.com/emacs-evil/evil-surround]]
+#+BEGIN_SRC emacs-lisp 
+(use-package evil-surround
+  :diminish
+  :bind (:map evil-motion-state-map
+         ("s" . evil-surround-edit))
+  :after evil
+  :config
+  (global-evil-surround-mode 1))
+#+END_SRC
+
+*** evil-tutor
+#+BEGIN_QUOTE
+Vimtutor adapted to Evil and wrapped in a major-mode
+#+END_QUOTE
+Source: [[https://github.com/syl20bnr/evil-tutor]]
+#+BEGIN_SRC emacs-lisp 
+(use-package evil-tutor
+  :diminish
+  :commands evil-tutor-start
+  :after evil)
+#+END_SRC
+*** evil-anzu
+#+BEGIN_QUOTE
+anzu for evil-mode
+#+END_QUOTE
+Source: [[https://github.com/syohex/emacs-evil-anzu]]
+#+BEGIN_SRC emacs-lisp 
+(use-package evil-anzu
+  :disabled t
+  :commands 'evil-search-next
+  :diminish
+  :after evil)
+#+END_SRC
+
+*** evil-cleverparens
+#+BEGIN_QUOTE
+Evil friendly minor-mode for editing lisp.
+#+END_QUOTE
+Source: [[https://github.com/luxbock/evil-cleverparens]]
+#+BEGIN_SRC emacs-lisp 
+(use-package evil-cleverparens
+  :disabled t
+  :commands 'evil-cleverparens-mode
+  :diminish
+  :after evil
+  :init
+  (add-hook 'elisp-mode-hook 'evil-cleverparens-mode)
+  (add-hook 'lisp-mode-hook 'evil-cleverparens-mode)
+  (add-hook 'scheme-mode-hook 'evil-cleverparens-mode)
+  :config
+  (evil-cleverparens-mode 1))
+#+END_SRC
+
+*** evil-ediff
+#+BEGIN_QUOTE
+Make ediff a little evil
+#+END_QUOTE
+Source: [[https://github.com/emacs-evil/evil-ediff]]
+#+BEGIN_SRC emacs-lisp 
+(use-package evil-ediff
+  :disabled t
+  :commands 'evil-ediff-init
+  :diminish
+  :after evil
+  :init
+  (add-hook 'ediff-mode-hook 'evil-ediff-init))
 #+END_SRC
 
 *** evil-iedit-state
@@ -404,22 +457,6 @@ Source: [[https://github.com/syl20bnr/evil-lisp-state]]
   :after evil)
 #+END_SRC
 
-*** evil-matchit
-#+BEGIN_QUOTE
-Vim matchit ported to Evil
-#+END_QUOTE
-Source: [[https://github.com/redguardtoo/evil-matchit]]
-#+BEGIN_SRC emacs-lisp 
-(use-package evil-matchit
-  :commands 'evil-jump-item
-  :bind (:map evil-motion-state-map
-         ("%" . evilmi-jump-items))
-  :diminish
-  :after evil
-  :config
-  (global-evil-matchit-mode 1))
-#+END_SRC
-
 *** evil-mc
 #+BEGIN_QUOTE
 Multiple cursors for evil-mode
@@ -433,18 +470,6 @@ Source: [[https://github.com/gabesoft/evil-mc]]
   :after evil
   :config
   (global-evil-mc-mode))
-#+END_SRC
-
-*** evil-nerd-commenter
-#+BEGIN_QUOTE
-Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
-#+END_QUOTE
-Source: [[https://github.com/redguardtoo/evil-nerd-commenter]]
-#+BEGIN_SRC emacs-lisp 
-(use-package evil-nerd-commenter
-  :disabled t
-  :diminish
-  :after evil)
 #+END_SRC
 
 *** evil-numbers
@@ -490,21 +515,6 @@ Source: [[https://github.com/hlissner/evil-snipe]]
   (evil-snipe-mode 1))
 #+END_SRC
 
-*** evil-surround
-#+BEGIN_QUOTE
-emulate surround.vim from Vim
-#+END_QUOTE
-Source: [[https://github.com/emacs-evil/evil-surround]]
-#+BEGIN_SRC emacs-lisp 
-(use-package evil-surround
-  :diminish
-  :bind (:map evil-motion-state-map
-         ("s" . evil-surround-edit))
-  :after evil
-  :config
-  (global-evil-surround-mode 1))
-#+END_SRC
-
 *** evil-terminal-cursor-changer
 #+BEGIN_QUOTE
 Change cursor shape and color by evil state in terminal
@@ -544,17 +554,6 @@ Source: [[https://github.com/bling/evil-visualstar]]
   (global-evil-visualstar-mode 1))
 #+END_SRC
 
-*** evil-tutor
-#+BEGIN_QUOTE
-Vimtutor adapted to Evil and wrapped in a major-mode
-#+END_QUOTE
-Source: [[https://github.com/syl20bnr/evil-tutor]]
-#+BEGIN_SRC emacs-lisp 
-(use-package evil-tutor
-  :diminish
-  :commands evil-tutor-start
-  :after evil)
-#+END_SRC
 ** Emacs
 *** diminish
 #+BEGIN_QUOTE
@@ -590,17 +589,6 @@ Source: [[https://github.com/raugturi/powerline-evil]]
   :diminish
   :config
   (powerline-default-theme))
-#+END_SRC
-
-*** smart-mode-line
-#+BEGIN_QUOTE
-A color coded smart mode-line.
-#+END_QUOTE
-Source: [[https://github.com/Malabarba/smart-mode-line]]
-#+BEGIN_SRC emacs-lisp 
-(use-package smart-mode-line
-  :disabled t
-  :diminish)
 #+END_SRC
 
 *** solarized-theme
@@ -643,6 +631,17 @@ Source: [[https://github.com/domtronn/spaceline-all-the-icons.el]]
   :config
   (spaceline-all-the-icons-theme))
 #+END_SRC
+*** smart-mode-line
+#+BEGIN_QUOTE
+A color coded smart mode-line.
+#+END_QUOTE
+Source: [[https://github.com/Malabarba/smart-mode-line]]
+#+BEGIN_SRC emacs-lisp 
+(use-package smart-mode-line
+  :disabled t
+  :diminish)
+#+END_SRC
+
 ** Helm
 *** helm
 #+BEGIN_QUOTE
@@ -692,6 +691,34 @@ Source: [[https://github.com/syohex/emacs-helm-ag]]
   :after helm)
 #+END_SRC
 
+*** helm-flx
+#+BEGIN_QUOTE
+Sort helm candidates by flx score
+#+END_QUOTE
+Source: [[https://github.com/PythonNut/helm-flx]]
+#+BEGIN_SRC emacs-lisp 
+(use-package helm-flx
+  :diminish
+  :after helm
+  :config
+  (helm-flx-mode 1)
+  (setq helm-flx-for-helm-find-files t
+		helm-flx-for-helm-locate t))
+#+END_SRC
+
+*** helm-descbinds
+#+BEGIN_QUOTE
+A convenient `describe-bindings' with `helm'
+#+END_QUOTE
+Source: [[https://github.com/emacs-helm/helm-descbinds]]
+#+BEGIN_SRC emacs-lisp 
+(use-package helm-descbinds
+  :diminish
+  :bind ("<help> k" . helm-descbinds)
+  :config
+  (helm-descbinds-mode))
+#+END_SRC
+
 *** helm-c-yasnippet
 #+BEGIN_QUOTE
 helm source for yasnippet.el
@@ -722,34 +749,6 @@ Source: [[https://github.com/Sodel-the-Vociferous/helm-company]]
 			  (progn
 				(define-key company-mode-map (kbd "C-'") 'helm-company)
 				(define-key company-active-map (kbd "C-'") 'helm-company)))))
-#+END_SRC
-
-*** helm-descbinds
-#+BEGIN_QUOTE
-A convenient `describe-bindings' with `helm'
-#+END_QUOTE
-Source: [[https://github.com/emacs-helm/helm-descbinds]]
-#+BEGIN_SRC emacs-lisp 
-(use-package helm-descbinds
-  :diminish
-  :bind ("<help> k" . helm-descbinds)
-  :config
-  (helm-descbinds-mode))
-#+END_SRC
-
-*** helm-flx
-#+BEGIN_QUOTE
-Sort helm candidates by flx score
-#+END_QUOTE
-Source: [[https://github.com/PythonNut/helm-flx]]
-#+BEGIN_SRC emacs-lisp 
-(use-package helm-flx
-  :diminish
-  :after helm
-  :config
-  (helm-flx-mode 1)
-  (setq helm-flx-for-helm-find-files t
-		helm-flx-for-helm-locate t))
 #+END_SRC
 
 *** helm-gitignore
@@ -854,6 +853,16 @@ Source: [[https://github.com/ShingoFukuyama/helm-swoop]]
   :after helm)
 #+END_SRC
 ** Git
+*** magit
+#+BEGIN_QUOTE
+A Git porcelain inside Emacs.
+#+END_QUOTE
+Source: [[https://github.com/magit/magit]]
+#+BEGIN_SRC emacs-lisp 
+(use-package magit
+  :commands 'magit-status
+  :diminish)
+#+END_SRC
 *** git-timemachine
 #+BEGIN_QUOTE
 Walk through git revisions of a file
@@ -880,16 +889,6 @@ Source: [[https://gitlab.com/pidu/git-timemachine]]
   (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
 #+END_SRC
 
-*** magit
-#+BEGIN_QUOTE
-A Git porcelain inside Emacs.
-#+END_QUOTE
-Source: [[https://github.com/magit/magit]]
-#+BEGIN_SRC emacs-lisp 
-(use-package magit
-  :commands 'magit-status
-  :diminish)
-#+END_SRC
 ** Org
 *** org
 #+BEGIN_QUOTE
