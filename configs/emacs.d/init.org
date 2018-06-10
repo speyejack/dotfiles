@@ -813,7 +813,6 @@ Select and toggle major and minor modes with helm
 Source: [[https://github.com/istib/helm-mode-manager]]
 #+BEGIN_SRC emacs-lisp 
 (use-package helm-mode-manager
-  :disabled t
   :commands
   (helm-switch-major-mode
    helm-enable-minor-mode
