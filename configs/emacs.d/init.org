@@ -729,12 +729,8 @@ A convenient `describe-bindings' with `helm'
 Source: [[https://github.com/emacs-helm/helm-descbinds]]
 #+BEGIN_SRC emacs-lisp 
 (use-package helm-descbinds
-  :disabled t
-  :commands 'helm-descbinds
   :diminish
-  :after helm
-  :init
-  (bind-key (kbd "<help> k") 'helm-descbinds)
+  :bind ("<help> k" . helm-descbinds)
   :config
   (helm-descbinds-mode))
 #+END_SRC
