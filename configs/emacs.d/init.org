@@ -94,7 +94,6 @@ A modern list library for Emacs
 Source: [[https://github.com/magnars/dash.el]]
 #+BEGIN_SRC emacs-lisp 
 (use-package dash
-  :disabled t
   :diminish)
 #+END_SRC
 
@@ -124,7 +123,6 @@ The long lost Emacs string manipulation library.
 Source: [[https://github.com/magnars/s.el]]
 #+BEGIN_SRC emacs-lisp 
 (use-package s
-  :disabled t
   :diminish)
 #+END_SRC
 * General Packages
