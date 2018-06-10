@@ -1855,7 +1855,7 @@ Source: [[https://github.com/CodeFalling/nlinum-relative]]
   :defer 15
   :diminish
   :config
-  (nlinum-relative-mode t)
+  (global-nlinum-relative-mode t)
   (nlinum-relative-setup-evil))
 #+END_SRC
 
