@@ -1064,8 +1064,9 @@ Adds spell check
 Source: [[https://www.emacswiki.org/emacs/FlySpell]]
 #+BEGIN_SRC emacs-lisp 
 (use-package flyspell
-  :disabled t
   :diminish
+  :defer 15
+  :disabled t
   :config
   (flyspell-mode 1))
 #+END_SRC
@@ -1077,16 +1078,11 @@ correcting words with flyspell via custom interface
 Source: [[https://github.com/d12frosted/flyspell-correct]]
 #+BEGIN_SRC emacs-lisp 
 (use-package flyspell-correct
+  :bind (:map flyspell-mode-map
+         ("C-:" . 'flyspell-correct-previous-word-generic)
+         ("C-;" . 'flyspell-correct-next-word-generic))
   :disabled t
-  :commands 'flyspell-correct-previous-word-generic
-  :diminish
-  :after flyspell
-  :init
-  (add-hook 'flyspell-mode-hook
-			(lambda ()
-			  (progn
-				(define-key flyspell-mode-map (kbd "C-:") 'flyspell-correct-previous-word-generic)
-				(define-key flyspell-mode-map (kbd "C-;") 'flyspell-correct-next-word-generic)))))
+  :diminish)
 #+END_SRC
 
 *** flyspell-correct-helm
@@ -1096,9 +1092,9 @@ correcting words with flyspell via helm interface
 Source: [[https://github.com/d12frosted/flyspell-correct]]
 #+BEGIN_SRC emacs-lisp 
 (use-package flyspell-correct-helm
-  :disabled t
   :diminish
-  :after (flyspell-correct helm))
+  :disabled t
+  :after flyspell-correct)
 #+END_SRC
 ** Text
 *** aggressive-indent
