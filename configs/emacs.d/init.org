@@ -538,6 +538,7 @@ Source: [[https://github.com/bling/evil-visualstar]]
 (use-package evil-visualstar
   :disabled t
   :diminish
+  :bind ("<visual-state> *" . evil-visualstar/begin-search-forward)
   :after evil
   :config
   (global-evil-visualstar-mode 1))
