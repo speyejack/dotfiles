@@ -279,14 +279,14 @@ Motions and text objects for delimited arguments in Evil.
 #+END_QUOTE
 Source: [[https://github.com/wcsmith/evil-args]]
 #+BEGIN_SRC emacs-lisp 
-(use-package evil-args
-  :diminish
-  :commands (evil-inner-arg evil-outer-arg)
-  :after evil
-  :init
-  ;; bind evil-args text objects
-  (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
-  (define-key evil-outer-text-objects-map "a" 'evil-outer-arg))
+  (use-package evil-args
+    :diminish
+    ;; bind evil-args text objects
+    :bind (:map evil-inner-text-objects-map
+           ("a" . evil-inner-arg)
+           :map evil-outer-text-objects-map
+           ("a" . evil-outer-arg))
+    :after evil)
 #+END_SRC
 
 *** evil-cleverparens
