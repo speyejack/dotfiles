@@ -865,7 +865,6 @@ Walk through git revisions of a file
 Source: [[https://gitlab.com/pidu/git-timemachine]]
 #+BEGIN_SRC emacs-lisp 
 (use-package git-timemachine
-  :disabled t
   :commands 'git-timemachine
   :diminish
   :config
