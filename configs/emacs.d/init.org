@@ -345,7 +345,6 @@ Exchange text more easily within Evil
 Source: [[https://github.com/Dewdrops/evil-exchange]]
 #+BEGIN_SRC emacs-lisp 
 (use-package evil-exchange
-  :disabled t
   :commands 'evil-exchange
   :diminish
   :after evil)
