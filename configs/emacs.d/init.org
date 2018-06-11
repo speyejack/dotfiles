@@ -1722,11 +1722,10 @@ Highlight uncommitted changes using VC
 Source: [[https://github.com/dgutov/diff-hl]]
 #+BEGIN_SRC emacs-lisp 
 (use-package diff-hl
-  :disabled t
-  :commands 'diff-hl-mode
   :diminish
+  :defer 15
   :config
-  (add-hook 'prog-mode-hook 'diff-hl-mode))
+  (global-diff-hl-mode))
 #+END_SRC
 
 *** golden-ratio
