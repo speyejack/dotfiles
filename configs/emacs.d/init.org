@@ -55,7 +55,7 @@ A temporary solution to having to tangling while configuring
 (defun my/tangle-dotfile ()
   "If the current file is in '~/.dotfiles', the code blocks are tangled"
   (when (equal (buffer-file-name)
-               (expand-file-name "~/dotfiles/configs/emacs.d/init.org"))
+               (expand-file-name "~/.emacs.d/init.org"))
     (org-babel-tangle)
     (message "Dotfile tangled")))
 
