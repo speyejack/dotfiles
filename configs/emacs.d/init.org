@@ -1141,8 +1141,8 @@ show vertical lines to guide indentation
 Source: [[https://github.com/zk-phi/indent-guide]]
 #+BEGIN_SRC emacs-lisp 
 (use-package indent-guide
-  :disabled t
   :diminish
+  :defer 5
   :config
   (indent-guide-global-mode))
 #+END_SRC
