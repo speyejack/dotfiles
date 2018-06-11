@@ -61,6 +61,10 @@ A temporary solution to having to tangling while configuring
 
 (add-hook 'after-save-hook #'my/tangle-dotfile)
 #+END_SRC
+Set emacs to use system clipboard
+#+BEGIN_SRC emacs-lisp
+(setq x-select-enable-clipboard nil)
+#+END_SRC
 
 *** Archives
 Adding the elpa packages
