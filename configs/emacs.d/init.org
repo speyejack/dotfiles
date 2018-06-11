@@ -217,7 +217,12 @@ Source: [[https://github.com/cofi/evil-leader]]
 	"v"  'centered-cursor-mode
 	"w"  'save-buffer
 	"x"  'helm-M-x
-	"y"  'yank-to-x-clipboard)
+    "y"  'helm-yas-complete
+    "Yy"  'aya-create
+    "YY"  'aya-create
+    "Ye"  'aya-expand
+    "Yl"  'aya-open-line
+    "Ys"  'aya-persist-snippet)
   (global-evil-leader-mode))
 #+END_SRC
 
@@ -718,7 +723,6 @@ helm source for yasnippet.el
 Source: [[https://github.com/emacs-jp/helm-c-yasnippet]]
 #+BEGIN_SRC emacs-lisp 
 (use-package helm-c-yasnippet
-  :disabled t
   :commands 'helm-yas-complete
   :diminish
   :after helm)
@@ -1108,7 +1112,7 @@ Quickly create disposable yasnippets
 Source: [[https://github.com/abo-abo/auto-yasnippet]]
 #+BEGIN_SRC emacs-lisp 
 (use-package auto-yasnippet
-  :disabled t
+  :commands (aya-create aya-expand aya-open-line aya-persist-snippet)
   :diminish)
 #+END_SRC
 
@@ -1227,8 +1231,8 @@ Yet another snippet extension for Emacs.
 Source: [[https://github.com/joaotavora/yasnippet]]
 #+BEGIN_SRC emacs-lisp 
 (use-package yasnippet
-  :disabled t
   :diminish
+  :defer t
   :config
   (yas-global-mode 1))
 #+END_SRC
