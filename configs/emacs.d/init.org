@@ -185,6 +185,7 @@ Source: [[https://github.com/cofi/evil-leader]]
 	","  'other-window
 	"/"  'helm-swoop
 	"."  'mode-line-other-buffer
+	"!"  'restart-emacs
 	":"  'eval-expression
   "'"  'whitespace-mode
   "*"  'google-this
@@ -208,8 +209,8 @@ Source: [[https://github.com/cofi/evil-leader]]
 	"Pp"  'helm-projectile-switch-project
 	"Pf"  'helm-projectile-find-file
 	"s"  'ag-project            ;; Ag search from project's root
-	"r"  (lambda () (interactive) (revert-buffer :ignore-auto :noconfirm))
-	"R"  'restart-emacs
+    "r"  'srefactor-refactor-at-point
+	"R"  (lambda () (interactive) (revert-buffer :ignore-auto :noconfirm))
 	"t"  'gtags-reindex
 	"T"  'gtags-find-tag
 	"u"  'undo-tree-visualize
