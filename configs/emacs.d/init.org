@@ -1868,8 +1868,8 @@ Minor mode for visual feedback on some operations.
 Source: [[https://github.com/k-talo/volatile-highlights.el]]
 #+BEGIN_SRC emacs-lisp 
 (use-package volatile-highlights
-  :disabled t
   :diminish
+  :defer 5
   :config
   (volatile-highlights-mode t))
 #+END_SRC
