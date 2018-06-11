@@ -1188,8 +1188,8 @@ Allows for language aware editing
 Source: [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Semantic.html]]
 #+BEGIN_SRC emacs-lisp 
 (use-package semantic
-  :disabled t
   :diminish
+  :defer 15
   :config
   (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
   (semantic-mode 1))
@@ -1202,15 +1202,10 @@ A refactoring tool based on Semantic parser framework
 Source: [[https://github.com/tuhdo/semantic-refactor]]
 #+BEGIN_SRC emacs-lisp 
 (use-package srefactor
-  :disabled t
   :diminish
+  :commands 'srefactor-refactor-at-point
   :config
-  (define-key c-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
-  (define-key c++-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
-  (global-set-key (kbd "M-RET o") 'srefactor-lisp-one-line)
-  (global-set-key (kbd "M-RET m") 'srefactor-lisp-format-sexp)
-  (global-set-key (kbd "M-RET d") 'srefactor-lisp-format-defun)
-  (global-set-key (kbd "M-RET b") 'srefactor-lisp-format-buffer))
+  (semantic-mode 1))
 #+END_SRC
 
 *** ws-butler
