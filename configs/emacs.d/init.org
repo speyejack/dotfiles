@@ -198,7 +198,7 @@ Source: [[https://github.com/cofi/evil-leader]]
 	"e"  'evil-exchange
 	"f"  'helm-imenu            ;; Jump to function in buffer
 	"g"  'magit-status
-	"h"  'git-timemachine       ;; Open git timemachine
+	"G"  'git-timemachine       ;; Open git timemachine
 	"i"  'use-package-report
   "l"  'helm-google
 	"'"  'whitespace-mode       ;; Show invisible characters
