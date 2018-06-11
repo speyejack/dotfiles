@@ -254,10 +254,10 @@ A set of keybindings for evil-mode
 Source: [[https://github.com/emacs-evil/evil-collection]]
 #+BEGIN_SRC emacs-lisp 
 (use-package evil-collection
-  :init
   :diminish
   :after evil
-  :config 
+  :init 
+  (setq evil-collection-setup-minibuffer t)
   (evil-collection-init))
 #+END_SRC
 
@@ -658,15 +658,6 @@ Source: [[https://github.com/emacs-helm/helm]]
   ("M-x" . 'helm-M-x))
   :init
   :config
-  (define-key helm-map (kbd "C-j") 'helm-next-line)
-  (define-key helm-map (kbd "C-k") 'helm-previous-line)
-  (define-key helm-map (kbd "C-u") 'helm-previous-page)
-  (define-key helm-map (kbd "C-d") 'helm-next-page)
-  (add-hook 'helm-find-files-after-init-hook
-			(lambda ()
-			  (progn
-				(define-key helm-find-files-map (kbd "C-h") 'helm-find-files-up-one-level)
-				(define-key helm-find-files-map (kbd "C-l") 'helm-ff-RET))))
   (helm-mode 1))
 #+END_SRC
 
