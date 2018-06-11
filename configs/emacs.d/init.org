@@ -1788,10 +1788,10 @@ highlight TODO and similar keywords
 Source: [[https://github.com/tarsius/hl-todo]]
 #+BEGIN_SRC emacs-lisp 
 (use-package hl-todo
-  :disabled t
   :diminish
+  :defer 15
   :config
-  (add-hook 'prog-mode-hook 'hl-todo-mode))
+  (global-hl-todo-mode))
 #+END_SRC
 
 *** imenu-list
