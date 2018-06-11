@@ -1117,6 +1117,8 @@ Source: [[https://github.com/abo-abo/auto-yasnippet]]
 #+BEGIN_SRC emacs-lisp 
 (use-package auto-yasnippet
   :commands (aya-create aya-expand aya-open-line aya-persist-snippet)
+  :config
+  (aya-case-fold t)
   :diminish)
 #+END_SRC
 
