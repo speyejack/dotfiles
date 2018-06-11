@@ -1765,8 +1765,8 @@ highlight surrounding parentheses
 Source: [[https://github.com/tsdh/highlight-parentheses.el]]
 #+BEGIN_SRC emacs-lisp 
 (use-package highlight-parentheses
-  :disabled t
   :diminish
+  :defer 5
   :config
   (global-highlight-parentheses-mode))
 #+END_SRC
