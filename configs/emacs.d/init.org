@@ -63,7 +63,7 @@ A temporary solution to having to tangling while configuring
 #+END_SRC
 Set emacs to use system clipboard
 #+BEGIN_SRC emacs-lisp
-(setq x-select-enable-clipboard nil)
+(setq x-select-enable-clipboard t)
 #+END_SRC
 
 *** Archives
