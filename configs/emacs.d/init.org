@@ -53,9 +53,9 @@ Configure where auto saves go and several backup settings
 A temporary solution to having to tangling while configuring
 #+BEGIN_SRC emacs-lisp 
 (defun my/tangle-dotfile ()
-  "If the current file is in '~/.dotfiles', the code blocks are tangled"
-  (when (equal (buffer-file-name)
-               (expand-file-name "~/.dotfiles/configs/emacs.d/init.org"))
+  "If the current file is the init org file, the code blocks are tangled"
+  (when (equal (file-truename (buffer-file-name))
+               (file-truename (expand-file-name (concat user-emacs-directory "init.org"))))
     (org-babel-tangle)
     (message "Dotfile tangled")))
 
