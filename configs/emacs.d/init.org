@@ -65,6 +65,10 @@ Set emacs to use system clipboard
 #+BEGIN_SRC emacs-lisp
 (setq x-select-enable-clipboard t)
 #+END_SRC
+Enabled global visual line mode for line wrapping
+#+BEGIN_SRC emacs-lisp
+(global-visual-line-mode)
+#+END_SRC
 
 *** Archives
 Adding the elpa packages
