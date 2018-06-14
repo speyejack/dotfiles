@@ -162,7 +162,12 @@ Vim undo tree
 Source: [[https://www.emacswiki.org/emacs/UndoTree]]
 #+BEGIN_SRC emacs-lisp 
 (use-package undo-tree
-  :commands 'undo-tree-visualize
+  :commands undo-tree-visualize
+  :bind (:map undo-tree-visualizer-mode-map
+         ([remap evil-backward-char] . undo-tree-visualize-switch-branch-left)
+         ([remap evil-forward-char] . undo-tree-visualize-switch-branch-right)
+         ([remap evil-next-line] . undo-tree-visualize-redo)
+         ([remap evil-previous-line] . undo-tree-visualize-undo))
   :diminish)
 #+END_SRC
 
