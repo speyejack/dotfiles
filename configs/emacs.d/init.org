@@ -69,6 +69,11 @@ Enabled global visual line mode for line wrapping
 #+BEGIN_SRC emacs-lisp
 (global-visual-line-mode)
 #+END_SRC
+Set up org src settings
+#+BEGIN_SRC emacs-lisp
+(setq org-src-tab-acts-natively t)
+(setq org-src-fontify-natively t)
+#+END_SRC
 
 *** Archives
 Adding the elpa packages
