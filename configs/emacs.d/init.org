@@ -2619,3 +2619,14 @@ Source: [[https://github.com/JorisE/yapfify]]
   :disabled t
   :diminish)
 #+END_SRC
+** XML
+*** nxml
+#+BEGIN_QUOTE
+Nxml mode that's installed by default
+#+END_QUOTE
+Source: [[https://www.emacswiki.org/emacs/NxmlMode]]
+#+BEGIN_SRC emacs-lisp
+ (add-to-list 'auto-mode-alist
+              (cons (concat "\\." (regexp-opt '("launch") t) "\\'")
+                    'nxml-mode))
+#+END_SRC
