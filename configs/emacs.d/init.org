@@ -155,6 +155,9 @@ Source: [[https://github.com/emacs-evil/evil]]
     (evil-define-key 'normal global-map (kbd "gh") 'evil-first-non-blank)
     (evil-define-key 'normal global-map (kbd "gl") 'evil-end-of-line)
     (evil-define-key 'normal global-map (kbd "-")  'helm-find-files)
+    (evil-define-key 'normal global-map (kbd "R")  'undo-tree-redo)
+    (evil-define-key 'normal global-map (kbd "C-r")  'undo-tree-redo)
+    (evil-define-key 'normal global-map (kbd "u")  'undo-tree-undo)
     (setq evil-magic 'very-magic)
     (remove 'doc-view-mode evil-emacs-state-modes)
     (evil-mode 1))
@@ -167,7 +170,7 @@ Vim undo tree
 Source: [[https://www.emacswiki.org/emacs/UndoTree]]
 #+BEGIN_SRC emacs-lisp 
   (use-package undo-tree
-    :commands undo-tree-visualize
+    :commands undo-tree-visualize undo-tree-undo undo-tree-redo
     :bind (:map undo-tree-visualizer-mode-map
            ([remap evil-backward-char] . undo-tree-visualize-switch-branch-left)
            ([remap evil-forward-char] . undo-tree-visualize-switch-branch-right)
