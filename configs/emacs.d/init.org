@@ -244,6 +244,7 @@ Source: [[https://github.com/cofi/evil-leader]]
       "Yy"  'aya-create
       "YY"  'aya-create
       "Ye"  'aya-expand
+      "Yp"  'aya-expand
       "Yl"  'aya-open-line
       "Ys"  'aya-persist-snippet)
     (global-evil-leader-mode))
@@ -1147,7 +1148,7 @@ Source: [[https://github.com/abo-abo/auto-yasnippet]]
   (use-package auto-yasnippet
     :commands (aya-create aya-expand aya-open-line aya-persist-snippet)
     :config
-    (aya-case-fold t)
+    (setq aya-case-fold t)
     :diminish)
 #+END_SRC
 
