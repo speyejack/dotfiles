@@ -85,6 +85,12 @@ Adding the elpa packages
 #+END_SRC
 * Critical Packages
 *** use-package
+#+BEGIN_QUOTE
+A use-package declaration for simplifying your .emacs
+#+END_QUOTE
+Source: [[https://github.com/jwiegley/use-package]]
+
+
 Download and require use package
 #+BEGIN_SRC emacs-lisp 
   (unless (package-installed-p 'use-package)
