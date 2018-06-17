@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+#name : create_package
+#key : package
+#contributor : jack
+# --
+*** $1
+#+BEGIN_QUOTE
+$2
+#+END_QUOTE
+Source: [[$3]]
+#+BEGIN_SRC emacs-lisp
+  (use-package $1
+    :disabled t
+    :diminish)
+#+END_SRC
