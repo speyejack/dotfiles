@@ -145,6 +145,17 @@ Source: [[https://github.com/magnars/s.el]]
     :diminish)
 #+END_SRC
 * General Packages
+** General
+*** general
+#+BEGIN_QUOTE
+More convenient key definitions in emacs
+#+END_QUOTE
+Source: [[https://github.com/noctuid/general.el]]
+#+BEGIN_SRC emacs-lisp
+  (use-package general
+    :diminish)
+#+END_SRC
+
 ** Evil
 *** evil
 #+BEGIN_QUOTE
