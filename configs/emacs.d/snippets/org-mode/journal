@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+#name : journal
+#key : journal
+#contributor : jack
+# --
+
+$1 $2
+
+* Thankful for
+** $0
+* Three good things
+**
+* One bad thing
+**
+* Goals
+** Be fit
+** Be productive
+** Make Falon happy
+** Be clean
+** Be nice
+* What's on your mind
