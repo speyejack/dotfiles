@@ -156,6 +156,22 @@ Source: [[https://github.com/noctuid/general.el]]
     :diminish)
 #+END_SRC
 
+
+Set up several key binders for later use
+#+BEGIN_SRC emacs-lisp
+  (general-create-definer jag--leader-def
+    :keymaps 'normal
+    :prefix ",")
+
+  (general-create-definer jag--local-leader-def
+    :keymaps 'normal
+    :prefix ", m")
+
+  (general-create-definer jag--visual-def
+    :keymaps 'normal
+    :prefix ", v")
+#+END_SRC
+
 ** Evil
 *** evil
 #+BEGIN_QUOTE
