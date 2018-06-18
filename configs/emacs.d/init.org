@@ -1774,6 +1774,8 @@ Source: [[https://github.com/andre-r/centered-cursor-mode.el]]
   (use-package centered-cursor-mode
     :diminish
     :defer 1
+    :general
+    (jag--visual-def "c" 'centered-cursor-mode)
     :config
     (global-centered-cursor-mode))
 #+END_SRC
