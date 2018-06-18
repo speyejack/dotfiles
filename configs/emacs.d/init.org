@@ -1949,8 +1949,10 @@ Colorize color names
 Source: [[https://github.com/emacsmirror/rainbow-mode]]
 #+BEGIN_SRC emacs-lisp 
   (use-package rainbow-mode
-    :disabled t
     :diminish
+    :defer 15
+    :general
+    (jag--visual-def "R" 'rainbow-mode)
     :config
     (add-hook 'prog-mode-hook 'rainbow-mode))
 #+END_SRC
