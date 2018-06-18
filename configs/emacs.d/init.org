@@ -1937,7 +1937,8 @@ Highlight brackets according to their depth
 Source: [[https://github.com/Fanael/rainbow-delimiters]]
 #+BEGIN_SRC emacs-lisp 
   (use-package rainbow-delimiters
-    :disabled t
+    :general
+    (jag--visual-def "r" 'rainbow-delimiters-mode)
     :diminish)
 #+END_SRC
 
