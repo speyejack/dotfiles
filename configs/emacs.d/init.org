@@ -152,21 +152,47 @@ Source: [[https://github.com/noctuid/general.el]]
     :diminish)
 #+END_SRC
 
-
-Set up several key binders for later use
+*** leader
+Setup a leader definer
 #+BEGIN_SRC emacs-lisp
   (general-create-definer jag--leader-def
     :keymaps 'normal
     :prefix ",")
 
+  (jag--leader-def
+    ","  'other-window
+    "."  'mode-line-other-buffer
+    ":"  'eval-expression
+    "d"  'kill-this-buffer
+    "i"  'use-package-report
+    "nn" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
+    "nw" 'widen
+    "o"  'delete-other-windows  ;; C-w o
+    "O"  'delete-window  ;; C-w o
+    "R"  (lambda () (interactive) (revert-buffer :ignore-auto :noconfirm))
+    ;; "t"  'gtags-reindex
+    "T"  'gtags-find-tag
+    "w"  'save-buffer)
+#+END_SRC
+
+*** local leader
+Setup a local mode leader definer
+#+BEGIN_SRC emacs-lisp
   (general-create-definer jag--local-leader-def
     :keymaps 'normal
     :prefix ", m")
+#+END_SRC
 
+*** visual leader
+Setup a visual leader definer
+#+BEGIN_SRC emacs-lisp
   (general-create-definer jag--visual-leader-def
     :which-key "Visual leader prefix"
     :keymaps 'normal
     :prefix ", v")
+
+  (jag--visual-leader-def
+    "l"  'whitespace-mode)
 #+END_SRC
 
 ** Evil
@@ -200,12 +226,16 @@ Vim undo tree
 Source: [[https://www.emacswiki.org/emacs/UndoTree]]
 #+BEGIN_SRC emacs-lisp 
   (use-package undo-tree
-    :commands undo-tree-visualize undo-tree-undo undo-tree-redo
-    :bind (:map undo-tree-visualizer-mode-map
-           ([remap evil-backward-char] . undo-tree-visualize-switch-branch-left)
-           ([remap evil-forward-char] . undo-tree-visualize-switch-branch-right)
-           ([remap evil-next-line] . undo-tree-visualize-redo)
-           ([remap evil-previous-line] . undo-tree-visualize-undo))
+    :general
+    (:keymap 'evil-normal-state-map
+     "u"   'undo-tree-undo
+     "C-r" 'undo-tree-redo)
+    (:keymap 'undo-tree-visualizer-mode-map
+     [remap evil-backward-char] 'undo-tree-visualize-switch-branch-left
+     [remap evil-forward-char]  'undo-tree-visualize-switch-branch-right
+     [remap evil-next-line]     'undo-tree-visualize-redo
+     [remap evil-previous-line] 'undo-tree-visualize-undo)
+    (jag--leader-def "u" 'undo-tree-visualize)
     :diminish)
 #+END_SRC
 
@@ -222,57 +252,6 @@ Source: [[https://github.com/syl20bnr/evil-escape]]
     (setq-default evil-escape-key-sequence "jk")
     (setq evil-escape-unordered-key-sequence 1)
     (evil-escape-mode 1))
-#+END_SRC
-
-*** leader defs
-#+BEGIN_QUOTE
-let there be a group leader
-#+END_QUOTE
-Source: None
-#+BEGIN_SRC emacs-lisp
-  (jag--leader-def
-   ","  'other-window
-   "/"  'helm-swoop
-   "."  'mode-line-other-buffer
-   "!"  'restart-emacs
-   ":"  'eval-expression
-   "'"  'whitespace-mode
-   "a"  'ace-link
-   "b"  'helm-mini             ;; Switch to another buffer
-   "c"  'helm-flycheck
-   ;; Add evil nerd commentary
-   "d"  'kill-this-buffer
-   "D"  'ediff
-   "e"  'evil-exchange
-   "f"  'helm-imenu            ;; Jump to function in buffer
-   "g"  'magit-status
-   "G"  'git-timemachine       ;; Open git timemachine
-   "i"  'use-package-report
-   "l"  'helm-google
-   "L"  'google-this
-   "nn" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
-   "nw" 'widen
-   "o"  'delete-other-windows  ;; C-w o
-   "O"  'delete-window  ;; C-w o
-   "p"  'helm-show-kill-ring
-   "Pp"  'helm-projectile-switch-project
-   "Pf"  'helm-projectile-find-file
-   "s"  'ag-project            ;; Ag search from project's root
-   "r"  'srefactor-refactor-at-point
-   "R"  (lambda () (interactive) (revert-buffer :ignore-auto :noconfirm))
-   "t"  'gtags-reindex
-   "T"  'gtags-find-tag
-   "u"  'undo-tree-visualize
-   "w"  'save-buffer
-   "x"  'helm-M-x
-   "y"  'yas-expand
-   "Yh"  'helm-yas-complete
-   "Yy"  'aya-create
-   "YY"  'aya-create
-   "Ye"  'aya-expand
-   "Yp"  'aya-expand
-   "Yl"  'aya-open-line
-   "Ys"  'aya-persist-snippet)
 #+END_SRC
 
 *** evil-org
@@ -356,7 +335,8 @@ Exchange text more easily within Evil
 Source: [[https://github.com/Dewdrops/evil-exchange]]
 #+BEGIN_SRC emacs-lisp 
   (use-package evil-exchange
-    :commands 'evil-exchange
+    :general
+    (jag--leader-def "e" 'evil-exchange)
     :diminish
     :after evil)
 #+END_SRC
@@ -707,21 +687,24 @@ Source: [[https://github.com/emacs-helm/helm]]
 #+BEGIN_SRC emacs-lisp 
   (use-package helm
     :diminish
-    :bind
-    (("C-x C-F" . helm-find-files)
-     ("C-x C-b" . helm-mini)
-     ("M-x" . 'helm-M-x))
-    :init
+    :general
+    ("C-x C-F" 'helm-find-files)
+    ("C-x C-b" 'helm-mini)
+    ("M-x" 'helm-M-x)
+    (:keymaps 'helm-map
+     "M-j" 'helm-next-line
+     "M-k" 'helm-previous-line
+     "M-u" 'helm-previous-page
+     "M-d" 'helm-next-page)
+    (:keymaps 'helm-find-files-map
+     "M-h" 'helm-find-files-up-one-level
+     "M-l" 'helm-ff-RET)
+    (jag--leader-def
+      "b"  'helm-mini             ;; Switch to another buffer
+      "x"  'helm-M-x
+      "p"  'helm-show-kill-ring
+      "f" 'helm-imenu)
     :config
-    (define-key helm-map (kbd "M-j") 'helm-next-line)
-    (define-key helm-map (kbd "M-k") 'helm-previous-line)
-    (define-key helm-map (kbd "M-u") 'helm-previous-page)
-    (define-key helm-map (kbd "M-d") 'helm-next-page)
-    (add-hook 'helm-find-files-after-init-hook
-              (lambda ()
-                (progn
-                  (define-key helm-find-files-map (kbd "M-h") 'helm-find-files-up-one-level)
-                  (define-key helm-find-files-map (kbd "M-l") 'helm-ff-RET))))
     (helm-mode 1))
 #+END_SRC
 
@@ -782,9 +765,9 @@ helm source for yasnippet.el
 Source: [[https://github.com/emacs-jp/helm-c-yasnippet]]
 #+BEGIN_SRC emacs-lisp 
   (use-package helm-c-yasnippet
-    :commands 'helm-yas-complete
-    :diminish
-    :after helm)
+    :general
+    (jag--leader-def "Yh" 'helm-yas-complete)
+    :diminish)
 #+END_SRC
 
 *** helm-company
@@ -817,15 +800,15 @@ Source: [[https://github.com/jupl/helm-gitignore]]
 #+END_SRC
 
 *** helm-google
-#+BEGIN_QUOTE
+BEGIN_QUOTE
 Emacs Helm Interface for quick Google searches
 #+END_QUOTE
 Source: [[https://framagit.org/steckerhalter/helm-google]]
 #+BEGIN_SRC emacs-lisp 
   (use-package helm-google
-
-    :diminish
-    :after helm)
+    :general
+    (jag--leader-def "l" 'helm-google)
+    :diminish)
 #+END_SRC
 
 *** helm-gtags
@@ -880,10 +863,9 @@ Helm integration for Projectile
 Source: [[https://github.com/bbatsov/helm-projectile]]
 #+BEGIN_SRC emacs-lisp 
   (use-package helm-projectile
-    :commands
-    (helm-projectile
-     helm-projectile-find-file
-     helm-projectile-switch-project)
+    :general
+    (jag--leader-def "P" 'helm-projectile)
+    (jag--leader-def "s" 'helm-projectile-ag)
     :diminish
     :config
     (helm-projectile-on))
@@ -896,6 +878,8 @@ Efficiently hopping squeezed lines powered by helm interface
 Source: [[https://github.com/ShingoFukuyama/helm-swoop]]
 #+BEGIN_SRC emacs-lisp 
   (use-package helm-swoop
+    :general
+    (jag--leader-def "/"  'helm-swoop)
     :commands 'helm-swoop
     :diminish)
 #+END_SRC
@@ -907,7 +891,8 @@ A Git porcelain inside Emacs.
 Source: [[https://github.com/magit/magit]]
 #+BEGIN_SRC emacs-lisp 
   (use-package magit
-    :commands 'magit-status
+    :general
+    (jag--leader-def "g" 'magit-status)
     :diminish)
 #+END_SRC
 *** git-timemachine
@@ -917,19 +902,21 @@ Walk through git revisions of a file
 Source: [[https://gitlab.com/pidu/git-timemachine]]
 #+BEGIN_SRC emacs-lisp 
   (use-package git-timemachine
-    :commands 'git-timemachine
+    :general
+    (jag--leader-def "G" 'git-timemachine)
+    (:keymaps 'git-timemachine-mode-map
+     ;; Remove default timemachine mode bindings
+     "n" nil
+     "p" nil
+     "w" nil
+     "W" nil
+     ;; Add my own key bindings
+     "J" 'git-timemachine-show-previous-revision
+     "K" 'git-timemachine-show-next-revision
+     "Y" 'git-timemachine-kill-revision
+     "q" 'git-timemachine-quit)
     :diminish
     :config
-    ;; Remove default timemachine mode bindings
-    (define-key git-timemachine-mode-map (kbd "n") nil)
-    (define-key git-timemachine-mode-map (kbd "p") nil)
-    (define-key git-timemachine-mode-map (kbd "w") nil)
-    (define-key git-timemachine-mode-map (kbd "W") nil)
-    ;; Add my own key bindings
-    (define-key git-timemachine-mode-map (kbd "J") 'git-timemachine-show-previous-revision)
-    (define-key git-timemachine-mode-map (kbd "K") 'git-timemachine-show-next-revision)
-    (define-key git-timemachine-mode-map (kbd "Y") 'git-timemachine-kill-revision)
-    (define-key git-timemachine-mode-map (kbd "q") 'git-timemachine-quit)
     ;; Override evil keymap with timemachine's map
     (evil-make-intercept-map git-timemachine-mode-map 'normal)
     (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
@@ -1121,7 +1108,8 @@ Show flycheck errors with helm
 Source: [[https://github.com/yasuyk/helm-flycheck]]
 #+BEGIN_SRC emacs-lisp 
   (use-package helm-flycheck
-    :commands 'helm-flycheck
+    :general
+    (jag--leader-def "c" 'helm-flycheck)
     :diminish)
 #+END_SRC
 
@@ -1185,7 +1173,14 @@ Quickly create disposable yasnippets
 Source: [[https://github.com/abo-abo/auto-yasnippet]]
 #+BEGIN_SRC emacs-lisp 
   (use-package auto-yasnippet
-    :commands (aya-create aya-expand aya-open-line aya-persist-snippet)
+    :general
+    (jag--leader-def
+      "Yy" 'aya-create
+      "YY" 'aya-create
+      "Ye" 'aya-expand
+      "Yp" 'aya-expand
+      "Yl" 'aya-open-line
+      "Ys" 'aya-persist-snippet)
     :config
     (setq aya-case-fold t)
     :diminish)
@@ -1281,7 +1276,8 @@ Source: [[https://github.com/tuhdo/semantic-refactor]]
 #+BEGIN_SRC emacs-lisp 
   (use-package srefactor
     :diminish
-    :commands 'srefactor-refactor-at-point
+    :general
+    (jag--leader-def "r" 'srefactor-refactor-at-point)
     :config
     (semantic-mode 1))
 #+END_SRC
@@ -1307,8 +1303,8 @@ Source: [[https://github.com/joaotavora/yasnippet]]
 #+BEGIN_SRC emacs-lisp 
   (use-package yasnippet
     :diminish
-    :commands 'yas-expand
-    :defer t
+    :general
+    (jag--leader-def "y" 'yas-expand)
     :config
     (yas-global-mode 1))
 #+END_SRC
@@ -1329,8 +1325,10 @@ Source: [[https://github.com/cute-jumper/ace-jump-helm-line]]
 Quickly follow links
 #+END_QUOTE
 Source: [[https://github.com/abo-abo/ace-link]]
-#+BEGIN_SRC emacs-lisp 
+#+BEGIN_SRC emacs-lisp
   (use-package ace-link
+    :general
+    (jag--leader-def "a" 'ace-link)
     :commands 'ace-link
     :diminish)
 #+END_SRC
@@ -1342,7 +1340,7 @@ A front-end for ag ('the silver searcher'), the C ack replacement.
 Source: [[https://github.com/Wilfred/ag.el]]
 #+BEGIN_SRC emacs-lisp 
   (use-package ag
-    :commands ag-project
+    :defer t
     :diminish)
 #+END_SRC
 
@@ -1386,7 +1384,8 @@ Easy diff between two files
 Source: [[https://www.gnu.org/software/emacs/manual/html_node/ediff/]]
 #+BEGIN_SRC emacs-lisp 
   (use-package ediff
-    :commands 'ediff
+    :general
+    (jag--leader-def "D" 'ediff)
     :diminish)
 #+END_SRC
 
@@ -1543,8 +1542,10 @@ Open a junk (memo) file to try-and-error
 Source: [[https://github.com/rubikitch/open-junk-file]]
 #+BEGIN_SRC emacs-lisp 
   (use-package open-junk-file
-    :disabled t
-    :diminish)
+    :general (jag--leader-def "t" 'open-junk-file)
+    :diminish
+    :config
+    (setq open-junk-file-directory (concat user-emacs-directory "junk/%Y/%m/%d-%H%M%S.")))
 #+END_SRC
 
 *** persp-mode
@@ -1609,6 +1610,8 @@ Restart emacs from within emacs
 Source: [[https://github.com/iqbalansari/restart-emacs]]
 #+BEGIN_SRC emacs-lisp 
   (use-package restart-emacs
+    :general
+    (jag--leader-def "!" 'restart-emacs)
     :commands 'restart-emacs
     :diminish)
 #+END_SRC
@@ -1860,10 +1863,11 @@ automatic and manual symbol highlighting
 Source: [[https://github.com/nschum/highlight-symbol.el]]
 #+BEGIN_SRC emacs-lisp 
   (use-package highlight-symbol
+    :disabled t
     :diminish
     :defer 15
     :general
-    (jag--visual-leader-def "n" 'auto-highlight-symbol-mode)
+    (jag--visual-leader-def "N" 'auto-highlight-symbol-mode)
     :config
     (add-hook 'prog-mode-hook 'auto-highlight-symbol-mode))
 #+END_SRC
@@ -2011,7 +2015,8 @@ A set of functions and bindings to google under point.
 Source: [[https://github.com/Malabarba/emacs-google-this]]
 #+BEGIN_SRC emacs-lisp 
   (use-package google-this
-    :commands 'google-this
+    :general
+    (jag--leader-def "L" 'google-this)
     :diminish)
 #+END_SRC
 
