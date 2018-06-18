@@ -65,10 +65,6 @@ Set emacs to use system clipboard
 #+BEGIN_SRC emacs-lisp
   (setq x-select-enable-clipboard t)
 #+END_SRC
-Enabled global visual line mode for line wrapping
-#+BEGIN_SRC emacs-lisp
-  (global-visual-line-mode)
-#+END_SRC
 Set up org src settings
 #+BEGIN_SRC emacs-lisp
   (setq org-src-tab-acts-natively t)
@@ -1973,6 +1969,18 @@ Source: [[https://github.com/k-talo/volatile-highlights.el]]
     :config
     (volatile-highlights-mode t))
 #+END_SRC
+*** visual-line-mode
+#+BEGIN_QUOTE
+Enables visual line mode
+#+END_QUOTE
+Source: [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Visual-Line-Mode.html]]
+#+BEGIN_SRC emacs-lisp
+  (jag--visual-leader-def "w" 'visual-line-mode)
+  (general-define-key
+   :keymaps 'visual-line-mode-map
+   [remap evil-next-line] 'evil-next-visual-line
+   [remap evil-previous-line] 'evil-previous-visual-line)
+    #+END_SRC
 ** Web
 *** bbdb
 #+BEGIN_QUOTE
