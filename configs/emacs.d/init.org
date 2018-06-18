@@ -2084,6 +2084,8 @@ Source: [[https://emacs.stackexchange.com/questions/10230/how-to-indent-keywords
             (lambda () (setq-local lisp-indent-function 'Fuco1/lisp-indent-function)))
   (add-hook 'org-mode-hook
             (lambda () (setq-local lisp-indent-function 'Fuco1/lisp-indent-function)))
+  (add-hook 'org-src-mode-hook
+            (lambda () (setq-local lisp-indent-function 'Fuco1/lisp-indent-function)))
 #+END_SRC
 The indention function
 #+BEGIN_SRC emacs-lisp
