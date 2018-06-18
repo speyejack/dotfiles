@@ -1785,11 +1785,15 @@ Source: [[https://github.com/andre-r/centered-cursor-mode.el]]
 Highlight text that extends beyond a  column
 #+END_QUOTE
 Source: [[https://github.com/jordonbiondo/column-enforce-mode]]
-#+BEGIN_SRC emacs-lisp 
-  (use-package column-enforce-mode
-    :disabled t
-    :commands 'column-enforce-mode
-    :diminish)
+ #+BEGIN_SRC emacs-lisp
+   (use-package column-enforce-mode
+     :defer 15
+     :general
+     (jag--visual-def "C" 'column-number-mode)
+     :diminish
+     :config
+     (setq column-enforce-column 120)
+     (global-column-enforce-mode t))
 #+END_SRC
 
 *** diff-hl
