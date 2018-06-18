@@ -1805,6 +1805,8 @@ Source: [[https://github.com/dgutov/diff-hl]]
   (use-package diff-hl
     :diminish
     :defer 15
+    :general
+    (jag--visual-def "d" 'global-diff-hl-mode)
     :config
     (global-diff-hl-mode))
 #+END_SRC
