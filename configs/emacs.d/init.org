@@ -1879,6 +1879,8 @@ Source: [[https://github.com/tarsius/hl-todo]]
   (use-package hl-todo
     :diminish
     :defer 15
+    :general
+    (jag--visual-def "t" 'hl-todo-mode)
     :config
     (global-hl-todo-mode))
 #+END_SRC
