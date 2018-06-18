@@ -1832,8 +1832,10 @@ Highlight numbers in source code
 Source: [[https://github.com/Fanael/highlight-numbers]]
 #+BEGIN_SRC emacs-lisp 
   (use-package highlight-numbers
-    :disabled t
+    :defer 15
     :diminish
+    :general
+    (jag--visual-def "n" 'highlight-numbers-mode)
     :config
     (add-hook 'prog-mode-hook 'highlight-numbers-mode))
 #+END_SRC
