@@ -1849,6 +1849,8 @@ Source: [[https://github.com/tsdh/highlight-parentheses.el]]
   (use-package highlight-parentheses
     :diminish
     :defer 5
+    :general
+    (jag--visual-def "p" 'highlight-parentheses-mode)
     :config
     (global-highlight-parentheses-mode))
 #+END_SRC
