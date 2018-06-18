@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : leader
+#key : leader
+#contributor : Jack
+# --
+:general
+  (jag--leader-def "$1" '$2)
