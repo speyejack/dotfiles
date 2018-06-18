@@ -1818,11 +1818,11 @@ Automatic resizing of Emacs windows to the golden ratio
 Source: [[https://github.com/roman/golden-ratio.el]]
 #+BEGIN_SRC emacs-lisp 
   (use-package golden-ratio
-    :disabled t
     :diminish
+    :general
+    (jag--visual-def "g" 'golden-ratio-mode)
     :config
-    (add-to-list 'golden-ratio-exclude-buffer-names " *MINIMAP*")
-    (golden-ratio-mode 1))
+    (add-to-list 'golden-ratio-exclude-buffer-names " *MINIMAP*"))
 #+END_SRC
 
 *** highlight-numbers
