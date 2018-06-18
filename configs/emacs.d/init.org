@@ -227,62 +227,55 @@ Source: [[https://github.com/syl20bnr/evil-escape]]
     (evil-escape-mode 1))
 #+END_SRC
 
-*** evil-leader
+*** leader defs
 #+BEGIN_QUOTE
-let there be <leader>
+let there be a group leader
 #+END_QUOTE
-Source: [[https://github.com/cofi/evil-leader]]
-#+BEGIN_SRC emacs-lisp 
-  (use-package evil-leader
-    :diminish
-    :config
-    (evil-leader/set-leader ",")
-    (evil-leader/set-key
-      ","  'other-window
-      "/"  'helm-swoop
-      "."  'mode-line-other-buffer
-      "!"  'restart-emacs
-      ":"  'eval-expression
-      "'"  'whitespace-mode
-      "a"  'ace-link
-      "b"  'helm-mini             ;; Switch to another buffer
-      "c"  'helm-flycheck
-      ;; Add evil nerd commentary
-      "d"  'kill-this-buffer
-      "D"  'ediff
-      "e"  'evil-exchange
-      "f"  'helm-imenu            ;; Jump to function in buffer
-      "g"  'magit-status
-      "G"  'git-timemachine       ;; Open git timemachine
-      "i"  'use-package-report
-      "l"  'helm-google
-      "L"  'google-this
-      "'"  'whitespace-mode       ;; Show invisible characters
-      "nn" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
-      "nw" 'widen
-      "o"  'delete-other-windows  ;; C-w o
-      "O"  'delete-window  ;; C-w o
-      "p"  'helm-show-kill-ring
-      "Pp"  'helm-projectile-switch-project
-      "Pf"  'helm-projectile-find-file
-      "s"  'ag-project            ;; Ag search from project's root
-      "r"  'srefactor-refactor-at-point
-      "R"  (lambda () (interactive) (revert-buffer :ignore-auto :noconfirm))
-      "t"  'gtags-reindex
-      "T"  'gtags-find-tag
-      "u"  'undo-tree-visualize
-      "v"  'centered-cursor-mode
-      "w"  'save-buffer
-      "x"  'helm-M-x
-      "y"  'yas-expand
-      "Yh"  'helm-yas-complete
-      "Yy"  'aya-create
-      "YY"  'aya-create
-      "Ye"  'aya-expand
-      "Yp"  'aya-expand
-      "Yl"  'aya-open-line
-      "Ys"  'aya-persist-snippet)
-    (global-evil-leader-mode))
+Source: None
+#+BEGIN_SRC emacs-lisp
+  (jag--leader-def
+   ","  'other-window
+   "/"  'helm-swoop
+   "."  'mode-line-other-buffer
+   "!"  'restart-emacs
+   ":"  'eval-expression
+   "'"  'whitespace-mode
+   "a"  'ace-link
+   "b"  'helm-mini             ;; Switch to another buffer
+   "c"  'helm-flycheck
+   ;; Add evil nerd commentary
+   "d"  'kill-this-buffer
+   "D"  'ediff
+   "e"  'evil-exchange
+   "f"  'helm-imenu            ;; Jump to function in buffer
+   "g"  'magit-status
+   "G"  'git-timemachine       ;; Open git timemachine
+   "i"  'use-package-report
+   "l"  'helm-google
+   "L"  'google-this
+   "nn" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
+   "nw" 'widen
+   "o"  'delete-other-windows  ;; C-w o
+   "O"  'delete-window  ;; C-w o
+   "p"  'helm-show-kill-ring
+   "Pp"  'helm-projectile-switch-project
+   "Pf"  'helm-projectile-find-file
+   "s"  'ag-project            ;; Ag search from project's root
+   "r"  'srefactor-refactor-at-point
+   "R"  (lambda () (interactive) (revert-buffer :ignore-auto :noconfirm))
+   "t"  'gtags-reindex
+   "T"  'gtags-find-tag
+   "u"  'undo-tree-visualize
+   "w"  'save-buffer
+   "x"  'helm-M-x
+   "y"  'yas-expand
+   "Yh"  'helm-yas-complete
+   "Yy"  'aya-create
+   "YY"  'aya-create
+   "Ye"  'aya-expand
+   "Yp"  'aya-expand
+   "Yl"  'aya-open-line
+   "Ys"  'aya-persist-snippet)
 #+END_SRC
 
 *** evil-org
