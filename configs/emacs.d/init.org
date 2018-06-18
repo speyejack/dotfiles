@@ -167,7 +167,8 @@ Set up several key binders for later use
     :keymaps 'normal
     :prefix ", m")
 
-  (general-create-definer jag--visual-def
+  (general-create-definer jag--visual-leader-def
+    :which-key "Visual leader prefix"
     :keymaps 'normal
     :prefix ", v")
 #+END_SRC
@@ -1775,7 +1776,7 @@ Source: [[https://github.com/andre-r/centered-cursor-mode.el]]
     :diminish
     :defer 1
     :general
-    (jag--visual-def "c" 'centered-cursor-mode)
+    (jag--visual-leader-def "c" 'centered-cursor-mode)
     :config
     (global-centered-cursor-mode))
 #+END_SRC
@@ -1789,7 +1790,7 @@ Source: [[https://github.com/jordonbiondo/column-enforce-mode]]
    (use-package column-enforce-mode
      :defer 15
      :general
-     (jag--visual-def "C" 'column-number-mode)
+     (jag--visual-leader-def "C" 'column-number-mode)
      :diminish
      :config
      (setq column-enforce-column 120)
@@ -1806,7 +1807,7 @@ Source: [[https://github.com/dgutov/diff-hl]]
     :diminish
     :defer 15
     :general
-    (jag--visual-def "d" 'global-diff-hl-mode)
+    (jag--visual-leader-def "d" 'global-diff-hl-mode)
     :config
     (global-diff-hl-mode))
 #+END_SRC
@@ -1820,7 +1821,7 @@ Source: [[https://github.com/roman/golden-ratio.el]]
   (use-package golden-ratio
     :diminish
     :general
-    (jag--visual-def "g" 'golden-ratio-mode)
+    (jag--visual-leader-def "g" 'golden-ratio-mode)
     :config
     (add-to-list 'golden-ratio-exclude-buffer-names " *MINIMAP*"))
 #+END_SRC
@@ -1835,7 +1836,7 @@ Source: [[https://github.com/Fanael/highlight-numbers]]
     :defer 15
     :diminish
     :general
-    (jag--visual-def "n" 'highlight-numbers-mode)
+    (jag--visual-leader-def "n" 'highlight-numbers-mode)
     :config
     (add-hook 'prog-mode-hook 'highlight-numbers-mode))
 #+END_SRC
@@ -1850,7 +1851,7 @@ Source: [[https://github.com/tsdh/highlight-parentheses.el]]
     :diminish
     :defer 5
     :general
-    (jag--visual-def "p" 'highlight-parentheses-mode)
+    (jag--visual-leader-def "p" 'highlight-parentheses-mode)
     :config
     (global-highlight-parentheses-mode))
 #+END_SRC
@@ -1865,7 +1866,7 @@ Source: [[https://github.com/nschum/highlight-symbol.el]]
     :diminish
     :defer 15
     :general
-    (jag--visual-def "n" 'auto-highlight-symbol-mode)
+    (jag--visual-leader-def "n" 'auto-highlight-symbol-mode)
     :config
     (add-hook 'prog-mode-hook 'auto-highlight-symbol-mode))
 #+END_SRC
@@ -1880,7 +1881,7 @@ Source: [[https://github.com/tarsius/hl-todo]]
     :diminish
     :defer 15
     :general
-    (jag--visual-def "t" 'hl-todo-mode)
+    (jag--visual-leader-def "t" 'hl-todo-mode)
     :config
     (global-hl-todo-mode))
 #+END_SRC
@@ -1893,7 +1894,7 @@ Source: [[https://github.com/bmag/imenu-list]]
 #+BEGIN_SRC emacs-lisp 
   (use-package imenu-list
     :general
-    (jag--visual-def "i" 'imenu-list-smart-toggle)
+    (jag--visual-leader-def "i" 'imenu-list-smart-toggle)
     :diminish)
 #+END_SRC
 
@@ -1906,7 +1907,7 @@ Source: [[https://github.com/dengste/minimap]]
   (use-package minimap
     :commands 'minimap-mode
     :general
-    (jag--visual-def "m" 'minimap-mode)
+    (jag--visual-leader-def "m" 'minimap-mode)
     :diminish
     :config
     (setq minimap-width-fraction 0.10)
@@ -1923,7 +1924,7 @@ Source: [[https://github.com/CodeFalling/nlinum-relative]]
   (use-package nlinum-relative
     :defer 15
     :general
-    (jag--visual-def "n" 'nlinum-relative-mode)
+    (jag--visual-leader-def "n" 'nlinum-relative-mode)
     :diminish
     :config
     (global-nlinum-relative-mode t)
@@ -1938,7 +1939,7 @@ Source: [[https://github.com/Fanael/rainbow-delimiters]]
 #+BEGIN_SRC emacs-lisp 
   (use-package rainbow-delimiters
     :general
-    (jag--visual-def "r" 'rainbow-delimiters-mode)
+    (jag--visual-leader-def "r" 'rainbow-delimiters-mode)
     :diminish)
 #+END_SRC
 
@@ -1952,7 +1953,7 @@ Source: [[https://github.com/emacsmirror/rainbow-mode]]
     :diminish
     :defer 15
     :general
-    (jag--visual-def "R" 'rainbow-mode)
+    (jag--visual-leader-def "R" 'rainbow-mode)
     :config
     (add-hook 'prog-mode-hook 'rainbow-mode))
 #+END_SRC
@@ -1967,7 +1968,7 @@ Source: [[https://github.com/k-talo/volatile-highlights.el]]
     :diminish
     :defer 5
     :general
-    (jag--visual-def "v" 'volatile-highlights-mode)
+    (jag--visual-leader-def "v" 'volatile-highlights-mode)
     :config
     (volatile-highlights-mode t))
 #+END_SRC
