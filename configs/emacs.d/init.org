@@ -1904,11 +1904,10 @@ Adds a minimap as a sidebar
 Source: [[https://github.com/dengste/minimap]]
 #+BEGIN_SRC emacs-lisp 
   (use-package minimap
-    :disabled t
     :commands 'minimap-mode
+    :general
+    (jag--visual-def "m" 'minimap-mode)
     :diminish
-    :init
-    (add-hook 'prog-mode-hook 'minimap-mode)
     :config
     (setq minimap-width-fraction 0.10)
     (setq minimap-minimum-width 15)
