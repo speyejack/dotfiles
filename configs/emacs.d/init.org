@@ -1892,7 +1892,8 @@ Show imenu entries in a separate buffer
 Source: [[https://github.com/bmag/imenu-list]]
 #+BEGIN_SRC emacs-lisp 
   (use-package imenu-list
-    :disabled t
+    :general
+    (jag--visual-def "i" 'imenu-list-smart-toggle)
     :diminish)
 #+END_SRC
 
