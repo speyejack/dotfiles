@@ -1862,10 +1862,12 @@ automatic and manual symbol highlighting
 Source: [[https://github.com/nschum/highlight-symbol.el]]
 #+BEGIN_SRC emacs-lisp 
   (use-package highlight-symbol
-    :disabled t
     :diminish
+    :defer 15
+    :general
+    (jag--visual-def "n" 'auto-highlight-symbol-mode)
     :config
-    (global-auto-highlight-symbol-mode 1))
+    (add-hook 'prog-mode-hook 'auto-highlight-symbol-mode))
 #+END_SRC
 
 *** hl-todo
