@@ -1966,6 +1966,8 @@ Source: [[https://github.com/k-talo/volatile-highlights.el]]
   (use-package volatile-highlights
     :diminish
     :defer 5
+    :general
+    (jag--visual-def "v" 'volatile-highlights-mode)
     :config
     (volatile-highlights-mode t))
 #+END_SRC
