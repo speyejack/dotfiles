@@ -2725,8 +2725,10 @@ Source: [[https://github.com/ionrock/pytest-el]]
 Source: [[https://github.com/JorisE/yapfify]]
 #+BEGIN_SRC emacs-lisp 
   (use-package yapfify
-    :disabled t
-    :diminish)
+    :general
+    (jag--local-leader-def "=" 'yapf-mode)
+    :hook (python-mode . yapf-mode)
+    :diminish yapf-mode)
 #+END_SRC
 ** XML
 *** nxml
