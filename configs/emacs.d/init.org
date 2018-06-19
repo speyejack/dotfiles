@@ -1263,7 +1263,7 @@ Source: [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Semantic.htm
     :diminish
     :defer 15
     :config
-    (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
+    ;; (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
     (semantic-mode 1))
 #+END_SRC
 
