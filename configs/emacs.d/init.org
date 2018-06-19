@@ -207,8 +207,6 @@ Source: [[https://github.com/emacs-evil/evil]]
     :init (setq evil-want-integration nil)
     :diminish
     :config
-    (evil-define-key 'normal global-map (kbd "j") 'evil-next-visual-line)
-    (evil-define-key 'normal global-map (kbd "k") 'evil-previous-visual-line)
     (evil-define-key 'normal global-map (kbd "gh") 'evil-first-non-blank)
     (evil-define-key 'normal global-map (kbd "gl") 'evil-end-of-line)
     (evil-define-key 'normal global-map (kbd "-")  'helm-find-files)
