@@ -206,13 +206,13 @@ Source: [[https://github.com/emacs-evil/evil]]
   (use-package evil
     :init (setq evil-want-integration nil)
     :diminish
+    :general
+    (:states 'normal
+     "gh" 'evil-first-non-blank
+     "gl" 'evil-end-of-line
+     "-"  'helm-find-files
+     "R"  'undo-tree-redo)
     :config
-    (evil-define-key 'normal global-map (kbd "gh") 'evil-first-non-blank)
-    (evil-define-key 'normal global-map (kbd "gl") 'evil-end-of-line)
-    (evil-define-key 'normal global-map (kbd "-")  'helm-find-files)
-    (evil-define-key 'normal global-map (kbd "R")  'undo-tree-redo)
-    (evil-define-key 'normal global-map (kbd "C-r")  'undo-tree-redo)
-    (evil-define-key 'normal global-map (kbd "u")  'undo-tree-undo)
     (setq evil-magic 'very-magic)
     (remove 'doc-view-mode evil-emacs-state-modes)
     (evil-mode 1))
@@ -226,7 +226,7 @@ Source: [[https://www.emacswiki.org/emacs/UndoTree]]
 #+BEGIN_SRC emacs-lisp 
   (use-package undo-tree
     :general
-    (:keymaps 'evil-normal-state-map
+    (:states 'normal
      "u"   'undo-tree-undo
      "C-r" 'undo-tree-redo)
     (:keymaps 'undo-tree-visualizer-mode-map
