@@ -2726,7 +2726,10 @@ Source: [[https://github.com/JorisE/yapfify]]
 #+BEGIN_SRC emacs-lisp 
   (use-package yapfify
     :general
-    (jag--local-leader-def "=" 'yapf-mode)
+    (jag--local-leader-def
+      :states 'normal
+      :keymaps 'python-mode-map
+      "=" 'yapf-mode)
     :hook (python-mode . yapf-mode)
     :diminish yapf-mode)
 #+END_SRC
