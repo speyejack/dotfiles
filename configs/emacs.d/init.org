@@ -227,10 +227,10 @@ Source: [[https://www.emacswiki.org/emacs/UndoTree]]
 #+BEGIN_SRC emacs-lisp 
   (use-package undo-tree
     :general
-    (:keymap 'evil-normal-state-map
+    (:keymaps 'evil-normal-state-map
      "u"   'undo-tree-undo
      "C-r" 'undo-tree-redo)
-    (:keymap 'undo-tree-visualizer-mode-map
+    (:keymaps 'undo-tree-visualizer-mode-map
      [remap evil-backward-char] 'undo-tree-visualize-switch-branch-left
      [remap evil-forward-char]  'undo-tree-visualize-switch-branch-right
      [remap evil-next-line]     'undo-tree-visualize-redo
@@ -1005,14 +1005,14 @@ Source: [[https://github.com/company-mode/company-mode]]
     :diminish
     :defer 15
     :general
-    (:keymap 'company-active-map
+    (:keymaps 'company-active-map
      "C-n" 'company-select-next-or-abort
      "C-p" 'company-select-previous-or-abort
      "C-j" 'company-select-next-or-abort
      "C-k" 'company-select-previous-or-abort
      "M-j" 'company-select-next
      "M-k" 'company-select-previous)
-    (:keymap 'company-search-map
+    (:keymaps 'company-search-map
      "C-j" 'company-select-next-or-abort
      "C-k" 'company-select-previous-or-abort
      "M-j" 'company-select-next
