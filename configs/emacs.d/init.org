@@ -2545,6 +2545,26 @@ Source: [[https://www.emacswiki.org/emacs/PythonProgrammingInEmacs]]
     :disabled t
     :diminish)
 #+END_SRC
+*** pdb
+#+BEGIN_SRC emacs-lisp
+  (general-define-key
+   :states 'normal
+   :keymaps 'gud-minor-mode-map
+   "M-b" 'gud-break
+   "M-r" 'gud-refresh
+   "M-l" 'gud-step
+   "M-j" 'gud-next
+   "M-i" 'gud-stepi
+   "M-e" 'gud-statement
+   "M-p" 'gud-print
+   "M-c" 'gud-cont
+   "M-d" 'gud-remove
+   "M-t" 'gud-tbreak
+   "M-K" 'gud-up
+   "M-J" 'gud-down
+   "M-h" 'gud-finish
+   "M-g" 'gud-jump)
+#+END_SRC
 
 *** anaconda-mode
 #+BEGIN_QUOTE
