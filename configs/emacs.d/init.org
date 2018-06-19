@@ -140,7 +140,6 @@ Source: [[https://github.com/magnars/s.el]]
   (use-package s
     :diminish)
 #+END_SRC
-* General Packages
 ** General
 *** general
 #+BEGIN_QUOTE
@@ -196,6 +195,7 @@ Setup a visual leader definer
     "l"  'whitespace-mode)
 #+END_SRC
 
+* General Packages
 ** Evil
 *** evil
 #+BEGIN_QUOTE
