@@ -2535,6 +2535,17 @@ Source: [[https://github.com/immerrr/lua-mode]]
     :diminish)
 #+END_SRC
 ** Python
+*** python
+#+BEGIN_QUOTE
+Python mode
+#+END_QUOTE
+Source: [[https://www.emacswiki.org/emacs/PythonProgrammingInEmacs]]
+#+BEGIN_SRC emacs-lisp
+  (use-package python
+    :disabled t
+    :diminish)
+#+END_SRC
+
 *** anaconda-mode
 #+BEGIN_QUOTE
 Code navigation, documentation lookup and completion for Python
@@ -2679,17 +2690,6 @@ Easy Python test running in Emacs
 Source: [[https://github.com/ionrock/pytest-el]]
 #+BEGIN_SRC emacs-lisp 
   (use-package pytest
-    :disabled t
-    :diminish)
-#+END_SRC
-
-*** python
-#+BEGIN_QUOTE
-Python mode
-#+END_QUOTE
-Source: [[https://www.emacswiki.org/emacs/PythonProgrammingInEmacs]]
-#+BEGIN_SRC emacs-lisp 
-  (use-package python
     :disabled t
     :diminish)
 #+END_SRC
