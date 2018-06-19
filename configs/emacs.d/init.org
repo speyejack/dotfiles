@@ -165,6 +165,7 @@ Setup a leader definer
     ":"  'eval-expression
     "d"  'kill-this-buffer
     "i"  'use-package-report
+    "I"  'general-describe-keybindings
     "nn" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
     "nw" 'widen
     "o"  'delete-other-windows  ;; C-w o
