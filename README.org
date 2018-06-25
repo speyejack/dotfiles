@@ -1,0 +1,33 @@
+#+TITLE: My Dotfiles
+A collection of all of my different dotfiles.
+** Emacs
+My emacs config that powers all of my emacs
+
+It is mainly powered by a [[./configs/emacs.d/init.org][single org file]]
+
+Directory: [[./configs/emacs.d/]]
+
+** Ssh
+My ssh config to organize my different keys
+
+Directory: [[./configs/ssh/]]
+
+** I3
+My i3 config to setup i3 controls
+
+Directory: [[./configs/i3/]]
+
+** I3Blocks
+My i3blocks config which just sets up i3blocks
+
+Directory: [[./configs/i3blocks/]]
+
+** Zsh
+My zsh config so that I can use the terminal sanely
+
+Directory: [[./configs/zsh/]]
+
+** Other
+There are several other configs in there that I'm not currently using, so for now I'm leaving them blank
+
+Directory: [[./configs/]]
