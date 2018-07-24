@@ -2007,6 +2007,25 @@ Source: [[https://github.com/skeeto/x86-lookup]]
     :commands 'x86-lookup
     :diminish)
 #+END_SRC
+** Arduino
+*** arduino-mode
+#+BEGIN_QUOTE
+Arduino mode used for editing ino files
+#+END_QUOTE
+Source: [[https://github.com/bookest/arduino-mode]]
+#+BEGIN_SRC emacs-lisp
+  (use-package arduino-mode
+    :mode "\\.ino\\'"
+    :commands arduino-mode
+    :config
+    (add-hook 'arduino-mode-hook
+              (lambda ()
+                (progn
+                  (setq-local tab-width 2)
+                  (setq-local indent-tabs-mode nil))))
+    :diminish)
+#+END_SRC
+
 ** Emacs-lisp
 *** auto-compile
 #+BEGIN_QUOTE
