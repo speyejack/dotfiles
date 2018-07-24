@@ -37,6 +37,7 @@ Turn on tab indention and set tab width
 #+BEGIN_SRC emacs-lisp 
   (setq-default c-basic-offset 4
                 tab-width 4
+                c-default-style "linux"
                 indent-tabs-mode t)
 #+END_SRC
 Configure where auto saves go and several backup settings
