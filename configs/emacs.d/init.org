@@ -164,6 +164,7 @@ Setup a leader definer
     "."  'mode-line-other-buffer
     ":"  'eval-expression
     "d"  'kill-this-buffer
+    "B"  'ibuffer
     "i"  'use-package-report
     "I"  'general-describe-keybindings
     "nn" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
