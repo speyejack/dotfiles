@@ -214,6 +214,9 @@ Source: [[https://github.com/emacs-evil/evil]]
      "gl" 'evil-end-of-line
      "-"  'helm-find-files
      "R"  'undo-tree-redo)
+    (jag--leader-def "=" (lambda () (interactive)
+                           (save-excursion
+                             (evil-indent (point-min) (point-max)))))
     :config
     (setq evil-magic 'very-magic)
     (remove 'doc-view-mode evil-emacs-state-modes)
