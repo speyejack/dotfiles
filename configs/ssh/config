@@ -17,3 +17,8 @@ Host bitbucket-nau
 	 User git
 	 HostName bitbucket.com
 	 IdentityFile ~/.ssh/id_nau
+
+Host monsoon
+	User jg2562
+	HostName monsoon.hpc.nau.edu
+	IdentityFile ~/.ssh/id_nau
