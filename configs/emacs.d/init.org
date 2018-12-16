@@ -1974,7 +1974,7 @@ Source: [[https://github.com/vibhavp/emacs-xkcd]]
     :commands 'xkcd
     :diminish)
 #+END_SRC
-* Language Packages
+* Major Mode Packages
 ** Asm
 *** asm-mode
 #+BEGIN_QUOTE
