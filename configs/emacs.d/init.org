@@ -167,8 +167,10 @@ Setup a leader definer
     "B"  'ibuffer
     "i"  'use-package-report
     "I"  'general-describe-keybindings
-    "nn" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
-    "nw" 'widen
+    "Nn" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
+    "Nw" 'widen
+    "NN" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
+    "NW" 'widen
     "o"  'delete-other-windows  ;; C-w o
     "O"  'delete-window  ;; C-w o
     "R"  (lambda () (interactive) (revert-buffer :ignore-auto :noconfirm))
