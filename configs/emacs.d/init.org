@@ -2493,6 +2493,8 @@ Source: [[https://orgmode.org/]]
     :commands 'org-mode
     :diminish 'org-indent-mode
     :general
+    (jag--leader-def
+      "q" 'jag--quick-org-task-capture)
     (jag--local-leader-def
       :states 'normal
       :keymaps 'org-mode-map
@@ -2502,14 +2504,13 @@ Source: [[https://orgmode.org/]]
       :keymaps 'org-src-mode-map
       "e" 'org-edit-src-exit)
     :config
-    (define-key global-map (kbd "C-c c") 'my-org-task-capture)
     (setq org-capture-templates
           '(("a" "My TODO task format." entry
              (file "~/Dropbox/notes/todos.org")
              "* TODO %?
-    SCHEDULED: %t")))
+        SCHEDULED: %t")))
 
-    (defun my-org-task-capture ()
+    (defun jag--quick-org-task-capture ()
       "Capture a task with my default template."
       (interactive)
       (org-capture nil "a"))
@@ -2540,8 +2541,12 @@ Pomodoro implementation for org-mode.
 Source: [[https://github.com/lolownia/org-pomodoro]]
 #+BEGIN_SRC emacs-lisp
   (use-package org-pomodoro
-    :disabled t
     :commands 'org-pomodoro
+    :general
+    (jag--local-leader-def
+      :states 'normal
+      :keymaps 'org-mode-map
+      "p" 'org-pomodoro)
     :diminish
     :after org)
 #+END_SRC
@@ -2553,15 +2558,16 @@ Repository todo management for org-mode
 Source: [[https://github.com/IvanMalison/org-projectile]]
 #+BEGIN_SRC emacs-lisp
   (use-package org-projectile
-    :disabled t
-    :commands 'org-mode
+    :commands 'org-projectile-project-todo-entry
     :diminish
-    :after org
+    :init
+    (push (org-projectile-project-todo-entry) org-capture-templates)
+    :general
+    (jag--leader-def
+      "Q" (lambda () (interactive) (org-capture nil "p")))
     :config
-    (define-key global-map (kbd "C-c n p") 'org-projectile-project-todo-completing-read)
     (setq org-projectile-projects-file "~/Dropbox/notes/projects.org")
-    (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
-    (push (org-projectile-project-todo-entry) org-capture-templates))
+    (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
 #+END_SRC
 ** Python
 *** python
