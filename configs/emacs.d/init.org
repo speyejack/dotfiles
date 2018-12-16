@@ -2500,6 +2500,7 @@ Source: [[https://orgmode.org/]]
     (jag--local-leader-def
       :states 'normal
       :keymaps 'org-mode-map
+      "t" 'org-babel-tangle
       "e" 'org-edit-special)
     (jag--local-leader-def
       :keymaps 'org-src-mode-map
