@@ -1053,10 +1053,7 @@ Source: [[https://www.emacswiki.org/emacs/FlySpell]]
 #+BEGIN_SRC emacs-lisp 
   (use-package flyspell
     :diminish
-    :defer 15
-    :disabled t
-    :config
-    (flyspell-mode 1))
+    :defer 15)
 #+END_SRC
 
 *** flyspell-correct
@@ -1066,10 +1063,8 @@ correcting words with flyspell via custom interface
 Source: [[https://github.com/d12frosted/flyspell-correct]]
 #+BEGIN_SRC emacs-lisp 
   (use-package flyspell-correct
-    :bind (:map flyspell-mode-map
-           ("C-:" . 'flyspell-correct-previous-word-generic)
-           ("C-;" . 'flyspell-correct-next-word-generic))
-    :disabled t
+    :general
+    (jag--leader-def "C" 'flyspell-correct-next-word-generic)
     :diminish)
 #+END_SRC
 
@@ -1081,7 +1076,6 @@ Source: [[https://github.com/d12frosted/flyspell-correct]]
 #+BEGIN_SRC emacs-lisp 
   (use-package flyspell-correct-helm
     :diminish
-    :disabled t
     :after flyspell-correct)
 #+END_SRC
 ** Text
