@@ -3,4 +3,4 @@
 SCRIPT=$(readlink -f "$0")
 # Absolute path this script is in, thus /home/user/bin
 SCRIPTPATH=$(dirname "$SCRIPT")
-ln -s -r $SCRIPTPATH ~/.config/i3
+ln -s -r $SCRIPTPATH ~/.config/
