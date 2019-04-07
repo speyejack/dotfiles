@@ -2199,6 +2199,48 @@ Source: [[https://github.com/dominikh/go-mode.el]]
     :commands 'go-mode
     :diminish)
 #+END_SRC
+** Gud
+*** Gud
+#+BEGIN_SRC emacs-lisp
+  (use-package gud
+    :commands 'gud-mode
+    :diminish
+    :general
+    (:states 'normal
+     :keymaps 'gud-mode-map
+     "b" 'gud-break
+     "r" 'gud-run
+     "R" 'gud-refresh
+     "l" 'gud-step
+     "L" 'gud-stepi
+     "j" 'gud-next
+     "k" (lambda () ())
+     "e" 'gud-statement
+     "p" 'gud-print
+     "c" 'gud-cont
+     "d" 'gud-remove
+     "B" 'gud-tbreak
+     "K" 'gud-up
+     "J" 'gud-down
+     "h" 'gud-finish
+     "g" 'gud-jump
+     "q" 'jag--gud-quit
+     "il" 'jag--gud-get-local-vars
+     "ia" 'jag--gud-get-arg-vars
+     "ig" 'jag--gud-get-global-vars
+     "p" 'jag--gud-run-expression
+     "P" 'jag--gud-run-star-expression
+     )
+
+    :config
+    (gud-def jag--gud-quit "quit" "Quits gud")
+    (gud-def jag--gud-get-local-vars "info locals" "Gets local variables from gud")
+    (gud-def jag--gud-get-arg-vars "info args" "Gets arguments variables from gud")
+    (gud-def jag--gud-get-global-vars "info variables" "Gets global variables from gud")
+    (gud-def jag--gud-run-expression "p %e" "Gets global variables from gud")
+    (gud-def jag--gud-run-star-expression "p *(%e)" "Gets global variables from gud")
+    )
+#+END_SRC
 ** Haskell
 *** cmm-mode
 #+BEGIN_QUOTE
@@ -2580,27 +2622,6 @@ Source: [[https://www.emacswiki.org/emacs/PythonProgrammingInEmacs]]
     :disabled t
     :diminish)
 #+END_SRC
-*** pdb
-#+BEGIN_SRC emacs-lisp
-  (general-define-key
-   :states 'normal
-   :keymaps 'gud-minor-mode-map
-   "M-b" 'gud-break
-   "M-r" 'gud-refresh
-   "M-l" 'gud-step
-   "M-j" 'gud-next
-   "M-i" 'gud-stepi
-   "M-e" 'gud-statement
-   "M-p" 'gud-print
-   "M-c" 'gud-cont
-   "M-d" 'gud-remove
-   "M-t" 'gud-tbreak
-   "M-K" 'gud-up
-   "M-J" 'gud-down
-   "M-h" 'gud-finish
-   "M-g" 'gud-jump)
-#+END_SRC
-
 *** anaconda-mode
 #+BEGIN_QUOTE
 Code navigation, documentation lookup and completion for Python
