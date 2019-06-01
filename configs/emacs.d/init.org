@@ -2237,6 +2237,7 @@ Source: [[https://github.com/dominikh/go-mode.el]]
     (gud-def jag--gud-get-local-vars "info locals" "Gets local variables from gud")
     (gud-def jag--gud-get-arg-vars "info args" "Gets arguments variables from gud")
     (gud-def jag--gud-get-global-vars "info variables" "Gets global variables from gud")
+    (gud-def jag--gud-get-class-vars "p *this" "Gets global variables from gud")
     (gud-def jag--gud-run-expression "p %e" "Gets global variables from gud")
     (gud-def jag--gud-run-star-expression "p *(%e)" "Gets global variables from gud")
     )
