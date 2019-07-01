@@ -95,7 +95,7 @@ zle -N zle-line-finish
 # Less mode time to switch modes, may cause bugs
 export KEYTIMEOUT=10
 
-source ~/anaconda3/etc/profile.d/conda.sh
+#source ~/anaconda3/etc/profile.d/conda.sh
 export PATH="~/anaconda3/bin:$PATH"
 export GOPATH="$GOPATH:/home/jack/Dropbox/code/personal/go"
 
