@@ -99,5 +99,3 @@ source ~/anaconda3/etc/profile.d/conda.sh
 export PATH="~/anaconda3/bin:$PATH"
 export GOPATH="$GOPATH:/home/jack/Dropbox/code/personal/go"
 
-# source /opt/ros/kinetic/setup.zsh
-# source ~/Dropbox/code/work/biomech/exo/Gui/devel/setup.zsh
