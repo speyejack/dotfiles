@@ -684,6 +684,17 @@ Source: [[https://github.com/Malabarba/smart-mode-line]]
     :diminish)
 #+END_SRC
 
+*** smart-tabs
+#+BEGIN_QUOTE
+Smarter indentation with mixed tabs and spaces
+#+END_QUOTE
+Source: [[https://github.com/jcsalomon/smarttabs]]
+#+BEGIN_SRC emacs-lisp
+  (use-package smart-tabs-mode
+    :init
+    (smart-tabs-insinuate'c 'javascript 'c++ 'java 'python 'nxml)
+    :diminish)
+#+END_SRC
 ** Helm
 *** helm
 #+BEGIN_QUOTE
@@ -1545,7 +1556,6 @@ Source: [[https://github.com/iqbalansari/restart-emacs]]
     :commands 'restart-emacs
     :diminish)
 #+END_SRC
-
 *** spray
 #+BEGIN_QUOTE
 a speed reading mode
