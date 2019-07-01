@@ -99,3 +99,5 @@ export KEYTIMEOUT=10
 export PATH="~/anaconda3/bin:$PATH"
 export GOPATH="$GOPATH:/home/jack/Dropbox/code/personal/go"
 
+alias dcrun='docker-compose -f ./docker-compose.yml'
+alias dclogs='docker-compose -f ./docker-compose.yml logs -tf --tail="50"'
