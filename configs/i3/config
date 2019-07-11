@@ -76,6 +76,10 @@ bindsym $mod+u focus parent
 bindsym $mod+z focus child
 bindsym $mod+n focus child
 
+# move focused container to scratchpad
+bindsym $mod+i move scratchpad
+bindsym $mod+o scratchpad show; floating disable
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
