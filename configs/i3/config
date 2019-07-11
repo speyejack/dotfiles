@@ -47,7 +47,6 @@ bindsym $mod+l focus right
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
-
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
