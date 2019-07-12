@@ -2692,7 +2692,11 @@ pydoc with helm interface
 Source: [[https://github.com/syohex/emacs-helm-pydoc]]
 #+BEGIN_SRC emacs-lisp 
   (use-package helm-pydoc
-    :disabled t
+    :general
+    (jag--local-leader-def
+      :keymaps 'python-mode-map
+      :states 'normal
+      "d" 'helm-pydoc)
     :diminish)
 #+END_SRC
 
