@@ -216,9 +216,12 @@ Source: [[https://github.com/emacs-evil/evil]]
      "gl" 'evil-end-of-line
      "-"  'helm-find-files
      "R"  'undo-tree-redo)
-    (jag--leader-def "=" (lambda () (interactive)
-                           (save-excursion
-                             (evil-indent (point-min) (point-max)))))
+    (jag--leader-def
+      "=" (lambda () (interactive)
+            (save-excursion
+              (evil-indent (point-min) (point-max))))
+      "'" 'evil-save-modified-and-close
+      "q" 'evil-quit)
     :config
     (setq evil-magic 'very-magic)
     (remove 'doc-view-mode evil-emacs-state-modes)
@@ -576,8 +579,8 @@ Display evil marks on buffer
 Source: [[https://github.com/roman/evil-visual-mark-mode]]
 #+BEGIN_SRC emacs-lisp 
   (use-package evil-visual-mark-mode
-    :disabled t
     :diminish
+    :defer 15
     :after evil)
 #+END_SRC
 
@@ -2549,7 +2552,7 @@ Source: [[https://orgmode.org/]]
     :diminish 'org-indent-mode
     :general
     (jag--leader-def
-      "q" 'jag--quick-org-task-capture)
+      "Q" 'jag--quick-org-task-capture)
     (jag--local-leader-def
       :states 'normal
       :keymaps 'org-mode-map
