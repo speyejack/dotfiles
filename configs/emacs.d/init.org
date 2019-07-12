@@ -591,7 +591,9 @@ Source: [[https://github.com/roman/evil-visual-mark-mode]]
 #+BEGIN_SRC emacs-lisp 
   (use-package evil-visual-mark-mode
     :diminish
-    :defer 15
+    :commands (evil-visual-mark-mode)
+    :general
+    (jag--visual-leader-def "'" 'evil-visual-mark-mode)
     :after evil)
 #+END_SRC
 
