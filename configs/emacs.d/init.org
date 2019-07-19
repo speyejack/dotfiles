@@ -220,7 +220,8 @@ Source: [[https://github.com/emacs-evil/evil]]
             (save-excursion
               (evil-indent (point-min) (point-max))))
       "'" 'evil-save-modified-and-close
-      "q" 'evil-quit)
+      "q" 'evil-quit
+      "W" 'evil-window-map)
     :config
     (setq evil-magic 'very-magic)
     (remove 'doc-view-mode evil-emacs-state-modes)
