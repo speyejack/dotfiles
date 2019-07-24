@@ -3,4 +3,8 @@
 SCRIPT=$(readlink -f "$0")
 # Absolute path this script is in, thus /home/user/bin
 SCRIPTPATH=$(dirname "$SCRIPT")
+
+sudo apt install i3
+sudo apt install i3status
+
 ln -s -r $SCRIPTPATH ~/.config/
