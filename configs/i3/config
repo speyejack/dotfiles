@@ -179,10 +179,10 @@ bindsym $mod+b mode "$mode_brightness"
 # HDMI menu
 set $mode_hdmi HDMI Connect (h) Left, (j) Below, (k) Above, (l) Right, (;) Disconnect
 mode "$mode_hdmi" {
-	bindsym h exec --no-startup-id xrandr --output HDMI1 --left eDP1 --auto; mode"default"
 	bindsym j exec --no-startup-id xrandr --output HDMI1 --below eDP1 --auto; mode"default"
 	bindsym k exec --no-startup-id xrandr --output HDMI1 --above eDP1 --auto; mode"default"
-	bindsym l exec --no-startup-id xrandr --output HDMI1 --right eDP1 --auto; mode"default"
+	bindsym h exec --no-startup-id xrandr --output HDMI1 --left-of eDP1 --auto; mode"default"
+	bindsym l exec --no-startup-id xrandr --output HDMI1 --right-of eDP1 --auto; mode"default"
 	bindsym semicolon exec --no-startup-id xrandr --output HDMI-1 --off; mode"default"
 
     # back to normal: Enter or Escape
