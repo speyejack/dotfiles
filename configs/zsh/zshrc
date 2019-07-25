@@ -78,8 +78,8 @@ function vi-toggle-normal(){
 }
 
 function change-cursor(){
-	if [ $TERM = "xterm-termite" ] || [$TERM = "xterm-color256"]; then
-		if [ $KEYMAP = vicmd ]; then
+	if ["$TERM" = "xterm-termite"] || ["$TERM" = "xterm-color256"]; then
+		if [ "$KEYMAP" = vicmd ]; then
 			# the command mode for vi
 			echo -ne "\e[1 q"
 		else
