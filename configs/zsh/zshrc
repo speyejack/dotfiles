@@ -148,6 +148,17 @@ zle -N zle-line-finish
 # Less mode time to switch modes, may cause bugs
 export KEYTIMEOUT=10
 
+# Add incremental searching with vi
+bindkey -M vicmd '?' history-incremental-search-backward
+bindkey -M vicmd '/' history-incremental-search-forward
+
+bindkey "^[OA" up-line-or-beginning-search
+bindkey "^[OB" down-line-or-beginning-search
+bindkey -M vicmd "k" up-line-or-beginning-search
+bindkey -M vicmd "j" down-line-or-beginning-search
+
+bindkey -M vicmd "^V" edit-command-line
+
 
 # External programs
 export PATH="$PATH:/usr/local/avr/bin"
