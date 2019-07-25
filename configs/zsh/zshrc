@@ -32,8 +32,6 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 autoload -Uz compinit
 compinit
 
-export PATH="$PATH:/usr/local/avr/bin"
-
 # Make sure that the output of ls is colorized
 alias ls='ls --color=auto'
 # Allow for nakai's own stupidity with exiting
@@ -135,6 +133,10 @@ zle -N zle-line-finish
 
 # Less mode time to switch modes, may cause bugs
 export KEYTIMEOUT=10
+
+
+# External programs
+export PATH="$PATH:/usr/local/avr/bin"
 
 #source ~/anaconda3/etc/profile.d/conda.sh
 export PATH="~/anaconda3/bin:$PATH"
