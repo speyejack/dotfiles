@@ -1,9 +1,10 @@
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+
 # export TERM="xterm-256color"
-export PROMPT='%15<..<%~# '
-export RPROMPT='%t'
+export PROMPT='%B%(4~|%F{cyan}%8>..>%-3~%>>%F{green}%2~|%F{green}%~)%F{cyan}%#%b%f '
+export RPROMPT='%F{cyan}%B%t%b%f'
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
