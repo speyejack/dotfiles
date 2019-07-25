@@ -3,12 +3,6 @@ export LANGUAGE="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 # export TERM="xterm-256color"
-export PROMPT='%B%(4~|%F{cyan}%8>..>%-3~%>>%F{green}%2~|%F{green}%~)%F{cyan}%#%b%f '
-export RPROMPT='%F{cyan}%B%t%b%f'
-
-export SHELL='/bin/zsh'
-export EDITOR='vim -u NONE'
-
 ZSH=$HOME/.oh-my-zsh
 
 source $ZSH/lib/functions.zsh
@@ -19,6 +13,12 @@ source $ZSH/lib/key-bindings.zsh
 source $ZSH/lib/completion.zsh
 source $ZSH/lib/misc.zsh
 source $ZSH/lib/clipboard.zsh
+
+export PROMPT='%B%(4~|%F{cyan}%8>..>%-3~%>>%F{green}%2~|%F{green}%~)%F{cyan}%#%b%f '
+export RPROMPT='%F{cyan}%B%t%b%f'
+
+export SHELL='/bin/zsh'
+export EDITOR='vim -u NONE'
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -169,3 +169,4 @@ export GOPATH="$GOPATH:/home/jack/Dropbox/code/personal/go"
 
 alias dcrun='docker-compose -f ./docker-compose.yml'
 alias dclogs='docker-compose -f ./docker-compose.yml logs -tf --tail="50"'
+
