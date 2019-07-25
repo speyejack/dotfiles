@@ -9,6 +9,17 @@ export RPROMPT='%F{cyan}%B%t%b%f'
 export SHELL='/bin/zsh'
 export EDITOR='vim -u NONE'
 
+ZSH=$HOME/.oh-my-zsh
+
+source $ZSH/lib/functions.zsh
+source $ZSH/lib/theme-and-appearance.zsh
+source $ZSH/lib/git.zsh
+source $ZSH/lib/history.zsh
+source $ZSH/lib/key-bindings.zsh
+source $ZSH/lib/completion.zsh
+source $ZSH/lib/misc.zsh
+source $ZSH/lib/clipboard.zsh
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=5000
