@@ -13,9 +13,11 @@ source $ZSH/lib/completion.zsh
 source $ZSH/lib/misc.zsh
 source $ZSH/lib/clipboard.zsh
 
+# Custom prompt
 export PROMPT='%B%(4~|%F{cyan}%8>..>%-3~%>>%F{green}%2~|%F{green}%~)%F{cyan}%#%b%f '
 export RPROMPT='%F{cyan}%B%t%b%f'
 
+# Preferred utilities
 export SHELL='/bin/zsh'
 export EDITOR='vim -u NONE'
 
