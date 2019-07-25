@@ -6,6 +6,9 @@ export LC_ALL="en_US.UTF-8"
 export PROMPT='%B%(4~|%F{cyan}%8>..>%-3~%>>%F{green}%2~|%F{green}%~)%F{cyan}%#%b%f '
 export RPROMPT='%F{cyan}%B%t%b%f'
 
+export SHELL='/bin/zsh'
+export EDITOR='vim -u NONE'
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=5000
