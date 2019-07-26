@@ -6,7 +6,7 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 
 
 sudo apt update
-sudo apt install build-essential
+sudo apt install build-essential make
 
 sudo apt-get install -y git g++ libgtk-3-dev gtk-doc-tools gnutls-bin valac intltool libpcre2-dev libglib3.0-cil-dev libgnutls28-dev libgirepository1.0-dev libxml2-utils gperf
 
@@ -18,7 +18,7 @@ cd vte-ng
 ./autogen.sh
 make && sudo make install
 cd ..
-rm -rf vte-ng
+
 
 # Install termite
 cd ~/
@@ -32,5 +32,7 @@ sudo ln -s /usr/local/share/terminfo/x/xterm-termite /lib/terminfo/x/xterm-termi
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/termite 60
 cd ..
 rm -rf termite
+rm -rf vte-ng
 
+rm -rf ~/.config/termite
 ln -s -r $SCRIPTPATH ~/.config/
