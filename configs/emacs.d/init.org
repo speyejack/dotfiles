@@ -1510,6 +1510,7 @@ Open a junk (memo) file to try-and-error
 Source: [[https://github.com/rubikitch/open-junk-file]]
 #+BEGIN_SRC emacs-lisp 
   (use-package open-junk-file
+    :commands 'open-junk-file
     :general (jag--leader-def "t" 'open-junk-file)
     :diminish
     :config
