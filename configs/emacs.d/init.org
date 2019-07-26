@@ -156,7 +156,7 @@ Source: [[https://github.com/noctuid/general.el]]
 Setup a leader definer
 #+BEGIN_SRC emacs-lisp
   (general-create-definer jag--leader-def
-    :keymaps 'normal
+    :keymaps '(normal visual)
     :prefix ",")
 
   (jag--leader-def
@@ -182,7 +182,7 @@ Setup a leader definer
 Setup a local mode leader definer
 #+BEGIN_SRC emacs-lisp
   (general-create-definer jag--local-leader-def
-    :keymaps 'normal
+    :keymaps '(normal visual)
     :prefix ", m")
 #+END_SRC
 
