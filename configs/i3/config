@@ -177,14 +177,14 @@ mode "$mode_brightness" {
 bindsym $mod+b mode "$mode_brightness"
 
 # HDMI menu
-set $mode_hdmi HDMI Connect (h) Left, (j) Below, (k) Above, (l) Right, (;) Disconnect
+set $mode_hdmi HDMI Connect (h) Left, (j) Below, (k) Above, (l) Right, (m) Mirror, (;) Disconnect
 mode "$mode_hdmi" {
-	bindsym j exec --no-startup-id xrandr --output HDMI1 --below eDP1 --auto; mode"default"
-	bindsym k exec --no-startup-id xrandr --output HDMI1 --above eDP1 --auto; mode"default"
-	bindsym h exec --no-startup-id xrandr --output HDMI1 --left-of eDP1 --auto; mode"default"
-	bindsym l exec --no-startup-id xrandr --output HDMI1 --right-of eDP1 --auto; mode"default"
-	bindsym m exec --no-startup-id xrandr --output HDMI1 --same-as eDP1 --auto; mode"default"
-	bindsym semicolon exec --no-startup-id xrandr --output HDMI-1 --off; mode"default"
+	bindsym j exec --no-startup-id $i3_path/i3hdmi below; mode "default"
+	bindsym k exec --no-startup-id $i3_path/i3hdmi above; mode "default"
+	bindsym h exec --no-startup-id $i3_path/i3hdmi left; mode "default"
+	bindsym l exec --no-startup-id $i3_path/i3hdmi right; mode "default"
+	bindsym m exec --no-startup-id $i3_path/i3hdmi mirror; mode "default"
+	bindsym semicolon exec --no-startup-id $i3_path/i3hdmi disconnect; mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+in_dev=$(xrandr | grep primary | sed 's/ .*//')
+out_dev=HDMI-1
+case "$1" in
+    below)
+		xrandr --output $out_dev --below $in_dev --auto
+        ;;
+    above)
+		xrandr --output $out_dev --above $in_dev --auto
+        ;;
+    left)
+		xrandr --output $out_dev --left-of $in_dev --auto
+        ;;
+    right)
+		xrandr --output $out_dev --right-of $in_dev --auto
+        ;;
+    mirror)
+		xrandr --output $out_dev --same-as $in_dev --auto
+        ;;
+    disconnect)
+		xrandr --output $out_dev --off
+        ;;
+    *)
+        echo "Usage: $0 {below|above|left|right|mirror|disconnect}"
+        exit 2
+esac
+
+exit 0
