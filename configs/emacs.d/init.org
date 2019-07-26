@@ -2826,7 +2826,18 @@ Easy Python test running in Emacs
 Source: [[https://github.com/ionrock/pytest-el]]
 #+BEGIN_SRC emacs-lisp 
   (use-package pytest
-    :disabled t
+    :general
+    (jag--local-leader-def
+      :keymaps 'python-mode-map
+      :states 'normal
+      "t" '(:keymap python-mode-map :which-key "pytest-map")
+      "ta" 'pytest-all
+      "tm" 'pytest-module
+      "to" 'pytest-one
+      "tp" '(nil :which-key "pdb-map")
+      "tpa" 'pytest-pdb-all
+      "tpm" 'pytest-pdb-module
+      "tpo" 'pytest-pdb-one)
     :diminish)
 #+END_SRC
 
