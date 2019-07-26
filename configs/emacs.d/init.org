@@ -919,6 +919,27 @@ Source: [[https://github.com/ShingoFukuyama/helm-swoop]]
     :commands 'helm-swoop
     :diminish)
 #+END_SRC
+*** ace-jump-helm-line
+#+BEGIN_QUOTE
+Ace-jump to a candidate in helm window
+#+END_QUOTE
+Source: [[https://github.com/cute-jumper/ace-jump-helm-line]]
+#+BEGIN_SRC emacs-lisp
+  (use-package ace-jump-helm-line
+    :general
+    (:keymaps 'helm-map
+     "M-f" 'ace-jump-helm-line)
+    :diminish
+    :config
+    (setq ace-jump-helm-line-style 'pre)
+    (setq ace-jump-helm-line-default-action 'select)
+    (setq ace-jump-helm-line-select-key ?e) ;; this line is not needed
+    ;; Set the move-only and persistent keys
+    (setq ace-jump-helm-line-move-only-key ?o)
+    (setq ace-jump-helm-line-persistent-key ?p)
+    :after helm)
+#+END_SRC
+
 ** Git
 *** magit
 #+BEGIN_QUOTE
@@ -1267,17 +1288,6 @@ Source: [[https://github.com/joaotavora/yasnippet]]
     (yas-global-mode 1))
 #+END_SRC
 ** Utility
-*** ace-jump-helm-line
-#+BEGIN_QUOTE
-Ace-jump to a candidate in helm window
-#+END_QUOTE
-Source: [[https://github.com/cute-jumper/ace-jump-helm-line]]
-#+BEGIN_SRC emacs-lisp 
-  (use-package ace-jump-helm-line
-    :disabled t
-    :diminish)
-#+END_SRC
-
 *** ace-link
 #+BEGIN_QUOTE
 Quickly follow links
