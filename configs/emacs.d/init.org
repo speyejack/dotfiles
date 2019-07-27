@@ -1154,6 +1154,7 @@ Source: [[https://github.com/abo-abo/auto-yasnippet]]
   (use-package auto-yasnippet
     :general
     (jag--leader-def
+      "Y" '(:wk "yasnippet")
       "Yy" 'aya-create
       "YY" 'aya-create
       "Ye" 'aya-expand
