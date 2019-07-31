@@ -229,5 +229,7 @@ assign [class="^Firefox"] → 3
 new_window 1pixel
 new_float 1pixel
 
+exec --no-startup-id $i3_path/i3startup
+
 # TODO: check this repo for ideas:
 # https://github.com/vitiral/dotfiles/blob/master/config/i3/config

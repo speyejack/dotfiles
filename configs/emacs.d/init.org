@@ -166,16 +166,19 @@ Setup a leader definer
     "d"  'kill-this-buffer
     "B"  'ibuffer
     "I"  'general-describe-keybindings
+    "N"  '(:which-key "adjust-window")
     "Nn" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
     "Nw" 'widen
     "NN" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
     "NW" 'widen
+    "m"  '(:which-key "local-mode-map")
     "o"  'delete-other-windows  ;; C-w o
     "O"  'delete-window  ;; C-w o
-    "R"  (lambda () (interactive) (revert-buffer :ignore-auto :noconfirm))
+    "R"  '((lambda () (interactive) (revert-buffer :ignore-auto :noconfirm)) :which-key "revert-buffer")
     ;; "t"  'gtags-reindex
     "T"  'gtags-find-tag
-    "w"  'save-buffer)
+    "w"  'save-buffer
+    "v"  '(:which-key "visual-map"))
 #+END_SRC
 
 *** local leader
@@ -216,9 +219,9 @@ Source: [[https://github.com/emacs-evil/evil]]
      "-"  'helm-find-files
      "R"  'undo-tree-redo)
     (jag--leader-def
-      "=" (lambda () (interactive)
+      "=" '((lambda () (interactive)
             (save-excursion
-              (evil-indent (point-min) (point-max))))
+              (evil-indent (point-min) (point-max)))) :which-key "reformat-buffer")
       "'" 'evil-save-modified-and-close
       "q" 'evil-quit
       "W" 'evil-window-map)
@@ -515,6 +518,7 @@ Source: [[https://github.com/gabesoft/evil-mc]]
                evil-mc-make-cursor-move-prev-line)
     :general
     (jag--leader-def
+      "i" '(:which-key "multiple-cursors")
       "ih" 'evil-mc-make-cursor-here
       "ij" 'evil-mc-make-cursor-move-next-line
       "ik" 'evil-mc-make-cursor-move-prev-line
@@ -1154,6 +1158,7 @@ Source: [[https://github.com/abo-abo/auto-yasnippet]]
   (use-package auto-yasnippet
     :general
     (jag--leader-def
+      "Y" '(:wk "yasnippet")
       "Yy" 'aya-create
       "YY" 'aya-create
       "Ye" 'aya-expand
@@ -2577,7 +2582,7 @@ Source: [[https://orgmode.org/]]
     :diminish 'org-indent-mode
     :general
     (jag--leader-def
-      "Q" 'jag--quick-org-task-capture)
+      "Q" '(jag--quick-org-task-capture :which-key "quick-task-capture"))
     (jag--local-leader-def
       :states 'normal
       :keymaps 'org-mode-map
