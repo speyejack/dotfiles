@@ -6,5 +6,6 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 
 sudo apt install i3
 sudo apt install i3status
+sudo apt install unclutter
 
 ln -s -r $SCRIPTPATH ~/.config/

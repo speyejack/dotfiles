@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DEVICE=$(xinput list | grep "Mouse\|Touchpad" | sed 's/.*id=\([0-9]\+\).*/\1/')
+
+case "$1" in
+    disable)
+		xinput --disable $DEVICE
+        ;;
+    enable)
+		xinput --enable $DEVICE
+        ;;
+    *)
+        echo "Usage: $0 {enable|disable}"
+        exit 2
+esac
+
+exit 0
