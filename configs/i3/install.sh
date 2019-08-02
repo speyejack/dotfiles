@@ -8,4 +8,6 @@ sudo apt install i3
 sudo apt install i3status
 sudo apt install unclutter
 
+touch $SCRIPTPATH/i3startup
+chmod +x $SCRIPTPATH/i3startup
 ln -s -r $SCRIPTPATH ~/.config/
