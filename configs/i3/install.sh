@@ -6,6 +6,7 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 
 sudo apt install i3
 sudo apt install i3status
+sudo apt install i3blocks
 sudo apt install unclutter
 
 echo -e "clear Lock\nkeycode 66 = Hyper_L\nadd mod4 = Hyper_L" >> ~/.Xmodmap
