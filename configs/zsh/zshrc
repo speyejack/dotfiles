@@ -114,13 +114,13 @@ function x11-clip-wrap-widgets() {
             eval "
             function _x11-clip-wrapped-$widget() {
                 zle .$widget
-                xclip -in -selection clipboard <<<\$CUTBUFFER
+                clipcopy <<<\$CUTBUFFER
             }
             "
         else
             eval "
             function _x11-clip-wrapped-$widget() {
-                CUTBUFFER=\$(xclip -out -selection clipboard)
+                CUTBUFFER=\$(clippaste)
                 zle .$widget
             }
             "
