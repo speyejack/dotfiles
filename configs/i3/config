@@ -194,6 +194,31 @@ mode "$mode_hdmi" {
 }
 bindsym $mod+c mode "$mode_hdmi"
 
+# Music menu
+set $mode_music Music (i) Info (space) Toggle, (h) Previous, (j) Pause, (k) Play, (l) Next, (s) Shuffle, (t/p) Loop Track/Playlist
+mode "$mode_music" {
+
+	bindsym i exec --no-startup-id $i3_path/i3music info
+	bindsym space exec --no-startup-id $i3_path/i3music toggle; mode "default"
+	bindsym h exec --no-startup-id $i3_path/i3music previous; mode "default"
+	bindsym Shift+h exec --no-startup-id $i3_path/i3music previous
+	bindsym j exec --no-startup-id $i3_path/i3music pause; mode "default"
+	bindsym k exec --no-startup-id $i3_path/i3music play; mode "default"
+	bindsym l exec --no-startup-id $i3_path/i3music next; mode "default"
+	bindsym Shift+l exec --no-startup-id $i3_path/i3music next
+	bindsym s exec --no-startup-id $i3_path/i3music shuffle-on; mode "default"
+	bindsym S exec --no-startup-id $i3_path/i3music shuffle-off; mode "default"
+	bindsym t exec --no-startup-id $i3_path/i3music loop-track; mode "default"
+	bindsym Shift+t exec --no-startup-id $i3_path/i3music loop-off; mode "default"
+	bindsym p exec --no-startup-id $i3_path/i3music loop-playlist; mode "default"
+	bindsym Shift+p exec --no-startup-id $i3_path/i3music loop-off; mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+y mode "$mode_music"
+
 
 # Mouse menu
 set $mode_mouse Mouse (h) Disable, (l) Enable

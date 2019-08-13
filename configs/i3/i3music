@@ -1,0 +1,43 @@
+#!/bin/bash
+
+case "$1" in
+	info)
+		notify-send -u low "$(playerctl metadata title)" "$(playerctl metadata artist) - $(playerctl metadata album)"
+		;;
+	toggle)
+		playerctl play-pause
+		;;
+	previous)
+		playerctl previous
+		;;
+	next)
+		playerctl next
+		;;
+	play)
+		playerctl play
+		;;
+	pause)
+		playerctl pause
+		;;
+	shuffle-on)
+		playerctl shuffle on
+		;;
+	shuffle-off)
+		playerctl shuffle off
+		;;
+	loop-track)
+		playerctl loop Track
+		;;
+	loop-playlist)
+		playerctl loop Playlist
+		;;
+
+	loop-off)
+		playerctl loop off
+		;;
+	*)
+		echo "Usage: $0 {toggle|previous|next|play|pause|shuffle-on|shuffle-off|loop-track|loop-playlist|loop-off}"
+		exit 2
+esac
+
+exit 0
