@@ -4,14 +4,7 @@ SCRIPT=$(readlink -f "$0")
 # Absolute path this script is in, thus /home/user/bin
 SCRIPTPATH=$(dirname "$SCRIPT")
 
-git clone https://github.com/vivien/i3blocks
-cd i3blocks
-./autogen.sh
-./configure
-make
-make install
-cd ..
-rm -rf ./i3blocks
+sudo apt install i3blocks
 
-# rm -rf ~/.config/i3blocks
-# ln -s -r $SCRIPTPATH ~/.config/
+rm -rf ~/.config/i3blocks
+ln -s -r $SCRIPTPATH ~/.config/
