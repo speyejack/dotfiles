@@ -1110,6 +1110,8 @@ Source: [[https://www.emacswiki.org/emacs/FlySpell]]
 #+BEGIN_SRC emacs-lisp 
   (use-package flyspell
     :diminish
+    :hook ((text-mode . flyspell-mode)
+           (prog-mode . flyspell-prog-mode))
     :defer 15)
 #+END_SRC
 
