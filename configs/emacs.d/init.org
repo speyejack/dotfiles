@@ -1692,19 +1692,6 @@ Source: [[https://github.com/emacsmirror/zoom-frm]]
     :diminish)
 #+END_SRC
 ** Visual
-*** adaptive-wrap
-#+BEGIN_QUOTE
-Wraps the buffer automatically and adapts the size without changing buffer
-#+END_QUOTE
-Source: [[http://elpa.gnu.org/packages/adaptive-wrap.html]]
-#+BEGIN_SRC emacs-lisp 
-  (use-package adaptive-wrap
-    :defer 5
-    :diminish
-    :config
-    (adaptive-wrap-prefix-mode t))
-#+END_SRC
-
 *** all-the-icons
 #+BEGIN_QUOTE
 A library for inserting Developer icons
@@ -1954,6 +1941,7 @@ Enables visual line mode
 #+END_QUOTE
 Source: [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Visual-Line-Mode.html]]
 #+BEGIN_SRC emacs-lisp
+  (add-hook 'prog-mode-hook 'visual-line-mode)
   (jag--visual-leader-def "w" 'visual-line-mode)
   (general-define-key
    :keymaps 'visual-line-mode-map
