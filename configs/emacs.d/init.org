@@ -1941,6 +1941,7 @@ Enables visual line mode
 #+END_QUOTE
 Source: [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Visual-Line-Mode.html]]
 #+BEGIN_SRC emacs-lisp
+  (diminish 'visual-line-mode)
   (add-hook 'prog-mode-hook 'visual-line-mode)
   (jag--visual-leader-def "w" 'visual-line-mode)
   (general-define-key
