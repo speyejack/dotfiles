@@ -164,6 +164,10 @@ Setup a leader definer
     "."  'mode-line-other-buffer
     ":"  'eval-expression
     "d"  'kill-this-buffer
+    "D"  '((lambda () (interactive)
+             (let ((kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions)))
+               (kill-this-buffer)
+               (delete-window))) :which-key force-kill-this-buffer)
     "B"  'ibuffer
     "I"  'general-describe-keybindings
     "N"  '(:which-key "adjust-window")
@@ -1360,7 +1364,7 @@ Source: [[https://www.gnu.org/software/emacs/manual/html_node/ediff/]]
 #+BEGIN_SRC emacs-lisp 
   (use-package ediff
     :general
-    (jag--leader-def "D" 'ediff)
+    (jag--leader-def "A" 'ediff)
     :diminish)
 #+END_SRC
 
