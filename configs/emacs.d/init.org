@@ -206,6 +206,18 @@ Setup a visual leader definer
     "l"  'whitespace-mode)
 #+END_SRC
 
+*** utility leader
+Setup a utility leader definer
+#+BEGIN_SRC emacs-lisp
+  (general-create-definer jag--utility-leader-def
+    :which-key "Utility leader prefix"
+    :states '(normal visual)
+    :prefix ", U")
+
+  (jag--utility-leader-def
+   "i"  'use-package-report)
+#+END_SRC
+
 * General Packages
 ** Evil
 *** evil
