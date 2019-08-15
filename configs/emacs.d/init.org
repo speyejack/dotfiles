@@ -199,7 +199,7 @@ Setup a visual leader definer
   (general-create-definer jag--visual-leader-def
     :which-key "Visual leader prefix"
     :keymaps 'normal
-    :prefix ", v")
+    :prefix ", V")
 
   (jag--visual-leader-def
     "l"  'whitespace-mode)
@@ -1191,7 +1191,9 @@ Increase selected region by semantic units.
 Source: [[https://github.com/magnars/expand-region.el]]
 #+BEGIN_SRC emacs-lisp 
   (use-package expand-region
-    :disabled t
+    :general
+    (jag--leader-def
+      "v" 'er/expand-region)
     :diminish)
 #+END_SRC
 
