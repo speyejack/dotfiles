@@ -1191,6 +1191,7 @@ Increase selected region by semantic units.
 Source: [[https://github.com/magnars/expand-region.el]]
 #+BEGIN_SRC emacs-lisp 
   (use-package expand-region
+    :commands 'er/expand-region
     :general
     (jag--leader-def
       "v" 'er/expand-region)
