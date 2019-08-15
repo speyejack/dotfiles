@@ -190,6 +190,7 @@ Setup a local mode leader definer
 #+BEGIN_SRC emacs-lisp
   (general-create-definer jag--local-leader-def
     :keymaps '(normal visual)
+    :states '(normal visual)
     :prefix ", m")
 #+END_SRC
 
@@ -2582,7 +2583,6 @@ Source: [[https://orgmode.org/]]
     (jag--leader-def
       "Q" '(jag--quick-org-task-capture :which-key "quick-task-capture"))
     (jag--local-leader-def
-      :states 'normal
       :keymaps 'org-mode-map
       "t" 'org-babel-tangle
       "e" 'org-edit-special)
@@ -2630,7 +2630,6 @@ Source: [[https://github.com/lolownia/org-pomodoro]]
     :commands 'org-pomodoro
     :general
     (jag--local-leader-def
-      :states 'normal
       :keymaps 'org-mode-map
       "p" 'org-pomodoro)
     :diminish
@@ -2734,7 +2733,6 @@ Source: [[https://github.com/syohex/emacs-helm-pydoc]]
     :general
     (jag--local-leader-def
       :keymaps 'python-mode-map
-      :states 'normal
       "d" 'helm-pydoc)
     :diminish)
 #+END_SRC
@@ -2760,7 +2758,6 @@ Source: [[https://github.com/donkirkby/live-py-plugin]]
     :general
     (jag--local-leader-def
       :keymaps 'python-mode-map
-      :states 'normal
       "l" 'live-py-mode)
     :diminish)
 #+END_SRC
@@ -2832,7 +2829,6 @@ Source: [[https://github.com/ionrock/pytest-el]]
     :general
     (jag--local-leader-def
       :keymaps 'python-mode-map
-      :states 'normal
       "t" '(:keymap python-mode-map :which-key "pytest-map")
       "ta" 'pytest-all
       "tm" 'pytest-module
@@ -2853,7 +2849,6 @@ Source: [[https://github.com/JorisE/yapfify]]
   (use-package yapfify
     :general
     (jag--local-leader-def
-      :states 'normal
       :keymaps 'python-mode-map
       "=" 'yapf-mode)
     :hook (python-mode . yapf-mode)
