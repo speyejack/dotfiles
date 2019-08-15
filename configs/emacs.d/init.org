@@ -2829,7 +2829,7 @@ Source: [[https://github.com/ionrock/pytest-el]]
     :general
     (jag--local-leader-def
       :keymaps 'python-mode-map
-      "t" '(:keymap python-mode-map :which-key "pytest-map")
+      "t" '(nil :which-key "pytest-map")
       "ta" 'pytest-all
       "tm" 'pytest-module
       "to" 'pytest-one
