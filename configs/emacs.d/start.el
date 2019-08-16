@@ -25,7 +25,6 @@
 ;; Add the core, the core will populate everything else
 (add-to-list 'load-path (expand-file-name "core" jag-dir))
 
-
 ;; Core
 (require 'jag-core-constants)
 (require 'jag-core-settings)
@@ -48,5 +47,5 @@
 							  (time-subtract after-init-time
 											 before-init-time))))))
 
-(provide 'start.el)
+(provide 'start)
 ;;; start.el ends here
