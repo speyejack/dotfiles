@@ -1,0 +1,40 @@
+#+TITLE: Libraries
+* Libraries
+** dash
+#+BEGIN_QUOTE
+A modern list library for Emacs
+#+END_QUOTE
+Source: [[https://github.com/magnars/dash.el]]
+#+BEGIN_SRC emacs-lisp
+  (use-package dash
+    :diminish)
+#+END_SRC
+
+** pdf-tools
+#+BEGIN_QUOTE
+Support library for PDF documents.
+#+END_QUOTE
+Source: [[https://github.com/politza/pdf-tools]]
+#+BEGIN_SRC emacs-lisp
+  (use-package pdf-tools
+    :disabled t
+    :commands 'doc-view-mode
+    :diminish
+    :init
+    (add-hook 'doc-view-mode-hook 'evil-local-mode)
+    :config
+    (bind-key (kbd "j") 'doc-view-next-line-or-next-page 'doc-view-mode-map)
+    (bind-key (kbd "k") 'doc-view-previous-line-or-previous-page 'doc-view-mode-map)
+    (bind-key (kbd "J") 'doc-view-next-page 'doc-view-mode-map)
+    (bind-key (kbd "K") 'doc-view-previous-page 'doc-view-mode-map))
+#+END_SRC
+
+** s
+#+BEGIN_QUOTE
+The long lost Emacs string manipulation library.
+#+END_QUOTE
+Source: [[https://github.com/magnars/s.el]]
+#+BEGIN_SRC emacs-lisp
+  (use-package s
+    :diminish)
+#+END_SRC
