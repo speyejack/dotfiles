@@ -4,11 +4,11 @@
 \#*#
 
 # Ignore most of emacs.d
-configs/emacs.d/*
 *.elc
 
 # Keep important scripts
 !configs/emacs.d/init.org
+!configs/emacs.d/start.el
 !configs/emacs.d/snippets
 !configs/emacs.d/core/*
 !configs/emacs.d/funcs/*
