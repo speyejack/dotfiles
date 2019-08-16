@@ -4,6 +4,13 @@
 ;; Adds the core packages used by Emacs config
 
 ;;; Code:
+(package-initialize)
+
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("elpy" . "https://jorgenschaefer.github.io/packages/"))
+
 
 ;; Install use-package if not installed
 (unless (package-installed-p 'use-package)
@@ -17,6 +24,11 @@
 ;; Enabled ensure for everything
 (setq use-package-always-ensure t)
 ;; (setq use-package-compute-statistics t)
+
+
+;; More convenient key definitions in emacs
+(use-package general
+  :diminish)
 
 
 (provide 'jag-core-packages)
