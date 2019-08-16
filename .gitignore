@@ -4,6 +4,7 @@
 \#*#
 
 # Ignore most of emacs.d
+configs/emacs.d/*
 *.elc
 
 # Keep important scripts
