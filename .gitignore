@@ -10,6 +10,10 @@ configs/emacs.d/*
 # Keep important scripts
 !configs/emacs.d/init.org
 !configs/emacs.d/snippets
+!configs/emacs.d/core/*
+!configs/emacs.d/funcs/*
+!configs/emacs.d/modes/*
+!configs/emacs.d/packages/*
 
 
 # SSH ignores
