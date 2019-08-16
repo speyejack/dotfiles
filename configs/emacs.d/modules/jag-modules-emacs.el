@@ -1,4 +1,4 @@
-;;; jag-packages-emacs.el ---
+;;; jag-modules-emacs.el ---
 
 ;;; Commentary:
 
@@ -96,5 +96,5 @@
   (smart-tabs-insinuate'c 'javascript 'c++ 'java 'python 'nxml)
   :diminish)
 
-(provide 'jag-packages-emacs)
-;;; jag-packages-emacs.el ends here
+(provide 'jag-modules-emacs)
+;;; jag-modules-emacs.el ends here

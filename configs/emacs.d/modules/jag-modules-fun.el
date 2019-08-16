@@ -1,4 +1,4 @@
-;;; jag-packages-fun.el ---
+;;; jag-modules-fun.el ---
 
 ;;; Commentary:
 
@@ -15,5 +15,5 @@
   :commands 'xkcd
   :diminish)
 
-(provide 'jag-packages-fun)
-;;; jag-packages-fun.el ends here
+(provide 'jag-modules-fun)
+;;; jag-modules-fun.el ends here

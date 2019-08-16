@@ -1,4 +1,4 @@
-;;; jag-packages-web.el ---
+;;; jag-modules-web.el ---
 
 ;;; Commentary:
 
@@ -45,5 +45,5 @@
   :disabled t
   :diminish)
 
-(provide 'jag-packages-web)
-;;; jag-packages-web.el ends here
+(provide 'jag-modules-web)
+;;; jag-modules-web.el ends here

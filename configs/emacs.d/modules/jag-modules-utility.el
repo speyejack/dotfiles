@@ -1,4 +1,4 @@
-;;; jag-packages-utility.el ---
+;;; jag-modules-utility.el ---
 
 ;;; Commentary:
 
@@ -371,5 +371,5 @@
   :disabled t
   :diminish)
 
-(provide 'jag-packages-utility)
-;;; jag-packages-utility.el ends here
+(provide 'jag-modules-utility)
+;;; jag-modules-utility.el ends here

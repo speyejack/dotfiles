@@ -1,4 +1,4 @@
-;;; jag-packages-evil.el ---
+;;; jag-modules-evil.el ---
 
 ;;; Commentary:
 
@@ -390,5 +390,5 @@
   :config
   (global-evil-visualstar-mode 1))
 
-(provide 'jag-packages-evil)
-;;; jag-packages-evil.el ends here
+(provide 'jag-modules-evil)
+;;; jag-modules-evil.el ends here

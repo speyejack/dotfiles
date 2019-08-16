@@ -1,4 +1,4 @@
-;;; jag-packages-helm.el ---
+;;; jag-modules-helm.el ---
 
 ;;; Commentary:
 
@@ -218,5 +218,5 @@
   (setq ace-jump-helm-line-persistent-key ?p)
   :after helm)
 
-(provide 'jag-packages-helm)
-;;; jag-packages-helm.el ends here
+(provide 'jag-modules-helm)
+;;; jag-modules-helm.el ends here

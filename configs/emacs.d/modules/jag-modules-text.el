@@ -1,4 +1,4 @@
-;;; jag-packages-text.el ---
+;;; jag-modules-text.el ---
 
 ;;; Commentary:
 
@@ -152,5 +152,5 @@
 ;;   :config
 ;;   (yas-global-mode 1))
 
-(provide 'jag-packages-text)
-;;; jag-packages-text.el ends here
+(provide 'jag-modules-text)
+;;; jag-modules-text.el ends here

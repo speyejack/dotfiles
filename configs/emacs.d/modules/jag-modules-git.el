@@ -1,4 +1,4 @@
-;;; jag-packages-git.el ---
+;;; jag-modules-git.el ---
 
 ;;; Commentary:
 
@@ -41,5 +41,5 @@
   (evil-make-intercept-map git-timemachine-mode-map 'normal)
   (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
 
-(provide 'jag-packages-git)
-;;; jag-packages-git.el ends here
+(provide 'jag-modules-git)
+;;; jag-modules-git.el ends here

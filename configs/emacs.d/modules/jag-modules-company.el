@@ -1,4 +1,4 @@
-;;; jag-packages-company.el ---
+;;; jag-modules-company.el ---
 
 ;;; Commentary:
 
@@ -67,5 +67,5 @@
   :config
   (company-ycmd-setup))
 
-(provide 'jag-packages-company)
-;;; jag-packages-company.el ends here
+(provide 'jag-modules-company)
+;;; jag-modules-company.el ends here

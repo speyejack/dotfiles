@@ -1,4 +1,4 @@
-;;; jag-packages-correction.el ---
+;;; jag-modules-correction.el ---
 
 ;;; Commentary:
 
@@ -84,5 +84,5 @@
   :diminish
   :after flyspell-correct)
 
-(provide 'jag-packages-correction)
-;;; jag-packages-correction.el ends here
+(provide 'jag-modules-correction)
+;;; jag-modules-correction.el ends here

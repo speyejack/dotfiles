@@ -1,4 +1,4 @@
-;;; jag-packages-visual.el ---
+;;; jag-modules-visual.el ---
 
 ;;; Commentary:
 
@@ -245,5 +245,5 @@
  [remap evil-next-line] 'evil-next-visual-line
  [remap evil-previous-line] 'evil-previous-visual-line)
 
-(provide 'jag-packages-visual)
-;;; jag-packages-visual.el ends here
+(provide 'jag-modules-visual)
+;;; jag-modules-visual.el ends here
