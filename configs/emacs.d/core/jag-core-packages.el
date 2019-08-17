@@ -41,5 +41,23 @@
   :config
   (diminish 'eldoc-mode))
 
+;; which-key
+;;
+;; Display available keybindings in popup
+;;
+;; Source: https://github.com/justbur/emacs-which-key
+
+(use-package which-key
+  :diminish
+  :init
+
+  (setq which-key-idle-delay 0.5)
+
+  ;; Minibuffer feels much faster than using windows.
+  (setq which-key-popup-type 'minibuffer)
+
+  :config
+  (which-key-mode))
+
 (provide 'jag-core-packages)
 ;;; jag-core-packages ends here
