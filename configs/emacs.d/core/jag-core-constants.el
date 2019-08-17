@@ -23,9 +23,9 @@ Similar to `before-init-time'")
   "The directory for local packages.")
 (add-to-list 'load-path jag-locals-dir)
 
-(defconst jag-packages-dir (expand-file-name "packages" jag-dir)
-  "The directory for downloaded packages.")
-(add-to-list 'load-path jag-packages-dir)
+(defconst jag-modules-dir (expand-file-name "modules" jag-dir)
+  "The directory for packages grouped into modules.")
+(add-to-list 'load-path jag-modules-dir)
 
 (defconst jag-modes-dir (expand-file-name "modes" jag-dir)
   "The directory for mode specific packages.")
