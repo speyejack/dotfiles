@@ -11,6 +11,9 @@
 
 ;;; Code:
 
+;; Prevent emacs from auto adding this
+;; (package-initialize)
+
 ;; Make startup faster by reducing the frequency of garbage
 ;; collection.  The default is 0.8MB.  Measured in bytes.
 (setq gc-cons-threshold (* 50 1000 1000))
