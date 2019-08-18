@@ -11,8 +11,7 @@
 ;; Source: https://github.com/magit/magit
 
 (use-package magit
-  :general
-  (jag--leader-def "g" 'magit-status)
+  :commands 'magit-status
   :diminish)
 
 ;; git-timemachine
@@ -22,8 +21,7 @@
 ;; Source: https://gitlab.com/pidu/git-timemachine
 
 (use-package git-timemachine
-  :general
-  (jag--leader-def "G" 'git-timemachine)
+  :commands 'git-timemachine
   (:keymaps 'git-timemachine-mode-map
    ;; Remove default timemachine mode bindings
    "n" nil
