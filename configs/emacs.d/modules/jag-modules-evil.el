@@ -118,10 +118,9 @@
 ;; Source: https://github.com/emacs-evil/evil-magit
 
 (use-package evil-magit
-  :commands(evil-local-mode)
-  :after (evil magit)
-  :init
-  (add-hook 'magit-mode-hook 'evil-local-mode))
+  :after (evil magit))
+
+
 
 ;; evil-collection
 ;;
