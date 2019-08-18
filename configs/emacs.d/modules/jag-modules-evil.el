@@ -4,6 +4,13 @@
 
 ;;; Code:
 
+(use-package jag-funcs-evil
+  :defer t
+  :ensure nil
+  :commands (jag-evil-reformat-buffer
+			 jag-evil-next-visual-line-5
+			 jag-evil-previous-visual-line-5))
+
 ;; evil
 ;;
 ;; Extensible Vi layer for Emacs.
@@ -11,25 +18,50 @@
 ;; Source: https://github.com/emacs-evil/evil
 
 (use-package evil
-  :init (setq evil-want-integration nil)
+  :demand
   :diminish
+  :init
+  (setq evil-want-integration t)
+  (setq evil-respect-visual-line-mode t)
+
+  :config
+
+  ;; / searches have all the magic characters
+  (setq evil-magic 'very-magic)
+
+  ;; * and # search using symbols.
+  (setq-default evil-symbol-word-search t)
+
+
+  ;; evil-want-Y-yank-to-eol must be set via customize to have an effect.
+  (customize-set-variable 'evil-want-Y-yank-to-eol t)
+
+  ;; http://emacs.stackexchange.com/questions/14940
+  (fset 'evil-visual-update-x-selection 'ignore)
+
+  ;; Prevents esc-key from translating to meta-key in terminal mode.
+  (setq evil-esc-delay 0)
+
+  ;; Major modes that should default to an insert state.
+  (add-to-list 'evil-insert-state-modes 'git-commit-mode)
+
+  ;; TODO Determine what this does
+  ;;(remove 'doc-view-mode evil-emacs-state-modes)
+
+  (evil-mode 1)
+
   :general
-  (:states 'normal
+  (:states '(motion)
+   "j"  'evil-next-visual-line
+   "k"  'evil-previous-visual-line
+   "J"  'jag-evil-next-visual-lines-5
+   "K"  'jag-evil-previous-visual-lines-5
    "gh" 'evil-first-non-blank
    "gl" 'evil-end-of-line
+   "gj" 'evil-join
    "-"  'helm-find-files
    "R"  'undo-tree-redo)
-  (jag--leader-def
-    "=" '((lambda () (interactive)
-          (save-excursion
-            (evil-indent (point-min) (point-max)))) :which-key "reformat-buffer")
-    "'" 'evil-save-modified-and-close
-    "q" 'evil-quit
-    "w" 'evil-window-map)
-  :config
-  (setq evil-magic 'very-magic)
-  (remove 'doc-view-mode evil-emacs-state-modes)
-  (evil-mode 1))
+  )
 
 ;; undo-tree
 ;;
@@ -39,7 +71,7 @@
 
 (use-package undo-tree
   :general
-  (:states 'normal
+  (:states 'motion
    "u"   'undo-tree-undo
    "C-r" 'undo-tree-redo)
   (:keymaps 'undo-tree-visualizer-mode-map
@@ -47,8 +79,7 @@
    [remap evil-forward-char]  'undo-tree-visualize-switch-branch-right
    [remap evil-next-line]     'undo-tree-visualize-redo
    [remap evil-previous-line] 'undo-tree-visualize-undo)
-  (jag--leader-def "u" 'undo-tree-visualize)
-  :diminish)
+  :diminish 'undo-tree-mode)
 
 ;; evil-escape
 ;;
@@ -57,12 +88,13 @@
 ;; Source: https://github.com/syl20bnr/evil-escape
 
 (use-package evil-escape
+  :commands (evil-escape-pre-command-hook)
   :diminish
   :after evil
-  :config
+  :init
+  (add-hook 'pre-command-hook 'evil-escape-pre-command-hook)
   (setq-default evil-escape-key-sequence "jk")
-  (setq evil-escape-unordered-key-sequence 1)
-  (evil-escape-mode 1))
+  (setq evil-escape-unordered-key-sequence 1))
 
 ;; evil-org
 ;;
@@ -71,9 +103,10 @@
 ;; Source: https://github.com/Somelauw/evil-org-mode
 
 (use-package evil-org
+  :defer t
   :diminish
   :after (evil org)
-  :hook (org-mode . evil-org-mode)
+  :hook (org-mode 'evil-org-mode)
   :config
   (add-hook 'evil-org-mode-hook
             (lambda ()
@@ -86,6 +119,7 @@
 ;; Source: https://github.com/emacs-evil/evil-magit
 
 (use-package evil-magit
+  :commands(evil-local-mode)
   :after (evil magit)
   :init
   (add-hook 'magit-mode-hook 'evil-local-mode))
@@ -97,6 +131,7 @@
 ;; Source: https://github.com/emacs-evil/evil-collection
 
 (use-package evil-collection
+  :defer t
   :diminish
   :disabled t
   :after evil
@@ -127,11 +162,12 @@
 
 (use-package evil-commentary
   :diminish
-  :bind (:map evil-normal-state-map
-         ("gc" . evil-commentary))
-  :after evil
-  :config
-  (evil-commentary-mode 1))
+  :commands (evil-commentary evil-commentary-yank)
+  :init
+  :general
+  (:states 'motion
+   "gc" 'evil-commentary
+   "gy" 'evil-commentary))
 
 ;; evil-exchange
 ;;
@@ -140,10 +176,11 @@
 ;; Source: https://github.com/Dewdrops/evil-exchange
 
 (use-package evil-exchange
+  :commands (evil-exchange evil-exchange-cancel)
   :general
-  (jag--leader-def "e" 'evil-exchange)
-  :diminish
-  :after evil)
+  (:states '(motion normal visual operator)
+   "gx" 'evil-exchange
+   "gX" 'evil-exchange-cancel))
 
 ;; evil-goggles
 ;;
@@ -152,10 +189,11 @@
 ;; Source: https://github.com/edkolev/evil-goggles
 
 (use-package evil-goggles
+  :defer 3
   :diminish
-  :defer 10
   :after evil
   :config
+  (setq evil-goggles-duration 0.06)
   (evil-goggles-mode))
 
 ;; evil-matchit
@@ -165,24 +203,12 @@
 ;; Source: https://github.com/redguardtoo/evil-matchit
 
 (use-package evil-matchit
-  :commands 'evil-jump-item
-  :bind (:map evil-motion-state-map
-         ("%" . evilmi-jump-items))
+  :commands 'evilmi-jump-items
   :diminish
   :after evil
-  :config
-  (global-evil-matchit-mode 1))
-
-;; evil-nerd-commenter
-;;
-;; Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
-;;
-;; Source: https://github.com/redguardtoo/evil-nerd-commenter
-
-(use-package evil-nerd-commenter
-  :disabled t
-  :diminish
-  :after evil)
+  :general
+  (:states 'motion
+   "%" 'evilmi-jump-items))
 
 ;; evil-surround
 ;;
@@ -192,11 +218,13 @@
 
 (use-package evil-surround
   :diminish
-  :bind (:map evil-motion-state-map
-         ("s" . evil-surround-edit))
-  :after evil
-  :config
-  (global-evil-surround-mode 1))
+  :bind (:map evil-operator-state-map
+         ("s" . evil-surround-edit)
+		 ("S" . evil-Surround-edit)
+		 :map evil-visual-state-map
+         ("S" . evil-surround-edit)
+		 ("gS" . evil-Surround-edit))
+  :after evil)
 
 ;; evil-tutor
 ;;
@@ -216,7 +244,7 @@
 ;; Source: https://github.com/syohex/emacs-evil-anzu
 
 (use-package evil-anzu
-  :after anzu)
+  :after (evil anzu))
 
 ;; evil-cleverparens
 ;;
@@ -232,9 +260,7 @@
   :init
   (add-hook 'elisp-mode-hook 'evil-cleverparens-mode)
   (add-hook 'lisp-mode-hook 'evil-cleverparens-mode)
-  (add-hook 'scheme-mode-hook 'evil-cleverparens-mode)
-  :config
-  (evil-cleverparens-mode 1))
+  (add-hook 'scheme-mode-hook 'evil-cleverparens-mode))
 
 ;; evil-ediff
 ;;
@@ -255,10 +281,9 @@
 ;; Source: https://github.com/syl20bnr/evil-iedit-state
 
 (use-package evil-iedit-state
-  :disabled t
   :commands 'iedit-mode
   :diminish
-  :after evil)
+  :after (evil iedit))
 
 ;; evil-indent-plus
 ;;
@@ -267,23 +292,16 @@
 ;; Source: https://github.com/TheBB/evil-indent-plus
 
 (use-package evil-indent-plus
-  :disabled t
   :diminish
   :after evil
-  :config
-  (evil-indent-plus-default-bindings))
-
-;; evil-lisp-state
-;;
-;; An evil state to edit Lisp code
-;;
-;; Source: https://github.com/syl20bnr/evil-lisp-state
-
-(use-package evil-lisp-state
-  :disabled t
-  :commands 'evil-lisp-state
-  :diminish
-  :after evil)
+  :bind(:map evil-inner-text-objects-map
+		("i" . evil-indent-plus-i-indent)
+		("I" . evil-indent-plus-i-indent-up)
+		("J" . evil-indent-plus-i-indent-up-down)
+		:map evil-outer-text-objects-map
+		("i" . evil-indent-plus-a-indent)
+		("I" . evil-indent-plus-a-indent-up)
+		("J" . evil-indent-plus-a-indent-up-down)))
 
 ;; evil-mc
 ;;
@@ -292,25 +310,21 @@
 ;; Source: https://github.com/gabesoft/evil-mc
 
 (use-package evil-mc
-  :commands (evil-mc-make-cursor-here
-             evil-mc-make-all-cursors
-             evil-mc-make-cursor-move-next-line
-             evil-mc-make-cursor-move-prev-line)
   :general
-  (jag--leader-def
-    "i" '(:which-key "multiple-cursors")
-    "ih" 'evil-mc-make-cursor-here
-    "ij" 'evil-mc-make-cursor-move-next-line
-    "ik" 'evil-mc-make-cursor-move-prev-line
-    "ip" 'evil-mc-pause-cursors
-    "ir" 'evil-mc-resume-cursors
-    "iq" 'evil-mc-undo-all-cursors
-    "iu" 'evil-mc-undo-last-added-cursor
-    "im" 'evil-mc-make-all-cursors)
+  (:states 'motion
+   "gr"  '(:which-key "multiple-cursors")
+   "grh" 'evil-mc-make-cursor-here
+   "grj" 'evil-mc-make-cursor-move-next-line
+   "grk" 'evil-mc-make-cursor-move-prev-line
+   "grp" 'evil-mc-pause-cursors
+   "grr" 'evil-mc-resume-cursors
+   "grq" 'evil-mc-undo-all-cursors
+   "gru" 'evil-mc-undo-last-added-cursor
+   "grm" 'evil-mc-make-all-cursors)
   :diminish
   :after evil
   :config
-  (global-evil-mc-mode))
+  (evil-mc-initialize))
 
 ;; evil-numbers
 ;;
@@ -319,38 +333,10 @@
 ;; Source: https://github.com/cofi/evil-numbers
 
 (use-package evil-numbers
-  :disabled t
+  :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
   :diminish
   :after evil
-  :config
-  (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
-  (define-key evil-normal-state-map (kbd "C-c =") 'evil-numbers/inc-at-pt)
-  (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt))
-
-;; evil-search-highlight-persist
-;;
-;; Persistent highlights after search
-;;
-;; Source: https://github.com/naclander/evil-search-highlight-persist
-
-(use-package evil-search-highlight-persist
-  :disabled t
-  :diminish
-  :after evil)
-
-;; evil-snipe
-;;
-;; emulate vim-sneak & vim-seek
-;;
-;; Source: https://github.com/hlissner/evil-snipe
-
-(use-package evil-snipe
-  :disabled t
-  :diminish
-  :after evil
-  :config
-  (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
-  (evil-snipe-mode 1))
+  :config)
 
 ;; evil-terminal-cursor-changer
 ;;
@@ -372,8 +358,6 @@
 (use-package evil-visual-mark-mode
   :diminish
   :commands (evil-visual-mark-mode)
-  :general
-  (jag--visual-leader-def "'" 'evil-visual-mark-mode)
   :after evil)
 
 ;; evil-visualstar
@@ -383,12 +367,12 @@
 ;; Source: https://github.com/bling/evil-visualstar
 
 (use-package evil-visualstar
-  :disabled t
   :diminish
-  :bind ("<visual-state> *" . evil-visualstar/begin-search-forward)
-  :after evil
-  :config
-  (global-evil-visualstar-mode 1))
+  :general
+  (:states 'visual
+   "*"  'evil-visualstar/begin-search-forward
+   "#"  'evil-visualstar/begin-search-backward)
+  :after evil)
 
 (provide 'jag-modules-evil)
 ;;; jag-modules-evil.el ends here

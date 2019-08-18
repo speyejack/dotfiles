@@ -32,6 +32,7 @@
 (require 'jag-core-keybindings)
 
 ;; Packages
+(require 'jag-modules-evil)
 
 
 
