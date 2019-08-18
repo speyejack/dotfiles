@@ -200,6 +200,18 @@
 (jag--save-search-symbols-leader-def
  "s" 'save-buffer
  "S" 'evil-write-all)
+
+(jag--narrow-numbers-leader-def
+ "r" 'narrow-to-region
+ "p" 'narrow-to-page
+ "f" 'narrow-to-defun
+ "w" 'widen
+ "+" 'evil-numbers/inc-at-pt
+ "=" 'evil-numbers/inc-at-pt
+ "-" 'evil-numbers/dec-at-pt
+ "S" 'evil-write-all)
+
+
 (provide 'jag-core-keybindings)
 
 ;;; jag-core-keybindings.el ends here
