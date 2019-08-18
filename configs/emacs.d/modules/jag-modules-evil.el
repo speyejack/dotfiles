@@ -73,12 +73,13 @@
   :general
   (:states 'motion
    "u"   'undo-tree-undo
+   "U"   'undo-tree-visualize
    "C-r" 'undo-tree-redo)
   (:keymaps 'undo-tree-visualizer-mode-map
    [remap evil-backward-char] 'undo-tree-visualize-switch-branch-left
    [remap evil-forward-char]  'undo-tree-visualize-switch-branch-right
-   [remap evil-next-line]     'undo-tree-visualize-redo
-   [remap evil-previous-line] 'undo-tree-visualize-undo)
+   [remap evil-next-visual-line]     'undo-tree-visualize-redo
+   [remap evil-previous-visual-line] 'undo-tree-visualize-undo)
   :diminish 'undo-tree-mode)
 
 ;; evil-escape
