@@ -23,6 +23,7 @@
 
 (use-package powerline
   :diminish
+  :demand
   :config
   (setq powerline-default-separator 'wave))
 
@@ -34,6 +35,7 @@
 
 (use-package powerline-evil
   :diminish
+  :demand
   :config
   (powerline-default-theme))
 
@@ -45,45 +47,9 @@
 
 (use-package solarized-theme
   :diminish
+  :demand
   :config
   (load-theme 'solarized-dark t))
-
-;; spaceline
-;;
-;; Modeline configuration library for powerline
-;;
-;; Source: https://github.com/TheBB/spaceline
-
-(use-package spaceline
-  :disabled t
-  :diminish
-  :config
-  (require 'spaceline-config)
-  (spaceline-spacemacs-theme)
-  (spaceline-toggle-global-on))
-
-;; spaceline-all-the-icons
-;;
-;; A Spaceline theme using All The Icons
-;;
-;; Source: https://github.com/domtronn/spaceline-all-the-icons.el
-
-(use-package spaceline-all-the-icons
-  :disabled t
-  :diminish
-  :after spaceline
-  :config
-  (spaceline-all-the-icons-theme))
-
-;; smart-mode-line
-;;
-;; A color coded smart mode-line.
-;;
-;; Source: https://github.com/Malabarba/smart-mode-line
-
-(use-package smart-mode-line
-  :disabled t
-  :diminish)
 
 ;; smart-tabs
 ;;
@@ -93,6 +59,7 @@
 
 (use-package smart-tabs-mode
   :init
+  :demand
   (smart-tabs-insinuate'c 'javascript 'c++ 'java 'python 'nxml)
   :diminish)
 

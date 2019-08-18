@@ -33,6 +33,7 @@
 
 ;; Packages
 (require 'jag-modules-evil)
+(require 'jag-modules-emacs)
 
 
 
