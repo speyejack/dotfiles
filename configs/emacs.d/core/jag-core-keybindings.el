@@ -27,19 +27,19 @@
 (general-create-definer jag--buffer-leader-def
   :which-key "Buffer leader prefix"
   :states '(normal visual)
-  :prefix "SPC v")
+  :prefix "SPC b")
 
 ;; Create the errors leader definer
 (general-create-definer jag--errors-leader-def
   :which-key "Errors leader prefix"
   :states '(normal visual)
-  :prefix "SPC v")
+  :prefix "SPC e")
 
 ;; Create the files leader definer
 (general-create-definer jag--files-leader-def
   :which-key "Files leader prefix"
   :states '(normal visual)
-  :prefix "SPC v")
+  :prefix "SPC f")
 
 ;; Create the compile leader definer
 (general-create-definer jag--compile-leader-def
