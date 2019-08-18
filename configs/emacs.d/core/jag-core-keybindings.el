@@ -132,6 +132,11 @@
 
 (jag--utility-leader-def
  "i"  'use-package-report)
+(jag--jump-leader-def
+ "f" 'find-function
+ "v" 'find-variable
+ "b" 'evil-window-bottom
+ "t" 'evil-window-top)
 
 (use-package jag-funcs-help
   :ensure nil
