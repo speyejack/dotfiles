@@ -21,18 +21,33 @@
 ;; Source: https://github.com/hrs/engine-mode
 
 (use-package engine-mode
-  :disabled t
-  :diminish)
+  :commands
+  (engine/search-github
+   engine/search-stack-overflow
+   engine/search-wikipedia
+   engine/search-duckduckgo
+   engine/search-duckduckgo
+   engine/search-amazon
+   engine/search-youtube)
 
-;; google-this
-;;
-;; A set of functions and bindings to google under point.
-;;
-;; Source: https://github.com/Malabarba/emacs-google-this
+  :config
+  (defengine github
+	"https://github.com/search?ref=simplesearch&q=%s")
 
-(use-package google-this
-  :general
-  (jag--leader-def "L" 'google-this)
+  (defengine stack-overflow
+	"https://stackoverflow.com/search?q=%s")
+
+  (defengine wikipedia
+	"http://www.wikipedia.org/search-redirect.php?language=en&go=Go&search=%s")
+
+  (defengine duckduckgo
+	"https://duckduckgo.com/?q=%s")
+
+  (defengine amazon
+	"http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=%s")
+
+  (defengine youtube
+	"http://www.youtube.com/results?aq=f&oq=&search_query=%s")
   :diminish)
 
 ;; gnus

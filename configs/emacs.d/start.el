@@ -37,6 +37,7 @@
 (require 'jag-modules-helm)
 (require 'jag-modules-git)
 
+(require 'jag-modules-web)
 (require 'jag-modules-visual)
 
 

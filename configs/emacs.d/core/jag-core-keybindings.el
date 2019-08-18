@@ -31,6 +31,7 @@
 (require 'jag-keys-insert)
 (require 'jag-keys-vc)
 (require 'jag-keys-toggles)
+(require 'jag-keys-web)
 (require 'jag-keys-visual)
 
 
