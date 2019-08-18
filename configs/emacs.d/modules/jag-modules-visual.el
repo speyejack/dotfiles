@@ -135,7 +135,7 @@
 (use-package hl-todo
   :diminish
   :defer 3
-  :commands 'hl-todo-mode
+  :commands (hl-todo-mode hl-todo-next hl-todo-previous)
   :config
   (global-hl-todo-mode))
 
