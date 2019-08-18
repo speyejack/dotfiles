@@ -34,6 +34,8 @@
 ;; Packages
 (require 'jag-modules-evil)
 (require 'jag-modules-emacs)
+(require 'jag-modules-helm)
+(require 'jag-modules-git)
 
 
 
