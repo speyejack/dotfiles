@@ -15,6 +15,10 @@ Similar to `before-init-time'")
   "The home of the core functionality.")
 (add-to-list 'load-path jag-core-dir)
 
+(defconst jag-keys-dir (expand-file-name "keys" jag-dir)
+  "The directory for key bindings.")
+(add-to-list 'load-path jag-keys-dir)
+
 (defconst jag-funcs-dir (expand-file-name "funcs" jag-dir)
   "The directory of custom functions to assist with maps and packages.")
 (add-to-list 'load-path jag-funcs-dir)
