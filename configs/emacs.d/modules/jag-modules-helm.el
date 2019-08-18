@@ -1,6 +1,7 @@
-;;; jag-modules-helm.el ---
+;;; jag-modules-helm.el --- Helm packages
 
 ;;; Commentary:
+;; The packages to use with helm
 
 ;;; Code:
 
@@ -13,22 +14,23 @@
 (use-package helm
   :diminish
   :general
-  ("C-x C-F" 'helm-find-files)
-  ("C-x C-b" 'helm-mini)
-  ("M-x" 'helm-M-x)
+  (:states 'motion
+   "C-x C-F" 'helm-find-files
+   "C-x C-b" 'helm-mini
+   "M-x" 'helm-M-x
+   "-"  'helm-find-files)
   (:keymaps 'helm-map
    "M-j" 'helm-next-line
    "M-k" 'helm-previous-line
+   "M-J" 'helm-previous-page
+   "M-K" 'helm-next-page
    "M-u" 'helm-previous-page
-   "M-d" 'helm-next-page)
+   "M-d" 'helm-next-page
+   )
   (:keymaps 'helm-find-files-map
    "M-h" 'helm-find-files-up-one-level
    "M-l" 'helm-ff-RET)
-  (jag--leader-def
-    "b"  'helm-mini             ;; Switch to another buffer
-    "SPC"  'helm-M-x
-    "p"  'helm-show-kill-ring
-    "f" 'helm-imenu)
+  :commands (helm-imenu helm-M-x)
   :config
   (helm-mode 1))
 
@@ -42,18 +44,20 @@
   :commands
   (helm-ag
    helm-do-ag
-   helm-ag-this-file
    helm-do-ag-this-file
-   helm-ag-project-root
-   helm-do-ag-project-root
-   helm-ag-buffers
    helm-do-ag-buffers
-   helm-ag-pop-stack
-   helm-ag-clear-stack)
-  :general
-  (jag--leader-def "S" 'helm-do-ag)
+   helm-ag-pop-stack)
   :diminish
   :after helm)
+
+;; helm-rg
+;;
+;; ripgrep with helm interface
+;;
+;; Source: https://github.com/cosmicexplorer/helm-rg
+
+(use-package helm-rg
+  :commands (helm-rg))
 
 ;; helm-flx
 ;;
@@ -77,9 +81,7 @@
 
 (use-package helm-descbinds
   :diminish
-  :bind ("<help> k" . helm-descbinds)
-  :config
-  (helm-descbinds-mode))
+  :bind ("<help> b" . helm-descbinds))
 
 ;; helm-c-yasnippet
 ;;
@@ -87,10 +89,9 @@
 ;;
 ;; Source: https://github.com/emacs-jp/helm-c-yasnippet
 
-;; (use-package helm-c-yasnippet
-;;   :general
-;;   (jag--leader-def "Yh" 'helm-yas-complete)
-;;   :diminish)
+(use-package helm-c-yasnippet
+  :commands 'helm-yas-complete
+  :diminish)
 
 ;; helm-company
 ;;
@@ -104,8 +105,10 @@
   :after company
   :bind (:map company-mode-map
          ("C-'" . helm-company)
+         ("M-l" . helm-company)
          :map company-active-map
-         ("C-'" . helm-company)))
+		 ("C-'" . helm-company)
+         ("M-l" . helm-company)))
 
 ;; helm-gitignore
 ;;
@@ -114,7 +117,6 @@
 ;; Source: https://github.com/jupl/helm-gitignore
 
 (use-package helm-gitignore
-  :disabled t
   :commands 'helm-gitignore
   :diminish
   :after helm)
@@ -126,8 +128,7 @@
 ;; Source: https://framagit.org/steckerhalter/helm-google
 
 (use-package helm-google
-  :general
-  (jag--leader-def "l" 'helm-google)
+  :commands (helm-google)
   :diminish)
 
 ;; helm-gtags
@@ -153,7 +154,6 @@
 ;; Source: https://github.com/abo-abo/helm-make
 
 (use-package helm-make
-  :disabled t
   :commands 'helm-make
   :diminish
   :after helm)
@@ -179,12 +179,17 @@
 ;; Source: https://github.com/bbatsov/helm-projectile
 
 (use-package helm-projectile
-  :general
-  (jag--leader-def "P" 'helm-projectile)
-  (jag--leader-def "sa" 'helm-projectile-ag)
-  :diminish
-  :config
-  (helm-projectile-on))
+  :commands
+  (helm-projectile
+   helm-projectile-find-file
+   helm-projectile-find-dir
+   helm-projectile-find-file-dwim
+   helm-projectile-recentf
+   helm-projectile-switch-to-buffer
+   helm-projectile-rg
+   helm-projectile-ag
+   helm-projectile-grep)
+  :diminish)
 
 ;; helm-swoop
 ;;
@@ -192,10 +197,12 @@
 ;;
 ;; Source: https://github.com/ShingoFukuyama/helm-swoop
 
+;; TODO Edit commands to allow for better use of swoop edit mode
 (use-package helm-swoop
-  :general
-  (jag--leader-def "/"  'helm-swoop)
-  :commands 'helm-swoop
+  :commands (helm-swoop
+			 helm-multi-swoop-all
+			 helm-multi-swoop-current-mode
+			 helm-mutli-swoop)
   :diminish)
 
 ;; ace-jump-helm-line
@@ -216,6 +223,16 @@
   ;; Set the move-only and persistent keys
   (setq ace-jump-helm-line-move-only-key ?o)
   (setq ace-jump-helm-line-persistent-key ?p)
+  :after helm)
+
+
+;; helm-unicode
+;;
+;; Adds ability to use unicode to helm
+;;
+;; Source: https://github.com/bomgar/helm-unicode
+(use-package helm-unicode
+  :commands 'helm-unicode
   :after helm)
 
 (provide 'jag-modules-helm)
