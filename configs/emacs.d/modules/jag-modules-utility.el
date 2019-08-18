@@ -319,18 +319,6 @@
   :disabled t
   :diminish)
 
-;; which-key
-;;
-;; Display available keybindings in popup
-;;
-;; Source: https://github.com/justbur/emacs-which-key
-
-(use-package which-key
-  :demand
-  :diminish
-  :config
-  (which-key-mode))
-
 ;; winum
 ;;
 ;; Navigate windows and frames using numbers.
