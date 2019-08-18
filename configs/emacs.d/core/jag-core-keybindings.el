@@ -6,9 +6,10 @@
 
 ;;; Code:
 
+;; TODO Make leader work with motion state
 ;; Create the leader definer
 (general-create-definer jag--leader-def
-  :keymaps '(normal visual)
+  :states '(normal visual)
   :prefix "SPC")
 
 ;; Create the local leader definer
