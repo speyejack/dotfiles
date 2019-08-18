@@ -120,6 +120,22 @@
 (jag--utility-leader-def
  "i"  'use-package-report)
 
+(use-package jag-funcs-help
+  :ensure nil
+  :general
+  (jag--help-leader-def
+   "d" '(nil :wk "describe")
+   "db" 'describe-bindings
+   "dc" 'describe-char
+   "df" 'describe-function
+   "dk" 'describe-key
+   "dl" 'jag-describe-last-keys
+   "dp" 'describe-package
+   "ds" 'jag-describe-system-info
+   "dt" 'describe-theme
+   "dv" 'describe-variable
+   "N"  'view-emacs-news))
+
 (provide 'jag-core-keybindings)
 
 ;;; jag-core-keybindings.el ends here
