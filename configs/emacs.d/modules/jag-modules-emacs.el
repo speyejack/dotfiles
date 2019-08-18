@@ -1,6 +1,7 @@
-;;; jag-modules-emacs.el ---
+;;; jag-modules-emacs.el --- Emacs module
 
 ;;; Commentary:
+;; Modules that control the look and meta operation of emacs
 
 ;;; Code:
 
