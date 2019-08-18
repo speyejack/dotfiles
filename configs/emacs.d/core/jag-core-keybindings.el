@@ -120,6 +120,12 @@
   "w"  'save-buffer
   "v"  '(:which-key "visual-map"))
 
+(jag--application-leader-def
+ "c" 'calc-dispatch
+ "p" 'list-processes
+ "P" 'proced
+ "u" 'undo-tree-visualize)
+
 (jag--visual-leader-def
   "l"  'whitespace-mode)
 
