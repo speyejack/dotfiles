@@ -1,19 +1,22 @@
-;;; jag-modules-company.el ---
+;;; jag-modules-company.el --- Company packages
 
 ;;; Commentary:
+;; Packages for the company completion framework
 
 ;;; Code:
 
 ;; company
 ;;
 ;; Modular text completion framework
-;;
-;; Source: https://github.com/company-mode/company-mode
+;; ;; Source: https://github.com/company-mode/company-mode
 
+;; TODO find a way to have tab complete use helm
 (use-package company
   :diminish
-  :defer 15
+  :defer 2
   :general
+  (:keymaps 'company-mode-map
+			"M-l" 'company-complete)
   (:keymaps 'company-active-map
    "C-n" 'company-select-next-or-abort
    "C-p" 'company-select-previous-or-abort
@@ -28,7 +31,8 @@
    "M-k" 'company-select-previous
    "<escape>" 'company-search-abort)
   :config
-  (global-company-mode 1))
+  (global-company-mode 1)
+  (setq tab-always-indent 'complete))
 
 ;; company-quickhelp
 ;;
@@ -61,11 +65,10 @@
 ;; Source: https://github.com/abingham/emacs-ycmd
 
 (use-package company-ycmd
-  :disabled t
   :diminish
   :after (company ycmd)
   :config
-  (company-ycmd-setup))
+  (add-to-list 'company-backends 'company-ycmd))
 
 (provide 'jag-modules-company)
 ;;; jag-modules-company.el ends here
