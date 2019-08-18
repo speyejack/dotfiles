@@ -10,8 +10,8 @@
 (general-create-definer jag--registers-leader-def
   :which-key "Registers leader prefix"
   :states '(normal visual)
-  :prefix (concat jag-leader-key " b")
-  :global-prefix (concat jag-emacs-leader-key " b"))
+  :prefix (concat jag-leader-key " r")
+  :global-prefix (concat jag-emacs-leader-key " r"))
 
 
 (jag--registers-leader-def
