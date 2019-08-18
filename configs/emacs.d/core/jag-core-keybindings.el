@@ -59,6 +59,12 @@
   :states '(normal visual)
   :prefix "SPC w")
 
+;; Create the narrow and numbers leader definer
+(general-create-definer jag--narrow-numbers-leader-def
+  :which-key "narrow/numbers"
+  :states '(normal visual)
+  :prefix "SPC n")
+
 ;; Create the text leader definer
 (general-create-definer jag--text-leader-def
   :which-key "Text leader prefix"
