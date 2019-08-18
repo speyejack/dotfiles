@@ -127,7 +127,8 @@
  "u" 'undo-tree-visualize)
 
 (jag--visual-leader-def
-  "l"  'whitespace-mode)
+  "'" 'evil-visual-mark-mode
+  "l" 'whitespace-mode)
 
 (jag--utility-leader-def
  "i"  'use-package-report)
