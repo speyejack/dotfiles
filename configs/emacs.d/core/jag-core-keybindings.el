@@ -196,6 +196,10 @@
    "v" 'evil-window-vsplit
    "w" 'evil-window-next
    "y" 'other-frame))
+
+(jag--save-search-symbols-leader-def
+ "s" 'save-buffer
+ "S" 'evil-write-all)
 (provide 'jag-core-keybindings)
 
 ;;; jag-core-keybindings.el ends here
