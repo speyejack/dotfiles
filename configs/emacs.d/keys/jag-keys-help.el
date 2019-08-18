@@ -18,17 +18,18 @@
   :ensure nil
   :general
   (jag--help-leader-def
-   "d" '(nil :wk "describe")
-   "db" 'describe-bindings
-   "dc" 'describe-char
-   "df" 'describe-function
-   "dk" 'describe-key
-   "dl" 'jag-describe-last-keys
-   "dp" 'describe-package
-   "ds" 'jag-describe-system-info
-   "dt" 'describe-theme
-   "dv" 'describe-variable
-   "N"  'view-emacs-news))
+   "b" 'helm-descbinds
+   "c" 'describe-char
+   "e" 'evil-tutor-resume
+   "E" 'evil-tutor-start
+   "f" 'describe-function
+   "k" 'describe-key
+   "l" 'jag-describe-last-keys
+   "p" 'describe-package
+   "s" 'jag-describe-system-info
+   "t" 'describe-theme
+   "v" 'describe-variable
+   "N" 'view-emacs-news))
 
 
 (provide 'jag-keys-help)

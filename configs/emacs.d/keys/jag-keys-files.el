@@ -13,6 +13,11 @@
   :prefix (concat jag-leader-key " f")
   :global-prefix (concat jag-emacs-leader-key " f"))
 
+(jag--files-leader-def
+ "s" 'save-buffer
+ "S" 'evil-write-all
+ "f" 'helm-find-files)
+
 
 (provide 'jag-keys-files)
 

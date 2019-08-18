@@ -10,8 +10,8 @@
 (general-create-definer jag--text-leader-def
   :which-key "Text leader prefix"
   :states '(normal visual)
-  :prefix (concat jag-leader-key " x")
-  :global-prefix (concat jag-emacs-leader-key " x"))
+  :prefix (concat jag-leader-key " t")
+  :global-prefix (concat jag-emacs-leader-key " t"))
 
 
 (provide 'jag-keys-text)

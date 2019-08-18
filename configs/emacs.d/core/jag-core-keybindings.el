@@ -26,6 +26,12 @@
 (require 'jag-keys-help)
 (require 'jag-keys-application)
 (require 'jag-keys-search)
+(require 'jag-keys-registers)
+(require 'jag-keys-project)
+(require 'jag-keys-insert)
+(require 'jag-keys-vc)
+(require 'jag-keys-toggles)
+(require 'jag-keys-visual)
 
 
 (provide 'jag-core-keybindings)

@@ -14,6 +14,13 @@
   :global-prefix (concat jag-emacs-leader-key " b"))
 
 
+(jag--buffer-leader-def
+ "b" 'helm-mini
+ "m" '(:wk "modes")
+ "mm" 'helm-switch-major-mode
+ "me" 'helm-enable-minor-mode
+ "md" 'helm-disable-minor-mode)
+
 (provide 'jag-keys-buffer)
 
 ;;; jag-keys-buffer.el ends here

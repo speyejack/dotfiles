@@ -15,6 +15,17 @@
 
 
 (jag--save-search-symbols-leader-def
+ "aa" 'helm-do-ag
+ "al" 'helm-do-this-file
+ "ab" 'helm-do-ag-buffers
+ "ap" 'helm-ag-pop-stack
+ "r" 'helm-rg
+ "L" 'helm-google
+ "f" 'helm-imenu
+ "j" 'helm-swoop
+ "J" 'helm-multi-swoop-all
+ "i" 'helm-multi-swoop-current-mode
+ "I" 'helm-multi-swoop
  "s" 'save-buffer
  "S" 'evil-write-all)
 

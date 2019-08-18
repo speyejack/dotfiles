@@ -15,6 +15,7 @@
 
 
 (jag--jump-leader-def
+ "i" 'helm-imenu
  "f" 'find-function
  "v" 'find-variable
  "b" 'evil-window-bottom

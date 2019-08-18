@@ -13,6 +13,8 @@
   :prefix (concat jag-leader-key " c")
   :global-prefix (concat jag-emacs-leader-key " c"))
 
+(jag--compile-leader-def
+ "m" 'helm-make)
 
 (provide 'jag-keys-compile)
 
