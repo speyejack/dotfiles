@@ -127,6 +127,24 @@
   :config
   (semantic-mode 1))
 
+;; string-inflection
+;;
+;; Converts between foo_bar, FOO_BAR, and FooBar style of names.
+;;
+;; Source: https://github.com/akicho8/string-inflection
+
+(use-package string-inflection
+  :defer t
+  :bind
+  ;; :commands
+  ;;  ("xii" . string-inflection-all-cycle)
+  ;;  ("xiu" . string-inflection-underscore)
+  ;;  ("xiU" . string-inflection-upcase)
+  ;;  ("xik" . string-inflection-kebab-case)
+  ;;  ("xic" . string-inflection-lower-camelcase)
+  ;;  ("xiC" . string-inflection-camelcase)))
+  )
+
 ;; ws-butler
 ;;
 ;; Unobtrusively remove trailing whitespace.
