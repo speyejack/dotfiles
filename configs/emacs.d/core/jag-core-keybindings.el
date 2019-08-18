@@ -14,15 +14,14 @@
 
 ;; Create the local leader definer
 (general-create-definer jag--local-leader-def
-  :keymaps '(normal visual)
   :states '(normal visual)
   :prefix "SPC m")
 
 ;; Create the visual leader definer
 (general-create-definer jag--visual-leader-def
   :which-key "Visual leader prefix"
-  :keymaps 'normal
-  :prefix "SPC V")
+  :states '(normal visual)
+  :prefix "SPC v")
 
 ;; Create the utility leader definer
 (general-create-definer jag--utility-leader-def
