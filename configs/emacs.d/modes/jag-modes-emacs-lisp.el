@@ -122,5 +122,17 @@
   :commands 'macrostep-mode
   :diminish)
 
+;; evil-lisp-state
+;;
+;; An evil state to edit Lisp code
+;;
+;; Source: https://github.com/syl20bnr/evil-lisp-state
+
+(use-package evil-lisp-state
+  :disabled t
+  :commands 'evil-lisp-state
+  :diminish
+  :after evil)
+
 (provide 'jag-modes-emacs-lisp)
 ;;; jag-modes-emacs-lisp.el ends here
