@@ -53,9 +53,6 @@
 
   (setq which-key-idle-delay 0.5)
 
-  ;; Minibuffer feels much faster than using windows.
-  (setq which-key-popup-type 'minibuffer)
-
   :config
   (which-key-mode))
 
