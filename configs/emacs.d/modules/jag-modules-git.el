@@ -21,7 +21,8 @@
 ;; Source: https://gitlab.com/pidu/git-timemachine
 
 (use-package git-timemachine
-  :commands 'git-timemachine
+  :commands (git-timemachine)
+  :general
   (:keymaps 'git-timemachine-mode-map
    ;; Remove default timemachine mode bindings
    "n" nil
