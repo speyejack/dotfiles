@@ -69,7 +69,7 @@
 (general-create-definer jag--text-leader-def
   :which-key "Text leader prefix"
   :states '(normal visual)
-  :prefix "SPC v")
+  :prefix "SPC x")
 
 ;; Create the jump leader definer
 (general-create-definer jag--jump-leader-def
