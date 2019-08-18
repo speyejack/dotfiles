@@ -59,9 +59,7 @@
    "gh" 'evil-first-non-blank
    "gl" 'evil-end-of-line
    "gj" 'evil-join
-   "-"  'helm-find-files
-   "R"  'undo-tree-redo)
-  )
+   "R"  'undo-tree-redo))
 
 ;; undo-tree
 ;;
@@ -235,7 +233,7 @@
 
 (use-package evil-tutor
   :diminish
-  :commands evil-tutor-start
+  :commands (evil-tutor-start evil-tutor-resume)
   :after evil)
 
 ;; evil-anzu
