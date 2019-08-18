@@ -37,6 +37,7 @@
 (require 'jag-modules-helm)
 (require 'jag-modules-git)
 
+(require 'jag-modules-visual)
 
 
 ;; Make gc pauses faster by decreasing the threshold.

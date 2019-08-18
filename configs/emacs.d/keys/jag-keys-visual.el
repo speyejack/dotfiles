@@ -15,6 +15,18 @@
 
 (jag--visual-leader-def
   "'" 'evil-visual-mark-mode
+  "c" 'centered-cursor-mode
+  "C" 'column-number-mode
+  "g" 'golden-ratio-mode
+  "n" 'highlight-numbers-mode
+  "t" 'hl-todo-mode
+  "i" 'imenu-list-smart-toggle
+  "m" 'minimap-mode
+  "n" 'nlinum-relative-mode
+  "r" 'rainbow-delimters-mode
+  "R" 'rainbow-mode
+  "v" 'volatile-highlights-mode
+  "w" 'visual-line-mode
   "l" 'whitespace-mode)
 
 (provide 'jag-keys-visual)

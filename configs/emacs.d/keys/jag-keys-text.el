@@ -13,6 +13,8 @@
   :prefix (concat jag-leader-key " t")
   :global-prefix (concat jag-emacs-leader-key " t"))
 
+(jag--text-leader-def
+  "h" 'highlight-symbol)
 
 (provide 'jag-keys-text)
 
