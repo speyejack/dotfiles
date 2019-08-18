@@ -23,12 +23,71 @@
   :states '(normal visual)
   :prefix "SPC v")
 
+;; Create the buffer leader definer
+(general-create-definer jag--buffer-leader-def
+  :which-key "Buffer leader prefix"
+  :states '(normal visual)
+  :prefix "SPC v")
+
+;; Create the errors leader definer
+(general-create-definer jag--errors-leader-def
+  :which-key "Errors leader prefix"
+  :states '(normal visual)
+  :prefix "SPC v")
+
+;; Create the files leader definer
+(general-create-definer jag--files-leader-def
+  :which-key "Files leader prefix"
+  :states '(normal visual)
+  :prefix "SPC v")
+
+;; Create the compile leader definer
+(general-create-definer jag--compile-leader-def
+  :which-key "Compile leader prefix"
+  :states '(normal visual)
+  :prefix "SPC c")
+
 ;; Create the utility leader definer
 (general-create-definer jag--utility-leader-def
-  :which-key "Utility leader prefix"
+  :which-key "utility"
   :states '(normal visual)
   :prefix "SPC U")
 
+;; Create the window leader definer
+(general-create-definer jag--window-leader-def
+  :which-key "Window leader prefix"
+  :states '(normal visual)
+  :prefix "SPC w")
+
+;; Create the text leader definer
+(general-create-definer jag--text-leader-def
+  :which-key "Text leader prefix"
+  :states '(normal visual)
+  :prefix "SPC v")
+
+;; Create the jump leader definer
+(general-create-definer jag--jump-leader-def
+  :which-key "jump"
+  :states '(normal visual)
+  :prefix "SPC j")
+
+;; Create the help leader definer
+(general-create-definer jag--help-leader-def
+  :which-key "help"
+  :states '(normal visual)
+  :prefix "SPC h")
+
+;; Create the application leader definer
+(general-create-definer jag--application-leader-def
+  :which-key "application"
+  :states '(normal visual)
+  :prefix "SPC a")
+
+;; Create the save/search/symbols leader definer
+(general-create-definer jag--save-search-symbols-leader-def
+  :which-key "save/search/symbols"
+  :states '(normal visual)
+  :prefix "SPC s")
 
 (jag--leader-def
   ","  'other-window
