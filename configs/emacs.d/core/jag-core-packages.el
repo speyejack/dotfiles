@@ -30,17 +30,6 @@
 (use-package general
   :diminish)
 
-;; diminish
-;;
-;; Diminished modes are minor modes with no modeline display
-;;
-;; Source: https://github.com/myrjola/diminish.el
-
-(use-package diminish
-  :diminish
-  :config
-  (diminish 'eldoc-mode))
-
 ;; which-key
 ;;
 ;; Display available keybindings in popup
