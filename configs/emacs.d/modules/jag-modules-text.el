@@ -112,8 +112,7 @@
 ;; Source: https://github.com/akicho8/string-inflection
 
 (use-package string-inflection
-  :defer t
-  )
+  :defer t)
 
 ;; ws-butler
 ;;

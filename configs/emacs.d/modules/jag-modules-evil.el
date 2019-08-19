@@ -60,7 +60,12 @@
    "gh" 'evil-first-non-blank
    "gl" 'evil-end-of-line
    "gj" 'evil-join
-   "R"  'undo-tree-redo))
+   "R"  'undo-tree-redo)
+  (:keymaps 'minibuffer-inactive-mode-map
+	"M-h" 'left-char
+	"M-l" 'right-char
+	"M-j" 'next-complete-history-element
+	"M-k" 'previous-complete-history-element))
 
 ;; undo-tree
 ;;

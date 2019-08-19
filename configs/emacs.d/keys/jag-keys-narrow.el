@@ -21,8 +21,7 @@
  "w" 'widen
  "+" 'evil-numbers/inc-at-pt
  "=" 'evil-numbers/inc-at-pt
- "-" 'evil-numbers/dec-at-pt
- "S" 'evil-write-all)
+ "-" 'evil-numbers/dec-at-pt)
 
 
 (provide 'jag-keys-narrow)

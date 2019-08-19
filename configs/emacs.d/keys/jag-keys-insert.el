@@ -22,8 +22,7 @@
   "u" 'helm-unicode
   "y" 'helm-yas-complete
   "a" 'aya-create
-  "e" 'aya-expand
-  "g" 'helm-insertile-grep)
+  "e" 'aya-expand)
 
 
 (provide 'jag-keys-insert)
