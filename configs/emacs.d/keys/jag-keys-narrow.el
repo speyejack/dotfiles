@@ -13,15 +13,24 @@
   :prefix (concat jag-leader-key " n")
   :global-prefix (concat jag-emacs-leader-key " n"))
 
-
-(jag--narrow-numbers-leader-def
- "r" 'narrow-to-region
- "p" 'narrow-to-page
- "f" 'narrow-to-defun
- "w" 'widen
- "+" 'evil-numbers/inc-at-pt
- "=" 'evil-numbers/inc-at-pt
- "-" 'evil-numbers/dec-at-pt)
+(use-package jag-funcs-narrow
+  :ensure nil
+  :general
+  (jag--narrow-numbers-leader-def
+	"r" 'narrow-to-region
+	"p" 'narrow-to-page
+	"f" 'narrow-to-defun
+	"w" 'widen
+	"o" 'jag-open-fold
+	"O" 'jag-open-folds
+	"c" 'jag-close-fold
+	"C" 'jag-close-folds
+	"t" 'jag-toggle-fold
+	"i" 'jag-open-fold-recursively
+	"I" 'origami-reset
+	"+" 'evil-numbers/inc-at-pt
+	"=" 'evil-numbers/inc-at-pt
+	"-" 'evil-numbers/dec-at-pt))
 
 
 (provide 'jag-keys-narrow)
