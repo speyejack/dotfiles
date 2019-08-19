@@ -15,8 +15,10 @@
   :defer 2
   :general
   (:keymaps 'company-mode-map
-			"M-l" 'company-complete)
+   "C-'" 'helm-company
+   "M-h" 'helm-company)
   (:keymaps 'company-active-map
+   "M-l" 'company-complete-selection
    "C-n" 'company-select-next-or-abort
    "C-p" 'company-select-previous-or-abort
    "C-j" 'company-select-next-or-abort

@@ -102,13 +102,7 @@
 (use-package helm-company
   :commands 'helm-company
   :diminish
-  :after company
-  :bind (:map company-mode-map
-         ("C-'" . helm-company)
-         ("M-l" . helm-company)
-         :map company-active-map
-		 ("C-'" . helm-company)
-         ("M-l" . helm-company)))
+  :after company)
 
 ;; helm-gitignore
 ;;
