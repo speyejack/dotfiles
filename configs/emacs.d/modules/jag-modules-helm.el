@@ -27,8 +27,7 @@
    "M-J" 'helm-previous-page
    "M-K" 'helm-next-page
    "M-u" 'helm-previous-page
-   "M-d" 'helm-next-page
-   )
+   "M-d" 'helm-next-page)
   (:keymaps 'helm-find-files-map
    "M-h" 'helm-find-files-up-one-level
    "M-l" 'helm-ff-RET)
