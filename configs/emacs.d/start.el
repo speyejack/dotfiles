@@ -39,7 +39,7 @@
 (require 'jag-modules-emacs)
 (require 'jag-modules-helm)
 (require 'jag-modules-git)
-(require 'jag-modules-company)
+(require 'jag-modules-autocomplete)
 
 (require 'jag-modules-web)
 (require 'jag-modules-visual)

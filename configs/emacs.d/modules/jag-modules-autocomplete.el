@@ -1,7 +1,7 @@
-;;; jag-modules-company.el --- Company packages
+;;; jag-modules-autocomplete.el --- Autocomplete packages
 
 ;;; Commentary:
-;; Packages for the company completion framework
+;; Packages for autocomplete in emacs
 
 ;;; Code:
 
@@ -10,7 +10,6 @@
 ;; Modular text completion framework
 ;; ;; Source: https://github.com/company-mode/company-mode
 
-;; TODO find a way to have tab complete use helm
 (use-package company
   :diminish
   :defer 2
@@ -70,5 +69,5 @@
   :config
   (add-to-list 'company-backends 'company-ycmd))
 
-(provide 'jag-modules-company)
-;;; jag-modules-company.el ends here
+(provide 'jag-modules-autocomplete)
+;;; jag-modules-autocomplete.el ends here
