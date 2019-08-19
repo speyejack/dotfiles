@@ -28,6 +28,7 @@
    "p" 'describe-package
    "s" 'jag-describe-system-info
    "t" 'describe-theme
+   "m" 'describe-mode
    "v" 'describe-variable
    "N" 'view-emacs-news))
 
