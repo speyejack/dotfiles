@@ -20,6 +20,8 @@
    "M-x" 'helm-M-x
    "-"  'helm-find-files)
   (:keymaps 'helm-map
+   "M-l" 'helm-confirm-and-exit-minibuffer
+   "M-h" 'evil-delete-backward-word
    "M-j" 'helm-next-line
    "M-k" 'helm-previous-line
    "M-J" 'helm-previous-page
