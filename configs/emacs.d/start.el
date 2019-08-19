@@ -50,6 +50,7 @@
 ;; Modes
 (require 'jag-modes-emacs-lisp)
 (require 'jag-modes-xkcd)
+(require 'jag-modes-calc)
 
 
 ;; Make gc pauses faster by decreasing the threshold.
