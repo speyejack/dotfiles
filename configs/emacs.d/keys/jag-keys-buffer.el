@@ -16,6 +16,7 @@
 
 (jag--buffer-leader-def
  "b" 'helm-mini
+ "d" 'kill-this-buffer
  "m" '(:wk "modes")
  "mm" 'helm-switch-major-mode
  "me" 'helm-enable-minor-mode
