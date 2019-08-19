@@ -51,11 +51,11 @@
   (evil-mode 1)
 
   :general
-  (:states '(motion)
+  (:states '(motion normal visual operator)
    "j"  'evil-next-visual-line
    "k"  'evil-previous-visual-line
-   "J"  'jag-evil-next-visual-lines-5
-   "K"  'jag-evil-previous-visual-lines-5
+   "J"  'jag-evil-next-visual-line-5
+   "K"  'jag-evil-previous-visual-line-5
    "gh" 'evil-first-non-blank
    "gl" 'evil-end-of-line
    "gj" 'evil-join
