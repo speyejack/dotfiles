@@ -45,9 +45,11 @@
 
 (require 'jag-modules-web)
 (require 'jag-modules-visual)
+(require 'jag-modules-fun)
 
 ;; Modes
 (require 'jag-modes-emacs-lisp)
+(require 'jag-modes-xkcd)
 
 
 ;; Make gc pauses faster by decreasing the threshold.
