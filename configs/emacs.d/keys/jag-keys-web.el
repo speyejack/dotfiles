@@ -10,8 +10,8 @@
 (general-create-definer jag--web-leader-def
   :which-key "Web leader prefix"
   :states '(normal visual)
-  :prefix (concat jag-leader-key " y")
-  :global-prefix (concat jag-emacs-leader-key " y"))
+  :prefix (concat jag-leader-key " l")
+  :global-prefix (concat jag-emacs-leader-key " l"))
 
 (jag--web-leader-def
  "g" 'engine/search-github
