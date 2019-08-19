@@ -16,6 +16,8 @@
 
 (jag--buffer-leader-def
  "b" 'helm-mini
+ "c" 'clone-indirect-buffer-other-window
+ "C" 'clone-buffer
  "d" 'kill-this-buffer
  "m" '(:wk "modes")
  "mm" 'helm-switch-major-mode
