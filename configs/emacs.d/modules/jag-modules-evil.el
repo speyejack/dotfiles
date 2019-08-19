@@ -1,6 +1,7 @@
-;;; jag-modules-evil.el ---
+;;; jag-modules-evil.el --- Evil modules
 
 ;;; Commentary:
+;; All the evil packages
 
 ;;; Code:
 

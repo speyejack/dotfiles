@@ -13,6 +13,7 @@
 (use-package auto-dictionary
   :disabled t
   :diminish
+
   :after flyspell)
 
 ;; flycheck
@@ -22,7 +23,7 @@
 ;; Source: https://github.com/flycheck/flycheck
 
 (use-package flycheck
-  :defer 15
+  :defer 3
   :diminish
   :config
   (global-flycheck-mode 1))
@@ -47,8 +48,7 @@
 ;; Source: https://github.com/yasuyk/helm-flycheck
 
 (use-package helm-flycheck
-  :general
-  (jag--leader-def "c" 'helm-flycheck)
+  :commands (helm-flycheck)
   :diminish)
 
 ;; flyspell
@@ -60,8 +60,8 @@
 (use-package flyspell
   :diminish
   :hook ((text-mode . flyspell-mode)
-         (prog-mode . flyspell-prog-mode))
-  :defer 15)
+		 (prog-mode . flyspell-prog-mode))
+  :defer 3)
 
 ;; flyspell-correct
 ;;
@@ -70,8 +70,7 @@
 ;; Source: https://github.com/d12frosted/flyspell-correct
 
 (use-package flyspell-correct
-  :general
-  (jag--leader-def "C" 'flyspell-correct-next-word-generic)
+  :commands (flyspell-correct-next-word-generic)
   :diminish)
 
 ;; flyspell-correct-helm

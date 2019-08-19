@@ -40,9 +40,14 @@
 (require 'jag-modules-helm)
 (require 'jag-modules-git)
 (require 'jag-modules-autocomplete)
+(require 'jag-modules-correction)
+(require 'jag-modules-text)
 
 (require 'jag-modules-web)
 (require 'jag-modules-visual)
+
+;; Modes
+(require 'jag-modes-emacs-lisp)
 
 
 ;; Make gc pauses faster by decreasing the threshold.

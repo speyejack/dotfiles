@@ -15,9 +15,15 @@
 
 
 (jag--insert-leader-def
- "u" 'helm-unicode
- "y" 'helm-yas-complete
- "g" 'helm-insertile-grep)
+  "i" '(:wk "lorem-ipsum")
+  "il" 'lorem-ipsum-insert-list
+  "ip" 'lorem-ipsum-insert-paragraphs
+  "is" 'lorem-ipsum-insert-sentences
+  "u" 'helm-unicode
+  "y" 'helm-yas-complete
+  "a" 'aya-create
+  "e" 'aya-expand
+  "g" 'helm-insertile-grep)
 
 
 (provide 'jag-keys-insert)

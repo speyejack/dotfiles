@@ -337,6 +337,8 @@
 
 (use-package ycmd
   :disabled t
+  :config
+  (add-hook 'ycmd-mode-hook 'flycheck-ycmd-setup)
   :diminish)
 
 ;; zeal-at-point

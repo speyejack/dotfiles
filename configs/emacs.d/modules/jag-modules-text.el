@@ -12,29 +12,9 @@
 
 (use-package aggressive-indent
   :diminish
-  :defer 5
+  :defer 1
   :config
-  (aggressive-indent-global-mode 1))
-
-;; auto-yasnippet
-;;
-;; Quickly create disposable yasnippets
-;;
-;; Source: https://github.com/abo-abo/auto-yasnippet
-
-;; (use-package auto-yasnippet
-;;   :general
-;;   (jag--leader-def
-;;     "Y" '(:wk "yasnippet")
-;;     "Yy" 'aya-create
-;;     "YY" 'aya-create
-;;     "Ye" 'aya-expand
-;;     "Yp" 'aya-expand
-;;     "Yl" 'aya-open-line
-;;     "Ys" 'aya-persist-snippet)
-;;   :config
-;;   (setq aya-case-fold t)
-;;   :diminish)
+  (add-hook 'prog-mode aggressive-indent-mode))
 
 ;; clean-aindent-mode
 ;;
@@ -54,9 +34,6 @@
 
 (use-package expand-region
   :commands 'er/expand-region
-  :general
-  (jag--leader-def
-    "v" 'er/expand-region)
   :diminish)
 
 ;; indent-guide
@@ -67,7 +44,7 @@
 
 (use-package indent-guide
   :diminish
-  :defer 5
+  :defer 1
   :config
   (indent-guide-global-mode))
 
@@ -78,7 +55,9 @@
 ;; Source: https://github.com/jschaf/emacs-lorem-ipsum
 
 (use-package lorem-ipsum
-  :disabled t
+  :commands (lorem-ipsum-insert-list
+			 lorem-ipsum-insert-sentences
+			 lorem-ipsum-insert-paragraphs)
   :diminish)
 
 ;; move-text
@@ -88,7 +67,7 @@
 ;; Source: https://github.com/emacsfodder/move-text
 
 (use-package move-text
-  :disabled t
+  :commands (move-text-up move-text-down)
   :diminish)
 
 ;; origami
@@ -98,7 +77,7 @@
 ;; Source: https://github.com/gregsexton/origami.el
 
 (use-package origami
-  :disabled t
+  :defer t
   :diminish)
 
 ;; semantic
@@ -108,10 +87,10 @@
 ;; Source: https://www.gnu.org/software/emacs/manual/html_node/emacs/Semantic.html
 
 (use-package semantic
+  :disabled t
   :diminish
-  :defer 15
+  :commands (semantic-mode semantic-stickyfunc-mode)
   :config
-  ;; (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
   (semantic-mode 1))
 
 ;; srefactor
@@ -122,8 +101,7 @@
 
 (use-package srefactor
   :diminish
-  :general
-  (jag--leader-def "r" 'srefactor-refactor-at-point)
+  :commands 'srefactor-refactor-at-point
   :config
   (semantic-mode 1))
 
@@ -135,14 +113,6 @@
 
 (use-package string-inflection
   :defer t
-  :bind
-  ;; :commands
-  ;;  ("xii" . string-inflection-all-cycle)
-  ;;  ("xiu" . string-inflection-underscore)
-  ;;  ("xiU" . string-inflection-upcase)
-  ;;  ("xik" . string-inflection-kebab-case)
-  ;;  ("xic" . string-inflection-lower-camelcase)
-  ;;  ("xiC" . string-inflection-camelcase)))
   )
 
 ;; ws-butler
@@ -153,22 +123,9 @@
 
 (use-package ws-butler
   :diminish
-  :defer 5
+  :defer 2
   :config
-  (ws-butler-global-mode 1))
-
-;; yasnippet
-;;
-;; Yet another snippet extension for Emacs.
-;;
-;; Source: https://github.com/joaotavora/yasnippet
-
-;; (use-package yasnippet
-;;   :diminish
-;;   :general
-;;   (jag--leader-def "y" 'yas-expand)
-;;   :config
-;;   (yas-global-mode 1))
+  (add-hook 'prog-mode-hook #'ws-butler-mode))
 
 (provide 'jag-modules-text)
 ;;; jag-modules-text.el ends here

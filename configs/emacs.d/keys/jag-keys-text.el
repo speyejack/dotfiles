@@ -14,7 +14,17 @@
   :global-prefix (concat jag-emacs-leader-key " t"))
 
 (jag--text-leader-def
-  "h" 'highlight-symbol)
+  "e" 'er/expand-region
+  "k" 'move-text-up
+  "j" 'move-text-down
+  "i" '(:wk "string-inflection")
+  "ii" 'string-inflection-all-cycle
+  "iu" 'string-inflection-underscore
+  "iU" 'string-inflection-upcase
+  "ik" 'string-inflection-kebab-case
+  "it" 'string-inflection-toggle
+  "ic" 'string-inflection-lower-camelcase
+  "iC" 'string-inflection-camelcase)
 
 (provide 'jag-keys-text)
 

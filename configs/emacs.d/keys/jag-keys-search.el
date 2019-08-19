@@ -20,6 +20,7 @@
  "ab" 'helm-do-ag-buffers
  "ap" 'helm-ag-pop-stack
  "r" 'helm-rg
+ "t" 'srefactor-refactor-at-point
  "L" 'helm-google
  "f" 'helm-imenu
  "j" 'helm-swoop

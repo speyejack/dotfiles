@@ -13,10 +13,16 @@
   :prefix (concat jag-leader-key " v")
   :global-prefix (concat jag-emacs-leader-key " v"))
 
+(use-package jag-funcs-visual
+  :ensure nil
+  :commands (jag-stickyfunc-mode))
+
 (jag--visual-leader-def
   "'" 'evil-visual-mark-mode
+  "a" 'indent-guide-global-mode
   "c" 'centered-cursor-mode
   "C" 'column-number-mode
+  "f" 'jag-stickyfunc-mode
   "g" 'golden-ratio-mode
   "n" 'highlight-numbers-mode
   "t" 'hl-todo-mode

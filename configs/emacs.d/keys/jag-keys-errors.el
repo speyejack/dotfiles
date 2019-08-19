@@ -14,8 +14,10 @@
   :global-prefix (concat jag-emacs-leader-key " e"))
 
 (jag--errors-leader-def
- "t" 'hl-todo-next
- "T" 'hl-todo-prev)
+  "c" 'helm-flycheck
+  "s" 'flyspell-correct-next-word-generic
+  "t" 'hl-todo-next
+  "T" 'hl-todo-prev)
 
 (provide 'jag-keys-errors)
 
