@@ -45,6 +45,7 @@
   "i" '(:which-key "insert")
   "g" '(:which-key "git/version-control")
   "x" '(:which-key "toggles")
+  "y" '(:which-key "web")
   "=" 'jag-evil-reformat-buffer
   "'" 'evil-save-modified-and-close
   "q" 'evil-quit)
