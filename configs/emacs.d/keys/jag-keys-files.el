@@ -15,6 +15,7 @@
 
 (jag--files-leader-def
  "t" 'open-junk-file
+ "j" 'dired-jump
  "s" 'save-buffer
  "S" 'evil-write-all
  "f" 'helm-find-files)
