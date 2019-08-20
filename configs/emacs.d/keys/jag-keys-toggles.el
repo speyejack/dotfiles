@@ -15,7 +15,8 @@
 
 
 (jag--toggles-leader-def
- )
+  "l" 'toggle-truncate-lines
+  "d" 'toggle-debug-on-error)
 
 
 (provide 'jag-keys-toggles)
