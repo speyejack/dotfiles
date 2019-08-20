@@ -121,7 +121,7 @@
   :commands (yas-hippie-try-expand)
   :init
   (setq yas-verbosity 1)
-  (setq yas-snippet-dirs '("~/.dotfiles/emacs/snippets"))
+  (setq yas-snippet-dirs '("~/.dotfiles/configs/emacs.d/snippets"))
   (push 'yas-hippie-try-expand hippie-expand-try-functions-list)
   ;; Disable default yas minor mode map and use hippie integration.
   (setq yas-minor-mode-map (make-sparse-keymap))
