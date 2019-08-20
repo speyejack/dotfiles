@@ -14,12 +14,22 @@
   :global-prefix (concat jag-emacs-leader-key " j"))
 
 
+(use-package jag-funcs-jump
+  :ensure nil
+  :commands (jag-avy-goto-url jag-avy-open-url))
+
 (jag--jump-leader-def
- "i" 'helm-imenu
- "f" 'find-function
- "v" 'find-variable
- "b" 'evil-window-bottom
- "t" 'evil-window-top)
+  "J" 'evil-avy-goto-char-2
+  "j" 'evil-avy-goto-char
+  "l" 'evil-avy-goto-line
+  "w" 'evil-avy-goto-word-or-subword-1
+  "u" 'jag-avy-open-url
+  "U" 'jag-avy-goto-url
+  "i" 'helm-imenu
+  "f" 'find-function
+  "v" 'find-variable
+  "b" 'evil-window-bottom
+  "t" 'evil-window-top)
 
 
 (provide 'jag-keys-jump)

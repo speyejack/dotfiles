@@ -14,6 +14,7 @@
   :global-prefix (concat jag-emacs-leader-key " f"))
 
 (jag--files-leader-def
+ "t" 'open-junk-file
  "s" 'save-buffer
  "S" 'evil-write-all
  "f" 'helm-find-files)

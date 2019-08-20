@@ -190,5 +190,16 @@
   :hook (python-mode . yapf-mode)
   :diminish yapf-mode)
 
+;; virtualenvwrapper
+;;
+;; a featureful virtualenv tool for Emacs
+;;
+;; Source: https://github.com/porterjamesj/virtualenvwrapper.el
+
+(use-package virtualenvwrapper
+  :disabled t
+  :diminish)
+
+
 (provide 'jag-modes-python)
 ;;; jag-modes-python.el ends here

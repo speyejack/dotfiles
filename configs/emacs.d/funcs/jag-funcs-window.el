@@ -3,6 +3,13 @@
 ;;; Commentary:
 ;; from @jschaf
 
+;; TODO Fix for interactive mode
+(defun jag-select-window-by-number (&optional ARG)
+  "Use winum to select a window."
+  (interactive)
+  (winum-mode 1)
+  (winum-select-window-by-number ARG))
+
 (defun jag-alternate-window ()
   "Switch back and forth between current and last window in the
 current frame."

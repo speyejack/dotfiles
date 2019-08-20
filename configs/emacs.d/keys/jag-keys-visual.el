@@ -25,6 +25,7 @@
   "f" 'jag-stickyfunc-mode
   "g" 'golden-ratio-mode
   "n" 'highlight-numbers-mode
+  "h" 'popwin-mode
   "t" 'hl-todo-mode
   "i" 'imenu-list-smart-toggle
   "m" 'minimap-mode

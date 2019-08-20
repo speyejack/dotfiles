@@ -16,8 +16,16 @@
 
 (jag--application-leader-def
  "c" 'calc-dispatch
+ "z" 'zeal-at-point
+ "Z" 'zeal-at-point-search
  "p" 'list-processes
  "P" 'proced
+ "d" 'ediff
+ "f" 'floobits-join-workspace
+ "s" 'spray-mode
+ "l" '(:wk "desktop")
+ "ls" 'desktop-save
+ "ll" 'desktop-read
  "u" 'undo-tree-visualize)
 
 

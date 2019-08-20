@@ -47,6 +47,7 @@
   "x" '(:which-key "toggles")
   "y" '(:which-key "web")
   "=" 'jag-evil-reformat-buffer
+  "|" 'restart-emacs
   "'" 'evil-save-modified-and-close
   "q" 'evil-quit)
 

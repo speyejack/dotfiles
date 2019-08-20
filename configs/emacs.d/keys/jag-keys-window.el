@@ -27,7 +27,7 @@
    "=" 'balance-windows
    "_" 'jag-maximize-horizontally
    "/" 'jag-window-layout-toggle
-   "F" 'make-frame
+   "F" 'jag-select-window-by-number
    "H" 'evil-window-move-far-left
    "J" 'evil-window-move-very-bottom
    "K" 'evil-window-move-very-top
@@ -38,6 +38,7 @@
    "v" 'split-window-right-and-focus
    "W" 'evil-window-prev
    "b" 'jag-switch-to-minibuffer-window
+   "c" 'make-frame
    "d" 'jag-delete-window
    "f" 'follow-mode
    "h" 'evil-window-left

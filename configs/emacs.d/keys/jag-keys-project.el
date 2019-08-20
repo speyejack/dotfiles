@@ -21,7 +21,7 @@
  "F" 'helm-projectile-find-file-dwim
  "r" 'helm-projectile-recentf
  "b" 'helm-projectile-switch-to-buffer
- "p" 'helm-projectile-switch-project
+ "p" 'projectile-switch-project
  "s" 'helm-projectile-rg
  "a" 'helm-projectile-ag
  "g" 'helm-projectile-grep)
