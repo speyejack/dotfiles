@@ -6,10 +6,11 @@
 
 ;;; Code:
 
+
 ;; Create the application leader definer
 (general-create-definer jag--application-leader-def
   :which-key "application"
-  :states '(normal visual)
+  :states '(normal visual operator)
   :prefix (concat jag-leader-key " a")
   :global-prefix (concat jag-emacs-leader-key " a"))
 

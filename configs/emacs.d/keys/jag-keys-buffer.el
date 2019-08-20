@@ -9,7 +9,7 @@
 ;; Create the buffer leader definer
 (general-create-definer jag--buffer-leader-def
   :which-key "Buffer leader prefix"
-  :states '(normal visual)
+  :states '(normal visual operator)
   :prefix (concat jag-leader-key " b")
   :global-prefix (concat jag-emacs-leader-key " b"))
 

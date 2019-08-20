@@ -9,7 +9,7 @@
 ;; Create the registers leader definer
 (general-create-definer jag--registers-leader-def
   :which-key "Registers leader prefix"
-  :states '(normal visual)
+  :states '(normal visual operator)
   :prefix (concat jag-leader-key " r")
   :global-prefix (concat jag-emacs-leader-key " r"))
 

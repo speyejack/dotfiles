@@ -9,7 +9,7 @@
 ;; Create the utility leader definer
 (general-create-definer jag--utility-leader-def
   :which-key "utility"
-  :states '(normal visual)
+  :states '(normal visual operator)
   :prefix (concat jag-leader-key " U")
   :global-prefix (concat jag-emacs-leader-key " U"))
 

@@ -9,7 +9,7 @@
 ;; Create the narrow and numbers leader definer
 (general-create-definer jag--narrow-numbers-leader-def
   :which-key "narrow/numbers"
-  :states '(normal visual)
+  :states '(normal visual operator)
   :prefix (concat jag-leader-key " n")
   :global-prefix (concat jag-emacs-leader-key " n"))
 

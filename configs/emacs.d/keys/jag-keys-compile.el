@@ -9,7 +9,7 @@
 ;; Create the compile leader definer
 (general-create-definer jag--compile-leader-def
   :which-key "Compile leader prefix"
-  :states '(normal visual)
+  :states '(normal visual operator)
   :prefix (concat jag-leader-key " c")
   :global-prefix (concat jag-emacs-leader-key " c"))
 

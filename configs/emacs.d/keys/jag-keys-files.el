@@ -9,7 +9,7 @@
 ;; Create the files leader definer
 (general-create-definer jag--files-leader-def
   :which-key "Files leader prefix"
-  :states '(normal visual)
+  :states '(normal visual operator)
   :prefix (concat jag-leader-key " f")
   :global-prefix (concat jag-emacs-leader-key " f"))
 

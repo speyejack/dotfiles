@@ -9,7 +9,7 @@
 ;; Create the help leader definer
 (general-create-definer jag--help-leader-def
   :which-key "help"
-  :states '(normal visual)
+  :states '(normal visual operator)
   :prefix (concat jag-leader-key " h")
   :global-prefix (concat jag-emacs-leader-key " h"))
 

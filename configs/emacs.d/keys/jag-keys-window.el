@@ -9,7 +9,7 @@
 ;; Create the window leader definer
 (general-create-definer jag--window-leader-def
   :which-key "Window leader prefix"
-  :states '(normal visual)
+  :states '(normal visual operator)
   :prefix (concat jag-leader-key " w")
   :global-prefix (concat jag-emacs-leader-key " w"))
 

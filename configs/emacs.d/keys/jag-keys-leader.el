@@ -11,7 +11,7 @@
 ;; Create the leader definer
 (general-create-definer jag--leader-def
   :which-key "Leader prefix"
-  :states '(normal visual)
+  :states '(normal visual operator)
   :prefix jag-leader-key
   :global-prefix jag-emacs-leader-key)
 

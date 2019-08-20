@@ -9,7 +9,7 @@
 ;; Create the local leader definer
 (general-create-definer jag--local-leader-def
   :global-prefix (concat jag-emacs-leader-key " m")
-  :states '(normal visual)
+  :states '(normal visual operator)
   :prefix (concat jag-leader-key " m"))
 
 (provide 'jag-keys-local)

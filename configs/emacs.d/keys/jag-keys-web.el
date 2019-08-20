@@ -9,7 +9,7 @@
 ;; Create the web leader definer
 (general-create-definer jag--web-leader-def
   :which-key "Web leader prefix"
-  :states '(normal visual)
+  :states '(normal visual operator)
   :prefix (concat jag-leader-key " l")
   :global-prefix (concat jag-emacs-leader-key " l"))
 
