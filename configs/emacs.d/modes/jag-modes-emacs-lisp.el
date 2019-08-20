@@ -4,16 +4,15 @@
 
 ;;; Code:
 
-;; auto-compile
-;;
-;; automatically compile Emacs Lisp libraries
-;;
-;; Source: https://github.com/emacscollective/auto-compile
-
-(use-package auto-compile
-  :disabled t
-  :commands (auto-compile-on-save-mode auto-compile-on-load-mode)
-  :diminish)
+(jag--local-leader-def
+  :keymaps '(emacs-lisp-mode-map lisp-mode-map lisp-interaction-mode-map)
+  "e" '(:wk "eval")
+  "eb" 'eval-buffer
+  "ef" 'eval-defun
+  "ee" 'eval-last-sexp
+  "er" 'eval-region
+  "ep" 'pp-eval-last-sexp
+  "em" 'pp-macroexpand-last-sexp)
 
 ;; indention
 ;;
@@ -77,6 +76,17 @@
 									 indent-point normal-indent))
 			  (method
 			   (funcall method indent-point state))))))))
+
+;; auto-compile
+;;
+;; automatically compile Emacs Lisp libraries
+;;
+;; Source: https://github.com/emacscollective/auto-compile
+
+(use-package auto-compile
+  :disabled t
+  :commands (auto-compile-on-save-mode auto-compile-on-load-mode)
+  :diminish)
 
 ;; edebug
 ;;
