@@ -21,7 +21,7 @@
 (setq gc-cons-percentage 0.6)
 
 ;; Create the root dir for the config file
-(defconst jag-dir (expand-file-name "~/.emacs.d/emacs.d/")
+(defconst jag-dir (expand-file-name "~/.emacs.d")
   "The root dir of the config file.")
 (setq user-emacs-directory jag-dir)
 
