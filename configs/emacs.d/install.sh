@@ -9,4 +9,7 @@ sudo apt update
 sudo apt install emacs26
 
 ln -s -r $SCRIPTPATH ~/.emacs.d
-$SCRIPTPATH/tangle.sh
+
+echo ";; This is here to prevent emacs from doing it" > ~/.emacs.d/init.el
+echo ";; (package-initialize)" >> ~/.emacs.d/init.el
+echo "(load-file "~/.emacs.d/start.el")" >> ~/.emacs.d/init.el
