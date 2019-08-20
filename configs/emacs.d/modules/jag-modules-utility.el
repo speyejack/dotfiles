@@ -45,6 +45,9 @@
 
 (use-package avy
   :commands 'avy-jump
+  :init
+  (setq avy-all-windows 'all-frames
+  (setq avy-background t)
   :diminish)
 
 ;; desktop
