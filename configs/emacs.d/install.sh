@@ -12,4 +12,4 @@ ln -s -r $SCRIPTPATH ~/.emacs.d
 
 echo ";; This is here to prevent emacs from doing it" > ~/.emacs.d/init.el
 echo ";; (package-initialize)" >> ~/.emacs.d/init.el
-echo "(load-file "~/.emacs.d/start.el")" >> ~/.emacs.d/init.el
+echo "(load-file \"~/.emacs.d/start.el\")" >> ~/.emacs.d/init.el
