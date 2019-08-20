@@ -21,7 +21,8 @@
  "Z" 'zeal-at-point-search
  "p" 'list-processes
  "P" 'proced
- "d" 'ediff
+ "e" 'ediff
+ "d" 'dired
  "f" 'floobits-join-workspace
  "s" 'spray-mode
  "l" '(:wk "desktop")
