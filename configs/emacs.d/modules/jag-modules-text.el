@@ -114,6 +114,15 @@
 (use-package string-inflection
   :defer t)
 
+;; unfill
+;;
+;; Functions providing the inverse of Emacs' fill-paragraph and fill-region
+;;
+;; Source: https://github.com/purcell/unfill
+
+(use-package unfill
+  :commands (unfill-region unfill-paragraph unfill-toggle))
+
 ;; ws-butler
 ;;
 ;; Unobtrusively remove trailing whitespace.

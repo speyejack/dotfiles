@@ -19,6 +19,8 @@
   :commands (jag-avy-goto-url jag-avy-open-url))
 
 (jag--jump-leader-def
+  "d" 'dired-jump
+  "D" 'dired-jump-other-window
   "J" 'evil-avy-goto-char-2
   "j" 'evil-avy-goto-char
   "l" 'evil-avy-goto-line

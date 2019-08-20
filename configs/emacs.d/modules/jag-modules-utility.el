@@ -45,6 +45,9 @@
 
 (use-package avy
   :commands 'avy-jump
+  :init
+  (setq avy-all-windows 'all-frames)
+  (setq avy-background t)
   :diminish)
 
 ;; desktop
@@ -155,14 +158,14 @@
   :commands 'restart-emacs
   :diminish)
 
-;; wgrep-ag
+;; wgrep
 ;;
-;; Writable ag buffer and apply the changes to files
+;; Writable grep buffer and apply the changes to files
 ;;
 ;; Source: https://github.com/mhayashi1120/Emacs-wgrep
 
 (use-package wgrep-ag
-  :disabled t
+  :defer t
   :diminish)
 
 ;; ycmd
