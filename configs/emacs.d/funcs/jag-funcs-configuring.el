@@ -37,8 +37,7 @@
 	":ensure nil"
 	"  )"))
   "The template used to create a new general module.
-The template will be formatted with (format template func-module)"
-  )
+The template will be formatted with (format template func-module)")
 
 (defvar jag-mode-module-body-template
   (s-join
@@ -48,8 +47,7 @@ The template will be formatted with (format template func-module)"
 	":ensure nil"
 	"  )"))
   "The template used to create a new mode module.
-The template will be formatted with (format template name func-module)"
-  )
+The template will be formatted with (format template name func-module)")
 
 (defvar jag-key-module-body-template
   (s-join
@@ -70,24 +68,23 @@ The template will be formatted with (format template name func-module)"
 	"  )"
 	))
   "The template used to create a new key module.
-The template will be formatted with the (format template name binding func-module)"
-  )
+The template will be formatted with the (format template name binding func-module)")
 
 
 (defun jag--new-general-module-file (name)
   "Create new general module file with NAME."
   (jag--new-template-file name "modules" "Config for general module %s" jag-modules-dir
-						  (format jag-general-module-body-template (jag--new-module-name "funcs" name ))))
+						  (format jag-general-module-body-template (jag--new-template-name "funcs" name ))))
 
 (defun jag--new-mode-module-file (name)
   "Create new mode module file with NAME."
   (jag--new-template-file name "modes" "Config for mode %s" jag-modes-dir
-						  (format jag-mode-module-body-template name (jag--new-module-name "funcs" name ))))
+						  (format jag-mode-module-body-template name (jag--new-template-name "funcs" name ))))
 
 (defun jag--new-key-module-file (name leader-key)
   "Create new key module file with NAME."
   (jag--new-template-file name "keys" "Config for key %s" jag-keys-dir
-						  (format jag-key-module-body-template name leader-key (jag--new-module-name "funcs" name ))))
+						  (format jag-key-module-body-template name leader-key (jag--new-template-name "funcs" name ))))
 
 (defun jag--new-func-module-file (name)
   "Create new func file for module NAME."
@@ -113,8 +110,7 @@ The template will be formatted with the (format template name binding func-modul
   (find-file file-path)
   (insert template)
   (indent-region (point-min) (point-max))
-  ;(save-buffer)
-  ))
+  (save-buffer)))
 
 (defun jag--new-template-name (type name)
   "Generate full module name from TYPE and NAME."
@@ -135,6 +131,7 @@ The template will be formatted with the (format template name binding func-modul
 	  ""
 	  (format "(provide '%s)" name)
 	  (format ";;; %s.el ends here" name))))
+
 
 (provide 'jag-funcs-configuring)
 ;;; jag-funcs-configuring.el ends here
