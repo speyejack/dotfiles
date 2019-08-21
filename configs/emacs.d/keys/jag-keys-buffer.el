@@ -38,7 +38,7 @@
 	"r" 'jag-safe-revert-buffer
 	"s" 'jag-switch-to-scratch-buffer
 	"w" 'read-only-mode
-	"Y" 'jag-copy-clipboard-to-whole-buffer)
+	"Y" 'jag-copy-clipboard-to-whole-buffer))
 
 
 (provide 'jag-keys-buffer)
