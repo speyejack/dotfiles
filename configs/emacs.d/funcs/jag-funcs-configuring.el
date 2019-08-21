@@ -12,7 +12,7 @@
   (interactive (list (read-string "New general module name: ")))
 
   (jag--new-general-module-file name)
-  (jag--new-funcs-file name))
+  (jag--new-func-module-file name))
 
 (defun jag-new-mode-module (name)
   "Create a new mode module with NAME."
