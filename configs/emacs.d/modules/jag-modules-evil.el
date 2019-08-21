@@ -57,8 +57,9 @@
    "k"  'evil-previous-visual-line
    "J"  'jag-evil-next-visual-line-5
    "K"  'jag-evil-previous-visual-line-5
-   "gh" 'evil-first-non-blank
-   "gl" 'evil-end-of-line
+   "gh" 'evil-first-non-blank-of-visual-line
+   "gH" 'evil-beginning-of-visual-line
+   "gl" 'evil-end-of-visual-line
    "gj" 'evil-join
    "R"  'undo-tree-redo)
   (:keymaps 'minibuffer-inactive-mode-map

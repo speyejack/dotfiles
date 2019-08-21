@@ -13,12 +13,16 @@
   :prefix (concat jag-leader-key " b")
   :global-prefix (concat jag-emacs-leader-key " b"))
 
+(use-package jag-funcs-buffer
+  :ensure nil
+  :commands (jag-force-kill-this-buffer))
 
 (jag--buffer-leader-def
  "b" 'helm-mini
  "c" 'clone-indirect-buffer-other-window
  "C" 'clone-buffer
  "d" 'kill-this-buffer
+ "D" 'jag-force-kill-this-buffer
  "m" '(:wk "modes")
  "mm" 'helm-switch-major-mode
  "me" 'helm-enable-minor-mode
