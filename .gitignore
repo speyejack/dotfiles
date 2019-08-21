@@ -12,9 +12,9 @@ configs/emacs.d/*
 !configs/emacs.d/start.el
 !configs/emacs.d/snippets
 !configs/emacs.d/core/
+!configs/emacs.d/modules/
 !configs/emacs.d/funcs/
 !configs/emacs.d/modes/
-!configs/emacs.d/packages/
 
 
 # SSH ignores
