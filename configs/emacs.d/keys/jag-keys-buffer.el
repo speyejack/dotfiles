@@ -15,18 +15,31 @@
 
 (use-package jag-funcs-buffer
   :ensure nil
-  :commands (jag-force-kill-this-buffer))
+  :general
+  (jag--buffer-leader-def
+	"B" 'mode-line-other-buffer
+	"b" 'helm-mini
+	"C" 'clone-buffer
+	"c" 'clone-indirect-buffer-other-window
+	"D" 'jag-force-kill-this-buffer
+	"d" 'kill-this-buffer
+	"e" 'jag-safe-erase-buffer
+	"i"  'ibuffer
+	"m" '(:wk "modes")
+	"md" 'helm-disable-minor-mode)
+	"me" 'helm-enable-minor-mode
+	"mm" 'helm-switch-major-mode
+	"N" 'jag-new-empty-buffer
+	"n" 'next-buffer
+	"o" 'jag-kill-other-buffers
+	"P" 'jag-copy-clipboard-to-whole-buffer
+	"p" 'previous-buffer
+	"R" 'jag-force-revert-buffer
+	"r" 'jag-safe-revert-buffer
+	"s" 'jag-switch-to-scratch-buffer
+	"w" 'read-only-mode
+	"Y" 'jag-copy-clipboard-to-whole-buffer)
 
-(jag--buffer-leader-def
- "b" 'helm-mini
- "c" 'clone-indirect-buffer-other-window
- "C" 'clone-buffer
- "d" 'kill-this-buffer
- "D" 'jag-force-kill-this-buffer
- "m" '(:wk "modes")
- "mm" 'helm-switch-major-mode
- "me" 'helm-enable-minor-mode
- "md" 'helm-disable-minor-mode)
 
 (provide 'jag-keys-buffer)
 
