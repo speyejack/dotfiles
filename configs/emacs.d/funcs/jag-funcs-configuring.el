@@ -8,26 +8,31 @@
   :commands s-join)
 
 (defun jag-new-general-module (name)
-  "Create a new general module with NAME."
+  "Create a new general and func module with NAME."
   (interactive (list (read-string "New general module name: ")))
 
   (jag--new-general-module-file name)
   (jag--new-func-module-file name))
 
 (defun jag-new-mode-module (name)
-  "Create a new mode module with NAME."
+  "Create a new mode and func module with NAME."
   (interactive (list (read-string "New mode module name: ")))
 
   (jag--new-mode-module-file name)
   (jag--new-func-module-file name))
 
 (defun jag-new-key-module (name leader-key)
-  "Create a new key module with NAME accessed by LEADER-KEY."
+  "Create a new key and func module with NAME accessed by LEADER-KEY."
   (interactive (list (read-string "New key module name: ") (read-string "Leader key: ")))
 
   (jag--new-key-module-file name leader-key)
   (jag--new-func-module-file name))
 
+(defun jag-new-func-module (name)
+  "Create a new func module with NAME."
+  (interactive (list (read-string "New func module name: ")))
+
+  (jag--new-func-module-file name))
 
 (defvar jag-general-module-body-template
   (s-join

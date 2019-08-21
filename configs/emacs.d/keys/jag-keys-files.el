@@ -24,8 +24,8 @@
   "S" 'evil-write-all
   "f" 'helm-find-files
   "d"  '(:wk "dotfiles")
-  "dn" '(:wk "new-module")
   "dk" 'jag-new-key-module
+  "df" 'jag-new-func-module
   "dg" 'jag-new-general-module
   "dm" 'jag-new-mode-module)
 
