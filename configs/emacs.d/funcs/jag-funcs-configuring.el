@@ -67,7 +67,7 @@ The template will be formatted with (format template name func-module)")
 	""
 	"(use-package %3$s"
 	"  :ensure nil"
-	"  :general
+	"  :general"
 	"  (jag--%1$s-leader-def"
 	"    ))"
 	))
