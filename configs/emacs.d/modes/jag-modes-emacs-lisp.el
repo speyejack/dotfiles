@@ -6,6 +6,7 @@
 
 (jag--local-leader-def
   :keymaps '(emacs-lisp-mode-map lisp-mode-map lisp-interaction-mode-map)
+  "t" 'eldoc-mode
   "e" '(:wk "eval")
   "eb" 'eval-buffer
   "ef" 'eval-defun
