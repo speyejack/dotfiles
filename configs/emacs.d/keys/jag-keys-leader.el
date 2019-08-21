@@ -56,26 +56,6 @@
   "'" 'evil-save-modified-and-close
   "q" 'evil-quit)
 
-;; Things to be rebound
-;; "u"  'undo-tree-visualize
-;; "o"  'delete-other-windows  ;; C-w o
-;; "O"  'delete-window  ;; C-w o
-;; "R"  '((lambda () (interactive) (revert-buffer :ignore-auto :noconfirm)) :which-key "revert-buffer")
-;; "N"  '(:which-key "adjust-window")
-;; "Nn" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
-;; "Nw" 'widen
-;; "NN" 'air-narrow-dwim       ;; Narrow to region and enter normal mode
-;; "NW" 'widen
-;; "."  'mode-line-other-buffer
-;; ":"  'eval-expression
-;; "d"  'kill-this-buffer
-;; "D"  '((lambda () (interactive)
-;; 		 (let ((kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions)))
-;; 		   (kill-this-buffer)
-;; 		   (delete-window))) :which-key force-kill-this-buffer)
-;; "B"  'ibuffer
-
-
 (provide 'jag-keys-leader)
 
 ;;; jag-keys-leader.el ends here
