@@ -7,7 +7,7 @@
 
 (defun jag-force-kill-this-buffer (&optional arg)
   "Force kill this buffer.
-If the universal prefix argument is used then kill the window too."
+If the universal prefix ARG is used then kill the window too."
   (interactive "P")
   (let ((kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions)))
 	(kill-this-buffer)
@@ -62,7 +62,7 @@ If the universal prefix ARG is non-nil then also kill the window."
       (erase-buffer)))
 
 (defun jag-force-revert-buffer ()
-  "Revert the file with no prompts"
+  "Revert the file with no prompts."
   (interactive)
   (revert-buffer :ignore-auto :noconfirm))
 
