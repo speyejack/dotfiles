@@ -9,7 +9,7 @@
 ;; Create the save/search/symbols leader definer
 (general-create-definer jag--save-search-symbols-leader-def
   :which-key "save/search/symbols"
-  :states '(normal visual operator)
+  :states '(normal visual operator motion emacs)
   :prefix (concat jag-leader-key " s")
   :global-prefix (concat jag-emacs-leader-key " s"))
 

@@ -9,7 +9,7 @@
 ;; Create the text leader definer
 (general-create-definer jag--text-leader-def
   :which-key "Text leader prefix"
-  :states '(normal visual operator)
+  :states '(normal visual operator motion emacs)
   :prefix (concat jag-leader-key " t")
   :global-prefix (concat jag-emacs-leader-key " t"))
 

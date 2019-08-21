@@ -6,12 +6,16 @@
 
 ;;; Code:
 
+(general-unbind
+  :states '(motion)
+  "SPC")
+
 ;; TODO Make leader work with motion state
 ;; TODO Get prefix key working
 ;; Create the leader definer
 (general-create-definer jag--leader-def
   :which-key "Leader prefix"
-  :states '(normal visual operator)
+  :states '(normal visual operator emacs)
   :prefix jag-leader-key
   :global-prefix jag-emacs-leader-key)
 

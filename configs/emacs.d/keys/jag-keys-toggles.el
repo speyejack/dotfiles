@@ -9,7 +9,7 @@
 ;; Create the toggles leader definer
 (general-create-definer jag--toggles-leader-def
   :which-key "Toggles leader prefix"
-  :states '(normal visual operator)
+  :states '(normal visual operator motion emacs)
   :prefix (concat jag-leader-key " x")
   :global-prefix (concat jag-emacs-leader-key " x"))
 

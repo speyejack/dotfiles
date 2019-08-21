@@ -9,7 +9,7 @@
 ;; Create the vc leader definer
 (general-create-definer jag--vc-leader-def
   :which-key "Vc leader prefix"
-  :states '(normal visual operator)
+  :states '(normal visual operator motion emacs)
   :prefix (concat jag-leader-key " g")
   :global-prefix (concat jag-emacs-leader-key " g"))
 

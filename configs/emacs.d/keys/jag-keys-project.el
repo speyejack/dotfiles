@@ -9,7 +9,7 @@
 ;; Create the project leader definer
 (general-create-definer jag--project-leader-def
   :which-key "Project leader prefix"
-  :states '(normal visual operator)
+  :states '(normal visual operator motion emacs)
   :prefix (concat jag-leader-key " p")
   :global-prefix (concat jag-emacs-leader-key " p"))
 

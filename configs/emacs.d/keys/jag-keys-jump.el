@@ -9,7 +9,7 @@
 ;; Create the jump leader definer
 (general-create-definer jag--jump-leader-def
   :which-key "jump"
-  :states '(normal visual operator)
+  :states '(normal visual operator motion emacs)
   :prefix (concat jag-leader-key " j")
   :global-prefix (concat jag-emacs-leader-key " j"))
 

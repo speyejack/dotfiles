@@ -9,7 +9,7 @@
 ;; Create the insert leader definer
 (general-create-definer jag--insert-leader-def
   :which-key "Insert leader prefix"
-  :states '(normal visual operator)
+  :states '(normal visual operator motion emacs)
   :prefix (concat jag-leader-key " i")
   :global-prefix (concat jag-emacs-leader-key " i"))
 

@@ -9,7 +9,7 @@
 ;; Create the errors leader definer
 (general-create-definer jag--errors-leader-def
   :which-key "Errors leader prefix"
-  :states '(normal visual operator)
+  :states '(normal visual operator motion emacs)
   :prefix (concat jag-leader-key " e")
   :global-prefix (concat jag-emacs-leader-key " e"))
 
