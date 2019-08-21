@@ -13,13 +13,21 @@
   :prefix (concat jag-leader-key " f")
   :global-prefix (concat jag-emacs-leader-key " f"))
 
-(jag--files-leader-def
- "t" 'open-junk-file
- "j" 'dired-jump
- "s" 'save-buffer
- "S" 'evil-write-all
- "f" 'helm-find-files)
+(use-package jag-funcs-configuring
+  :ensure nil
+  :commands (jag-new-general-module jag-new-key-module jag-new-mode-module))
 
+(jag--files-leader-def
+  "t" 'open-junk-file
+  "j" 'dired-jump
+  "s" 'save-buffer
+  "S" 'evil-write-all
+  "f" 'helm-find-files
+  "d"  '(:wk "dotfiles")
+  "dn" '(:wk "new-module")
+  "dk" 'jag-new-key-module
+  "dg" 'jag-new-general-module
+  "dm" 'jag-new-mode-module)
 
 (provide 'jag-keys-files)
 
