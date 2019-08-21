@@ -26,7 +26,7 @@
 	"e" 'jag-safe-erase-buffer
 	"i"  'ibuffer
 	"m" '(:wk "modes")
-	"md" 'helm-disable-minor-mode)
+	"md" 'helm-disable-minor-mode
 	"me" 'helm-enable-minor-mode
 	"mm" 'helm-switch-major-mode
 	"N" 'jag-new-empty-buffer
