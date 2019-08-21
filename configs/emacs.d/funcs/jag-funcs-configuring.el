@@ -67,10 +67,9 @@ The template will be formatted with (format template name func-module)")
 	""
 	"(use-package %3$s"
 	"  :ensure nil"
-	"  :commands ())"
-	""
-	"(jag--%1$s-leader-def"
-	"  )"
+	"  :general
+	"  (jag--%1$s-leader-def"
+	"    ))"
 	))
   "The template used to create a new key module.
 The template will be formatted with the (format template name binding func-module)")
