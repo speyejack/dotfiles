@@ -24,7 +24,22 @@
   "ik" 'string-inflection-kebab-case
   "it" 'string-inflection-toggle
   "ic" 'string-inflection-lower-camelcase
-  "iC" 'string-inflection-camelcase)
+  "iC" 'string-inflection-camelcase
+  "a" '(:wk "align")
+  "a&" 'jag-align-repeat-ampersand
+  "a\\" 'jag-align-repeat-backslash
+  "a|" 'jag-align-repeat-bar
+  "a," 'jag-align-repeat-comma
+  "a=" 'jag-align-repeat-equal
+  "a(" 'jag-align-repeat-left-paren
+  "am" 'jag-align-repeat-math-oper
+  "a)" 'jag-align-repeat-right-paren
+  "a;" 'jag-align-repeat-semicolon
+  "a:" 'jag-align-repeat-colon
+  "a." 'jag-align-repeat-decimal
+  "ar" 'jag-align-repeat
+  "ac" 'align-current
+  "aa" 'align)
 
 (provide 'jag-keys-text)
 
