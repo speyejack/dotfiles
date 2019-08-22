@@ -19,6 +19,7 @@
   :general
   (jag--help-leader-def
    "b" 'helm-descbinds
+   "y" 'jag-display-and-copy-emacs-version
    "c" 'describe-char
    "e" 'evil-tutor-resume
    "E" 'evil-tutor-start

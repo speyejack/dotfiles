@@ -5,6 +5,13 @@
 
 ;;; Code:
 
+(defun jag-display-and-copy-emacs-version ()
+  "Echo the current Emacs version and copy it."
+  (interactive)
+  (let ((msg (format "%s" (emacs-version))))
+    (message msg)
+    (kill-new msg)))
+
 (defun jag-describe-keymap (keymap)
   "Describe key bindings in KEYMAP.
    Interactively, prompt for a variable that has a keymap value.
