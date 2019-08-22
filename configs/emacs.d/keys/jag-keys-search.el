@@ -23,6 +23,7 @@
  "t" 'srefactor-refactor-at-point
  "L" 'helm-google
  "f" 'helm-imenu
+ "h" 'jag-highlight-symbol
  "j" 'helm-swoop
  "J" 'helm-multi-swoop-all
  "i" 'helm-multi-swoop-current-mode
