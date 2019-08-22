@@ -23,7 +23,7 @@
 	"C" 'clone-buffer
 	"c" 'clone-indirect-buffer-other-window
 	"D" 'jag-force-kill-this-buffer
-	"d" 'kill-this-buffer
+	"d" 'jag-kill-this-buffer
 	"e" 'jag-safe-erase-buffer
 	"i"  'ibuffer
 	"m" '(:wk "modes")
