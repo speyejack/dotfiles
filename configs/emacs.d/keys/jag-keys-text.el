@@ -46,13 +46,13 @@
 	"ik" 'string-inflection-kebab-case
 	"it" 'string-inflection-toggle
 	"iu" 'string-inflection-underscore
-	"j" '(:wk "justify")
 	"j" 'move-text-down
-	"jc" 'set-justification-center
-	"jf" 'set-justification-full
-	"jl" 'set-justification-left
-	"jn" 'set-justification-none
-	"jr" 'set-justification-right
+	"J" '(:wk "justify")
+	"Jc" 'set-justification-center
+	"Jf" 'set-justification-full
+	"Jl" 'set-justification-left
+	"Jn" 'set-justification-none
+	"Jr" 'set-justification-right
 	"k" 'move-text-up
 	"l" '(:wk "lines")
 	"lC" 'jag-sort-lines-by-column-reverse
