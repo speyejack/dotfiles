@@ -16,15 +16,27 @@
 
 (jag--project-leader-def
  "SPC" 'helm-projectile
- "f" 'helm-projectile-find-file
- "d" 'helm-projectile-find-dir
+ "!" 'projectile-run-shell-command-in-root
+ "%" 'projectile-replace-regexp
+ "&" 'projectile-run-async-shell-command-in-root
+ "D" 'projectile-dired
  "F" 'helm-projectile-find-file-dwim
- "r" 'helm-projectile-recentf
+ "G" 'projectile-regenerate-tags
+ "I" 'projectile-invalidate-cache
+ "R" 'projectile-replace
+ "S" 'helm-projectile-ag
+ "T" 'projectile-test-project
+ "a" 'projectile-toggle-between-implementation-and-test
  "b" 'helm-projectile-switch-to-buffer
+ "c" 'projectile-compile-project
+ "d" 'helm-projectile-find-dir
+ "f" 'helm-projectile-find-file
+ "g" 'projectile-find-tag
+ "k" 'projectile-kill-buffers
  "p" 'projectile-switch-project
- "s" 'helm-projectile-rg
- "a" 'helm-projectile-ag
- "g" 'helm-projectile-grep)
+ "r" 'helm-projectile-recentf
+ "s" 'jag-helm-projectile
+ "v" 'projectile-vc)
 
 
 (provide 'jag-keys-project)
