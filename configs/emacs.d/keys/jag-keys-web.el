@@ -17,12 +17,11 @@
  "g" 'engine/search-github
  "s" 'engine/search-stack-overflow
  "w" 'engine/search-wikipedia
- "y" 'engine/search-duckduckgo
  "d" 'engine/search-duckduckgo
  "l" 'engine/search-duckduckgo
  "a" 'engine/search-amazon
  "x" 'xkcd
- "Y" 'engine/search-youtube)
+ "y" 'engine/search-youtube)
 
 (provide 'jag-keys-web)
 
