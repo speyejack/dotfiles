@@ -19,6 +19,7 @@
  "w" 'engine/search-wikipedia
  "y" 'engine/search-duckduckgo
  "d" 'engine/search-duckduckgo
+ "l" 'engine/search-duckduckgo
  "a" 'engine/search-amazon
  "x" 'xkcd
  "Y" 'engine/search-youtube)
