@@ -17,6 +17,7 @@
   :ensure nil
   :general
   (jag--buffer-leader-def
+	"!" 'jag-shell-command-on-buffer
 	"B" 'mode-line-other-buffer
 	"b" 'helm-mini
 	"C" 'clone-buffer

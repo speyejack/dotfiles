@@ -77,5 +77,17 @@ Create the *scratch* buffer first if needed."
   (interactive)
   (switch-to-buffer (get-buffer-create "*scratch*")))
 
+(defun jag-shell-command-on-buffer (command &optional keep-buffer-p)
+  "Prompt and run a COMMAND on the buffer.
+By default, `shell-command-on-buffer' will replace the contents
+of the buffer with the output of COMMAND.  If KEEP-BUFFER-P is
+non-nil, keep the original buffer content."
+  (interactive (list (read-shell-command "Shell command on buffer: ")))
+  (shell-command-on-region
+   (point-min) (point-max)
+   command
+   'use-current-buffer
+   (not keep-buffer-p)))
+
 (provide 'jag-funcs-buffer)
 ;;; jag-funcs-buffer.el ends here
