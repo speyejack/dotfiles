@@ -15,19 +15,37 @@
 
 (use-package jag-funcs-configuring
   :ensure nil
-  :commands (jag-new-general-module jag-new-key-module jag-new-mode-module))
-
-(jag--files-leader-def
-  "t" 'open-junk-file
-  "j" 'dired-jump
-  "s" 'save-buffer
-  "S" 'evil-write-all
-  "f" 'helm-find-files
-  "d"  '(:wk "dotfiles")
-  "dk" 'jag-new-key-module
-  "df" 'jag-new-func-module
-  "dg" 'jag-new-general-module
-  "dm" 'jag-new-mode-module)
+  :general
+  (jag--files-leader-def
+	"c" 'jag-copy-file
+	"C" '(:wk "covert")
+	"Cd" 'jag-unix2dos
+	"Cu" 'jag-dos2unix
+	"D" 'jag-delete-current-buffer-file
+	"d"  '(:wk "dotfiles")
+	"df" 'jag-new-func-module
+	"dg" 'jag-new-general-module
+	"dk" 'jag-new-key-module
+	"dl" 'helm-locate-library
+	"dm" 'jag-new-mode-module
+	"ds" 'jag-config-switch-between-func-and-module
+	"E" 'jag-sudo-edit
+	"f" 'helm-find-files
+	"G" 'rgrep
+	"j" 'dired-jump
+	"l" 'find-file-literally
+	"L" 'helm-locate
+	"o" 'jag-open-file-or-directory-in-external-app
+	"r" 'helm-recentf
+	"R" 'jag-rename-current-buffer-file
+	"S" 'evil-write-all
+	"s" 'save-buffer
+	"t" 'open-junk-file
+	"v"  '(:wk "variables")
+	"vd"  'add-dir-local-variable
+	"vf"  'add-file-local-variable
+	"vp"  'add-file-local-variable-prop-line
+	"y" 'jag-show-and-copy-buffer-filename))
 
 (provide 'jag-keys-files)
 
