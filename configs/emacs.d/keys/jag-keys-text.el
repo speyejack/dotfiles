@@ -18,58 +18,59 @@
   :general
   (jag--text-leader-def
 	"TAB" 'indent-rigidly
-	"u" 'downcase-region
 	"U" 'upcase-region
+	"a" '(:wk "align")
+	"a&" 'jag-align-repeat-ampersand
+	"a(" 'jag-align-repeat-left-paren
+	"a)" 'jag-align-repeat-right-paren
+	"a," 'jag-align-repeat-comma
+	"a." 'jag-align-repeat-decimal
+	"a:" 'jag-align-repeat-colon
+	"a;" 'jag-align-repeat-semicolon
+	"a=" 'jag-align-repeat-equal
+	"a\\" 'jag-align-repeat-backslash
+	"aa" 'align
+	"ac" 'align-current
+	"am" 'jag-align-repeat-math-oper
+	"ar" 'jag-align-repeat
+	"a|" 'jag-align-repeat-bar
+	"c" 'count-words-region
 	"d" '(:wk "delete")
 	"dw" 'delete-trailing-whitespace
+	"e" 'er/expand-region
+	"i" '(:wk "string-inflection")
+	"iC" 'string-inflection-camelcase
+	"iU" 'string-inflection-upcase
+	"ic" 'string-inflection-lower-camelcase
+	"ii" 'string-inflection-all-cycle
+	"ik" 'string-inflection-kebab-case
+	"it" 'string-inflection-toggle
+	"iu" 'string-inflection-underscore
 	"j" '(:wk "justify")
+	"j" 'move-text-down
 	"jc" 'set-justification-center
 	"jf" 'set-justification-full
 	"jl" 'set-justification-left
-	"jr" 'set-justification-right
 	"jn" 'set-justification-none
+	"jr" 'set-justification-right
+	"k" 'move-text-up
+	"l" '(:wk "lines")
+	"lC" 'jag-sort-lines-by-column-reverse
+	"lS" 'jag-sort-lines-reverse
+	"lT" 'untabify
+	"lc" 'jag-sort-lines-by-column
+	"ld" 'jag-duplicate-line-or-region
+	"ls" 'jag-sort-lines
+	"lt" 'tabify
+	"lu" 'jag-uniquify-lines
 	"t" '(:wk "transpose")
 	"tc" 'transpose-chars
 	"tl" 'transpose-lines
-	"tw" 'transpose-words
 	"tl" 'transpose-regions
+	"tw" 'transpose-words
+	"u" 'downcase-region
 	"w" 'jag-count-words-analysis
-	"e" 'er/expand-region
-	"c" 'count-words-region
-	"k" 'move-text-up
-	"j" 'move-text-down
-	"i" '(:wk "string-inflection")
-	"ii" 'string-inflection-all-cycle
-	"iu" 'string-inflection-underscore
-	"iU" 'string-inflection-upcase
-	"ik" 'string-inflection-kebab-case
-	"it" 'string-inflection-toggle
-	"ic" 'string-inflection-lower-camelcase
-	"iC" 'string-inflection-camelcase
-	"l" '(:wk "lines")
-	"ls" 'jag-sort-lines
-	"lS" 'jag-sort-lines-reverse
-	"lc" 'jag-sort-lines-by-column
-	"lC" 'jag-sort-lines-by-column-reverse
-	"lu" 'jag-uniquify-lines
-	"ld" 'jag-duplicate-line-or-region
-	"lt" 'tabify
-	"lT" 'untabify
-	"a" '(:wk "align")
-	"a&" 'jag-align-repeat-ampersand
-	"a\\" 'jag-align-repeat-backslash
-	"a|" 'jag-align-repeat-bar
-	"a," 'jag-align-repeat-comma
-	"a=" 'jag-align-repeat-equal
-	"a(" 'jag-align-repeat-left-paren
-	"am" 'jag-align-repeat-math-oper
-	"a)" 'jag-align-repeat-right-paren
-	"a;" 'jag-align-repeat-semicolon
-	"a:" 'jag-align-repeat-colon
-	"a." 'jag-align-repeat-decimal
-	"ar" 'jag-align-repeat
-	"ac" 'align-current
-	"aa" 'align))
+	))
 
 (provide 'jag-keys-text)
 
