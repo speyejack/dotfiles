@@ -5,6 +5,7 @@
 ;;; Code:
 
 
+;; TODO Finish function
 (defun jag-helm-projectile-search ()
   "Search the project with either rg, ag, or grep."
   (interactive)
