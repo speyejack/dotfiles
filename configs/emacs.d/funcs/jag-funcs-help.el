@@ -12,6 +12,7 @@
     (message msg)
     (kill-new msg)))
 
+;; TODO Fix function
 (defun jag-describe-keymap (keymap)
   "Describe key bindings in KEYMAP.
    Interactively, prompt for a variable that has a keymap value.

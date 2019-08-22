@@ -25,6 +25,7 @@
    "E" 'evil-tutor-start
    "f" 'describe-function
    "k" 'describe-key
+   "K" 'jag-describe-keymap
    "l" 'jag-describe-last-keys
    "p" 'describe-package
    "s" 'jag-describe-system-info
