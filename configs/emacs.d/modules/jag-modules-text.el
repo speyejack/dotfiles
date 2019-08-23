@@ -111,7 +111,6 @@
   (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
   (sp-local-pair 'minibuffer-inactive-mode "'" nil :actions nil))
 
-(testing out something 'test who)
 ;; srefactor
 ;;
 ;; A refactoring tool based on Semantic parser framework
