@@ -21,5 +21,13 @@
 	   (save-excursion
 		 (evil-indent (point-min) (point-max))))
 
+(defun jag-goto-middle-of-line ()
+  "Move cursor to middle of the line."
+  (interactive)
+  (goto-char
+   (/
+    (+ (line-end-position) (line-beginning-position))
+    2)))
+
 (provide 'jag-funcs-evil)
 ;;; jag-funcs-evil.el ends here
