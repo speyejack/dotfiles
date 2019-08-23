@@ -34,15 +34,16 @@
   "U" '(:which-key "utility")
   "a" '(:which-key "application")
   "b" '(:which-key "buffer")
-  "c" '(:which-key "compile/comment")
+  "c" '(:which-key "compile")
   "e" '(:which-key "errors")
   "f" '(:which-key "files")
   "g" '(:which-key "git/version-control")
   "h" '(:which-key "help")
   "i" '(:which-key "insert")
   "j" '(:which-key "jump/join/split")
+  "l" '(:which-key "web")
   "m" '(:which-key "local-mode-map")
-  "n" '(:which-key "narrow/numbers")
+  "n" '(:which-key "narrow/fold/numbers")
   "p" '(:which-key "project")
   "r" '(:which-key "registers/ring/resume")
   "s" '(:which-key "search/symbol")
@@ -50,7 +51,7 @@
   "v" '(:which-key "visual-map")
   "w" '(:which-key "window")
   "x" '(:which-key "toggles")
-  "y" '(:which-key "web")
+  "y" '(:which-key "yank")
   "=" 'jag-evil-reformat-buffer
   "|" 'restart-emacs
   "'" 'evil-save-modified-and-close
