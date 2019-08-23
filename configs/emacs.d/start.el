@@ -48,9 +48,16 @@
 (require 'jag-modules-fun)
 
 ;; Modes
-(require 'jag-modes-emacs-lisp)
-(require 'jag-modes-xkcd)
+(require 'jag-modes-arduino)
 (require 'jag-modes-calc)
+(require 'jag-modes-emacs-lisp)
+(require 'jag-modes-eshell)
+(require 'jag-modes-gud)
+(require 'jag-modes-org)
+(require 'jag-modes-python)
+(require 'jag-modes-spray)
+(require 'jag-modes-xkcd)
+(require 'jag-modes-xml)
 
 
 ;; Make gc pauses faster by decreasing the threshold.
