@@ -15,6 +15,13 @@
 
 (use-package jag-funcs-configuring
   :ensure nil
+  :commands (jag-new-func-module
+			 jag-new-mode-module
+			 jag-new-general-module
+			 jag-new-key-module))
+
+(use-package jag-funcs-files
+  :ensure nil
   :general
   (jag--files-leader-def
 	"c" 'jag-copy-file
