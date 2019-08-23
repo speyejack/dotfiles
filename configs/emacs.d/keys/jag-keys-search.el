@@ -19,6 +19,7 @@
  "al" 'helm-do-this-file
  "ab" 'helm-do-ag-buffers
  "ap" 'helm-ag-pop-stack
+ "e" 'evil-iedit-state/iedit-mode
  "r" 'helm-rg
  "t" 'srefactor-refactor-at-point
  "L" 'helm-google

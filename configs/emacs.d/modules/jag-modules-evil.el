@@ -288,9 +288,9 @@
 ;; Source: https://github.com/syl20bnr/evil-iedit-state
 
 (use-package evil-iedit-state
-  :commands 'iedit-mode
+  :commands (evil-iedit-state/iedit-mode evil-iedit-state)
   :diminish
-  :after (evil iedit))
+  :after evil)
 
 ;; evil-indent-plus
 ;;
