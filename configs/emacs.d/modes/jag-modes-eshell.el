@@ -4,6 +4,18 @@
 
 ;;; Code:
 
+(setq password-cache t)
+(setq password-cache-expiry 300)
+
+(use-package jag-funcs-eshell
+  :ensure nil
+  :init
+  (evil-define-key 'normal eshell-mode-map
+		"K" evil-previous-visual-line
+		"J" evil-next-visual-line
+		"j" 'eshell-next-matching-input-from-input
+		"k" 'eshell-previous-matching-input-from-input))
+
 ;; esh-help
 ;;
 ;; Add some help functions and support for Eshell
