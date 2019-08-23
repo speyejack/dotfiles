@@ -93,6 +93,25 @@
   :config
   (semantic-mode 1))
 
+;; smartparens
+;;
+;; Minor mode for Emacs that deals with parens pairs and tries to be smart about it.
+;;
+;; Source: https://github.com/Fuco1/smartparens
+(use-package smartparens
+  :diminish
+  :config
+  (setq sp-show-pair-from-inside t
+		sp-highlight-pair-overlay nil
+		sp-highlight-wrap-overlay nil
+		sp-highlight-wrap-tag-overlay nil)
+  (add-hook 'prog-mode-hook 'smartparens-mode)
+  (add-hook 'comint-mode 'smartparens-mode)
+  (show-smartparens-global-mode 1)
+  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+  (sp-local-pair 'minibuffer-inactive-mode "'" nil :actions nil))
+
+(testing out something 'test who)
 ;; srefactor
 ;;
 ;; A refactoring tool based on Semantic parser framework
