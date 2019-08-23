@@ -16,6 +16,10 @@
 
 (jag--vc-leader-def
  "g" 'magit-status
+ "m" 'magit-dispatch
+ "S" 'magit-stage-file
+ "U" 'magit-unstage-file
+ "l" 'magit-log-buffer-file
  "t" 'git-timemachine)
 
 
