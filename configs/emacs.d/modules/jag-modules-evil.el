@@ -9,6 +9,7 @@
   :defer t
   :ensure nil
   :commands (jag-evil-reformat-buffer
+			 jag-goto-middle-of-line
 			 jag-evil-next-visual-line-5
 			 jag-evil-previous-visual-line-5))
 
@@ -58,6 +59,7 @@
    "J"  'jag-evil-next-visual-line-5
    "K"  'jag-evil-previous-visual-line-5
    "gh" 'evil-first-non-blank-of-visual-line
+   "gm" 'jag-goto-middle-of-line
    "gH" 'evil-beginning-of-visual-line
    "gl" 'evil-end-of-visual-line
    "gj" 'evil-join
