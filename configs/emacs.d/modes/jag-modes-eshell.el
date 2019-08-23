@@ -11,17 +11,6 @@
 ;; Source: https://github.com/tom-tan/esh-help
 
 (use-package esh-help
-  :disabled t
-  :diminish)
-
-;; eshell
-;;
-;; Adds several helpful functions to eShell
-;;
-;; Source: https://www.gnu.org/software/emacs/manual/html_mono/eshell.html
-
-(use-package eshell
-  :disabled t
   :diminish)
 
 ;; exec-path-from-shell
@@ -31,7 +20,6 @@
 ;; Source: https://github.com/purcell/exec-path-from-shell
 
 (use-package exec-path-from-shell
-  :disabled t
   :diminish)
 
 ;; fasd
