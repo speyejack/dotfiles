@@ -114,16 +114,6 @@
   :disabled t
   :diminish)
 
-;; pip-requirements
-;;
-;; A major mode for editing pip requirements files.
-;;
-;; Source: https://github.com/Wilfred/pip-requirements.el
-
-(use-package pip-requirements
-  :disabled t
-  :diminish)
-
 ;; py-isort
 ;;
 ;; Use isort to sort the imports in a Python buffer
