@@ -28,6 +28,7 @@
   "u" 'jag-avy-open-url
   "U" 'jag-avy-goto-url
   "i" 'helm-imenu
+  "o" 'open-line
   "f" 'find-function
   "v" 'find-variable
   "b" 'evil-window-bottom
