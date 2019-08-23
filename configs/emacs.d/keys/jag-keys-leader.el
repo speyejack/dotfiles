@@ -31,7 +31,6 @@
   "!" 'shell-command
   "u" 'universal-argument
   "I" 'use-package-report
-  "U" '(:which-key "utility")
   "a" '(:which-key "application")
   "b" '(:which-key "buffer")
   "c" '(:which-key "compile")

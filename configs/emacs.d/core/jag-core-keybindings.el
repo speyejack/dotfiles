@@ -29,7 +29,6 @@
 (require 'jag-keys-search)
 (require 'jag-keys-text)
 (require 'jag-keys-toggles)
-(require 'jag-keys-utility)
 (require 'jag-keys-vc)
 (require 'jag-keys-visual)
 (require 'jag-keys-web)
