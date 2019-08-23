@@ -24,7 +24,10 @@
  "e" 'ediff
  "d" 'dired
  "f" 'floobits-join-workspace
- "s" 'spray-mode
+ "r" 'spray-mode
+ "t" 'term
+ "s" 'eshell
+ "S" 'shell
  "l" '(:wk "desktop")
  "ls" 'desktop-save
  "ll" 'desktop-read
