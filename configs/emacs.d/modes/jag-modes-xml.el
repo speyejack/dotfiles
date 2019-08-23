@@ -1,4 +1,4 @@
-;;; jag-modes-xml.el ---
+;;; jag-modes-xml.el --- Xml mode configurations
 
 ;;; Commentary:
 
@@ -18,3 +18,5 @@
             (make-variable-buffer-local 'indent-tabs-mode)
             (setq indent-tabs-mode nil)))
 
+(provide 'jag-modes-xml)
+;;; jag-modes-xml.el ends here
