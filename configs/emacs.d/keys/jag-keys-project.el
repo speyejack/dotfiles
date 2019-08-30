@@ -24,7 +24,6 @@
  "G" 'projectile-regenerate-tags
  "I" 'projectile-invalidate-cache
  "R" 'projectile-replace
- "S" 'helm-projectile-ag
  "T" 'projectile-test-project
  "a" 'projectile-toggle-between-implementation-and-test
  "b" 'helm-projectile-switch-to-buffer
