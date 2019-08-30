@@ -5,11 +5,14 @@
 ;;; Code:
 
 
-;; TODO Finish function
-(defun jag-helm-projectile-search ()
-  "Search the project with either rg, ag, or grep."
+(defun jag-helm-projectile-search (&optional options)
+  "Search the project with either rg, ag, ack or grep using OPTIONS."
   (interactive)
-  (message "Not implemented."))
+  (if (executable-find "rg")
+	  (helm-projectile-rg)
+	(if (executable-find "ag")
+		(helm-projectile-ag)
+	  (helm-projectile-grep-or-ack))))
 
 (provide 'jag-funcs-project)
 ;;; jag-funcs-project.el ends here
