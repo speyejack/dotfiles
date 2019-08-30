@@ -109,6 +109,7 @@
   (add-hook 'comint-mode 'smartparens-mode)
   (show-smartparens-global-mode 1)
   (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+  (sp-local-pair 'emacs-lisp-mode "`" nil :actions nil)
   (sp-local-pair 'minibuffer-inactive-mode "'" nil :actions nil))
 
 ;; srefactor
