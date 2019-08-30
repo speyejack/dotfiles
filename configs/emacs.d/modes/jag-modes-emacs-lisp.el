@@ -7,13 +7,12 @@
 (jag--local-leader-def
   :keymaps '(emacs-lisp-mode-map lisp-mode-map lisp-interaction-mode-map)
   "t" 'eldoc-mode
-  "e" '(:wk "eval")
-  "eb" 'eval-buffer
-  "ef" 'eval-defun
-  "ee" 'eval-last-sexp
-  "er" 'eval-region
-  "ep" 'pp-eval-last-sexp
-  "em" 'pp-macroexpand-last-sexp)
+  "b" 'eval-buffer
+  "f" 'eval-defun
+  "e" 'eval-last-sexp
+  "r" 'eval-region
+  "p" 'pp-eval-last-sexp
+  "m" 'pp-macroexpand-last-sexp)
 
 ;; indention
 ;;
