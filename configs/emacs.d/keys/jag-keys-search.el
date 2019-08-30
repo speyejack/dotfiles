@@ -15,12 +15,14 @@
 
 
 (jag--save-search-symbols-leader-def
- "aa" 'helm-do-ag
- "al" 'helm-do-this-file
- "ab" 'helm-do-ag-buffers
- "ap" 'helm-ag-pop-stack
+ "a" 'helm-do-ag
+ "A" '(:wk "ag")
+ "Al" 'helm-do-this-file
+ "Ab" 'helm-do-ag-buffers
+ "Ap" 'helm-ag-pop-stack
  "e" 'evil-iedit-state/iedit-mode
  "r" 'helm-rg
+ "g" 'helm-grep
  "t" 'srefactor-refactor-at-point
  "L" 'helm-google
  "f" 'helm-imenu
