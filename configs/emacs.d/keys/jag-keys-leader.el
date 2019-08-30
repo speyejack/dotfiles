@@ -10,8 +10,6 @@
   :states '(motion)
   "SPC")
 
-;; TODO Make leader work with motion state
-;; TODO Get prefix key working
 ;; Create the leader definer
 (general-create-definer jag--leader-def
   :which-key "Leader prefix"
