@@ -53,6 +53,7 @@
 (require 'jag-modes-emacs-lisp)
 (require 'jag-modes-eshell)
 (require 'jag-modes-gud)
+(require 'jag-modes-julia)
 (require 'jag-modes-org)
 (require 'jag-modes-python)
 (require 'jag-modes-spray)
