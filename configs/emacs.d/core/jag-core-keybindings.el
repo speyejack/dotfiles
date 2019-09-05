@@ -9,7 +9,7 @@
 (defvar jag-leader-key "SPC"
   "The leader key in all motion states.")
 
-(defvar jag-emacs-leader-key "M-SPC"
+(defvar jag-emacs-leader-key "C-SPC"
   "The leader key in all states.")
 
 (require 'jag-keys-leader)
