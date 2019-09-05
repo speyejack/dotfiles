@@ -23,6 +23,7 @@
  "P" 'proced
  "e" 'ediff
  "d" 'dired
+ "h" 'hexl-mode
  "f" 'floobits-join-workspace
  "r" 'spray-mode
  "t" 'term
