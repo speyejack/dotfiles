@@ -17,8 +17,7 @@
   (:states 'motion
    "C-x C-F" 'helm-find-files
    "C-x C-b" 'helm-mini
-   "M-x" 'helm-M-x
-   "-"  'helm-find-files)
+   "M-x" 'helm-M-x)
   (:keymaps 'helm-map
    "M-l" 'helm-confirm-and-exit-minibuffer
    "M-h" 'evil-delete-backward-word
