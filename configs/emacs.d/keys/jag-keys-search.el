@@ -8,7 +8,7 @@
 
 ;; Create the save/search/symbols leader definer
 (general-create-definer jag--save-search-symbols-leader-def
-  :which-key "save/search/symbols"
+  :which-key "search/symbols"
   :states '(normal visual operator motion emacs)
   :prefix (concat jag-leader-key " s")
   :global-prefix (concat jag-emacs-leader-key " s"))
@@ -25,14 +25,16 @@
  "g" 'helm-grep
  "t" 'srefactor-refactor-at-point
  "L" 'helm-google
- "f" 'helm-imenu
+ "f" 'helm-imenu-in-all-buffers
+ "F" 'find-function
  "h" 'jag-highlight-symbol
  "j" 'helm-swoop
  "J" 'helm-multi-swoop-all
  "i" 'helm-multi-swoop-current-mode
  "I" 'helm-multi-swoop
- "s" 'save-buffer
- "S" 'evil-write-all)
+ "v" 'find-variable
+ "s" 'helm-swoop
+ "S" 'helm-multi-swoop-all)
 
 
 (provide 'jag-keys-search)

@@ -29,8 +29,8 @@
   "U" 'jag-avy-goto-url
   "i" 'helm-imenu
   "o" 'open-line
-  "f" 'find-function
-  "v" 'find-variable
+  "f" 'helm-imenu-in-all-buffers
+  "F" 'helm-imenu
   "b" 'evil-window-bottom
   "t" 'evil-window-top)
 
