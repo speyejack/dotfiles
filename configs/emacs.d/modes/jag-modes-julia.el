@@ -21,6 +21,7 @@
 ;; Source: https://github.com/JuliaEditorSupport/julia-emacs
 
 (use-package julia-mode
+  :commands julia-mode
   :diminish)
 
 
