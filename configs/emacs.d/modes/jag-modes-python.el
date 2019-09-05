@@ -20,7 +20,7 @@
   :keymaps 'python-mode-map
   "p" 'run-python
   "f" 'python-shell-send-file
-  "c" 'python-shell-send-buffer
+  "b" 'python-shell-send-buffer
   "r" 'python-shell-send-region
   "s" 'python-shell-send-string
   "o" 'python-shell-switch-to-shell)
