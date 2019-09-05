@@ -38,9 +38,12 @@
   (s-join
    "\n"
    (list
-	"(use-package %s"
-	":ensure nil"
-	"  )"))
+	"(use-package %2$s"
+	"  :ensure nil"
+	"    )"
+	""
+	"(use-package %1$s"
+	"    )"))
   "The template used to create a new general module.
 The template will be formatted with (format template func-module)")
 
@@ -48,9 +51,12 @@ The template will be formatted with (format template func-module)")
   (s-join
    "\n"
    (list
-	"(use-package %s"
-	":ensure nil"
-	"  )"))
+	"(use-package %2$s"
+	"  :ensure nil"
+	"    )"
+	""
+	"(use-package %1$s"
+	"    )"))
   "The template used to create a new mode module.
 The template will be formatted with (format template name func-module)")
 
@@ -62,10 +68,10 @@ The template will be formatted with (format template name func-module)")
 	"(general-create-definer jag--%1$s-leader-def"
 	"  :which-key \"%1$s leader prefix\""
 	"  :states '(normal visual operator)"
-	"  :prefix (concat jag-leader-key \" %2$s\")"
-	"  :global-prefix (concat jag-emacs-leader-key \" %2$s\"))"
+	"  :prefix (concat jag-leader-key \" %3$s\")"
+	"  :global-prefix (concat jag-emacs-leader-key \" %3$s\"))"
 	""
-	"(use-package %3$s"
+	"(use-package %2$s"
 	"  :ensure nil"
 	"  :general"
 	"  (jag--%1$s-leader-def"
@@ -79,7 +85,7 @@ The template will be formatted with the (format template name binding func-modul
 (defun jag--new-general-module-file (name)
   "Create new general module file with NAME."
   (jag--new-template-file name "modules" "Config for general module %s" jag-modules-dir
-						  (format jag-general-module-body-template (jag--new-template-name "funcs" name ))))
+						  (format jag-general-module-body-template name (jag--new-template-name "funcs" name ))))
 
 (defun jag--new-mode-module-file (name)
   "Create new mode module file with NAME."
@@ -89,7 +95,7 @@ The template will be formatted with the (format template name binding func-modul
 (defun jag--new-key-module-file (name leader-key)
   "Create new key module file with NAME."
   (jag--new-template-file name "keys" "Config for key %s" jag-keys-dir
-						  (format jag-key-module-body-template name leader-key (jag--new-template-name "funcs" name ))))
+						  (format jag-key-module-body-template name (jag--new-template-name "funcs" name ) leader-key )))
 
 (defun jag--new-func-module-file (name)
   "Create new func file for module NAME."
