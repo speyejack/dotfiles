@@ -60,6 +60,7 @@
 (require 'jag-modes-spray)
 (require 'jag-modes-xkcd)
 (require 'jag-modes-xml)
+(require 'jag-modes-yaml)
 
 
 ;; Make gc pauses faster by decreasing the threshold.
