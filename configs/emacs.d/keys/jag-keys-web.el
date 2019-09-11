@@ -15,7 +15,10 @@
 
 (jag--web-leader-def
  "g" 'engine/search-github
- "s" 'engine/search-stack-overflow
+ "S" 'engine/search-stack-overflow
+ "s" 'howdoyou-query
+ "h" 'howdoi-query
+ "H" 'howdoi-query-line-at-point
  "w" 'engine/search-wikipedia
  "d" 'engine/search-duckduckgo
  "l" 'engine/search-duckduckgo

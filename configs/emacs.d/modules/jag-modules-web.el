@@ -50,6 +50,25 @@
 	"http://www.youtube.com/results?aq=f&oq=&search_query=%s")
   :diminish)
 
+;; Howdoyou
+;;
+;; Easily search stack overflow into org mode
+;;
+;; Source: https://github.com/thanhvg/emacs-howdoyou
+(use-package howdoyou
+  :commands (howdoyou-query)
+  :diminish)
+
+;; Howdoi
+;;
+;; Easily get help on questions
+;;
+;; Source: https://github.com/gleitz/howdoi
+(use-package howdoi
+  :commands (howdoi-query
+			 howdoi-query-line-at-point)
+  :diminish)
+
 ;; gnus
 ;;
 ;; Reading email from emacs
