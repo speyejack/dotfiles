@@ -23,7 +23,9 @@
   "b" 'python-shell-send-buffer
   "r" 'python-shell-send-region
   "s" 'python-shell-send-string
-  "o" 'python-shell-switch-to-shell)
+  "o" 'python-shell-switch-to-shell
+  "d" 'pdb)
+
 
 ;; anaconda-mode
 ;;
@@ -78,7 +80,7 @@
   :general
   (jag--local-leader-def
     :keymaps 'python-mode-map
-    "d" 'helm-pydoc)
+    "h" 'helm-pydoc)
   :diminish)
 
 ;; hy-mode
