@@ -85,5 +85,21 @@
   (setq org-projectile-projects-file "~/Dropbox/notes/projects.org")
   (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
 
+;; evil-org
+;;
+;; evil keybindings for org-mode
+;;
+;; Source: https://github.com/Somelauw/evil-org-mode
+
+(use-package evil-org
+  :defer t
+  :diminish
+  :after (evil org)
+  :hook (org-mode 'evil-org-mode)
+  :config
+  (add-hook 'evil-org-mode-hook
+            (lambda ()
+              (evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading)))))
+
 (provide 'jag-modes-org)
 ;;; jag-modes-org.el ends here

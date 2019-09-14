@@ -104,22 +104,6 @@
   (setq-default evil-escape-key-sequence "jk")
   (setq evil-escape-unordered-key-sequence 1))
 
-;; evil-org
-;;
-;; evil keybindings for org-mode
-;;
-;; Source: https://github.com/Somelauw/evil-org-mode
-
-(use-package evil-org
-  :defer t
-  :diminish
-  :after (evil org)
-  :hook (org-mode 'evil-org-mode)
-  :config
-  (add-hook 'evil-org-mode-hook
-            (lambda ()
-              (evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading)))))
-
 ;; evil-magit
 ;;
 ;; evil-based key bindings for magit
