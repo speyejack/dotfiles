@@ -30,7 +30,7 @@
   "i" 'helm-imenu
   "o" 'open-line
   "f" 'helm-imenu-in-all-buffers
-  "F" 'helm-imenu
+  "F" 'dumb-jump-go
   "b" 'evil-window-bottom
   "t" 'evil-window-top)
 

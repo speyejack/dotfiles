@@ -61,6 +61,15 @@
   :commands (desktop-read desktop-save)
   :diminish)
 
+;; dumb-jump
+;;
+;; an Emacs "jump to definition" package for 40+ languages
+;;
+;; Source: https://github.com/jacktasia/dumb-jump
+(use-package dumb-jump
+  :commands (dumb-jump-go)
+  :diminish)
+
 ;; eyebrowse
 ;;
 ;; Easy window config switching
