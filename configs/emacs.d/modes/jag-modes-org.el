@@ -38,7 +38,8 @@
   (setq org-startup-indented 1)
   (setq org-agenda-files '("~/Dropbox/notes/"))
   (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
-  (setq org-log-done (quote time)))
+  (setq org-log-done (quote time))
+  (setq org-checkbox-hierarchical-statistics nil))
 
 ;; org-bullets
 ;;
