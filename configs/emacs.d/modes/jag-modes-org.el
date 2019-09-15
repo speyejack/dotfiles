@@ -92,14 +92,10 @@
 ;; Source: https://github.com/Somelauw/evil-org-mode
 
 (use-package evil-org
-  :defer t
   :diminish
-  :after (evil org)
-  :hook (org-mode 'evil-org-mode)
+  :hook (org-mode . evil-org-mode)
   :config
-  (add-hook 'evil-org-mode-hook
-            (lambda ()
-              (evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading)))))
+  (evil-org-set-key-theme '(textobject insert navigation shift todo)))
 
 (provide 'jag-modes-org)
 ;;; jag-modes-org.el ends here
