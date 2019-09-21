@@ -26,7 +26,8 @@
  "h" 'hexl-mode
  "f" 'floobits-join-workspace
  "r" 'spray-mode
- "t" 'term
+ "T" 'term
+ "t" 'helm-top
  "s" 'eshell
  "S" 'shell
  "l" '(:wk "desktop")
