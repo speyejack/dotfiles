@@ -24,7 +24,8 @@
 
 (jag--leader-def
   "SPC" 'helm-M-x
-  ":"  'eval-expression
+  ";"  'eval-expression
+  ":"  'helm-eval-expression-with-eldoc
   "?" 'helm-descbinds
   "!" 'shell-command
   "u" 'universal-argument
