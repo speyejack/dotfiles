@@ -19,6 +19,8 @@
   :general
   (jag--help-leader-def
    "b" 'helm-descbinds
+   "d" 'helm-man-woman
+   "h" 'helm-apropos
    "y" 'jag-display-and-copy-emacs-version
    "c" 'describe-char
    "e" 'evil-tutor-resume
