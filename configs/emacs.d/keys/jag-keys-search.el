@@ -20,6 +20,7 @@
  "Al" 'helm-do-this-file
  "Ab" 'helm-do-ag-buffers
  "Ap" 'helm-ag-pop-stack
+ "c" 'helm-colors
  "e" 'evil-iedit-state/iedit-mode
  "r" 'helm-rg
  "g" 'helm-grep
