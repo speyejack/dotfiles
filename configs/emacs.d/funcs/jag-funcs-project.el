@@ -12,7 +12,10 @@
 	  (helm-projectile-rg)
 	(if (executable-find "ag")
 		(helm-projectile-ag)
-	  (helm-projectile-grep-or-ack))))
+	  (if (executable-find "grep")
+		  (helm-projectile-grep)
+		(helm-projectile-ack)))))
+
 
 (provide 'jag-funcs-project)
 ;;; jag-funcs-project.el ends here
