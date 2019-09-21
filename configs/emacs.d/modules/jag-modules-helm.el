@@ -25,14 +25,19 @@
    "M-k" 'helm-previous-line
    "M-J" 'helm-previous-page
    "M-K" 'helm-next-page
+   "C-M-j" 'helm-toggle-visible-mark
+   "C-M-k" 'helm-toggle-visible-mark
+   "C-M-a" 'helm-mark-all
    "M-u" 'helm-previous-page
+   "M-a" 'helm-ff-run-complete-fn-at-point
    "M-d" 'helm-next-page)
   (:keymaps 'helm-find-files-map
    "M-h" 'helm-find-files-up-one-level
    "M-l" 'helm-ff-RET)
   :commands (helm-imenu helm-M-x)
   :config
-  (helm-mode 1))
+  (helm-mode 1)
+  (helm-top-poll-mode 1))
 
 ;; helm-ag
 ;;
