@@ -34,7 +34,7 @@
   (:keymaps 'helm-find-files-map
    "M-h" 'helm-find-files-up-one-level
    "M-l" 'helm-ff-RET)
-  :commands (helm-imenu helm-M-x)
+  :commands (helm helm-make-source)
   :config
   (helm-mode 1)
   (helm-top-poll-mode 1))
