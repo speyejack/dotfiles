@@ -14,9 +14,9 @@
   :prefix (concat jag-leader-key " a")
   :global-prefix (concat jag-emacs-leader-key " a"))
 
-
 (jag--application-leader-def
  "c" 'calc-dispatch
+ "C" 'helm-calcul-expression
  "z" 'zeal-at-point
  "Z" 'zeal-at-point-search
  "p" 'list-processes
