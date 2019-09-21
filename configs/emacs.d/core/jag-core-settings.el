@@ -22,7 +22,7 @@
 
 ;; Turn off the scroll bar and menu bar
 (menu-bar-mode -1)
-(toggle-scroll-bar -1)
+(scroll-bar-mode -1)
 (tool-bar-mode -1)
 
 ;; Turn on tab indention and set tab width
