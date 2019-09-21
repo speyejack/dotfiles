@@ -6,6 +6,10 @@
 
 ;;; Code:
 
+(general-unbind
+  :states '(motion)
+  "SPC m")
+
 ;; Create the local leader definer
 (general-create-definer jag--local-leader-def
   :global-prefix (concat jag-emacs-leader-key " m")
