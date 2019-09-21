@@ -11,9 +11,10 @@
   :ensure nil
   :config
   (add-hook 'eshell-mode-hook
-			'(general-def '(insert normal) eshell-mode-map
-			   "M-j" 'eshell-next-matching-input-from-input
-			   "M-k" 'eshell-previous-matching-input-from-input)))
+			(lambda ()
+			  (general-def '(insert normal) eshell-mode-map
+				"M-j" 'eshell-next-matching-input-from-input
+				"M-k" 'eshell-previous-matching-input-from-input))))
 
 ;; esh-help
 ;;
