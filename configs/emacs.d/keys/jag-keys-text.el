@@ -63,6 +63,7 @@
 	"ls" 'jag-sort-lines
 	"lt" 'tabify
 	"lu" 'jag-uniquify-lines
+	"r" 'helm-regexp
 	"t" '(:wk "transpose")
 	"tc" 'transpose-chars
 	"tl" 'transpose-lines
