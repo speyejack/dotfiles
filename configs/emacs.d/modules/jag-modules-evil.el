@@ -54,8 +54,6 @@
 
   :general
   (:states '(motion normal visual operator)
-   "j"  'evil-next-visual-line
-   "k"  'evil-previous-visual-line
    "J"  'jag-evil-next-visual-line-5
    "K"  'jag-evil-previous-visual-line-5
    "gh" 'evil-first-non-blank-of-visual-line
@@ -64,6 +62,13 @@
    "gl" 'evil-end-of-visual-line
    "gj" 'evil-join
    "R"  'undo-tree-redo)
+  ;; Handles visual mode inconsistencies
+  (:states '(motion normal visual)
+   "<remap> <evil-next-line>"  'evil-next-visual-line
+   "<remap> <evil-previous-line>"  'evil-previous-visual-line)
+  (:states '(operator)
+   "<remap> <evil-next-line>"  'evil-next-line
+   "<remap> <evil-previous-line>"  'evil-previous-line)
   (:keymaps 'minibuffer-inactive-mode-map
 	"M-h" 'left-char
 	"M-l" 'right-char
