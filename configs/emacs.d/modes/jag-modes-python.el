@@ -14,15 +14,8 @@
           (lambda ()
             (setq indent-tabs-mode t)
             (setq python-shell-interpreter "python3")
-(jag--local-leader-def
-  :keymaps 'python-mode-map
-  "p" 'run-python
-  "f" 'python-shell-send-file
-  "b" 'python-shell-send-buffer
-  "r" 'python-shell-send-region
-  "s" 'python-shell-send-string
-  "o" 'python-shell-switch-to-shell
-  "d" 'pdb)
+            (setq tab-width (default-value 'tab-width))
+			(setq python-indent-offset 4)))
 
 
 ;; anaconda-mode
