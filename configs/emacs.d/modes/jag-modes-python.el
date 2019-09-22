@@ -10,12 +10,10 @@
 ;;
 ;; Source: https://www.emacswiki.org/emacs/PythonProgrammingInEmacs
 
-(smart-tabs-advice python-indent-line-1 python-indent)
 (add-hook 'python-mode-hook
           (lambda ()
             (setq indent-tabs-mode t)
             (setq python-shell-interpreter "python3")
-            (setq tab-width (default-value 'tab-width))))
 (jag--local-leader-def
   :keymaps 'python-mode-map
   "p" 'run-python
