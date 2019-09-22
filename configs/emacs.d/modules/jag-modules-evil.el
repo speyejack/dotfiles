@@ -60,7 +60,7 @@
    "gm" 'jag-goto-middle-of-line
    "gH" 'evil-beginning-of-visual-line
    "gl" 'evil-end-of-visual-line
-   "gj" 'evil-join
+   "gJ" 'evil-join
    "R"  'undo-tree-redo)
   ;; Handles visual mode inconsistencies
   (:states '(motion normal visual)
