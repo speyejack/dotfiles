@@ -4,6 +4,10 @@
 
 ;;; Code:
 
+(jag--leader-def
+  :keymaps '(emacs-lisp-mode-map lisp-mode-map lisp-interaction-mode-map)
+  "k" 'jag-lisp-eval)
+
 (jag--local-leader-def
   :keymaps '(emacs-lisp-mode-map lisp-mode-map lisp-interaction-mode-map)
   "t" 'eldoc-mode

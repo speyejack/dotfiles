@@ -44,6 +44,7 @@
   "h" '(:which-key "help")
   "i" '(:which-key "insert")
   "j" '(:which-key "jump/join/split")
+  "k" '(eval-expression :which-key "eval")
   "l" '(:which-key "web")
   "m" '(:which-key "local-mode-map")
   "n" '(:which-key "narrow/fold/numbers")

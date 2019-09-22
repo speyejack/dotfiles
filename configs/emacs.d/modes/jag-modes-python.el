@@ -20,6 +20,9 @@
 (use-package jag-funcs-python
   :ensure nil
   :general
+  (jag--leader-def
+	:keymaps 'python-mode-map
+	"k" 'jag-python-shell-send)
   (jag--local-leader-def
 	:keymaps 'python-mode-map
 	"p" 'run-python
