@@ -33,6 +33,7 @@
   "a" '(:which-key "application")
   "b" '(:which-key "buffer")
   "c" '(:which-key "compile")
+  "d" 'helm-resume
   "e" '(:which-key "errors")
   "f" '(:which-key "files")
   "g" '(:which-key "git/version-control")
