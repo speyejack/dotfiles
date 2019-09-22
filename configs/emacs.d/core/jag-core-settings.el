@@ -41,16 +41,6 @@
 	  kept-old-versions 2
 	  version-control t)
 
-;; A temporary solution to having to tangling while configuring
-(defun jag--tangle-dotfile ()
-  "If the current file is the init org file, the code blocks are tangled."
-  (when (equal (file-truename (buffer-file-name))
-			   (file-truename (expand-file-name (concat user-emacs-directory "init.org"))))
-	(org-babel-tangle)
-	(message "Dotfile tangled")))
-
-(add-hook 'after-save-hook #'jag--tangle-dotfile)
-
 ;; Set emacs to use system clipboard
 (setq select-enable-clipboard t)
 
