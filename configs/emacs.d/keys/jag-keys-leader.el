@@ -10,6 +10,10 @@
   :states '(motion)
   "SPC")
 
+(general-unbind
+  :states'(motion emacs insert)
+  "C-SPC")
+
 ;; Create the leader definer
 (general-create-definer jag--leader-def
   :which-key "Leader prefix"
