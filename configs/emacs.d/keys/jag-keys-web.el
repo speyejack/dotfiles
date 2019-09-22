@@ -17,6 +17,8 @@
 (setq helm-google-suggest-search-url "https://duckduckgo.com/?q=%s&t=canonical&atb=v185-2&ia=web")
 
 (jag--web-leader-def
+ "e" 'atomic-chrome-start-server
+ "E" 'atomic-chrome-stop-server
  "g" 'engine/search-github
  "S" 'engine/search-stack-overflow
  "s" 'howdoyou-query

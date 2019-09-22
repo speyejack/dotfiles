@@ -4,6 +4,15 @@
 
 ;;; Code:
 
+;; atomic-chrome
+;;
+;; Edit text area on Chrome with Emacs using Atomic Chrome
+;;
+;; Source: https://github.com/alpha22jp/atomic-chrome/tree/a505f638866f9e7b913784be0dc84f338e9ad449
+
+(use-package atomic-chrome
+  :diminish)
+
 ;; bbdb
 ;;
 ;; The Insidious Big Brother Database for GNU Emacs
