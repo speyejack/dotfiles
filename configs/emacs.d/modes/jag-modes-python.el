@@ -17,6 +17,18 @@
             (setq tab-width (default-value 'tab-width))
 			(setq python-indent-offset 4)))
 
+(use-package jag-funcs-python
+  :ensure nil
+  :general
+  (jag--local-leader-def
+	:keymaps 'python-mode-map
+	"p" 'run-python
+	"f" 'python-shell-send-file
+	"b" 'python-shell-send-buffer
+	"r" 'python-shell-send-region
+	"s" 'python-shell-send-string
+	"o" 'python-shell-switch-to-shell
+	"d" 'pdb))
 
 ;; anaconda-mode
 ;;
