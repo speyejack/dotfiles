@@ -20,6 +20,7 @@
   "ip" 'lorem-ipsum-insert-paragraphs
   "is" 'lorem-ipsum-insert-sentences
   "u" 'helm-unicode
+  "n" 'rectangle-number-lines
   "y" 'helm-yas-complete
   "a" 'aya-create
   "e" 'aya-expand)
