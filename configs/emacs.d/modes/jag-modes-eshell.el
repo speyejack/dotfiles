@@ -14,6 +14,10 @@
   (add-hook 'eshell-mode-hook
 			(lambda ()
 			  (general-def '(insert normal) eshell-mode-map
+				"M-b" 'eshell-insert-buffer-name
+				"M-e" 'eshell-insert-envvar
+				"M-p" 'eshell-insert-process
+				"M-d" 'eshell-toggle-direct-send
 				"M-j" 'eshell-next-matching-input-from-input
 				"M-k" 'eshell-previous-matching-input-from-input))))
 
