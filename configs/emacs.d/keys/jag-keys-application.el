@@ -33,6 +33,27 @@
  "l" '(:wk "desktop")
  "ls" 'desktop-save
  "ll" 'desktop-read
+ "g" '(:wk "games")
+ "g5" '5x5
+ "gB" 'bubbles
+ "gD" 'doctor
+ "gH" 'hanoi-unix
+ "gM" 'morse-region
+ "gT" 'spook
+ "gb" 'blackbox
+ "gd" 'dunnet
+ "ge" 'decipher
+ "gg" 'gomoku
+ "gh" 'hanoi
+ "gl" 'life
+ "gm" 'mpuz
+ "gp" 'pong
+ "gr" 'dissociated-press
+ "gs" 'snake
+ "gs" 'solitaire
+ "gt" 'tetris
+ "gx" 'butterfly
+ "gz" 'zone
  "u" 'undo-tree-visualize)
 
 
