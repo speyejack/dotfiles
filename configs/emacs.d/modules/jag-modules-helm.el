@@ -20,6 +20,7 @@
    "M-x" 'helm-M-x)
   (:keymaps 'helm-map
    "M-l" 'helm-confirm-and-exit-minibuffer
+   "M-L" 'helm-execute-persistent-action
    "M-h" 'evil-delete-backward-word
    "M-j" 'helm-next-line
    "M-k" 'helm-previous-line
@@ -33,6 +34,7 @@
    "M-d" 'helm-next-page)
   (:keymaps 'helm-find-files-map
    "M-h" 'helm-find-files-up-one-level
+   "M-L" 'helm-execute-persistent-action
    "M-l" 'helm-ff-RET)
   :commands (helm helm-make-source)
   :config
