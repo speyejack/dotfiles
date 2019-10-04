@@ -15,6 +15,7 @@
   :global-prefix (concat jag-emacs-leader-key " a"))
 
 (jag--application-leader-def
+ "A" 'artist-mode
  "c" 'calc-dispatch
  "C" 'helm-calcul-expression
  "z" 'zeal-at-point
