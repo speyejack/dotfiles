@@ -6,7 +6,7 @@
 
 (setq password-cache t)
 (setq password-cache-expiry 300)
-(add-to-list 'eshell-visual-commands "nmtui")
+;; (add-to-list 'eshell-visual-commands "nmtui")
 
 (use-package jag-funcs-eshell
   :ensure nil
