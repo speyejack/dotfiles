@@ -16,6 +16,7 @@
 (jag--errors-leader-def
   "c" 'helm-flycheck
   "s" 'flyspell-correct-next-word-generic
+  "d" 'toggle-debug-on-error
   "t" 'hl-todo-next
   "T" 'hl-todo-prev)
 
