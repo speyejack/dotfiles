@@ -21,7 +21,7 @@
 				"M-p" 'eshell-insert-process
 				"M-d" 'eshell-toggle-direct-send
 				"M-g" 'helm-eshell-prompts
-				"M-G" 'helm-eshell-prompts-all
+				"M-G" 'helm-eshell-prompts-all)
 			  (general-def '(insert) eshell-mode-map
 				"M-j" 'eshell-next-matching-input-from-input
 				"M-k" 'eshell-previous-matching-input-from-input)
