@@ -133,7 +133,7 @@ containing the current file by the default explorer."
               (search-backward ":")
               (let ((last-match-end nil)
                     (last-ssh-hostname nil))
-                (while (string-match "@\\\([^:|]+\\\)" fname last-match-end)
+                (while (string-match "\\\(?:[a-zA-Z]*@\\\)?\\\([^:|]+\\\)[:|]" fname last-match-end)
                   (setq last-ssh-hostname (or (match-string 1 fname)
                                               last-ssh-hostname))
                   (setq last-match-end (match-end 0)))
