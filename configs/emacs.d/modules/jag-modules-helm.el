@@ -26,11 +26,13 @@
    "M-k" 'helm-previous-line
    "M-J" 'helm-previous-page
    "M-K" 'helm-next-page
+   "M-y" 'helm-yank-selection
    "C-M-j" 'helm-toggle-visible-mark
    "C-M-k" 'helm-toggle-visible-mark
    "C-M-a" 'helm-mark-all
    "M-u" 'helm-previous-page
    "M-a" 'helm-ff-run-complete-fn-at-point
+   "M-t" 'helm-toggle-truncate-line
    "M-d" 'helm-next-page)
   (:keymaps 'helm-find-files-map
    "M-h" 'helm-find-files-up-one-level
