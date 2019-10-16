@@ -88,10 +88,11 @@
    "U"   'undo-tree-visualize
    "C-r" 'undo-tree-redo)
   (:keymaps 'undo-tree-visualizer-mode-map
-   [remap evil-backward-char] 'undo-tree-visualize-switch-branch-left
-   [remap evil-forward-char]  'undo-tree-visualize-switch-branch-right
-   [remap evil-next-visual-line]     'undo-tree-visualize-redo
-   [remap evil-previous-visual-line] 'undo-tree-visualize-undo)
+   :states 'motion
+   "h" 'undo-tree-visualize-switch-branch-left
+   "l" 'undo-tree-visualize-switch-branch-right
+   "j" 'undo-tree-visualize-redo
+   "k" 'undo-tree-visualize-undo)
   :diminish 'undo-tree-mode)
 
 ;; evil-escape
