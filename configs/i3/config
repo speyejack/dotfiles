@@ -251,8 +251,6 @@ mode "$mode_launch" {
 }
 bindsym $mod+g mode "$mode_launch"
 
-# Disable mouse by default
-exec --no-startup-id $i3_path/i3mouse disable
 # Disable mouse warping for multiple monitor use
 mouse_warping none
 
