@@ -16,6 +16,7 @@
 
 (jag--toggles-leader-def
   "l" 'toggle-truncate-lines
+  "L" 'helm-truncate-lines
   "d" 'toggle-debug-on-error)
 
 
