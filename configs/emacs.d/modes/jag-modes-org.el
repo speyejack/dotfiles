@@ -112,13 +112,6 @@
   :general
   (jag--leader-def
     "Q" '(jag--quick-org-task-capture :which-key "quick-task-capture"))
-  (jag--local-leader-def
-    :keymaps 'org-mode-map
-    "t" 'org-babel-tangle
-    "e" 'org-edit-special)
-  (jag--local-leader-def
-    :keymaps 'org-src-mode-map
-    "e" 'org-edit-src-exit)
   :config
   (setq org-capture-templates
         '(("a" "My TODO task format." entry
