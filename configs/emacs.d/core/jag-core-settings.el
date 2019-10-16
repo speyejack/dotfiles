@@ -44,6 +44,9 @@
 ;; Set emacs to use system clipboard
 (setq select-enable-clipboard t)
 
+;; Save more recent files
+(setq recentf-max-saved-items 50)
+
 ;; Remove some safety for convenience
 (defalias 'yes-or-no-p 'y-or-n-p)
 
