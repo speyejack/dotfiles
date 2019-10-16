@@ -33,7 +33,8 @@
   "r" 'rainbow-delimters-mode
   "R" 'rainbow-mode
   "v" 'volatile-highlights-mode
-  "w" 'visual-line-mode
+  "W" 'visual-line-mode
+  "w" 'toggle-truncate-lines
   "l" 'whitespace-mode)
 
 (provide 'jag-keys-visual)
