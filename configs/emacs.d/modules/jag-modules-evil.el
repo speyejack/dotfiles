@@ -26,6 +26,9 @@
   (setq evil-want-integration t)
   (setq evil-respect-visual-line-mode t)
 
+  :custom
+ (evil-want-Y-yank-to-eol t "Make Y yank full lines")
+
   :config
 
   ;; / searches have all the magic characters
