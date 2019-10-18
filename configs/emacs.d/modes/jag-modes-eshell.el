@@ -20,6 +20,8 @@
 				"M-e" 'eshell-insert-envvar
 				"M-p" 'eshell-insert-process
 				"M-d" 'eshell-toggle-direct-send
+				"M-J" 'eshell-next-prompt
+				"M-K" 'eshell-previous-prompt
 				"M-g" 'helm-eshell-prompts
 				"M-G" 'helm-eshell-prompts-all)
 			  (general-def '(insert) eshell-mode-map
