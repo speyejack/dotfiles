@@ -6,11 +6,7 @@
 
 
 (use-package jag-funcs-emacs-lisp
-  :ensure nil
-  :general
-  (jag--leader-def
-	:keymaps '(emacs-lisp-mode-map lisp-mode-map lisp-interaction-mode-map)
-	"k" 'jag-lisp-eval))
+  :ensure nil)
 
 (jag--local-leader-def
   :keymaps '(emacs-lisp-mode-map lisp-mode-map lisp-interaction-mode-map)
