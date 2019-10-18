@@ -60,6 +60,7 @@
 (require 'jag-modes-org)
 (require 'jag-modes-pdb)
 (require 'jag-modes-python)
+(require 'jag-modes-realgud)
 (require 'jag-modes-spray)
 (require 'jag-modes-xkcd)
 (require 'jag-modes-xml)
