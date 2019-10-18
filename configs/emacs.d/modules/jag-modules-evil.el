@@ -139,6 +139,29 @@
   (setq evil-collection-setup-minibuffer t)
   (evil-collection-init))
 
+;; evil-extra-operator
+;;
+;; An extra set of operators used with evil
+;;
+;; Source: https://github.com/Dewdrops/evil-extra-operator
+
+(use-package evil-extra-operator
+  :defer t
+  :custom
+  (evil-extra-operator-eval-modes-alist
+   '((elisp-mode eval-region)
+	 (scheme-mode geiser-eval-region)
+	 (clojure-mode cider-eval-region)
+	 (ruby-mode ruby-send-region)
+	 (enh-ruby-mode ruby-send-region)
+	 (python-mode python-shell-send-region)
+	 (julia-mode julia-shell-run-region)))
+  :config
+  (global-evil-extra-operator-mode t)
+  :general
+  (jag--leader-def
+	"k" 'evil-operator-eval))
+
 ;; evil-args
 ;;
 ;; Motions and text objects for delimited arguments in Evil.
