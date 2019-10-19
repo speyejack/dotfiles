@@ -9,6 +9,7 @@
   )
 
 (use-package realgud
+  :commands (realgud:gdb realgud:pdb)
   :bind
   (:map realgud-short-key-mode
    ("M-J" . realgud:cmd-newer-frame)
