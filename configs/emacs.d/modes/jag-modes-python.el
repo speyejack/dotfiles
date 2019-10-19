@@ -13,12 +13,13 @@
 (add-hook 'python-mode-hook
           (lambda ()
             (setq indent-tabs-mode t)
-            (setq python-shell-interpreter "python3")
             (setq tab-width (default-value 'tab-width))
 			(setq python-indent-offset 4)))
 
 (use-package jag-funcs-python
   :ensure nil
+  :init
+  (setq python-shell-interpreter "python3")
   :general
   (jag--local-leader-def
 	:keymaps 'python-mode-map
