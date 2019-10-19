@@ -156,8 +156,6 @@
 	 (enh-ruby-mode ruby-send-region)
 	 (python-mode python-shell-send-region)
 	 (julia-mode julia-shell-run-region)))
-  :config
-  (global-evil-extra-operator-mode t)
   :general
   (jag--leader-def
 	"k" 'evil-operator-eval))
