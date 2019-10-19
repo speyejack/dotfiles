@@ -23,7 +23,7 @@
    ("M-c" . realgud:cmd-continue)
    ("M-b" . realgud:cmd-break)
    ("M-l" . realgud:cmd-step)
-   ("M-r" . realgud:cmd-run-command)))
+   ("M-r" . realgud:cmd-restart)))
 
 (provide 'jag-modes-realgud)
 ;;; jag-modes-realgud.el ends here
