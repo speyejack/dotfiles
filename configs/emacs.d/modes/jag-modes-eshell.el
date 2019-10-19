@@ -14,6 +14,8 @@
   (add-hook 'eshell-mode-hook
 			(lambda ()
 			  (setq pcomplete-cycle-completions nil)
+			  (general-def '(normal operator visual) eshell-mode-map
+				"gh" 'eshell-bol)
 			  (general-def '(insert normal) eshell-mode-map
 				"RET" 'eshell-send-input
 				"M-b" 'eshell-insert-buffer-name
