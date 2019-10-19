@@ -102,6 +102,7 @@
   :diminish
   :config
   (setq sp-show-pair-from-inside t
+		sp-escape-quotes-after-insert nil
 		sp-highlight-pair-overlay nil
 		sp-highlight-wrap-overlay nil
 		sp-highlight-wrap-tag-overlay nil)
