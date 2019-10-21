@@ -33,6 +33,7 @@
   "?" 'helm-descbinds
   "!" 'shell-command
   "u" 'universal-argument
+  "U" 'undo-tree-visualize
   "I" 'use-package-report
   "a" '(:which-key "application")
   "b" '(:which-key "buffer")

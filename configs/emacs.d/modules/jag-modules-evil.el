@@ -63,8 +63,7 @@
    "gm" 'jag-goto-middle-of-line
    "gH" 'evil-beginning-of-visual-line
    "gl" 'evil-end-of-visual-line
-   "gJ" 'evil-join
-   "R"  'undo-tree-redo)
+   "gJ" 'evil-join)
   ;; Handles visual mode inconsistencies
   (:states '(motion normal visual)
    "<remap> <evil-next-line>"  'evil-next-visual-line
@@ -88,8 +87,7 @@
   :general
   (:states 'motion
    "u"   'undo-tree-undo
-   "U"   'undo-tree-visualize
-   "C-r" 'undo-tree-redo)
+   "U"   'undo-tree-redo)
   (:keymaps 'undo-tree-visualizer-mode-map
    :states 'motion
    "h" 'undo-tree-visualize-switch-branch-left
