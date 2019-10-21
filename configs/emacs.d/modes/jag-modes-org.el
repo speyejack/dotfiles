@@ -104,7 +104,10 @@
   "i" '(nil :wk "insertion")
   "ia" 'org-attach
   "il" 'org-insert-link
-  "if" 'org-footnote-new)
+  "if" 'org-footnote-new
+  "iL" 'org-ref-helm-insert-label-link
+  "ir" 'org-ref-helm-insert-ref-link
+  "ic" 'org-ref-helm-insert-cite-link)
 
 (use-package org
   :commands 'org-mode
@@ -185,6 +188,16 @@
   :hook (org-mode . evil-org-mode)
   :config
   (evil-org-set-key-theme '(textobject insert navigation shift todo)))
+
+;; org-ref
+;;
+;; Allow citations within org more
+;;
+;; Source: https://github.com/jkitchin/org-ref
+
+(use-package org-ref
+  :commands (org)
+  :after (org-ref-helm-insert-label-link org-ref-helm-insert-ref-link org-ref-helm-insert-cite-link))
 
 (provide 'jag-modes-org)
 ;;; jag-modes-org.el ends here
