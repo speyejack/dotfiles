@@ -15,7 +15,7 @@
   "c" 'org-capture
   "d" 'org-deadline
   "D" 'org-insert-drawer
-  "ee" 'org-export-dispatch
+  "e" 'org-export-dispatch
   "f" 'org-set-effort
   "P" 'org-set-property
   ":" 'org-set-tags
