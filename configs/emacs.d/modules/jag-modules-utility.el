@@ -68,6 +68,8 @@
 ;; Source: https://github.com/jacktasia/dumb-jump
 (use-package dumb-jump
   :commands (dumb-jump-go)
+  :config
+  (setq dumb-jump-selector 'helm)
   :diminish)
 
 ;; eyebrowse
@@ -121,6 +123,19 @@
   :diminish
   :config
   (setq open-junk-file-directory (concat user-emacs-directory "junk/%Y-%m-%d-%H%M%S.")))
+
+;; paradox
+;;
+;; Better package manager
+;;
+;; Source: https://github.com/Malabarba/paradox
+
+(use-package paradox
+  :diminish
+  :bind
+  (:map paradox-menu-mode-map
+   ("j" . paradox-next-commit)
+   ("k" . paradox-previous-commit)))
 
 ;; persp-mode
 ;;
