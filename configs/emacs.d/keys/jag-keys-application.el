@@ -55,6 +55,7 @@
  "gt" 'tetris
  "gx" 'butterfly
  "gz" 'zone
+ "x" 'paradox-list-packages
  "u" 'undo-tree-visualize)
 
 
