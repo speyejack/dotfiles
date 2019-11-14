@@ -110,28 +110,45 @@
   "ic" 'org-ref-helm-insert-cite-link)
 
 (use-package org
-  :commands 'org-mode
+  :defer t
+  :commands (org-mode org-capture)
   :diminish 'org-indent-mode
-  :general
-  (jag--leader-def
-    "Q" '(jag--quick-org-task-capture :which-key "quick-task-capture"))
   :config
-  (setq org-capture-templates
-        '(("a" "My TODO task format." entry
-           (file "~/Dropbox/notes/todos.org")
-           "* TODO %?
-      SCHEDULED: %t")))
+  (let ((inbox-file (expand-file-name "inbox.org" jag-gtd-dir))
+		(gtd-file (expand-file-name "gtd.org" jag-gtd-dir))
+		(someday-file (expand-file-name "someday.org" jag-gtd-dir))
+		(tickler-file (expand-file-name "tickler.org" jag-gtd-dir)))
 
-  (defun jag--quick-org-task-capture ()
-    "Capture a task with my default template."
-    (interactive)
-    (org-capture nil "a"))
+	(if (not (file-exists-p jag-gtd-dir))
+		(progn
+		  (make-directory jag-gtd-dir t)
+		  (make-directory (expand-file-name "references" jag-gtd-dir))
+		  (write-region "" "" inbox-file t)
+		  (write-region "" "" gtd-file t)
+		  (write-region "" "" someday-file t)
+		  (write-region "" "" tickler-file t)))
+
+	(setq org-capture-templates
+		  `(("t" "Todo [inbox]" entry
+			 (file+headline ,inbox-file "Tasks")
+			 "* TODO %i%?")))
+
+	(setq org-refile-targets
+		  `((,gtd-file :maxlevel . 2)
+			(,tickler-file :maxlevel . 2)
+			(,someday-file :maxlevel . 2)))
+
+	(setq org-agenda-files
+		  `(,inbox-file ,gtd-file ,tickler-file)))
 
   (setq org-startup-indented 1)
-  (setq org-agenda-files '("~/Dropbox/notes/"))
   (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
   (setq org-log-done (quote time))
-  (setq org-checkbox-hierarchical-statistics nil))
+  (setq org-checkbox-hierarchical-statistics nil)
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+	 (python . t))))
 
 ;; org-bullets
 ;;
@@ -170,11 +187,9 @@
   :diminish
   :init
   (push (org-projectile-project-todo-entry) org-capture-templates)
-  :general
-  (jag--leader-def
-    "Q" (lambda () (interactive) (org-capture nil "p")))
   :config
-  (setq org-projectile-projects-file "~/Dropbox/notes/projects.org")
+  (setq org-projectile-projects-file
+		  (expand-file-name "gtd.org" jag-notes-dir))
   (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
 
 ;; evil-org
