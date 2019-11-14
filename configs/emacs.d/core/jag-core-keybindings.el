@@ -38,6 +38,7 @@
 (require 'jag-keys-insert)
 (require 'jag-keys-jump)
 (require 'jag-keys-narrow)
+(require 'jag-keys-organize)
 (require 'jag-keys-project)
 (require 'jag-keys-registers)
 (require 'jag-keys-search)
