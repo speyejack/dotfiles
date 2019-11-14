@@ -36,6 +36,14 @@ Similar to `before-init-time'")
 (add-to-list 'load-path jag-modes-dir)
 
 
+
+(defconst jag-notes-dir (expand-file-name "notes" jag-dir)
+  "The directory for storing notes.")
+
+(defconst jag-gtd-dir (expand-file-name "gtd" jag-notes-dir)
+  "The directory for storing gtd notes.")
+
+
 (provide 'jag-core-constants)
 
 ;;; jag-core-constants.el ends here
