@@ -15,6 +15,8 @@
 			(lambda ()
 			  (setq pcomplete-cycle-completions nil)
 			  (general-def '(normal operator visual) eshell-mode-map
+				"gj" 'eshell-next-prompt
+				"gk" 'eshell-previous-prompt
 				"gh" 'eshell-bol)
 			  (general-def '(insert normal) eshell-mode-map
 				"RET" 'eshell-send-input
