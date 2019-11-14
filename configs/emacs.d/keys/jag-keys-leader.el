@@ -27,6 +27,9 @@
   :commands (jag-evil-reformat-buffer))
 
 (jag--leader-def
+  :keymaps 'org-capture-mode-map
+  "\"" 'org-capture-refile)
+(jag--leader-def
   "SPC" 'helm-M-x
   ";"  'eval-expression
   ":"  'helm-eval-expression-with-eldoc
