@@ -36,8 +36,6 @@
 			 julia-repl-send-buffer
 			 julia-repl-send-region-or-line
 			 julia-repl-send-line)
-  :init
-  (add-hook 'julia-mode-hook 'julia-mode)
   :diminish)
 
 
