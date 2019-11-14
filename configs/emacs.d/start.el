@@ -57,6 +57,7 @@
 (require 'jag-modes-ibuffer)
 (require 'jag-modes-calc)
 (require 'jag-modes-comint)
+(require 'jag-modes-doc-view)
 (require 'jag-modes-emacs-lisp)
 (require 'jag-modes-eshell)
 (require 'jag-modes-gdb)
