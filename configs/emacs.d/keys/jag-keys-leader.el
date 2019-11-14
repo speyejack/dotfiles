@@ -45,10 +45,11 @@
   "h" '(:which-key "help")
   "i" '(:which-key "insert")
   "j" '(:which-key "jump/join/split")
-  "k" '(eval-expression :which-key "eval")
+  "k" 'evil-operator-eval
   "l" '(:which-key "web")
   "m" '(:which-key "local-mode-map")
   "n" '(:which-key "narrow/fold/numbers")
+  "o" '(:which-key "organize")
   "p" '(:which-key "project")
   "r" '(:which-key "registers/ring/resume")
   "s" '(:which-key "search/symbol")
