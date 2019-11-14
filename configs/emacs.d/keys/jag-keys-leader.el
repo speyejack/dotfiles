@@ -21,6 +21,10 @@
   :prefix jag-leader-key
   :global-prefix jag-emacs-leader-key)
 
+(use-package jag-funcs-leader
+  :ensure nil
+  :commands (jag-buffer-motion))
+
 (use-package jag-funcs-evil
   :defer t
   :ensure nil
