@@ -19,6 +19,7 @@
   :commands (jag-avy-goto-url jag-avy-open-url))
 
 (jag--jump-leader-def
+  "b" 'ibuffer-jump
   "d" 'dired-jump
   "D" 'dired-jump-other-window
   "J" 'evil-avy-goto-char-2
@@ -27,12 +28,13 @@
   "w" 'evil-avy-goto-word-or-subword-1
   "u" 'jag-avy-open-url
   "U" 'jag-avy-goto-url
-  "i" 'helm-imenu
   "o" 'open-line
   "f" 'helm-imenu-in-all-buffers
-  "F" 'dumb-jump-go
-  "b" 'evil-window-bottom
-  "t" 'evil-window-top)
+  "F" 'helm-semantic-or-imenu
+  "k" 'dumb-jump-go
+  "K" 'dumb-jump-back
+  "G" 'evil-window-bottom
+  "g" 'evil-window-top)
 
 
 (provide 'jag-keys-jump)
