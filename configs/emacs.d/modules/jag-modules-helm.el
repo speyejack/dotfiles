@@ -13,31 +13,30 @@
 
 (use-package helm
   :diminish
-  :general
-  (:states 'motion
-   "C-x C-F" 'helm-find-files
-   "C-x C-b" 'helm-mini
-   "M-x" 'helm-M-x)
-  (:keymaps 'helm-map
-   "M-l" 'helm-confirm-and-exit-minibuffer
-   "M-L" 'helm-execute-persistent-action
-   "M-h" 'evil-delete-backward-word
-   "M-j" 'helm-next-line
-   "M-k" 'helm-previous-line
-   "M-J" 'helm-previous-page
-   "M-K" 'helm-next-page
-   "M-y" 'helm-yank-selection
-   "C-M-j" 'helm-toggle-visible-mark
-   "C-M-k" 'helm-toggle-visible-mark
-   "C-M-a" 'helm-mark-all
-   "M-u" 'helm-previous-page
-   "M-a" 'helm-ff-run-complete-fn-at-point
-   "M-t" 'helm-toggle-truncate-line
-   "M-d" 'helm-next-page)
-  (:keymaps 'helm-find-files-map
-   "M-h" 'helm-find-files-up-one-level
-   "M-L" 'helm-execute-persistent-action
-   "M-l" 'helm-ff-RET)
+  :bind
+  (("C-x C-F" . 'helm-find-files)
+   ("C-x C-b" . 'helm-mini)
+   ("M-x" . 'helm-M-x)
+  :map helm-map
+  ("M-l" . 'helm-confirm-and-exit-minibuffer)
+  ("M-L" . 'helm-execute-persistent-action)
+  ("M-h" . 'evil-delete-backward-word)
+  ("M-j" . 'helm-next-line)
+  ("M-k" . 'helm-previous-line)
+  ("M-J" . 'helm-previous-page)
+  ("M-K" . 'helm-next-page)
+  ("M-y" . 'helm-yank-selection)
+  ("C-M-j" . 'helm-toggle-visible-mark)
+  ("C-M-k" . 'helm-toggle-visible-mark)
+  ("C-M-a" . 'helm-mark-all)
+  ("M-u" . 'helm-previous-page)
+  ("M-a" . 'helm-ff-run-complete-fn-at-point)
+  ("M-t" . 'helm-toggle-truncate-line)
+  ("M-d" . 'helm-next-page)
+  :map helm-find-files-map
+  ("M-h" . 'helm-find-files-up-one-level)
+  ("M-L" . 'helm-execute-persistent-action)
+  ("M-l" . 'helm-ff-RET))
   :commands (helm helm-make-source)
   :config
   (helm-mode 1)
@@ -215,9 +214,9 @@
 ;; Source: https://github.com/cute-jumper/ace-jump-helm-line
 
 (use-package ace-jump-helm-line
-  :general
-  (:keymaps 'helm-map
-   "M-f" 'ace-jump-helm-line)
+  :bind
+  (:map helm-map
+   ("M-f" . 'ace-jump-helm-line))
   :diminish
   :config
   (setq ace-jump-helm-line-style 'pre)

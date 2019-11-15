@@ -22,18 +22,18 @@
 
 (use-package git-timemachine
   :commands (git-timemachine)
-  :general
-  (:keymaps 'git-timemachine-mode-map
+  :bind
+  (:map git-timemachine-mode-map
    ;; Remove default timemachine mode bindings
-   "n" nil
-   "p" nil
-   "w" nil
-   "W" nil
+   ("n" . nil)
+   ("p" . nil)
+   ("w" . nil)
+   ("W" . nil)
    ;; Add my own key bindings
-   "J" 'git-timemachine-show-previous-revision
-   "K" 'git-timemachine-show-next-revision
-   "Y" 'git-timemachine-kill-revision
-   "q" 'git-timemachine-quit)
+   ("J" . 'git-timemachine-show-previous-revision)
+   ("K" . 'git-timemachine-show-next-revision)
+   ("Y" . 'git-timemachine-kill-revision)
+   ("q" . 'git-timemachine-quit))
   :diminish
   :config
   ;; Override evil keymap with timemachine's map

@@ -9,10 +9,10 @@
 
 (use-package ibuffer
   :ensure nil
-  :general
-  (:keymaps 'ibuffer-mode-map
-   "j" 'evil-next-visual-line
-   "k" 'evil-previous-visual-line)
+  :bind
+  (:map ibuffer-mode-map
+   ("j" . 'evil-next-visual-line)
+   ("k" . 'evil-previous-visual-line))
   :config
   (evil-define-key 'normal ibuffer-mode-map
 	"j" 'evil-next-visual-line

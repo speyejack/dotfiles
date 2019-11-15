@@ -13,18 +13,18 @@
 ;; TODO Remove cursor during spray mode
 (use-package spray
   :commands spray-mode
-  :general
-  (:keymaps 'spray-mode-map
-   "p" 'spray-start/stop
-   "q" 'spray-quit
-   "k" 'spray-faster
-   "j" 'spray-slower
-   "l" 'spray-forward-word
-   "L" 'spray-start
-   "h" 'spray-backward-word
-   "H" 'spray-stop
-   "c" 'jag-disable-cursor
-   "t" 'spray-time)
+  :bind
+  (:map spray-mode-map
+   ("p" . 'spray-start/stop)
+   ("q" . 'spray-quit)
+   ("k" . 'spray-faster)
+   ("j" . 'spray-slower)
+   ("l" . 'spray-forward-word)
+   ("L" . 'spray-start)
+   ("h" . 'spray-backward-word)
+   ("H" . 'spray-stop)
+   ("c" . 'jag-disable-cursor)
+   ("t" . 'spray-time))
    :diminish
    :config
   (defun jag-disable-cursor ()
