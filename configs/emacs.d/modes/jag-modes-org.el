@@ -114,6 +114,13 @@
   :commands (org-mode org-capture)
   :diminish 'org-indent-mode
   :config
+  (evil-define-key 'normal org-mode-map
+	(kbd "M-h") 'org-up-element
+	(kbd "M-j") 'org-forward-element
+	(kbd "M-k") 'org-backward-element
+	(kbd "M-l") 'org-down-element
+	(kbd "M-o") 'org-insert-heading-after-current
+	(kbd "M-O") 'org-insert-heading)
   (let ((inbox-file (expand-file-name "inbox.org" jag-gtd-dir))
 		(gtd-file (expand-file-name "gtd.org" jag-gtd-dir))
 		(someday-file (expand-file-name "someday.org" jag-gtd-dir))
@@ -214,6 +221,15 @@
   :commands (org-ref-helm-insert-label-link org-ref-helm-insert-ref-link org-ref-helm-insert-cite-link)
   :after (org))
 
+;; org-reveal
+;;
+;; Org-Reveal exports your Org documents to reveal.js presentations.
+;;
+;; Source: https://github.com/yjwen/org-reveal/
+
+(use-package org-re-reveal
+  :commands (org-re-reveal-export-to-html org-re-reveal-export-to-html-and-browse)
+  :after (org))
 
 (provide 'jag-modes-org)
 ;;; jag-modes-org.el ends here
