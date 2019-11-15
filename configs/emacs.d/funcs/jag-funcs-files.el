@@ -146,5 +146,15 @@ containing the current file by the default explorer."
   (interactive)
   (set-buffer-file-coding-system 'undecided-dos nil))
 
+(defun jag-open-dotfiles ()
+  "Opens dotfiles start file."
+  (interactive)
+  (find-file (expand-file-name "start.el" jag-dir)))
+
+(defun jag-open-inbox ()
+  "Opens inbox files."
+  (interactive)
+  (find-file (expand-file-name "inbox.org" jag-gtd-dir)))
+
 (provide 'jag-funcs-files)
 ;;; jag-funcs-files.el ends here

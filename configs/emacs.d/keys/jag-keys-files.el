@@ -39,8 +39,8 @@
 	"E" 'jag-sudo-edit
 	"f" 'helm-find-files
 	"g" '(:wk "goto")
-	"gd" '(lambda () (interactive) (find-file (expand-file-name "start.el" jag-dir)) :wk "dotfiles")
-	"gi" '(lambda () (interactive) (find-file (expand-file-name "inbox.org" jag-gtd-dir)) :wk "inbox")
+	"gd" 'jag-open-dotfiles
+	"gi" 'jag-open-inbox
 	"G" 'rgrep
 	"j" 'dired-jump
 	"l" 'find-file-literally
