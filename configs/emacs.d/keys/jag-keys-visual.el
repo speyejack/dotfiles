@@ -22,6 +22,7 @@
   "a" 'indent-guide-global-mode
   "c" 'centered-cursor-mode
   "C" 'column-number-mode
+  "d" 'global-diff-hl-mode
   "f" 'jag-stickyfunc-mode
   "g" 'golden-ratio-mode
   "n" 'highlight-numbers-mode

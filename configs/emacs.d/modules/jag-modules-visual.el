@@ -73,8 +73,6 @@
 (use-package diff-hl
   :diminish
   :defer 3
-  :general
-  (jag--visual-leader-def "d" 'global-diff-hl-mode)
   :config
   (global-diff-hl-mode))
 
