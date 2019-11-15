@@ -211,8 +211,9 @@
 ;; Source: https://github.com/jkitchin/org-ref
 
 (use-package org-ref
-  :commands (org)
-  :after (org-ref-helm-insert-label-link org-ref-helm-insert-ref-link org-ref-helm-insert-cite-link))
+  :commands (org-ref-helm-insert-label-link org-ref-helm-insert-ref-link org-ref-helm-insert-cite-link)
+  :after (org))
+
 
 (provide 'jag-modes-org)
 ;;; jag-modes-org.el ends here
