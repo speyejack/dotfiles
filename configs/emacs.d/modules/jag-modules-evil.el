@@ -57,6 +57,8 @@
 
   :general
   (:states '(motion normal visual operator)
+   "C-j"  'scroll-down-command
+   "C-k"  'scroll-up-command
    "J"  'jag-evil-next-visual-line-5
    "K"  'jag-evil-previous-visual-line-5
    "gh" 'evil-first-non-blank-of-visual-line
