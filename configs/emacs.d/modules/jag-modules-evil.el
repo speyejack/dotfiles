@@ -112,9 +112,7 @@
 (use-package undo-tree
   :commands (undo-tree-redo undo-tree-undo)
   :bind
-  (("u" . 'undo-tree-undo)
-   ("r" . 'undo-tree-redo)
-   :map undo-tree-visualizer-mode-map
+  (:map undo-tree-visualizer-mode-map
    ("h" . 'undo-tree-visualize-switch-branch-left)
    ("l" . 'undo-tree-visualize-switch-branch-right)
    ("j" . 'undo-tree-visualize-redo)
