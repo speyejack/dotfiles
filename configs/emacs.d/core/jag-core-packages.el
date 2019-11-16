@@ -25,6 +25,17 @@
 (setq use-package-always-ensure t)
 ;; (setq use-package-compute-statistics t)
 
+;; gcmh
+;;
+;; Magic hack for garbage collector to only perform when user inactive
+;;
+;; Source: https://akrl.sdf.org/
+(use-package gcmh
+  :demand
+  :diminish
+  :config
+  (gcmh-mode t))
+
 ;; which-key
 ;;
 ;; Display available keybindings in popup
