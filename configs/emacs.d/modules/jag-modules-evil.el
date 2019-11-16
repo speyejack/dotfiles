@@ -30,6 +30,8 @@
  (evil-want-Y-yank-to-eol t "Make Y yank full lines")
 
   :config
+  (evil-define-key '(normal visual motion) 'global
+	(kbd "SPC") jag-leader-map)
 
   ;; / searches have all the magic characters
   (setq evil-magic 'very-magic)
