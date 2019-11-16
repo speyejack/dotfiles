@@ -70,6 +70,7 @@
 (require 'jag-modes-realgud)
 (require 'jag-modes-spray)
 (require 'jag-modes-special)
+(require 'jag-modes-term)
 (require 'jag-modes-xkcd)
 (require 'jag-modes-xml)
 (require 'jag-modes-yaml)
