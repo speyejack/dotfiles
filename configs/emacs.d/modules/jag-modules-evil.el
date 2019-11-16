@@ -117,7 +117,9 @@
    ("l" . 'undo-tree-visualize-switch-branch-right)
    ("j" . 'undo-tree-visualize-redo)
    ("k" . 'undo-tree-visualize-undo))
-  :diminish 'undo-tree-mode)
+  :diminish 'undo-tree-mode
+  :config
+  (evil-make-overriding-map undo-tree-visualizer-mode-map))
 
 ;; evil-escape
 ;;
