@@ -13,12 +13,9 @@
   :prefix (concat jag-leader-key " j")
   :global-prefix (concat jag-emacs-leader-key " j"))
 
+(jag-create-sub-leader-map jag-leader-map "j" "jump")
 
-(use-package jag-funcs-jump
-  :ensure nil
-  :commands (jag-avy-goto-url jag-avy-open-url))
-
-(jag--jump-leader-def
+(jag-define-keys jag-jump-map
   "b" 'ibuffer-jump
   "d" 'dired-jump
   "D" 'dired-jump-other-window

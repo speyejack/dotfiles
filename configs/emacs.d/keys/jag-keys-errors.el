@@ -6,14 +6,9 @@
 
 ;;; Code:
 
-;; Create the errors leader definer
-(general-create-definer jag--errors-leader-def
-  :which-key "Errors leader prefix"
-  :states '(normal visual operator motion emacs)
-  :prefix (concat jag-leader-key " e")
-  :global-prefix (concat jag-emacs-leader-key " e"))
+(jag-create-sub-leader-map jag-leader-map "e" "error")
 
-(jag--errors-leader-def
+(jag-define-keys jag-error-map
   "c" 'helm-flycheck
   "s" 'flyspell-correct-next-word-generic
   "d" 'toggle-debug-on-error

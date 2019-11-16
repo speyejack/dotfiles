@@ -6,17 +6,11 @@
 
 ;;; Code:
 
-;; Create the save/search/symbols leader definer
-(general-create-definer jag--save-search-symbols-leader-def
-  :which-key "search/symbols"
-  :states '(normal visual operator motion emacs)
-  :prefix (concat jag-leader-key " s")
-  :global-prefix (concat jag-emacs-leader-key " s"))
+(jag-create-sub-leader-map jag-leader-map "s" "search")
 
-
-(jag--save-search-symbols-leader-def
+(jag-define-keys jag-search-map
  "a" 'helm-do-ag
- "A" '(:wk "ag")
+ ;; "A" '(:wk "ag")
  "Al" 'helm-do-this-file
  "Ab" 'helm-do-ag-buffers
  "Ap" 'helm-ag-pop-stack

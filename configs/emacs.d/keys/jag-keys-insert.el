@@ -6,16 +6,10 @@
 
 ;;; Code:
 
-;; Create the insert leader definer
-(general-create-definer jag--insert-leader-def
-  :which-key "Insert leader prefix"
-  :states '(normal visual operator motion emacs)
-  :prefix (concat jag-leader-key " i")
-  :global-prefix (concat jag-emacs-leader-key " i"))
+(jag-create-sub-leader-map jag-leader-map "i" "insert")
 
-
-(jag--insert-leader-def
-  "i" '(:wk "lorem-ipsum")
+(jag-define-keys jag-insert-map
+  ;; "i" '(:wk "lorem-ipsum")
   "il" 'lorem-ipsum-insert-list
   "ip" 'lorem-ipsum-insert-paragraphs
   "is" 'lorem-ipsum-insert-sentences

@@ -6,18 +6,13 @@
 
 ;;; Code:
 
-;; Create the project leader definer
-(general-create-definer jag--project-leader-def
-  :which-key "Project leader prefix"
-  :states '(normal visual operator motion emacs)
-  :prefix (concat jag-leader-key " p")
-  :global-prefix (concat jag-emacs-leader-key " p"))
-
 (use-package jag-funcs-project
   :commands 'jag-helm-projectile-search
   :ensure nil)
 
-(jag--project-leader-def
+(jag-create-sub-leader-map jag-leader-map "p" "project")
+
+(jag-define-keys jag-project-map
   "SPC" 'helm-projectile
   "!" 'projectile-run-shell-command-in-root
   "%" 'projectile-replace-regexp

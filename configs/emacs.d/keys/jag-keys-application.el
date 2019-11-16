@@ -14,7 +14,9 @@
   :prefix (concat jag-leader-key " a")
   :global-prefix (concat jag-emacs-leader-key " a"))
 
-(jag--application-leader-def
+(jag-create-sub-leader-map jag-leader-map "a" "application")
+
+(jag-define-keys jag-application-map
  "A" 'artist-mode
  "c" 'calc-dispatch
  "C" 'helm-calcul-expression
@@ -31,10 +33,10 @@
  "t" 'helm-top
  "s" 'eshell
  "S" 'shell
- "l" '(:wk "desktop")
+ ;; "l" '(:wk "desktop")
  "ls" 'desktop-save
  "ll" 'desktop-read
- "g" '(:wk "games")
+ ;; "g" '(:wk "games")
  "g5" '5x5
  "gB" 'bubbles
  "gD" 'doctor

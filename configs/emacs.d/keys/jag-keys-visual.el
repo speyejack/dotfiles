@@ -6,18 +6,13 @@
 
 ;;; Code:
 
-;; Create the visual leader definer
-(general-create-definer jag--visual-leader-def
-  :which-key "Visual leader prefix"
-  :states '(normal visual operator motion emacs)
-  :prefix (concat jag-leader-key " v")
-  :global-prefix (concat jag-emacs-leader-key " v"))
+(jag-create-sub-leader-map jag-leader-map "v" "visual")
 
 (use-package jag-funcs-visual
   :ensure nil
   :commands (jag-stickyfunc-mode))
 
-(jag--visual-leader-def
+(jag-define-keys jag-visual-map
   "'" 'evil-visual-mark-mode
   "a" 'indent-guide-global-mode
   "c" 'centered-cursor-mode

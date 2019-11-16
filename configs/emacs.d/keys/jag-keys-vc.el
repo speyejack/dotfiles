@@ -6,15 +6,9 @@
 
 ;;; Code:
 
-;; Create the vc leader definer
-(general-create-definer jag--vc-leader-def
-  :which-key "Vc leader prefix"
-  :states '(normal visual operator motion emacs)
-  :prefix (concat jag-leader-key " g")
-  :global-prefix (concat jag-emacs-leader-key " g"))
+(jag-create-sub-leader-map jag-leader-map "g" "vc")
 
-
-(jag--vc-leader-def
+(jag-define-keys jag-vc-map
  "g" 'magit-status
  "m" 'magit-dispatch
  "S" 'magit-stage-file

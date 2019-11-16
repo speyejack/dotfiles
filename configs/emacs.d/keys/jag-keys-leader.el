@@ -14,26 +14,7 @@
   :states'(motion emacs insert)
   "C-SPC")
 
-;; Create the leader definer
-(general-create-definer jag--leader-def
-  :which-key "Leader prefix"
-  :states '(normal visual operator emacs)
-  :prefix jag-leader-key
-  :global-prefix jag-emacs-leader-key)
-
-(use-package jag-funcs-leader
-  :ensure nil
-  :commands (jag-buffer-motion))
-
-(use-package jag-funcs-evil
-  :defer t
-  :ensure nil
-  :commands (jag-evil-reformat-buffer))
-
-(jag--leader-def
-  :keymaps 'org-capture-mode-map
-  "\"" 'org-capture-refile)
-(jag--leader-def
+(jag-define-keys jag-leader-map
   "SPC" 'helm-M-x
   ";"  'eval-expression
   ":"  'helm-eval-expression-with-eldoc

@@ -6,17 +6,12 @@
 
 ;;; Code:
 
-;; Create the web leader definer
-(general-create-definer jag--web-leader-def
-  :which-key "Web leader prefix"
-  :states '(normal visual operator motion emacs)
-  :prefix (concat jag-leader-key " l")
-  :global-prefix (concat jag-emacs-leader-key " l"))
+(jag-create-sub-leader-map jag-leader-map "l" "web")
 
 ;; Should add duck duck go as suggestion url
 (setq helm-google-suggest-search-url "https://duckduckgo.com/?q=%s&t=canonical&atb=v185-2&ia=web")
 
-(jag--web-leader-def
+(jag-define-keys jag-web-map
  "e" 'atomic-chrome-start-server
  "E" 'atomic-chrome-stop-server
  "g" 'engine/search-github
