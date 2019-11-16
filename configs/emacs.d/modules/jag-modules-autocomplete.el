@@ -13,24 +13,24 @@
 (use-package company
   :diminish
   :defer 2
-  :general
-  (:keymaps 'company-mode-map
-   "C-'" 'helm-company
-   "M-h" 'helm-company)
-  (:keymaps 'company-active-map
-   "M-l" 'company-complete-selection
-   "C-n" 'company-select-next-or-abort
-   "C-p" 'company-select-previous-or-abort
-   "C-j" 'company-select-next-or-abort
-   "C-k" 'company-select-previous-or-abort
-   "M-j" 'company-select-next
-   "M-k" 'company-select-previous)
-  (:keymaps 'company-search-map
-   "C-j" 'company-select-next-or-abort
-   "C-k" 'company-select-previous-or-abort
-   "M-j" 'company-select-next
-   "M-k" 'company-select-previous
-   "<escape>" 'company-search-abort)
+  :bind
+  (:map company-mode-map
+   ("C-'" . 'helm-company)
+   ("M-h" . 'helm-company))
+  (:map company-active-map
+   ("M-l" . 'company-complete-selection)
+   ("C-n" . 'company-select-next-or-abort)
+   ("C-p" . 'company-select-previous-or-abort)
+   ("C-j" . 'company-select-next-or-abort)
+   ("C-k" . 'company-select-previous-or-abort)
+   ("M-j" . 'company-select-next)
+   ("M-k" . 'company-select-previous))
+  (:map company-search-map
+   ("C-j" . 'company-select-next-or-abort)
+   ("C-k" . 'company-select-previous-or-abort)
+   ("M-j" . 'company-select-next)
+   ("M-k" . 'company-select-previous)
+   ("<escape>" . 'company-search-abort))
   :config
   (global-company-mode 1)
   (setq tab-always-indent 'complete))

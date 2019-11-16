@@ -8,6 +8,9 @@
 
 (jag-create-sub-leader-map jag-leader-map "l" "web")
 
+(jag-declare-prefixes
+ '(("l" "web")))
+
 ;; Should add duck duck go as suggestion url
 (setq helm-google-suggest-search-url "https://duckduckgo.com/?q=%s&t=canonical&atb=v185-2&ia=web")
 

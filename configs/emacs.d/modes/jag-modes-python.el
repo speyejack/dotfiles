@@ -16,20 +16,33 @@
             (setq tab-width (default-value 'tab-width))
 			(setq python-indent-offset 4)))
 
+(jag-declare-prefix-for-mode 'python-mode "mt" "pytest")
+(jag-declare-prefix-for-mode 'python-mode "mtp" "pytest-pdb")
+(jag-define-leader-keys-for-major-mode
+ 'python-mode
+ "l" 'live-py-mode
+ "h" 'helm-pydoc
+ "p" 'run-python
+ "f" 'python-shell-send-file
+ "b" 'python-shell-send-buffer
+ "r" 'python-shell-send-region
+ "s" 'python-shell-send-string
+ "o" 'python-shell-switch-to-shell
+ "d" 'pdb
+
+ "ta" 'pytest-all
+ "tm" 'pytest-module
+ "to" 'pytest-one
+ "tpa" 'pytest-pdb-all
+ "tpm" 'pytest-pdb-module
+ "tpo" 'pytest-pdb-one
+ "=" 'yapf-mode
+ )
+
 (use-package jag-funcs-python
   :ensure nil
   :init
-  (setq python-shell-interpreter "python3")
-  :general
-  (jag--local-leader-def
-	:keymaps 'python-mode-map
-	"p" 'run-python
-	"f" 'python-shell-send-file
-	"b" 'python-shell-send-buffer
-	"r" 'python-shell-send-region
-	"s" 'python-shell-send-string
-	"o" 'python-shell-switch-to-shell
-	"d" 'pdb))
+  (setq python-shell-interpreter "python3"))
 
 ;; anaconda-mode
 ;;
@@ -81,10 +94,7 @@
 ;; Source: https://github.com/syohex/emacs-helm-pydoc
 
 (use-package helm-pydoc
-  :general
-  (jag--local-leader-def
-    :keymaps 'python-mode-map
-    "h" 'helm-pydoc)
+  :commands 'helm-pydoc
   :diminish)
 
 ;; hy-mode
@@ -104,10 +114,7 @@
 ;; Source: https://github.com/donkirkby/live-py-plugin
 
 (use-package live-py-mode
-  :general
-  (jag--local-leader-def
-    :keymaps 'python-mode-map
-    "l" 'live-py-mode)
+  :commands 'live-py-mode
   :diminish)
 
 ;; nose
@@ -159,17 +166,8 @@
 ;; Source: https://github.com/ionrock/pytest-el
 
 (use-package pytest
-  :general
-  (jag--local-leader-def
-    :keymaps 'python-mode-map
-    "t" '(nil :which-key "pytest-map")
-    "ta" 'pytest-all
-    "tm" 'pytest-module
-    "to" 'pytest-one
-    "tp" '(nil :which-key "pdb-map")
-    "tpa" 'pytest-pdb-all
-    "tpm" 'pytest-pdb-module
-    "tpo" 'pytest-pdb-one)
+  :commands (pytest-all pytest-module pytest-one pytest-pdb-all
+						pytest-pdb-module pytest-pdb-one)
   :diminish)
 
 ;; yapfify
@@ -179,10 +177,6 @@
 ;; Source: https://github.com/JorisE/yapfify
 
 (use-package yapfify
-  :general
-  (jag--local-leader-def
-    :keymaps 'python-mode-map
-    "=" 'yapf-mode)
   :hook (python-mode . yapf-mode)
   :diminish yapf-mode)
 

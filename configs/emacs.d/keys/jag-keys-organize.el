@@ -6,6 +6,9 @@
 
 (jag-create-sub-leader-map jag-leader-map "o" "organize")
 
+(jag-declare-prefixes
+ '(("o" "organize")))
+
 (use-package jag-funcs-organize
   :ensure nil
   :bind

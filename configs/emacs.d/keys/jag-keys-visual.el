@@ -12,6 +12,9 @@
   :ensure nil
   :commands (jag-stickyfunc-mode))
 
+(jag-declare-prefixes
+ '(("v" "visual")))
+
 (jag-define-keys jag-visual-map
   "'" 'evil-visual-mark-mode
   "a" 'indent-guide-global-mode

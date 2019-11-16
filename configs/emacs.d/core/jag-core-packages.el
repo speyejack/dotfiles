@@ -25,11 +25,6 @@
 (setq use-package-always-ensure t)
 ;; (setq use-package-compute-statistics t)
 
-
-;; More convenient key definitions in emacs
-(use-package general
-  :diminish)
-
 ;; which-key
 ;;
 ;; Display available keybindings in popup

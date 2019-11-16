@@ -8,6 +8,10 @@
 
 (jag-create-sub-leader-map jag-leader-map "b" "buffer")
 
+(jag-declare-prefixes
+ '(("b" "buffer")
+   ("bm" "modes")))
+
 (use-package jag-funcs-buffer
   :ensure nil
   :bind
@@ -21,7 +25,6 @@
 	("d" . 'jag-kill-this-buffer)
 	("e" . 'jag-safe-erase-buffer)
 	("i" .  'ibuffer)
-;;	("m" . '(:wk "modes"))
 	("md" . 'helm-disable-minor-mode)
 	("me" . 'helm-enable-minor-mode)
 	("mm" . 'helm-switch-major-mode)

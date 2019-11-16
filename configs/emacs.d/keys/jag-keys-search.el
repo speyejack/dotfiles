@@ -8,9 +8,12 @@
 
 (jag-create-sub-leader-map jag-leader-map "s" "search")
 
+(jag-declare-prefixes
+ '(("s" "search")
+   ("sA" "ag")))
+
 (jag-define-keys jag-search-map
  "a" 'helm-do-ag
- ;; "A" '(:wk "ag")
  "Al" 'helm-do-this-file
  "Ab" 'helm-do-ag-buffers
  "Ap" 'helm-ag-pop-stack

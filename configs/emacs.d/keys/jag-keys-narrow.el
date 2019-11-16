@@ -8,6 +8,9 @@
 
 (jag-create-sub-leader-map jag-leader-map "n" "narrow")
 
+(jag-declare-prefixes
+ '(("n" "narrow")))
+
 (use-package jag-funcs-narrow
   :ensure nil
   :bind

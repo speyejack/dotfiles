@@ -9,14 +9,20 @@
 ;; Emacs org mode
 ;;
 ;; Source: https://orgmode.org/
-(jag--local-leader-def
-  :keymaps 'org-mode-map
+(jag-declare-prefix-for-mode 'org-mode "mh" "headings")
+(jag-declare-prefix-for-mode 'org-mode "mS" "subtree")
+(jag-declare-prefix-for-mode 'org-mode "mi" "insertion")
+(jag-declare-prefix-for-mode 'org-mode "mt" "tables")
+(jag-define-leader-keys-for-major-mode
+  'org-mode
+
   "'" 'org-edit-special
   "c" 'org-capture
   "d" 'org-deadline
   "D" 'org-insert-drawer
   "e" 'org-export-dispatch
   "f" 'org-set-effort
+  "p" 'org-pomodoro
   "P" 'org-set-property
   ":" 'org-set-tags
 
@@ -30,7 +36,6 @@
   "!" 'org-time-stamp-inactive
 
   ;; headings
-  "h" '(nil :wk "headings")
   "hi" 'org-insert-heading-after-current
   "hI" 'org-insert-heading
   "hs" 'org-insert-subheading
@@ -48,14 +53,12 @@
   "C-S-k" 'org-shiftcontrolup
 
   ;; Subtree editing
-  "S" '(nil :wk "subtree")
   "Sl" 'org-demote-subtree
   "Sh" 'org-promote-subtree
   "Sj" 'org-move-subtree-down
   "Sk" 'org-move-subtree-up
 
   ;; tables
-  "t" '(nil :wk "tables")
   "ta" 'org-table-align
   "tb" 'org-table-blank-field
   "tc" 'org-table-convert
@@ -101,7 +104,6 @@
   "s" 'org-schedule
 
   ;; insertion of common elements
-  "i" '(nil :wk "insertion")
   "ia" 'org-attach
   "il" 'org-insert-link
   "if" 'org-footnote-new
@@ -176,10 +178,6 @@
 
 (use-package org-pomodoro
   :commands 'org-pomodoro
-  :general
-  (jag--local-leader-def
-    :keymaps 'org-mode-map
-    "p" 'org-pomodoro)
   :diminish
   :after org)
 

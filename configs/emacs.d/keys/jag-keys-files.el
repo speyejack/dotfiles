@@ -8,6 +8,13 @@
 
 (jag-create-sub-leader-map jag-leader-map "f" "files")
 
+(jag-declare-prefixes
+ '(("f" "files")
+   ("fC" "convert")
+   ("fd" "dotfiles")
+   ("fg" "goto")
+   ("fv" "variables")))
+
 (use-package jag-funcs-configuring
   :ensure nil
   :bind
@@ -23,15 +30,12 @@
   :bind
   (:map jag-files-map
 	("c" . 'jag-copy-file)
-	;; "C" '(:wk "covert")
 	("Cd" . 'jag-unix2dos)
 	("Cu" . 'jag-dos2unix)
 	("D" . 'jag-delete-current-buffer-file)
-	;; "d"  '(:wk "dotfiles")
 	("ds" . 'jag-config-switch-between-func-and-module)
 	("E" . 'jag-sudo-edit)
 	("f" . 'helm-find-files)
-	;; "g" '(:wk "goto")
 	("gd" . 'jag-open-dotfiles)
 	("gi" . 'jag-open-inbox)
 	("G" . 'rgrep)
@@ -44,7 +48,6 @@
 	("S" . 'evil-write-all)
 	("s" . 'save-buffer)
 	("t" . 'open-junk-file)
-	;; "v"  '(:wk "variables")
 	("vd" .  'add-dir-local-variable)
 	("vf" .  'add-file-local-variable)
 	("vp" .  'add-file-local-variable-prop-line)

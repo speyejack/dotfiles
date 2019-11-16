@@ -20,9 +20,11 @@
          jag-map-val)
 
     ;; Use existing keymap if it exists.
-    (unless (boundp jag-map-sym)
-      (set jag-map-sym (make-sparse-keymap)))
-    (setq jag-map-val (symbol-value jag-map-sym))
+	(unless (boundp jag-map-sym)
+	  (set jag-map-sym (make-sparse-keymap))
+	  (define-key (symbol-value jag-map-sym) (kbd "C-g") 'keyboard-quit)
+	  (define-key (symbol-value jag-map-sym) (kbd "<escape>") 'keyboard-quit))
+	(setq jag-map-val (symbol-value jag-map-sym))
 
 	(define-key leader-keymap (kbd key) jag-map-val)
 
@@ -31,14 +33,43 @@
 (defun jag-define-keys (keymap key def &rest bindings)
   "In KEYMAP define KEY to DEF as well as all BINDINGS.
 `kbd' is applied to all KEYs.  BINDINGS is additional KEY-DEF pairs.
-Always defines <escape> and C-g as `keyboard-quit'."
-  (declare (indent 1))
-  (define-key keymap (kbd "C-g") 'keyboard-quit)
-  (define-key keymap (kbd "<escape>") 'keyboard-quit)
+Always defines <escape> and <C-g> as `keyboard-quit'."
   (while key
 	(define-key keymap (kbd key) def)
 	(setq key (pop bindings))
 	(setq def (pop bindings))))
+
+(defun jag-declare-prefixes (prefixes)
+  "Declare which-key PREFIXES."
+  (mapc (lambda (x) (apply #'jag-declare-prefix x))
+		prefixes))
+
+(defun jag-declare-prefix (prefix name)
+  "Declare a which-key PREFIX.
+PREFIX is a string describing a key sequence.  NAME is a string
+used as the prefix command."
+  (let* ((command name)
+	 (full-prefix (concat jag-leader-key " " prefix))
+	 (full-prefix-emacs (concat jag-emacs-leader-key " " prefix))
+	 (full-prefix-lst (listify-key-sequence (kbd full-prefix)))
+	 (full-prefix-emacs-lst (listify-key-sequence
+				 (kbd full-prefix-emacs))))
+    (which-key-declare-prefixes
+      full-prefix-emacs name
+      full-prefix name)))
+
+(defun jag-declare-prefix-for-mode (mode prefix name)
+  "Declare a which-key PREFIX in MODE with NAME.
+MODE is the mode in which this prefix command should be added.
+PREFIX is a string describing a key sequence.  NAME is a symbol name
+used as the prefix command."
+  (let  ((command (intern (concat (symbol-name mode) name)))
+	 (full-prefix (concat jag-leader-key " " prefix))
+	 (full-prefix-emacs (concat jag-emacs-leader-key " " prefix)))
+
+    (which-key-declare-prefixes-for-mode mode
+      full-prefix-emacs name
+      full-prefix name)))
 
 (require 'jag-keys-leader)
 (require 'jag-keys-local)

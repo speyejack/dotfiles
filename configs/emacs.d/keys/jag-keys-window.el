@@ -8,6 +8,9 @@
 
 (jag-create-sub-leader-map jag-leader-map "w" "window")
 
+(jag-declare-prefixes
+ '(("w" "window")))
+
 (use-package jag-funcs-window
   :ensure nil
   :bind

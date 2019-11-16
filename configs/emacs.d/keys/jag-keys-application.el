@@ -7,14 +7,12 @@
 ;;; Code:
 
 
-;; Create the application leader definer
-(general-create-definer jag--application-leader-def
-  :which-key "application"
-  :states '(normal visual operator motion emacs)
-  :prefix (concat jag-leader-key " a")
-  :global-prefix (concat jag-emacs-leader-key " a"))
-
 (jag-create-sub-leader-map jag-leader-map "a" "application")
+
+(jag-declare-prefixes
+ '(("a" "applications")
+   ("al" "desktop")
+   ("ag" "games")))
 
 (jag-define-keys jag-application-map
  "A" 'artist-mode
@@ -33,10 +31,8 @@
  "t" 'helm-top
  "s" 'eshell
  "S" 'shell
- ;; "l" '(:wk "desktop")
  "ls" 'desktop-save
  "ll" 'desktop-read
- ;; "g" '(:wk "games")
  "g5" '5x5
  "gB" 'bubbles
  "gD" 'doctor

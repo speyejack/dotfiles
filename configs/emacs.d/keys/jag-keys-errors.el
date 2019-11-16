@@ -8,6 +8,9 @@
 
 (jag-create-sub-leader-map jag-leader-map "e" "error")
 
+(jag-declare-prefixes
+ '(("e" "errors")))
+
 (jag-define-keys jag-error-map
   "c" 'helm-flycheck
   "s" 'flyspell-correct-next-word-generic

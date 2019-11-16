@@ -6,6 +6,9 @@
 
 (jag-create-sub-leader-map jag-leader-map "y" "yank")
 
+(jag-declare-prefixes
+ '(("y" "yank")))
+
 (use-package jag-funcs-buffer
   :ensure nil
   :bind

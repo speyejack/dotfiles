@@ -8,8 +8,11 @@
 
 (jag-create-sub-leader-map jag-leader-map "i" "insert")
 
+(jag-declare-prefixes
+ '(("i" "insert")
+   ("ii" "lorem-ipsum")))
+
 (jag-define-keys jag-insert-map
-  ;; "i" '(:wk "lorem-ipsum")
   "il" 'lorem-ipsum-insert-list
   "ip" 'lorem-ipsum-insert-paragraphs
   "is" 'lorem-ipsum-insert-sentences

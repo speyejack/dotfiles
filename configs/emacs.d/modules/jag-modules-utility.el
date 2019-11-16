@@ -12,8 +12,6 @@
 
 (use-package ace-link
   :disabled t
-  :general
-  (jag--leader-def "a" 'ace-link)
   :commands 'ace-link
   :diminish)
 

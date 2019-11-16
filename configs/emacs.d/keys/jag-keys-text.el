@@ -8,13 +8,21 @@
 
 (jag-create-sub-leader-map jag-leader-map "t" "text")
 
+(jag-declare-prefixes
+ '(("t" "text")
+   ("ta" "align")
+   ("td" "delete")
+   ("ti" "string-inflection")
+   ("tJ" "justify")
+   ("tl" "lines")
+   ("tt" "transpose")))
+
 (use-package jag-funcs-text
   :ensure nil
   :bind
   (:map jag-text-map
 	("TAB" . 'indent-rigidly)
 	("U" . 'upcase-region)
-	;; "a" '(:wk "align")
 	("a&" . 'jag-align-repeat-ampersand)
 	("a(" . 'jag-align-repeat-left-paren)
 	("a)" . 'jag-align-repeat-right-paren)
@@ -30,10 +38,8 @@
 	("ar" . 'jag-align-repeat)
 	("a|" . 'jag-align-repeat-bar)
 	("c" . 'count-words-region)
-	;; "d" '(:wk "delete")
 	("dw" . 'delete-trailing-whitespace)
 	("e" . 'er/expand-region)
-	;; "i" '(:wk "string-inflection")
 	("iC" . 'string-inflection-camelcase)
 	("iU" . 'string-inflection-upcase)
 	("ic" . 'string-inflection-lower-camelcase)
@@ -42,14 +48,12 @@
 	("it" . 'string-inflection-toggle)
 	("iu" . 'string-inflection-underscore)
 	("j" . 'move-text-down)
-	;; "J" '(:wk "justify")
 	("Jc" . 'set-justification-center)
 	("Jf" . 'set-justification-full)
 	("Jl" . 'set-justification-left)
 	("Jn" . 'set-justification-none)
 	("Jr" . 'set-justification-right)
 	("k" . 'move-text-up)
-	;; "l" '(:wk "lines")
 	("lC" . 'jag-sort-lines-by-column-reverse)
 	("lS" . 'jag-sort-lines-reverse)
 	("lT" . 'untabify)
@@ -59,7 +63,6 @@
 	("lt" . 'tabify)
 	("lu" . 'jag-uniquify-lines)
 	("r" . 'helm-regexp)
-	;; "t" '(:wk "transpose")
 	("tc" . 'transpose-chars)
 	("tl" . 'transpose-lines)
 	("tl" . 'transpose-regions)

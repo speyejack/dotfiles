@@ -8,6 +8,9 @@
 
 (jag-create-sub-leader-map jag-leader-map "c" "compile")
 
+(jag-declare-prefixes
+ '(("c" "compile")))
+
 (jag-define-keys jag-compile-map
   "C" 'compile
   "d" 'jag-close-compilation-window

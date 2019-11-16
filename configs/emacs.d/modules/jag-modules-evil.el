@@ -27,11 +27,14 @@
   (setq evil-respect-visual-line-mode t)
 
   :custom
- (evil-want-Y-yank-to-eol t "Make Y yank full lines")
+  (evil-want-Y-yank-to-eol t "Make Y yank full lines")
 
   :config
   (evil-define-key '(normal visual motion) 'global
-	(kbd "SPC") jag-leader-map)
+	(kbd jag-leader-key) jag-leader-map)
+
+  (evil-define-key '(normal visual motion insert emacs) 'global
+	(kbd jag-emacs-leader-key) jag-leader-map)
 
   ;; / searches have all the magic characters
   (setq evil-magic 'very-magic)
@@ -57,25 +60,44 @@
 
   (evil-mode 1)
 
-  :general
-  (:states '(motion normal visual operator)
-   "C-j"  'scroll-down-command
-   "C-k"  'scroll-up-command
-   "J"  'jag-evil-next-visual-line-5
-   "K"  'jag-evil-previous-visual-line-5
-   "gh" 'evil-first-non-blank-of-visual-line
-   "gm" 'jag-goto-middle-of-line
-   "gH" 'evil-beginning-of-visual-line
-   "gl" 'evil-end-of-visual-line
-   "gJ" 'evil-join)
+  (evil-define-key '(motion normal visual operator) 'global
+	(kbd "C-j")  'scroll-down-command
+	(kbd "C-k")  'scroll-up-command
+	(kbd "J")  'jag-evil-next-visual-line-5
+	(kbd "K")  'jag-evil-previous-visual-line-5
+	(kbd "gh") 'evil-first-non-blank-of-visual-line
+	(kbd "gm") 'jag-goto-middle-of-line
+	(kbd "gH") 'evil-beginning-of-visual-line
+	(kbd "gl") 'evil-end-of-visual-line
+	(kbd "gJ") 'evil-join
+	(kbd "gs") 'evil-operator-fold
+	(kbd "gV") 'evil-operator-highlight
+	(kbd "go") 'evil-operator-org-capture
+	(kbd "gR") 'evil-operator-remember
+	(kbd "u")   'undo-tree-undo
+	(kbd "U")   'undo-tree-redo
+	(kbd "gc") 'evil-commentary
+	(kbd "gy") 'evil-commentary-yank
+	(kbd "gx") 'evil-exchange
+	(kbd "gX") 'evil-exchange-cancel
+	(kbd "grh") 'evil-mc-make-cursor-here
+	(kbd "grj") 'evil-mc-make-cursor-move-next-line
+	(kbd "grk") 'evil-mc-make-cursor-move-prev-line
+	(kbd "grp") 'evil-mc-pause-cursors
+	(kbd "grr") 'evil-mc-resume-cursors
+	(kbd "grq") 'evil-mc-undo-all-cursors
+	(kbd "gru") 'evil-mc-undo-last-added-cursor
+	(kbd "grm") 'evil-mc-make-all-cursors
+)
+
   ;; Handles visual mode inconsistencies
-  (:states '(motion normal visual)
-   "<remap> <evil-next-line>"  'evil-next-visual-line
-   "<remap> <evil-previous-line>"  'evil-previous-visual-line)
-  (:states '(operator)
-   "<remap> <evil-next-line>"  'evil-next-line
-   "<remap> <evil-previous-line>"  'evil-previous-line)
-  (:keymaps 'minibuffer-inactive-mode-map
+  (evil-define-key '(motion normal visual) 'global
+	(kbd "<remap> <evil-next-line>")  'evil-next-visual-line
+	(kbd "<remap> <evil-previous-line>")  'evil-previous-visual-line)
+  (evil-define-key '(operator) 'global
+	(kbd "<remap> <evil-next-line>")  'evil-next-line
+	(kbd "<remap> <evil-previous-line>")  'evil-previous-line)
+  (jag-define-keys minibuffer-inactive-mode-map
 	"M-h" 'left-char
 	"M-l" 'right-char
 	"M-j" 'next-complete-history-element
@@ -88,16 +110,15 @@
 ;; Source: https://www.emacswiki.org/emacs/UndoTree
 
 (use-package undo-tree
-  :general
-  (:states 'motion
-   "u"   'undo-tree-undo
-   "U"   'undo-tree-redo)
-  (:keymaps 'undo-tree-visualizer-mode-map
-   :states 'motion
-   "h" 'undo-tree-visualize-switch-branch-left
-   "l" 'undo-tree-visualize-switch-branch-right
-   "j" 'undo-tree-visualize-redo
-   "k" 'undo-tree-visualize-undo)
+  :commands (undo-tree-redo undo-tree-undo)
+  :bind
+  (("u" . 'undo-tree-undo)
+   ("r" . 'undo-tree-redo)
+   :map undo-tree-visualizer-mode-map
+   ("h" . 'undo-tree-visualize-switch-branch-left)
+   ("l" . 'undo-tree-visualize-switch-branch-right)
+   ("j" . 'undo-tree-visualize-redo)
+   ("k" . 'undo-tree-visualize-undo))
   :diminish 'undo-tree-mode)
 
 ;; evil-escape
@@ -148,6 +169,11 @@
 ;; Source: https://github.com/Dewdrops/evil-extra-operator
 
 (use-package evil-extra-operator
+  :commands (evil-operator-eval
+			 evil-operator-fold
+			 evil-operator-highlight
+			 evil-operator-org-capture
+			 evil-operator-remember)
   :defer t
   :custom
   (evil-extra-operator-eval-modes-alist
@@ -159,11 +185,7 @@
 	 (python-mode python-shell-send-region)
 	 (julia-mode julia-shell-run-region)))
   :config
-  (evil-define-key 'normal global-map
-  	"gs" 'evil-operator-fold
-  	"gV" 'evil-operator-highlight
-  	"go" 'evil-operator-org-capture
-  	"gR" 'evil-operator-remember))
+  )
 
 ;; evil-args
 ;;
@@ -175,9 +197,9 @@
   :diminish
   ;; bind evil-args text objects
   :bind (:map evil-inner-text-objects-map
-         ("a" . evil-inner-arg)
-         :map evil-outer-text-objects-map
-         ("a" . evil-outer-arg))
+		 ("a" . evil-inner-arg)
+		 :map evil-outer-text-objects-map
+		 ("a" . evil-outer-arg))
   :after evil)
 
 ;; evil-commentary
@@ -188,12 +210,7 @@
 
 (use-package evil-commentary
   :diminish
-  :commands (evil-commentary evil-commentary-yank)
-  :init
-  :general
-  (:states 'motion
-   "gc" 'evil-commentary
-   "gy" 'evil-commentary))
+  :commands (evil-commentary evil-commentary-yank))
 
 ;; evil-exchange
 ;;
@@ -202,11 +219,7 @@
 ;; Source: https://github.com/Dewdrops/evil-exchange
 
 (use-package evil-exchange
-  :commands (evil-exchange evil-exchange-cancel)
-  :general
-  (:states '(motion normal visual operator)
-   "gx" 'evil-exchange
-   "gX" 'evil-exchange-cancel))
+  :commands (evil-exchange evil-exchange-cancel))
 
 ;; evil-goggles
 ;;
@@ -232,9 +245,8 @@
   :commands 'evilmi-jump-items
   :diminish
   :after evil
-  :general
-  (:states 'motion
-   "%" 'evilmi-jump-items))
+  :bind
+  (("%" . 'evilmi-jump-items)))
 
 ;; evil-surround
 ;;
@@ -245,10 +257,10 @@
 (use-package evil-surround
   :diminish
   :bind (:map evil-operator-state-map
-         ("s" . evil-surround-edit)
+		 ("s" . evil-surround-edit)
 		 ("S" . evil-Surround-edit)
 		 :map evil-visual-state-map
-         ("S" . evil-surround-edit)
+		 ("S" . evil-surround-edit)
 		 ("gS" . evil-Surround-edit))
   :after evil)
 
@@ -336,17 +348,16 @@
 ;; Source: https://github.com/gabesoft/evil-mc
 
 (use-package evil-mc
-  :general
-  (:states 'motion
-   "gr"  '(:which-key "multiple-cursors")
-   "grh" 'evil-mc-make-cursor-here
-   "grj" 'evil-mc-make-cursor-move-next-line
-   "grk" 'evil-mc-make-cursor-move-prev-line
-   "grp" 'evil-mc-pause-cursors
-   "grr" 'evil-mc-resume-cursors
-   "grq" 'evil-mc-undo-all-cursors
-   "gru" 'evil-mc-undo-last-added-cursor
-   "grm" 'evil-mc-make-all-cursors)
+  :commands (evil-mc-make-cursor-here
+		 evil-mc-make-cursor-move-next-line
+		 evil-mc-make-cursor-move-prev-line
+		 evil-mc-pause-cursors
+		 evil-mc-resume-cursors
+		 evil-mc-undo-all-cursors
+		 evil-mc-undo-last-added-cursor
+		 evil-mc-make-all-cursors)
+  :init
+  (jag-declare-prefix "gr" "multiple-cursors")
   :diminish
   :after evil
   :config
@@ -394,10 +405,10 @@
 
 (use-package evil-visualstar
   :diminish
-  :general
-  (:states 'visual
-   "*"  'evil-visualstar/begin-search-forward
-   "#"  'evil-visualstar/begin-search-backward)
+  :bind
+  (:map evil-visual-state-map
+   ("*" .  'evil-visualstar/begin-search-forward)
+   ("#" .  'evil-visualstar/begin-search-backward))
   :after evil)
 
 (provide 'jag-modules-evil)

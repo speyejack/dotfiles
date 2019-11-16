@@ -8,6 +8,9 @@
 
 (jag-create-sub-leader-map jag-leader-map "x" "toggles")
 
+(jag-declare-prefixes
+ '(("x" "toggles")))
+
 (jag-define-keys jag-toggles-map
   "l" 'toggle-truncate-lines
   "L" 'helm-truncate-lines

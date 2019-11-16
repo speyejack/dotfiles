@@ -12,6 +12,9 @@
 
 (jag-create-sub-leader-map jag-leader-map "p" "project")
 
+(jag-declare-prefixes
+ '(("p" "project")))
+
 (jag-define-keys jag-project-map
   "SPC" 'helm-projectile
   "!" 'projectile-run-shell-command-in-root

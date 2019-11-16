@@ -6,14 +6,10 @@
 
 (use-package jag-funcs-special
   :ensure nil
-  )
-
-(use-package special
-  :ensure nil
-  :general
-  (:keymaps 'special-mode-map
-   "j" 'scroll-down-command
-   "k" 'scroll-up-command))
+  :bind
+  (:map special-mode-map
+   ("j" . 'scroll-down-command)
+   ("k" . 'scroll-up-command)))
 
 (provide 'jag-modes-special)
 ;;; jag-modes-special.el ends here

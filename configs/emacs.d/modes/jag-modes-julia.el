@@ -5,14 +5,7 @@
 ;;; Code:
 
 (use-package jag-funcs-julia
-  :ensure nil
-  :general
-  (jag--local-leader-def
-	:keymaps 'julia-mode-map
-	"p" 'julia-repl
-	"b" 'julia-repl-send-buffer
-	"r" 'julia-repl-send-region-or-line
-	"l" 'julia-repl-send-line))
+  :ensure nil)
 
 ;; julia-mode
 ;;
@@ -22,7 +15,15 @@
 
 (use-package julia-mode
   :commands julia-mode
-  :diminish)
+  :diminish
+  :config
+  (jag-define-leader-keys-for-major-mode
+   'julia-mode
+
+   "p" 'julia-repl
+   "b" 'julia-repl-send-buffer
+   "r" 'julia-repl-send-region-or-line
+   "l" 'julia-repl-send-line))
 
 
 ;; julia-repl

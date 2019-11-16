@@ -8,6 +8,9 @@
 
 (jag-create-sub-leader-map jag-leader-map "r" "registers")
 
+(jag-declare-prefixes
+ '(("r" "registers")))
+
 (jag-define-keys jag-registers-map
  "r" 'helm-register
  "p" 'helm-show-kill-ring)

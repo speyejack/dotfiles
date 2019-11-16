@@ -8,15 +8,16 @@
 (use-package jag-funcs-emacs-lisp
   :ensure nil)
 
-(jag--local-leader-def
-  :keymaps '(emacs-lisp-mode-map lisp-mode-map lisp-interaction-mode-map)
+(dolist (mode '(emacs-lisp-mode lisp-mode lisp-interaction-mode))
+  (jag-define-leader-keys-for-major-mode
+   mode
   "t" 'eldoc-mode
   "b" 'eval-buffer
   "f" 'eval-defun
   "e" 'eval-last-sexp
   "r" 'eval-region
   "p" 'pp-eval-last-sexp
-  "m" 'pp-macroexpand-last-sexp)
+  "m" 'pp-macroexpand-last-sexp))
 
 ;; indention
 ;;

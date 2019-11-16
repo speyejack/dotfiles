@@ -6,14 +6,10 @@
 
 ;;; Code:
 
-;; Create the jump leader definer
-(general-create-definer jag--jump-leader-def
-  :which-key "jump"
-  :states '(normal visual operator motion emacs)
-  :prefix (concat jag-leader-key " j")
-  :global-prefix (concat jag-emacs-leader-key " j"))
-
 (jag-create-sub-leader-map jag-leader-map "j" "jump")
+
+(jag-declare-prefixes
+ '(("j" "jump")))
 
 (jag-define-keys jag-jump-map
   "b" 'ibuffer-jump

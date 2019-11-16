@@ -14,26 +14,26 @@
   (add-hook 'eshell-mode-hook
 			(lambda ()
 			  (setq pcomplete-cycle-completions nil)
-			  (general-def '(normal operator visual) eshell-mode-map
-				"gj" 'eshell-next-prompt
-				"gk" 'eshell-previous-prompt
-				"gh" 'eshell-bol)
-			  (general-def '(insert normal) eshell-mode-map
-				"RET" 'eshell-send-input
-				"M-b" 'eshell-insert-buffer-name
-				"M-e" 'eshell-insert-envvar
-				"M-p" 'eshell-insert-process
-				"M-d" 'eshell-toggle-direct-send
-				"M-J" 'eshell-next-prompt
-				"M-K" 'eshell-previous-prompt
-				"M-g" 'helm-eshell-prompts
-				"M-G" 'helm-eshell-prompts-all)
-			  (general-def '(insert) eshell-mode-map
-				"M-j" 'eshell-next-matching-input-from-input
-				"M-k" 'eshell-previous-matching-input-from-input)
-			  (general-def '(normal) eshell-mode-map
-				"M-j" 'eshell-next-input
-				"M-k" 'eshell-previous-input))))
+			  (evil-define-key '(normal operator visual) eshell-mode-map
+				(kbd "gj") 'eshell-next-prompt
+				(kbd "gk") 'eshell-previous-prompt
+				(kbd "gh") 'eshell-bol)
+			  (evil-define-key '(insert normal) eshell-mode-map
+				(kbd "RET") 'eshell-send-input
+				(kbd "M-b") 'eshell-insert-buffer-name
+				(kbd "M-e") 'eshell-insert-envvar
+				(kbd "M-p") 'eshell-insert-process
+				(kbd "M-d") 'eshell-toggle-direct-send
+				(kbd "M-J") 'eshell-next-prompt
+				(kbd "M-K") 'eshell-previous-prompt
+				(kbd "M-g") 'helm-eshell-prompts
+				(kbd "M-G") 'helm-eshell-prompts-all)
+			  (evil-define-key '(insert) eshell-mode-map
+				(kbd "M-j") 'eshell-next-matching-input-from-input
+				(kbd "M-k") 'eshell-previous-matching-input-from-input)
+			  (evil-define-key '(normal) eshell-mode-map
+				(kbd "M-j") 'eshell-next-input
+				(kbd "M-k") 'eshell-previous-input))))
 
 ;; esh-help
 ;;

@@ -10,6 +10,9 @@
 
 (jag-create-sub-leader-map jag-leader-map "h" "help")
 
+(jag-declare-prefixes
+ '(("h" "help")))
+
 (use-package jag-funcs-help
   :ensure nil
   :bind
