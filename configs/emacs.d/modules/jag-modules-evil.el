@@ -69,6 +69,7 @@
 	(kbd "gm") 'jag-goto-middle-of-line
 	(kbd "gH") 'evil-beginning-of-visual-line
 	(kbd "gl") 'evil-end-of-visual-line
+	(kbd "gL") 'evil-end-of-line
 	(kbd "gJ") 'evil-join
 	(kbd "gs") 'evil-operator-fold
 	(kbd "gV") 'evil-operator-highlight
