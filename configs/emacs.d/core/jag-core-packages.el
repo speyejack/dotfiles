@@ -11,6 +11,14 @@
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (add-to-list 'package-archives '("elpy" . "https://jorgenschaefer.github.io/packages/"))
 
+(defun jag-fix-verification ()
+  "Download new gnu keys to fix package verification problem."
+  (interactive)
+  (setq package-check-signature nil)
+  (package-refresh-contents)
+  (package-install 'gnu-elpa-keyring-update)
+  (setq package-check-signature t)
+  (error "Disabled security to install new keys.  Please restart"))
 
 ;; Install use-package if not installed
 (unless (package-installed-p 'use-package)
