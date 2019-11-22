@@ -246,7 +246,8 @@
   :diminish
   :after evil
   :bind
-  (("%" . 'evilmi-jump-items)))
+  (:map evil-motion-state-map
+   ("%" . 'evilmi-jump-items)))
 
 ;; evil-surround
 ;;
