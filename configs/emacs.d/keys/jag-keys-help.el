@@ -25,6 +25,7 @@
    ("e" . 'evil-tutor-resume)
    ("E" . 'evil-tutor-start)
    ("f" . 'describe-function)
+   ("F" . 'repeat-complex-command)
    ("k" . 'describe-key)
    ("K" . 'jag-describe-keymap)
    ("l" . 'jag-describe-last-keys)
