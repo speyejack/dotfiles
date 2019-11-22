@@ -17,7 +17,8 @@
   "e" 'eval-last-sexp
   "r" 'eval-region
   "p" 'pp-eval-last-sexp
-  "m" 'pp-macroexpand-last-sexp))
+  "m" 'pp-macroexpand-last-sexp
+  "M" 'emacs-lisp-macroexpand))
 
 ;; indention
 ;;
