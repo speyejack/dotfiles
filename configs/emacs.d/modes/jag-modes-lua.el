@@ -11,7 +11,6 @@
 ;; Source: https://github.com/immerrr/lua-mode
 
 (use-package lua-mode
-  :disabled t
   :commands 'lua-mode
   :diminish)
 

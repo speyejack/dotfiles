@@ -64,6 +64,7 @@
 (require 'jag-modes-gud)
 (require 'jag-modes-hexl)
 (require 'jag-modes-julia)
+(require 'jag-modes-lua)
 (require 'jag-modes-org)
 (require 'jag-modes-pdb)
 (require 'jag-modes-python)
