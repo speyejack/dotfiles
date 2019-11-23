@@ -109,6 +109,9 @@
   (add-hook 'prog-mode-hook 'smartparens-mode)
   (add-hook 'comint-mode 'smartparens-mode)
   (show-smartparens-global-mode 1)
+
+  (sp-pair "(" nil :unless '(sp-point-before-same-p))
+
   (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
   (sp-local-pair 'emacs-lisp-mode "`" nil :actions nil)
   (sp-local-pair 'minibuffer-inactive-mode "'" nil :actions nil))
