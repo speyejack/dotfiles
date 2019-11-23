@@ -116,10 +116,10 @@
 	(sp-local-pair mode "{" nil :post-handlers '(("||\n[i]" "RET"))))
 
   (dolist (mode '(julia-mode lua-mode))
-	(sp-local-pair mode "function" "end" :post-handlers '(("||\n[i]" "SPC")))
-	(sp-local-pair mode "if" "end" :post-handlers '(("||\n[i]" "SPC")))
-	(sp-local-pair mode "for" "end" :post-handlers '(("||\n[i]" "SPC")))
-	(sp-local-pair mode "while" "end" :post-handlers '(("||\n[i]" "SPC"))))
+	(sp-local-pair mode "function" "end" :when '(("SPC")) :post-handlers '("||\n[i]"))
+	(sp-local-pair mode "if" "end" :when '(("SPC")) :post-handlers '("||\n[i]"))
+	(sp-local-pair mode "for" "end" :when '(("SPC")) :post-handlers '("||\n[i]"))
+	(sp-local-pair mode "while" "end" :when '(("SPC")) :post-handlers '("||\n[i]")))
 
   (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
   (sp-local-pair 'emacs-lisp-mode "`" nil :actions nil)
