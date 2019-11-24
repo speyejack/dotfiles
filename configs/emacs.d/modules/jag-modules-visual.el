@@ -172,7 +172,7 @@
   :commands 'nlinum-relative-mode
   :diminish
   :config
-  (global-nlinum-relative-mode t)
+  (add-hook 'prog-mode-hook 'nlinum-relative-mode)
   (nlinum-relative-setup-evil))
 
 ;; rainbow-delimiters
