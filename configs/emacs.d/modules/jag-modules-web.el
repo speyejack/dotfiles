@@ -11,6 +11,7 @@
 ;; Source: https://github.com/alpha22jp/atomic-chrome/tree/a505f638866f9e7b913784be0dc84f338e9ad449
 
 (use-package atomic-chrome
+  :commands 'atomic-chrome-start-server
   :diminish)
 
 ;; bbdb
