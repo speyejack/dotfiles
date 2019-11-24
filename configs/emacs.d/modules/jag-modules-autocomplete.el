@@ -9,27 +9,21 @@
 ;;
 ;; Modular text completion framework
 ;; ;; Source: https://github.com/company-mode/company-mode
-
 (use-package company
   :diminish
   :defer 2
   :bind
   (:map company-mode-map
-   ("C-'" . 'helm-company)
-   ("M-h" . 'helm-company))
+   ("M-;" . 'helm-company)
+   ("M-i" . 'helm-company))
   (:map company-active-map
-   ("M-l" . 'company-complete-selection)
-   ("C-n" . 'company-select-next-or-abort)
-   ("C-p" . 'company-select-previous-or-abort)
-   ("C-j" . 'company-select-next-or-abort)
-   ("C-k" . 'company-select-previous-or-abort)
-   ("M-j" . 'company-select-next)
-   ("M-k" . 'company-select-previous))
+   ("M-;" . 'company-complete-selection)
+   ("M-j" . 'company-select-next-or-abort)
+   ("M-k" . 'company-select-previous-or-abort))
   (:map company-search-map
-   ("C-j" . 'company-select-next-or-abort)
-   ("C-k" . 'company-select-previous-or-abort)
-   ("M-j" . 'company-select-next)
-   ("M-k" . 'company-select-previous)
+   ("M-j" . 'company-select-next-or-abort)
+   ("M-k" . 'company-select-previous-or-abort)
+   ("M-:" . 'company-search-abort)
    ("<escape>" . 'company-search-abort))
   :config
   (global-company-mode 1)
