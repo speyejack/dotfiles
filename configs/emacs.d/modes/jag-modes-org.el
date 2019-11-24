@@ -154,10 +154,7 @@
   (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
   (setq org-log-done (quote time))
   (setq org-checkbox-hierarchical-statistics nil)
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((emacs-lisp . t)
-	 (python . t))))
+  (require 'jag-modes-org-babel))
 
 ;; org-bullets
 ;;
