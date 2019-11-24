@@ -71,6 +71,8 @@ used as the prefix command."
       full-prefix-emacs name
       full-prefix name)))
 
+(require 'jag-keys-global)
+
 (require 'jag-keys-leader)
 (require 'jag-keys-local)
 
