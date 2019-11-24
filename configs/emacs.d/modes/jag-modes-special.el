@@ -8,8 +8,10 @@
   :ensure nil
   :bind
   (:map special-mode-map
-   ("j" . 'scroll-down-command)
-   ("k" . 'scroll-up-command)))
+   ("l" . 'forward-char)
+   ("h" . 'backward-char)
+   ("j" . 'next-line)
+   ("k" . 'previous-line)))
 
 (provide 'jag-modes-special)
 ;;; jag-modes-special.el ends here
