@@ -13,15 +13,7 @@
   :defer t
   :ensure org-plus-contrib
   :init
-  (setq org-confirm-babel-evaluate nil)
-
-  ;; (org-babel-do-load-languages
-  ;;  'org-babel-load-languages
-  ;;  '((emacs-lisp . t)
-  ;; 	 (plantuml . t)
-  ;; 	 (python . t)))
-
-  )
+  (setq org-confirm-babel-evaluate nil))
 
 ;; Avoid `org-babel-do-load-languages' since it does an eager require.
 (use-package ob-emacs-lisp
