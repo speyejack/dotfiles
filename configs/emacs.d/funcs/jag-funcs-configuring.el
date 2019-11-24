@@ -65,21 +65,20 @@ The template will be formatted with (format template name func-module)")
    "\n"
    (list
 	";; Create the %1$s leader definer"
-	"(general-create-definer jag--%1$s-leader-def"
-	"  :which-key \"%1$s leader prefix\""
-	"  :states '(normal visual operator)"
-	"  :prefix (concat jag-leader-key \" %3$s\")"
-	"  :global-prefix (concat jag-emacs-leader-key \" %3$s\"))"
+	"(jag-create-sub-leader-map jag-leader-map \"%3$s\" \"%1$s\")"
+	""
+	"(jag-declare-prefixes"
+	" '((\"%3$s\" \"%1$s\")))"
 	""
 	"(use-package %2$s"
 	"  :ensure nil"
-	"  :general"
-	"  (jag--%1$s-leader-def"
+	"  :bind"
+	"  (:map jag-%1$s-map"
 	""
 	"    ))"
 	))
   "The template used to create a new key module.
-The template will be formatted with the (format template name binding func-module)")
+The template will be formatted with the (format template name func-module binding)")
 
 
 (defun jag--new-general-module-file (name)
