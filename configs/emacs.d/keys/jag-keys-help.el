@@ -28,12 +28,16 @@
    ("F" . 'repeat-complex-command)
    ("k" . 'describe-key)
    ("K" . 'jag-describe-keymap)
-   ("l" . 'jag-describe-last-keys)
+   ("l" . 'view-lossage)
+   ("L" . 'jag-describe-last-keys)
    ("p" . 'describe-package)
    ("s" . 'jag-describe-system-info)
    ("t" . 'describe-theme)
    ("m" . 'describe-mode)
    ("v" . 'describe-variable)
+   ("i" . 'info)
+   ("I" . 'info-emacs-manual)
+   ("w" . 'where-is)
    ("N" . 'view-emacs-news)))
 
 
