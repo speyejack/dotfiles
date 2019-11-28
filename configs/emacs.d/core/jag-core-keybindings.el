@@ -6,7 +6,7 @@
 
 ;;; Code:
 (defvar jag-leader-map (make-sparse-keymap)
-  "Base keymap for all leader keys")
+  "Base keymap for all leader keys.")
 
 (defvar jag-leader-key "SPC"
   "The leader key in all motion states.")
