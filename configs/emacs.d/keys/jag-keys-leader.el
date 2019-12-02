@@ -5,6 +5,9 @@
 ;; The leader key bindings used throughout Emacs
 
 ;;; Code:
+(use-package jag-funcs-leader
+  :ensure nil
+  :commands 'jag-evil-eval-whole-buffer)
 
 (jag-define-keys jag-leader-map
   "SPC" 'helm-M-x
@@ -17,6 +20,7 @@
   "I" 'use-package-report
   "d" 'helm-resume
   "k" 'evil-operator-eval
+  "K" 'jag-evil-eval-whole-buffer
   "=" 'jag-evil-reformat-buffer
   "|" 'restart-emacs
   "'" 'evil-save-modified-and-close
