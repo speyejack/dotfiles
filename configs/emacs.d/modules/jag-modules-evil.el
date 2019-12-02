@@ -73,7 +73,9 @@
    ("h" . 'undo-tree-visualize-switch-branch-left)
    ("l" . 'undo-tree-visualize-switch-branch-right)
    ("j" . 'undo-tree-visualize-redo)
-   ("k" . 'undo-tree-visualize-undo))
+   ("k" . 'undo-tree-visualize-undo)
+   ("J" . 'undo-tree-visualize-redo-to-x)
+   ("K" . 'undo-tree-visualize-undo-to-x))
   :diminish 'undo-tree-mode
   :config
   (evil-make-overriding-map undo-tree-visualizer-mode-map))
