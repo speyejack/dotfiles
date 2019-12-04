@@ -110,7 +110,7 @@
   (add-hook 'comint-mode 'smartparens-mode)
   (show-smartparens-global-mode 1)
 
-  (sp-pair "(" nil :unless '(sp-point-before-same-p))
+  (sp-pair "(" nil :unless '(sp-point-before-same-p sp-point-before-word-p))
 
   (dolist (mode '(c++-mode c-mode java-mode))
 	(sp-local-pair mode "{" nil :post-handlers '(("||\n[i]" "RET"))))
