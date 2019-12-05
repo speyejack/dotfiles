@@ -124,6 +124,16 @@
   (unless yas-global-mode (yas-global-mode 1))
   (yas-minor-mode 1))
 
+
+;; yasnippet-snippets
+;;
+;; A collection of snippets
+;;
+;; Source: https://github.com/AndreaCrotti/yasnippet-snippets
+
+(use-package yasnippet-snippets)
+
+
 ;; auto-yasnippet
 ;;
 ;; Quickly create disposable yasnippets
