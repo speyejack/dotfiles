@@ -123,8 +123,18 @@
 	(kbd "M-j") 'org-forward-element
 	(kbd "M-k") 'org-backward-element
 	(kbd "M-l") 'org-down-element
+
+	(kbd "M-H") 'org-promote-subtree
+	(kbd "M-J") 'org-move-subtree-down
+	(kbd "M-K") 'org-move-subtree-up
+	(kbd "M-L") 'org-demote-subtree
+
+	(kbd "C-M-H") 'org-do-promote
+	(kbd "C-M-L") 'org-do-demote
+
 	(kbd "M-o") 'org-insert-heading-after-current
 	(kbd "M-O") 'org-insert-heading)
+
   (let ((inbox-file (expand-file-name "inbox.org" jag-gtd-dir))
 		(gtd-file (expand-file-name "gtd.org" jag-gtd-dir))
 		(someday-file (expand-file-name "someday.org" jag-gtd-dir))
