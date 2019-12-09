@@ -35,10 +35,7 @@
 		 ("S" . doc-view-reset-slice)
 		 ("r" . revert-buffer)
 		 ("q" . quit-window)
-		 ("d" . doc-view-kill-proc))
-  :config
-  (add-hook 'doc-view-minor-mode-hook
-			(lambda () (nlinum-mode 0))))
+		 ("d" . doc-view-kill-proc)))
 
 (provide 'jag-modes-doc-view)
 ;;; jag-modes-doc-view.el ends here
