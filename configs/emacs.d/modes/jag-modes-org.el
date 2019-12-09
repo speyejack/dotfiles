@@ -88,6 +88,7 @@
 
   ;; Multi-purpose keys
 
+  "m" 'org-ctrl-c-ctrl-c
   "," 'org-ctrl-c-ctrl-c
   "*" 'org-ctrl-c-star
   "RET" 'org-ctrl-c-ret
