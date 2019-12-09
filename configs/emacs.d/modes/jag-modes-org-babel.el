@@ -28,7 +28,9 @@
 (use-package ob-python
   :ensure nil
   :commands
-  (org-babel-execute:python))
+  (org-babel-execute:python)
+  :config
+  (setq org-babel-python-command "python3"))
 
 (use-package ob-shell
   :ensure nil
