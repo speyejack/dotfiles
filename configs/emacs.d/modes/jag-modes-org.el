@@ -105,6 +105,7 @@
   "s" 'org-schedule
 
   ;; insertion of common elements
+  "it" 'org-insert-structure-template
   "ia" 'org-attach
   "il" 'org-insert-link
   "if" 'org-footnote-new
