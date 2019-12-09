@@ -35,7 +35,10 @@
 		 ("S" . doc-view-reset-slice)
 		 ("r" . revert-buffer)
 		 ("q" . quit-window)
-		 ("d" . doc-view-kill-proc)))
+		 ("d" . doc-view-kill-proc))
+  :config
+  (evil-make-intercept-map doc-view-mode-map 'normal)
+  (add-hook 'doc-view-mode-hook #'evil-normalize-keymaps))
 
 (provide 'jag-modes-doc-view)
 ;;; jag-modes-doc-view.el ends here
