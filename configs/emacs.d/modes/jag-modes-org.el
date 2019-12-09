@@ -170,6 +170,7 @@
   (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
   (setq org-export-with-section-numbers nil)
   (setq org-export-with-toc nil)
+  (add-hook 'org-export-before-parsing-hook (lambda (x) (untabify (point-min) (point-max))))
   (setq org-log-done (quote time))
   (setq org-checkbox-hierarchical-statistics nil)
   (require 'jag-modes-org-babel))
