@@ -168,6 +168,8 @@
 
   (setq org-startup-indented 1)
   (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
+  (setq org-export-with-section-numbers nil)
+  (setq org-export-with-toc nil)
   (setq org-log-done (quote time))
   (setq org-checkbox-hierarchical-statistics nil)
   (require 'jag-modes-org-babel))
