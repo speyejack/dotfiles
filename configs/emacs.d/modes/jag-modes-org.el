@@ -113,6 +113,10 @@
   "ir" 'org-ref-helm-insert-ref-link
   "ic" 'org-ref-helm-insert-cite-link)
 
+(use-package jag-funcs-org
+  :ensure nil
+  :commands (jag-fix-org-pdf))
+
 (use-package org
   :defer t
   :commands (org-mode org-capture)
