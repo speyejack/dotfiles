@@ -111,9 +111,7 @@
   (show-smartparens-global-mode 1)
 
   (sp-pair "(" nil :unless '(sp-point-before-same-p sp-point-before-word-p))
-
-  (dolist (mode '(c++-mode c-mode java-mode))
-	(sp-local-pair mode "{" nil :post-handlers '(("||\n[i]" "RET"))))
+  (sp-pair "{" nil :post-handlers '(("||\n[i]" "RET")))
 
   (dolist (mode '(julia-mode lua-mode))
 	(sp-local-pair mode "function" "end" :when '(("SPC")) :post-handlers '("||\n[i]"))
