@@ -115,7 +115,9 @@
 
 (use-package jag-funcs-org
   :ensure nil
-  :commands (jag-fix-org-pdf))
+  :commands (jag-fix-org-pdf
+			 jag-org-open-heading-after-current
+			 jag-org-open-heading))
 
 (use-package org
   :defer t
@@ -136,8 +138,8 @@
 	(kbd "C-M-H") 'org-do-promote
 	(kbd "C-M-L") 'org-do-demote
 
-	(kbd "M-o") 'org-insert-heading-after-current
-	(kbd "M-O") 'org-insert-heading)
+	(kbd "M-o") 'jag-org-open-heading-after-current
+	(kbd "M-O") 'jag-org-open-heading)
 
   (let ((inbox-file (expand-file-name "inbox.org" jag-gtd-dir))
 		(gtd-file (expand-file-name "gtd.org" jag-gtd-dir))
