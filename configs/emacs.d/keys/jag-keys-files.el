@@ -33,7 +33,7 @@
 	("Cd" . 'jag-unix2dos)
 	("Cu" . 'jag-dos2unix)
 	("D" . 'jag-delete-current-buffer-file)
-	("ds" . 'jag-config-switch-between-func-and-module)
+	("ds" . 'jag-config-switch-between-func-and-other)
 	("E" . 'jag-sudo-edit)
 	("f" . 'helm-find-files)
 	("gd" . 'jag-open-dotfiles)

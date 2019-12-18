@@ -4,36 +4,40 @@
 
 ;;; Code:
 
-(defun jag-config-switch-between-func-and-module ()
-  "Switch between the jag-func-* and jag-module-* of current buffer."
+(defun jag-config-switch-between-func-and-other ()
+  "Switch between the jag-func-* and jag-module/jag-mode/jag-key of current buffer."
   (interactive)
   (if (not buffer-file-name)
-      (error "Buffer has no file name."))
-  (if (not (string-match-p "\\(funcs\\|module\\)"
+      (error "Buffer has no file name"))
+  (if (not (string-match-p "\\(funcs\\|modules\\|modes\\|keys\\)"
                            (file-name-nondirectory (buffer-file-name))))
-      (error "File doesn't have funcs or module in name."))
-  (let ((new-file (jag--bookmark-module-funcs-other-file-name)))
-    (find-file new-file)))
+      (error "File doesn't have funcs or module in name"))
+  (let ((new-file (jag--bookmark-config-other-file-name (buffer-file-name))))
+	(if new-file
+		(find-file new-file)
+	  (error "Associated file could not be found"))))
 
-;; TODO add mode module functionality
-(defun jag--bookmark-module-funcs-other-file-name ()
-  "Get the corresponding jag-funcs or jag-module/jag-mode name from current buffer."
-  (let* ((current-file (buffer-file-name))
+(defun jag--bookmark-config-other-file-name (current-file)
+  "Get the corresponding jag-funcs or jag-module/jag-mode/jag-key name from FILE."
+  (let* ((base-name (file-name-nondirectory current-file))
          (parent-dir (file-name-directory current-file))
-         (grandparent-dir (file-name-directory (directory-file-name parent-dir)))
-         (base-name (file-name-nondirectory current-file)))
-    (string-match "\\(jag-\\)\\(funcs\\|modules\\|modes\\)\\(.*\\)"
-                  base-name)
-    (let* ((name-prefix (match-string 1 base-name))
-           (current-type (match-string 3 base-name))
-           (new-type (if (string-equal current-type "funcs")
-                         "module"
-                       "funcs"))
-           (new-parent-dir (if (string-equal new-type "funcs") "funcs" "modules"))
-           (name-suffix (match-string 4 base-name))
-           (new-name (concat name-prefix new-type name-suffix)))
-      (concat grandparent-dir new-parent-dir
-              "/" name-prefix new-type name-suffix))))
+         (grandparent-dir (file-name-directory (directory-file-name parent-dir))))
+	(string-match "\\(jag-\\)\\(funcs\\|modules\\|modes\\|keys\\)\\(.*\\)" base-name)
+	(let* ((current-type (match-string 2 base-name))
+		   (name-prefix (match-string 1 base-name))
+           (name-suffix (match-string 3 base-name))
+		   (possible-types (if (string-equal current-type "funcs")
+							   '("modules" "keys" "modes")
+							 '("funcs")))
+		   (possible-files (mapcar (lambda (type)
+									 (concat grandparent-dir type "/" name-prefix type name-suffix))
+								   possible-types)))
+	  (seq-reduce
+	   (lambda (x y) (or x y) )
+	   (mapcar (lambda (file)
+				 (if (file-exists-p file)
+					 file
+				   nil)) possible-files) nil))))
 
 (defun jag-copy-file ()
   "Write the file under new name."
