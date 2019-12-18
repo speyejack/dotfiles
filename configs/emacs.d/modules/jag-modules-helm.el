@@ -36,7 +36,9 @@
   :map helm-find-files-map
   ("M-h" . 'helm-find-files-up-one-level)
   ("M-L" . 'helm-execute-persistent-action)
-  ("M-l" . 'helm-ff-RET))
+  ("M-l" . 'helm-ff-RET)
+  :map helm-buffer-map
+  ("M-L" . 'helm-buffer-switch-other-window))
   :commands (helm helm-make-source)
   :config
   (helm-mode 1)
