@@ -63,6 +63,7 @@
 (require 'jag-modes-gdb)
 (require 'jag-modes-gud)
 (require 'jag-modes-hexl)
+(require 'jag-modes-info)
 (require 'jag-modes-julia)
 (require 'jag-modes-lua)
 (require 'jag-modes-org)
