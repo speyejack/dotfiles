@@ -99,15 +99,17 @@
 ;;
 ;; Source: https://github.com/Fuco1/smartparens
 (use-package smartparens
+  :commands 'smartparens-mode
   :diminish
+  :init
+  (add-hook 'prog-mode-hook 'smartparens-mode)
+  (add-hook 'comint-mode 'smartparens-mode)
   :config
   (setq sp-show-pair-from-inside t
 		sp-escape-quotes-after-insert nil
 		sp-highlight-pair-overlay nil
 		sp-highlight-wrap-overlay nil
 		sp-highlight-wrap-tag-overlay nil)
-  (add-hook 'prog-mode-hook 'smartparens-mode)
-  (add-hook 'comint-mode 'smartparens-mode)
   (show-smartparens-global-mode 1)
 
   (sp-pair "(" nil :unless '(sp-point-before-same-p sp-point-before-word-p))
