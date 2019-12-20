@@ -9,6 +9,7 @@
   :ensure nil)
 
 (use-package info
+  :defer t
   :ensure nil
   :bind (:map Info-mode-map
 		 ("M-L" . 'Info-history-forward)

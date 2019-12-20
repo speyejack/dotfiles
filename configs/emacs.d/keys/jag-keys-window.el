@@ -12,6 +12,7 @@
  '(("w" "window")))
 
 (use-package jag-funcs-window
+  :defer t
   :ensure nil
   :bind
   (:map jag-window-map

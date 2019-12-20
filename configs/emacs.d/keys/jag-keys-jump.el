@@ -12,6 +12,7 @@
  '(("j" "jump")))
 
 (use-package jag-funcs-jump
+  :defer t
   :ensure nil
   :bind
   (:map jag-jump-map

@@ -6,6 +6,7 @@
 
 ;;; Code:
 (use-package jag-funcs-leader
+  :defer t
   :ensure nil
   :commands 'jag-evil-eval-whole-buffer)
 

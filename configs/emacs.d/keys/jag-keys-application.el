@@ -15,6 +15,7 @@
    ("ag" "games")))
 
 (use-package jag-funcs-application
+  :defer t
   :ensure nil
   :bind
   (:map jag-application-map

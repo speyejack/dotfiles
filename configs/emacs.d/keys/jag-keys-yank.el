@@ -10,12 +10,14 @@
  '(("y" "yank")))
 
 (use-package jag-funcs-buffer
+  :defer t
   :ensure nil
   :bind
   (:map jag-yank-map
   ("b" . 'jag-copy-whole-buffer-to-clipboard)))
 
 (use-package jag-funcs-yank
+  :defer t
   :ensure nil
   :bind
   (:map jag-yank-map

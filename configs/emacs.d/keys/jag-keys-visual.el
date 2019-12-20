@@ -9,6 +9,7 @@
 (jag-create-sub-leader-map jag-leader-map "v" "visual")
 
 (use-package jag-funcs-visual
+  :defer t
   :ensure nil
   :commands (jag-stickyfunc-mode))
 

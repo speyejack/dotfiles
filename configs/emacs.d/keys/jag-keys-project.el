@@ -7,6 +7,7 @@
 ;;; Code:
 
 (use-package jag-funcs-project
+  :defer t
   :commands 'jag-helm-projectile-search
   :ensure nil)
 

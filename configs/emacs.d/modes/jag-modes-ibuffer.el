@@ -9,6 +9,7 @@
   :ensure nil)
 
 (use-package ibuffer
+  :defer t
   :ensure nil
   :bind
   (:map ibuffer-mode-map

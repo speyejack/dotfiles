@@ -14,6 +14,7 @@
  '(("h" "help")))
 
 (use-package jag-funcs-help
+  :defer t
   :ensure nil
   :bind
   (:map jag-help-map

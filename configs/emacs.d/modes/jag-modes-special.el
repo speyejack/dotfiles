@@ -5,6 +5,7 @@
 ;;; Code:
 
 (use-package jag-funcs-special
+  :defer t
   :ensure nil
   :bind
   (:map special-mode-map

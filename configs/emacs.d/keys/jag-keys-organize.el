@@ -10,6 +10,7 @@
  '(("o" "organize")))
 
 (use-package jag-funcs-organize
+  :defer t
   :ensure nil
   :bind
   (:map jag-organize-map

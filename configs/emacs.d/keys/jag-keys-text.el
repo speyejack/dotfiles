@@ -18,6 +18,7 @@
    ("tt" "transpose")))
 
 (use-package jag-funcs-text
+  :defer t
   :ensure nil
   :bind
   (:map jag-text-map

@@ -13,6 +13,7 @@
    ("bm" "modes")))
 
 (use-package jag-funcs-buffer
+  :defer t
   :ensure nil
   :bind
   (:map jag-buffer-map

@@ -16,6 +16,7 @@
    ("fv" "variables")))
 
 (use-package jag-funcs-configuring
+  :defer t
   :ensure nil
   :bind
   (:map jag-files-map
@@ -26,6 +27,7 @@
 	("dm" . 'jag-new-mode-module)))
 
 (use-package jag-funcs-files
+  :defer t
   :ensure nil
   :bind
   (:map jag-files-map

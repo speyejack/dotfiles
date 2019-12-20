@@ -12,6 +12,7 @@
  '(("n" "narrow")))
 
 (use-package jag-funcs-narrow
+  :defer t
   :ensure nil
   :bind
   (:map jag-narrow-map
