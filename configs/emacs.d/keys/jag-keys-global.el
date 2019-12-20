@@ -9,6 +9,8 @@
   :ensure nil
   :after evil
   :config
+  (global-set-key (kbd "M-l") 'hippie-expand)
+
   (jag-declare-prefix "gr" "multiple-cursors")
   (evil-define-key '(motion normal visual operator) 'global
 	(kbd "C-k")  'scroll-down-command

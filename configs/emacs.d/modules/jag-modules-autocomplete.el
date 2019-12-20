@@ -75,7 +75,6 @@
   :defer t
   :ensure nil ; built-in package
   :init
-  (global-set-key (kbd "M-l") 'hippie-expand)
   ;; Disables "Using try-expand-dabbrev" on completions.
   (setq hippie-expand-verbose nil)
   (setq hippie-expand-try-functions-list
