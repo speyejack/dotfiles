@@ -131,7 +131,9 @@
 ;;
 ;; Source: https://github.com/AndreaCrotti/yasnippet-snippets
 
-(use-package yasnippet-snippets)
+(use-package yasnippet-snippets
+  :defer t
+  :after yasnippet)
 
 
 ;; auto-yasnippet
