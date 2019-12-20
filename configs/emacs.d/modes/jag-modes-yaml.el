@@ -5,11 +5,11 @@
 ;;; Code:
 
 (use-package jag-funcs-yaml
-  :ensure nil
-  )
+  :defer t
+  :ensure nil)
 
 (use-package yaml-mode
-  )
+  :commands 'yaml-mode)
 
 (provide 'jag-modes-yaml)
 ;;; jag-modes-yaml.el ends here

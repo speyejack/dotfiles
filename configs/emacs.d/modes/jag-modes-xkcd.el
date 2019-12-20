@@ -29,7 +29,7 @@
   :diminish
   :config
   (evil-make-intercept-map xkcd-mode-map)
-  (add-hook 'xkcd-mode-hook #'evil-normalize-keymaps)
-  )
+  (add-hook 'xkcd-mode-hook #'evil-normalize-keymaps))
+
 (provide 'jag-modes-xkcd)
 ;;; jag-modes-xkcd.el ends here

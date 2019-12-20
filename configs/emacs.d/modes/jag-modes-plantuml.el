@@ -5,6 +5,7 @@
 ;;; Code:
 
 (use-package jag-funcs-plantuml
+  :defer t
   :ensure nil)
 
 (use-package plantuml)

@@ -5,8 +5,8 @@
 ;;; Code:
 
 (use-package jag-funcs-pdb
-  :ensure nil
-  )
+  :defer t
+  :ensure nil)
 
 (add-hook 'pdb-mode-hook
 		  (lambda ()

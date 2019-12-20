@@ -5,9 +5,8 @@
 ;;; Code:
 
 (use-package jag-funcs-org-babel
-  :ensure nil
-  :init
-  )
+  :defer t
+  :ensure nil)
 
 (use-package org-babel
   :defer t

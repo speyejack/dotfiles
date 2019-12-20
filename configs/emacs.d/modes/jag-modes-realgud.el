@@ -5,8 +5,8 @@
 ;;; Code:
 
 (use-package jag-funcs-realgud
-  :ensure nil
-  )
+  :defer t
+  :ensure nil)
 
 (use-package realgud
   :commands (realgud:gdb realgud:pdb)

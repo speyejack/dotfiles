@@ -6,6 +6,7 @@
 
 
 (use-package jag-funcs-emacs-lisp
+  :defer t
   :ensure nil)
 
 (dolist (mode '(emacs-lisp-mode lisp-mode lisp-interaction-mode))

@@ -5,8 +5,8 @@
 ;;; Code:
 
 (use-package jag-funcs-help
-  :ensure nil
-  )
+  :defer t
+  :ensure nil)
 
 (use-package help
   :ensure nil

@@ -5,10 +5,11 @@
 ;;; Code:
 
 (use-package jag-funcs-term
-  :ensure nil
-  )
+  :defer t
+  :ensure nil)
 
 (use-package term
+  :commands 'term
   :ensure nil
   :config
   (evil-define-key '(motion normal) term-raw-map

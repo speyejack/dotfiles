@@ -5,6 +5,7 @@
 ;;; Code:
 
 (use-package jag-funcs-doc-view
+  :defer t
   :ensure nil)
 
 (use-package doc-view

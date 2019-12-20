@@ -5,6 +5,7 @@
 ;;; Code:
 
 (use-package jag-funcs-ibuffer
+  :defer t
   :ensure nil)
 
 (use-package ibuffer

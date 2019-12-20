@@ -41,6 +41,7 @@
 
 (use-package jag-funcs-python
   :ensure nil
+  :defer t
   :init
   (setq python-shell-interpreter "python3"))
 

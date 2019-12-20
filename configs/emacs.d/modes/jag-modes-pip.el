@@ -11,8 +11,8 @@
 ;; Source: https://github.com/Wilfred/pip-requirements.el
 
 (use-package pip-requirements
-  :ensure nil
-  )
+  :defer t
+  :ensure nil)
 
 (provide 'jag-modes-pip)
 ;;; jag-modes-pip.el ends here

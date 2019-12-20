@@ -5,6 +5,7 @@
 ;;; Code:
 
 (use-package jag-funcs-gdb
+  :defer t
   :ensure nil)
 
 (setq gdb-show-main t)
