@@ -12,7 +12,6 @@
     (message msg)
     (kill-new msg)))
 
-;; TODO Fix function
 (defun jag-describe-keymap (keymap)
   "Describe key bindings in KEYMAP.
    Interactively, prompt for a variable that has a keymap value.
@@ -29,13 +28,14 @@
 			 keymap)))
 	(jag--display-keymap-help aliased-keymap)))
 
+;; TODO Add history variable to keymap search
 (defun jag--read-keymap ()
   "Read a keymap from the user."
   (intern
    (completing-read
 	"Keymap: " obarray
 	(lambda (m) (and (boundp m)  (keymapp (symbol-value m))))
-	t nil 'variable-name-history)))
+	t nil nil)))
 
 (defun jag--display-keymap-help (keymap)
   "Display a help buffer for KEYMAP."
