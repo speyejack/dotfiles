@@ -206,11 +206,10 @@
 ;; Source: https://github.com/IvanMalison/org-projectile
 
 (use-package org-projectile
-  :commands 'org-projectile-project-todo-entry
+  :commands 'org-projectile-capture-for-current-project
   :diminish
-  :init
-  (push (org-projectile-project-todo-entry) org-capture-templates)
   :config
+  (push (org-projectile-project-todo-entry) org-capture-templates)
   (setq org-projectile-projects-file
 		  (expand-file-name "gtd.org" jag-notes-dir))
   (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
