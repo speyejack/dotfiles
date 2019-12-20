@@ -39,8 +39,8 @@
    "\n"
    (list
 	"(use-package %2$s"
-	"  :ensure nil"
-	"    )"
+	"  :defer t"
+	"  :ensure nil)"
 	""
 	"(use-package %1$s"
 	"    )"))
@@ -52,8 +52,8 @@ The template will be formatted with (format template func-module)")
    "\n"
    (list
 	"(use-package %2$s"
-	"  :ensure nil"
-	"    )"
+	"  :defer t"
+	"  :ensure nil)"
 	""
 	"(use-package %1$s"
 	"    )"))
