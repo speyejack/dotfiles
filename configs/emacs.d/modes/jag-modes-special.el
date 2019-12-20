@@ -11,7 +11,8 @@
    ("l" . 'forward-char)
    ("h" . 'backward-char)
    ("j" . 'next-line)
-   ("k" . 'previous-line)))
+   ("k" . 'previous-line)
+   ("M-l" . 'push-button)))
 
 (provide 'jag-modes-special)
 ;;; jag-modes-special.el ends here
