@@ -62,6 +62,7 @@
 (require 'jag-modes-eshell)
 (require 'jag-modes-gdb)
 (require 'jag-modes-gud)
+(require 'jag-modes-help)
 (require 'jag-modes-hexl)
 (require 'jag-modes-info)
 (require 'jag-modes-julia)
