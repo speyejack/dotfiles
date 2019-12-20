@@ -11,6 +11,8 @@
 (use-package info
   :ensure nil
   :bind (:map Info-mode-map
+		 ("M-L" . 'Info-history-forward)
+		 ("M-H" . 'Info-history-back)
 		 ("M-l" . 'Info-follow-nearest-node)
 		 ("M-h" . 'Info-up)
 		 ("M-j" . 'Info-next)
