@@ -5,6 +5,7 @@
 ;;; Code:
 
 (use-package jag-funcs-comint
+  :defer t
   :ensure nil
   :bind
    (:map comint-mode-map
