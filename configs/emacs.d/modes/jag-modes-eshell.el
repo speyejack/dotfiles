@@ -10,7 +10,7 @@
 
 (use-package jag-funcs-eshell
   :ensure nil
-  :config
+  :init
   (add-hook 'eshell-mode-hook
 			(lambda ()
 			  (setq pcomplete-cycle-completions nil)
