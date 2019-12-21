@@ -14,6 +14,8 @@
 ;; Prevent emacs from auto adding this
 ;; (package-initialize)
 
+(setq use-package-compute-statistics t)
+
 ;; Make startup faster by reducing the frequency of garbage
 ;; collection.  The default is 0.8MB.  Measured in bytes.
 (setq gc-cons-threshold (* 50 1000 1000))
@@ -38,6 +40,9 @@
 (require 'jag-core-settings)
 (require 'jag-core-packages)
 (require 'jag-core-keybindings)
+
+;; Window Manager Integration
+(require 'jag-modules-wm)
 
 ;; Packages
 (require 'jag-modules-evil)
