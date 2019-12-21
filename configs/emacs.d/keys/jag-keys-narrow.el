@@ -11,25 +11,31 @@
 (jag-declare-prefixes
  '(("n" "narrow")))
 
+(jag-define-keys jag-narrow-map
+ "r" 'narrow-to-region
+ "p" 'narrow-to-page
+ "f" 'narrow-to-defun
+ "w" 'widen
+ "o" 'jag-open-fold
+ "O" 'jag-open-folds
+ "c" 'jag-close-fold
+ "C" 'jag-close-folds
+ "t" 'jag-toggle-fold
+ "i" 'jag-open-fold-recursively
+ "I" 'origami-reset
+ "+" 'evil-numbers/inc-at-pt
+ "=" 'evil-numbers/inc-at-pt
+ "-" 'evil-numbers/dec-at-pt)
+
 (use-package jag-funcs-narrow
-  :defer t
-  :ensure nil
-  :bind
-  (:map jag-narrow-map
-	("r" . 'narrow-to-region)
-	("p" . 'narrow-to-page)
-	("f" . 'narrow-to-defun)
-	("w" . 'widen)
-	("o" . 'jag-open-fold)
-	("O" . 'jag-open-folds)
-	("c" . 'jag-close-fold)
-	("C" . 'jag-close-folds)
-	("t" . 'jag-toggle-fold)
-	("i" . 'jag-open-fold-recursively)
-	("I" . 'origami-reset)
-	("+" . 'evil-numbers/inc-at-pt)
-	("=" . 'evil-numbers/inc-at-pt)
-	("-" . 'evil-numbers/dec-at-pt)))
+  :commands
+  (jag-open-fold
+   jag-open-folds
+   jag-close-fold
+   jag-close-folds
+   jag-toggle-fold
+   jag-open-fold-recursively)
+  :ensure nil)
 
 
 (provide 'jag-keys-narrow)
