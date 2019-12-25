@@ -16,6 +16,7 @@
   ":"  'helm-eval-expression-with-eldoc
   "?" 'helm-descbinds
   "!" 'shell-command
+  "@" 'async-shell-command
   "u" 'universal-argument
   "U" 'undo-tree-visualize
   "I" 'use-package-report
