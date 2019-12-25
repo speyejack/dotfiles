@@ -55,9 +55,6 @@
   ;; Major modes that should default to an insert state.
   (evil-set-initial-state 'git-commit-mode 'insert)
 
-  ;; TODO Determine what this does
-  ;;(remove 'doc-view-mode evil-emacs-state-modes)
-
   (evil-mode 1))
 
 ;; undo-tree
