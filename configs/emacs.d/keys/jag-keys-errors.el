@@ -12,6 +12,7 @@
  '(("e" "errors")))
 
 (jag-define-keys jag-error-map
+  "e" 'helm-flycheck
   "c" 'helm-flycheck
   "s" 'flyspell-correct-next-word-generic
   "d" 'toggle-debug-on-error
