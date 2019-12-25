@@ -53,7 +53,7 @@
   (setq evil-esc-delay 0)
 
   ;; Major modes that should default to an insert state.
-  (add-to-list 'evil-insert-state-modes 'git-commit-mode)
+  (evil-set-initial-state 'git-commit-mode 'insert)
 
   ;; TODO Determine what this does
   ;;(remove 'doc-view-mode evil-emacs-state-modes)
