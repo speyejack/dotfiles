@@ -12,6 +12,8 @@
 	:defer nil
 	:config
 
+	(display-time-mode 1)
+	(display-battery-mode 1)
 	(require 'exwm-core)
 	;; Set the initial workspace number.
 	(unless (get 'exwm-workspace-number 'saved-value)
