@@ -38,7 +38,7 @@
 		 ("q" . quit-window)
 		 ("d" . doc-view-kill-proc))
   :config
-  (evil-make-intercept-map doc-view-mode-map 'normal)
+  (evil-make-override-map doc-view-mode-map 'normal)
   (add-hook 'doc-view-mode-hook #'evil-normalize-keymaps))
 
 (provide 'jag-modes-doc-view)

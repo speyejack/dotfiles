@@ -30,7 +30,7 @@
   (defun jag-disable-cursor ()
 	(interactive)
 	(setq cursor-type nil))
-  (evil-make-intercept-map spray-mode-map)
+  (evil-make-override-map spray-mode-map)
   (add-hook 'spray-mode-hook #'evil-normalize-keymaps)
   (add-hook 'spray-mode-hook 'jag-disable-cursor))
 

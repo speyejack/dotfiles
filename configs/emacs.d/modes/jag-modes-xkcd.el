@@ -28,7 +28,7 @@
    ("L" . 'xkcd-get-latest))
   :diminish
   :config
-  (evil-make-intercept-map xkcd-mode-map)
+  (evil-make-override-map xkcd-mode-map)
   (add-hook 'xkcd-mode-hook #'evil-normalize-keymaps))
 
 (provide 'jag-modes-xkcd)
