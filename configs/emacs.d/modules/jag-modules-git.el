@@ -37,7 +37,7 @@
   :diminish
   :config
   ;; Override evil keymap with timemachine's map
-  (evil-make-override-map git-timemachine-mode-map 'normal)
+  (evil-make-overriding-map git-timemachine-mode-map 'normal)
   (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
 
 (provide 'jag-modules-git)
