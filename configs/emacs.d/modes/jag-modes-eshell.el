@@ -9,6 +9,7 @@
 ;; (add-to-list 'eshell-visual-commands "nmtui")
 
 (use-package jag-funcs-eshell
+  :defer t
   :ensure nil
   :init
   (add-hook 'eshell-mode-hook
