@@ -137,6 +137,7 @@
   :custom
   (evil-extra-operator-eval-modes-alist
    '((emacs-lisp-mode eval-region)
+	 (lisp-interaction-mode eval-region)
 	 (scheme-mode geiser-eval-region)
 	 (clojure-mode cider-eval-region)
 	 (ruby-mode ruby-send-region)
