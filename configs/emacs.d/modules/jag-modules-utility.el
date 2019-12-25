@@ -170,6 +170,17 @@
   (setq projectile-completion-system 'helm)
   (projectile-mode 1))
 
+;; quickrun
+;;
+;; Run command quickly. This packages is inspired quickrun.vim
+;;
+;; Source: https://github.com/syohex/emacs-quickrun
+
+(use-package quickrun
+  :commands (quickrun quickrun-region)
+  :config
+  (evil-make-overriding-map quickrun--mode-map))
+
 ;; restart-emacs
 ;;
 ;; Restart emacs from within emacs

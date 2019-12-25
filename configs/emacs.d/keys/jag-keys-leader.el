@@ -20,7 +20,7 @@
   "U" 'undo-tree-visualize
   "I" 'use-package-report
   "d" 'helm-resume
-  "k" 'evil-operator-eval
+  "k" 'jag-evil-eval
   "K" 'jag-evil-eval-whole-buffer
   "=" 'jag-evil-reformat-buffer
   "|" 'restart-emacs
