@@ -12,6 +12,8 @@
 
 (use-package magit
   :commands 'magit-status
+  :config
+  (evil-set-initial-state 'git-commit-mode 'insert)
   :diminish)
 
 ;; git-timemachine
