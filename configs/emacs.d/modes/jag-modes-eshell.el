@@ -12,9 +12,10 @@
   :defer t
   :ensure nil
   :init
+  (evil-set-initial-state 'eshell-mode 'insert)
+  (setq pcomplete-cycle-completions nil)
   (add-hook 'eshell-mode-hook
 			(lambda ()
-			  (setq pcomplete-cycle-completions nil)
 			  (evil-define-key '(normal operator visual) eshell-mode-map
 				(kbd "gj") 'eshell-next-prompt
 				(kbd "gk") 'eshell-previous-prompt
