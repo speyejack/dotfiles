@@ -173,6 +173,7 @@
   (setq org-export-with-section-numbers nil)
   (setq org-export-with-toc nil)
   (add-hook 'org-export-before-parsing-hook (lambda (x) (untabify (point-min) (point-max))))
+  (add-hook 'org-capture-mode-hook (lambda () (evil-append-line 1)))
   (setq org-log-done (quote time))
   (setq org-checkbox-hierarchical-statistics nil)
   (require 'jag-modes-org-babel))
