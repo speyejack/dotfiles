@@ -1,4 +1,6 @@
 (set-prefix-key (kbd "C-M-Z"))
+(setf *mouse-focus-policy* :click)
+(setf *window-border-style* :none)
 
 (defun jag-define-keys (keymap key def &rest bindings)
   "In KEYMAP define KEY to DEF as well as all BINDINGS.
