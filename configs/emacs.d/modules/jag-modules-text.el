@@ -121,9 +121,9 @@
 	(sp-local-pair mode "for" "end" :when '(("SPC")) :post-handlers '("||\n[i]"))
 	(sp-local-pair mode "while" "end" :when '(("SPC")) :post-handlers '("||\n[i]")))
 
-  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
-  (sp-local-pair 'emacs-lisp-mode "`" nil :actions nil)
-  (sp-local-pair 'minibuffer-inactive-mode "'" nil :actions nil))
+  (dolist (mode '(emacs-lisp-mode minibuffer-inactive-mode lisp-mode))
+	(sp-local-pair mode "'" nil :actions nil)
+	(sp-local-pair mode "`" nil :actions nil)))
 
 ;; srefactor
 ;;
