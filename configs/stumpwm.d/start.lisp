@@ -62,8 +62,7 @@ Always defines <escape> and <C-g> as `keyboard-quit'."
   "Reloads the configuration file."
   (load "~/.stumpwm.d/init.lisp"))
 
-(jag-define-keys
- *top-map*
+(jag-define-keys *top-map*
  "s-h" "move-focus left"
  "s-j" "move-focus down"
  "s-k" "move-focus up"
