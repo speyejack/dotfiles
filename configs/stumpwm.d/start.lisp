@@ -21,6 +21,18 @@ Always defines <escape> and <C-g> as `keyboard-quit'."
 	   (if (listp ',bindings)
 	   (apply 'jag-define-keys '(,m . ,bindings))))))
 
+(dolist (num-pair '((1 . "!") (2 . "@") (3 . "#")
+					(4 . "$") (5 . "%") (6 . "^")
+					(7 . "&") (8 . "*") (9 . "(") (0 . ")")))
+  (let ((num (car num-pair)) (num-cap (cdr num-pair)))
+	(gnewbg (format nil "~D" num))
+	(define-key *top-map*
+	  (kbd (format nil "s-~D" num))
+	  (format nil "gselect ~D" num))
+	(define-key *top-map*
+	  (kbd (format nil "s-~A" num-cap))
+	  (format nil "gmove ~D" num))))
+
 (defcommand jag-run-emacs () ()
   "Raise or run emacs"
   (run-or-raise "emacs" '(:class "Emacs")))
