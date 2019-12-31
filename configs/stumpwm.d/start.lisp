@@ -55,7 +55,8 @@ Always defines <escape> and <C-g> as `keyboard-quit'."
 
 (jag-define-map *exec-map*
  "e" "jag-run-emacs"
- "f" "jag-run-firefox")
+ "f" "jag-run-firefox"
+ "s-g" "abort")
 
 (defcommand jag-reload () ()
   "Reloads the configuration file."
