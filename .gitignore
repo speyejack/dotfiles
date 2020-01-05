@@ -24,5 +24,8 @@ configs/ssh/*
 # Keep SSH config
 !configs/ssh/config
 
+# i3 ignores
+configs/i3/i3startup
+
 # Stumpwm ignores
 configs/stumpwm.d/init.lisp
