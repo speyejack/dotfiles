@@ -19,7 +19,7 @@
 	(kbd "K")  'jag-evil-previous-visual-line-5
 	(kbd "gh") 'evil-first-non-blank-of-visual-line
 	(kbd "gm") 'jag-goto-middle-of-line
-	(kbd "gH") 'evil-beginning-of-visual-line
+	(kbd "gH") 'evil-beginning-of-line
 	(kbd "gl") 'evil-end-of-visual-line
 	(kbd "gL") 'evil-end-of-line
 	(kbd "gJ") 'evil-join
