@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-compile)
 
 (provide 'jag-tests-compile)
 ;;; jag-tests-compile.el ends here

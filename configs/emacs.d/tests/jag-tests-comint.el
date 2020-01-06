@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-comint)
 
 (provide 'jag-tests-comint)
 ;;; jag-tests-comint.el ends here

@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-gud)
 
 (provide 'jag-tests-gud)
 ;;; jag-tests-gud.el ends here

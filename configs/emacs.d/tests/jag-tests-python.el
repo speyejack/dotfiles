@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-python)
 
 (provide 'jag-tests-python)
 ;;; jag-tests-python.el ends here

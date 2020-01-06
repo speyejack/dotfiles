@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-doc-view)
 
 (provide 'jag-tests-doc-view)
 ;;; jag-tests-doc-view.el ends here

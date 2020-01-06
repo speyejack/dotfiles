@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-eshell)
 
 (provide 'jag-tests-eshell)
 ;;; jag-tests-eshell.el ends here

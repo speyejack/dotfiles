@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-gdb)
 
 (provide 'jag-tests-gdb)
 ;;; jag-tests-gdb.el ends here

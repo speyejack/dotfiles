@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-configuring)
 
 (provide 'jag-tests-configuring)
 ;;; jag-tests-configuring.el ends here

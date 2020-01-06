@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-global)
 
 (provide 'jag-tests-global)
 ;;; jag-tests-global.el ends here

@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-realgud)
 
 (provide 'jag-tests-realgud)
 ;;; jag-tests-realgud.el ends here

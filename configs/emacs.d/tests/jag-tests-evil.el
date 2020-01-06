@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-evil)
 
 (provide 'jag-tests-evil)
 ;;; jag-tests-evil.el ends here

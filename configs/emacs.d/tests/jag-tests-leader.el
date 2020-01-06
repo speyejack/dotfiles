@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-leader)
 
 (provide 'jag-tests-leader)
 ;;; jag-tests-leader.el ends here

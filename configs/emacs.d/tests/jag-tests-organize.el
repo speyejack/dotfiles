@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-organize)
 
 (provide 'jag-tests-organize)
 ;;; jag-tests-organize.el ends here

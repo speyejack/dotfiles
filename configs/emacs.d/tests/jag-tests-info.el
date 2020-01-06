@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-info)
 
 (provide 'jag-tests-info)
 ;;; jag-tests-info.el ends here

@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-project)
 
 (provide 'jag-tests-project)
 ;;; jag-tests-project.el ends here

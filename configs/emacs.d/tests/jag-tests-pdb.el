@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-pdb)
 
 (provide 'jag-tests-pdb)
 ;;; jag-tests-pdb.el ends here

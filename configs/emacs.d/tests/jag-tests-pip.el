@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-pip)
 
 (provide 'jag-tests-pip)
 ;;; jag-tests-pip.el ends here

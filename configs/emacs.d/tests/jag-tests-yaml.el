@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-yaml)
 
 (provide 'jag-tests-yaml)
 ;;; jag-tests-yaml.el ends here

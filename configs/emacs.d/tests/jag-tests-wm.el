@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-wm)
 
 (provide 'jag-tests-wm)
 ;;; jag-tests-wm.el ends here

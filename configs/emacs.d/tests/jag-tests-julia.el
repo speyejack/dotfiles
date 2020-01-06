@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-julia)
 
 (provide 'jag-tests-julia)
 ;;; jag-tests-julia.el ends here

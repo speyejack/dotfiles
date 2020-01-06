@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-yank)
 
 (provide 'jag-tests-yank)
 ;;; jag-tests-yank.el ends here

@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-visual)
 
 (provide 'jag-tests-visual)
 ;;; jag-tests-visual.el ends here

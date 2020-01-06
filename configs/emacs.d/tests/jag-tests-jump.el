@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-jump)
 
 (provide 'jag-tests-jump)
 ;;; jag-tests-jump.el ends here

@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-
+(require 'jag-funcs-search)
 
 (provide 'jag-tests-search)
 ;;; jag-tests-search.el ends here

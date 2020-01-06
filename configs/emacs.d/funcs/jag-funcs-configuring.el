@@ -84,6 +84,14 @@ The template will be formatted with (format template name func-module)")
   "The template used to create a new key module.
 The template will be formatted with the (format template name func-module binding)")
 
+(defvar jag-test-module-body-template
+  (s-join
+   "\n"
+   (list
+	"(require '%1$s)"
+	))
+  "The template used to create a new testing module.
+The template will be formatted with (format func-module)")
 
 (defun jag--new-general-module-file (name)
   "Create new general module file with NAME."
@@ -106,7 +114,8 @@ The template will be formatted with the (format template name func-module bindin
 
 (defun jag--new-test-module-file (name)
   "Create new test file for module NAME."
-  (jag--new-template-file name "tests" "Tests for %s functions" jag-tests-dir))
+  (jag--new-template-file name "tests" "Tests for %s functions" jag-tests-dir
+						  (format jag-test-module-body-template (jag--new-template-name "funcs" name))))
 
 
 (defun jag--new-template-file (name type desc dir &optional body)
