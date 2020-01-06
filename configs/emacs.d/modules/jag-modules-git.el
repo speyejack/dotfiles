@@ -42,5 +42,15 @@
   (evil-make-overriding-map git-timemachine-mode-map 'normal)
   (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
 
+;; helm-gitignore
+;;
+;; Generate .gitignore files with gitignore.io.
+;;
+;; Source: https://github.com/jupl/helm-gitignore
+
+(use-package helm-gitignore
+  :commands 'helm-gitignore
+  :diminish
+  :after helm)
 (provide 'jag-modules-git)
 ;;; jag-modules-git.el ends here

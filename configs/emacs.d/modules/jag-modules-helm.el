@@ -114,17 +114,6 @@
   :diminish
   :after company)
 
-;; helm-gitignore
-;;
-;; Generate .gitignore files with gitignore.io.
-;;
-;; Source: https://github.com/jupl/helm-gitignore
-
-(use-package helm-gitignore
-  :commands 'helm-gitignore
-  :diminish
-  :after helm)
-
 ;; helm-google
 ;;
 ;; Emacs Helm Interface for quick Google searches
