@@ -16,6 +16,7 @@ configs/emacs.d/*
 !configs/emacs.d/modules/
 !configs/emacs.d/funcs/
 !configs/emacs.d/modes/
+!configs/emacs.d/tests/
 
 
 # SSH ignores
