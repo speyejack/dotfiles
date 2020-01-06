@@ -20,6 +20,7 @@
  "Cd" 'jag-unix2dos
  "Cu" 'jag-dos2unix
  "D" 'jag-delete-current-buffer-file
+ "d" 'ediff
  "E" 'jag-sudo-edit
  "f" 'helm-find-files
  "gd" 'jag-open-dotfiles

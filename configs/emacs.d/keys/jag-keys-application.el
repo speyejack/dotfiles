@@ -22,7 +22,6 @@
  "Z" 'zeal-at-point-search
  "p" 'list-processes
  "P" 'proced
- "e" 'ediff
  "d" 'dired
  "h" 'hexl-mode
  "f" 'floobits-join-workspace
