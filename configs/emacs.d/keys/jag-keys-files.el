@@ -11,7 +11,6 @@
 (jag-declare-prefixes
  '(("f" "files")
    ("fC" "convert")
-   ("fd" "dotfiles")
    ("fg" "goto")
    ("fv" "variables")))
 

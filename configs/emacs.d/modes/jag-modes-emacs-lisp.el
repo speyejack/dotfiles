@@ -10,6 +10,8 @@
   :ensure nil)
 
 (dolist (mode '(emacs-lisp-mode lisp-mode lisp-interaction-mode))
+  (jag-declare-prefix-for-mode mode
+   "d" "dotfiles")
   (jag-define-leader-keys-for-major-mode
    mode
    "df" 'jag-new-func-module
