@@ -17,6 +17,7 @@
  "S" 'magit-stage-file
  "U" 'magit-unstage-file
  "l" 'magit-log-buffer-file
+ "i" 'helm-gitignore
  "t" 'git-timemachine)
 
 
