@@ -52,5 +52,6 @@
   :commands 'helm-gitignore
   :diminish
   :after helm)
+
 (provide 'jag-modules-git)
 ;;; jag-modules-git.el ends here
