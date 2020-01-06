@@ -31,6 +31,7 @@
  "d" 'pdb
 
  "ta" 'pytest-all
+ "td" 'pytest-directory
  "tm" 'pytest-module
  "to" 'pytest-one
  "tpa" 'pytest-pdb-all
