@@ -14,6 +14,9 @@
 (defvar jag-emacs-leader-key "C-SPC"
   "The leader key in all states.")
 
+(defvar jag-local-leader-key "m"
+  "The local leader key under main leader key.")
+
 (defun jag-create-sub-leader-map (leader-keymap key name)
   "Create new keymap bound in LEADER-KEYMAP under KEY with NAME."
   (let* ((jag-map-sym (intern (format "jag-%s-map" name)))
@@ -64,8 +67,8 @@ MODE is the mode in which this prefix command should be added.
 PREFIX is a string describing a key sequence.  NAME is a symbol name
 used as the prefix command."
   (let  ((command (intern (concat (symbol-name mode) name)))
-	 (full-prefix (concat jag-leader-key " " prefix))
-	 (full-prefix-emacs (concat jag-emacs-leader-key " " prefix)))
+	 (full-prefix (concat jag-leader-key " " jag-local-leader-key " " prefix))
+	 (full-prefix-emacs (concat jag-emacs-leader-key " " jag-local-leader-key " " prefix)))
 
     (which-key-declare-prefixes-for-mode mode
       full-prefix-emacs name

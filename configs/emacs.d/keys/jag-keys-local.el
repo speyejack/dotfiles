@@ -26,11 +26,11 @@
 		   ;; All evil states with `M-m m'
 		   (evil-define-key '(normal insert visual operator motion emacs)
 			 ,mode-map-sym
-			 (kbd (concat jag-emacs-leader-key " m")) ,jag-map-sym)
+			 (kbd (concat jag-emacs-leader-key " " jag-local-leader-key)) ,jag-map-sym)
 		   ;; Non inserting evil states with SPC-m
 		   (evil-define-key '(normal visual operator motion)
 			 ,mode-map-sym
-			 (kbd (concat jag-leader-key " m")) ,jag-map-sym))))
+			 (kbd (concat jag-leader-key " " jag-local-leader-key)) ,jag-map-sym))))
 
 	(setq jag-map-val (symbol-value jag-map-sym))
 
