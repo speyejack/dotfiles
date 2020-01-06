@@ -70,7 +70,7 @@
 ;; Source: https://github.com/d12frosted/flyspell-correct
 
 (use-package flyspell-correct
-  :commands (flyspell-correct-next-word-generic)
+  :commands (flyspell-correct-next flyspell-correct-previous flyspell-correct-at-point)
   :diminish)
 
 ;; flyspell-correct-helm

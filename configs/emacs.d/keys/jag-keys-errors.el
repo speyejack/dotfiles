@@ -14,7 +14,8 @@
 (jag-define-keys jag-error-map
   "e" 'helm-flycheck
   "c" 'helm-flycheck
-  "s" 'flyspell-correct-next-word-generic
+  "s" 'flyspell-correct-next
+  "S" 'flyspell-correct-previous
   "d" 'toggle-debug-on-error
   "t" 'hl-todo-next
   "T" 'hl-todo-prev)
