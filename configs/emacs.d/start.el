@@ -1,6 +1,6 @@
 ;;; start.el --- Emacs Initialization File
 ;;
-;; Copyright (c) 2019 Jack Garrard
+;; Copyright (c) 2020 Jack Garrard
 ;;
 ;; Author: Jack Garrard <speyejack@gmail.com>
 ;; URL: https://github.com/speyejack/dotfiles
