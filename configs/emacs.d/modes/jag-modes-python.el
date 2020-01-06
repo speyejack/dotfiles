@@ -16,8 +16,8 @@
             (setq tab-width (default-value 'tab-width))
 			(setq python-indent-offset 4)))
 
-(jag-declare-prefix-for-mode 'python-mode "mt" "pytest")
-(jag-declare-prefix-for-mode 'python-mode "mtp" "pytest-pdb")
+(jag-declare-prefix-for-mode 'python-mode "t" "pytest")
+(jag-declare-prefix-for-mode 'python-mode "tp" "pytest-pdb")
 (jag-define-leader-keys-for-major-mode
  'python-mode
  "l" 'live-py-mode
