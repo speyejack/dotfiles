@@ -11,27 +11,31 @@
   "Create a new general and func module with NAME."
   (interactive (list (read-string "New general module name: ")))
 
-  (jag--new-general-module-file name)
-  (jag--new-func-module-file name))
+  (jag--new-test-module-file name)
+  (jag--new-func-module-file name)
+  (jag--new-general-module-file name))
 
 (defun jag-new-mode-module (name)
   "Create a new mode and func module with NAME."
   (interactive (list (read-string "New mode module name: ")))
 
-  (jag--new-mode-module-file name)
-  (jag--new-func-module-file name))
+  (jag--new-test-module-file name)
+  (jag--new-func-module-file name)
+  (jag--new-mode-module-file name))
 
 (defun jag-new-key-module (name leader-key)
   "Create a new key and func module with NAME accessed by LEADER-KEY."
   (interactive (list (read-string "New key module name: ") (read-string "Leader key: ")))
 
-  (jag--new-key-module-file name leader-key)
-  (jag--new-func-module-file name))
+  (jag--new-test-module-file name)
+  (jag--new-func-module-file name)
+  (jag--new-key-module-file name leader-key))
 
 (defun jag-new-func-module (name)
   "Create a new func module with NAME."
   (interactive (list (read-string "New func module name: ")))
 
+  (jag--new-test-module-file name)
   (jag--new-func-module-file name))
 
 (defvar jag-general-module-body-template
@@ -99,6 +103,10 @@ The template will be formatted with the (format template name func-module bindin
 (defun jag--new-func-module-file (name)
   "Create new func file for module NAME."
   (jag--new-template-file name "funcs" "Functions for %s" jag-funcs-dir))
+
+(defun jag--new-test-module-file (name)
+  "Create new test file for module NAME."
+  (jag--new-template-file name "tests" "Tests for %s functions" jag-tests-dir))
 
 
 (defun jag--new-template-file (name type desc dir &optional body)
