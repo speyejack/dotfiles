@@ -12,14 +12,20 @@
 (dolist (mode '(emacs-lisp-mode lisp-mode lisp-interaction-mode))
   (jag-define-leader-keys-for-major-mode
    mode
-  "t" 'eldoc-mode
-  "b" 'eval-buffer
-  "f" 'eval-defun
-  "e" 'eval-last-sexp
-  "r" 'eval-region
-  "p" 'pp-eval-last-sexp
-  "m" 'pp-macroexpand-last-sexp
-  "M" 'emacs-lisp-macroexpand))
+   "df" 'jag-new-func-module
+   "dg" 'jag-new-general-module
+   "dk" 'jag-new-key-module
+   "dl" 'helm-locate-library
+   "dm" 'jag-new-mode-module
+   "ds" 'jag-config-switch-between-func-and-other
+   "t" 'eldoc-mode
+   "b" 'eval-buffer
+   "f" 'eval-defun
+   "e" 'eval-last-sexp
+   "r" 'eval-region
+   "p" 'pp-eval-last-sexp
+   "m" 'pp-macroexpand-last-sexp
+   "M" 'emacs-lisp-macroexpand))
 
 ;; indention
 ;;
@@ -27,12 +33,9 @@
 ;;
 ;; Source: https://emacs.stackexchange.com/questions/10230/how-to-indent-keywords-aligned
 
-(add-hook 'emacs-lisp-mode-hook
-		  (lambda () (setq-local lisp-indent-function 'Fuco1/lisp-indent-function)))
-(add-hook 'org-mode-hook
-		  (lambda () (setq-local lisp-indent-function 'Fuco1/lisp-indent-function)))
-(add-hook 'org-src-mode-hook
-		  (lambda () (setq-local lisp-indent-function 'Fuco1/lisp-indent-function)))
+(dolist (mode '(emacs-lisp-mode-hook org-mode-hook org-src-mode-hook))
+  (add-hook mode
+			(lambda () (setq-local lisp-indent-function 'Fuco1/lisp-indent-function))))
 ;; The indentation function
 (defun Fuco1/lisp-indent-function (indent-point state)
   (let ((normal-indent (current-column))
