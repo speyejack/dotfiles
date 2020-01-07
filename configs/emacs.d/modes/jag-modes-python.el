@@ -170,7 +170,9 @@
 (use-package pytest
   :commands (pytest-all pytest-module pytest-one pytest-pdb-all
 						pytest-pdb-module pytest-pdb-one)
-  :diminish)
+  :diminish
+  :config
+  (setq pytest-global-name "pytest-3"))
 
 ;; yapfify
 ;;
