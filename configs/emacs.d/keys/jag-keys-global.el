@@ -17,6 +17,7 @@
 	(kbd "C-j")  'scroll-up-command
 	(kbd "J")  'jag-evil-next-visual-line-5
 	(kbd "K")  'jag-evil-previous-visual-line-5
+	(kbd "M-J") 'comment-indent-new-line
 	(kbd "gh") 'evil-first-non-blank-of-visual-line
 	(kbd "gm") 'jag-goto-middle-of-line
 	(kbd "gH") 'evil-beginning-of-line
