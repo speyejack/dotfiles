@@ -75,7 +75,6 @@
   :defer t
   :ensure nil ; built-in package
   :init
-  ;; Disables "Using try-expand-dabbrev" on completions.
   (setq hippie-expand-verbose nil)
   (setq hippie-expand-try-functions-list
 		'(
@@ -88,6 +87,8 @@
 		  ;; Try to expand word "dynamically", searching the kill
 		  ;; ring.
 		  try-expand-dabbrev-from-kill
+		  ;; Integrate with hippie expand.
+		  yas-hippie-try-expand
 		  ;; Try to complete text as a file name, as many characters
 		  ;; as unique.
 		  try-complete-file-name-partially
@@ -96,8 +97,7 @@
 		  ;; Try to expand word before point according to all abbrev
 		  ;; tables.
 		  try-expand-all-abbrevs
-		  ;; Try to complete the current line to an entire line in the
-		  ;; buffer.
+		  ;; Try to complete the current beginning of a list.
 		  try-expand-list
 		  ;; Try to complete the current line to an entire line in the
 		  ;; buffer.
@@ -115,7 +115,6 @@
   :init
   (setq yas-verbosity 1)
   (setq yas-snippet-dirs '("~/.dotfiles/configs/emacs.d/snippets"))
-  (push 'yas-hippie-try-expand hippie-expand-try-functions-list)
   ;; Disable default yas minor mode map and use hippie integration.
   (setq yas-minor-mode-map (make-sparse-keymap))
   (setq yas-wrap-around-region t)
