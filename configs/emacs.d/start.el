@@ -14,7 +14,7 @@
 ;; Prevent emacs from auto adding this
 ;; (package-initialize)
 
-(setq use-package-compute-statistics t)
+;;(setq use-package-compute-statistics t)
 
 ;; Make startup faster by reducing the frequency of garbage
 ;; collection.  The default is 0.8MB.  Measured in bytes.
