@@ -16,6 +16,12 @@
   (setq pcomplete-cycle-completions nil)
   (add-hook 'eshell-mode-hook
 			(lambda ()
+			  (unless (file-exists-p eshell-aliases-file)
+				(eshell/alias 'll "ls -l $*")
+				(eshell/alias 'ff "find-file $1")
+				(eshell/alias 'dcrun "docker-compose -f ./docker-compose.yml $*")
+				(eshell/alias 'dclogs "docker-compose -f ./docker-compose.yml logs -tf --tail=\"50\" $*"))
+
 			  (evil-define-key '(normal operator visual) eshell-mode-map
 				(kbd "gj") 'eshell-next-prompt
 				(kbd "gk") 'eshell-previous-prompt
