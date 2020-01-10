@@ -15,7 +15,9 @@
    ("M-J" . 'comint-next-prompt)
    ("M-g M-j" . 'comint-next-prompt)
    ("M-K" . 'comint-previous-prompt)
-   ("M-g M-k" . 'comint-previous-prompt)))
+   ("M-g M-k" . 'comint-previous-prompt))
+   :config
+  (setq comint-input-ignoredups t))
 
 
 (provide 'jag-modes-comint)
