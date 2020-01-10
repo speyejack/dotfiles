@@ -11,9 +11,12 @@
 (use-package help
   :ensure nil
   :bind (:map help-mode-map
+		 ("q" . 'kill-this-buffer)
 		 ("M-h" . 'help-mode-menu)
 		 ("M-j" . 'help-go-forward)
-		 ("M-k" . 'help-go-back)))
+		 ("M-k" . 'help-go-back))
+  :config
+  (evil-make-overriding-map help-mode-map))
 
 (provide 'jag-modes-help)
 ;;; jag-modes-help.el ends here
