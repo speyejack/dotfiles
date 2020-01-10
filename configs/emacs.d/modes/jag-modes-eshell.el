@@ -21,6 +21,7 @@
 				(eshell/alias 'ff "find-file $1")
 				(eshell/alias 'dcrun "docker-compose -f ./docker-compose.yml $*")
 				(eshell/alias 'dclogs "docker-compose -f ./docker-compose.yml logs -tf --tail=\"50\" $*"))
+			  (setq eshell-hist-ignoredups t)
 
 			  (evil-define-key '(normal operator visual) eshell-mode-map
 				(kbd "gj") 'eshell-next-prompt
