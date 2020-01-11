@@ -9,8 +9,8 @@
 ;; (add-to-list 'eshell-visual-commands "nmtui")
 
 (use-package jag-funcs-eshell
-  :defer t
   :ensure nil
+  :commands 'jag--jump-eshell-prompt
   :init
   (evil-set-initial-state 'eshell-mode 'insert)
   (setq pcomplete-cycle-completions nil)
@@ -22,6 +22,7 @@
 				(eshell/alias 'dcrun "docker-compose -f ./docker-compose.yml $*")
 				(eshell/alias 'dclogs "docker-compose -f ./docker-compose.yml logs -tf --tail=\"50\" $*"))
 			  (setq eshell-hist-ignoredups t)
+			  (add-hook 'evil-insert-state-entry-hook 'jag--jump-eshell-prompt nil t)
 
 			  (evil-define-key '(normal operator visual) eshell-mode-map
 				(kbd "gj") 'eshell-next-prompt
