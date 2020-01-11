@@ -11,6 +11,10 @@
 (use-package help
   :ensure nil
   :bind (:map help-mode-map
+		 ("h" . nil)
+		 ("j" . nil)
+		 ("k" . nil)
+		 ("l" . nil)
 		 ("q" . 'kill-this-buffer)
 		 ("M-h" . 'help-mode-menu)
 		 ("M-j" . 'help-go-forward)
