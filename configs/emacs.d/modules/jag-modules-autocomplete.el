@@ -18,6 +18,7 @@
    ("M-i" . 'helm-company))
   (:map company-active-map
    ("M-;" . 'company-complete-selection)
+   ("M-l" . 'company-complete-selection)
    ("M-j" . 'company-select-next-or-abort)
    ("M-k" . 'company-select-previous-or-abort))
   (:map company-search-map
