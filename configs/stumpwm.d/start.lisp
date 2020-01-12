@@ -42,6 +42,7 @@ Always defines <escape> and <C-g> as `keyboard-quit'."
   (run-or-raise "firefox" '(:class "firefox")))
 
 (jag-define-map *leader-map*
+ "s-SPC" "mode-line"
  "h" *HELP-MAP*
  "g" *GROUPS-MAP*
  "x" *EXCHANGE-WINDOW-MAP*)
@@ -49,9 +50,9 @@ Always defines <escape> and <C-g> as `keyboard-quit'."
 (jag-define-map *power-map*
  "l" "exec i3lock -c 000000;exec xset dpms force off"
  "e" "quit"
- "s" "exec systemctl shutdown"
+ "s" "exec systemctl halt"
  "r" "exec systemctl reboot"
- "S" "exec systemctl shutdown")
+ "S" "exec systemctl halt")
 
 (jag-define-map *exec-map*
  "e" "jag-run-emacs"
