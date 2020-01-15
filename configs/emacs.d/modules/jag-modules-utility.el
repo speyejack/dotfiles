@@ -15,6 +15,18 @@
   :commands 'ace-link
   :diminish)
 
+;; ace-window
+;;
+;; Quickly switch windows in Emacs
+;;
+;; Source: https://github.com/abo-abo/ace-window
+
+(use-package ace-window
+  :commands 'ace-window
+  :diminish
+  :config
+  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
+
 ;; ag
 ;;
 ;; A front-end for ag ('the silver searcher'), the C ack replacement.
