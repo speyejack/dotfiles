@@ -15,6 +15,11 @@
  "O" 'org-projectile-capture-for-current-project
  "r" 'evil-operator-remember
  "R" 'remember
+ "t" 'org-clock-in
+ "T" 'org-clock-in-last
+ "y" 'org-clock-out
+ "Y" 'org-clock-cancel
+ "g" 'org-clock-goto
  "c" 'evil-operator-org-capture
  "C" 'org-capture)
 
