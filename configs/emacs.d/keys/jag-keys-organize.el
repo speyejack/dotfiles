@@ -20,6 +20,7 @@
  "y" 'org-clock-out
  "Y" 'org-clock-cancel
  "g" 'org-clock-goto
+ "e" 'org-clock-modify-effort-estimate
  "c" 'evil-operator-org-capture
  "C" 'org-capture)
 
