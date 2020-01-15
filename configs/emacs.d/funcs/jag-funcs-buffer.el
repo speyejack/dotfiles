@@ -67,9 +67,11 @@ If the universal prefix ARG is non-nil then also kill the window."
   (revert-buffer :ignore-auto :noconfirm))
 
 (defun jag-safe-revert-buffer ()
-  "Prompt before reverting the file."
+  "Prompt before reverting the file unless unmodified."
   (interactive)
-  (revert-buffer nil nil))
+  (if (buffer-modified-p (current-buffer))
+	  (revert-buffer nil nil)
+	(revert-buffer :ignore-auto :noconfirm)))
 
 (defun jag-switch-to-scratch-buffer ()
   "Switch to the `*scratch*' buffer.
