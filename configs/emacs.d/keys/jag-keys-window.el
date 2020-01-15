@@ -21,20 +21,18 @@
  "=" 'balance-windows
  "_" 'jag-maximize-horizontally
  "/" 'jag-window-layout-toggle
- "F" 'jag-select-window-by-number
+ "F" 'follow-mode
  "H" 'evil-window-move-far-left
  "J" 'evil-window-move-very-bottom
  "K" 'evil-window-move-very-top
  "L" 'evil-window-move-far-right
  "R" 'jag-rotate-windows-backward
- "S" 'split-window-below-and-focus
+ "S" 'evil-window-split
  "U" 'winner-redo
- "v" 'split-window-right-and-focus
- "W" 'evil-window-prev
+ "W" 'evil-window-next
  "b" 'jag-switch-to-minibuffer-window
- "c" 'make-frame
  "d" 'jag-delete-window
- "f" 'follow-mode
+ "f" 'make-frame
  "h" 'evil-window-left
  "j" 'evil-window-down
  "k" 'evil-window-up
@@ -45,11 +43,10 @@
  "p" 'evil-window-mru
  "q" 'evil-quit
  "r" 'jag-rotate-windows-forward
- "s" 'evil-window-split
+ "s" 'evil-window-vsplit
  "t" 'jag-toggle-current-window-dedication
  "u" 'winner-undo
- "v" 'evil-window-vsplit
- "w" 'evil-window-next
+ "w" 'ace-window
  "y" 'other-frame)
 
 (use-package jag-funcs-window
