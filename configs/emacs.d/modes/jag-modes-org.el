@@ -85,6 +85,7 @@
   "ttf" 'org-table-toggle-formula-debugger
   "tto" 'org-table-toggle-coordinate-overlays
   "tw" 'org-table-wrap-region
+  "t?" 'org-table-field-info
 
   ;; Multi-purpose keys
 
