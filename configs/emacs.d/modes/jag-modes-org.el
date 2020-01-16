@@ -4,11 +4,6 @@
 
 ;;; Code:
 
-;; org
-;;
-;; Emacs org mode
-;;
-;; Source: https://orgmode.org/
 (jag-declare-prefix-for-mode 'org-mode "mh" "headings")
 (jag-declare-prefix-for-mode 'org-mode "mS" "subtree")
 (jag-declare-prefix-for-mode 'org-mode "mi" "insertion")
@@ -120,6 +115,11 @@
 			 jag-org-open-heading-after-current
 			 jag-org-open-heading))
 
+;; org
+;;
+;; Emacs org mode
+;;
+;; Source: https://orgmode.org/
 (use-package org
   :defer t
   :commands (org-mode org-capture)
