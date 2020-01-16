@@ -3,7 +3,19 @@ A collection of all of my different dotfiles.
 ** Emacs
 My emacs config that powers all of my emacs
 
-It is mainly powered by a [[./configs/emacs.d/init.org][single org file]]
+There are two main files in the top directory
+
+init.el - Loads start.el
+start.el - The main file to run (I recommend to an load this file)
+
+It is then separated into 5 main directories
+
+core - The core files to run at the beginning of the startup
+modules - A collection of packages around a theme
+modes - Major mode configuration
+funcs - Supportive functions for all other directories
+tests - Tests for supportive functions
+
 
 Directory: [[./configs/emacs.d/]]
 
