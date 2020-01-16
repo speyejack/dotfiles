@@ -213,7 +213,7 @@
   :config
   (push (org-projectile-project-todo-entry) org-capture-templates)
   (setq org-projectile-projects-file
-		  (expand-file-name "gtd.org" jag-notes-dir))
+		  (expand-file-name "gtd.org" jag-gtd-dir))
   (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
 
 ;; evil-org
