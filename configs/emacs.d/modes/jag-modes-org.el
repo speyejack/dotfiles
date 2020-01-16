@@ -159,7 +159,13 @@
 	(setq org-capture-templates
 		  `(("t" "Todo [inbox]" entry
 			 (file+headline ,inbox-file "Tasks")
-			 "* TODO %i%?")))
+			 "* TODO %i%?")
+			("d" "Due [inbox]" entry
+			 (file+headline ,inbox-file "Due")
+			 "* TODO %i%?\nDEADLINE: %^{Due Date}t")
+			("c" "Clock-in" entry
+			 (file+olp+headline ,inbox-file "Clocks")
+			 "* %i" :clock-in)))
 
 	(setq org-refile-targets
 		  `((,gtd-file :maxlevel . 2)
