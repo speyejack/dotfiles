@@ -22,5 +22,10 @@
   (interactive)
   (org-capture nil "c"))
 
+(defun jag-org-due-capture ()
+  "Capture a due date."
+  (interactive)
+  (org-capture nil "d"))
+
 (provide 'jag-funcs-organize)
 ;;; jag-funcs-organize.el ends here

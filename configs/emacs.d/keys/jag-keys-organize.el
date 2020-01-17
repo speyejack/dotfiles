@@ -11,6 +11,7 @@
 
 (jag-define-keys jag-organize-map
  "a" 'org-agenda
+ "d" 'jag-org-due-capture
  "o" 'jag--quick-org-task-capture
  "O" 'jag-org-file-task-capture
  "r" 'evil-operator-remember
