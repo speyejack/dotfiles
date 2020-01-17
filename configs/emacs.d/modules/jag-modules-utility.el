@@ -176,7 +176,7 @@
 ;; Source: https://github.com/bbatsov/projectile
 
 (use-package projectile
-  :commands (projectile-find-file projectile-switch-project)
+  :commands (projectile-find-file projectile-switch-project projectile-project-p)
   :diminish
   :config
   (setq projectile-completion-system 'helm)

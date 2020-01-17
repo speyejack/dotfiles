@@ -10,6 +10,17 @@
   (interactive)
   (org-capture nil "t"))
 
+(defun jag-org-file-task-capture ()
+  "Capture a task with a file or project."
+  (interactive)
+  (if (projectile-project-p)
+	  (org-projectile-capture-for-current-project)
+	(org-capture nil "h")))
+
+(defun jag-org-clock-in-capture ()
+  "Capture the name of a clock in and start."
+  (interactive)
+  (org-capture nil "c"))
 
 (provide 'jag-funcs-organize)
 ;;; jag-funcs-organize.el ends here
