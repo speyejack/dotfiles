@@ -159,13 +159,20 @@
 	(setq org-capture-templates
 		  `(("t" "Todo [inbox]" entry
 			 (file+headline ,inbox-file "Tasks")
-			 "* TODO %i%?")
+			 "* TODO %i%?\n")
+
+			("h" "Todo here [inbox]" entry
+			 (file+headline ,inbox-file "Tasks")
+			 "* TODO %i%?\n  %a\n")
+
 			("d" "Due [inbox]" entry
 			 (file+headline ,inbox-file "Due")
-			 "* TODO %i%?\nDEADLINE: %^{Due Date}t")
-			("c" "Clock-in" entry
-			 (file+olp+headline ,inbox-file "Clocks")
-			 "* %i" :clock-in)))
+			 "* TODO %i%?\n  DEADLINE: %^{Due Date}t\n")
+
+			("c" "Clock-in [inbox]" entry
+			 (file+olp+datetree ,inbox-file "Clocks")
+			 "* %i%?\n" :clock-in t :clock-keep t)))
+
 
 	(setq org-refile-targets
 		  `((,gtd-file :maxlevel . 2)
@@ -220,7 +227,8 @@
   (push (org-projectile-project-todo-entry) org-capture-templates)
   (setq org-projectile-projects-file
 		  (expand-file-name "gtd.org" jag-gtd-dir))
-  (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
+  (setq org-projectile-capture-template
+		"* TODO %i%?\n  %a\n"))
 
 ;; evil-org
 ;;
