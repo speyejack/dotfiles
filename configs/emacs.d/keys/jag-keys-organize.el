@@ -12,10 +12,10 @@
 (jag-define-keys jag-organize-map
  "a" 'org-agenda
  "o" 'jag--quick-org-task-capture
- "O" 'org-projectile-capture-for-current-project
+ "O" 'jag-org-file-task-capture
  "r" 'evil-operator-remember
  "R" 'remember
- "t" 'org-clock-in
+ "t" 'jag-org-clock-in-capture
  "T" 'org-clock-in-last
  "y" 'org-clock-out
  "Y" 'org-clock-cancel
@@ -26,7 +26,9 @@
 
 (use-package jag-funcs-organize
   :commands
-  (jag--quick-org-task-capture)
+  (jag--quick-org-task-capture
+   jag-org-file-task-capture
+   jag-org-clock-in-capture)
   :ensure nil)
 
 (provide 'jag-keys-organize)
