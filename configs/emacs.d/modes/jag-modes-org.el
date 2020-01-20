@@ -182,6 +182,7 @@
 	(setq org-agenda-files
 		  `(,inbox-file ,gtd-file ,tickler-file)))
 
+  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
   (setq org-startup-indented 1)
   (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
   (setq org-export-with-section-numbers nil)
