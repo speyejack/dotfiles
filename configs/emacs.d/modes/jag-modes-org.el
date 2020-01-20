@@ -173,7 +173,7 @@
 			 (file+headline ,inbox-file "Due")
 			 "* TODO %i%?\n  DEADLINE: %^{Due Date}t\n")
 
-			("c" "Clock-in [inbox]" entry
+			("c" "Clock-in" entry
 			 (file+olp+datetree ,clocks-file "Clocks")
 			 "* %i%?\n" :clock-in t :clock-keep t)))
 
