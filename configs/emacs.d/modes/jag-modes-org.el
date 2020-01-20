@@ -21,9 +21,9 @@
   "P" 'org-set-property
   ":" 'org-set-tags
 
-  "a" 'org-agenda
+  "a" 'org-archive-subtree
   "b" 'org-tree-to-indirect-buffer
-  "A" 'org-archive-subtree
+  "A" 'jag-org-archive-done-tasks
   "l" 'org-open-at-point
   "T" 'org-show-todo-tree
 

@@ -21,5 +21,14 @@
   (org-insert-heading)
   (evil-append 1))
 
+(defun jag-org-archive-done-tasks ()
+  "Archive all DONE entries"
+  (interactive)
+  (org-map-entries
+   (lambda ()
+     (org-archive-subtree)
+     (setq org-map-continue-from (outline-previous-heading)))
+   "/DONE" 'file))
+
 (provide 'jag-funcs-org)
 ;;; jag-funcs-org.el ends here
