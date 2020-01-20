@@ -97,7 +97,7 @@
   "N" 'widen
   "O" 'org-clock-out
   "q" 'org-clock-cancel
-  "R" 'org-refile
+  "r" 'org-refile
   "s" 'org-schedule
 
   ;; insertion of common elements
