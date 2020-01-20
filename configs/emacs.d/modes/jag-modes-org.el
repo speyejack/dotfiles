@@ -145,16 +145,20 @@
   (let ((inbox-file (expand-file-name "inbox.org" jag-gtd-dir))
 		(gtd-file (expand-file-name "gtd.org" jag-gtd-dir))
 		(someday-file (expand-file-name "someday.org" jag-gtd-dir))
-		(tickler-file (expand-file-name "tickler.org" jag-gtd-dir)))
+		(tickler-file (expand-file-name "tickler.org" jag-gtd-dir))
+		(clocks-file (expand-file-name "clocks.org" jag-gtd-dir))
+		(archive-folder (expand-file-name "archive" jag-gtd-dir)))
 
 	(if (not (file-exists-p jag-gtd-dir))
 		(progn
 		  (make-directory jag-gtd-dir t)
 		  (make-directory (expand-file-name "references" jag-gtd-dir))
+		  (make-directory archive-folder)
 		  (write-region "" "" inbox-file t)
 		  (write-region "" "" gtd-file t)
 		  (write-region "" "" someday-file t)
-		  (write-region "" "" tickler-file t)))
+		  (write-region "" "" tickler-file t)
+		  (write-region "" "" clocks-file t)))
 
 	(setq org-capture-templates
 		  `(("t" "Todo [inbox]" entry
@@ -170,7 +174,7 @@
 			 "* TODO %i%?\n  DEADLINE: %^{Due Date}t\n")
 
 			("c" "Clock-in [inbox]" entry
-			 (file+olp+datetree ,inbox-file "Clocks")
+			 (file+olp+datetree ,clocks-file "Clocks")
 			 "* %i%?\n" :clock-in t :clock-keep t)))
 
 
@@ -180,7 +184,9 @@
 			(,someday-file :maxlevel . 2)))
 
 	(setq org-agenda-files
-		  `(,inbox-file ,gtd-file ,tickler-file)))
+		  `(,inbox-file ,gtd-file ,tickler-file))
+
+	(setq org-archive-location archive-folder))
 
   (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
   (setq org-startup-indented 1)
