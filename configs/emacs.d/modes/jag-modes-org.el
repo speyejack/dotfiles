@@ -187,7 +187,7 @@
 	(setq org-agenda-files
 		  `(,inbox-file ,gtd-file ,tickler-file))
 
-	(setq org-archive-location archive-folder))
+	(setq org-archive-location (expand-file-name "archive_%s::" archive-folder)))
 
   (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
   (setq org-startup-indented 1)
