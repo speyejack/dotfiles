@@ -113,7 +113,8 @@
   :ensure nil
   :commands (jag-fix-org-pdf
 			 jag-org-open-heading-after-current
-			 jag-org-open-heading))
+			 jag-org-open-heading
+			 jag-org-archive-done-tasks))
 
 ;; org
 ;;
