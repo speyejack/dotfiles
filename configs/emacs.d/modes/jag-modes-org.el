@@ -1,4 +1,4 @@
-;;; jag-modes-org.el ---
+;;; jag-modes-org.el --- Configuration for emacs's org mode
 
 ;;; Commentary:
 
