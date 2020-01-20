@@ -50,9 +50,9 @@ Always defines <escape> and <C-g> as `keyboard-quit'."
 (jag-define-map *power-map*
  "l" "exec i3lock -c 000000;exec xset dpms force off"
  "e" "quit"
- "s" "exec systemctl halt"
+ "s" "exec shutdown -h now"
  "r" "exec systemctl reboot"
- "S" "exec systemctl halt")
+ "S" "exec shutdown -h now")
 
 (jag-define-map *exec-map*
  "e" "jag-run-emacs"
