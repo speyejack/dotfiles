@@ -165,7 +165,7 @@ bindkey -M vicmd "^V" edit-command-line
 export PATH="$PATH:/usr/local/avr/bin"
 
 #source ~/anaconda3/etc/profile.d/conda.sh
-export PATH="~/anaconda3/bin:$PATH"
+export PATH="~/.local/bin:~/anaconda3/bin:$PATH"
 export GOPATH="$GOPATH:/home/jack/Dropbox/code/personal/go"
 
 alias dcrun='docker-compose -f ./docker-compose.yml'
