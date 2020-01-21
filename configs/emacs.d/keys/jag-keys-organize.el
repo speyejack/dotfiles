@@ -22,6 +22,7 @@
  "Y" 'org-clock-cancel
  "g" 'org-clock-goto
  "e" 'org-clock-modify-effort-estimate
+ "f" 'org-resolve-clocks
  "c" 'evil-operator-org-capture
  "C" 'org-capture)
 
