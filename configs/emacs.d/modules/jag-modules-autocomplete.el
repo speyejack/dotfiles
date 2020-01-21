@@ -107,7 +107,21 @@
 		  ;; characters as unique.
 		  try-complete-lisp-symbol-partially
 		  ;; Try to complete word as an Emacs Lisp symbol.
-		  try-complete-lisp-symbol))) 
+		  try-complete-lisp-symbol)))
+
+;; pcmpl-args
+;;
+;; Enhanced shell completion in Emacs
+;;
+;; https://github.com/JonWaltman/pcmpl-args.el
+(use-package pcmpl-args
+  :diminish)
+
+;; yasnippet
+;;
+;; A template system for Emacs
+;;
+;; https://github.com/joaotavora/yasnippet
 
 (use-package yasnippet
   :defer t
