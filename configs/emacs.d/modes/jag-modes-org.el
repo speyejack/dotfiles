@@ -190,6 +190,7 @@
 	(setq org-archive-location (expand-file-name "archive_%s::" archive-folder)))
 
   (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+  (setq org-todo-keyword-faces '(("WAITING" . "sky blue") ("CANCELLED" . "forest green")))
   (setq org-startup-indented 1)
   (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
   (setq org-export-with-section-numbers nil)
