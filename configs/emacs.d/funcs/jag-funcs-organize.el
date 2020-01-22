@@ -20,6 +20,7 @@
 (defun jag-org-clock-in-capture ()
   "Capture the name of a clock in and start."
   (interactive)
+  (org-resolve-clocks)
   (org-capture nil "c"))
 
 (defun jag-org-due-capture ()
