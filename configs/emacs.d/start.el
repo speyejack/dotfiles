@@ -61,6 +61,7 @@
 (require 'jag-modes-arduino)
 (require 'jag-modes-ibuffer)
 (require 'jag-modes-calc)
+(require 'jag-modes-cmake)
 (require 'jag-modes-comint)
 (require 'jag-modes-doc-view)
 (require 'jag-modes-emacs-lisp)
