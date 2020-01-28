@@ -30,7 +30,8 @@
   :commands
   (jag--quick-org-task-capture
    jag-org-file-task-capture
-   jag-org-clock-in-capture)
+   jag-org-clock-in-capture
+   jag-org-due-capture)
   :ensure nil)
 
 (provide 'jag-keys-organize)
