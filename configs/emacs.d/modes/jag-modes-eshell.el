@@ -22,6 +22,7 @@
 				(eshell/alias 'dcrun "docker-compose -f ./docker-compose.yml $*")
 				(eshell/alias 'dclogs "docker-compose -f ./docker-compose.yml logs -tf --tail=\"50\" $*"))
 			  (setq eshell-hist-ignoredups t)
+			  (setq pcomplete-cycle-completions nil)
 			  (add-hook 'evil-insert-state-entry-hook 'jag--jump-eshell-prompt nil t)
 
 			  (evil-define-key '(normal operator visual) eshell-mode-map
