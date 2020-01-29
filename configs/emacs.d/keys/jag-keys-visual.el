@@ -11,7 +11,8 @@
 (use-package jag-funcs-visual
   :defer t
   :ensure nil
-  :commands (jag-stickyfunc-mode))
+  :commands (jag-stickyfunc-mode
+			 jag-whitespace-mode))
 
 (jag-declare-prefixes
  '(("v" "visual")))
@@ -35,7 +36,8 @@
   "v" 'volatile-highlights-mode
   "W" 'visual-line-mode
   "w" 'toggle-truncate-lines
-  "l" 'whitespace-mode)
+  "l" 'jag-whitespace-mode
+  "L" 'whitespace-mode)
 
 (provide 'jag-keys-visual)
 
