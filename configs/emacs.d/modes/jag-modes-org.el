@@ -174,6 +174,10 @@
 			 (file+headline ,inbox-file "Due")
 			 "* TODO %i%?\n  DEADLINE: %^{Due Date}t\n")
 
+			("s" "Schedule [inbox]" entry
+			 (file+headline ,tickler-file "Reminders")
+			 "* %i%?\n  Schedule: %^{Schedule Date}t\n")
+
 			("c" "Clock-in" entry
 			 (file+olp+datetree ,clocks-file "Clocks")
 			 "* %i%?\n" :clock-in t :clock-keep t)))

@@ -23,6 +23,7 @@
  "g" 'org-clock-goto
  "e" 'org-clock-modify-effort-estimate
  "f" 'org-resolve-clocks
+ "s" 'jag-org-schedule-capture
  "c" 'evil-operator-org-capture
  "C" 'org-capture)
 
@@ -31,7 +32,8 @@
   (jag--quick-org-task-capture
    jag-org-file-task-capture
    jag-org-clock-in-capture
-   jag-org-due-capture)
+   jag-org-due-capture
+   jag-org-shedule-capture)
   :ensure nil)
 
 (provide 'jag-keys-organize)

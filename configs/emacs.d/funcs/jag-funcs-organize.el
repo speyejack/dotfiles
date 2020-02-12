@@ -28,5 +28,10 @@
   (interactive "P")
   (org-capture goto "d"))
 
+(defun jag-org-schedule-capture (&optional goto)
+  "Capture a schedule date."
+  (interactive "P")
+  (org-capture goto "s"))
+
 (provide 'jag-funcs-organize)
 ;;; jag-funcs-organize.el ends here
