@@ -17,10 +17,6 @@
   (let (line-move-visual)
     (evil-previous-visual-line (* 5 (or count 1)))))
 
-(defun jag-evil-reformat-buffer () (interactive)
-	   (save-excursion
-		 (evil-indent (point-min) (point-max))))
-
 (defun jag-goto-middle-of-line ()
   "Move cursor to middle of the line."
   (interactive)

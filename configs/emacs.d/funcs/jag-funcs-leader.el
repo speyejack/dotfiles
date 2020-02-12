@@ -19,6 +19,9 @@
 	  (evil-operator-eval (point-min) (point-max))
 	(quickrun)))
 
+(defun jag-evil-reformat-buffer () (interactive)
+	   (save-excursion
+		 (evil-indent (point-min) (point-max))))
 
 (provide 'jag-funcs-leader)
 ;;; jag-funcs-leader.el ends here
