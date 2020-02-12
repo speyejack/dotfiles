@@ -8,7 +8,7 @@
 (defun jag-create-new-eshell ()
   "Create a new eshell."
   (interactive)
-  (let ((dir (if (buffer-file-name) (file-name-directory buffer-file-name))))
+  (let ((dir (if (buffer-file-name) (file-name-directory buffer-file-name) "~/")))
 	(eshell  dir)))
 
 

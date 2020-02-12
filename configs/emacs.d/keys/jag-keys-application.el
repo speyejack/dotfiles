@@ -28,8 +28,8 @@
  "r" 'spray-mode
  "T" 'term
  "t" 'helm-top
- "s" 'eshell
- "S" 'jag-create-new-eshell
+ "s" 'jag-create-new-eshell
+ "S" 'eshell
  "o" 'shell
  "ls" 'desktop-save
  "ll" 'desktop-read
