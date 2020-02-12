@@ -24,6 +24,7 @@
    ("y" . 'xkcd-copy-link)
    ("O" . 'xkcd-open-browser)
    ("r" . 'xkcd-rand)
+   ("R" . 'xkcd-rand)
    ("g" . 'xkcd-get)
    ("L" . 'xkcd-get-latest))
   :diminish
