@@ -15,6 +15,7 @@
  "o" 'jag--quick-org-task-capture
  "O" 'jag-org-file-task-capture
  "r" 'evil-operator-remember
+ "h" 'calendar
  "R" 'remember
  "t" 'jag-org-clock-in-capture
  "T" 'org-clock-in-last
