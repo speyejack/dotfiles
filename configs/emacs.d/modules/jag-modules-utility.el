@@ -71,6 +71,15 @@
   :commands (desktop-read desktop-save)
   :diminish)
 
+;; docker-tramp
+;;
+;; TRAMP integration for docker containers
+;;
+;; Source: https://github.com/emacs-pe/docker-tramp.el
+(use-package docker-tramp
+  :after tramp
+  :diminish)
+
 ;; dumb-jump
 ;;
 ;; an Emacs "jump to definition" package for 40+ languages
