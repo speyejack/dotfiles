@@ -34,8 +34,9 @@
   "r" 'rainbow-delimters-mode
   "R" 'rainbow-mode
   "v" 'volatile-highlights-mode
-  "W" 'visual-line-mode
+  "V" 'visual-line-mode
   "w" 'toggle-truncate-lines
+  "W" 'toggle-word-wrap
   "l" 'jag-whitespace-mode
   "L" 'whitespace-mode)
 
