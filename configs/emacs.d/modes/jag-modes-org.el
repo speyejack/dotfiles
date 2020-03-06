@@ -95,6 +95,7 @@
   "I" 'org-clock-in
   "n" 'org-narrow-to-subtree
   "N" 'widen
+  "o" 'org-latex-preview
   "O" 'org-clock-out
   "q" 'org-clock-cancel
   "r" 'org-refile
