@@ -60,6 +60,7 @@
  "lt" 'tabify
  "lu" 'jag-uniquify-lines
  "r" 'helm-regexp
+ "s" 'text-scale-adjust
  "tc" 'transpose-chars
  "tl" 'transpose-lines
  "tl" 'transpose-regions
