@@ -197,6 +197,7 @@
 
 	(setq org-archive-location (expand-file-name "archive_%s::" archive-folder)))
 
+  (setq-default org-format-latex-options (plist-put org-format-latex-options :scale 1.25))
   (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
   (setq org-todo-keyword-faces '(("WAITING" . "sky blue") ("CANCELLED" . "forest green")))
   (setq org-startup-indented 1)
