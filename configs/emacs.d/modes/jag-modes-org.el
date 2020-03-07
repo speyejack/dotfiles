@@ -95,12 +95,13 @@
   "I" 'org-clock-in
   "n" 'org-narrow-to-subtree
   "N" 'widen
-  "o" 'org-latex-preview
+  "o" 'org-toggle-inline-images
   "O" 'org-clock-out
   "q" 'org-clock-cancel
   "r" 'org-refile
   "s" 'org-schedule
-  "u" 'org-toggle-inline-images
+  "u" 'org-latex-preview
+  "U" 'jag-scale-latex
 
   ;; insertion of common elements
   "it" 'org-insert-structure-template
@@ -116,7 +117,8 @@
   :commands (jag-fix-org-pdf
 			 jag-org-open-heading-after-current
 			 jag-org-open-heading
-			 jag-org-archive-done-tasks))
+			 jag-org-archive-done-tasks
+			 jag-scale-latex))
 
 ;; org
 ;;

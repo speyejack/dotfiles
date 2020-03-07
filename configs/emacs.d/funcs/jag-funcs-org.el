@@ -30,5 +30,10 @@
      (setq org-map-continue-from (outline-previous-heading)))
    "/DONE" 'file))
 
+(defun jag-scale-latex (scale)
+  "Set the scale for all org latex images to SCALE."
+  (interactive (list (read-number "New scale (1.0): ")))
+  (setq org-format-latex-options (plist-put org-format-latex-options :scale scale)))
+
 (provide 'jag-funcs-org)
 ;;; jag-funcs-org.el ends here
