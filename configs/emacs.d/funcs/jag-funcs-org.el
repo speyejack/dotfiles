@@ -7,7 +7,7 @@
 (defun jag-fix-org-pdf ()
   "Fix errors with org pdf export."
   (interactive)
-  (eshell-command "sudo apt install texlive-latex-extra"))
+  (eshell-command "sudo apt -y install texlive-latex-extra"))
 
 (defun jag-org-open-heading-after-current ()
 	"Org insert heading and edit."
