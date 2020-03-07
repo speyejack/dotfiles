@@ -100,6 +100,7 @@
   "q" 'org-clock-cancel
   "r" 'org-refile
   "s" 'org-schedule
+  "u" 'org-toggle-inline-images
 
   ;; insertion of common elements
   "it" 'org-insert-structure-template
