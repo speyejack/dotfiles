@@ -41,6 +41,9 @@
 	  kept-old-versions 2
 	  version-control t)
 
+;; Set word-wrap to default to on
+(setq-default word-wrap t)
+
 ;; Set emacs to use system clipboard
 (setq select-enable-clipboard t)
 
