@@ -45,8 +45,14 @@
   :commands
   (org-babel-execute:plantuml)
   :config
-  (setq org-plantuml-jar-path (expand-file-name "/usr/share/plantuml/plantuml.jar"))
-  )
+  (setq org-plantuml-jar-path (expand-file-name "/usr/share/plantuml/plantuml.jar")))
+
+(use-package ob-gnuplot
+  :ensure nil
+  :commands
+  (org-babel-execute:gnuplot)
+  :config
+  (use-package gnuplot))
 
 (provide 'jag-modes-org-babel)
 ;;; jag-modes-org-babel.el ends here
