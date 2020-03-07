@@ -32,7 +32,9 @@
 
 (defun jag-scale-latex (scale)
   "Set the scale for all org latex images to SCALE."
-  (interactive (list (read-number "New scale (1.0): ")))
+  (interactive (list (read-number
+					  "New scale: "
+					  (plist-get org-format-latex-options :scale))))
   (setq org-format-latex-options (plist-put org-format-latex-options :scale scale)))
 
 (provide 'jag-funcs-org)
