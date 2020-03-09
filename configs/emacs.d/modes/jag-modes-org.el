@@ -76,6 +76,7 @@
   "tn" 'org-table-create
   "tN" 'org-table-create-with-table.el
   "tr" 'org-table-recalculate
+  "tR" 'org-table-recalculate-buffer-tables
   "ts" 'org-table-sort-lines
   "ttf" 'org-table-toggle-formula-debugger
   "tto" 'org-table-toggle-coordinate-overlays
