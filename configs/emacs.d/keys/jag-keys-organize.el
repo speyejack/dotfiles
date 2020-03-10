@@ -22,6 +22,7 @@
  "y" 'org-clock-out
  "Y" 'org-clock-cancel
  "g" 'org-clock-goto
+ "G" 'org-projectile-goto-location-for-project
  "e" 'org-clock-modify-effort-estimate
  "f" 'org-resolve-clocks
  "s" 'jag-org-schedule-capture
