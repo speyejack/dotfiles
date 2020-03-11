@@ -13,6 +13,7 @@
  "b" 'jag-copy-whole-buffer-to-clipboard
  "d" 'jag-yank-directory-path
  "f" 'jag-yank-file-path
+ "l" 'org-store-link
  "m" 'jag-yank-last-message)
 
 (use-package jag-funcs-buffer
