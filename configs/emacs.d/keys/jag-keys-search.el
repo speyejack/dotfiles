@@ -23,8 +23,8 @@
  "g" 'helm-grep
  "t" 'srefactor-refactor-at-point
  "L" 'helm-google
- "f" 'helm-imenu-in-all-buffers
- "F" 'find-function
+ "f" 'find-function
+ "F" 'helm-imenu-in-all-buffers
  "h" 'jag-highlight-symbol
  "j" 'helm-swoop
  "J" 'helm-multi-swoop-all
