@@ -17,8 +17,10 @@
  "r" 'evil-operator-remember
  "h" 'calendar
  "R" 'remember
+ "i" 'jag-org-interrupt-capture
  "t" 'jag-org-clock-in-capture
- "T" 'org-clock-in-last
+ "T" 'jag-org-clock-gtd
+ "u" 'org-clock-in-last
  "y" 'org-clock-out
  "Y" 'org-clock-cancel
  "g" 'org-clock-goto
@@ -35,6 +37,8 @@
    jag-org-file-task-capture
    jag-org-clock-in-capture
    jag-org-due-capture
+   jag-org-interrupt-capture
+   jag-org-clock-gtd
    jag-org-shedule-capture)
   :ensure nil)
 

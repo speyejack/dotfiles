@@ -33,5 +33,17 @@
   (interactive "P")
   (org-capture goto "s"))
 
+(defun jag-org-interrupt-capture (&optional goto)
+  "Capture a interrupt."
+  (interactive "P")
+  (org-capture goto "i"))
+
+(defun jag-org-clock-gtd (&optional goto)
+  "Start a clock on a header in the gtd file."
+  (interactive "P")
+  (let ((gtd-file (expand-file-name "gtd.org" jag-gtd-dir))
+		(tickler-file (expand-file-name "tickler.org" jag-gtd-dir)))
+	(jag-org-clock-file `((,gtd-file :maxlevel . 3) (,tickler-file :maxlevel . 3)) "v" goto)))
+
 (provide 'jag-funcs-organize)
 ;;; jag-funcs-organize.el ends here

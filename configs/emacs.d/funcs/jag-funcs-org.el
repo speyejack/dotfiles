@@ -37,5 +37,20 @@
 					  (plist-get org-format-latex-options :scale))))
   (setq org-format-latex-options (plist-put org-format-latex-options :scale scale)))
 
+(defun jag-org-clock-file (target template &optional goto)
+  "Start a capture/clock based on a org header in TARGET using TEMPLATE.
+
+TARGET follows the same structure used in `org-refile-targets'."
+  (let* ((org-refile-targets target)
+		 (loc (org-refile-get-location))
+		 (file (nth 1 loc))
+		 (pos (nth 3 loc)))
+	(with-current-buffer (or (find-buffer-visiting file)
+							 (find-file-noselect file))
+	  (save-excursion
+		(goto-char pos)
+		(call-interactively 'org-store-link)
+		(org-capture goto template)))))
+
 (provide 'jag-funcs-org)
 ;;; jag-funcs-org.el ends here

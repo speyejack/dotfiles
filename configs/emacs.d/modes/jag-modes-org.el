@@ -120,7 +120,8 @@
 			 jag-org-open-heading-after-current
 			 jag-org-open-heading
 			 jag-org-archive-done-tasks
-			 jag-scale-latex))
+			 jag-scale-latex
+			 jag-org-clock-file))
 
 ;; org
 ;;
@@ -129,7 +130,7 @@
 ;; Source: https://orgmode.org/
 (use-package org
   :defer t
-  :commands (org-mode org-capture)
+  :commands (org-mode org-capture org-refile-get-location)
   :diminish 'org-indent-mode
   :config
   (evil-define-key 'normal org-mode-map
@@ -176,6 +177,10 @@
 			 (file+headline ,inbox-file "Tasks")
 			 "* TODO %i%?\n  %a\n")
 
+			("v" "Clock-in entry" entry
+			 (file+olp+datetree ,clocks-file "Clocks")
+			 "* %a\n  %i%?\n" :clock-in t :clock-keep t)
+
 			("d" "Due [inbox]" entry
 			 (file+headline ,inbox-file "Due")
 			 "* TODO %i%?\n  DEADLINE: %^{Due Date}t\n")
@@ -183,6 +188,10 @@
 			("s" "Schedule [inbox]" entry
 			 (file+headline ,tickler-file "Reminders")
 			 "* %i%?\n  Schedule: %^{Schedule Date}t\n")
+
+			("i" "Interrupt" entry
+			 (file+olp+datetree ,clocks-file "Clocks")
+			 "* Interrupt: %i%?\n" :clock-resume t :clock-keep nil :clock-in t)
 
 			("c" "Clock-in" entry
 			 (file+olp+datetree ,clocks-file "Clocks")
