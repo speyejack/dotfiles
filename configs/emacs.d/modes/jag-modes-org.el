@@ -103,6 +103,7 @@
   "s" 'org-schedule
   "u" 'org-latex-preview
   "U" 'jag-scale-latex
+  "g" 'org-plot/gnuplot
 
   ;; insertion of common elements
   "it" 'org-insert-structure-template
