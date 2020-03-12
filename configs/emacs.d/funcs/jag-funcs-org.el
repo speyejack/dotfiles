@@ -10,13 +10,13 @@
   (eshell-command "sudo apt -y install texlive-latex-extra"))
 
 (defun jag-org-open-heading-after-current ()
-	"Org insert heading and edit."
+  "Org insert heading and edit."
   (interactive)
   (org-insert-heading-after-current)
   (evil-append 1))
 
 (defun jag-org-open-heading ()
-	"Org insert heading and edit."
+  "Org insert heading and edit."
   (interactive)
   (org-insert-heading)
   (evil-append 1))
@@ -26,8 +26,8 @@
   (interactive)
   (org-map-entries
    (lambda ()
-     (org-archive-subtree)
-     (setq org-map-continue-from (outline-previous-heading)))
+	 (org-archive-subtree)
+	 (setq org-map-continue-from (outline-previous-heading)))
    "/DONE" 'file))
 
 (defun jag-scale-latex (scale)
