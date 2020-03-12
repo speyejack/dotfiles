@@ -61,6 +61,7 @@
   "tdr" 'org-table-kill-row
   "te" 'org-table-eval-formula
   "tE" 'org-table-export
+  "tg" 'orgtbl-ascii-plot
   "th" 'org-table-previous-field
   "tH" 'org-table-move-column-left
   "tic" 'org-table-insert-column
