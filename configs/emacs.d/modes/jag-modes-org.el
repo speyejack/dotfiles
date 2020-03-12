@@ -61,6 +61,7 @@
   "tdr" 'org-table-kill-row
   "te" 'org-table-eval-formula
   "tE" 'org-table-export
+  "tg" 'orgtbl-ascii-plot
   "th" 'org-table-previous-field
   "tH" 'org-table-move-column-left
   "tic" 'org-table-insert-column
@@ -103,7 +104,8 @@
   "s" 'org-schedule
   "u" 'org-latex-preview
   "U" 'jag-scale-latex
-  "g" 'org-goto
+  "g" 'org-plot/gnuplot
+  "G" 'org-goto
 
   ;; insertion of common elements
   "it" 'org-insert-structure-template
