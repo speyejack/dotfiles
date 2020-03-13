@@ -79,6 +79,7 @@
   "tr" 'org-table-recalculate
   "tR" 'org-table-recalculate-buffer-tables
   "ts" 'org-table-sort-lines
+  "tT" 'org-table-transpose-table-at-point
   "ttf" 'org-table-toggle-formula-debugger
   "tto" 'org-table-toggle-coordinate-overlays
   "tw" 'org-table-wrap-region
