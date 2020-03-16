@@ -62,6 +62,7 @@
 (require 'jag-modes-ibuffer)
 (require 'jag-modes-c-c++)
 (require 'jag-modes-calc)
+(require 'jag-modes-compilation)
 (require 'jag-modes-cmake)
 (require 'jag-modes-comint)
 (require 'jag-modes-doc-view)
