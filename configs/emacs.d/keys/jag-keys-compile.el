@@ -12,6 +12,7 @@
  '(("c" "compile")))
 
 (jag-define-keys jag-compile-map
+  "c" 'recompile
   "C" 'compile
   "d" 'jag-close-compilation-window
   "k" 'kill-compilation
