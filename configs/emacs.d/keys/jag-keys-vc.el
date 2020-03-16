@@ -13,7 +13,8 @@
 
 (jag-define-keys jag-vc-map
  "g" 'magit-status
- "m" 'magit-dispatch
+ "G" 'magit-dispatch
+ "m" 'git-messenger:popup-message
  "S" 'magit-stage-file
  "U" 'magit-unstage-file
  "l" 'magit-log-buffer-file
