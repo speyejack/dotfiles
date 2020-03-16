@@ -38,7 +38,7 @@
    (kbd "M-k") (lambda () ())
    (kbd "M-l") 'gud-step
    (kbd "M-p") 'gud-print
-   (kbd "M-q") 'jag-gud-quit
+   (kbd "M-q") 'jag--gud-quit
    (kbd "M-r") 'gud-run)
   (evil-define-key '(insert) 'gud-mode-map
    (kbd "M-j") 'comint-next-input
