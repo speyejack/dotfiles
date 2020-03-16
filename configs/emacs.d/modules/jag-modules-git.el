@@ -53,5 +53,43 @@
   :diminish
   :after helm)
 
+;; orgit
+;;
+;; Support for Org links to Magit buffers
+;;
+;; https://github.com/magit/orgit
+
+(use-package orgit
+  :diminish
+  :after magit
+  :commands 'orgit-store-link
+  :init
+  (define-key magit-mode-map [remap org-store-link] 'orgit-store-link))
+
+;; git-flow
+;;
+;; GitFlow plugin for magit.el
+;;
+;; Source: https://github.com/jtatarik/magit-gitflow
+
+(use-package magit-gitflow
+  :diminish
+  :after magit
+  :commands 'magit-gitflow-popup
+  :init
+  (define-key magit-mode-map "#" 'magit-gitflow-popup)
+  :config
+  (turn-on-magit-gitflow))
+
+;; git-messenger
+;;
+;; Emacs Port of git-messenger.vim
+;;
+;; Source: https://github.com/emacsorphanage/git-messenger
+
+(use-package git-messenger
+  :commands 'git-messenger:popup-message
+  :diminish)
+
 (provide 'jag-modules-git)
 ;;; jag-modules-git.el ends here
