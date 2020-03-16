@@ -52,5 +52,11 @@ TARGET follows the same structure used in `org-refile-targets'."
 		(call-interactively 'org-store-link)
 		(org-capture goto template)))))
 
+(defun jag-add-property-with-date-captured ()
+  "Add DATE_CAPTURED property to the current item."
+  (interactive)
+  (org-set-property "DATE_CAPTURED" (format-time-string "%F")))
+
+
 (provide 'jag-funcs-org)
 ;;; jag-funcs-org.el ends here

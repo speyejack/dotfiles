@@ -124,7 +124,8 @@
 			 jag-org-open-heading
 			 jag-org-archive-done-tasks
 			 jag-scale-latex
-			 jag-org-clock-file))
+			 jag-org-clock-file
+			 jag-add-property-with-date-captured))
 
 ;; org
 ;;
@@ -220,6 +221,7 @@
   (setq org-export-with-toc nil)
   (add-hook 'org-export-before-parsing-hook (lambda (x) (untabify (point-min) (point-max))))
   (add-hook 'org-capture-mode-hook (lambda () (evil-append-line 1)))
+  (add-hook 'org-capture-before-finalize-hook 'jag-add-property-with-date-captured)
   (setq org-log-done (quote time))
   (setq org-checkbox-hierarchical-statistics nil)
   (require 'jag-modes-org-babel))
