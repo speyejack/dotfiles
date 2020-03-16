@@ -8,10 +8,17 @@
   :defer t
   :ensure nil)
 
+
+;; realgud
+;;
+;; The Grand "Cathedral" Debugger rewrite
+;;
+;; Source: https://github.com/realgud/realgud
+
 (use-package realgud
   :commands (realgud:gdb realgud:pdb)
   :bind
-  (:map realgud-short-key-mode
+  (:map realgud:shortkey-mode-map
    ("M-J" . realgud:cmd-newer-frame)
    ("M-K" . realgud:cmd-older-frame)
    ("M-G" . realgud:cmd-jump)
