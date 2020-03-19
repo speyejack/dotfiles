@@ -18,6 +18,7 @@
  "A" 'artist-mode
  "c" 'calc-dispatch
  "C" 'helm-calcul-expression
+ "D" 'docker
  "z" 'zeal-at-point
  "Z" 'zeal-at-point-search
  "p" 'list-processes

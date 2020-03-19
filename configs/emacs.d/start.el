@@ -66,6 +66,8 @@
 (require 'jag-modes-cmake)
 (require 'jag-modes-comint)
 (require 'jag-modes-doc-view)
+(require 'jag-modes-docker)
+(require 'jag-modes-docker-compose)
 (require 'jag-modes-emacs-lisp)
 (require 'jag-modes-eshell)
 (require 'jag-modes-gdb)
