@@ -18,12 +18,11 @@
  "A" 'artist-mode
  "c" 'calc-dispatch
  "C" 'helm-calcul-expression
- "D" 'docker
+ "d" 'docker
  "z" 'zeal-at-point
  "Z" 'zeal-at-point-search
  "p" 'list-processes
  "P" 'proced
- "d" 'dired
  "h" 'hexl-mode
  "f" 'floobits-join-workspace
  "r" 'spray-mode

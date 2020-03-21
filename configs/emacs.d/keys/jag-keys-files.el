@@ -26,6 +26,7 @@
  "gi" 'jag-open-inbox
  "G" 'rgrep
  "j" 'dired-jump
+ "k" 'dired
  "l" 'find-file-literally
  "L" 'helm-locate
  "o" 'jag-open-file-or-directory-in-external-app
