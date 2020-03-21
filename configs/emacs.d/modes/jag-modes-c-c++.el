@@ -11,10 +11,11 @@
 (dolist (mode '(c-mode c++-mode))
   (jag-define-leader-keys-for-major-mode
    mode
-   "d" 'realgud:gdb
+   "d" 'jag-start-realgud-gdb
+   "D" 'realgud:gdb
    "m" 'projectile-find-other-file
    "M" 'projectile-find-other-file-other-frame
-   "D" 'disaster))
+   "a" 'disaster))
 
 (use-package disaster
   :commands 'disaster
