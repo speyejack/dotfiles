@@ -10,6 +10,7 @@
   :ensure nil
   :bind
   (:map compilation-mode-map
+   ("SPC" . nil)
    ("M-h" . 'compilation-previous-file)
    ("M-j" . 'compilation-next-error)
    ("M-k" . 'compilation-previous-error)
