@@ -19,6 +19,10 @@
   "r" 'recompile
   "m" 'helm-make)
 
+(use-package jag-funcs-compile
+  :commands 'jag-close-compilation-window
+  :ensure nil)
+
 (provide 'jag-keys-compile)
 
 ;;; jag-keys-compile.el ends here
