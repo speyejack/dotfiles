@@ -11,14 +11,18 @@
 (use-package help
   :ensure nil
   :bind (:map help-mode-map
+		 ("SPC" . nil)
 		 ("h" . nil)
 		 ("j" . nil)
 		 ("k" . nil)
 		 ("l" . nil)
+		 ("g" . nil)
+		 ("r" . 'revert-buffer)
 		 ("q" . 'kill-this-buffer)
 		 ("M-h" . 'help-mode-menu)
 		 ("M-j" . 'help-go-forward)
-		 ("M-k" . 'help-go-back))
+		 ("M-k" . 'help-go-back)
+		 ("M-l" . 'push-button))
   :config
   (evil-make-overriding-map help-mode-map))
 
