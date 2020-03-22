@@ -6,9 +6,7 @@
 
 (use-package jag-funcs-realgud
   :defer t
-  :ensure nil
-  :commands 'jag-start-realgud-gdb)
-
+  :ensure nil)
 
 ;; realgud
 ;;

@@ -6,7 +6,8 @@
 
 (use-package jag-funcs-c-c++
   :defer t
-  :ensure nil)
+  :ensure nil
+  :commands 'jag-start-realgud-gdb)
 
 (dolist (mode '(c-mode c++-mode))
   (jag-define-leader-keys-for-major-mode
