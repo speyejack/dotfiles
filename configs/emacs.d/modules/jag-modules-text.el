@@ -13,8 +13,7 @@
 (use-package aggressive-indent
   :diminish
   :defer 1
-  :config
-  (add-hook 'prog-mode aggressive-indent-mode))
+  :commands 'aggressive-indent-mode)
 
 ;; clean-aindent-mode
 ;;

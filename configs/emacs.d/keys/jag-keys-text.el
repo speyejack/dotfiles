@@ -66,7 +66,8 @@
  "tl" 'transpose-regions
  "tw" 'transpose-words
  "u" 'downcase-region
- "w" 'jag-count-words-analysis)
+ "w" 'jag-count-words-analysis
+ "=" 'aggressive-indent-mode)
 
 (use-package jag-funcs-text
   :commands
