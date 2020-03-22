@@ -10,12 +10,12 @@
 
 (jag-declare-prefixes
  '(("i" "insert")
-   ("ii" "lorem-ipsum")))
+   ("il" "lorem-ipsum")))
 
 (jag-define-keys jag-insert-map
-  "il" 'lorem-ipsum-insert-list
-  "ip" 'lorem-ipsum-insert-paragraphs
-  "is" 'lorem-ipsum-insert-sentences
+  "ll" 'lorem-ipsum-insert-list
+  "lp" 'lorem-ipsum-insert-paragraphs
+  "ls" 'lorem-ipsum-insert-sentences
   "u" 'helm-unicode
   "n" 'rectangle-number-lines
   "y" 'helm-yas-complete
