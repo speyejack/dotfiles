@@ -13,6 +13,7 @@ configs/emacs.d/*
 !configs/emacs.d/snippets
 !configs/emacs.d/core/
 !configs/emacs.d/keys/
+!configs/emacs.d/locals/
 !configs/emacs.d/modules/
 !configs/emacs.d/funcs/
 !configs/emacs.d/modes/

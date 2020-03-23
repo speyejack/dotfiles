@@ -58,6 +58,9 @@
 (require 'jag-modules-visual)
 (require 'jag-modules-fun)
 
+;; Include locals
+(require 'jag-locals)
+
 ;; Modes
 (require 'jag-modes-arduino)
 (require 'jag-modes-ibuffer)
