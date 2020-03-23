@@ -156,9 +156,14 @@ containing the current file by the default explorer."
   (find-file (expand-file-name "start.el" jag-dir)))
 
 (defun jag-open-inbox ()
-  "Opens inbox files."
+  "Opens inbox file."
   (interactive)
   (find-file (expand-file-name "inbox.org" jag-gtd-dir)))
+
+(defun jag-open-gtd ()
+  "Opens gtd file."
+  (interactive)
+  (find-file (expand-file-name "gtd.org" jag-gtd-dir)))
 
 (provide 'jag-funcs-files)
 ;;; jag-funcs-files.el ends here

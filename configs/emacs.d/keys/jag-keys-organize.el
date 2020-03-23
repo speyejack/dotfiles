@@ -7,7 +7,8 @@
 (jag-create-sub-leader-map jag-leader-map "o" "organize")
 
 (jag-declare-prefixes
- '(("o" "organize")))
+ '(("o" "organize")
+   ("og" "goto")))
 
 (jag-define-keys jag-organize-map
  "a" 'org-agenda
@@ -23,8 +24,10 @@
  "u" 'org-clock-in-last
  "y" 'org-clock-out
  "Y" 'org-clock-cancel
- "g" 'org-clock-goto
- "G" 'org-projectile-goto-location-for-project
+ "gc" 'org-clock-goto
+ "gp" 'org-projectile-goto-location-for-project
+ "gi" 'jag-open-inbox
+ "gg" 'jag-open-gtd
  "e" 'org-clock-modify-effort-estimate
  "f" 'org-resolve-clocks
  "s" 'jag-org-schedule-capture
