@@ -14,9 +14,9 @@
  "d" 'jag-org-due-capture
  "o" 'jag--quick-org-task-capture
  "O" 'jag-org-file-task-capture
- "r" 'evil-operator-remember
+ "b" 'evil-operator-remember
+ "B" 'remember
  "h" 'calendar
- "R" 'remember
  "i" 'jag-org-interrupt-capture
  "t" 'jag-org-clock-in-capture
  "T" 'jag-org-clock-gtd
