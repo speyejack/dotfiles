@@ -8,6 +8,9 @@
 (jag-declare-prefix-for-mode 'org-mode "S" "subtree")
 (jag-declare-prefix-for-mode 'org-mode "i" "insertion")
 (jag-declare-prefix-for-mode 'org-mode "t" "tables")
+(jag-declare-prefix-for-mode 'org-mode "ti" "insert")
+(jag-declare-prefix-for-mode 'org-mode "tt" "toggle")
+(jag-declare-prefix-for-mode 'org-mode "td" "delete")
 (jag-define-leader-keys-for-major-mode
   'org-mode
 
