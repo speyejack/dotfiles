@@ -53,6 +53,7 @@
 (require 'jag-modules-correction)
 (require 'jag-modules-text)
 (require 'jag-modules-utility)
+(require 'jag-modules-lsp)
 (require 'jag-modules-web)
 (require 'jag-modules-visual)
 (require 'jag-modules-fun)
