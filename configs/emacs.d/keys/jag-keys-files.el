@@ -59,6 +59,7 @@
    jag-config-switch-between-func-and-other
    jag-sudo-edit
    jag-open-dotfiles
+   jag-open-gtd
    jag-open-inbox
    jag-open-file-or-directory-in-external-app
    jag-rename-current-buffer-file
