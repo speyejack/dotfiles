@@ -4,10 +4,10 @@
 
 ;;; Code:
 
-(jag-declare-prefix-for-mode 'org-mode "mh" "headings")
-(jag-declare-prefix-for-mode 'org-mode "mS" "subtree")
-(jag-declare-prefix-for-mode 'org-mode "mi" "insertion")
-(jag-declare-prefix-for-mode 'org-mode "mt" "tables")
+(jag-declare-prefix-for-mode 'org-mode "h" "headings")
+(jag-declare-prefix-for-mode 'org-mode "S" "subtree")
+(jag-declare-prefix-for-mode 'org-mode "i" "insertion")
+(jag-declare-prefix-for-mode 'org-mode "t" "tables")
 (jag-define-leader-keys-for-major-mode
   'org-mode
 
