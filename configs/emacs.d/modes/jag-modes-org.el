@@ -155,6 +155,7 @@
 	(kbd "C-M-L") 'org-do-demote
 
 	(kbd "M-o") 'jag-org-open-heading-after-current
+	(kbd "RET") 'org-return
 	(kbd "M-O") 'jag-org-open-heading)
 
   (let ((inbox-file (expand-file-name "inbox.org" jag-gtd-dir))
@@ -227,6 +228,7 @@
   (add-hook 'org-capture-before-finalize-hook 'jag-add-property-with-date-captured)
   (setq org-log-done (quote time))
   (setq org-checkbox-hierarchical-statistics nil)
+  (setq org-return-follows-link t)
   (require 'jag-modes-org-babel))
 
 ;; org-bullets
