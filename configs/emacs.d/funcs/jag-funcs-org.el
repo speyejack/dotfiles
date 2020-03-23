@@ -57,6 +57,14 @@ TARGET follows the same structure used in `org-refile-targets'."
 ;;   (interactive)
 ;;   (org-set-property "DATE_CAPTURED" (format-time-string "%F")))
 
+;; Taken from org-journal
+(defun jag-org-journal-find-location ()
+  ;; Open today's journal, but specify a non-nil prefix argument in order to
+  ;; inhibit inserting the heading; org-capture will insert the heading.
+  (org-journal-new-entry t)
+  ;; Position point on the journal's top-level heading so that org-capture
+  ;; will add the new entry as a child entry.
+  (goto-char (point-min)))
 
 (provide 'jag-funcs-org)
 ;;; jag-funcs-org.el ends here

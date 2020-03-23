@@ -33,6 +33,8 @@ Similar to `before-init-time'")
 (defconst jag-gtd-dir (expand-file-name "gtd" jag-notes-dir)
   "The directory for storing gtd notes.")
 
+(defconst jag-notes-library-dir (expand-file-name "library" jag-notes-dir)
+  "The directory for storing interconnected notes.")
 
 (provide 'jag-core-constants)
 

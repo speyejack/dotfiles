@@ -38,6 +38,11 @@
   (interactive "P")
   (org-capture goto "i"))
 
+(defun jag-org-journal-capture (&optional goto)
+  "Capture a journal."
+  (interactive "P")
+  (org-capture goto "j"))
+
 (defun jag-org-clock-gtd (&optional goto)
   "Start a clock on a header in the gtd file."
   (interactive "P")

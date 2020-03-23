@@ -205,7 +205,11 @@
 
 			("c" "Clock-in" entry
 			 (file+olp+datetree ,clocks-file "Clocks")
-			 "* %i%?\n" :clock-in t :clock-keep t)))
+			 "* %i%?\n" :clock-in t :clock-keep t)
+
+			("j" "Journal entry" entry
+			 (function jag-org-journal-find-location)
+			 "** %(format-time-string org-journal-time-format)%i%?\n")))
 
 
 	(setq org-refile-targets
@@ -291,6 +295,19 @@
 (use-package org-ref
   :commands (org-ref-helm-insert-label-link org-ref-helm-insert-ref-link org-ref-helm-insert-cite-link)
   :after (org))
+
+;; org-journal
+;;
+;; A simple org-mode based journaling mode
+;;
+;; Source: https://github.com/bastibe/org-journal
+(use-package org-journal
+  :commands 'org-journal-new-entry
+  :custom
+  (org-journal-dir jag-notes-library-dir)
+  (org-journal-date-prefix "#+TITLE: ")
+  (org-journal-file-format "%Y-%m-%d.org")
+  (org-journal-date-format "%A, %B %d %Y"))
 
 ;; org-download
 ;;

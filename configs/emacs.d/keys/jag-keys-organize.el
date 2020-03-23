@@ -24,6 +24,8 @@
  "u" 'org-clock-in-last
  "y" 'org-clock-out
  "Y" 'org-clock-cancel
+ "j" 'jag-org-journal-capture
+ "J" 'org-journal-new-entry
  "gc" 'org-clock-goto
  "gp" 'org-projectile-goto-location-for-project
  "gi" 'jag-open-inbox
@@ -41,6 +43,7 @@
    jag-org-clock-in-capture
    jag-org-due-capture
    jag-org-interrupt-capture
+   jag-org-journal-capture
    jag-org-clock-gtd
    jag-org-shedule-capture)
   :ensure nil)
