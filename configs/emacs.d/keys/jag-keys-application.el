@@ -54,7 +54,9 @@
  "gx" 'butterfly
  "gz" 'zone
  "x" 'paradox-list-packages
- "u" 'undo-tree-visualize)
+ "u" 'undo-tree-visualize
+ "v" 'vimgolf
+ "V" 'vimgolf-browse)
 
 (use-package jag-funcs-application
   :ensure nil
