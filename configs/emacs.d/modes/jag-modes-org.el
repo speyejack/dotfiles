@@ -114,6 +114,8 @@
   ;; insertion of common elements
   "it" 'org-insert-structure-template
   "ia" 'org-attach
+  "is" 'org-download-screenshot
+  "iy" 'org-download-yank
   "il" 'org-insert-link
   "if" 'org-footnote-new
   "iL" 'org-ref-helm-insert-label-link
@@ -289,6 +291,16 @@
 (use-package org-ref
   :commands (org-ref-helm-insert-label-link org-ref-helm-insert-ref-link org-ref-helm-insert-cite-link)
   :after (org))
+
+;; org-download
+;;
+;; Drag and drop images to Emacs org-mode
+;;
+;; Source: https://github.com/abo-abo/org-download
+(use-package org-download
+  :commands (org-download-yank org-download-screenshot org-download-enable)
+  :hook
+  (dired-mode . org-download-enable))
 
 ;; org-reveal
 ;;
