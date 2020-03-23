@@ -118,6 +118,7 @@
   "iy" 'org-download-yank
   "il" 'org-insert-link
   "if" 'org-footnote-new
+  "in" 'org-roam-insert
   "iL" 'org-ref-helm-insert-label-link
   "ir" 'org-ref-helm-insert-ref-link
   "ic" 'org-ref-helm-insert-cite-link)
@@ -308,6 +309,19 @@
   (org-journal-date-prefix "#+TITLE: ")
   (org-journal-file-format "%Y-%m-%d.org")
   (org-journal-date-format "%A, %B %d %Y"))
+
+;; org-roam
+;;
+;; Rudimentary Roam replica with Org-mode
+;;
+;; Source: https://github.com/jethrokuan/org-roam
+(use-package org-roam
+  :commands (org-roam org-roam-find-file org-roam-show-graph org-roam-insert)
+  :diminish
+  :custom
+  (org-roam-directory jag-notes-library-dir)
+  :config
+  (org-roam-mode 1))
 
 ;; org-download
 ;;

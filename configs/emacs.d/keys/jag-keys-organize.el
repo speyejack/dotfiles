@@ -17,6 +17,7 @@
  "O" 'jag-org-file-task-capture
  "b" 'evil-operator-remember
  "B" 'remember
+ "R" 'org-roam
  "h" 'calendar
  "i" 'jag-org-interrupt-capture
  "t" 'jag-org-clock-in-capture
@@ -26,6 +27,8 @@
  "Y" 'org-clock-cancel
  "j" 'jag-org-journal-capture
  "J" 'org-journal-new-entry
+ "k" 'org-roam-find-file
+ "K" 'org-roam-today
  "gc" 'org-clock-goto
  "gp" 'org-projectile-goto-location-for-project
  "gi" 'jag-open-inbox
