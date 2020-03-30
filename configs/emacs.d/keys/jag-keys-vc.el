@@ -14,6 +14,7 @@
 (jag-define-keys jag-vc-map
  "g" 'magit-status
  "G" 'magit-dispatch
+ "f" 'magit-find-file
  "m" 'git-messenger:popup-message
  "S" 'magit-stage-file
  "U" 'magit-unstage-file
