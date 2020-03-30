@@ -23,6 +23,7 @@
  "t" 'jag-toggle-fold
  "i" 'jag-open-fold-recursively
  "I" 'origami-reset
+ "," 'commify-toggle
  "+" 'evil-numbers/inc-at-pt
  "=" 'evil-numbers/inc-at-pt
  "-" 'evil-numbers/dec-at-pt)

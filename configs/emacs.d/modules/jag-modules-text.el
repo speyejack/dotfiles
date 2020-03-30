@@ -25,6 +25,16 @@
   :disabled t
   :diminish)
 
+;; commify
+;;
+;; Emacs package for toggling commas on and off in numbers.
+;;
+;; Source: https://github.com/ddoherty03/commify
+
+(use-package commify
+  :diminish
+  :commands 'commify-toggle)
+
 ;; expand-region
 ;;
 ;; Increase selected region by semantic units.
