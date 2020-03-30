@@ -22,6 +22,7 @@
  "i" 'helm-gitignore
  "e" 'goto-last-change
  "E" 'goto-last-change-reverse
+ "o" 'magit-todos-list
  "t" 'git-timemachine)
 
 

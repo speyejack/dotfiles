@@ -91,5 +91,17 @@
   :commands 'git-messenger:popup-message
   :diminish)
 
+;; magit-todos
+;;
+;; Show source files' TODOs (and FIXMEs, etc) in Magit status buffer
+;;
+;; Source: https://github.com/alphapapa/magit-todos
+
+(use-package magit-todos
+  :diminish
+  :after magit
+  :config
+  (magit-todos-mode))
+
 (provide 'jag-modules-git)
 ;;; jag-modules-git.el ends here
