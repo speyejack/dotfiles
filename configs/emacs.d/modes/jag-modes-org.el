@@ -235,6 +235,8 @@
   (setq org-log-done (quote time))
   (setq org-checkbox-hierarchical-statistics nil)
   (setq org-return-follows-link t)
+  (setq org-clock-out-remove-zero-time-clocks t)
+  (setq org-clock-idle-time 15)
   (require 'jag-modes-org-babel))
 
 ;; org-bullets
