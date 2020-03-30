@@ -20,6 +20,8 @@
  "U" 'magit-unstage-file
  "l" 'magit-log-buffer-file
  "i" 'helm-gitignore
+ "e" 'goto-last-change
+ "E" 'goto-last-change-reverse
  "t" 'git-timemachine)
 
 
