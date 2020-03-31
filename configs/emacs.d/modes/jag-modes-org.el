@@ -216,7 +216,7 @@
 	(setq org-refile-targets
 		  `((,gtd-file :maxlevel . 2)
 			(,tickler-file :maxlevel . 2)
-			(,someday-file :maxlevel . 2)))
+			(,someday-file :maxlevel . 1)))
 
 	(setq org-agenda-files
 		  `(,inbox-file ,gtd-file ,tickler-file))
