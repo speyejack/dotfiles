@@ -50,5 +50,10 @@
 		(tickler-file (expand-file-name "tickler.org" jag-gtd-dir)))
 	(jag-org-clock-file `((,gtd-file :maxlevel . 3) (,tickler-file :maxlevel . 3)) "v" goto)))
 
+(defun jag-org-clock-select-task ()
+  "Select a task for org clocking."
+  (interactive)
+  (org-clock-select-task))
+
 (provide 'jag-funcs-organize)
 ;;; jag-funcs-organize.el ends here
