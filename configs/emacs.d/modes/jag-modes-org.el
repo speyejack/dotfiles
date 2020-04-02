@@ -297,7 +297,31 @@
 
 (use-package org-ref
   :commands (org-ref-helm-insert-label-link org-ref-helm-insert-ref-link org-ref-helm-insert-cite-link)
-  :after (org))
+  :after (org)
+  :config
+  (let ((bib-notes-file (expand-file-name "notes.bib" jag-notes-bibliography-dir))
+		(bib-reference-file (expand-file-name "references.bib" jag-notes-bibliography-dir))
+		(bib-pdf-download "~/Downloads/papers")
+		(helm-bib-notes (expand-file-name "helm-bibtex-notes" jag-notes-bibliography-dir)))
+
+	(if (not (file-exists-p jag-notes-bibliography-dir))
+		(progn
+		  (make-directory jag-notes-bibliography-dir t)
+		  (make-directory helm-bib-notes)))
+
+	(if (not (file-exists-p bib-pdf-download))
+		(progn
+		  (make-directory bib-pdf-download)))
+
+	(setq reftex-default-bibliography bib-reference-file)
+
+	(setq org-ref-bibliography-notes  bib-notes-file
+		  org-ref-default-bibliography `(,bib-reference-file)
+		  org-ref-pdf-directory bib-pdf-download)
+
+	(setq bibtex-completion-bibliography bib-reference-file
+		  bibtex-completion-library-path bib-pdf-download
+		  bibtex-completion-notes-path helm-bib-notes)))
 
 ;; org-journal
 ;;

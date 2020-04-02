@@ -36,6 +36,9 @@ Similar to `before-init-time'")
 (defconst jag-notes-library-dir (expand-file-name "library" jag-notes-dir)
   "The directory for storing interconnected notes.")
 
+(defconst jag-notes-bibliography-dir (expand-file-name "bibliography" jag-notes-dir)
+  "The directory for storing bibliography notes.")
+
 (provide 'jag-core-constants)
 
 ;;; jag-core-constants.el ends here
