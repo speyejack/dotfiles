@@ -87,6 +87,7 @@ used as the prefix command."
 (require 'jag-keys-help)
 (require 'jag-keys-insert)
 (require 'jag-keys-jump)
+(require 'jag-keys-lsp)
 (require 'jag-keys-narrow)
 (require 'jag-keys-organize)
 (require 'jag-keys-project)
