@@ -39,7 +39,8 @@
 		 ("d" . doc-view-kill-proc))
   :config
   (evil-make-overriding-map doc-view-mode-map 'normal)
-  (add-hook 'doc-view-mode-hook #'evil-normalize-keymaps))
+  (add-hook 'doc-view-mode-hook #'evil-normalize-keymaps)
+  (setq doc-view-continuous t))
 
 (provide 'jag-modes-doc-view)
 ;;; jag-modes-doc-view.el ends here
