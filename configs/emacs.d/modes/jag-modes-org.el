@@ -113,6 +113,7 @@
 
   ;; insertion of common elements
   "it" 'org-insert-structure-template
+  "iu" 'org-cliplink
   "ia" 'org-attach
   "is" 'org-download-screenshot
   "iy" 'org-download-yank
@@ -368,6 +369,16 @@
 (use-package org-re-reveal
   :commands (org-re-reveal-export-to-html org-re-reveal-export-to-html-and-browse)
   :after (org))
+
+;; org-cliplink
+;;
+;; Insert org-mode links from clipboard
+;;
+;; Source: https://github.com/rexim/org-cliplink
+
+(use-package org-cliplink
+  :diminish
+  :commands 'org-cliplink)
 
 (provide 'jag-modes-org)
 ;;; jag-modes-org.el ends here
