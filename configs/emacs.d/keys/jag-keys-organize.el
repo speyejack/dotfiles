@@ -12,6 +12,7 @@
    ("oc" "clock")
    ("or" "capture")
    ("oR" "remember")
+   ("ob" "bibliography")
    ("oK" "roam")))
 
 (jag-define-keys jag-organize-map
@@ -58,6 +59,13 @@
  "gp" 'org-projectile-goto-location-for-project
  "gi" 'jag-open-inbox
  "gg" 'jag-open-gtd
+
+ "bb" 'org-ref
+ "bh" 'org-ref-help
+ "bd" 'doi-add-bibtex-entry
+ "bp" 'org-ref-pdf-to-bibtex
+ "bu" 'jag-org-ref-doi-from-url
+ "bl" 'org-ref-open-citation-at-point
 
  "Rr" 'evil-operator-remember
  "Rl" 'remember

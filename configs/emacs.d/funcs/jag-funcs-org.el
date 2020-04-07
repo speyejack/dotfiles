@@ -66,5 +66,11 @@ TARGET follows the same structure used in `org-refile-targets'."
   ;; will add the new entry as a child entry.
   (goto-char (point-min)))
 
+(defun jag-org-ref-doi-from-url (url)
+  "Take in a URL and parse to doi out of it."
+  (interactive "P\nbUrl: ")
+  (org-ref-url-add-first-doi-entry url))
+
+
 (provide 'jag-funcs-org)
 ;;; jag-funcs-org.el ends here
