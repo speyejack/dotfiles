@@ -20,7 +20,7 @@
   "u" 'universal-argument
   "U" 'undo-tree-visualize
   "I" 'use-package-report
-  "d" 'helm-resume
+  "," 'helm-resume
   "k" 'jag-evil-eval
   "K" 'jag-evil-eval-whole-buffer
   "=" 'jag-evil-reformat-buffer

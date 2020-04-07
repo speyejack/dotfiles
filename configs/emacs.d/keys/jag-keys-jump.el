@@ -24,8 +24,11 @@
  "o" 'open-line
  "f" 'helm-imenu-in-all-buffers
  "F" 'helm-semantic-or-imenu
- "k" 'dumb-jump-go
- "K" 'dumb-jump-back
+ "k" 'xref-find-definitions
+ "K" 'xref-find-references
+ "s" 'xref-find-apropos
+ "d" 'dumb-jump-go
+ "D" 'dumb-jump-back
  "G" 'evil-window-bottom
  "g" 'evil-window-top)
 

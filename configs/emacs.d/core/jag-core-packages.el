@@ -44,6 +44,15 @@
   :config
   (gcmh-mode t))
 
+;; hydra
+;;
+;; make Emacs bindings that stick around
+;;
+;; Source: https://github.com/abo-abo/hydra
+(use-package hydra
+  :diminish
+  :commands (defhydra))
+
 ;; which-key
 ;;
 ;; Display available keybindings in popup

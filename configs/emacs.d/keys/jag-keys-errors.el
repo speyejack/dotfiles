@@ -17,6 +17,7 @@
   "s" 'flyspell-correct-next
   "S" 'flyspell-correct-previous
   "d" 'toggle-debug-on-error
+  "D" 'toggle-debug-on-quit
   "t" 'hl-todo-next
   "T" 'hl-todo-prev)
 

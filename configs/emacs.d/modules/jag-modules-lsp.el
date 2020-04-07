@@ -8,24 +8,77 @@
   :defer t
   :ensure nil)
 
+;; lsp-mode
+;;
+;; Emacs client/library for the Language Server Protocol
+;;
+;; Source: https://github.com/emacs-lsp/lsp-mode
 (use-package lsp-mode
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-  :init (setq lsp-keymap-prefix "SPC z")
-  :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-         (XXX-mode . lsp)
-         ;; if you want which-key integration
-         (lsp-mode . lsp-enable-which-key-integration))
-  :commands lsp)
+  :hook ((lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp
+  :after
+  (require lsp-mode))
 
-;; optionally
-(use-package lsp-ui :commands lsp-ui-mode)
-(use-package company-lsp :commands company-lsp)
-;; if you are helm user
-(use-package helm-lsp :commands helm-lsp-workspace-symbol)
-;; (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+;; treemacs
+;;
+;; a tree layout file explorer for Emacs
+;;
+;; Source: https://github.com/Alexander-Miller/treemacs
+(use-package treemacs
+  :diminish
+  :after lsp-mode
+  :commands treemacs)
 
-;; optionally if you want to use debugger
-(use-package dap-mode)
+;; lsp-ui
+;;
+;; UI integrations for lsp-mode
+;;
+;; Source: https://github.com/emacs-lsp/lsp-ui
+(use-package lsp-ui
+  :after lsp-mode
+  :diminish
+  :commands lsp-ui-mode)
+
+;; company-lsp
+;;
+;; Company completion backend for lsp-mode
+;;
+;; Source: https://github.com/tigersoldier/company-lsp
+(use-package company-lsp
+  :diminish
+  :after lsp-mode
+  :commands company-lsp)
+
+;; helm-lsp
+;;
+;; lsp-mode heart helm
+;;
+;; Source: https://github.com/emacs-lsp/helm-lsp
+(use-package helm-lsp
+  :diminish
+  :after lsp-mode
+  :commands helm-lsp-workspace-symbol)
+
+;; lsp-treemacs
+;;
+;; lsp-mode heart treemacs
+;;
+;; Source: https://github.com/emacs-lsp/lsp-treemacs
+(use-package lsp-treemacs
+  :diminish
+  :after lsp-mode
+  :commands lsp-treemacs-errors-list)
+
+;; dap-mode
+;;
+;;  Emacs heart Debug Adapter Protocol
+;;
+;; Source: https://github.com/emacs-lsp/dap-mode
+(use-package dap-mode
+  :after lsp-mode
+  :diminish
+  :commands (dap-debug dap-debug-edit-template dap-debug-last))
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
 (provide 'jag-modules-lsp)
