@@ -228,5 +228,23 @@
   :commands 'helm-unicode
   :after helm)
 
+;; helm-xref
+;;
+;; Helm interface for xref results
+;;
+;; Source: https://github.com/brotzeit/helm-xref
+(use-package helm-xref
+  :diminish
+  :after helm
+  :init
+  (if (< emacs-major-version 27)
+	  (setq xref-show-xrefs-function 'helm-xref-show-xrefs)
+	(progn
+	  (setq xref-show-xrefs-function 'helm-xref-show-xrefs-27)
+	  (setq xref-show-definitions-function 'helm-xref-show-defs-27)))
+  :commands (helm-xref-show-xrefs
+			 helm-xref-show-xrefs-27
+			 helm-xref-show-defs-27))
+
 (provide 'jag-modules-helm)
 ;;; jag-modules-helm.el ends here
