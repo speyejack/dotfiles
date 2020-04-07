@@ -9,7 +9,9 @@
 (jag-create-sub-leader-map jag-leader-map "w" "window")
 
 (jag-declare-prefixes
- '(("w" "window")))
+ '(("w" "window")
+   ("wv" "resize")
+   ("wz" "zoom")))
 
 (jag-define-keys jag-window-map
  "2" 'jag-layout-double-columns
@@ -46,8 +48,26 @@
  "s" 'evil-window-vsplit
  "t" 'jag-toggle-current-window-dedication
  "u" 'winner-undo
+ "v" nil
  "w" 'ace-window
- "y" 'other-frame)
+ "y" 'other-frame
+ "z" nil)
+
+(defhydra jag-window-resize
+  (jag-window-map "v")
+  "resize"
+  ("h" evil-window-decrease-width "decrease width")
+  ("j" evil-window-decrease-height "decrease height")
+  ("k" evil-window-increase-height "increase height")
+  ("l" evil-window-increase-width "increase width")
+  ("q" nil "quit"))
+
+(defhydra jag-window-zoom
+  (jag-window-map "z")
+  "zoom"
+  ("j" text-scale-decrease "out")
+  ("k" text-scale-increase "in")
+  ("q" nil "quit"))
 
 (use-package jag-funcs-window
   :commands
