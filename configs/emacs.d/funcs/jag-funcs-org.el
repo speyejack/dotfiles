@@ -68,7 +68,7 @@ TARGET follows the same structure used in `org-refile-targets'."
 
 (defun jag-org-ref-doi-from-url (url)
   "Take in a URL and parse to doi out of it."
-  (interactive "P")
+  (interactive "P\nbUrl: ")
   (org-ref-url-add-first-doi-entry url))
 
 

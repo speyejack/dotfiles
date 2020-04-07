@@ -131,7 +131,8 @@
 			 jag-org-archive-done-tasks
 			 jag-scale-latex
 			 jag-org-clock-file
-			 jag-org-journal-find-location))
+			 jag-org-journal-find-location
+			 jag-org-ref-doi-from-url))
 
 ;; org
 ;;
@@ -296,7 +297,10 @@
 ;; Source: https://github.com/jkitchin/org-ref
 
 (use-package org-ref
-  :commands (org-ref-helm-insert-label-link org-ref-helm-insert-ref-link org-ref-helm-insert-cite-link)
+  :commands (org-ref-helm-insert-label-link
+			 org-ref-helm-insert-ref-link
+			 org-ref-helm-insert-cite-link
+			 doi-add-bibtex-entry)
   :after (org)
   :config
   (let ((bib-notes-file (expand-file-name "notes.bib" jag-notes-bibliography-dir))
