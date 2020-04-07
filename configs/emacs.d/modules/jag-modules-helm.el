@@ -33,6 +33,8 @@
   ("M-a" . 'helm-ff-run-complete-fn-at-point)
   ("M-t" . 'helm-toggle-truncate-line)
   ("M-d" . 'helm-next-page)
+  ("M-p" . 'evil-paste-after)
+  ("M-P" . 'evil-paste-before)
   :map helm-find-files-map
   ("M-h" . 'helm-find-files-up-one-level)
   ("M-L" . 'helm-execute-persistent-action)
