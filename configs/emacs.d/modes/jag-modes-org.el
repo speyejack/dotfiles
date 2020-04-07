@@ -384,5 +384,15 @@
   :diminish
   :commands 'org-cliplink)
 
+;; org-noter
+;;
+;; Emacs document annotator, using Org-mode
+;;
+;; Source: https://github.com/weirdNox/org-noter
+
+(use-package org-noter
+  :diminish
+  :commands 'org-noter)
+
 (provide 'jag-modes-org)
 ;;; jag-modes-org.el ends here

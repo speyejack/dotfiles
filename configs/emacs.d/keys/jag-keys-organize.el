@@ -25,6 +25,7 @@
  "d" 'jag-org-due-capture
  "i" 'jag-org-interrupt-capture
  "s" 'jag-org-schedule-capture
+ "n" 'org-noter
 
  "t" 'jag-org-clock-in-capture
  "T" 'jag-org-clock-gtd
