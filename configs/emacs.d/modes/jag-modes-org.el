@@ -160,8 +160,11 @@
 	(kbd "C-M-L") 'org-do-demote
 
 	(kbd "M-o") 'jag-org-open-heading-after-current
-	(kbd "RET") 'org-return
+	(kbd "RET") 'evil-org-return
 	(kbd "M-O") 'jag-org-open-heading)
+
+  (evil-define-key '(motion normal) org-mode-map
+	(kbd "RET") 'evil-org-return)
 
   (let ((inbox-file (expand-file-name "inbox.org" jag-gtd-dir))
 		(gtd-file (expand-file-name "gtd.org" jag-gtd-dir))
