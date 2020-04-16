@@ -38,6 +38,7 @@
  "cr" 'org-clock-report
  "ct" 'org-clock-in
  "cu" 'org-clock-in-last
+ "cF" 'org-clock-update-time-maybe
  "cy" 'org-clock-out
  "cc" 'jag-org-clock-select-task
 
