@@ -9,15 +9,25 @@
   :ensure nil
   :after evil
   :config
-  (global-set-key (kbd "M-l") 'hippie-expand)
+  (global-set-key (kbd "M-e") 'hippie-expand)
+  (global-set-key (kbd "M-h") nil)
+  (global-set-key (kbd "M-l") nil)
 
   (jag-declare-prefix "gr" "multiple-cursors")
-  (evil-define-key '(motion normal visual operator) 'global
-	(kbd "C-k")  'scroll-down-command
-	(kbd "C-j")  'scroll-up-command
+  (evil-define-key '(motion) prog-mode-map
 	(kbd "J")  'jag-evil-next-visual-line-5
 	(kbd "K")  'jag-evil-previous-visual-line-5
-	(kbd "M-J") 'comment-indent-new-line
+	(kbd "M-k")  'evil-backward-section-begin
+	(kbd "M-j")  'evil-forward-section-begin
+	(kbd "M-K")  'evil-backward-section-end
+	(kbd "M-J")  'evil-forward-section-end
+	(kbd "M-h")  nil
+	(kbd "M-l")  nil)
+  (evil-define-key '(motion normal visual operator) 'global
+	(kbd "J")  nil
+	(kbd "C-k")  'scroll-down-command
+	(kbd "C-j")  'scroll-up-command
+	(kbd "M-o") 'comment-indent-new-line
 	(kbd "gh") 'evil-first-non-blank-of-visual-line
 	(kbd "gm") 'jag-goto-middle-of-line
 	(kbd "gH") 'evil-beginning-of-line
