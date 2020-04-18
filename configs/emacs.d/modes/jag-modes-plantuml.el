@@ -8,7 +8,7 @@
   :defer t
   :ensure nil)
 
-(use-package plantuml)
+(use-package plantuml-mode)
 
 (provide 'jag-modes-plantuml)
 ;;; jag-modes-plantuml.el ends here
