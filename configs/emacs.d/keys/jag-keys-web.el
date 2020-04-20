@@ -25,6 +25,7 @@
  "w" 'engine/search-wikipedia
  "d" 'engine/search-duckduckgo
  "l" 'helm-google-suggest
+ "L" 'browse-url-at-point
  "a" 'engine/search-amazon
  "x" 'xkcd
  "y" 'engine/search-youtube)

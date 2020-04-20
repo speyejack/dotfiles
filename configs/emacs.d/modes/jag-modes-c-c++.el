@@ -7,7 +7,15 @@
 (use-package jag-funcs-c-c++
   :defer t
   :ensure nil
-  :commands 'jag-start-realgud-gdb)
+  :commands 'jag-start-realgud-gdb
+  :init
+  (defcustom jag-realgud-gdb-command
+	nil
+	"The default command passed to realgud during `jag-start-realgud-gdb'.
+Normally for the purpose of being used with dir locals to have a default method of testing a bug."
+	:type 'string
+	:safe 'stringp))
+
 
 (dolist (mode '(c-mode c++-mode))
   (jag-define-leader-keys-for-major-mode

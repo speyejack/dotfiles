@@ -12,19 +12,28 @@
   (global-set-key (kbd "M-e") 'hippie-expand)
   (global-set-key (kbd "M-h") nil)
   (global-set-key (kbd "M-l") nil)
+  (global-set-key (kbd "M-j") nil)
+  (global-set-key (kbd "M-k") nil)
 
   (jag-declare-prefix "gr" "multiple-cursors")
   (evil-define-key '(motion) prog-mode-map
-	(kbd "J")  'jag-evil-next-visual-line-5
-	(kbd "K")  'jag-evil-previous-visual-line-5
 	(kbd "M-k")  'evil-backward-section-begin
 	(kbd "M-j")  'evil-forward-section-begin
 	(kbd "M-K")  'evil-backward-section-end
 	(kbd "M-J")  'evil-forward-section-end
 	(kbd "M-h")  nil
 	(kbd "M-l")  nil)
+
+  ;; Unbind anything I want to override
   (evil-define-key '(motion normal visual operator) 'global
 	(kbd "J")  nil
+	(kbd "gx")  nil)
+
+  (evil-define-key '(motion) 'global
+	(kbd "J")  'jag-evil-next-visual-line-5
+	(kbd "K")  'jag-evil-previous-visual-line-5
+	(kbd "M-k")  'evil-scroll-up
+	(kbd "M-j")  'evil-scroll-down
 	(kbd "C-k")  'scroll-down-command
 	(kbd "C-j")  'scroll-up-command
 	(kbd "M-o") 'comment-indent-new-line
@@ -63,12 +72,21 @@
 	(kbd "<remap> <evil-next-line>")  'evil-next-line
 	(kbd "<remap> <evil-previous-line>")  'evil-previous-line)
 
+  (jag-define-keys minibuffer-local-map
+				   "M-p" 'evil-paste-after
+				   "M-P" 'evil-paste-before
+				   "M-y" 'evil-yank-line
+				   "M-h" 'left-char
+				   "M-l" 'right-char
+				   "M-j" 'next-complete-history-element
+				   "M-k" 'previous-complete-history-element)
 
   (jag-define-keys minibuffer-inactive-mode-map
 				   "M-h" 'left-char
 				   "M-l" 'right-char
 				   "M-j" 'next-complete-history-element
 				   "M-k" 'previous-complete-history-element))
+
 
 (provide 'jag-keys-global)
 ;;; jag-keys-global.el ends here

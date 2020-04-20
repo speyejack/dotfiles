@@ -4,14 +4,6 @@
 
 ;;; Code:
 
-(defcustom jag-realgud-gdb-command
-  nil
-  "The default command passed to realgud during `jag-start-realgud-gdb'.
-Normally for the purpose of being used with dir locals to have a default method of testing a bug."
-  :type 'string
-  :risky nil)
-
-
 (defun jag-start-realgud-gdb ()
   "Start realgud gdb then send some configurations."
   (interactive)
