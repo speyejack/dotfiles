@@ -14,7 +14,8 @@
 (jag-define-keys jag-toggles-map
   "l" 'toggle-truncate-lines
   "L" 'helm-truncate-lines
-  "d" 'toggle-debug-on-error)
+  "d" 'toggle-debug-on-error
+  "s" 'subword-mode)
 
 
 (provide 'jag-keys-toggles)
