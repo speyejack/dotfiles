@@ -72,12 +72,21 @@
 	(kbd "<remap> <evil-next-line>")  'evil-next-line
 	(kbd "<remap> <evil-previous-line>")  'evil-previous-line)
 
+  (jag-define-keys minibuffer-local-map
+				   "M-p" 'evil-paste-after
+				   "M-P" 'evil-paste-before
+				   "M-y" 'evil-yank-line
+				   "M-h" 'left-char
+				   "M-l" 'right-char
+				   "M-j" 'next-complete-history-element
+				   "M-k" 'previous-complete-history-element)
 
   (jag-define-keys minibuffer-inactive-mode-map
 				   "M-h" 'left-char
 				   "M-l" 'right-char
 				   "M-j" 'next-complete-history-element
 				   "M-k" 'previous-complete-history-element))
+
 
 (provide 'jag-keys-global)
 ;;; jag-keys-global.el ends here
