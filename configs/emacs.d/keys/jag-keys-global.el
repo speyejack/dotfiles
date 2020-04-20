@@ -23,15 +23,8 @@
 	(kbd "M-J")  'evil-forward-section-end
 	(kbd "M-h")  nil
 	(kbd "M-l")  nil)
-  (evil-define-key '(motion) 'global
-	(kbd "J")  'jag-evil-next-visual-line-5
-	(kbd "K")  'jag-evil-previous-visual-line-5
-	(kbd "M-k")  'evil-scroll-up
-	(kbd "M-j")  'evil-scroll-down
-	(kbd "C-k")  'scroll-down-command
-	(kbd "C-j")  'scroll-up-command)
   (evil-define-key '(motion normal visual operator) 'global
-	(kbd "J")  'jag-evil-next-visual-line-5
+	(kbd "J")  'nil
 	(kbd "M-o") 'comment-indent-new-line
 	(kbd "gh") 'evil-first-non-blank-of-visual-line
 	(kbd "gm") 'jag-goto-middle-of-line
@@ -57,6 +50,13 @@
 	(kbd "grq") 'evil-mc-undo-all-cursors
 	(kbd "gru") 'evil-mc-undo-last-added-cursor
 	(kbd "grm") 'evil-mc-make-all-cursors)
+  (evil-define-key '(motion) 'global
+	(kbd "J")  'jag-evil-next-visual-line-5
+	(kbd "K")  'jag-evil-previous-visual-line-5
+	(kbd "M-k")  'evil-scroll-up
+	(kbd "M-j")  'evil-scroll-down
+	(kbd "C-k")  'scroll-down-command
+	(kbd "C-j")  'scroll-up-command)
 
 
   ;; Handles visual mode inconsistencies
