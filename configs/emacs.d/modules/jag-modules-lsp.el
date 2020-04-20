@@ -37,8 +37,7 @@
 ;; Source: https://github.com/emacs-lsp/lsp-ui
 (use-package lsp-ui
   :after lsp-mode
-  :diminish
-  :commands lsp-ui-mode)
+  :diminish)
 
 ;; company-lsp
 ;;
