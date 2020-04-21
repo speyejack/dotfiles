@@ -15,13 +15,15 @@
   'org-mode
 
   "'" 'org-edit-special
+  "y" 'org-copy-special
+  "x" 'org-cut-special
+  "p" 'org-cut-special
   "c" 'org-capture
   "d" 'org-deadline
   "D" 'org-insert-drawer
   "e" 'org-export-dispatch
   "f" 'org-set-effort
-  "p" 'org-pomodoro
-  "P" 'org-set-property
+  "P" 'org-pomodoro
   ":" 'org-set-tags
 
   "a" 'org-archive-subtree
@@ -123,6 +125,7 @@
   "iL" 'org-ref-helm-insert-label-link
   "ir" 'org-ref-helm-insert-ref-link
   "ic" 'org-ref-helm-insert-cite-link)
+  "ip" 'org-set-property
 
 (use-package jag-funcs-org
   :ensure nil
