@@ -17,7 +17,7 @@
  '(("p" "project")))
 
 (jag-define-keys jag-project-map
-  "SPC" 'helm-projectile
+  jag-leader-key 'helm-projectile
   "!" 'projectile-run-shell-command-in-root
   "%" 'projectile-replace-regexp
   "&" 'projectile-run-async-shell-command-in-root

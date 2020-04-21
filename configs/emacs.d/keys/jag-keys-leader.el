@@ -11,7 +11,7 @@
   :commands (jag-evil-eval jag-evil-eval-whole-buffer jag-evil-reformat-buffer))
 
 (jag-define-keys jag-leader-map
-  "SPC" 'helm-M-x
+  jag-leader-key 'helm-M-x
   ";"  'eval-expression
   ":"  'helm-eval-expression-with-eldoc
   "?" 'helm-descbinds
