@@ -15,7 +15,7 @@
 
 (jag-define-keys jag-help-map
  "b" 'helm-descbinds
- "d" 'helm-man-woman
+ "d" 'evil-lookup
  "h" 'helm-apropos
  "y" 'jag-display-and-copy-emacs-version
  "c" 'describe-char

@@ -37,8 +37,7 @@
 ;; Source: https://github.com/emacs-lsp/lsp-ui
 (use-package lsp-ui
   :after lsp-mode
-  :diminish
-  :commands lsp-ui-mode)
+  :diminish)
 
 ;; company-lsp
 ;;
@@ -80,6 +79,9 @@
   :diminish
   :commands (dap-debug dap-debug-edit-template dap-debug-last))
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
+
+(use-package posframe
+  :after lsp-mode)
 
 (provide 'jag-modules-lsp)
 ;;; jag-modules-lsp.el ends here

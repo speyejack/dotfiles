@@ -27,7 +27,8 @@
   ;; Unbind anything I want to override
   (evil-define-key '(motion normal visual operator) 'global
 	(kbd "J")  nil
-	(kbd "gx")  nil)
+	(kbd "gx")  nil
+	(kbd "gJ")  nil)
 
   (evil-define-key '(motion) 'global
 	(kbd "J")  'jag-evil-next-visual-line-5
@@ -43,6 +44,7 @@
 	(kbd "gl") 'evil-end-of-visual-line
 	(kbd "gL") 'evil-end-of-line
 	(kbd "gJ") 'evil-join
+	(kbd "g M-j") 'evil-join-whitespace
 	(kbd "gs") 'evil-operator-fold
 	(kbd "gV") 'evil-operator-highlight
 	(kbd "go") 'evil-operator-org-capture
