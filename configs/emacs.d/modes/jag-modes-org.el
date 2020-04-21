@@ -77,7 +77,7 @@
   "tK" 'org-table-move-row-up
   "tl" 'org-table-next-field
   "tL" 'org-table-move-column-right
-  "tn" 'org-table-create
+  "tn" 'org-table-create-or-convert-from-region
   "tN" 'org-table-create-with-table.el
   "tr" 'org-table-recalculate
   "tR" 'org-table-recalculate-buffer-tables
