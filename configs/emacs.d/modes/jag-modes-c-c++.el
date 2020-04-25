@@ -26,6 +26,17 @@ Normally for the purpose of being used with dir locals to have a default method 
    "M" 'projectile-find-other-file-other-frame
    "a" 'disaster))
 
+(use-package ccls
+  :after (cc-mode)
+  :config
+  (setq lsp-enable-indentation nil))
+
+(use-package dap-lldb
+  :ensure nil
+  :after (cc-mode)
+  :config
+  (setq dap-lldb-debug-program '("/home/jack/.vscode/extensions/llvm-org.lldb-vscode-0.1.0/bin/lldb-vscode")))
+
 (use-package disaster
   :commands 'disaster
   :diminish)
