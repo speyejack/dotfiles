@@ -9,7 +9,7 @@
   (interactive)
   (realgud:gdb jag-realgud-gdb-command)
   (realgud-command "set confirm off")
-  (realgud-command "break main")
+  (realgud-command "tbreak main")
   (realgud-command "run"))
 
 
