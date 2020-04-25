@@ -78,7 +78,16 @@
   :after lsp-mode
   :diminish
   :commands (dap-debug dap-debug-edit-template dap-debug-last))
-;; (use-package dap-LANGUAGE) to load the dap adapter for your language
+
+;; dap-ui
+;;
+;; UI integation for dap-mode
+;;
+;; Source: https://github.com/emacs-lsp/dap-mode
+(use-package dap-ui
+  :after dap-mode
+  :ensure nil)
+
 
 (use-package posframe
   :after lsp-mode)
