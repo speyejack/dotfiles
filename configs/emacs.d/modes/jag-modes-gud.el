@@ -15,6 +15,7 @@
   :commands 'jag-gud-quit)
 
 (use-package gud
+  :disabled t
   :commands 'gud-mode
   :diminish
   :config
