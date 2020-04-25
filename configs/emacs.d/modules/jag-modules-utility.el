@@ -188,6 +188,7 @@
   :commands (projectile-find-file projectile-switch-project projectile-project-p)
   :diminish
   :config
+  (setq projectile-globally-ignored-directories (add-to-list 'projectile-globally-ignored-directories ".ccls-cache"))
   (setq projectile-completion-system 'helm)
   (projectile-mode 1))
 
