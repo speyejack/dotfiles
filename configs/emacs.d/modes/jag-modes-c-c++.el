@@ -29,6 +29,8 @@ Normally for the purpose of being used with dir locals to have a default method 
 (use-package ccls
   :after (cc-mode)
   :config
+  (when (executable-find "ccls")
+	(add-hook 'c++-mode-hook 'lsp))
   (setq lsp-enable-indentation nil))
 
 (use-package dap-lldb
