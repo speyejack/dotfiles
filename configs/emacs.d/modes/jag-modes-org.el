@@ -149,6 +149,8 @@
   :diminish 'org-indent-mode
   :config
   (evil-define-key 'normal org-mode-map
+	(kbd "gh")  'evil-beginning-of-visual-line
+	(kbd "gl")  'evil-end-of-visual-line
 	(kbd "M-h") 'org-up-element
 	(kbd "M-j") 'org-forward-element
 	(kbd "M-k") 'org-backward-element
