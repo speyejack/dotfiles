@@ -25,7 +25,7 @@
   ("M-k" . 'helm-previous-line)
   ("M-J" . 'helm-next-page)
   ("M-K" . 'helm-previous-page)
-  ("M-y" . 'helm-yank-selection)
+  ("M-y" . 'helm-kill-selection-and-quit)
   ("C-M-j" . 'helm-toggle-visible-mark)
   ("C-M-k" . 'helm-toggle-visible-mark)
   ("C-M-a" . 'helm-mark-all)
