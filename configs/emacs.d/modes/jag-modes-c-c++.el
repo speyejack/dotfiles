@@ -30,7 +30,8 @@ Normally for the purpose of being used with dir locals to have a default method 
   :after (cc-mode)
   :config
   (when (executable-find "ccls")
-	(add-hook 'c++-mode-hook 'lsp))
+	(dolist (hook '(c++-mode-hook c-mode-hook))
+			(add-hook hook 'lsp)))
   (setq lsp-enable-indentation nil))
 
 (use-package dap-lldb
