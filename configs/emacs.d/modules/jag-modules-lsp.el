@@ -89,7 +89,9 @@
 ;; Source: https://github.com/emacs-lsp/dap-mode
 (use-package dap-ui
   :after dap-mode
-  :ensure nil)
+  :ensure nil
+  :config
+  (dap-ui-mode))
 
 (use-package dap-hydra
   :after dap-mode
