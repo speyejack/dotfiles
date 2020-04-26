@@ -77,7 +77,10 @@
 (use-package dap-mode
   :after lsp-mode
   :diminish
-  :commands (dap-debug dap-debug-edit-template dap-debug-last))
+  :commands (dap-debug dap-debug-edit-template dap-debug-last)
+  :config
+  (add-hook 'dap-stopped-hook
+          (lambda (arg) (call-interactively #'dap-hydra))))
 
 ;; dap-ui
 ;;
