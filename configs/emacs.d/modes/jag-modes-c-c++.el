@@ -35,6 +35,7 @@ Normally for the purpose of being used with dir locals to have a default method 
   (setq lsp-enable-indentation nil))
 
 (use-package dap-lldb
+  :after dap-mode
   :ensure nil
   :after (cc-mode)
   :config
