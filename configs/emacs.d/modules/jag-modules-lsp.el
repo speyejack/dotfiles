@@ -91,6 +91,19 @@
   :after dap-mode
   :ensure nil)
 
+(use-package dap-hydra
+  :after dap-mode
+  :commands 'dap-hydra
+  :ensure nil
+  :bind
+  (:map dap-hydra/keymap
+   ("M-j" . dap-hydra/dap-next)
+   ("M-l" . dap-hydra/dap-step-out)
+   ("M-h" . dap-hydra/dap-step-in)
+   ("M-b" . dap-hydra/dap-breakpoint-toggle)
+   ("M-c" . dap-hydra/dap-continue)
+   ("M-r" . dap-hydra/dap-restart-frame)
+   ("M-q" . dap-hydra/dap-disconnect)))
 
 (use-package posframe
   :after lsp-mode)
