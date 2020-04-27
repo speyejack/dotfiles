@@ -9,18 +9,19 @@
   :defer t
   :ensure nil)
 
+(use-package lispy
+  :commands (lispy-forward lispy-backward lispy-right lispy-left))
+
 (dolist (mode '(emacs-lisp-mode lisp-mode lisp-interaction-mode))
   (jag-declare-prefix-for-mode mode
    "d" "dotfiles")
 
   (evil-define-key '(motion normal)
 	(symbol-value (intern (format "%s-map" mode)))
-	(kbd "M-k")  'sp-beginning-of-previous-sexp
-	(kbd "M-j")  'sp-beginning-of-next-sexp
-	(kbd "M-K")  'sp-end-of-previous-sexp
-	(kbd "M-J")  'sp-end-of-next-sexp
-	(kbd "M-h")  'sp-up-sexp
-	(kbd "M-l")  'sp-down-sexp)
+	(kbd "M-k")  'lispy-backward
+	(kbd "M-j")  'lispy-forward
+	(kbd "M-h")  'lispy-left
+	(kbd "M-l")  'lispy-right)
 
   (jag-define-leader-keys-for-major-mode
    mode
