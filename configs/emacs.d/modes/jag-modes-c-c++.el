@@ -23,7 +23,8 @@ Normally for the purpose of being used with dir locals to have a default method 
    "d" 'jag-start-realgud-gdb
    "D" 'realgud:gdb
    "m" 'projectile-find-other-file
-   "M" 'projectile-find-other-file-other-frame
+   "M" 'projectile-find-other-file-other-window
+   "C-m" 'projectile-find-other-file-other-frame
    "a" 'disaster))
 
 (use-package ccls
