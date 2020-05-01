@@ -100,8 +100,8 @@
   :bind
   (:map dap-hydra/keymap
    ("M-j" . dap-hydra/dap-next)
-   ("M-l" . dap-hydra/dap-step-out)
-   ("M-h" . dap-hydra/dap-step-in)
+   ("M-h" . dap-hydra/dap-step-out)
+   ("M-l" . dap-hydra/dap-step-in)
    ("M-b" . dap-hydra/dap-breakpoint-toggle)
    ("M-c" . dap-hydra/dap-continue)
    ("M-r" . dap-hydra/dap-restart-frame)
