@@ -84,6 +84,7 @@
 ;;
 ;; Source: https://github.com/szermatt/emacs-bash-completion
 (use-package bash-completion
+  :after eshell
   :if (executable-find "bash")
   :config
   (bash-completion-setup))
@@ -94,6 +95,7 @@
 ;;
 ;; Source: https://gitlab.com/ambrevar/emacs-fish-completion
 (use-package fish-completion
+  :after eshell
   :if (executable-find "fish")
   :config
   (global-fish-completion-mode)
