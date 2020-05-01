@@ -40,6 +40,8 @@
  "=" 'yapf-mode
  )
 
+(add-hook 'python-mode-hook 'lsp)
+
 (use-package jag-funcs-python
   :ensure nil
   :defer t
