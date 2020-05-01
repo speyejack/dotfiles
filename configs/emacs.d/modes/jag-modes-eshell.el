@@ -78,5 +78,26 @@
   :diminish)
 
 
+;; bash-completion
+;;
+;; Add programmable bash completion to Emacs shell-mode
+;;
+;; Source: https://github.com/szermatt/emacs-bash-completion
+(use-package bash-completion
+  :if (executable-find "bash")
+  :config
+  (bash-completion-setup))
+
+;; fish-completion
+;;
+;; Fish completion for Emacs and Eshell
+;;
+;; Source: https://gitlab.com/ambrevar/emacs-fish-completion
+(use-package fish-completion
+  :if (executable-find "fish")
+  :config
+  (global-fish-completion-mode)
+  (setq fish-completion-fallback-on-bash-p (executable-find "bash")))
+
 (provide 'jag-modes-eshell)
 ;;; jag-modes-eshell.el ends here
