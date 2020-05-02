@@ -16,12 +16,12 @@
  "p" 'narrow-to-page
  "f" 'narrow-to-defun
  "w" 'widen
- "o" 'jag-open-fold
+ "o" 'jag-open-fold-recursively
  "O" 'jag-open-folds
  "c" 'jag-close-fold
  "C" 'jag-close-folds
  "t" 'jag-toggle-fold
- "i" 'jag-open-fold-recursively
+ "i" 'jag-open-fold
  "I" 'origami-reset
  "," 'commify-toggle
  "+" 'evil-numbers/inc-at-pt

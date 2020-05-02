@@ -43,7 +43,8 @@
 	"Enabled origami and open folds recursively."
 	(interactive)
 	(jag-enable-origami-mode)
-	(evil-close-folds))
+	(evil-open-fold)
+	(evil-open-fold-rec))
 
 (provide 'jag-funcs-narrow)
 ;;; jag-funcs-narrow.el ends here
