@@ -45,6 +45,7 @@
 	   "=r" lsp-format-region (lsp-feature? "textDocument/rangeFormatting")
 
 	   ;; debugger
+	   "dd" dap-debug-last t
 	   "dD" dap-debug t
 	   "de" dap-debug-edit-template t
 
