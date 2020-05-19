@@ -33,7 +33,7 @@
 			  (evil-define-key '(insert normal) eshell-mode-map
 				(kbd "RET") 'eshell-send-input
 				(kbd "M-b") 'eshell-insert-buffer-name
-				(kbd "M-e") 'eshell-insert-envvar
+				(kbd "M-v") 'eshell-insert-envvar
 				(kbd "M-p") 'eshell-insert-process
 				(kbd "M-d") 'eshell-toggle-direct-send
 				(kbd "M-J") 'eshell-next-prompt
