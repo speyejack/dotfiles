@@ -98,7 +98,11 @@
 ;; Source: https://github.com/emacs-evil/evil-magit
 
 (use-package evil-magit
-  :after (evil magit))
+  :after (evil magit)
+  :config
+  (evil-magit-define-key 'motion 'magit-mode-map "M-h" 'magit-section-backward)
+  (evil-magit-define-key 'motion 'magit-mode-map "M-j" 'magit-section-forward-sibling)
+  (evil-magit-define-key 'motion 'magit-mode-map "M-k" 'magit-section-backward-sibling))
 
 
 
