@@ -19,7 +19,7 @@
   :commands 'gud-mode
   :diminish
   :config
-  (evil-define-key '(motion normal) 'gud-mode-map
+  (evil-define-key '(motion normal) gud-mode-map
    (kbd "M-B") 'gud-tbreak
    (kbd "M-J") 'gud-down
    (kbd "M-K") 'gud-up
@@ -41,7 +41,7 @@
    (kbd "M-p") 'gud-print
    (kbd "M-q") 'jag--gud-quit
    (kbd "M-r") 'gud-run)
-  (evil-define-key '(insert) 'gud-mode-map
+  (evil-define-key '(insert) gud-mode-map
    (kbd "M-j") 'comint-next-input
    (kbd "M-k") 'comint-previous-input))
 
