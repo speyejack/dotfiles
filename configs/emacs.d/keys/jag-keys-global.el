@@ -74,6 +74,9 @@
 	(kbd "<remap> <evil-next-line>")  'evil-next-line
 	(kbd "<remap> <evil-previous-line>")  'evil-previous-line)
 
+  (evil-define-key '(insert) 'global
+	(kbd "M-RET") 'comment-indent-new-line)
+
   (jag-define-keys minibuffer-local-map
 				   "M-p" 'evil-paste-after
 				   "M-P" 'evil-paste-before
