@@ -28,7 +28,7 @@
 ;; Turn on tab indention and set tab width
 (setq-default c-basic-offset 4
 			  tab-width 4
-			  c-default-style "linux"
+			  c-default-style "java"
 			  indent-tabs-mode t)
 
 ;; Configure where auto saves go and several backup settings
