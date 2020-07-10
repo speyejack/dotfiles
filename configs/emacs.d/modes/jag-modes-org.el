@@ -250,6 +250,17 @@
   (setq org-return-follows-link t)
   (setq org-clock-out-remove-zero-time-clocks t)
   (setq org-clock-idle-time 5)
+
+
+  (with-eval-after-load "ox-latex"
+	(add-to-list 'org-latex-classes
+				 '("IEEEtran" "\\documentclass[10pt,conference,compsocconf]{IEEEtran}"
+				   ("\\section{%s}" . "\\section*{%s}")
+				   ("\\subsection{%s}" . "\\subsection*{%s}")
+				   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+				   ("\\paragraph{%s}" . "\\paragraph*{%s}")
+				   ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+
   (require 'jag-modes-org-babel))
 
 ;; org-bullets

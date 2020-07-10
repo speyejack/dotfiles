@@ -22,6 +22,7 @@
  "d" 'ediff
  "E" 'jag-sudo-edit
  "f" 'helm-find-files
+ "F" 'jag-helm-sudo-find-file
  "gd" 'jag-open-dotfiles
  "gi" 'jag-open-inbox
  "G" 'rgrep
@@ -58,6 +59,7 @@
    jag-delete-current-buffer-file
    jag-config-switch-between-func-and-other
    jag-sudo-edit
+   jag-helm-sudo-find-file
    jag-open-dotfiles
    jag-open-gtd
    jag-open-inbox

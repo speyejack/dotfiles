@@ -17,15 +17,18 @@ Normally for the purpose of being used with dir locals to have a default method 
 	:safe 'stringp))
 
 
-(dolist (mode '(c-mode c++-mode))
-  (jag-define-leader-keys-for-major-mode
-   mode
-   "d" 'jag-start-realgud-gdb
-   "D" 'realgud:gdb
-   "m" 'projectile-find-other-file
-   "M" 'projectile-find-other-file-other-window
-   "C-m" 'projectile-find-other-file-other-frame
-   "a" 'disaster))
+(with-eval-after-load 'cc-mode
+  (dolist (mode '(c-mode c++-mode))
+	(evil-define-key 'insert (symbol-value (intern (format "%s-map"mode)))
+	  (kbd "M-RET") 'c-indent-new-comment-line)
+	(jag-define-leader-keys-for-major-mode
+	 mode
+	 "d" 'jag-start-realgud-gdb
+	 "D" 'realgud:gdb
+	 "m" 'projectile-find-other-file
+	 "M" 'projectile-find-other-file-other-window
+	 "C-m" 'projectile-find-other-file-other-frame
+	 "a" 'disaster)))
 
 (use-package ccls
   :after (cc-mode)

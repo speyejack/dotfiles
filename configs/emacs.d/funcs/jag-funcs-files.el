@@ -130,20 +130,27 @@ containing the current file by the default explorer."
   (let ((fname (if (or arg (not buffer-file-name))
                    (read-file-name "File: ")
                  buffer-file-name)))
-    (find-file
-     (cond ((string-match-p "^/ssh:" fname)
-            (with-temp-buffer
-              (insert fname)
-              (search-backward ":")
-              (let ((last-match-end nil)
-                    (last-ssh-hostname nil))
-                (while (string-match "\\\(?:[a-zA-Z]*@\\\)?\\\([^:|]+\\\)[:|]" fname last-match-end)
-                  (setq last-ssh-hostname (or (match-string 1 fname)
-                                              last-ssh-hostname))
-                  (setq last-match-end (match-end 0)))
-                (insert (format "|sudo:%s" (or last-ssh-hostname "localhost"))))
-              (buffer-string)))
-           (t (concat "/sudo:root@localhost:" fname))))))
+    (find-file (jag--sudo-file fname))))
+
+(defun jag-helm-sudo-find-file (&optional arg)
+  (interactive "P")
+  (let ((fname default-directory))
+    (helm-find-files-1 (jag--sudo-file fname))))
+
+(defun jag--sudo-file (fname)
+  (cond ((string-match-p "^/ssh:" fname)
+		 (with-temp-buffer
+		   (insert fname)
+		   (search-backward ":")
+		   (let ((last-match-end nil)
+				 (last-ssh-hostname nil))
+			 (while (string-match "\\\(?:[a-zA-Z]*@\\\)?\\\([^:|]+\\\)[:|]" fname last-match-end)
+			   (setq last-ssh-hostname (or (match-string 1 fname)
+										   last-ssh-hostname))
+			   (setq last-match-end (match-end 0)))
+			 (insert (format "|sudo:%s" (or last-ssh-hostname "localhost"))))
+		   (buffer-string)))
+		(t (concat "/sudo:root@localhost:" fname))))
 
 (defun jag-unix2dos ()
   "Converts the current buffer to DOS file format."
