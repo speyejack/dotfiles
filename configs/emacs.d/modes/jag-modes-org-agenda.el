@@ -88,7 +88,7 @@
 
 
 	;; go and show
-	"." 'org-agenda-goto-today ; TODO: What about evil-repeat?
+	"." 'org-agenda-goto-today
 	"gc" 'org-agenda-goto-calendar
 	"gC" 'org-agenda-convert-date
 	"gd" 'org-agenda-goto-date
