@@ -82,6 +82,7 @@
 (require 'jag-modes-julia)
 (require 'jag-modes-lua)
 (require 'jag-modes-org)
+(require 'jag-modes-org-agenda)
 (require 'jag-modes-pdb)
 (require 'jag-modes-python)
 (require 'jag-modes-realgud)
