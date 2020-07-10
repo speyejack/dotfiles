@@ -124,8 +124,8 @@
   "in" 'org-roam-insert
   "iL" 'org-ref-helm-insert-label-link
   "ir" 'org-ref-helm-insert-ref-link
-  "ic" 'org-ref-helm-insert-cite-link)
-  "ip" 'org-set-property
+  "ic" 'org-ref-helm-insert-cite-link
+  "ip" 'org-set-property)
 
 (use-package jag-funcs-org
   :ensure nil
