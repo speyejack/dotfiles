@@ -37,11 +37,12 @@
 					  (plist-get org-format-latex-options :scale))))
   (setq org-format-latex-options (plist-put org-format-latex-options :scale scale)))
 
-(defun jag-org-clock-file (target template &optional goto)
+(defun jag-org-clock-file (target template &optional goto filter-function)
   "Start a capture/clock based on a org header in TARGET using TEMPLATE.
 
 TARGET follows the same structure used in `org-refile-targets'."
   (let* ((org-refile-targets target)
+		 (org-refile-target-verify-function filter-function)
 		 (loc (org-refile-get-location))
 		 (file (nth 1 loc))
 		 (pos (nth 3 loc)))
@@ -70,6 +71,40 @@ TARGET follows the same structure used in `org-refile-targets'."
   "Take in a URL and parse to doi out of it."
   (interactive "P\nbUrl: ")
   (org-ref-url-add-first-doi-entry url))
+
+(defun jag-org-element-is-parent (element)
+  "Check if ELEMENT is a parent"
+  (save-excursion
+	(org-goto-first-child)))
+
+(defun jag-parent-refile-verify ()
+  "Check target to see if it is a parent to be included in refile targets."
+  (jag-org-element-is-parent (org-element-at-point)))
+
+(defun jag-child-refile-verify ()
+  "Check target to see if it is a child to be included in refile targets."
+  (not (jag-org-element-is-parent (org-element-at-point))))
+
+
+(defun jag-org-refile ()
+	"Refile gtd files unless outside inbox, then refile normally."
+	(interactive)
+	(if (member (buffer-file-name) jag-org-refile-files)
+		(let ((org-refile-targets jag-org-refile-min-targets)
+			  (org-refile-target-verify-function
+			   'jag-parent-refile-verify))
+		  (call-interactively 'org-refile)))
+	(call-interactively 'org-refile))
+
+(defun jag-org-refile-all ()
+  "Similar to `jag-org-refile' expect operates with more included targets."
+  (interactive)
+  (if (member (buffer-file-name) jag-org-refile-files)
+	  (let ((org-refile-targets jag-org-refile-max-targets)
+			(org-refile-target-verify-function
+			 nil))
+		(call-interactively 'org-refile)))
+  (call-interactively 'org-refile))
 
 
 (provide 'jag-funcs-org)

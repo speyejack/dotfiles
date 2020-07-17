@@ -106,7 +106,8 @@
   "o" 'org-toggle-inline-images
   "O" 'org-clock-out
   "q" 'org-clock-cancel
-  "r" 'org-refile
+  "r" 'jag-org-refile
+  "R" 'jag-org-refile-all
   "s" 'org-schedule
   "u" 'org-latex-preview
   "U" 'jag-scale-latex
@@ -121,7 +122,8 @@
   "iy" 'org-download-yank
   "il" 'org-insert-link
   "if" 'org-footnote-new
-  "in" 'org-roam-insert
+  "ik" 'org-roam-insert
+  "in" 'org-add-note
   "iL" 'org-ref-helm-insert-label-link
   "ir" 'org-ref-helm-insert-ref-link
   "ic" 'org-ref-helm-insert-cite-link
@@ -136,6 +138,8 @@
 			 jag-scale-latex
 			 jag-org-clock-file
 			 jag-org-journal-find-location
+			 jag-org-refile
+			 jag-org-refile-all
 			 jag-org-ref-doi-from-url))
 
 ;; org
@@ -209,7 +213,7 @@
 
 			("s" "Schedule [inbox]" entry
 			 (file+headline ,tickler-file "Reminders")
-			 "* %i%?\n  Schedule: %^{Schedule Date}t\n")
+			 "* TODO %i%?\n  SCHEDULED: %^{Schedule Date}t\n")
 
 			("i" "Interrupt" entry
 			 (file+olp+datetree ,clocks-file "Clocks")
@@ -223,11 +227,29 @@
 			 (function jag-org-journal-find-location)
 			 "** %(format-time-string org-journal-time-format)%i%?\n")))
 
+	(add-hook 'org-clock-in-hook #'org-save-all-org-buffers)
+	(add-hook 'org-clock-out-hook #'org-save-all-org-buffers)
+	(advice-add 'org-archive-subtree :after #'org-save-all-org-buffers)
 
 	(setq org-refile-targets
-		  `((,gtd-file :level . 2)
-			(,tickler-file :level . 2)
-			(,someday-file :level . 1)))
+		  '((nil :maxlevel . 3)))
+
+	(setq jag-org-refile-files
+		  `(,gtd-file
+			,tickler-file
+			,inbox-file
+			,clocks-file
+			,someday-file))
+
+	(setq jag-org-refile-min-targets
+		  `((,gtd-file :maxlevel . 3)
+			(,tickler-file :maxlevel . 3)
+			(,someday-file :maxlevel . 3)))
+
+	(setq jag-org-refile-max-targets
+		  `((,gtd-file :maxlevel . 3)
+			(,tickler-file :maxlevel . 3)
+			(,someday-file :maxlevel . 3)))
 
 	(setq org-agenda-files
 		  `(,inbox-file ,gtd-file ,tickler-file))
