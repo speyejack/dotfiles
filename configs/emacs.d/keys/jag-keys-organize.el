@@ -85,7 +85,7 @@
    jag-org-interrupt-capture
    jag-org-journal-capture
    jag-org-clock-gtd
-   jag-org-shedule-capture
+   jag-org-schedule-capture
    jag-org-clock-select-task)
   :ensure nil)
 
