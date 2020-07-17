@@ -6,11 +6,14 @@
 
 (use-package jag-funcs-org-agenda
   :defer t
+  :commands (jag-agenda-list-filter
+			 jag-agenda-planner-filter)
   :ensure nil)
 
 (with-eval-after-load 'org-agenda
+
   (setq org-deadline-warning-days 7
-		org-agenda-breadcrumbs-separator " ❱ ")
+		jag-org-non-critical-deadline-tags '("event", "meeting"))
 
   (evil-set-initial-state 'org-agenda-mode 'motion)
 
@@ -107,7 +110,36 @@
 
 	;; Others
 	"+" 'org-agenda-manipulate-query-add
-	"-" 'org-agenda-manipulate-query-subtract))
+	"-" 'org-agenda-manipulate-query-subtract)
+
+  (setq org-agenda-custom-commands
+		'(("a" "Daily Agenda"
+		   ((todo "TODO"
+				  ;; Reoccuring items that reoccur today
+				  ;; action items
+				  ((org-agenda-overriding-header "\n⚡ Due Today:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
+				   (org-agenda-remove-tags t)
+				   (org-agenda-prefix-format " %-15b")
+				   (org-agenda-todo-keyword-format "")
+				   (org-agenda-span 'day)
+				   (org-agenda-skip-scheduled-if-done t)
+				   (org-agenda-skip-function 'jag-agenda-list-filter)
+				   ))
+			(agenda ""
+					((org-agenda-start-day "+0d")
+					 (org-agenda-span 5)
+					 (org-agenda-overriding-header "⚡ Schedule:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
+					 (org-agenda-repeating-timestamp-show-all nil)
+					 (org-agenda-remove-tags t)
+					 (org-agenda-prefix-format   "  %-15b %t%s")
+					 (org-agenda-todo-keyword-format "")
+					 (org-agenda-current-time-string "<┈┈┈┈┈┈┈ now")
+					 (org-agenda-scheduled-leaders '("" ""))
+					 (org-agenda-skip-deadline-prewarning-if-scheduled t)
+					 (org-agenda-skip-function 'jag-agenda-planner-filter)
+					 (org-agenda-time-grid (quote ((daily today remove-match)
+												   (0900 1200 1500 1800 2100)
+												   "      " "┈┈┈┈┈┈┈┈┈┈┈┈┈"))))))))))
 
 (provide 'jag-modes-org-agenda)
 ;;; jag-modes-org-agenda.el ends here
