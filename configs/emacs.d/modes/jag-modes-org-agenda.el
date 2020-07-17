@@ -9,12 +9,18 @@
   :ensure nil)
 
 (with-eval-after-load 'org-agenda
+  (setq org-deadline-warning-days 7
+		org-agenda-breadcrumbs-separator " ❱ ")
+
   (evil-set-initial-state 'org-agenda-mode 'motion)
 
   (which-key-declare-prefixes-for-mode 'org-agenda-mode "d" "delete")
   (which-key-declare-prefixes-for-mode 'org-agenda-mode "Z" "exit")
   (which-key-declare-prefixes-for-mode 'org-agenda-mode "s" "filter")
   (which-key-declare-prefixes-for-mode 'org-agenda-mode "c" "change/clock")
+
+  (evil-define-key 'normal org-agenda-mode-map
+	"q" nil)
 
   (evil-define-key 'motion org-agenda-mode-map
 	(kbd "<tab>") 'org-agenda-goto
@@ -41,12 +47,10 @@
 
 	"u" 'org-agenda-undo
 
-	"d" nil
 	"dd" 'org-agenda-kill
 	"dA" 'org-agenda-archive
 	"da" 'org-agenda-archive-default-with-confirmation
 
-	"c" nil
 	"ct" 'org-agenda-set-tags
 	"ce" 'org-agenda-set-effort
 	"cT" 'org-timer-set-timer
@@ -55,6 +59,7 @@
 	"a" 'org-agenda-add-note
 	"A" 'org-agenda-append-agenda
 	"C" 'org-agenda-capture
+	"f" 'org-agenda-follow-mode
 
 	"m" 'org-agenda-bulk-toggle
 	"~" 'org-agenda-bulk-toggle-all
