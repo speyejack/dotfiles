@@ -7,7 +7,10 @@
 (use-package jag-funcs-org-agenda
   :defer t
   :commands (jag-agenda-list-filter
-			 jag-agenda-planner-filter)
+			 jag-agenda-planner-filter
+			 jag-org-agenda-refile
+			 jag-org-agenda-refile-all
+			 jag-org-agenda-refile-inbox)
   :ensure nil)
 
 (with-eval-after-load 'org-agenda

@@ -140,6 +140,7 @@
 			 jag-org-journal-find-location
 			 jag-org-refile
 			 jag-org-refile-all
+			 jag-org-refile-inbox
 			 jag-org-ref-doi-from-url))
 
 ;; org
