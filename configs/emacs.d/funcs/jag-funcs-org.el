@@ -85,26 +85,31 @@ TARGET follows the same structure used in `org-refile-targets'."
   "Check target to see if it is a child to be included in refile targets."
   (not (jag-org-element-is-parent (org-element-at-point))))
 
+(defun jag--org-refile (targets refile filter valid)
+  "Refile using REFILE function into TARGETS narrows by FILTER unless VALID function returns nil in which it will use default REFILE function behavior."
+  (if (funcall valid)
+	  (let ((org-refile-targets targets)
+			(org-refile-target-verify-function
+			 filter))
+		(call-interactively refile))
+	(call-interactively refile)))
 
 (defun jag-org-refile ()
-	"Refile gtd files unless outside inbox, then refile normally."
-	(interactive)
-	(if (member (buffer-file-name) jag-org-refile-files)
-		(let ((org-refile-targets jag-org-refile-min-targets)
-			  (org-refile-target-verify-function
-			   'jag-parent-refile-verify))
-		  (call-interactively 'org-refile)))
-	(call-interactively 'org-refile))
+  "Refile gtd files unless outside inbox, then refile normally."
+  (interactive)
+  (jag--org-refile jag-org-refile-min-targets
+				   'org-refile
+				   'jag-parent-refile-verify
+				   (lambda () (member (buffer-file-name) jag-org-refile-files))
+				   ))
 
 (defun jag-org-refile-all ()
   "Similar to `jag-org-refile' expect operates with more included targets."
   (interactive)
-  (if (member (buffer-file-name) jag-org-refile-files)
-	  (let ((org-refile-targets jag-org-refile-max-targets)
-			(org-refile-target-verify-function
-			 nil))
-		(call-interactively 'org-refile)))
-  (call-interactively 'org-refile))
+  (jag--org-refile jag-org-refile-max-targets
+				   'org-refile
+				   nil
+				   (lambda () (member (buffer-file-name) jag-org-refile-files))))
 
 
 (provide 'jag-funcs-org)
