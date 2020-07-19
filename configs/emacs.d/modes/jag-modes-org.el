@@ -270,6 +270,9 @@
 
   (setq-default org-format-latex-options (plist-put org-format-latex-options :scale 1.25))
 
+  (setq org-global-properties
+		'(("Effort_ALL" . "0:10 0:15 0:20 0:30 0:45 1:00 1:30 2:00 3:00 4:00 5:00 6:00 7:00 8:00 0:00")))
+
   (setq org-todo-keywords
 		'((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
 		  (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" )))
