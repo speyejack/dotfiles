@@ -117,6 +117,16 @@
 		   ((todo "TODO"
 				  ;; Reoccuring items that reoccur today
 				  ;; action items
+				  ((org-agenda-overriding-header "\n⚡ Inbox:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
+				   (org-agenda-remove-tags t)
+				   (org-agenda-prefix-format " ")
+				   (org-agenda-todo-keyword-format "")
+				   (org-agenda-span 'day)
+				   (org-agenda-files `(,jag-org-inbox-file))
+				   ))
+			(todo "TODO"
+				  ;; Reoccuring items that reoccur today
+				  ;; action items
 				  ((org-agenda-overriding-header "\n⚡ Due Today:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
 				   (org-agenda-remove-tags t)
 				   (org-agenda-prefix-format " %-15b")
