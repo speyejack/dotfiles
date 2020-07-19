@@ -251,6 +251,15 @@
 			(,tickler-file :maxlevel . 3)
 			(,someday-file :maxlevel . 3)))
 
+	(setq org-tag-alist '(("@errand" . ?e)
+						  ("@work" . ?o)
+						  ("@home" . ?h)
+						  ("@school" . ?s)
+						  (:newline)
+						  ("WAITING" . ?w)
+						  ("HOLD" . ?H)
+						  ("CANCELLED" . ?c)))
+
 	(setq jag-org-inbox-file
 		  inbox-file)
 
