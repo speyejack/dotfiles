@@ -251,6 +251,9 @@
 			(,tickler-file :maxlevel . 3)
 			(,someday-file :maxlevel . 3)))
 
+	(setq jag-org-inbox-file
+		  inbox-file)
+
 	(setq org-agenda-files
 		  `(,inbox-file ,gtd-file ,tickler-file))
 
