@@ -127,5 +127,21 @@ TARGET follows the same structure used in `org-refile-targets'."
 				   nil
 				   (lambda () (identity t))))
 
+(defun jag-org-agenda-refile-inbox ()
+  "Process inbox item in agenda mode."
+  (interactive)
+  (org-with-wide-buffer
+   (org-agenda-set-tags)
+   (org-agenda-set-effort)
+   (jag-org-agenda-refile))))
+
+(defun jag-org-refile-inbox ()
+  "Process inbox item in inbox file."
+  (interactive)
+  (org-with-wide-buffer
+   (org-set-tags-command)
+   (org-set-effort)
+   (jag-org-refile))))
+
 (provide 'jag-funcs-org)
 ;;; jag-funcs-org.el ends here
