@@ -48,6 +48,9 @@
 	"L" 'org-agenda-do-date-later
 	"t" 'org-agenda-todo
 
+	"r" 'jag-org-agenda-refile-inbox
+	"R" 'jag-org-agenda-refile
+
 	"u" 'org-agenda-undo
 
 	"dd" 'org-agenda-kill
