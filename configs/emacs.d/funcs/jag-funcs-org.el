@@ -111,6 +111,21 @@ TARGET follows the same structure used in `org-refile-targets'."
 				   nil
 				   (lambda () (member (buffer-file-name) jag-org-refile-files))))
 
+(defun jag-org-agenda-refile ()
+  "Refile gtd files in agenda unless outside inbox, then refile normally."
+  (interactive)
+  (jag--org-refile jag-org-refile-min-targets
+				   'org-agenda-refile
+				   'jag-parent-refile-verify
+				   (lambda () (identity t))))
+
+(defun jag-org-agenda-refile-all ()
+  "Similar to `jag-org-agenda-refile' expect operates with more included targets."
+  (interactive)
+  (jag--org-refile jag-org-refile-max-targets
+				   'org-agenda-refile
+				   nil
+				   (lambda () (identity t))))
 
 (provide 'jag-funcs-org)
 ;;; jag-funcs-org.el ends here
