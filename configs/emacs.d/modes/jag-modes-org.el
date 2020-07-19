@@ -269,8 +269,12 @@
 	(setq org-archive-location (expand-file-name "archive_%s::" archive-folder)))
 
   (setq-default org-format-latex-options (plist-put org-format-latex-options :scale 1.25))
-  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
-  (setq org-todo-keyword-faces '(("WAITING" . "sky blue") ("CANCELLED" . "forest green")))
+
+  (setq org-todo-keywords
+		'((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+		  (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" )))
+  (setq org-todo-keyword-faces '(("NEXT" . "tan") ("WAITING" . "sky blue") ("CANCELLED" . "forest green") ("HOLD" . "yellow green")))
+
   (setq org-startup-indented 1)
   (setq org-list-allow-alphabetical t)
   (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
