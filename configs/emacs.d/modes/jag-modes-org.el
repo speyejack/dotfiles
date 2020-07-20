@@ -108,6 +108,7 @@
   "q" 'org-clock-cancel
   "r" 'jag-org-refile
   "R" 'jag-org-refile-all
+  "C-r" 'jag-org-refile-inbox
   "s" 'org-schedule
   "u" 'org-latex-preview
   "U" 'jag-scale-latex
