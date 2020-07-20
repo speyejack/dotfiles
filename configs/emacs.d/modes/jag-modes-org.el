@@ -24,7 +24,7 @@
   "e" 'org-export-dispatch
   "f" 'org-set-effort
   "P" 'org-pomodoro
-  ":" 'org-set-tags
+  ":" 'org-set-tags-command
 
   "a" 'org-archive-subtree
   "b" 'org-tree-to-indirect-buffer
