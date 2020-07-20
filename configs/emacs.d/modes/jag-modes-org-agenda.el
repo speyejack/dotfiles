@@ -119,7 +119,7 @@
 	"-" 'org-agenda-manipulate-query-subtract)
 
   (setq org-agenda-custom-commands
-		'(("a" "Daily Agenda"
+		'(("n" "Next Items"
 		   ((todo "TODO"
 				  ;; Reoccuring items that reoccur today
 				  ;; action items
@@ -128,9 +128,29 @@
 				   (org-agenda-prefix-format " ")
 				   (org-agenda-todo-keyword-format "")
 				   (org-agenda-span 'day)
-				   (org-agenda-files `(,jag-org-inbox-file))
-				   ))
-			(todo "TODO"
+				   (org-agenda-files `(,jag-org-inbox-file))))
+			(todo "NEXT"
+				  ;; Reoccuring items that reoccur today
+				  ;; action items
+				  ((org-agenda-overriding-header "\n⚡ Next items:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
+				   (org-agenda-remove-tags t)
+				   (org-agenda-prefix-format " %-15b")
+				   (org-agenda-todo-keyword-format "")
+				   (org-agenda-span 'day)
+				   (org-agenda-skip-scheduled-if-done t)))))
+
+		  ("a" "Daily Agenda"
+		   ((todo "TODO"
+				  ;; Reoccuring items that reoccur today
+				  ;; action items
+				  ((org-agenda-overriding-header "\n⚡ Inbox:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
+				   (org-agenda-remove-tags t)
+				   (org-agenda-prefix-format " ")
+				   (org-agenda-todo-keyword-format "")
+				   (org-agenda-span 'day)
+				   (org-agenda-files `(,jag-org-inbox-file))))
+
+			(todo "TODO|NEXT"
 				  ;; Reoccuring items that reoccur today
 				  ;; action items
 				  ((org-agenda-overriding-header "\n⚡ Due Today:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
@@ -139,8 +159,8 @@
 				   (org-agenda-todo-keyword-format "")
 				   (org-agenda-span 'day)
 				   (org-agenda-skip-scheduled-if-done t)
-				   (org-agenda-skip-function 'jag-agenda-list-filter)
-				   ))
+				   (org-agenda-skip-function 'jag-agenda-list-filter)))
+
 			(agenda ""
 					((org-agenda-start-day "+0d")
 					 (org-agenda-span 5)
