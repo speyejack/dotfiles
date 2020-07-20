@@ -258,6 +258,8 @@
 						  ("@work" . ?o)
 						  ("@home" . ?h)
 						  ("@school" . ?s)
+						  ("@event" . ?E)
+						  ("@meeting" . ?m)
 						  (:newline)
 						  ("WAITING" . ?w)
 						  ("HOLD" . ?H)
