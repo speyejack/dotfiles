@@ -39,6 +39,7 @@
   "hi" 'org-insert-heading-after-current
   "hI" 'org-insert-heading
   "hs" 'org-insert-subheading
+  "hu" 'org-update-statistics-cookies
 
   ;; More cycling options (timestamps, headlines, items, properties)
   "L" 'org-shiftright
