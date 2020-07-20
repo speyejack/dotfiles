@@ -18,8 +18,13 @@
 			  (and (not (seq-intersection jag-org-non-critical-deadline-tags (org-get-tags)))
 				   (not (org-get-scheduled-time (point))))))
 
-	 ;; Action items
-	 (member "action" (org-get-tags))
+	 ;; Next items
+	 (and
+	  (org-get-todo-state)
+	  (string-match-p "NEXT" (org-get-todo-state))
+	  (org-get-scheduled-time (point))
+	  (<= (org-time-stamp-to-now
+		   (org-entry-get (point) "SCHEDULED")) 1))
 
 	 ;; Repeating item happening today
 	 (and (org-get-repeat)
