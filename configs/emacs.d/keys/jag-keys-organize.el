@@ -27,8 +27,8 @@
  "s" 'jag-org-schedule-capture
  "n" 'org-noter
 
- "t" 'jag-org-clock-in-capture
- "T" 'jag-org-clock-gtd
+ "t" 'jag-org-clock-gtd
+ "T" 'jag-org-clock-in-capture
  "y" 'org-clock-out
  "Y" 'org-clock-cancel
 
