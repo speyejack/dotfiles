@@ -296,6 +296,7 @@
   (setq org-return-follows-link t)
   (setq org-clock-out-remove-zero-time-clocks t)
   (setq org-clock-idle-time 5)
+  (add-hook 'org-capture-mode-hook (lambda () (setq-local org-clock-idle-time nil)))
 
 
   (with-eval-after-load "ox-latex"
