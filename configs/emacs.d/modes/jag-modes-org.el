@@ -208,7 +208,7 @@
 
 			("v" "Clock-in entry" entry
 			 (file+olp+datetree ,clocks-file "Clocks")
-			 "* %a\n  %i%?\n" :clock-in t :clock-keep t)
+			 "* %a\n  %i%?\n" :clock-in t :clock-keep t :immediate-finish t)
 
 			("d" "Due [inbox]" entry
 			 (file+headline ,inbox-file "Due")
