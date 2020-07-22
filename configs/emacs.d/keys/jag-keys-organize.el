@@ -27,8 +27,8 @@
  "s" 'jag-org-schedule-capture
  "n" 'org-noter
 
- "t" 'jag-org-clock-in-capture
- "T" 'jag-org-clock-gtd
+ "t" 'jag-org-clock-gtd
+ "T" 'jag-org-clock-in-capture
  "y" 'org-clock-out
  "Y" 'org-clock-cancel
 
@@ -85,7 +85,7 @@
    jag-org-interrupt-capture
    jag-org-journal-capture
    jag-org-clock-gtd
-   jag-org-shedule-capture
+   jag-org-schedule-capture
    jag-org-clock-select-task)
   :ensure nil)
 

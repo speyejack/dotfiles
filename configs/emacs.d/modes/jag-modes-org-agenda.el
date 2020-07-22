@@ -6,15 +6,27 @@
 
 (use-package jag-funcs-org-agenda
   :defer t
+  :commands (jag-agenda-list-filter
+			 jag-agenda-planner-filter
+			 jag-org-agenda-refile
+			 jag-org-agenda-refile-all
+			 jag-org-agenda-refile-inbox)
   :ensure nil)
 
 (with-eval-after-load 'org-agenda
+
+  (setq org-deadline-warning-days 7
+		jag-org-non-critical-deadline-tags '("event", "meeting"))
+
   (evil-set-initial-state 'org-agenda-mode 'motion)
 
   (which-key-declare-prefixes-for-mode 'org-agenda-mode "d" "delete")
   (which-key-declare-prefixes-for-mode 'org-agenda-mode "Z" "exit")
   (which-key-declare-prefixes-for-mode 'org-agenda-mode "s" "filter")
   (which-key-declare-prefixes-for-mode 'org-agenda-mode "c" "change/clock")
+
+  (evil-define-key 'normal org-agenda-mode-map
+	"q" nil)
 
   (evil-define-key 'motion org-agenda-mode-map
 	(kbd "<tab>") 'org-agenda-goto
@@ -39,14 +51,15 @@
 	"L" 'org-agenda-do-date-later
 	"t" 'org-agenda-todo
 
+	"r" 'jag-org-agenda-refile-inbox
+	"R" 'jag-org-agenda-refile
+
 	"u" 'org-agenda-undo
 
-	"d" nil
 	"dd" 'org-agenda-kill
 	"dA" 'org-agenda-archive
 	"da" 'org-agenda-archive-default-with-confirmation
 
-	"c" nil
 	"ct" 'org-agenda-set-tags
 	"ce" 'org-agenda-set-effort
 	"cT" 'org-timer-set-timer
@@ -55,6 +68,7 @@
 	"a" 'org-agenda-add-note
 	"A" 'org-agenda-append-agenda
 	"C" 'org-agenda-capture
+	"f" 'org-agenda-follow-mode
 
 	"m" 'org-agenda-bulk-toggle
 	"~" 'org-agenda-bulk-toggle-all
@@ -88,7 +102,7 @@
 
 
 	;; go and show
-	"." 'org-agenda-goto-today ; TODO: What about evil-repeat?
+	"." 'org-agenda-goto-today
 	"gc" 'org-agenda-goto-calendar
 	"gC" 'org-agenda-convert-date
 	"gd" 'org-agenda-goto-date
@@ -102,7 +116,66 @@
 
 	;; Others
 	"+" 'org-agenda-manipulate-query-add
-	"-" 'org-agenda-manipulate-query-subtract))
+	"-" 'org-agenda-manipulate-query-subtract)
+
+  (setq org-agenda-custom-commands
+		'(("n" "Next Items"
+		   ((todo "TODO"
+				  ;; Reoccuring items that reoccur today
+				  ;; action items
+				  ((org-agenda-overriding-header "\n⚡ Inbox:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
+				   (org-agenda-remove-tags t)
+				   (org-agenda-prefix-format " ")
+				   (org-agenda-todo-keyword-format "")
+				   (org-agenda-span 'day)
+				   (org-agenda-files `(,jag-org-inbox-file))))
+			(todo "NEXT"
+				  ;; Reoccuring items that reoccur today
+				  ;; action items
+				  ((org-agenda-overriding-header "\n⚡ Next items:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
+				   (org-agenda-remove-tags t)
+				   (org-agenda-prefix-format " %-15b")
+				   (org-agenda-todo-keyword-format "")
+				   (org-agenda-span 'day)
+				   (org-agenda-skip-scheduled-if-done t)))))
+
+		  ("a" "Daily Agenda"
+		   ((todo "TODO"
+				  ;; Reoccuring items that reoccur today
+				  ;; action items
+				  ((org-agenda-overriding-header "\n⚡ Inbox:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
+				   (org-agenda-remove-tags t)
+				   (org-agenda-prefix-format " ")
+				   (org-agenda-todo-keyword-format "")
+				   (org-agenda-span 'day)
+				   (org-agenda-files `(,jag-org-inbox-file))))
+
+			(todo "TODO|NEXT"
+				  ;; Reoccuring items that reoccur today
+				  ;; action items
+				  ((org-agenda-overriding-header "\n⚡ Due Today:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
+				   (org-agenda-remove-tags t)
+				   (org-agenda-prefix-format " %-15b")
+				   (org-agenda-todo-keyword-format "")
+				   (org-agenda-span 'day)
+				   (org-agenda-skip-scheduled-if-done t)
+				   (org-agenda-skip-function 'jag-agenda-list-filter)))
+
+			(agenda ""
+					((org-agenda-start-day "+0d")
+					 (org-agenda-span 5)
+					 (org-agenda-overriding-header "⚡ Schedule:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
+					 (org-agenda-repeating-timestamp-show-all nil)
+					 (org-agenda-remove-tags t)
+					 (org-agenda-prefix-format   "  %-15b %t%s")
+					 (org-agenda-todo-keyword-format "")
+					 (org-agenda-current-time-string "<┈┈┈┈┈┈┈ now")
+					 (org-agenda-scheduled-leaders '("" ""))
+					 (org-agenda-skip-deadline-prewarning-if-scheduled t)
+					 (org-agenda-skip-function 'jag-agenda-planner-filter)
+					 (org-agenda-time-grid (quote ((daily today remove-match)
+												   (0900 1200 1500 1800 2100)
+												   "      " "┈┈┈┈┈┈┈┈┈┈┈┈┈"))))))))))
 
 (provide 'jag-modes-org-agenda)
 ;;; jag-modes-org-agenda.el ends here

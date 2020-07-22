@@ -4,6 +4,10 @@
 
 ;;; Code:
 
+(use-package jag-funcs-org
+  :ensure nil
+  :commands (jag-org-clock-file
+			 jag-child-refile-verify))
 
 (defun jag--quick-org-task-capture (&optional goto)
   "Capture a task with my default template."
@@ -48,7 +52,9 @@
   (interactive "P")
   (let ((gtd-file (expand-file-name "gtd.org" jag-gtd-dir))
 		(tickler-file (expand-file-name "tickler.org" jag-gtd-dir)))
-	(jag-org-clock-file `((,gtd-file :maxlevel . 3) (,tickler-file :maxlevel . 3)) "v" goto)))
+	(jag-org-clock-file
+	 `((,gtd-file :maxlevel . 3)
+	   (,tickler-file :maxlevel . 3)) "v" goto 'jag-child-refile-verify)))
 
 (defun jag-org-clock-select-task ()
   "Select a task for org clocking."

@@ -24,7 +24,7 @@
   "e" 'org-export-dispatch
   "f" 'org-set-effort
   "P" 'org-pomodoro
-  ":" 'org-set-tags
+  ":" 'org-set-tags-command
 
   "a" 'org-archive-subtree
   "b" 'org-tree-to-indirect-buffer
@@ -39,6 +39,7 @@
   "hi" 'org-insert-heading-after-current
   "hI" 'org-insert-heading
   "hs" 'org-insert-subheading
+  "hu" 'org-update-statistics-cookies
 
   ;; More cycling options (timestamps, headlines, items, properties)
   "L" 'org-shiftright
@@ -106,7 +107,9 @@
   "o" 'org-toggle-inline-images
   "O" 'org-clock-out
   "q" 'org-clock-cancel
-  "r" 'org-refile
+  "r" 'jag-org-refile
+  "R" 'jag-org-refile-all
+  "C-r" 'jag-org-refile-inbox
   "s" 'org-schedule
   "u" 'org-latex-preview
   "U" 'jag-scale-latex
@@ -121,7 +124,8 @@
   "iy" 'org-download-yank
   "il" 'org-insert-link
   "if" 'org-footnote-new
-  "in" 'org-roam-insert
+  "ik" 'org-roam-insert
+  "in" 'org-add-note
   "iL" 'org-ref-helm-insert-label-link
   "ir" 'org-ref-helm-insert-ref-link
   "ic" 'org-ref-helm-insert-cite-link
@@ -136,6 +140,9 @@
 			 jag-scale-latex
 			 jag-org-clock-file
 			 jag-org-journal-find-location
+			 jag-org-refile
+			 jag-org-refile-all
+			 jag-org-refile-inbox
 			 jag-org-ref-doi-from-url))
 
 ;; org
@@ -201,7 +208,7 @@
 
 			("v" "Clock-in entry" entry
 			 (file+olp+datetree ,clocks-file "Clocks")
-			 "* %a\n  %i%?\n" :clock-in t :clock-keep t)
+			 "* %a\n  %i%?\n" :clock-in t :clock-keep t :immediate-finish t)
 
 			("d" "Due [inbox]" entry
 			 (file+headline ,inbox-file "Due")
@@ -209,7 +216,7 @@
 
 			("s" "Schedule [inbox]" entry
 			 (file+headline ,tickler-file "Reminders")
-			 "* %i%?\n  Schedule: %^{Schedule Date}t\n")
+			 "* TODO %i%?\n  SCHEDULED: %^{Schedule Date}t\n")
 
 			("i" "Interrupt" entry
 			 (file+olp+datetree ,clocks-file "Clocks")
@@ -223,11 +230,43 @@
 			 (function jag-org-journal-find-location)
 			 "** %(format-time-string org-journal-time-format)%i%?\n")))
 
+	(add-hook 'org-clock-in-hook #'org-save-all-org-buffers)
+	(add-hook 'org-clock-out-hook #'org-save-all-org-buffers)
+	(advice-add 'org-archive-subtree :after #'org-save-all-org-buffers)
 
 	(setq org-refile-targets
-		  `((,gtd-file :level . 2)
-			(,tickler-file :level . 2)
-			(,someday-file :level . 1)))
+		  '((nil :maxlevel . 3)))
+
+	(setq jag-org-refile-files
+		  `(,gtd-file
+			,tickler-file
+			,inbox-file
+			,clocks-file
+			,someday-file))
+
+	(setq jag-org-refile-min-targets
+		  `((,gtd-file :maxlevel . 3)
+			(,tickler-file :maxlevel . 3)
+			(,someday-file :maxlevel . 3)))
+
+	(setq jag-org-refile-max-targets
+		  `((,gtd-file :maxlevel . 3)
+			(,tickler-file :maxlevel . 3)
+			(,someday-file :maxlevel . 3)))
+
+	(setq org-tag-alist '(("@errand" . ?e)
+						  ("@work" . ?o)
+						  ("@home" . ?h)
+						  ("@school" . ?s)
+						  ("@event" . ?E)
+						  ("@meeting" . ?m)
+						  (:newline)
+						  ("WAITING" . ?w)
+						  ("HOLD" . ?H)
+						  ("CANCELLED" . ?c)))
+
+	(setq jag-org-inbox-file
+		  inbox-file)
 
 	(setq org-agenda-files
 		  `(,inbox-file ,gtd-file ,tickler-file))
@@ -235,8 +274,15 @@
 	(setq org-archive-location (expand-file-name "archive_%s::" archive-folder)))
 
   (setq-default org-format-latex-options (plist-put org-format-latex-options :scale 1.25))
-  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
-  (setq org-todo-keyword-faces '(("WAITING" . "sky blue") ("CANCELLED" . "forest green")))
+
+  (setq org-global-properties
+		'(("Effort_ALL" . "0:10 0:15 0:20 0:30 0:45 1:00 1:30 2:00 3:00 0:00")))
+
+  (setq org-todo-keywords
+		'((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+		  (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" )))
+  (setq org-todo-keyword-faces '(("NEXT" . "tan") ("WAITING" . "sky blue") ("CANCELLED" . "forest green") ("HOLD" . "yellow green")))
+
   (setq org-startup-indented 1)
   (setq org-list-allow-alphabetical t)
   (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
@@ -250,6 +296,7 @@
   (setq org-return-follows-link t)
   (setq org-clock-out-remove-zero-time-clocks t)
   (setq org-clock-idle-time 5)
+  (add-hook 'org-capture-mode-hook (lambda () (setq-local org-clock-idle-time nil)))
 
 
   (with-eval-after-load "ox-latex"
