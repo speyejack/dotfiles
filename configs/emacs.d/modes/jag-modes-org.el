@@ -143,6 +143,7 @@
 			 jag-org-refile
 			 jag-org-refile-all
 			 jag-org-refile-inbox
+			 jag--org-update-parent-stats
 			 jag-org-ref-doi-from-url))
 
 ;; org
@@ -233,6 +234,8 @@
 	(add-hook 'org-clock-in-hook #'org-save-all-org-buffers)
 	(add-hook 'org-clock-out-hook #'org-save-all-org-buffers)
 	(advice-add 'org-archive-subtree :after #'org-save-all-org-buffers)
+	(advice-add 'org-refile :after #'org-save-all-org-buffers)
+	(add-hook 'org-after-refile-insert-hook 'jag--org-update-parent-stats)
 
 	(setq org-refile-targets
 		  '((nil :maxlevel . 3)))

@@ -119,5 +119,15 @@ TARGET follows the same structure used in `org-refile-targets'."
    (org-set-effort)
    (jag-org-refile)))
 
+(defun jag--org-apply-to-parents (func)
+  "Apply FUNC to all parent entries."
+  (save-excursion
+	(while (org-up-heading-safe)
+	  (funcall func))))
+
+(defun jag--org-update-parent-stats ()
+  "Update all parent statistics cookies."
+  (jag--org-apply-to-parents (lambda () (org-update-statistics-cookies nil))))
+
 (provide 'jag-funcs-org)
 ;;; jag-funcs-org.el ends here
