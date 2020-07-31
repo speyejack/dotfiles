@@ -18,7 +18,8 @@
   "y" 'org-copy-special
   "x" 'org-cut-special
   "p" 'org-cut-special
-  "c" 'org-capture
+  "c" 'org-columns
+  "C" 'org-capture
   "d" 'org-deadline
   "D" 'org-insert-drawer
   "e" 'org-export-dispatch
