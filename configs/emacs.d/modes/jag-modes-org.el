@@ -237,6 +237,12 @@
 	(advice-add 'org-refile :after #'org-save-all-org-buffers)
 	(add-hook 'org-after-refile-insert-hook 'jag--org-update-parent-stats)
 
+	(setq org-refile-use-outline-path 'file
+		  org-outline-path-complete-in-steps nil
+		  org-refile-allow-creating-parent-nodes 'confirm)
+
+	(setq org-agenda-text-search-extra-files '(agenda-archives))
+
 	(setq org-refile-targets
 		  '((nil :maxlevel . 3)))
 
@@ -299,6 +305,13 @@
   (setq org-return-follows-link t)
   (setq org-clock-out-remove-zero-time-clocks t)
   (setq org-clock-idle-time 5)
+
+  (setq org-blank-before-new-entry '((heading) (plain-list-item))
+		org-enforce-todo-dependencies t
+		org-enforce-todo-checkbox-dependencies t
+		org-log-redeadline 'time
+		org-log-reschedule 'time)
+
   (add-hook 'org-capture-mode-hook (lambda () (setq-local org-clock-idle-time nil)))
 
 
