@@ -27,25 +27,10 @@
   (org-resolve-clocks)
   (org-capture goto "c"))
 
-(defun jag-org-due-capture (&optional goto)
-  "Capture a due date."
-  (interactive "P")
-  (org-capture goto "d"))
-
-(defun jag-org-schedule-capture (&optional goto)
-  "Capture a schedule date."
-  (interactive "P")
-  (org-capture goto "s"))
-
 (defun jag-org-interrupt-capture (&optional goto)
   "Capture a interrupt."
   (interactive "P")
   (org-capture goto "i"))
-
-(defun jag-org-journal-capture (&optional goto)
-  "Capture a journal."
-  (interactive "P")
-  (org-capture goto "j"))
 
 (defun jag-org-clock-gtd (&optional goto)
   "Start a clock on a header in the gtd file."

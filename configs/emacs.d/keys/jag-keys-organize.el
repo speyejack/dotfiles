@@ -10,8 +10,7 @@
  '(("o" "organize")
    ("og" "goto")
    ("oc" "clock")
-   ("or" "capture")
-   ("oR" "remember")
+   ("or" "remember")
    ("ob" "bibliography")
    ("oK" "roam")))
 
@@ -22,10 +21,13 @@
 
  "o" 'jag--quick-org-task-capture
  "O" 'jag-org-file-task-capture
- "d" 'jag-org-due-capture
  "i" 'jag-org-interrupt-capture
- "s" 'jag-org-schedule-capture
  "n" 'org-noter
+
+
+ "p" 'org-capture
+ "P" 'evil-operator-org-capture
+ "l" 'org-capture-goto-last-stored
 
  "t" 'jag-org-clock-gtd
  "T" 'jag-org-clock-in-capture
@@ -41,9 +43,6 @@
  "cF" 'org-clock-update-time-maybe
  "cy" 'org-clock-out
  "cc" 'jag-org-clock-select-task
-
- "j" 'jag-org-journal-capture
- "J" 'org-journal-new-entry
 
  "k" 'org-roam-find-file
  "Kk" 'org-roam
@@ -69,12 +68,8 @@
  "bu" 'jag-org-ref-doi-from-url
  "bl" 'org-ref-open-citation-at-point
 
- "Rr" 'evil-operator-remember
- "Rl" 'remember
-
- "rr" 'evil-operator-org-capture
- "rl" 'org-capture-goto-last-stored
- "rc" 'org-capture)
+ "rr" 'evil-operator-remember
+ "rl" 'remember)
 
 (use-package jag-funcs-organize
   :commands
