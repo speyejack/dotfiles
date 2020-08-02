@@ -216,7 +216,7 @@
 
 			("s" "Schedule [inbox]" entry
 			 (file ,tickler-file)
-			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %t\n:END:\n  SCHEDULED: %^{Schedule Date}t\n")
+			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %t\n:END:\nSCHEDULED: %^{Schedule Date}t\n")
 
 			("i" "Interrupt" entry
 			 (file+olp+datetree ,clocks-file)
