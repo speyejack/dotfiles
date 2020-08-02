@@ -219,15 +219,15 @@
 			 "* TODO %i%?\n  SCHEDULED: %^{Schedule Date}t\n")
 
 			("i" "Interrupt" entry
-			 (file+olp+datetree ,clocks-file "Clocks")
+			 (file+olp+datetree ,clocks-file)
 			 "* Interrupt: %i%?\n" :clock-resume t :clock-keep nil :clock-in t)
 
 			("c" "Clock-in" entry
-			 (file+olp+datetree ,clocks-file "Clocks")
+			 (file+olp+datetree ,clocks-file)
 			 "* %i%?\n" :clock-in t :clock-keep t)
 
 			("v" "Clock-in entry" entry
-			 (file+olp+datetree ,clocks-file "Clocks")
+			 (file+olp+datetree ,clocks-file)
 			 "* %a\n  %i%?\n" :clock-in t :clock-keep t :immediate-finish t)
 
 			("j" "Journal entry" entry
