@@ -203,23 +203,19 @@
 
 	(setq org-capture-templates
 		  `(("t" "Todo [inbox]" entry
-			 (file+headline ,inbox-file "Tasks")
+			 (file ,inbox-file)
 			 "* TODO %i%?\n")
 
 			("h" "Todo here [inbox]" entry
-			 (file+headline ,inbox-file "Tasks")
+			 (file ,inbox-file)
 			 "* TODO %i%?\n  %a\n")
 
-			("v" "Clock-in entry" entry
-			 (file+olp+datetree ,clocks-file "Clocks")
-			 "* %a\n  %i%?\n" :clock-in t :clock-keep t :immediate-finish t)
-
 			("d" "Due [inbox]" entry
-			 (file+headline ,inbox-file "Due")
+			 (file ,inbox-file)
 			 "* TODO %i%?\n  DEADLINE: %^{Due Date}t\n")
 
 			("s" "Schedule [inbox]" entry
-			 (file+headline ,tickler-file "Reminders")
+			 (file ,tickler-file)
 			 "* TODO %i%?\n  SCHEDULED: %^{Schedule Date}t\n")
 
 			("i" "Interrupt" entry
@@ -229,6 +225,10 @@
 			("c" "Clock-in" entry
 			 (file+olp+datetree ,clocks-file "Clocks")
 			 "* %i%?\n" :clock-in t :clock-keep t)
+
+			("v" "Clock-in entry" entry
+			 (file+olp+datetree ,clocks-file "Clocks")
+			 "* %a\n  %i%?\n" :clock-in t :clock-keep t :immediate-finish t)
 
 			("j" "Journal entry" entry
 			 (function jag-org-journal-find-location)
