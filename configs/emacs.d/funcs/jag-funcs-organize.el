@@ -6,7 +6,7 @@
 
 (use-package jag-funcs-org
   :ensure nil
-  :commands (jag-org-clock-file
+  :commands (jag-org-clock-item
 			 jag-child-refile-verify))
 
 (defun jag--quick-org-task-capture (&optional goto)
@@ -32,16 +32,20 @@
   (interactive "P")
   (org-capture goto "i"))
 
-(defun jag-org-clock-gtd (&optional goto)
-  "Start a clock on a header in the gtd file."
+(defun jag-org-clock-gtd (&optional select)
+  "Start a clock on a header in the gtd files."
   (interactive "P")
   (let ((gtd-file (expand-file-name "gtd.org" jag-gtd-dir))
+		(inbox-file (expand-file-name "inbox.org" jag-gtd-dir))
 		(someday-file (expand-file-name "someday.org" jag-gtd-dir))
 		(tickler-file (expand-file-name "tickler.org" jag-gtd-dir)))
-	(jag-org-clock-file
+	(jag-org-clock-item
 	 `((,gtd-file :maxlevel . 5)
 	   (,someday-file :maxlevel . 5)
-	   (,tickler-file :maxlevel . 5)) "v" goto 'jag-child-refile-verify)))
+	   (,inbox-file :maxlevel . 5)
+	   (,tickler-file :maxlevel . 5))
+	 select
+	 'jag-child-refile-verify)))
 
 (defun jag-org-clock-select-task ()
   "Select a task for org clocking."

@@ -140,7 +140,6 @@
 			 jag-org-open-heading
 			 jag-org-archive-done-tasks
 			 jag-scale-latex
-			 jag-org-clock-file
 			 jag-org-journal-find-location
 			 jag-org-refile
 			 jag-org-refile-all
@@ -215,20 +214,16 @@
 			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\nDEADLINE: %^{Due Date}t\n")
 
 			("s" "Schedule [inbox]" entry
-			 (file ,tickler-file)
+			 (file ,inbox-file)
 			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\nSCHEDULED: %^{Schedule Date}t\n")
 
 			("i" "Interrupt" entry
-			 (file+olp+datetree ,clocks-file)
-			 "* Interrupt: %i%?\n" :clock-resume t :clock-keep nil :clock-in t)
+			 (file ,inbox-file)
+			 "* INTERRUPTED %i%?\n" :clock-resume t :clock-keep nil :clock-in t)
 
 			("c" "Clock-in" entry
-			 (file+olp+datetree ,clocks-file)
-			 "* %i%?\n" :clock-in t :clock-keep t)
-
-			("v" "Clock-in entry" entry
-			 (file+olp+datetree ,clocks-file)
-			 "* %a\n  %i%?\n" :clock-in t :clock-keep t :immediate-finish t)
+			 (file ,inbox-file)
+			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\n" :clock-in t :clock-keep t)
 
 			("j" "Journal entry" entry
 			 (function jag-org-journal-find-location)
@@ -292,8 +287,12 @@
 
   (setq org-todo-keywords
 		'((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
-		  (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" )))
-  (setq org-todo-keyword-faces '(("NEXT" . "tan") ("WAITING" . "sky blue") ("CANCELLED" . "forest green") ("HOLD" . "yellow green")))
+		  (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "INTERRUPTED(I)")))
+  (setq org-todo-keyword-faces '(("NEXT" . "tan")
+								 ("WAITING" . "sky blue")
+								 ("CANCELLED" . "forest green")
+								 ("HOLD" . "yellow green")
+								 ("INTERRUPTED" . "forest green")))
 
   (setq org-startup-indented 1)
   (setq org-list-allow-alphabetical t)

@@ -53,6 +53,23 @@ TARGET follows the same structure used in `org-refile-targets'."
 		(call-interactively 'org-store-link)
 		(org-capture goto template)))))
 
+(defun jag-org-clock-item (target &optional select filter-function)
+  "Select org header from TARGET and FILTER-FUNCTION to start a clock on.
+
+TARGET follows the same structure used in `org-refile-targets'.
+FILTER-FUNCTION is used to filter refile results
+SELECT is passed to org-clock-in"
+  (let* ((org-refile-targets target)
+		 (org-refile-target-verify-function filter-function)
+		 (loc (org-refile-get-location))
+		 (file (nth 1 loc))
+		 (pos (nth 3 loc)))
+	(with-current-buffer (or (find-buffer-visiting file)
+							 (find-file-noselect file))
+	  (save-excursion
+		(goto-char pos)
+		(org-clock-in)))))
+
 ;; Taken from org-journal
 (defun jag-org-journal-find-location ()
   ;; Open today's journal, but specify a non-nil prefix argument in order to
