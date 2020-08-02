@@ -36,10 +36,12 @@
   "Start a clock on a header in the gtd file."
   (interactive "P")
   (let ((gtd-file (expand-file-name "gtd.org" jag-gtd-dir))
+		(someday-file (expand-file-name "someday.org" jag-gtd-dir))
 		(tickler-file (expand-file-name "tickler.org" jag-gtd-dir)))
 	(jag-org-clock-file
-	 `((,gtd-file :maxlevel . 3)
-	   (,tickler-file :maxlevel . 3)) "v" goto 'jag-child-refile-verify)))
+	 `((,gtd-file :maxlevel . 5)
+	   (,someday-file :maxlevel . 5)
+	   (,tickler-file :maxlevel . 5)) "v" goto 'jag-child-refile-verify)))
 
 (defun jag-org-clock-select-task ()
   "Select a task for org clocking."
