@@ -111,6 +111,7 @@
   "r" 'jag-org-refile
   "R" 'jag-org-refile-all
   "C-r" 'jag-org-refile-inbox
+  "C-S-R" 'jag-org-refile-inbox-all
   "s" 'org-schedule
   "u" 'org-latex-preview
   "U" 'jag-scale-latex
@@ -144,6 +145,7 @@
 			 jag-org-refile
 			 jag-org-refile-all
 			 jag-org-refile-inbox
+			 jag-org-refile-inbox-all
 			 jag--org-update-parent-stats
 			 jag-org-ref-doi-from-url))
 

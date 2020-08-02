@@ -119,6 +119,14 @@ TARGET follows the same structure used in `org-refile-targets'."
    (org-set-effort)
    (jag-org-refile)))
 
+(defun jag-org-refile-inbox-all ()
+  "Process inbox item in inbox file to all places."
+  (interactive)
+  (org-with-wide-buffer
+   (org-set-tags-command)
+   (org-set-effort)
+   (jag-org-refile-all)))
+
 (defun jag--org-apply-to-parents (func)
   "Apply FUNC to all parent entries."
   (save-excursion
