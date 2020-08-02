@@ -204,19 +204,19 @@
 	(setq org-capture-templates
 		  `(("t" "Todo [inbox]" entry
 			 (file ,inbox-file)
-			 "* TODO %i%?\n")
+			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %t\n:END:\n")
 
 			("h" "Todo here [inbox]" entry
 			 (file ,inbox-file)
-			 "* TODO %i%?\n  %a\n")
+			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %t\n:END:\n  %a\n")
 
 			("d" "Due [inbox]" entry
 			 (file ,inbox-file)
-			 "* TODO %i%?\n  DEADLINE: %^{Due Date}t\n")
+			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %t\n:END:\nDEADLINE: %^{Due Date}t\n")
 
 			("s" "Schedule [inbox]" entry
 			 (file ,tickler-file)
-			 "* TODO %i%?\n  SCHEDULED: %^{Schedule Date}t\n")
+			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %t\n:END:\n  SCHEDULED: %^{Schedule Date}t\n")
 
 			("i" "Interrupt" entry
 			 (file+olp+datetree ,clocks-file)
