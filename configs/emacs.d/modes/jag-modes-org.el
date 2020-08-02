@@ -257,14 +257,14 @@
 			,someday-file))
 
 	(setq jag-org-refile-min-targets
-		  `((,gtd-file :maxlevel . 3)
-			(,tickler-file :maxlevel . 3)
-			(,someday-file :maxlevel . 3)))
+		  `((,gtd-file :maxlevel . 5)
+			(,tickler-file :maxlevel . 5)
+			(,someday-file :maxlevel . 5)))
 
 	(setq jag-org-refile-max-targets
-		  `((,gtd-file :maxlevel . 3)
-			(,tickler-file :maxlevel . 3)
-			(,someday-file :maxlevel . 3)))
+		  `((,gtd-file :maxlevel . 5)
+			(,tickler-file :maxlevel . 5)
+			(,someday-file :maxlevel . 5)))
 
 	(setq org-tag-alist '(("@errand" . ?e)
 						  ("@work" . ?o)
