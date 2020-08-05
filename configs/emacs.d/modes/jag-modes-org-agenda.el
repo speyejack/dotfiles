@@ -120,7 +120,7 @@
 
   (setq org-agenda-custom-commands
 		'(("n" "Next Items"
-		   ((todo "TODO"
+		   ((todo ".*"
 				  ;; Reoccuring items that reoccur today
 				  ;; action items
 				  ((org-agenda-overriding-header "\n⚡ Inbox:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
@@ -140,7 +140,7 @@
 				   (org-agenda-skip-scheduled-if-done t)))))
 
 		  ("a" "Daily Agenda"
-		   ((todo "TODO"
+		   ((todo ".*"
 				  ;; Reoccuring items that reoccur today
 				  ;; action items
 				  ((org-agenda-overriding-header "\n⚡ Inbox:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
