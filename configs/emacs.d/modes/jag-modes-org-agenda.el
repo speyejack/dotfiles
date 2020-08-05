@@ -60,6 +60,8 @@
 	"dA" 'org-agenda-archive
 	"da" 'org-agenda-archive-default-with-confirmation
 
+	"cs" 'org-agenda-schedule
+	"cd" 'org-agenda-deadline
 	"ct" 'org-agenda-set-tags
 	"ce" 'org-agenda-set-effort
 	"cT" 'org-timer-set-timer
