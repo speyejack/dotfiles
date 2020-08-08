@@ -203,31 +203,31 @@
 	(setq org-capture-templates
 		  `(("t" "Todo [inbox]" entry
 			 (file ,inbox-file)
-			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\n")
+			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\n" :kill-buffer t)
 
 			("h" "Todo here [inbox]" entry
 			 (file ,inbox-file)
-			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\n  %a\n")
+			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\n  %a\n" :kill-buffer t)
 
 			("d" "Due [inbox]" entry
 			 (file ,inbox-file)
-			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\nDEADLINE: %^{Due Date}t\n")
+			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\nDEADLINE: %^{Due Date}t\n" :kill-buffer t)
 
 			("s" "Schedule [inbox]" entry
 			 (file ,inbox-file)
-			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\nSCHEDULED: %^{Schedule Date}t\n")
+			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\nSCHEDULED: %^{Schedule Date}t\n" :kill-buffer t)
 
 			("i" "Interrupt" entry
 			 (file ,inbox-file)
-			 "* INTERRUPTED %i%?\n" :clock-resume t :clock-keep nil :clock-in t)
+			 "* INTERRUPTED %i%?\n" :clock-resume t :clock-keep nil :clock-in t :kill-buffer t)
 
 			("c" "Clock-in" entry
 			 (file ,inbox-file)
-			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\n" :clock-in t :clock-keep t)
+			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\n" :clock-in t :clock-keep t :kill-buffer t)
 
 			("j" "Journal entry" entry
 			 (function jag-org-journal-find-location)
-			 "** %(format-time-string org-journal-time-format)%i%?\n")))
+			 "** %(format-time-string org-journal-time-format)%i%?\n" :kill-buffer t)))
 
 	(add-hook 'org-clock-in-hook #'org-save-all-org-buffers)
 	(add-hook 'org-clock-out-hook #'org-save-all-org-buffers)
