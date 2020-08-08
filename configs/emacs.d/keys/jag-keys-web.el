@@ -27,6 +27,7 @@
  "l" 'helm-google-suggest
  "L" 'browse-url-at-point
  "a" 'engine/search-amazon
+ "m" 'mu4e
  "x" 'xkcd
  "y" 'engine/search-youtube)
 
