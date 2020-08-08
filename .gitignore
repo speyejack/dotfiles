@@ -3,6 +3,9 @@
 # Ignore Emacs saves
 \#*#
 
+# Security
+*.gpg
+
 # Ignore most of emacs.d
 configs/emacs.d/*
 *.elc
@@ -31,3 +34,9 @@ configs/i3/i3startup
 
 # Stumpwm ignores
 configs/stumpwm.d/init.lisp
+
+# OfflineImap ignores
+configs/offlineimap/users.json
+
+# Python ignores
+*.pyc

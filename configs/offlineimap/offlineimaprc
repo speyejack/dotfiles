@@ -1,0 +1,104 @@
+# Sample minimal config file.  Copy this to ~/.offlineimaprc and edit to
+# get started fast.
+
+# General
+[general]
+accounts = Personal,Professional,School,Spam
+pythonfile = ~/.offlineimap.py
+maxsyncaccounts = 4
+
+
+# Accounts
+[Account Personal]
+localrepository = LocalPersonal
+remoterepository = RemotePersonal
+quick = 24
+maxage = 90
+synclabels = yes
+labelsheader = X-Keywords
+
+[Account Professional]
+localrepository = LocalProfessional
+remoterepository = RemoteProfessional
+quick = 24
+maxage = 90
+synclabels = yes
+labelsheader = X-Keywords
+
+[Account School]
+localrepository = LocalSchool
+remoterepository = RemoteSchool
+quick = 24
+maxage = 90
+synclabels = yes
+labelsheader = X-Keywords
+
+[Account Spam]
+localrepository = LocalSpam
+remoterepository = RemoteSpam
+quick = 24
+maxage = 5
+synclabels = yes
+labelsheader = X-Keywords
+
+
+# Repositories
+[Repository LocalPersonal]
+type = GmailMaildir
+localfolders = ~/.mail/Personal
+
+[Repository RemotePersonal]
+type = Gmail
+remoteusereval = mailuser("personal")
+remotepasseval = mailpass("personal")
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt 
+realdelete = no
+folderfilter = lambda folder: folder.startswith('[Gmail]/') and \
+			 folder[8:] in ['All Mail', 'Trash', 'Drafts', 'Spam']
+trashfolder = [Gmail]/Trash
+
+[Repository LocalProfessional]
+type = GmailMaildir
+localfolders = ~/.mail/Professional
+
+[Repository RemoteProfessional]
+type = Gmail
+remoteusereval = mailuser("professional")
+remotepasseval = mailpass("professional")
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt 
+realdelete = no
+folderfilter = lambda folder: folder.startswith('[Gmail]/') and \
+			 folder[8:] in ['All Mail', 'Trash', 'Drafts', 'Spam']
+trashfolder = [Gmail]/Trash
+
+[Repository LocalSchool]
+type = GmailMaildir
+localfolders = ~/.mail/School
+
+[Repository RemoteSchool]
+type = Gmail
+remoteusereval = mailuser("school")
+remotepasseval = mailpass("school")
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt 
+realdelete = no
+folderfilter = lambda folder: folder.startswith('[Gmail]/') and \
+			 folder[8:] in ['All Mail', 'Trash', 'Drafts', 'Spam']
+trashfolder = [Gmail]/Trash
+
+[Repository LocalSpam]
+type = GmailMaildir
+localfolders = ~/.mail/Spam
+
+[Repository RemoteSpam]
+type = Gmail
+remoteusereval = mailuser("spam")
+remotepasseval = mailpass("spam")
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt 
+realdelete = no
+folderfilter = lambda folder: folder.startswith('[Gmail]/') and \
+			 folder[8:] in ['All Mail', 'Trash', 'Drafts', 'Spam']
+trashfolder = [Gmail]/Trash
