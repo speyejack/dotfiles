@@ -92,7 +92,7 @@ SELECT is passed to org-clock-in"
   (org-ref-url-add-first-doi-entry url))
 
 (defun jag-org-element-is-parent (element)
-  "Check if ELEMENT is a parent"
+  "Check if ELEMENT is a parent."
   (save-excursion
 	(org-goto-first-child)))
 
@@ -105,7 +105,7 @@ SELECT is passed to org-clock-in"
   (not (jag-org-element-is-parent (org-element-at-point))))
 
 (defun jag--org-refile (targets refile filter valid)
-  "Refile using REFILE function into TARGETS narrows by FILTER unless VALID function returns nil in which it will use default REFILE function behavior."
+  "Refile using REFILE function into TARGETS narrows by FILTER unless VALID function return nil in which it will use default REFILE function behavior."
   (if (funcall valid)
 	  (let ((org-refile-targets targets)
 			(org-refile-target-verify-function
