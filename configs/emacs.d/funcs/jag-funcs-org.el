@@ -54,6 +54,12 @@ SELECT is passed to org-clock-in"
 		(goto-char pos)
 		(funcall func)))))
 
+(defun jag-org-note-item (target &optional filter-function)
+  "Create a note on an org header in TARGET and FILTER-FUNCTION."
+  (jag--org-goto-target-item
+   'org-add-note
+   target filter-function))
+
 (defun jag-org-clock-file (target template &optional goto filter-function)
   "Start a capture/clock based on a org header in TARGET using TEMPLATE.
 

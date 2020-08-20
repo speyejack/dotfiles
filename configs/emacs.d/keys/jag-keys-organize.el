@@ -22,7 +22,8 @@
  "o" 'jag--quick-org-task-capture
  "O" 'jag-org-file-task-capture
  "i" 'jag-org-interrupt-capture
- "n" 'org-noter
+ "n" 'jag-org-note-gtd
+ "N" 'org-noter
 
 
  "p" 'org-capture
@@ -81,6 +82,7 @@
    jag-org-journal-capture
    jag-org-clock-gtd
    jag-org-schedule-capture
+   jag-org-note-gtd
    jag-org-clock-select-task)
   :ensure nil)
 

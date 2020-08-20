@@ -7,7 +7,8 @@
 (use-package jag-funcs-org
   :ensure nil
   :commands (jag-org-clock-item
-			 jag-child-refile-verify))
+			 jag-child-refile-verify
+			 jag-org-note-item))
 
 (defun jag--quick-org-task-capture (&optional goto)
   "Capture a task with my default template."
@@ -45,6 +46,20 @@
 	   (,inbox-file :maxlevel . 5)
 	   (,tickler-file :maxlevel . 5))
 	 select
+	 'jag-child-refile-verify)))
+
+(defun jag-org-note-gtd ()
+  "Enter a note on a header in the gtd files."
+  (interactive)
+  (let ((gtd-file (expand-file-name "gtd.org" jag-gtd-dir))
+		(inbox-file (expand-file-name "inbox.org" jag-gtd-dir))
+		(someday-file (expand-file-name "someday.org" jag-gtd-dir))
+		(tickler-file (expand-file-name "tickler.org" jag-gtd-dir)))
+	(jag-org-note-item
+	 `((,gtd-file :maxlevel . 5)
+	   (,someday-file :maxlevel . 5)
+	   (,inbox-file :maxlevel . 5)
+	   (,tickler-file :maxlevel . 5))
 	 'jag-child-refile-verify)))
 
 (defun jag-org-clock-select-task ()
