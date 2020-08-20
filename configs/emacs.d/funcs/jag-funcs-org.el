@@ -37,11 +37,13 @@
 					  (plist-get org-format-latex-options :scale))))
   (setq org-format-latex-options (plist-put org-format-latex-options :scale scale)))
 
-(defun jag-org-clock-file (target template &optional goto filter-function)
-  "Start a capture/clock based on a org header in TARGET using TEMPLATE.
+(defun jag--org-goto-target-item (func target &optional filter-function)
+  "Select org header from TARGET and FILTER-FUNCTION to call FUNC on.
 
-TARGET follows the same structure used in `org-refile-targets'."
-  (let* ((org-refile-targets target)
+TARGET follows the same structure used in `org-refile-targets'.
+FILTER-FUNCTION is used to filter refile results
+SELECT is passed to org-clock-in"
+(let* ((org-refile-targets target)
 		 (org-refile-target-verify-function filter-function)
 		 (loc (org-refile-get-location))
 		 (file (nth 1 loc))
@@ -50,8 +52,19 @@ TARGET follows the same structure used in `org-refile-targets'."
 							 (find-file-noselect file))
 	  (save-excursion
 		(goto-char pos)
-		(call-interactively 'org-store-link)
-		(org-capture goto template)))))
+		(funcall func)))))
+
+(defun jag-org-clock-file (target template &optional goto filter-function)
+  "Start a capture/clock based on a org header in TARGET using TEMPLATE.
+
+TARGET follows the same structure used in `org-refile-targets'.
+GOTO is passed to `org-capture`.
+FILTER-FUNCTION is used to filter down targets."
+  (jag--org-goto-target-item
+   (lambda ()
+	 (call-interactively 'org-store-link)
+	 (org-capture goto template))
+   target filter-function))
 
 (defun jag-org-clock-item (target &optional select filter-function)
   "Select org header from TARGET and FILTER-FUNCTION to start a clock on.
@@ -59,16 +72,10 @@ TARGET follows the same structure used in `org-refile-targets'."
 TARGET follows the same structure used in `org-refile-targets'.
 FILTER-FUNCTION is used to filter refile results
 SELECT is passed to org-clock-in"
-  (let* ((org-refile-targets target)
-		 (org-refile-target-verify-function filter-function)
-		 (loc (org-refile-get-location))
-		 (file (nth 1 loc))
-		 (pos (nth 3 loc)))
-	(with-current-buffer (or (find-buffer-visiting file)
-							 (find-file-noselect file))
-	  (save-excursion
-		(goto-char pos)
-		(org-clock-in)))))
+  (jag--org-goto-target-item
+   (lambda ()
+	 (org-clock-in select))
+   target filter-function))
 
 ;; Taken from org-journal
 (defun jag-org-journal-find-location ()
