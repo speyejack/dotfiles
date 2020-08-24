@@ -13,7 +13,7 @@ git clone https://git.savannah.gnu.org/git/emacs.git emacs
 cd emacs
 sudo apt install autoconf build-essential texinfo libgtk-3-dev libjpeg-dev libxpm-dev libgif-dev libtiff-dev libgnutls28-dev libtinfo-dev
 ./autoconf
-./configure
+./configure --with-xml2 --with-mailutils --with-xwidgets
 
 ln -s -r $SCRIPTPATH ~/.emacs.d
 
