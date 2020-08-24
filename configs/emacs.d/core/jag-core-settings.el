@@ -50,6 +50,8 @@
 ;; Save more recent files
 (setq recentf-max-saved-items 50)
 
+(setq shell-file-name "/bin/bash")
+
 ;; Remove some safety for convenience
 (defalias 'yes-or-no-p 'y-or-n-p)
 
