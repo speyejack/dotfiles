@@ -18,6 +18,11 @@
   (setq org-deadline-warning-days 7
 		jag-org-non-critical-deadline-tags '("event", "meeting"))
 
+  (appt-activate t)
+  (org-agenda-to-appt)
+  (add-hook 'org-agenda-finalize-hook 'org-agenda-to-appt)
+
+
   (evil-set-initial-state 'org-agenda-mode 'motion)
 
   (which-key-declare-prefixes-for-mode 'org-agenda-mode "d" "delete")
