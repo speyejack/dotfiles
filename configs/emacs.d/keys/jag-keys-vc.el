@@ -23,7 +23,8 @@
  "e" 'goto-last-change
  "E" 'goto-last-change-reverse
  "o" 'magit-todos-list
- "t" 'git-timemachine)
+ "t" 'git-timemachine
+ "b" 'magit-blame)
 
 
 (provide 'jag-keys-vc)
