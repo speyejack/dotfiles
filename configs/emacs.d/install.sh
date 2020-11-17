@@ -11,12 +11,8 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 sudo apt install git
 git clone https://git.savannah.gnu.org/git/emacs.git emacs
 cd emacs
-sudo apt install autoconf build-essential texinfo libgtk-3-dev libjpeg-dev libxpm-dev libgif-dev libtiff-dev libgnutls28-dev libtinfo-dev
-./autoconf
-./configure --with-xml2 --with-mailutils --with-xwidgets
+sudo apt install autoconf build-essential texinfo libgtk-3-dev libjpeg-dev libxpm-dev libgif-dev libtiff-dev libgnutls28-dev libtinfo-dev libgccjit-8-dev
+./autogen.sh
+./configure --with-xml2 --with-mailutils --with-xwidgets --with-nativecomp
 
-ln -s -r $SCRIPTPATH ~/.emacs.d
-
-echo ";; This is here to prevent emacs from doing it" > ~/.emacs.d/init.el
-echo ";; (package-initialize)" >> ~/.emacs.d/init.el
-echo "(load-file \"~/.emacs.d/start.el\")" >> ~/.emacs.d/init.el
+./setup.sh

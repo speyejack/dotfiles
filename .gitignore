@@ -11,6 +11,8 @@ configs/emacs.d/*
 *.elc
 
 # Keep important scripts
+!configs/emacs.d/install.sh
+!configs/emacs.d/setup.sh
 !configs/emacs.d/init.org
 !configs/emacs.d/start.el
 !configs/emacs.d/snippets
