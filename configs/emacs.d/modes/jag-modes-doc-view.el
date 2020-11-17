@@ -6,10 +6,10 @@
 
 (use-package jag-funcs-doc-view
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (use-package doc-view
-  :ensure nil
+  :straight nil
   :bind (:map doc-view-mode-map
 		 ("SPC" . nil)
 		 ("e" . doc-view-toggle-display)

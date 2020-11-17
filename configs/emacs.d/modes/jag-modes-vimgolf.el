@@ -6,7 +6,7 @@
 
 (use-package jag-funcs-vimgolf
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (use-package vimgolf
   :diminish

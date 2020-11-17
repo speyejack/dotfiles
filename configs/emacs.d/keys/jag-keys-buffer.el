@@ -49,7 +49,7 @@
    jag-safe-revert-buffer
    jag-switch-to-scratch-buffer
    jag-copy-clipboard-to-whole-buffer)
-  :ensure nil)
+  :straight nil)
 
 (provide 'jag-keys-buffer)
 

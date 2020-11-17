@@ -11,7 +11,7 @@
 			 jag-org-agenda-refile
 			 jag-org-agenda-refile-all
 			 jag-org-agenda-refile-inbox)
-  :ensure nil)
+  :straight nil)
 
 (with-eval-after-load 'org-agenda
 

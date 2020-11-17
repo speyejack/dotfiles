@@ -6,7 +6,7 @@
 
 
 (use-package jag-funcs-global
-  :ensure nil
+  :straight nil
   :after evil
   :config
   (global-set-key (kbd "M-e") 'hippie-expand)

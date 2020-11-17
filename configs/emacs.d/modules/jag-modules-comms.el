@@ -6,13 +6,13 @@
 
 (use-package jag-funcs-comms
   :defer t
-  :ensure nil
+  :straight nil
   :commands 'jag-decrypt-and-update-mail)
 
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
 
 (use-package mu4e
-  :ensure nil
+  :straight nil
   :commands 'mu4e
   :config
   (setq mu4e-get-mail-command "offlineimap")

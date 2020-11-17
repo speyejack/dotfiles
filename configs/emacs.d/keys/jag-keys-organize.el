@@ -84,7 +84,7 @@
    jag-org-schedule-capture
    jag-org-note-gtd
    jag-org-clock-select-task)
-  :ensure nil)
+  :straight nil)
 
 (provide 'jag-keys-organize)
 ;;; jag-keys-organize.el ends here

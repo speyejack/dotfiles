@@ -4,11 +4,6 @@
 ;; Adds the core packages used by Emacs config
 
 ;;; Code:
-(package-initialize)
-
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
 (defun jag-fix-verification ()
   "Download new gnu keys to fix package verification problem."
@@ -19,17 +14,28 @@
   (setq package-check-signature t)
   (error "Disabled security to install new keys.  Please restart"))
 
-;; Install use-package if not installed
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+;; Install straight.el, functional package manager
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
+(straight-use-package 'use-package)
 
 ;; Require use-package
 (eval-when-compile
   (require 'use-package))
 
 ;; Enabled ensure for everything
-(setq use-package-always-ensure t)
+(setq straight-use-package-by-default t)
 ;; (setq use-package-compute-statistics t)
 
 ;; gcmh

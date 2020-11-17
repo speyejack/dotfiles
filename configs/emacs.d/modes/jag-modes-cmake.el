@@ -6,7 +6,7 @@
 
 (use-package jag-funcs-cmake
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (use-package cmake-mode
   :commands cmake-mode

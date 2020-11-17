@@ -6,7 +6,7 @@
 
 (use-package jag-funcs-wm
   :commands 'jag-run-exwm
-  :ensure nil)
+  :straight nil)
 
 
 (provide 'jag-modules-wm)

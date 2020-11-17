@@ -6,7 +6,7 @@
 
 (use-package jag-funcs-docker-compose
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (use-package docker-compose-mode)
 

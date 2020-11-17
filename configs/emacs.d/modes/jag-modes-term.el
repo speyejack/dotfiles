@@ -6,11 +6,11 @@
 
 (use-package jag-funcs-term
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (use-package term
   :commands 'term
-  :ensure nil
+  :straight nil
   :config
   (evil-define-key '(motion normal) term-raw-map
 	(kbd "M-h") 'term-send-left

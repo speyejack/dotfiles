@@ -82,7 +82,7 @@
    jag-toggle-maximize-buffer
    jag-rotate-windows-forward
    jag-toggle-current-window-dedication)
-  :ensure nil)
+  :straight nil)
 
 
 (provide 'jag-keys-window)

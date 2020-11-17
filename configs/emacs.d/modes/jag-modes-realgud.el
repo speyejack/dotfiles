@@ -6,7 +6,7 @@
 
 (use-package jag-funcs-realgud
   :defer t
-  :ensure nil)
+  :straight nil)
 
 ;; realgud
 ;;

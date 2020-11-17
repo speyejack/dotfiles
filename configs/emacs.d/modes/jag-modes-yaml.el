@@ -6,7 +6,7 @@
 
 (use-package jag-funcs-yaml
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (use-package yaml-mode
   :commands 'yaml-mode)

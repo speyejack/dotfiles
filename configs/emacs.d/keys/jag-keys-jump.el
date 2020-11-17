@@ -36,7 +36,7 @@
   :commands
   (jag-avy-open-url
    jag-avy-goto-url)
-  :ensure nil)
+  :straight nil)
 
 
 

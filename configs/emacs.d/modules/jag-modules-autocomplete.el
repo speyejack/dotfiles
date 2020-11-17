@@ -74,7 +74,7 @@
 
 (use-package hippie-exp
   :defer t
-  :ensure nil ; built-in package
+  :straight nil ; built-in package
   :init
   (setq hippie-expand-verbose nil)
   (setq hippie-expand-try-functions-list

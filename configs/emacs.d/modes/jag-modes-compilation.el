@@ -7,7 +7,7 @@
 (use-package jag-funcs-compilation
   :after compile
   :defer t
-  :ensure nil
+  :straight nil
   :bind
   (:map compilation-mode-map
    ("SPC" . nil)

@@ -4,7 +4,7 @@
 
 ;;; Code:
 (use-package jag-funcs-org
-  :ensure nil
+  :straight nil
   :commands (jag--org-refile))
 
 (defun jag-agenda-list-filter ()

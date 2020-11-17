@@ -5,7 +5,7 @@
 ;;; Code:
 (use-package jag-funcs-hexl
   :defer t
-  :ensure nil
+  :straight nil
   :init
   (add-hook 'hexl-mode-hook
 			(lambda ()

@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package jag-funcs-org
-  :ensure nil
+  :straight nil
   :commands (jag-org-clock-item
 			 jag-child-refile-verify
 			 jag-org-note-item))

@@ -7,7 +7,7 @@
 (use-package jag-funcs-comint
   :after comint
   :defer t
-  :ensure nil
+  :straight nil
   :bind
    (:map comint-mode-map
    ("M-j" . 'comint-next-input)

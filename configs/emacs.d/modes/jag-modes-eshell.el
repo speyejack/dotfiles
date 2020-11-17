@@ -9,7 +9,7 @@
 ;; (add-to-list 'eshell-visual-commands "nmtui")
 
 (use-package jag-funcs-eshell
-  :ensure nil
+  :straight nil
   :commands 'jag--jump-eshell-prompt
   :init
   (evil-set-initial-state 'eshell-mode 'insert)

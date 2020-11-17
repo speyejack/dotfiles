@@ -6,7 +6,7 @@
 
 (use-package jag-funcs-julia
   :defer t
-  :ensure nil)
+  :straight nil)
 
 ;; julia-mode
 ;;

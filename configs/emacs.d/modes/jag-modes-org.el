@@ -134,7 +134,7 @@
   "ip" 'org-set-property)
 
 (use-package jag-funcs-org
-  :ensure nil
+  :straight nil
   :commands (jag-fix-org-pdf
 			 jag-org-open-heading-after-current
 			 jag-org-open-heading

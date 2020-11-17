@@ -21,7 +21,7 @@
 
 (use-package jag-funcs-compile
   :commands 'jag-close-compilation-window
-  :ensure nil)
+  :straight nil)
 
 (provide 'jag-keys-compile)
 

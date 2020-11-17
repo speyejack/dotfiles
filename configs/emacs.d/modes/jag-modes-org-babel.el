@@ -6,17 +6,17 @@
 
 (use-package jag-funcs-org-babel
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (use-package org-babel
   :defer t
-  :ensure org-plus-contrib
+  :straight org-plus-contrib
   :init
   (setq org-confirm-babel-evaluate nil))
 
 ;; Avoid `org-babel-do-load-languages' since it does an eager require.
 (use-package ob-emacs-lisp
-  :ensure nil
+  :straight nil
   :commands
   (org-babel-execute:elisp
    org-babel-expand-body:elisp
@@ -25,14 +25,14 @@
    org-babel-expand-body:emacs-lisp))
 
 (use-package ob-python
-  :ensure nil
+  :straight nil
   :commands
   (org-babel-execute:python)
   :config
   (setq org-babel-python-command "python3"))
 
 (use-package ob-shell
-  :ensure nil
+  :straight nil
   :commands
   (org-babel-execute:sh
    org-babel-expand-body:sh
@@ -41,16 +41,16 @@
    org-babel-expand-body:bash))
 
 (use-package ob-plantuml
-  :ensure nil
+  :straight nil
   :commands
   (org-babel-execute:plantuml)
   :config
-  (use-package jag-modes-plantuml
-	:ensure nil)
+  ;; (use-package jag-modes-plantuml
+  ;; 	:straight nil)
   (setq org-plantuml-jar-path (expand-file-name "/usr/share/plantuml/plantuml.jar")))
 
 (use-package ob-gnuplot
-  :ensure nil
+  :straight nil
   :commands
   (org-babel-execute:gnuplot)
   :config

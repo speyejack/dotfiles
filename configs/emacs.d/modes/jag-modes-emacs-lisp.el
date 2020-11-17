@@ -7,7 +7,7 @@
 
 (use-package jag-funcs-emacs-lisp
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (use-package lispy
   :commands (lispy-forward lispy-backward lispy-right lispy-left))

@@ -6,10 +6,10 @@
 
 (use-package jag-funcs-help
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (use-package help
-  :ensure nil
+  :straight nil
   :bind (:map help-mode-map
 		 ("SPC" . nil)
 		 ("h" . nil)

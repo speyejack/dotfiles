@@ -59,7 +59,7 @@
  "V" 'vimgolf-browse)
 
 (use-package jag-funcs-application
-  :ensure nil
+  :straight nil
   :commands 'jag-create-new-eshell)
 
 

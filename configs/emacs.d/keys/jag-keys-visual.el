@@ -10,7 +10,7 @@
 
 (use-package jag-funcs-visual
   :defer t
-  :ensure nil
+  :straight nil
   :commands (jag-stickyfunc-mode
 			 jag-whitespace-mode))
 

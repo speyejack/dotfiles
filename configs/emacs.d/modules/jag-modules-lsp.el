@@ -6,7 +6,7 @@
 
 (use-package jag-funcs-lsp
   :defer t
-  :ensure nil)
+  :straight nil)
 
 ;; lsp-mode
 ;;
@@ -89,14 +89,14 @@
 ;; Source: https://github.com/emacs-lsp/dap-mode
 (use-package dap-ui
   :after dap-mode
-  :ensure nil
+  :straight nil
   :config
   (dap-ui-mode))
 
 (use-package dap-hydra
   :after dap-mode
   :commands 'dap-hydra
-  :ensure nil
+  :straight nil
   :bind
   (:map dap-hydra/keymap
    ("M-j" . dap-hydra/dap-next)

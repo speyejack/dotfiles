@@ -6,7 +6,7 @@
 
 (use-package jag-funcs-gdb
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (setq gdb-show-main t)
 (add-hook 'gdb-mode-hook

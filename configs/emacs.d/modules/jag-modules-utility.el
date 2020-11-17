@@ -67,7 +67,7 @@
 ;; Source: https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs-Sessions.html
 
 (use-package desktop
-  :ensure nil
+  :straight nil
   :commands (desktop-read desktop-save)
   :diminish)
 

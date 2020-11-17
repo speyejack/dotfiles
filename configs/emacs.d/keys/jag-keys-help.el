@@ -43,7 +43,7 @@
    jag-describe-keymap
    jag-describe-last-keys
    jag-describe-system-info)
-  :ensure nil)
+  :straight nil)
 
 
 (provide 'jag-keys-help)

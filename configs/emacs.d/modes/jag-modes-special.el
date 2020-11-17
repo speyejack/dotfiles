@@ -6,7 +6,7 @@
 
 (use-package jag-funcs-special
   :defer t
-  :ensure nil
+  :straight nil
   :bind
   (:map special-mode-map
    ("l" . 'forward-char)

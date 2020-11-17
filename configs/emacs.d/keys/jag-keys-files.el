@@ -43,7 +43,7 @@
 
 
 (use-package jag-funcs-configuring
-  :ensure nil
+  :straight nil
   :commands
   (jag-new-func-module
    jag-new-general-module
@@ -51,7 +51,7 @@
    jag-new-mode-module))
 
 (use-package jag-funcs-files
-  :ensure nil
+  :straight nil
   :commands
   (jag-copy-file
    jag-unix2dos

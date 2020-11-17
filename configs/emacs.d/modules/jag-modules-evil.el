@@ -7,7 +7,7 @@
 
 (use-package jag-funcs-evil
   :defer t
-  :ensure nil
+  :straight nil
   :commands (jag-evil-reformat-buffer
 			 jag-goto-middle-of-line
 			 jag-evil-next-visual-line-5

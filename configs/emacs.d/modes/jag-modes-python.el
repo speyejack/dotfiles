@@ -43,7 +43,7 @@
 (add-hook 'python-mode-hook 'lsp)
 
 (use-package jag-funcs-python
-  :ensure nil
+  :straight nil
   :defer t
   :init
   (setq python-shell-interpreter "python3"))

@@ -7,7 +7,7 @@
 ;;; Code:
 (use-package jag-funcs-leader
   :defer t
-  :ensure nil
+  :straight nil
   :commands (jag-evil-eval jag-evil-eval-whole-buffer jag-evil-reformat-buffer))
 
 (jag-define-keys jag-leader-map

@@ -44,7 +44,7 @@
    (list
 	"(use-package %2$s"
 	"  :defer t"
-	"  :ensure nil)"
+	"  :straight nil)"
 	""
 	"(use-package %1$s"
 	"    )"))
@@ -57,7 +57,7 @@ The template will be formatted with (format template func-module)")
    (list
 	"(use-package %2$s"
 	"  :defer t"
-	"  :ensure nil)"
+	"  :straight nil)"
 	""
 	"(use-package %1$s"
 	"    )"))
@@ -75,7 +75,7 @@ The template will be formatted with (format template name func-module)")
 	" '((\"%3$s\" \"%1$s\")))"
 	""
 	"(use-package %2$s"
-	"  :ensure nil"
+	"  :straight nil"
 	"  :bind"
 	"  (:map jag-%1$s-map"
 	""

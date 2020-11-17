@@ -12,7 +12,7 @@
 
 (use-package pip-requirements
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (provide 'jag-modes-pip)
 ;;; jag-modes-pip.el ends here

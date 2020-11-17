@@ -6,11 +6,11 @@
 
 (use-package jag-funcs-ibuffer
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (use-package ibuffer
   :defer t
-  :ensure nil
+  :straight nil
   :bind
   (:map ibuffer-mode-map
    ("j" . 'evil-next-visual-line)

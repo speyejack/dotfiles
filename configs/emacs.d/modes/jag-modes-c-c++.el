@@ -6,7 +6,7 @@
 
 (use-package jag-funcs-c-c++
   :defer t
-  :ensure nil
+  :straight nil
   :commands 'jag-start-realgud-gdb
   :init
   (defcustom jag-realgud-gdb-command
@@ -40,7 +40,7 @@ Normally for the purpose of being used with dir locals to have a default method 
 
 (use-package dap-lldb
   :after dap-mode
-  :ensure nil
+  :straight nil
   :after (cc-mode)
   :config
   (setq dap-lldb-debug-program '("/home/jack/.vscode/extensions/llvm-org.lldb-vscode-0.1.0/bin/lldb-vscode")))

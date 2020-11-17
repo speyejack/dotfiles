@@ -9,7 +9,7 @@
 (use-package jag-funcs-project
   :defer t
   :commands 'jag-helm-projectile-search
-  :ensure nil)
+  :straight nil)
 
 (jag-create-sub-leader-map jag-leader-map "p" "project")
 

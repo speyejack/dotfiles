@@ -90,7 +90,7 @@
    jag-sort-lines
    jag-uniquify-lines
    jag-count-words-analysis)
-  :ensure nil)
+  :straight nil)
 
 (provide 'jag-keys-text)
 

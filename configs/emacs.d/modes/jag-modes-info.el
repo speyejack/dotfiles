@@ -6,11 +6,11 @@
 
 (use-package jag-funcs-info
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (use-package info
   :defer t
-  :ensure nil
+  :straight nil
   :bind (:map Info-mode-map
 		 ("M-L" . 'Info-history-forward)
 		 ("M-H" . 'Info-history-back)

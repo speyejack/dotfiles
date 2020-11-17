@@ -21,7 +21,7 @@
    ("d g"   "peek")))
 
 (use-package jag-funcs-lsp
-  :ensure nil)
+  :straight nil)
 
 (jag-define-keys
  jag-lsp-map

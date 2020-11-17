@@ -11,7 +11,7 @@
 ;; Source: https://www.gnu.org/software/emacs/manual/html_node/emacs/Starting-GUD.html#Starting-GUD
 
 (use-package jag-funcs-gud
-  :ensure nil
+  :straight nil
   :commands 'jag-gud-quit)
 
 (use-package gud

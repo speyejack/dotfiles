@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package eshell
-  :ensure nil
+  :straight nil
   :commands 'eshell/cat)
 
 (defun jag--begin-decrypt-mail-pass ()

@@ -18,14 +18,14 @@
 
 (use-package jag-funcs-buffer
   :commands (jag-copy-whole-buffer-to-clipboard)
-  :ensure nil)
+  :straight nil)
 
 (use-package jag-funcs-yank
   :commands
   (jag-yank-directory-path
    jag-yank-file-path
    jag-yank-last-message)
-  :ensure nil)
+  :straight nil)
 
 (provide 'jag-keys-yank)
 ;;; jag-keys-yank.el ends here

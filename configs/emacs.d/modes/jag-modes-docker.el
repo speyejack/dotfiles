@@ -6,7 +6,7 @@
 
 (use-package jag-funcs-docker
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (use-package docker
   :commands 'docker)

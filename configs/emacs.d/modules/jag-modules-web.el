@@ -31,6 +31,7 @@
 ;; Source: https://github.com/hrs/engine-mode
 
 (use-package engine-mode
+  :straight (:branch "main")
   :defer t
   :commands
   (engine/search-github

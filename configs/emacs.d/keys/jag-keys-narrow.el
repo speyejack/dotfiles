@@ -36,7 +36,7 @@
    jag-close-folds
    jag-toggle-fold
    jag-open-fold-recursively)
-  :ensure nil)
+  :straight nil)
 
 
 (provide 'jag-keys-narrow)

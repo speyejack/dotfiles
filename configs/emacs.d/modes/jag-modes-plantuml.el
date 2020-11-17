@@ -6,7 +6,7 @@
 
 (use-package jag-funcs-plantuml
   :defer t
-  :ensure nil)
+  :straight nil)
 
 (use-package plantuml-mode)
 
