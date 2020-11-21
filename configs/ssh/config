@@ -22,3 +22,12 @@ Host monsoon
 	User jg2562
 	HostName monsoon.hpc.nau.edu
 	IdentityFile ~/.ssh/id_nau
+
+Host cerberus
+	User jack
+	HostName 10.100.99.1
+
+Host athena
+	User jack
+	HostName 10.100.99.5
+	ForwardX11 yes
