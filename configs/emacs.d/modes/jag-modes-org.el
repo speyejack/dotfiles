@@ -225,9 +225,9 @@
 			 (file ,inbox-file)
 			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\n" :clock-in t :clock-keep t :kill-buffer t)
 
-			("j" "Journal entry" entry
+			("j" "Journal entry" plain
 			 (function jag-org-journal-find-location)
-			 "** %(format-time-string org-journal-time-format)%i%?\n" :kill-buffer t)))
+			 "** %(format-time-string org-journal-time-format)\n%i%?\n" :kill-buffer t)))
 
 	(add-hook 'org-clock-in-hook #'org-save-all-org-buffers)
 	(add-hook 'org-clock-out-hook #'org-save-all-org-buffers)
@@ -424,9 +424,11 @@
   :commands 'org-journal-new-entry
   :custom
   (org-journal-dir jag-notes-library-dir)
-  (org-journal-date-prefix "#+TITLE: ")
+  (org-journal-file-type 'weekly)
+  (org-journal-file-header "#+title: %F")
+  (org-journal-date-prefix "* ")
   (org-journal-file-format "%Y-%m-%d.org")
-  (org-journal-date-format "%A, %B %d %Y"))
+  (org-journal-date-format "%A, %B %e %Y"))
 
 ;; org-roam
 ;;

@@ -90,7 +90,9 @@ SELECT is passed to org-clock-in"
   (org-journal-new-entry t)
   ;; Position point on the journal's top-level heading so that org-capture
   ;; will add the new entry as a child entry.
-  (goto-char (point-min)))
+  (unless (eq org-journal-file-type 'daily)
+    (org-narrow-to-subtree))
+  (goto-char (point-max)))
 
 (defun jag-org-ref-doi-from-url (url)
   "Take in a URL and parse to doi out of it."
