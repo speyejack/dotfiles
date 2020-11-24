@@ -6,3 +6,4 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 cp ~/.ssh/* $SCRIPTPATH
 rm -r ~/.ssh
 ln -s -r $SCRIPTPATH ~/.ssh
+./setup.sh

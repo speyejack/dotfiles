@@ -30,6 +30,8 @@ configs/ssh/*
 
 # Keep SSH config
 !configs/ssh/config
+!configs/ssh/setup.sh
+!configs/ssh/install.sh
 
 # i3 ignores
 configs/i3/i3startup
