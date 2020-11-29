@@ -148,4 +148,4 @@ function change-cursor(){
 
 # Less mode time to switch modes, may cause bugs
 export KEYTIMEOUT=10
-
+export TERMINAL=alacritty
