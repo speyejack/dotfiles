@@ -275,6 +275,11 @@ assign [class="^[Ff]irefox"] → 3
 new_window 1pixel
 new_float 1pixel
 
+for_window [class=".*"] border pixel 0
+smart_gaps on
+gaps inner 5
+gaps outer 0
+
 exec --no-startup-id $i3_path/i3startup
 
 # TODO: check this repo for ideas:
