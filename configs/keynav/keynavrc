@@ -1,0 +1,42 @@
+clear
+
+super+space start, grid 3x3, windowzoom, warp
+super+shift+space start, grid 3x3, warp
+Escape end, start, grid 10x10, cell-select 5x10, cell-select 10x10, cell-select 10x10, cell-select 10x10, warp, end
+q end, start, grid 10x10, cell-select 5x10, cell-select 10x10, cell-select 10x10, cell-select 10x10, warp, end
+Return end
+
+w cell-select 1x1, warp
+e cell-select 2x1, warp
+r cell-select 3x1, warp
+s cell-select 1x2, warp
+d cell-select 2x2, warp
+f cell-select 3x2, warp
+x cell-select 1x3, warp
+c cell-select 2x3, warp
+v cell-select 3x3, warp
+
+BackSpace history-back
+space history-back, history-back, history-back, history-back, history-back, history-back, history-back, history-back, history-back, history-back, history-back, history-back, history-back, history-back, history-back, history-back, history-back, history-back, history-back, history-back, warp
+a history-back, warp
+
+semicolon warp
+h warp, click 6, click 6, click 6, click 6
+j warp, click 5, click 5, click 5, click 5
+k warp, click 4, click 4, click 4, click 4
+l warp, click 7, click 7, click 7, click 7
+ctrl+h warp, click 6
+ctrl+j warp, click 5
+ctrl+k warp, click 4
+ctrl+l warp, click 7
+
+u warp, click 1
+i warp, click 3
+o warp, click 2
+shift+u warp, doubleclick 1
+shift+i warp, doubleclick 3
+shift+o warp, doubleclick 2
+y warp, drag 1
+shift+y warp, drag 1 shift
+ctrl+y warp, drag 1 ctrl
+ctrl+shift+y warp, drag 1 ctrl+shift
