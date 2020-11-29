@@ -269,7 +269,7 @@ hide_edge_borders both
 assign [class="^Emacs"] → 1
 assign [class="^Gnome-terminal"] → 2
 assign [class="^Google-chrome"] → 3
-assign [class="^Firefox"] → 3
+assign [class="^[Ff]irefox"] → 3
 
 # Just don't let windows have edges at all!
 new_window 1pixel
