@@ -26,7 +26,8 @@
  "F" 'helm-semantic-or-imenu
  "k" 'xref-find-definitions
  "K" 'xref-find-references
- "s" 'xref-find-apropos
+ "S" 'xref-find-apropos
+ "s" 'helm-lsp-workspace-symbol
  "d" 'dumb-jump-go
  "D" 'dumb-jump-back
  "G" 'evil-window-bottom
