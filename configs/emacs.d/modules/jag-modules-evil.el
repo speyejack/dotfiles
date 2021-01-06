@@ -171,6 +171,17 @@
   :diminish
   :commands (evil-commentary evil-commentary-yank))
 
+;; evil-easymotion
+;;
+;; A port of vim easymotion to Emacs' evil-mode
+;;
+;; Source: https://github.com/PythonNut/evil-easymotion
+(use-package evil-easymotion
+  :diminish
+  :config
+  (jag-define-keys jag-leader-map
+  "z" evilem-map))
+
 ;; evil-exchange
 ;;
 ;; Exchange text more easily within Evil
