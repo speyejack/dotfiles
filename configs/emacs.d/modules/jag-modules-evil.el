@@ -28,6 +28,7 @@
 
   :custom
   (evil-want-Y-yank-to-eol t "Make Y yank full lines")
+  (evil-undo-system 'undo-tree)
 
   :config
   (evil-define-key '(normal visual motion) 'global

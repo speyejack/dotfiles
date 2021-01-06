@@ -49,8 +49,8 @@
 	(kbd "gV") 'evil-operator-highlight
 	(kbd "go") 'evil-operator-org-capture
 	(kbd "gR") 'evil-operator-remember
-	(kbd "u")   'undo-tree-undo
-	(kbd "U")   'undo-tree-redo
+	(kbd "u")  'evil-undo
+	(kbd "U")  'evil-redo
 	(kbd "gc") 'evil-commentary
 	(kbd "gy") 'evil-commentary-yank
 	(kbd "gx") 'evil-exchange
