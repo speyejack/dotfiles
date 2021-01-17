@@ -4,6 +4,7 @@ super+space start, grid 3x3, windowzoom, warp
 super+shift+space start, grid 3x3, warp
 Escape end, start, grid 10x10, cell-select 5x10, cell-select 10x10, cell-select 10x10, cell-select 10x10, warp, end
 q end, start, grid 10x10, cell-select 5x10, cell-select 10x10, cell-select 10x10, cell-select 10x10, warp, end
+Tab end, start, grid 10x10, cell-select 5x10, cell-select 10x10, cell-select 10x10, cell-select 10x10, warp, end
 Return end
 
 w cell-select 1x1, warp
