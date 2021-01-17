@@ -75,7 +75,7 @@
    ("K" . 'undo-tree-visualize-undo-to-x))
   :diminish 'undo-tree-mode
   :config
-  (add-hook 'text-mode-hook 'undo-tree-mode)
+  (global-undo-tree-mode)
   (evil-make-overriding-map undo-tree-visualizer-mode-map))
 
 ;; evil-escape
