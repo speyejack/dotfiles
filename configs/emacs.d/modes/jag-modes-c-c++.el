@@ -43,7 +43,7 @@ Normally for the purpose of being used with dir locals to have a default method 
   :straight nil
   :after (cc-mode)
   :config
-  (setq dap-lldb-debug-program '("/home/jack/.vscode/extensions/llvm-org.lldb-vscode-0.1.0/bin/lldb-vscode")))
+  (setq dap-lldb-debug-program '("/usr/bin/lldb-vscode")))
 
 (use-package disaster
   :commands 'disaster
