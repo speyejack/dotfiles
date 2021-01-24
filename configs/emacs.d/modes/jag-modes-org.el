@@ -328,6 +328,14 @@
 
   (require 'jag-modes-org-babel))
 
+(use-package org-transclusion
+  :straight (org-transclusion
+			 :type git :host github :branch "main"
+			 :repo "nobiot/org-transclusion")
+  :diminish
+  :after org)
+
+
 ;; org-bullets
 ;;
 ;; Show bullets in org-mode as UTF-8 characters
