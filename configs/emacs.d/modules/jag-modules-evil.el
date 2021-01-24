@@ -284,6 +284,15 @@
   :config
   (evil-ediff-init))
 
+;; evil-easymotion
+;;
+;; A port of vim easymotion to Emacs' evil-mode
+;;
+;; Source: https://github.com/PythonNut/evil-easymotion
+
+(use-package evil-easymotion
+  :after evil)
+
 ;; evil-iedit-state
 ;;
 ;; Evil states to interface iedit mode.
