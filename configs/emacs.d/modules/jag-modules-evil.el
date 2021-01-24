@@ -75,7 +75,7 @@
    ("K" . 'undo-tree-visualize-undo-to-x))
   :diminish 'undo-tree-mode
   :config
-  (global-undo-tree-mode)
+  (global-undo-tree-mode t)
   (evil-make-overriding-map undo-tree-visualizer-mode-map))
 
 ;; evil-escape
