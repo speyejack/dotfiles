@@ -14,7 +14,9 @@
           (lambda ()
             (setq indent-tabs-mode t)
             (setq tab-width (default-value 'tab-width))
-			(setq python-indent-offset 4)))
+			(setq python-indent-offset 4)
+			(setq dap-python-debugger 'debugpy)
+			(setq dap-python-executable "python3")))
 
 (jag-declare-prefix-for-mode 'python-mode "t" "pytest")
 (jag-declare-prefix-for-mode 'python-mode "tp" "pytest-pdb")
