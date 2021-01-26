@@ -294,7 +294,8 @@
 								 ("HOLD" . "yellow green")
 								 ("INTERRUPTED" . "forest green")))
 
-  (setq org-startup-indented 1)
+  (setq org-startup-indented t)
+  (setq org-startup-folded t)
   (setq org-list-allow-alphabetical t)
   (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
   (setq org-export-with-section-numbers nil)
