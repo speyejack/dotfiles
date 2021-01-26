@@ -45,6 +45,7 @@
  "cy" 'org-clock-out
  "cc" 'jag-org-clock-select-task
 
+ "j" 'jag-org-goto-project
  "k" 'org-roam-find-file
  "Kk" 'org-roam
  "Kb" 'org-roam-build-cache
@@ -85,6 +86,11 @@
    jag-org-note-gtd
    jag-org-clock-select-task)
   :straight nil)
+
+(use-package jag-funcs-org
+  :straight nil
+  :commands
+  (jag-org-goto-project))
 
 (provide 'jag-keys-organize)
 ;;; jag-keys-organize.el ends here

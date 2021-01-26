@@ -3,6 +3,10 @@
 ;;; Commentary:
 
 ;;; Code:
+(defun jag-org-goto-project ()
+  "Jump to header within GTD directory."
+  (interactive)
+  (jag-org-goto-target-item jag-org-refile-min-targets nil))
 
 (defun jag-fix-org-pdf ()
   "Fix errors with org pdf export."
@@ -37,8 +41,31 @@
 					  (plist-get org-format-latex-options :scale))))
   (setq org-format-latex-options (plist-put org-format-latex-options :scale scale)))
 
-(defun jag--org-goto-target-item (func target &optional filter-function)
-  "Select org header from TARGET and FILTER-FUNCTION to call FUNC on.
+(defun jag--org-find-target-item (target &optional filter-function)
+  "Find org header found with TARGET and FILTER-FUNCTION.
+
+TARGET follows the same structure used in `org-refile-targets'.
+FILTER-FUNCTION is used to filter refile results"
+	   (let ((org-refile-targets target)
+			 (org-refile-target-verify-function filter-function))
+		 (org-refile-get-location)))
+
+(defun jag--org-call-on-target-item (func target &optional filter-function)
+  "Call FUNC on org header found with TARGET and FILTER-FUNCTION.
+
+TARGET follows the same structure used in `org-refile-targets'.
+FILTER-FUNCTION is used to filter refile results"
+  (let* ((loc (jag--org-find-target-item target filter-function))
+		 (file (nth 1 loc))
+		 (pos (nth 3 loc)))
+	(with-current-buffer (or (find-buffer-visiting file)
+							 (find-file-noselect file))
+	  (save-excursion
+		(goto-char pos)
+		(funcall func)))))
+
+(defun jag-org-goto-target-item (target &optional filter-function)
+  "Goto org header from TARGET and FILTER-FUNCTION to call FUNC on.
 
 TARGET follows the same structure used in `org-refile-targets'.
 FILTER-FUNCTION is used to filter refile results
@@ -48,15 +75,12 @@ SELECT is passed to org-clock-in"
 		 (loc (org-refile-get-location))
 		 (file (nth 1 loc))
 		 (pos (nth 3 loc)))
-	(with-current-buffer (or (find-buffer-visiting file)
-							 (find-file-noselect file))
-	  (save-excursion
-		(goto-char pos)
-		(funcall func)))))
+  (find-file file)
+  (goto-char pos)))
 
 (defun jag-org-note-item (target &optional filter-function)
   "Create a note on an org header in TARGET and FILTER-FUNCTION."
-  (jag--org-goto-target-item
+  (jag--org-call-on-target-item
    'org-add-note
    target filter-function))
 
@@ -66,7 +90,7 @@ SELECT is passed to org-clock-in"
 TARGET follows the same structure used in `org-refile-targets'.
 GOTO is passed to `org-capture`.
 FILTER-FUNCTION is used to filter down targets."
-  (jag--org-goto-target-item
+  (jag--org-call-on-target-item
    (lambda ()
 	 (call-interactively 'org-store-link)
 	 (org-capture goto template))
@@ -78,7 +102,7 @@ FILTER-FUNCTION is used to filter down targets."
 TARGET follows the same structure used in `org-refile-targets'.
 FILTER-FUNCTION is used to filter refile results
 SELECT is passed to org-clock-in"
-  (jag--org-goto-target-item
+  (jag--org-call-on-target-item
    (lambda ()
 	 (org-clock-in select))
    target filter-function))

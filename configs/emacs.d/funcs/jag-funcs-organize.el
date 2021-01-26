@@ -8,7 +8,9 @@
   :straight nil
   :commands (jag-org-clock-item
 			 jag-child-refile-verify
-			 jag-org-note-item))
+			 jag-org-note-item
+			 jag-org-goto-target-item))
+
 
 (defun jag--quick-org-task-capture (&optional goto)
   "Capture a task with my default template."
