@@ -76,7 +76,11 @@ SELECT is passed to org-clock-in"
 		 (file (nth 1 loc))
 		 (pos (nth 3 loc)))
   (find-file file)
-  (goto-char pos)))
+  (goto-char pos)
+  (while (org-invisible-p (point) t)
+	(outline-previous-visible-heading 1)
+	(show-children)
+	(goto-char pos))))
 
 (defun jag-org-note-item (target &optional filter-function)
   "Create a note on an org header in TARGET and FILTER-FUNCTION."
