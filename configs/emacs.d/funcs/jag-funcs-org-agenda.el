@@ -71,7 +71,6 @@
   "Process inbox item in agenda mode."
   (interactive)
   (org-with-wide-buffer
-   (org-agenda-set-tags)
    (org-agenda-set-effort)
    (jag-org-agenda-refile)))
 
