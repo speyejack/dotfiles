@@ -130,12 +130,12 @@
 ;; Source: https://github.com/Dewdrops/evil-extra-operator
 
 (use-package evil-extra-operator
-  :commands (evil-operator-eval
+  :commands (evil-extra-operator-mode
+			 evil-operator-eval
 			 evil-operator-fold
 			 evil-operator-highlight
 			 evil-operator-org-capture
 			 evil-operator-remember)
-  :defer t
   :custom
   (evil-extra-operator-eval-modes-alist
    '((emacs-lisp-mode eval-region)

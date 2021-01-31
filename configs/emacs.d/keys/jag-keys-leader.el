@@ -8,7 +8,9 @@
 (use-package jag-funcs-leader
   :defer t
   :straight nil
-  :commands (jag-evil-eval jag-evil-eval-whole-buffer jag-evil-reformat-buffer))
+  :commands (jag-evil-eval jag-evil-eval-whole-buffer jag-evil-reformat-buffer)
+  :config
+  (evil-extra-operator-mode 1))
 
 (jag-define-keys jag-leader-map
   jag-leader-key 'helm-M-x
