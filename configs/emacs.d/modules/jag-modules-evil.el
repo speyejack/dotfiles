@@ -147,7 +147,8 @@
 	 (ruby-mode ruby-send-region)
 	 (enh-ruby-mode ruby-send-region)
 	 (python-mode python-shell-send-region)
-	 (julia-mode julia-shell-run-region))))
+	 (julia-mode julia-shell-run-region)
+	 (ess-r-mode jag-ess-eval-region))))
 
 ;; evil-args
 ;;
