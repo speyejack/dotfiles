@@ -261,6 +261,18 @@
 			(,tickler-file :maxlevel . 5)
 			(,someday-file :maxlevel . 5)))
 
+	(setq jag-org-jump-min-targets
+		  `((,inbox-file :maxlevel . 5)
+			(,gtd-file :maxlevel . 5)
+			(,tickler-file :maxlevel . 5)
+			(,someday-file :maxlevel . 5)))
+
+	(setq jag-org-jump-max-targets
+		  `((,inbox-file :maxlevel . 5)
+			(,gtd-file :maxlevel . 5)
+			(,tickler-file :maxlevel . 5)
+			(,someday-file :maxlevel . 5)))
+
 	(setq org-tag-alist '(("@errand" . ?e)
 						  ("@work" . ?o)
 						  ("@home" . ?h)

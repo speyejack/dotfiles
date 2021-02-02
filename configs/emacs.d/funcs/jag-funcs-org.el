@@ -6,7 +6,7 @@
 (defun jag-org-goto-project ()
   "Jump to header within GTD directory."
   (interactive)
-  (jag-org-goto-target-item jag-org-refile-min-targets nil))
+  (jag-org-goto-target-item jag-org-jump-min-targets nil))
 
 (defun jag-fix-org-pdf ()
   "Fix errors with org pdf export."
