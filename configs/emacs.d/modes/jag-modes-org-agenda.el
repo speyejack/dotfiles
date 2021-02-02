@@ -58,6 +58,7 @@
 
 	"r" 'jag-org-agenda-refile-inbox
 	"R" 'jag-org-agenda-refile
+	"C-r" 'jag-org-agenda-refile-all
 
 	"u" 'org-agenda-undo
 
