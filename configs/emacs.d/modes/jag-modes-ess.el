@@ -17,9 +17,20 @@
 
 (jag-define-leader-keys-for-major-mode
  'ess-r-mode
+ "j" 'polymode-next-chunk-same-type
+ "J" 'polymode-next-chunk
+ "k" 'polymode-previous-chunk-same-type
+ "K" 'polymode-previous-chunk
+ "e" 'polymode-eval-chunk
+ "M" 'ess-switch-to-end-of-ESS
+ "m" 'ess-switch-to-inferior-or-script-buffer
  "n" 'jag-polymode-eval-chunk-and-step
  "N" 'polymode-next-chunk-same-type
  "b" 'polymode-eval-buffer)
+
+(jag-define-leader-keys-for-major-mode
+ 'inferior-ess-mode
+ "m" 'ess-switch-to-inferior-or-script-buffer)
 
 
 (provide 'jag-modes-ess)
