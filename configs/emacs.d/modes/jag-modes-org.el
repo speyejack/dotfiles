@@ -211,11 +211,11 @@
 
 			("d" "Due [inbox]" entry
 			 (file ,inbox-file)
-			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\nDEADLINE: %^{Due Date}t\n" :kill-buffer t)
+			 "* TODO %i%?\nDEADLINE: %^{Due Date}t\n:PROPERTIES:\n:Captured: %U\n:END:\n" :kill-buffer t)
 
 			("s" "Schedule [inbox]" entry
 			 (file ,inbox-file)
-			 "* TODO %i%?\n:PROPERTIES:\n:Captured: %U\n:END:\nSCHEDULED: %^{Schedule Date}t\n" :kill-buffer t)
+			 "* TODO %i%?\nSCHEDULED: %^{Schedule Date}t\n:PROPERTIES:\n:Captured: %U\n:END:\n" :kill-buffer t)
 
 			("i" "Interrupt" entry
 			 (file ,inbox-file)
