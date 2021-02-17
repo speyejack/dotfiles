@@ -37,6 +37,16 @@
   :config
   (add-hook 'prog-mode-hook 'auto-highlight-symbol-mode))
 
+;; default-text-scale
+;;
+;; Easily adjust the font size in all Emacs frames
+;;
+;; Source: https://github.com/purcell/default-text-scale
+
+(use-package default-text-scale
+  :commands (default-text-scale-increase default-text-scale-decrease)
+  :diminish)
+
 ;; centered-cursor-mode
 ;;
 ;; cursor stays vertically centered

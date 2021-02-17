@@ -51,7 +51,8 @@
  "v" nil
  "w" 'ace-window
  "y" 'other-frame
- "z" nil)
+ "z" nil
+ "Z" nil)
 
 (defhydra jag-window-resize
   (jag-window-map "v")
@@ -65,8 +66,15 @@
 (defhydra jag-window-zoom
   (jag-window-map "z")
   "zoom"
-  ("j" text-scale-decrease "out")
-  ("k" text-scale-increase "in")
+  ("j" text-scale-decrease "zoom out")
+  ("k" text-scale-increase "zoom in")
+  ("q" nil "quit"))
+
+(defhydra jag-window-zoom-global
+  (jag-window-map "Z")
+  "global zoom"
+  ("j" default-text-scale-decrease "zoom out")
+  ("k" default-text-scale-increase "zoom in")
   ("q" nil "quit"))
 
 (use-package jag-funcs-window
