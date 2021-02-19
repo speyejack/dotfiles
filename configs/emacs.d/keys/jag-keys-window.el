@@ -64,14 +64,14 @@
   ("q" nil "quit"))
 
 (defhydra jag-window-zoom
-  (jag-window-map "z")
+  (jag-window-map "Z")
   "zoom"
   ("j" text-scale-decrease "zoom out")
   ("k" text-scale-increase "zoom in")
   ("q" nil "quit"))
 
 (defhydra jag-window-zoom-global
-  (jag-window-map "Z")
+  (jag-window-map "z")
   "global zoom"
   ("j" default-text-scale-decrease "zoom out")
   ("k" default-text-scale-increase "zoom in")
