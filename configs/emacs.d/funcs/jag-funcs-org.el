@@ -193,5 +193,9 @@ SELECT is passed to org-clock-in"
   "Update all parent statistics cookies."
   (jag--org-apply-to-parents (lambda () (org-update-statistics-cookies nil))))
 
+(defun jag--org-get-effort ()
+  "Get effort from org header at position."
+  (get-text-property 0 'effort-minutes (org-get-at-bol 'txt)))
+
 (provide 'jag-funcs-org)
 ;;; jag-funcs-org.el ends here

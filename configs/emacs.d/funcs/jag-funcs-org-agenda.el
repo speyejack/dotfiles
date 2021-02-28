@@ -5,7 +5,7 @@
 ;;; Code:
 (use-package jag-funcs-org
   :straight nil
-  :commands (jag--org-refile))
+  :commands (jag--org-refile jag--org-get-effort))
 
 (defun jag-agenda-list-filter ()
   "The filter used for the list on the main agenda."
@@ -71,7 +71,8 @@
   "Process inbox item in agenda mode."
   (interactive)
   (org-with-wide-buffer
-   (org-agenda-set-effort)
+   (when (eq (jag--org-get-effort) nil)
+	 (org-agenda-set-effort))
    (jag-org-agenda-refile)))
 
 (provide 'jag-funcs-org-agenda)
