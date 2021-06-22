@@ -28,6 +28,8 @@
  "K" 'xref-find-references
  "S" 'xref-find-apropos
  "s" 'helm-lsp-workspace-symbol
+ "r" 'lsp-ui-peek-find-references
+ "R" 'lsp-find-references
  "d" 'dumb-jump-go
  "D" 'dumb-jump-back
  "G" 'evil-window-bottom
