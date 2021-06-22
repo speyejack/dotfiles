@@ -61,7 +61,7 @@
 (use-package smart-tabs-mode
   :init
   :demand
-  (smart-tabs-insinuate'c 'javascript 'c++ 'java 'python 'nxml)
+  (smart-tabs-insinuate 'c 'javascript 'c++ 'java 'python 'nxml)
   :diminish)
 
 (provide 'jag-modules-emacs)
