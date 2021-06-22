@@ -185,6 +185,7 @@
 ;; Source: https://github.com/JorisE/yapfify
 
 (use-package yapfify
+  :disabled t
   :hook (python-mode . yapf-mode)
   :diminish yapf-mode)
 
