@@ -118,5 +118,14 @@
   :disabled t
   :diminish)
 
+;; lsp-haskell
+;;
+;; Successor of ghcide & haskell-ide-engine. One IDE to rule them all.
+;;
+;; Source: https://github.com/haskell/haskell-language-server
+
+(use-package lsp-haskell
+  :diminish)
+
 (provide 'jag-modes-haskell)
 ;;; jag-modes-haskell.el ends here
