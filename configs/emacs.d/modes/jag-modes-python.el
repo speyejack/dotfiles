@@ -160,7 +160,6 @@
 ;; Source: https://github.com/jorgenschaefer/pyvenv
 
 (use-package pyvenv
-  :disabled t
   :diminish
   :config
   (pyvenv-mode 1))
