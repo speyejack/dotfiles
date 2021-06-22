@@ -13,6 +13,8 @@
 (add-hook 'python-mode-hook
           (lambda ()
             (setq indent-tabs-mode t)
+			(lsp)
+			(require 'dap-python)
             (setq tab-width (default-value 'tab-width))
 			(setq python-indent-offset 4)
 			(setq dap-python-debugger 'debugpy)
@@ -42,7 +44,6 @@
  "=" 'yapf-mode
  )
 
-(add-hook 'python-mode-hook 'lsp)
 
 (use-package jag-funcs-python
   :straight nil
