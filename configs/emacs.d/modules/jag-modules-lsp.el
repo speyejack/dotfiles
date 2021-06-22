@@ -37,7 +37,14 @@
 ;; Source: https://github.com/emacs-lsp/lsp-ui
 (use-package lsp-ui
   :after lsp-mode
-  :diminish)
+  :diminish
+  :config
+  (jag-define-keys lsp-ui-peek-mode-map
+	"j" 'lsp-ui-peek--select-next
+	"k" 'lsp-ui-peek--select-prev
+	"M-j" 'lsp-ui-peek--select-next-file
+	"M-k" 'lsp-ui-peek--select-prev-file
+  ))
 
 ;; company-lsp
 ;;
