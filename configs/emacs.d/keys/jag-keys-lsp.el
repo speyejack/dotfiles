@@ -17,6 +17,7 @@
    ("d g"   "goto")
    ("d h"   "help")
    ("d r"   "refactor")
+   ("d u"   "ui")
    ("d a"   "code actions")
    ("d g"   "peek")))
 
@@ -90,6 +91,9 @@
 	   "aa" lsp-execute-code-action (lsp-feature? "textDocument/codeAction")
 	   "al" lsp-avy-lens t
 	   "ah" lsp-document-highlight (lsp-feature? "textDocument/documentHighlight")
+
+	   ;; ui
+	   "ui" lsp-ui-imenu t
 
 	   ;; peeks
 	   "gg" lsp-ui-peek-find-definitions (and (lsp-feature? "textDocument/definition")
