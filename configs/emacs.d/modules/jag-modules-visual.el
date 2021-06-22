@@ -4,6 +4,12 @@
 
 ;;; Code:
 
+(use-package jag-funcs-visual
+  :straight nil
+  :defer t
+  :init
+  (which-function-mode))
+
 ;; all-the-icons
 ;;
 ;; A library for inserting Developer icons
