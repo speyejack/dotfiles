@@ -18,6 +18,9 @@ Normally for the purpose of being used with dir locals to have a default method 
 
 
 (with-eval-after-load 'cc-mode
+  (when (executable-find "clangd")
+	(dolist (hook '(c++-mode-hook c-mode-hook))
+			(add-hook hook 'lsp)))
   (dolist (mode '(c-mode c++-mode))
 	(evil-define-key 'insert (symbol-value (intern (format "%s-map"mode)))
 	  (kbd "M-RET") 'c-indent-new-comment-line)
