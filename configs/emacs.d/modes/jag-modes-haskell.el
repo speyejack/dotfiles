@@ -76,7 +76,6 @@
 ;; Source: https://github.com/haskell/haskell-mode
 
 (use-package haskell-mode
-  :disabled t
   :diminish)
 
 ;; helm-hoogle
