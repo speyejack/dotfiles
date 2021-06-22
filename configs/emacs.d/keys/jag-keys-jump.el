@@ -13,8 +13,8 @@
 
 (jag-define-keys jag-jump-map
  "b" 'ibuffer-jump
- "d" 'dired-jump
- "D" 'dired-jump-other-window
+ "d" 'lsp-ui-peek-find-definitions
+ "D" 'lsp-find-declaration
  "J" 'evil-avy-goto-char-2
  "j" 'evil-avy-goto-char
  "l" 'evil-avy-goto-line
@@ -30,8 +30,9 @@
  "s" 'helm-lsp-workspace-symbol
  "r" 'lsp-ui-peek-find-references
  "R" 'lsp-find-references
- "d" 'dumb-jump-go
- "D" 'dumb-jump-back
+ "a" 'dumb-jump-go
+ "A" 'dumb-jump-back
+ "i" 'lsp-ui-peek-find-implementation
  "G" 'evil-window-bottom
  "g" 'evil-window-top)
 
