@@ -280,6 +280,7 @@
 						  ("@school" . ?s)
 						  ("@event" . ?E)
 						  ("@meeting" . ?m)
+						  ("@daily" . ?d)
 						  (:newline)
 						  ("WAITING" . ?w)
 						  ("HOLD" . ?H)
