@@ -64,8 +64,11 @@
 ;; Source: https://github.com/purcell/exec-path-from-shell
 
 (use-package exec-path-from-shell
-  :after eshell
-  :diminish)
+  :diminish
+  :config
+  (when (memq window-system '(mac ns x))
+	(exec-path-from-shell-initialize)
+	(add-to-list 'exec-path (expand-file-name "~/.local/bin"))))
 
 ;; fasd
 ;;
