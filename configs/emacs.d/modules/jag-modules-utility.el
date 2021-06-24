@@ -86,7 +86,10 @@
 ;;
 ;; Source: https://github.com/jacktasia/dumb-jump
 (use-package dumb-jump
-  :commands (dumb-jump-go)
+  :commands (dumb-jump-xref-activate)
+  :init
+  (with-eval-after-load 'xref
+	(add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
   :config
   (setq dumb-jump-selector 'helm)
   :diminish)

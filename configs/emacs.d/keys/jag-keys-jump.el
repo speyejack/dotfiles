@@ -30,8 +30,7 @@
  "s" 'helm-lsp-workspace-symbol
  "r" 'lsp-ui-peek-find-references
  "R" 'lsp-find-references
- "a" 'dumb-jump-go
- "A" 'dumb-jump-back
+ "o" 'xref-pop-marker-stack
  "i" 'lsp-ui-peek-find-implementation
  "G" 'evil-window-bottom
  "g" 'evil-window-top)
