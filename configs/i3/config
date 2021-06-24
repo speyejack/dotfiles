@@ -256,12 +256,12 @@ mouse_warping none
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3blocks
-        set $barmod Mod1
-        modifier $barmod
-        mode hide
-}
+#bar {
+        #status_command i3status
+        #set $barmod Mod1
+        #modifier $barmod
+        #mode hide
+#}
 
 # Hide the borders of windows adjacent to the edges of the screen
 hide_edge_borders both
@@ -281,6 +281,15 @@ gaps inner 5
 gaps outer 0
 
 exec --no-startup-id $i3_path/i3startup
+
+set $barmod Mod4+apostrophe
+bindsym Shift+$barmod exec "polybar-msg cmd toggle"
+bindsym $barmod exec "polybar-msg cmd show"
+bindsym --release $barmod exec "polybar-msg cmd hide"
+
+#bindsym $mod+d exec dmenu_run
+
+bindsym $mod+Tab exec --no-startup-id "i3-scratchpad -tmt -atc termite +transparent"
 
 # TODO: check this repo for ideas:
 # https://github.com/vitiral/dotfiles/blob/master/config/i3/config
