@@ -147,6 +147,26 @@
 				   (org-agenda-span 'day)
 				   (org-agenda-skip-scheduled-if-done t)))))
 
+		  ("d" "Daily Items"
+			((tags "@daily"
+				  ;; Reoccuring items that reoccur today
+				  ;; action items
+				  ((org-agenda-overriding-header "\n⚡ Tasks Today:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
+				   (org-agenda-remove-tags t)
+				   (org-agenda-prefix-format " %-15b")
+				   (org-agenda-todo-keyword-format "")
+				   (org-agenda-span 'day)))
+
+		   (todo ".*"
+				  ;; Reoccuring items that reoccur today
+				  ;; action items
+				  ((org-agenda-overriding-header "\n⚡ Inbox:\n⎺⎺⎺⎺⎺⎺⎺⎺⎺")
+				   (org-agenda-remove-tags t)
+				   (org-agenda-prefix-format " ")
+				   (org-agenda-todo-keyword-format "")
+				   (org-agenda-span 'day)
+				   (org-agenda-files `(,jag-org-inbox-file))))))
+
 		  ("a" "Daily Agenda"
 		   ((todo ".*"
 				  ;; Reoccuring items that reoccur today
