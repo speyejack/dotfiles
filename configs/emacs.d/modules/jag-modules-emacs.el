@@ -22,11 +22,11 @@
 ;;
 ;; Source: https://github.com/milkypostman/powerline
 
-(use-package powerline
-  :diminish
-  :demand
-  :config
-  (setq powerline-default-separator 'wave))
+;; (use-package powerline
+;;   :diminish
+;;   :demand
+;;   :config
+;;   (setq powerline-default-separator 'wave))
 
 ;; powerline-evil
 ;;
@@ -34,11 +34,11 @@
 ;;
 ;; Source: https://github.com/raugturi/powerline-evil
 
-(use-package powerline-evil
-  :diminish
-  :demand
-  :config
-  (powerline-default-theme))
+;; (use-package powerline-evil
+;;   :diminish
+;;   :demand
+;;   :config
+;;   (powerline-default-theme))
 
 ;; solarized-theme
 ;;
