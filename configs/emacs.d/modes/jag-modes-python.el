@@ -10,11 +10,14 @@
 ;;
 ;; Source: https://www.emacswiki.org/emacs/PythonProgrammingInEmacs
 
+(with-eval-after-load 'python-mode
+  (require 'lsp-python-ms)
+  (require 'dap-python))
+
 (add-hook 'python-mode-hook
           (lambda ()
             ;; (setq indent-tabs-mode t)
 			(lsp)
-			(require 'dap-python)
             (setq tab-width (default-value 'tab-width))
 			(setq python-indent-offset 4)
 			(setq dap-python-debugger 'debugpy)
