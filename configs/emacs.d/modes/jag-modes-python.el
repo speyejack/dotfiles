@@ -12,7 +12,7 @@
 
 (add-hook 'python-mode-hook
           (lambda ()
-            (setq indent-tabs-mode t)
+            ;; (setq indent-tabs-mode t)
 			(lsp)
 			(require 'dap-python)
             (setq tab-width (default-value 'tab-width))
