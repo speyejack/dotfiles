@@ -161,9 +161,9 @@
 ;;
 ;; Source: https://github.com/purcell/unfill
 
-(use-package unfill
-  :diminish
-  :commands (unfill-region unfill-paragraph unfill-toggle))
+;; (use-package unfill
+;;   :diminish
+;;   :commands (unfill-region unfill-paragraph unfill-toggle))
 
 ;; ws-butler
 ;;
