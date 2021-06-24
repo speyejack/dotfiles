@@ -18,6 +18,12 @@ Normally for the purpose of being used with dir locals to have a default method 
 
 
 (with-eval-after-load 'cc-mode
+  (require 'dap-cpptools)
+  (setq treemacs-space-between-root-nodes nil
+		company-idle-delay 0.2
+		company-minimum-prefix-length 1
+		lsp-idle-delay 0.1)  ;; clangd is fast
+
   (when (executable-find "clangd")
 	(dolist (hook '(c++-mode-hook c-mode-hook))
 			(add-hook hook 'lsp)))
