@@ -45,7 +45,13 @@
 				(kbd "M-k") 'eshell-previous-matching-input-from-input)
 			  (evil-define-key '(normal) eshell-mode-map
 				(kbd "M-j") 'eshell-next-input
-				(kbd "M-k") 'eshell-previous-input))))
+			  (kbd "M-k") 'eshell-previous-input)
+			))
+
+  )
+
+;; (add-to-list 'tramp-remote-path 'tramp-own-remote-path t)
+;; (add-to-list 'tramp-remote-path "~/.local/bin" t)
 
 ;; esh-help
 ;;
