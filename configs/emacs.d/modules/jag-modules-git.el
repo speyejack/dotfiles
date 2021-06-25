@@ -13,6 +13,10 @@
 (use-package magit
   :commands 'magit-status
   :config
+  (evil-collection-magit-setup)
+  (evil-define-key evil-collection-magit-state magit-mode-map "M-h" 'magit-section-backward)
+  (evil-define-key evil-collection-magit-state magit-mode-map "M-j" 'magit-section-forward-sibling)
+  (evil-define-key evil-collection-magit-state magit-mode-map "M-k" 'magit-section-backward-sibling)
   (evil-set-initial-state 'git-commit-mode 'insert)
   :diminish)
 

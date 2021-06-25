@@ -80,6 +80,15 @@
   (global-undo-tree-mode t)
   (evil-make-overriding-map undo-tree-visualizer-mode-map))
 
+;; evil-collection
+;;
+;; A set of keybindings for evil-mode
+;;
+;; Source: https://github.com/emacs-evil/evil-collection
+
+(use-package evil-collection
+  :commands (evil-collection-magit-setup))
+
 ;; evil-escape
 ;;
 ;; Escape from anything with a customizable key sequence
@@ -94,21 +103,6 @@
   (add-hook 'pre-command-hook 'evil-escape-pre-command-hook)
   (setq-default evil-escape-key-sequence "jk")
   (setq evil-escape-unordered-key-sequence 1))
-
-;; evil-magit
-;;
-;; evil-based key bindings for magit
-;;
-;; Source: https://github.com/emacs-evil/evil-magit
-
-(use-package evil-magit
-  :after (evil magit)
-  :config
-  (evil-magit-define-key 'motion 'magit-mode-map "M-h" 'magit-section-backward)
-  (evil-magit-define-key 'motion 'magit-mode-map "M-j" 'magit-section-forward-sibling)
-  (evil-magit-define-key 'motion 'magit-mode-map "M-k" 'magit-section-backward-sibling))
-
-
 
 ;; evil-collection
 ;;
