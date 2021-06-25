@@ -7,9 +7,9 @@
 ;; Create the lsp leader definer
 (jag-create-sub-leader-map jag-leader-map "d" "lsp")
 
-(eval-after-load
-	"lsp-mode"
-  (setq lsp-keymap-prefix "SPC d"))
+;; (eval-after-load
+;; 	"lsp-mode"
+;;   (setq lsp-keymap-prefix "SPC d"))
 
 (jag-declare-prefixes
  '(("d" "lsp")
