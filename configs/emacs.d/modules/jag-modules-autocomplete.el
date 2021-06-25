@@ -15,16 +15,17 @@
   :bind
   (:map company-mode-map
    ("M-;" . 'helm-company)
-   ("M-i" . 'helm-company)
-   ("M-h" . 'helm-company))
+   ("M-i" . 'helm-company))
   (:map company-active-map
    ("M-;" . 'company-complete-selection)
    ("M-l" . 'company-complete-selection)
    ("M-j" . 'company-select-next-or-abort)
-   ("M-k" . 'company-select-previous-or-abort))
+   ("M-k" . 'company-select-previous-or-abort)
+   ("M-h" . 'helm-company))
   (:map company-search-map
    ("M-j" . 'company-select-next-or-abort)
    ("M-k" . 'company-select-previous-or-abort)
+   ("M-h" . 'helm-company)
    ("M-:" . 'company-search-abort)
    ("<escape>" . 'company-search-abort))
   :config
