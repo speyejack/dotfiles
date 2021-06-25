@@ -89,6 +89,7 @@
   :commands (dumb-jump-xref-activate)
   :init
   (with-eval-after-load 'xref
+	(setq xref-prompt-for-identifier nil)
 	(add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
   :config
   (setq dumb-jump-selector 'helm)
