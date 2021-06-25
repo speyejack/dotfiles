@@ -15,7 +15,8 @@
   :bind
   (:map company-mode-map
    ("M-;" . 'helm-company)
-   ("M-i" . 'helm-company))
+   ("M-i" . 'helm-company)
+   ("M-h" . 'helm-company))
   (:map company-active-map
    ("M-;" . 'company-complete-selection)
    ("M-l" . 'company-complete-selection)
