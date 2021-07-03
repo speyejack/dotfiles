@@ -11,6 +11,19 @@
 ;; 	"lsp-mode"
 ;;   (setq lsp-keymap-prefix "SPC d"))
 
+(jag-declare-prefixes
+ '(("d" "lsp")
+   ("d d"   "debug")
+   ("d w"   "workspaces")
+   ("d F"   "folders")
+   ("d ="   "formatting")
+   ("d T"   "toggle")
+   ("d g"   "goto")
+   ("d h"   "help")
+   ("d r"   "refactor")
+   ("d u"   "ui")
+   ("d a"   "code actions")
+   ("d G"   "peek")))
 
 (use-package jag-funcs-lsp
   :straight nil)
