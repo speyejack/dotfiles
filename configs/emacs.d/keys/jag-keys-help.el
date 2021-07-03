@@ -16,7 +16,8 @@
 (jag-define-keys jag-help-map
  "b" 'helm-descbinds
  "d" 'evil-lookup
- "h" 'helm-apropos
+ "h" 'lsp-describe-thing-at-point
+ "a" 'helm-apropos
  "y" 'jag-display-and-copy-emacs-version
  "c" 'describe-char
  "e" 'evil-tutor-resume
