@@ -20,6 +20,7 @@
   :after
   (require lsp-mode)
   :config
+  (define-key jag-leader-map "d" lsp-command-map)
   (setq read-process-output-max (* 1024 1024)))
 
 ;; treemacs
