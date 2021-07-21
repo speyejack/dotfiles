@@ -10,8 +10,7 @@
 ;;
 ;; Source: https://www.emacswiki.org/emacs/PythonProgrammingInEmacs
 
-(with-eval-after-load 'python-mode
-  (require 'lsp-python-ms)
+(with-eval-after-load 'python
   (require 'dap-python))
 
 (add-hook 'python-mode-hook
