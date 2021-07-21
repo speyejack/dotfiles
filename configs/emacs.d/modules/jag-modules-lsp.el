@@ -17,8 +17,6 @@
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
   :hook ((lsp-mode . lsp-enable-which-key-integration))
   :commands lsp
-  :after
-  (require lsp-mode)
   :config
   (define-key jag-leader-map "d" lsp-command-map)
   (setq read-process-output-max (* 1024 1024)))
