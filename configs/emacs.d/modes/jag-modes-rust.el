@@ -8,8 +8,13 @@
   :defer t
   :straight nil)
 
-;; (use-package rustic)
-(use-package rust-mode)
+(add-hook 'rust-mode-hook
+		  (lambda ()
+			(lsp)))
+
+(use-package rust-mode
+  :config
+  (setq lsp-rust-server 'rust-analyzer))
 
 (provide 'jag-modes-rust)
 ;;; jag-modes-rust.el ends here
