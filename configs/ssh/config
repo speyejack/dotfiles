@@ -1,3 +1,5 @@
+AddKeysToAgent yes
+
 Host github-per
 	 User git
 	 HostName github.com
