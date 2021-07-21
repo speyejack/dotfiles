@@ -35,6 +35,9 @@
 	 (jag-define-keys
 	  lsp-command-map
 	  "dd" 'dap-debug-last
+	  "dD" 'dap-debug
+	  "de" 'dap-debug-edit-template
+	  "dd" 'dap-debug-last
 	  "dh" 'dap-hydra
 	  "db" 'dap-breakpoint-toggle)))
 
