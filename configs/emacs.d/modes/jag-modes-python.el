@@ -47,12 +47,20 @@
  "=" 'yapf-mode
  )
 
-
 (use-package jag-funcs-python
   :straight nil
   :defer t
   :init
   (setq python-shell-interpreter "python3"))
+
+;; lsp-pyright
+;;
+;; lsp-mode heart pyright
+;;
+;; Source: https://github.com/emacs-lsp/lsp-pyright
+
+(use-package lsp-pyright
+  :after python)
 
 ;; anaconda-mode
 ;;
