@@ -24,6 +24,10 @@ configs/emacs.d/*
 !configs/emacs.d/modes/
 !configs/emacs.d/tests/
 
+# xmonad ignores
+configs/xmonad/*
+
+!configs/xmonad/xmonad.hs
 
 # SSH ignores
 configs/ssh/*
