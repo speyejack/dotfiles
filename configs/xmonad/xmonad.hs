@@ -125,7 +125,7 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 myStartupHook :: X ()
 myStartupHook = do
           -- spawnOnce "lxsession &"
-          spawnOnce "feh --bg-center ~/Downloads/arch.png"
+          spawnOnce "feh --bg-center ~/Downloads/arch.jpg"
           spawnOnce "syncthing --no-browser &"
           spawnOnce "nitrogen --restore &"
           spawnOnce "picom --experimental-backends &"
