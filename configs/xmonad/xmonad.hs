@@ -130,6 +130,7 @@ myStartupHook = do
           spawnOnce "nitrogen --restore &"
           spawnOnce "picom --experimental-backends &"
           spawnOnce "unclutter &"
+          spawnOnce "setxkbmap -option caps:super"
           -- spawnOnce "nm-applet &"
           -- spawnOnce "volumeicon &"
           -- spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x282c34  --height 22 &"
