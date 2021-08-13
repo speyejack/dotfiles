@@ -277,7 +277,7 @@ myKeys = [
   ("M-S-<Space>", selectLayout defaultGSConfig ["Tall", "Tabs", "Grid"]),
 
   ("M-<Return>", spawn myTerminal),
-  ("M-g", spawnSelected defaultGSConfig ["emacs", "firefox", "thunar", "arduino", "gtkwave"]),
+  ("M-g", spawnSelected defaultGSConfig ["emacs", "firefox", "thunar", "arduino", "xournalpp", "gtkwave"]),
 
   ("M-c", kill),
   ("M-C-c", io exitSuccess),
