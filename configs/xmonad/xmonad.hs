@@ -305,9 +305,20 @@ myKeys = [
     , ((0, xK_l),  spawn "xbacklight -set 100%")
     , ((0, xK_h),  spawn "xbacklight -set 1%")
     , ((shiftMask, xK_h),  spawn "xbacklight -set 0%")
-    ])
+    ]),
 
-  ] ++ []
+  ("M-m", modalmap . M.fromList $
+    [ ((0, xK_j),  spawn $ soundProg ++ " decrease 10")
+    , ((0, xK_k),  spawn $ soundProg ++ " increase 10")
+    , ((shiftMask, xK_j),  spawn $ soundProg ++ " decrease 2")
+    , ((shiftMask, xK_k),  spawn $ soundProg ++ " increase 2")
+    , ((0, xK_l),  spawn $ soundProg ++ " nomute")
+    , ((0, xK_h),  spawn $ soundProg ++ " mute")
+    , ((0, xK_t),  spawn $ soundProg ++ " toggle")
+    ])
+  ]
+  where
+    soundProg = "~/.dotfiles/configs/i3/i3volume"
 
 
 main :: IO ()
