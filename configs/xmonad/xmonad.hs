@@ -288,8 +288,7 @@ myKeys = [
   -- ("M-1", viewWorkscreen " dev "),
   -- ("M-2", viewWorkscreen " sys "),
 
-  ("M-S-p", spawn "xmonad --recompile"), -- Recompiles xmonad
-  ("M-C-p", spawn "xmonad --restart"),
+  ("M-p", spawn "xmonad --recompile && xmonad --restart"),
 
   ("M-x", modalmap . M.fromList $
   [ ((0, xK_h), spawn "shutdown -h now")
