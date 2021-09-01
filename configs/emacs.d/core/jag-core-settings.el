@@ -52,6 +52,8 @@
 
 (setq shell-file-name "/bin/bash")
 
+(setenv "SSH_AUTH_SOCK" (concat (getenv "XDG_RUNTIME_DIR") "/ssh-agent.sock"))
+
 ;; Remove some safety for convenience
 (defalias 'yes-or-no-p 'y-or-n-p)
 
