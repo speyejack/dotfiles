@@ -264,6 +264,8 @@ makeLayoutList = map (\x -> (x, sendMessage $ JumpToLayout $ map toLower x))
 
 selectLayout conf layouts = runSelectedAction conf $ makeLayoutList layouts
 
+gridPrograms = ["emacs", "firefox", "thunar", "arduino", "xournalpp", "gtkwave", "discord","steam"]
+
 myKeys :: [(String, X ())]
 myKeys = [
   ("M-h", nextScreen),
@@ -278,7 +280,7 @@ myKeys = [
   ("M-S-<Space>", selectLayout defaultGSConfig ["Tall", "Tabs", "Grid"]),
 
   ("M-<Return>", spawn myTerminal),
-  ("M-g", spawnSelected defaultGSConfig ["emacs", "firefox", "thunar", "arduino", "xournalpp", "gtkwave"]),
+  ("M-g", spawnSelected defaultGSConfig gridPrograms),
 
   ("M-c", kill),
   ("M-C-c", io exitSuccess),
