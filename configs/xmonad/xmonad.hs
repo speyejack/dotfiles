@@ -292,6 +292,7 @@ myKeys = [
   -- ("M-2", viewWorkscreen " sys "),
 
   ("M-p", spawn "xmonad --recompile && xmonad --restart"),
+  ("M-o", spawn "/home/jack/.dotfiles/configs/i3/i3clip"),
 
   ("M-x", modalmap . M.fromList $
   [ ((0, xK_h), spawn "shutdown -h now")
