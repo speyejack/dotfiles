@@ -39,7 +39,8 @@
 (setq delete-old-versions t
 	  kept-new-versions 6
 	  kept-old-versions 2
-	  version-control t)
+	  version-control t
+	  ring-bell-function 'ignore)
 
 ;; Set word-wrap to default to on
 (setq-default word-wrap t)
