@@ -288,7 +288,7 @@ myKeys = [
   ("M-u", windows W.focusMaster),
   ("M-S-u", windows W.swapMaster),
 
-  -- ("M-1", viewWorkscreen " dev "),
+  -- ("M-6", viewWorkscreen 6),
   -- ("M-2", viewWorkscreen " sys "),
 
   ("M-p", spawn "xmonad --recompile && xmonad --restart"),
@@ -320,7 +320,7 @@ myKeys = [
     , ((0, xK_h),  spawn $ soundProg ++ " mute")
     , ((0, xK_t),  spawn $ soundProg ++ " toggle")
     ])
-  ]
+  ] -- ++ zip (map (\x -> (++) "M-" $ show x) [1..10]) (map W.greedyView [1..10])
   where
     soundProg = "~/.dotfiles/configs/i3/i3volume"
 
