@@ -312,6 +312,14 @@ myKeys = [
     , ((shiftMask, xK_h),  spawn "xbacklight -set 0%")
     ]),
 
+  ("M-i", modalmap . M.fromList $
+    [ ((0, xK_j),  decWindowSpacing 4)
+    , ((0, xK_k),  incWindowSpacing 4)
+    , ((0, xK_l),  decScreenSpacing 4)
+    , ((0, xK_h),  incScreenSpacing 4)
+    ]),
+
+
   ("M-m", modalmap . M.fromList $
     [ ((0, xK_j),  spawn $ soundProg ++ " decrease 10")
     , ((0, xK_k),  spawn $ soundProg ++ " increase 10")
