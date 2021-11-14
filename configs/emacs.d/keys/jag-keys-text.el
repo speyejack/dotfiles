@@ -37,6 +37,7 @@
  "c" 'count-words-region
  "dw" 'delete-trailing-whitespace
  "e" 'er/expand-region
+ "f" 'fill-paragraph
  "iC" 'string-inflection-camelcase
  "iU" 'string-inflection-upcase
  "ic" 'string-inflection-lower-camelcase
