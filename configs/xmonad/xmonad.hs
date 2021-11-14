@@ -302,6 +302,9 @@ myKeys = [
   , ((0, xK_e), io exitSuccess )
   ]),
 
+  ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10%"),
+  ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10%"),
+
   ("M-b", modalmap . M.fromList $
     [ ((0, xK_j),  spawn "xbacklight -dec 10%")
     , ((0, xK_k),  spawn "xbacklight -inc 10%")
@@ -311,6 +314,10 @@ myKeys = [
     , ((0, xK_h),  spawn "xbacklight -set 1%")
     , ((shiftMask, xK_h),  spawn "xbacklight -set 0%")
     ]),
+
+  ("<XF86AudioMute>", spawn $ soundProg ++ " toggle"),
+  ("<XF86AudioLowerVolume>", spawn $ soundProg ++ " decrease 10"),
+  ("<XF86AudioRaiseVolume>", spawn $ soundProg ++ " increase 10"),
 
   ("M-m", modalmap . M.fromList $
     [ ((0, xK_j),  spawn $ soundProg ++ " decrease 10")
