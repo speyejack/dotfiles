@@ -180,7 +180,7 @@
 	(kbd "M-O") 'jag-org-open-heading)
 
   (evil-define-key '(motion insert) org-mode-map
-	(kbd "M-RET") 'org-return
+	(kbd "M-RET") 'org-meta-return
 	(kbd "RET") 'evil-org-return)
 
   (let ((inbox-file (expand-file-name "inbox.org" jag-gtd-dir))
