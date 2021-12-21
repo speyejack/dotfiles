@@ -10,7 +10,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "h" "help")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("h" "help")))
 
 (jag-define-keys jag-help-map

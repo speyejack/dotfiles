@@ -14,7 +14,7 @@
   :commands (jag-stickyfunc-mode
 			 jag-whitespace-mode))
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("v" "visual")))
 
 (jag-define-keys jag-visual-map

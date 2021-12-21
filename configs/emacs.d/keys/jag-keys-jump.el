@@ -8,7 +8,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "j" "jump")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("j" "jump")))
 
 (jag-define-keys jag-jump-map

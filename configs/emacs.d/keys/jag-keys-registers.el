@@ -8,7 +8,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "r" "registers")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("r" "registers")))
 
 (jag-define-keys jag-registers-map

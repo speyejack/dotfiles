@@ -8,7 +8,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "t" "text")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("t" "text")
    ("ta" "align")
    ("td" "delete")

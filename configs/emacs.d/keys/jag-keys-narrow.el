@@ -8,7 +8,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "n" "narrow")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("n" "narrow")))
 
 (jag-define-keys jag-narrow-map

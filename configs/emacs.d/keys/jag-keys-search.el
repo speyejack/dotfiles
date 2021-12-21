@@ -8,7 +8,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "s" "search")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("s" "search")
    ("sA" "ag")))
 

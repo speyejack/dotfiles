@@ -6,7 +6,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "y" "yank")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("y" "yank")))
 
 (jag-define-keys jag-yank-map

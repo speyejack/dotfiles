@@ -8,7 +8,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "w" "window")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("w" "window")
    ("wv" "resize")
    ("wz" "zoom")))

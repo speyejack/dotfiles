@@ -8,7 +8,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "i" "insert")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("i" "insert")
    ("il" "lorem-ipsum")))
 

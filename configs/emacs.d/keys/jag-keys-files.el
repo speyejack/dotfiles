@@ -8,7 +8,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "f" "files")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("f" "files")
    ("fC" "convert")
    ("fg" "goto")
