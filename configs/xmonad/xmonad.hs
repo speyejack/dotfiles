@@ -132,6 +132,7 @@ myStartupHook = do
           spawnOnce "unclutter &"
           spawnOnce "/usr/bin/dunst &"
           spawnOnce "setxkbmap -option caps:super"
+          spawnOnce "light -Ss \"sysfs/leds/platform::micmute\" 0"
           -- spawnOnce "nm-applet &"
           -- spawnOnce "volumeicon &"
           -- spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x282c34  --height 22 &"
@@ -306,13 +307,15 @@ myKeys = [
   ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10%"),
 
   ("M-b", modalmap . M.fromList $
-    [ ((0, xK_j),  spawn "xbacklight -dec 10%")
-    , ((0, xK_k),  spawn "xbacklight -inc 10%")
-    , ((shiftMask, xK_j),  spawn "xbacklight -dec 2%")
-    , ((shiftMask, xK_k),  spawn "xbacklight -inc 2%")
-    , ((0, xK_l),  spawn "xbacklight -set 100%")
-    , ((0, xK_h),  spawn "xbacklight -set 1%")
-    , ((shiftMask, xK_h),  spawn "xbacklight -set 0%")
+    [ ((0, xK_j),  spawn "light -U 10")
+    , ((0, xK_k),  spawn "light -A 10")
+    , ((shiftMask, xK_j),  spawn "light -U 2")
+    , ((shiftMask, xK_k),  spawn "light -A 2")
+    , ((shiftMask .|. controlMask, xK_j),  spawn "light -U 0.1")
+    , ((shiftMask .|. controlMask, xK_k),  spawn "light -A 0.1")
+    , ((0, xK_l),  spawn "light -S 100")
+    , ((0, xK_h),  spawn "light -Sr 1")
+    , ((shiftMask, xK_h),  spawn "light -S 0")
     ]),
 
   ("<XF86AudioMute>", spawn $ soundProg ++ " toggle"),
