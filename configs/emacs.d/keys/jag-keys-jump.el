@@ -16,7 +16,7 @@
  "d" 'lsp-ui-peek-find-definitions
  "D" 'lsp-find-declaration
  "J" 'evil-avy-goto-char-2
- "j" 'evil-avy-goto-char
+ "j" 'evil-avy-goto-char-timer
  "l" 'evil-avy-goto-line
  "w" 'evil-avy-goto-word-or-subword-1
  "u" 'jag-avy-open-url
