@@ -25,10 +25,10 @@
 
   (evil-set-initial-state 'org-agenda-mode 'motion)
 
-  (which-key-declare-prefixes-for-mode 'org-agenda-mode "d" "delete")
-  (which-key-declare-prefixes-for-mode 'org-agenda-mode "Z" "exit")
-  (which-key-declare-prefixes-for-mode 'org-agenda-mode "s" "filter")
-  (which-key-declare-prefixes-for-mode 'org-agenda-mode "c" "change/clock")
+  (jag-declare-prefix org-agenda-mode-map "d" "delete")
+  (jag-declare-prefix org-agenda-mode-map "Z" "exit")
+  (jag-declare-prefix org-agenda-mode-map "s" "filter")
+  (jag-declare-prefix org-agenda-mode-map "c" "change/clock")
 
   (evil-define-key 'normal org-agenda-mode-map
 	"q" nil)

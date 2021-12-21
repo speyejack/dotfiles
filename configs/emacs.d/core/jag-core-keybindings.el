@@ -42,7 +42,7 @@ Always defines <escape> and <C-g> as `keyboard-quit'."
 	(setq key (pop bindings))
 	(setq def (pop bindings))))
 
-(defun jag--declare-prefix (map prefix name)
+(defun jag-declare-prefix (map prefix name)
   "Declare which-key NAME for PREFIX on MAP."
   (which-key-add-keymap-based-replacements map (kbd prefix) name))
 
@@ -55,14 +55,14 @@ Always defines <escape> and <C-g> as `keyboard-quit'."
   "Declare a which-key PREFIX.
 PREFIX is a string describing a key sequence.  NAME is a string
 used as the prefix command."
-	(jag--declare-prefix jag-leader-map prefix name))
+	(jag-declare-prefix jag-leader-map prefix name))
 
 (defun jag-declare-prefix-for-mode (mode prefix name)
   "Declare a which-key PREFIX in MODE with NAME.
 MODE is the mode in which this prefix command should be added.
 PREFIX is a string describing a key sequence.  NAME is a symbol name
 used as the prefix command."
-    (jag--declare-prefix (jag--init-major-mode-map mode) prefix name))
+    (jag-declare-prefix (jag--init-major-mode-map mode) prefix name))
 
 ;; Make <escape> quit as much as possible
 (define-key minibuffer-local-map (kbd "<escape>") 'keyboard-escape-quit)
