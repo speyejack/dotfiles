@@ -12,9 +12,45 @@
 		  (lambda ()
 			(lsp)))
 
+(jag-define-leader-keys-for-major-mode
+ 'rust-mode
+"h" 'lsp-rust-analyzer-open-external-docs
+"d" 'lsp-rust-analyzer-debug
+"k" 'lsp-rust-analyzer-rerun
+"K" 'lsp-rust-analyzer-run
+"r" 'cargo-process-run-bin
+"e" 'cargo-process-run-example
+"s" 'cargo-process-current-test
+"t" 'cargo-process-test
+"T" 'cargo-process-current-file-tests
+"f" 'cargo-process-clippy
+"=" 'cargo-process-fmt
+"c" 'cargo-process-build
+"C" 'cargo-process-clean
+"b" 'cargo-process-bench
+"D" 'cargo-process-doc
+"l" 'lsp-rust-analyzer-open-external-docs
+"o" 'lsp-rust-analyzer-open-cargo-toml
+ )
+
+
 (use-package rust-mode
   :config
   (setq lsp-rust-server 'rust-analyzer))
+
+(use-package cargo
+  :commands
+  (cargo-process-run-bin
+   cargo-process-run-example
+   cargo-process-current-test
+   cargo-process-test
+   cargo-process-current-file-tests
+   cargo-process-clippy
+   cargo-process-fmt
+   cargo-process-build
+   cargo-process-clean
+   cargo-process-bench
+   cargo-process-doc))
 
 (provide 'jag-modes-rust)
 ;;; jag-modes-rust.el ends here
