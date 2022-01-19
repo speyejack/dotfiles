@@ -13,7 +13,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "p" "project")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("p" "project")))
 
 (jag-define-keys jag-project-map

@@ -8,7 +8,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "t" "text")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("t" "text")
    ("ta" "align")
    ("td" "delete")
@@ -37,6 +37,7 @@
  "c" 'count-words-region
  "dw" 'delete-trailing-whitespace
  "e" 'er/expand-region
+ "f" 'fill-paragraph
  "iC" 'string-inflection-camelcase
  "iU" 'string-inflection-upcase
  "ic" 'string-inflection-lower-camelcase

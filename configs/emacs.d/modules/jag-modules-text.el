@@ -132,7 +132,10 @@
 
   (dolist (mode '(emacs-lisp-mode minibuffer-inactive-mode lisp-mode))
 	(sp-local-pair mode "'" nil :actions nil)
-	(sp-local-pair mode "`" nil :actions nil)))
+	(sp-local-pair mode "`" nil :actions nil))
+
+  (dolist (mode '(rust-mode))
+	(sp-local-pair mode "'" nil :actions nil)))
 
 ;; srefactor
 ;;

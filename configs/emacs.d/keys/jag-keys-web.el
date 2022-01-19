@@ -8,7 +8,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "l" "web")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("l" "web")))
 
 ;; Should add duck duck go as suggestion url

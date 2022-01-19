@@ -9,7 +9,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "a" "application")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("a" "applications")
    ("al" "desktop")
    ("ag" "games")))

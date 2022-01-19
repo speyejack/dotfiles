@@ -15,7 +15,7 @@
   (global-set-key (kbd "M-j") nil)
   (global-set-key (kbd "M-k") nil)
 
-  (jag-declare-prefix "gr" "multiple-cursors")
+  (jag-declare-leader-prefix "gr" "multiple-cursors")
   (evil-define-key '(motion) prog-mode-map
 	(kbd "M-k")  'evil-backward-section-begin
 	(kbd "M-j")  'evil-forward-section-begin

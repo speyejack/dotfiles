@@ -1,4 +1,5 @@
 AddKeysToAgent yes
+IdentityFile ~/.ssh/id_rsa
 
 Host github-per
 	 User git
@@ -27,6 +28,7 @@ Host monsoon
 
 Host cerberus
 	User jack
+	Port 2222
 	HostName 10.100.99.1
 
 Host athena

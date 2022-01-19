@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+(require 'evil-extra-operator)
+
 (evil-define-operator jag-evil-eval (beg end)
   "Run evil eval on region unless not defined, otherwise run quickrun."
   :move-point nil

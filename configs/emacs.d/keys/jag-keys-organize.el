@@ -6,7 +6,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "o" "organize")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("o" "organize")
    ("og" "goto")
    ("oc" "clock")

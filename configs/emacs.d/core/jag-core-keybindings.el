@@ -42,37 +42,67 @@ Always defines <escape> and <C-g> as `keyboard-quit'."
 	(setq key (pop bindings))
 	(setq def (pop bindings))))
 
-(defun jag-declare-prefixes (prefixes)
+(defun jag-declare-prefix (map prefix name)
+  "Declare which-key NAME for PREFIX on MAP."
+  (which-key-add-keymap-based-replacements map (kbd prefix) name))
+
+(defun jag-declare-leader-prefixes (prefixes)
   "Declare which-key PREFIXES."
-  (mapc (lambda (x) (apply #'jag-declare-prefix x))
+  (mapc (lambda (x) (apply #'jag-declare-leader-prefix x))
 		prefixes))
 
-(defun jag-declare-prefix (prefix name)
+(defun jag-declare-leader-prefix (prefix name)
   "Declare a which-key PREFIX.
 PREFIX is a string describing a key sequence.  NAME is a string
 used as the prefix command."
-  (let* ((command name)
-	 (full-prefix (concat jag-leader-key " " prefix))
-	 (full-prefix-emacs (concat jag-emacs-leader-key " " prefix))
-	 (full-prefix-lst (listify-key-sequence (kbd full-prefix)))
-	 (full-prefix-emacs-lst (listify-key-sequence
-				 (kbd full-prefix-emacs))))
-    (which-key-declare-prefixes
-      full-prefix-emacs name
-      full-prefix name)))
+	(jag-declare-prefix jag-leader-map prefix name))
 
 (defun jag-declare-prefix-for-mode (mode prefix name)
   "Declare a which-key PREFIX in MODE with NAME.
 MODE is the mode in which this prefix command should be added.
 PREFIX is a string describing a key sequence.  NAME is a symbol name
 used as the prefix command."
-  (let  ((command (intern (concat (symbol-name mode) name)))
-	 (full-prefix (concat jag-leader-key " " jag-local-leader-key " " prefix))
-	 (full-prefix-emacs (concat jag-emacs-leader-key " " jag-local-leader-key " " prefix)))
+    (jag-declare-prefix (jag--init-major-mode-map mode) prefix name))
 
-    (which-key-declare-prefixes-for-mode mode
-      full-prefix-emacs name
-      full-prefix name)))
+;; Make <escape> quit as much as possible
+(define-key minibuffer-local-map (kbd "<escape>") 'keyboard-escape-quit)
+(define-key minibuffer-local-ns-map (kbd "<escape>") 'keyboard-escape-quit)
+(define-key minibuffer-local-completion-map (kbd "<escape>") 'keyboard-escape-quit)
+(define-key minibuffer-local-must-match-map (kbd "<escape>") 'keyboard-escape-quit)
+(define-key minibuffer-local-isearch-map (kbd "<escape>") 'keyboard-escape-quit)
+
+
+(defun jag--init-major-mode-map (mode)
+  "Returns a keymap for major MODE that's activated by the leader keys."
+  (let* ((mode-map-sym (intern (format "%s-map" mode)))
+         (jag-map-sym (intern (format "jag-%s-map" mode)))
+         jag-map-val)
+
+	;; Use existing keymap if it exists.
+	(unless (boundp jag-map-sym)
+	  (set jag-map-sym (make-sparse-keymap))
+	  (define-key (symbol-value jag-map-sym) (kbd "C-g") 'keyboard-quit)
+	  (define-key (symbol-value jag-map-sym) (kbd "<escape>") 'keyboard-quit)
+
+	  (eval-after-load 'evil
+		`(progn
+		   ;; All evil states with `M-m m'
+		   (evil-define-key '(normal insert visual operator motion emacs)
+			 ,mode-map-sym
+			 (kbd (concat jag-emacs-leader-key " " jag-local-leader-key)) ,jag-map-sym)
+		   ;; Non inserting evil states with SPC-m
+		   (evil-define-key '(normal visual operator motion)
+			 ,mode-map-sym
+			 (kbd (concat jag-leader-key " " jag-local-leader-key)) ,jag-map-sym))))
+
+	(setq jag-map-val (symbol-value jag-map-sym))
+
+    jag-map-val))
+
+;; instantly display current keystrokes in mini buffer
+(setq echo-keystrokes 0.02)
+;; auto-indent on RET
+(define-key global-map (kbd "RET") 'newline-and-indent)
 
 (require 'jag-keys-global)
 

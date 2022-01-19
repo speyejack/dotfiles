@@ -8,7 +8,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "x" "toggles")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("x" "toggles")))
 
 (jag-define-keys jag-toggles-map

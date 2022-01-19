@@ -8,7 +8,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "e" "error")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("e" "errors")))
 
 (jag-define-keys jag-error-map

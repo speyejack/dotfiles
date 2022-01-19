@@ -11,7 +11,7 @@
 ;; 	"lsp-mode"
 ;;   (setq lsp-keymap-prefix "SPC d"))
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("d" "lsp")
    ("d d"   "debug")
    ("d w"   "workspaces")

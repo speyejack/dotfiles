@@ -71,7 +71,7 @@ The template will be formatted with (format template name func-module)")
 	";; Create the %1$s leader definer"
 	"(jag-create-sub-leader-map jag-leader-map \"%3$s\" \"%1$s\")"
 	""
-	"(jag-declare-prefixes"
+	"(jag-declare-leader-prefixes"
 	" '((\"%3$s\" \"%1$s\")))"
 	""
 	"(use-package %2$s"

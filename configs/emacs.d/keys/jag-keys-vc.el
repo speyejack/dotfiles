@@ -8,7 +8,7 @@
 
 (jag-create-sub-leader-map jag-leader-map "g" "vc")
 
-(jag-declare-prefixes
+(jag-declare-leader-prefixes
  '(("g" "version-control")))
 
 (jag-define-keys jag-vc-map

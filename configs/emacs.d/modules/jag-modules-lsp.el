@@ -41,6 +41,7 @@
   :diminish
   :config
   (setq lsp-ui-doc-show-with-cursor nil)
+  (setq lsp-ui-sideline-show-code-actions nil)
   (jag-define-keys lsp-ui-peek-mode-map
 	"j" 'lsp-ui-peek--select-next
 	"k" 'lsp-ui-peek--select-prev
