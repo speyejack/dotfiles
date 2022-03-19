@@ -19,7 +19,9 @@
   :commands lsp
   :config
   (define-key jag-leader-map "d" lsp-command-map)
-  (setq read-process-output-max (* 1024 1024)))
+  (setq read-process-output-max (* 1024 1024))
+  (setq lsp-rust-analyzer-server-display-inlay-hints t)
+  )
 
 ;; treemacs
 ;;
