@@ -1,5 +1,5 @@
 #!/bin/sh -e
 
 selection=$(hacksaw -f "-i %i -g %g")
-sleep 0.6 #wait for compton
+sleep 0.1 #wait for picom
 shotgun $selection - | xclip -t 'image/png' -selection clipboard
