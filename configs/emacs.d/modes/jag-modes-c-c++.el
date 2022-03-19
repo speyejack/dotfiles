@@ -48,9 +48,8 @@ Normally for the purpose of being used with dir locals to have a default method 
   (setq lsp-enable-indentation nil))
 
 (use-package dap-lldb
-  :after dap-mode
   :straight nil
-  :after (cc-mode)
+  :after (:all dap-mode (:any cc-mode rust-mode))
   :config
   (setq dap-lldb-debug-program '("/usr/bin/lldb-vscode")))
 
