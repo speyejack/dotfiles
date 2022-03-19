@@ -10,7 +10,8 @@
 
 (add-hook 'rust-mode-hook
 		  (lambda ()
-			(lsp)))
+			((lsp)
+			(rust-enable-format-on-save))))
 
 (jag-define-leader-keys-for-major-mode
  'rust-mode
