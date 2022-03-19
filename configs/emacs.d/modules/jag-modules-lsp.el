@@ -91,6 +91,20 @@
   :diminish
   :commands (dap-debug dap-debug-edit-template dap-debug-last dap-register-debug-template dap-debug-last)
   :config
+
+  (require 'dap-lldb)
+  (require 'dap-gdb-lldb)
+  ;; installs .extension/vscode
+  (dap-gdb-lldb-setup)
+  (dap-register-debug-template
+   "Rust::LLDB Run Configuration"
+   (list :type "lldb"
+         :request "launch"
+         :name "LLDB::Run"
+	 :gdbpath "rust-lldb"
+         :target nil
+         :cwd nil))
+
   (add-hook 'dap-stopped-hook
           (lambda (arg) (call-interactively #'dap-hydra))))
 
