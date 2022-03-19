@@ -15,11 +15,13 @@
 
 (jag-define-leader-keys-for-major-mode
  'rust-mode
+"m" 'cargo-process-repeat
 "h" 'lsp-rust-analyzer-open-external-docs
 "d" 'lsp-rust-analyzer-debug
 "k" 'lsp-rust-analyzer-rerun
 "K" 'lsp-rust-analyzer-run
-"r" 'cargo-process-run-bin
+"r" 'cargo-process-run
+"R" 'cargo-process-run-bin
 "e" 'cargo-process-run-example
 "s" 'cargo-process-current-test
 "t" 'cargo-process-test
