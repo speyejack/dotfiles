@@ -654,9 +654,10 @@ key_bindings:
   #- { key: Home,      mods: Shift,   mode: ~Alt, action: ScrollToTop,   }
   #- { key: End,       mods: Shift,   mode: ~Alt, action: ScrollToBottom }
 
+  - { key: N,  mods: Shift|Control,           action: SpawnNewInstance            }
   # Vi Mode
-  - { key: Space,  mods: Shift|Control, mode: Vi, action: ScrollToBottom          }
   - { key: Space,  mods: Shift|Control,           action: ToggleViMode            }
+  - { key: Space,  mods: Shift|Control, mode: Vi, action: ScrollToBottom          }
   - { key: Escape,                      mode: Vi, action: ClearSelection          }
   - { key: I,                           mode: Vi, action: ScrollToBottom          }
   - { key: I,                           mode: Vi, action: ToggleViMode            }
