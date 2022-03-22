@@ -17,7 +17,7 @@
           (lambda ()
             ;; (setq indent-tabs-mode t)
 			(lsp)
-            (setq tab-width (default-value 'tab-width))
+            (setq-local tab-width (default-value 'tab-width))
 			(setq dap-python-debugger 'debugpy)
 			(setq dap-python-executable "python3")
 			(setq python-indent-offset 4)))
