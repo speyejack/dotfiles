@@ -17,7 +17,8 @@
   (add-hook 'arduino-mode-hook
             (lambda ()
               (progn
-                (setq-local tab-width 2)
+                (setq-local tab-width 4)
+                (setq-local c-basic-offset 4)
                 (setq-local indent-tabs-mode nil))))
   :diminish)
 
