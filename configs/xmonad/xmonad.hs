@@ -13,7 +13,9 @@ import XMonad.Actions.GridSelect
 import XMonad.Actions.MouseResize
 import XMonad.Actions.Promote
 import XMonad.Actions.Submap
+import XMonad.Actions.Navigation2D (windowGo, windowSwap)
 import XMonad.Actions.RotSlaves (rotSlavesDown, rotAllDown)
+import XMonad.Actions.WindowMenu (windowMenu)
 import qualified XMonad.Actions.TreeSelect as TS
 import XMonad.Actions.WindowGo (runOrRaise)
 import XMonad.Actions.WithAll (sinkAll, killAll)
@@ -139,6 +141,7 @@ myStartupHook = do
           -- spawnOnce "/usr/bin/emacs --daemon &" -- emacs daemon for the emacsclient
           -- -- spawnOnce "kak -d -s mysession &"  -- kakoune daemon for better performance
           -- -- spawnOnce "urxvtd -q -o -f &"      -- urxvt daemon for better performance
+          spawnOnce "touchegg &"
           setWMName "LG3D"
 
 myColorizer :: Window -> Bool -> X (String, String)
@@ -215,6 +218,7 @@ myManageHook = composeAll
      , className =? "pinentry-gtk-2"  --> doFloat
      , className =? "splash"          --> doFloat
      , className =? "toolbar"         --> doFloat
+     , className =? "Onboard"         --> doFloat
      , title =? "Oracle VM VirtualBox Manager"  --> doFloat
      , title =? "Mozilla Firefox"     --> doShift ( myWorkspaces !! 2 )
      , className =? "brave-browser"   --> doShift ( myWorkspaces !! 2 )
@@ -342,6 +346,21 @@ myKeys = [
   where
     soundProg = "~/.dotfiles/configs/i3/i3volume"
 
+myEventHook = serverModeEventHookCmd
+            <+> serverModeEventHook
+            <+> docksEventHook
+            <+> serverModeEventHookF "XMONAD_COMMAND" defaultServerCommands
+  where
+                defaultServerCommands "menu-window"        = windowMenu
+                defaultServerCommands "menu-progs"        = spawnSelected defaultGSConfig gridPrograms
+                defaultServerCommands "swap-up"     = windowSwap U False
+                defaultServerCommands "swap-down"   = windowSwap D False
+                defaultServerCommands "swap-left"   = windowSwap L False
+                defaultServerCommands "swap-right"  = windowSwap R False
+                -- defaultServerCommands "rotate"      = sendMessage Rotate
+                defaultServerCommands "layout-next" = sendMessage NextLayout
+
+
 
 main :: IO ()
 main = do
@@ -355,10 +374,7 @@ main = do
         -- focus-up, focus-down, swap-up, swap-down, swap-master, sink, quit-wm. You can run
         -- "xmonadctl 0" to generate full list of commands written to ~/.xsession-errors.
         -- To compile xmonadctl: ghc -dynamic xmonadctl.hs
-        , handleEventHook    = serverModeEventHookCmd
-                               <+> serverModeEventHook
-                               <+> serverModeEventHookF "XMONAD_PRINT" (io . putStrLn)
-                               <+> docksEventHook
+        , handleEventHook    = myEventHook
         , modMask            = myModMask
         , terminal           = myTerminal
         , startupHook        = myStartupHook
