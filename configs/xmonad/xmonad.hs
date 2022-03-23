@@ -350,6 +350,21 @@ myKeys = [
     , ((0, xK_l),  spawn $ soundProg ++ " nomute")
     , ((0, xK_h),  spawn $ soundProg ++ " mute")
     , ((0, xK_t),  spawn $ soundProg ++ " toggle")
+    ]),
+
+  ("M-y", modalmap . M.fromList $
+    [ ((0, xK_i),  spawn $ musicProg ++ " info")
+    , ((0, xK_space),  spawn $ musicProg ++ " toggle")
+    , ((0, xK_h),  spawn $ musicProg ++ " previous")
+    , ((0, xK_j),  spawn $ musicProg ++ " pause")
+    , ((0, xK_k),  spawn $ musicProg ++ " play")
+    , ((0, xK_l),  spawn $ musicProg ++ " next")
+    , ((0, xK_s),  spawn $ musicProg ++ " shuffle-on")
+    , ((shiftMask, xK_s),  spawn $ musicProg ++ " shuffle-off")
+    , ((0, xK_t),  spawn $ musicProg ++ " loop-track")
+    , ((shiftMask, xK_t),  spawn $ musicProg ++ " loop-off")
+    , ((0, xK_p),  spawn $ musicProg ++ " loop-playlist")
+    , ((shiftMask, xK_p),  spawn $ musicProg ++ " loop-off")
     ])
   ] -- ++ zip (map (\x -> (++) "M-" $ show x) [1..10]) (map W.greedyView [1..10])
   where
