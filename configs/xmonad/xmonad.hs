@@ -291,6 +291,10 @@ myKeys = [
   ("M-c", kill),
   ("M-C-c", io exitSuccess),
 
+  ("M-S-<Up>", sendMessage (IncMasterN 1)),
+  ("M-S-<Down>", sendMessage (IncMasterN (-1))),
+  ("M-C-<Up>", increaseLimit),
+  ("M-C-<Down>", decreaseLimit),
   ("M-u", windows W.focusMaster),
   ("M-S-u", windows W.swapMaster),
 
