@@ -333,6 +333,11 @@ myKeys = [
   ("<XF86AudioLowerVolume>", spawn $ soundProg ++ " decrease 10"),
   ("<XF86AudioRaiseVolume>", spawn $ soundProg ++ " increase 10"),
 
+  ("<XF86AudioPlay>", spawn $ musicProg ++ " toggle"),
+  ("<XF86AudioStop>", spawn $ musicProg ++ " pause"),
+  ("<XF86AudioNext>", spawn $ musicProg ++ " next"),
+  ("<XF86AudioPrev>", spawn $ musicProg ++ " previous"),
+
   ("M-m", modalmap . M.fromList $
     [ ((0, xK_j),  spawn $ soundProg ++ " decrease 10")
     , ((0, xK_k),  spawn $ soundProg ++ " increase 10")
@@ -345,6 +350,7 @@ myKeys = [
   ] -- ++ zip (map (\x -> (++) "M-" $ show x) [1..10]) (map W.greedyView [1..10])
   where
     soundProg = "~/.dotfiles/configs/i3/i3volume"
+    musicProg = "~/.dotfiles/configs/i3/i3music"
 
 myEventHook = serverModeEventHookCmd
             <+> serverModeEventHook
