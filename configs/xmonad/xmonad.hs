@@ -306,6 +306,10 @@ myKeys = [
 
   ("M-p", spawn "xmonad --recompile && xmonad --restart"),
   ("M-o", spawn "/home/jack/.dotfiles/configs/i3/i3clip"),
+  ("M-t", modalmap . M.fromList $
+  [ ((shiftMask, xK_b), sendMessage ToggleStruts)
+
+  ]),
 
   ("M-x", modalmap . M.fromList $
   [ ((0, xK_h), spawn "shutdown -h now")
