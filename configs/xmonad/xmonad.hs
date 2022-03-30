@@ -301,6 +301,9 @@ myKeys = [
   -- ("M-6", viewWorkscreen 6),
   -- ("M-2", viewWorkscreen " sys "),
 
+  ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10%"),
+  ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10%"),
+
   ("M-p", spawn "xmonad --recompile && xmonad --restart"),
   ("M-o", spawn "/home/jack/.dotfiles/configs/i3/i3clip"),
 
@@ -311,8 +314,6 @@ myKeys = [
   , ((0, xK_e), io exitSuccess )
   ]),
 
-  ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10%"),
-  ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10%"),
 
   ("M-b", modalmap . M.fromList $
     [ ((0, xK_j),  spawn "light -U 10")
