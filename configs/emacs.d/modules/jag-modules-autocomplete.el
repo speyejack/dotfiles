@@ -21,6 +21,7 @@
    ("M-l" . 'company-complete-selection)
    ("M-j" . 'company-select-next-or-abort)
    ("M-k" . 'company-select-previous-or-abort)
+   ("M-o" . 'company-abort)
    ("M-h" . 'helm-company))
   (:map company-search-map
    ("M-j" . 'company-select-next-or-abort)
