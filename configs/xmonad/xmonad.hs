@@ -133,7 +133,7 @@ myStartupHook = do
           spawnOnce "picom --experimental-backends &"
           spawnOnce "unclutter &"
           spawnOnce "/usr/bin/dunst &"
-          spawnOnce "setxkbmap -option caps:super"
+          -- spawnOnce "setxkbmap -option caps:super"
           spawnOnce "light -Ss \"sysfs/leds/platform::micmute\" 0"
           -- spawnOnce "nm-applet &"
           -- spawnOnce "volumeicon &"
@@ -174,7 +174,29 @@ tall     = renamed [Replace "tall"]
            $ subLayout [] (smartBorders Simplest)
            $ limitWindows 12
            $ mySpacing 8
+           $ mkToggle (single MIRROR)
            $ ResizableTall 1 (3/100) (1/2) []
+
+grid     = renamed [Replace "grid"]
+           $ smartBorders
+           $ windowNavigation
+           $ addTabs shrinkText myTabTheme
+           $ subLayout [] (smartBorders Simplest)
+           $ limitWindows 12
+           $ mySpacing 8
+           $ mkToggle (single MIRROR)
+           $ Grid (16/10)
+
+-- grid     = renamed [Replace "grid"]
+--            $ smartBorders
+--            $ windowNavigation
+--            $ addTabs shrinkText myTabTheme
+--            $ subLayout [] (smartBorders Simplest)
+--            $ limitWindows 12
+--            $ mySpacing 8
+--            $ mkToggle (single MIRROR)
+--            $ Grid (16/10)
+
 tabs     = renamed [Replace "tabs"]
            -- I cannot add spacing to this layout because it will
            -- add spacing between window and tabs which looks bad.
@@ -194,7 +216,7 @@ myShowWNameTheme = def
 myLayoutHook = avoidStruts $ mouseResize $ windowArrange
                $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
              where
-               myDefaultLayout =    smartBorders tall
+               myDefaultLayout =     smartBorders tall
                                  ||| noBorders tabs
                                  ||| smartBorders grid
 
@@ -285,6 +307,13 @@ myKeys = [
   ("M-[", withFocused $ windows . W.sink),
   -- ("M-]", withFocused $ windows . W.float . windowset),
 
+  ("M-C-h", sendMessage $ pullGroup L),
+  ("M-C-k", sendMessage $ pullGroup U),
+  ("M-C-j", sendMessage $ pullGroup D),
+  ("M-C-l", sendMessage $ pullGroup R),
+  ("M-C-m", withFocused $ sendMessage . MergeAll),
+  ("M-C-u", withFocused $ sendMessage . UnMerge),
+
   ("M-<Space>", sendMessage NextLayout),
   ("M-C-<Space>", selectLayout defaultGSConfig ["Tall", "Tabs", "Grid"]),
 
@@ -294,6 +323,8 @@ myKeys = [
   ("M-c", kill),
   ("M-C-c", io exitSuccess),
 
+  ("M-f", sendMessage $ MT.Toggle NBFULL),
+  ("M-S-m", sendMessage $ MT.Toggle MIRROR),
   ("M-S-<Up>", sendMessage (IncMasterN 1)),
   ("M-S-<Down>", sendMessage (IncMasterN (-1))),
   ("M-C-<Up>", increaseLimit),
@@ -398,7 +429,7 @@ myEventHook = serverModeEventHookCmd
 main :: IO ()
 main = do
     -- Launching three instances of xmobar on their monitors.
-    xmproc0 <- spawnPipe "xmobar ~/.config/xmobar/xmobarrc0"
+    xmproc0 <- spawnPipe "xmobar -x 2 ~/.config/xmobar/xmobarrc0"
     -- the xmonad, ya know...what the WM is named after!
     xmonad $ ewmh def
         { manageHook = ( isFullscreen --> doFullFloat ) <+> myManageHook <+> manageDocks
