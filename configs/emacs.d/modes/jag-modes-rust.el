@@ -8,10 +8,8 @@
   :defer t
   :straight nil)
 
-(add-hook 'rust-mode-hook
-		  (lambda ()
-			((lsp)
-			(rust-enable-format-on-save))))
+(add-hook 'rust-mode-hook 'lsp)
+(add-hook 'rust-mode-hook 'rust-enable-format-on-save)
 
 (jag-define-leader-keys-for-major-mode
  'rust-mode
