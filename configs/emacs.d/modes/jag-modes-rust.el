@@ -59,6 +59,14 @@
   (lsp-rust-analyzer-display-reborrow-hints nil)
   )
 
+(use-package flycheck-rust
+  :after rust-mode
+  :commands
+  (flycheck-rust-setup))
+
+(with-eval-after-load 'rust-mode
+  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+
 (use-package cargo
   :after rust-mode
   :commands
