@@ -18,6 +18,7 @@
 "m" 'cargo-process-repeat
 "h" 'lsp-rust-analyzer-open-external-docs
 "d" 'lsp-rust-analyzer-debug
+"p" 'rust-dbg-wrap-or-unwrap
 "k" 'lsp-rust-analyzer-rerun
 "K" 'lsp-rust-analyzer-run
 "r" 'cargo-process-run
