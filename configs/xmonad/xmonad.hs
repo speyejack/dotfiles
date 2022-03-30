@@ -179,6 +179,8 @@ tabs     = renamed [Replace "tabs"]
            -- I cannot add spacing to this layout because it will
            -- add spacing between window and tabs which looks bad.
            $ tabbed shrinkText myTabTheme
+grid     = mySpacing 8
+           $ ThreeCol 1 (3/100) (1/2)
 
 -- Theme for showWName which prints current workspace when you change workspaces.
 myShowWNameTheme :: SWNConfig
@@ -194,6 +196,7 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange
              where
                myDefaultLayout =    smartBorders tall
                                  ||| noBorders tabs
+                                 ||| smartBorders grid
 
 
 myWorkspaces = [" dev ", " sys ", " www ", " doc ", " vbox ", " chat ", " mus ", " vid ", " gfx "]
