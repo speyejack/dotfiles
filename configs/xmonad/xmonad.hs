@@ -283,7 +283,7 @@ myKeys = [
   -- ("M-]", withFocused $ windows . W.float . windowset),
 
   ("M-<Space>", sendMessage NextLayout),
-  ("M-S-<Space>", selectLayout defaultGSConfig ["Tall", "Tabs", "Grid"]),
+  ("M-C-<Space>", selectLayout defaultGSConfig ["Tall", "Tabs", "Grid"]),
 
   ("M-<Return>", spawn myTerminal),
   ("M-g", spawnSelected defaultGSConfig gridPrograms),
