@@ -9,8 +9,8 @@
   :straight nil)
 
 (use-package org-babel
+  :straight nil
   :defer t
-  :straight org-plus-contrib
   :init
   (setq org-confirm-babel-evaluate nil))
 
