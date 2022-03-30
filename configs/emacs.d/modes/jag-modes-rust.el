@@ -42,6 +42,7 @@
   (setq lsp-rust-server 'rust-analyzer))
 
 (use-package cargo
+  :after rust-mode
   :commands
   (cargo-process-run-bin
    cargo-process-run-example
