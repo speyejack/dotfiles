@@ -187,21 +187,11 @@ grid     = renamed [Replace "grid"]
            $ mkToggle (single MIRROR)
            $ Grid (16/10)
 
--- grid     = renamed [Replace "grid"]
---            $ smartBorders
---            $ windowNavigation
---            $ addTabs shrinkText myTabTheme
---            $ subLayout [] (smartBorders Simplest)
---            $ limitWindows 12
---            $ mySpacing 8
---            $ mkToggle (single MIRROR)
---            $ Grid (16/10)
-
 tabs     = renamed [Replace "tabs"]
            -- I cannot add spacing to this layout because it will
            -- add spacing between window and tabs which looks bad.
            $ tabbed shrinkText myTabTheme
-grid     = mySpacing 8
+threecol     = mySpacing 8
            $ ThreeCol 1 (3/100) (1/2)
 
 -- Theme for showWName which prints current workspace when you change workspaces.
