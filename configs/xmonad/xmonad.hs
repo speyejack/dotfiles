@@ -289,10 +289,10 @@ gridPrograms = ["emacs", "firefox", "thunar", "arduino", "xournalpp", "gtkwave",
 
 myKeys :: [(String, X ())]
 myKeys = [
-  ("M-h", nextScreen),
+  ("M-h", prevScreen),
   ("M-k", windows W.focusDown),
   ("M-j", windows W.focusUp),
-  ("M-l", prevScreen),
+  ("M-l", nextScreen),
   ("M-;", shellPrompt dtXPConfig),
   ("M-[", withFocused $ windows . W.sink),
   -- ("M-]", withFocused $ windows . W.float . windowset),
