@@ -305,10 +305,10 @@ myKeys = [
   ("M-C-u", withFocused $ sendMessage . UnMerge),
 
   ("M-<Space>", sendMessage NextLayout),
-  ("M-C-<Space>", selectLayout defaultGSConfig ["Tall", "Tabs", "Grid"]),
+  ("M-C-<Space>", selectLayout def ["Tall", "Tabs", "Grid"]),
 
   ("M-<Return>", spawn myTerminal),
-  ("M-g", spawnSelected defaultGSConfig gridPrograms),
+  ("M-g", spawnSelected def gridPrograms),
 
   ("M-c", kill),
   ("M-C-c", io exitSuccess),
@@ -405,14 +405,14 @@ myEventHook = serverModeEventHookCmd
             <+> docksEventHook
             <+> serverModeEventHookF "XMONAD_COMMAND" defaultServerCommands
   where
-                defaultServerCommands "menu-window"        = windowMenu
-                defaultServerCommands "menu-progs"        = spawnSelected defaultGSConfig gridPrograms
-                defaultServerCommands "swap-up"     = windowSwap U False
-                defaultServerCommands "swap-down"   = windowSwap D False
-                defaultServerCommands "swap-left"   = windowSwap L False
-                defaultServerCommands "swap-right"  = windowSwap R False
-                -- defaultServerCommands "rotate"      = sendMessage Rotate
-                defaultServerCommands "layout-next" = sendMessage NextLayout
+                defaultServerCommands "menu-window"   = windowMenu
+                defaultServerCommands "menu-progs"    = spawnSelected def gridPrograms
+                defaultServerCommands "swap-up"       = windowSwap U False
+                defaultServerCommands "swap-down"     = windowSwap D False
+                defaultServerCommands "swap-left"     = windowSwap L False
+                defaultServerCommands "swap-right"    = windowSwap R False
+                -- defaultServerCommands "rotate"     = sendMessage Rotate
+                defaultServerCommands "layout-next"   = sendMessage NextLayout
 
 
 
