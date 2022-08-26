@@ -2,4 +2,10 @@
 
 selection=$(hacksaw -f "-i %i -g %g")
 sleep 0.1 #wait for picom
-shotgun $selection - | xclip -t 'image/png' -selection clipboard
+if [ -z "$1" ]
+then
+	shotgun $selection - | xclip -t 'image/png' -selection clipboard
+else
+	echo $1
+	shotgun $selection $1
+fi
