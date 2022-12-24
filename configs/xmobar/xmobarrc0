@@ -45,5 +45,5 @@ Config { font    = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=t
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " <icon=haskell_20.xpm/>   %bar% %UnsafeStdinReader% }{  %bar%  <fc=#03afc2><fn=1>直 </fn>  <action=`nm-connection-editor`>%wlp0s20f3wi%</action> </fc> %bar%  <fc=#b3afc2><fn=1></fn>  %battery% </fc> %bar%  <fc=#46d9ff> %bell%  In: %taskin% Due: %taskdue% </fc> %bar% <fc=#ecbe7b> <action=`alacritty -e htop`>%cpu%</action> </fc> %bar%  <fc=#ff6c6b> <action=`alacritty -e htop`>%memory%</action> </fc> %bar%  <fc=#51afef> %disku% </fc> %bar% <fc=#46d9ff> %date%  </fc>"
+       , template = " <icon=haskell_20.xpm/>   %bar% %UnsafeStdinReader% }{  %bar%  <fc=#03afc2><fn=1>直 </fn>  <action=`nm-connection-editor`>%wlp0s20f3wi%</action> </fc> %bar%  <fc=#b3afc2><fn=1></fn>  %battery% </fc> %bar%  <fc=#46d9ff> %bell%  In: %taskin% Do: %taskdue% </fc> %bar% <fc=#ecbe7b> <action=`alacritty -e htop`>%cpu%</action> </fc> %bar%  <fc=#ff6c6b> <action=`alacritty -e htop`>%memory%</action> </fc> %bar%  <fc=#51afef> %disku% </fc> %bar% <fc=#46d9ff> %date%  </fc>"
        }
