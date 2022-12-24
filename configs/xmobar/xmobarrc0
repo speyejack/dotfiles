@@ -36,11 +36,11 @@ Config { font    = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=t
                         "-l", "red"
                         ] 10
 
-                      , Run Com "uname" ["-r"] "" 3600
+                    , Run Com "echo" ["<fc=#666666>|</fc>"] "bar" 0
                     , Run Wireless "wlp0s20f3" ["<essid>" ] 10
                     , Run UnsafeStdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " <icon=haskell_20.xpm/>   <fc=#666666>|</fc> %UnsafeStdinReader% }{  <fc=#666666>|</fc>  <fc=#03afc2><fn=1>直 </fn>  <action=`nm-connection-editor`>%wlp0s20f3wi%</action> </fc> <fc=#666666>|</fc>  <fc=#b3afc2><fn=1></fn>  %battery% </fc> <fc=#666666>|</fc>  <fc=#46d9ff> <fn=1></fn>  In: %task% </fc> <fc=#666666>|</fc> <fc=#ecbe7b> <action=`alacritty -e htop`>%cpu%</action> </fc> <fc=#666666>|</fc>  <fc=#ff6c6b> <action=`alacritty -e htop`>%memory%</action> </fc> <fc=#666666>|</fc>  <fc=#51afef> %disku% </fc> <fc=#666666>|</fc> <fc=#46d9ff> %date%  </fc>"
+       , template = " <icon=haskell_20.xpm/>   %bar% %UnsafeStdinReader% }{  %bar%  <fc=#03afc2><fn=1>直 </fn>  <action=`nm-connection-editor`>%wlp0s20f3wi%</action> </fc> %bar%  <fc=#b3afc2><fn=1></fn>  %battery% </fc> %bar%  <fc=#46d9ff> <fn=1></fn>  In: %task% </fc> %bar% <fc=#ecbe7b> <action=`alacritty -e htop`>%cpu%</action> </fc> %bar%  <fc=#ff6c6b> <action=`alacritty -e htop`>%memory%</action> </fc> %bar%  <fc=#51afef> %disku% </fc> %bar% <fc=#46d9ff> %date%  </fc>"
        }
