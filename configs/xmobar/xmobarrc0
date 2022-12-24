@@ -13,19 +13,22 @@ Config { font    = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=t
        , iconRoot = "/home/dt/.xmonad/xpm/"  -- default: "."
        , commands = [
                     -- Time and date
-                      Run Date "<fn=1>\xf017</fn>  %b %d %Y - (%H:%M) " "date" 50
+                      Run Date "<fn=1>\xf017 </fn>  %b %d %Y - (%H:%M) " "date" 50
                       -- Network up and down
-                    , Run Network "enp6s0" ["-t", "<fn=1>\xf0ab</fn>  <rx>kb  <fn=1>\xf0aa</fn>  <tx>kb"] 20
+                    , Run Network "enp6s0" ["-t", "<fn=1>\xf0ab </fn>  <rx>kb  <fn=1>\xf0aa</fn>  <tx>kb"] 20
                       -- Cpu usage in percent
-                    , Run Cpu ["-t", "<fn=1>\xf108</fn>  cpu: (<total>%)","-H","50","--high","red"] 20
+                    , Run Cpu ["-t", "<fn=1>\xf108 </fn>  cpu: (<total>%)","-H","50","--high","red"] 20
                       -- Ram used number and percent
-                    , Run Memory ["-t", "<fn=1>\xf233</fn>  mem: <used>M (<usedratio>%)"] 20
+                    , Run Memory ["-t", "<fn=1>\xf233 </fn>  mem: <used>M (<usedratio>%)"] 20
                       -- Disk space free
-                    , Run DiskU [("/", "<fn=1>\xf0c7</fn>  hdd: <free> free")] [] 60
-                      -- Runs custom script to check for pacman updates.
-                      -- This script is in my dotfiles repo in .local/bin.
-                    , Run Com "task" ["+in","+PENDING","count"] "task" 60
-                      -- Runs a standard shell command 'uname -r' to get kernel version
+                    , Run DiskU [("/", "<fn=1>\xf0c7 </fn>  hdd: <free> free")] [] 200
+					-- Run a check of inbox tasks
+                    , Run Com "task" ["+in","+PENDING","count"] "taskin" 100
+					-- Run a check of due tasks
+                    , Run Com "task" ["(due.before:tom","or","schedule.before:tom)","+PENDING","count"] "taskdue" 100
+
+					-- Echos a "bell" icon in front of the pacman updates.
+					, Run Com "echo" ["<fn=1> </fn>"] "bell" 0
                     , Run Battery [
                         "-t", "<acstatus>: <left>% - <timeleft>",
                         "--",
@@ -42,5 +45,5 @@ Config { font    = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=t
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " <icon=haskell_20.xpm/>   %bar% %UnsafeStdinReader% }{  %bar%  <fc=#03afc2><fn=1>直 </fn>  <action=`nm-connection-editor`>%wlp0s20f3wi%</action> </fc> %bar%  <fc=#b3afc2><fn=1></fn>  %battery% </fc> %bar%  <fc=#46d9ff> <fn=1></fn>  In: %task% </fc> %bar% <fc=#ecbe7b> <action=`alacritty -e htop`>%cpu%</action> </fc> %bar%  <fc=#ff6c6b> <action=`alacritty -e htop`>%memory%</action> </fc> %bar%  <fc=#51afef> %disku% </fc> %bar% <fc=#46d9ff> %date%  </fc>"
+       , template = " <icon=haskell_20.xpm/>   %bar% %UnsafeStdinReader% }{  %bar%  <fc=#03afc2><fn=1>直 </fn>  <action=`nm-connection-editor`>%wlp0s20f3wi%</action> </fc> %bar%  <fc=#b3afc2><fn=1></fn>  %battery% </fc> %bar%  <fc=#46d9ff> %bell%  In: %taskin% Due: %taskdue% </fc> %bar% <fc=#ecbe7b> <action=`alacritty -e htop`>%cpu%</action> </fc> %bar%  <fc=#ff6c6b> <action=`alacritty -e htop`>%memory%</action> </fc> %bar%  <fc=#51afef> %disku% </fc> %bar% <fc=#46d9ff> %date%  </fc>"
        }
