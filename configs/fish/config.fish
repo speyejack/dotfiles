@@ -26,3 +26,12 @@ if status is-interactive
 	end
 end
 
+alias in='task add +in'
+
+function tickle
+		 set -l deadline $argv[1]
+		 in +tickle wait:$deadline $argv[2..]
+end
+alias tick=tickle
+alias think='tickle +1d'
+		 
