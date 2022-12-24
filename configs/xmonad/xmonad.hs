@@ -418,8 +418,7 @@ myEventHook = serverModeEventHookCmd
 
 main :: IO ()
 main = do
-    -- Launching three instances of xmobar on their monitors.
-    xmproc0 <- spawnPipe "xmobar -x 2 ~/.config/xmobar/xmobarrc0"
+    xmproc0 <- spawnPipe "xmobar ~/.config/xmobar/xmobarrc0"
     -- the xmonad, ya know...what the WM is named after!
     xmonad $ ewmh def
         { manageHook = ( isFullscreen --> doFullFloat ) <+> myManageHook <+> manageDocks
@@ -449,6 +448,6 @@ main = do
                         , ppUrgent = xmobarColor "#C45500" "" . wrap "!" "!"            -- Urgent workspace
                         , ppExtras  = [windowCount]                                     -- # of windows current workspace
                         , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]
-                        }
+                        } ) 
         } `additionalKeysP` myKeys
         --}
