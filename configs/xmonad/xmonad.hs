@@ -330,6 +330,7 @@ myKeys = [
 
   ("M-p", spawn "xmonad --recompile && xmonad --restart"),
   ("M-o", spawn "/home/jack/.dotfiles/configs/i3/i3clip"),
+  ("M-S-o", spawn "/home/jack/.dotfiles/configs/i3/i3clip ~/snip.png"),
   ("M-t", modalmap . M.fromList $
   [ ((shiftMask, xK_b), sendMessage ToggleStruts)
 
