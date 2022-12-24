@@ -211,7 +211,7 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange
                                  ||| smartBorders grid
 
 
-myWorkspaces = [" dev ", " sys ", " www ", " doc ", " vbox ", " chat ", " mus ", " vid ", " gfx "]
+myWorkspaces = [" dev ", " sys ", " www ", " aux ", " vbox ", " doc ", " mus ", " vid ", " com "]
 myWorkspaceIndices = M.fromList $ zip myWorkspaces [1..]
 
 clickable ws = "<action=xdotool key super+"++show i++">"++ws++"</action>"
