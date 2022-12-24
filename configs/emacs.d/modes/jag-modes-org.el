@@ -175,11 +175,15 @@
 	(kbd "C-M-H") 'org-do-promote
 	(kbd "C-M-L") 'org-do-demote
 
+	(kbd "C-M-RET") 'org-insert-todo-heading
+	(kbd "M-S-RET") 'org-insert-subheading
 	(kbd "M-o") 'jag-org-open-heading-after-current
 	(kbd "RET") 'evil-org-return
 	(kbd "M-O") 'jag-org-open-heading)
 
   (evil-define-key '(motion insert) org-mode-map
+	(kbd "C-M-RET") 'org-insert-todo-heading
+	(kbd "M-S-RET") 'org-insert-subheading
 	(kbd "M-RET") 'org-meta-return
 	(kbd "RET") 'evil-org-return)
 
