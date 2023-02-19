@@ -12,6 +12,7 @@ function _pure_prompt_first_line \
     set --local prompt_git (_pure_prompt_git)
     set --local prompt_command_duration (_pure_prompt_command_duration)
     set --local prompt_taskwarrior (_prompt_taskwarrior)
+    set --local prompt_bubbles (_prompt_bubbles)
     set --local prompt (_pure_print_prompt \
                             $prompt_ssh \
                             $prompt_container \
@@ -30,6 +31,7 @@ function _pure_prompt_first_line \
                 $prompt_ssh \
                 $prompt_container \
                 $prompt_taskwarrior \
+                $prompt_bubbles \
                 $prompt_command_duration
     else
         set prompt_components \
@@ -38,6 +40,7 @@ function _pure_prompt_first_line \
                 $current_folder \
                 $prompt_git \
                 $prompt_taskwarrior \
+                $prompt_bubbles \
                 $prompt_command_duration
     end
 
