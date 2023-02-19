@@ -15,6 +15,7 @@
  'rust-mode
 "m" 'cargo-process-repeat
 "h" 'lsp-rust-analyzer-open-external-docs
+"H" 'cargo-process-doc-open
 "d" 'lsp-rust-analyzer-debug
 "p" 'rust-dbg-wrap-or-unwrap
 "k" 'lsp-rust-analyzer-rerun
