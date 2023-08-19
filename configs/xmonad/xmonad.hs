@@ -128,8 +128,8 @@ myStartupHook :: X ()
 myStartupHook = do
           -- spawnOnce "lxsession &"
           spawnOnce "feh --bg-center ~/.dotfiles/images/bg.jpg"
-          spawnOnce "syncthing --no-browser &"
           spawnOnce "nitrogen --restore &"
+          spawnOnce "syncthing --no-browser &"
           spawnOnce "picom --experimental-backends &"
           spawnOnce "unclutter &"
           spawnOnce "/usr/bin/dunst &"
