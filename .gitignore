@@ -48,3 +48,12 @@ configs/offlineimap/users.json
 
 # Python ignores
 *.pyc
+
+# Nushell
+configs/nushell/history*
+
+# Touchegg
+configs/touchegg/*.lock
+
+
+images
