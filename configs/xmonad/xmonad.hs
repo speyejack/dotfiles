@@ -127,13 +127,13 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 myStartupHook :: X ()
 myStartupHook = do
           -- spawnOnce "lxsession &"
+          spawnOnce "setxkbmap -option caps:super"
           spawnOnce "feh --bg-center ~/.dotfiles/images/bg.jpg"
           spawnOnce "nitrogen --restore &"
           spawnOnce "syncthing --no-browser &"
           spawnOnce "picom --experimental-backends &"
           spawnOnce "unclutter &"
           spawnOnce "/usr/bin/dunst &"
-          -- spawnOnce "setxkbmap -option caps:super"
           spawnOnce "light -Ss \"sysfs/leds/platform::micmute\" 0"
           -- spawnOnce "nm-applet &"
           -- spawnOnce "volumeicon &"
