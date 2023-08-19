@@ -1,10 +1,5 @@
 # Nushell Config File
-use ~/.config/nushell/solarized.nu [solarized_light solarized_dark]
-# For more information on defining custom themes, see
-# https://www.nushell.sh/book/coloring_and_theming.html
-# And here is the theme collection
-# https://github.com/nushell/nu_scripts/tree/main/themes
-let solarized_theme = (solarized_dark)
+use ~/.config/nushell/solarized.nu [solarized_theme]
 
 # External completer example
 let carapace_completer = {|spans|
@@ -13,7 +8,7 @@ let carapace_completer = {|spans|
 
 
 # The default config record. This is where much of your global configuration is setup.
-let-env config = {
+$env.config = {
   ls: {
     use_ls_colors: false # use the LS_COLORS environment variable to colorize output
     clickable_links: true # enable or disable clickable links. Your terminal has to support links.
@@ -116,7 +111,7 @@ let-env config = {
     vi_insert: block # block, underscore, line (block is the default)
     vi_normal: underscore # block, underscore, line  (underscore is the default)
   }
-  color_config: $solarized_theme   # if you want a light theme, replace `$dark_theme` to `$light_theme`
+  color_config: (solarized_theme "dark")   # if you want a light theme, replace `$dark_theme` to `$light_theme`
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
   float_precision: 2 # the precision for displaying floats in tables
@@ -365,4 +360,17 @@ let-env config = {
       event: { send: menu name: commands_with_description }
     }
   ]
+}
+
+# Theme setup
+def tdark [] {
+	alacritty msg config colors.primary.foreground="\"#839496\"";
+	alacritty msg config colors.primary.background="\"#002b36\"";
+	$env.config.color_config = (solarized_theme "dark")
+}
+
+def tlight [] {
+	alacritty msg config colors.primary.foreground="\"#586e75\"";
+	alacritty msg config colors.primary.background="\"#fdf6e3\"";
+	$env.config.color_config = (solarized_theme "light")
 }
