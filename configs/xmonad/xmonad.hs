@@ -134,7 +134,6 @@ myStartupHook = do
           spawnOnce "picom --experimental-backends &"
           spawnOnce "unclutter &"
           spawnOnce "/usr/bin/dunst &"
-          spawnOnce "light -Ss \"sysfs/leds/platform::micmute\" 0"
           -- spawnOnce "nm-applet &"
           -- spawnOnce "volumeicon &"
           -- spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x282c34  --height 22 &"
@@ -142,6 +141,7 @@ myStartupHook = do
           -- -- spawnOnce "kak -d -s mysession &"  -- kakoune daemon for better performance
           -- -- spawnOnce "urxvtd -q -o -f &"      -- urxvt daemon for better performance
           spawnOnce "touchegg &"
+          spawnOnce "light -Ss \"sysfs/leds/platform::micmute\" 0"
           setWMName "LG3D"
 
 myColorizer :: Window -> Bool -> X (String, String)
