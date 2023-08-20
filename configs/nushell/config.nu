@@ -374,3 +374,11 @@ def tlight [] {
 	alacritty msg config colors.primary.background="\"#fdf6e3\"";
 	(change_theme "light")
 }
+
+ssh-agent -c
+    | lines
+    | first 2
+    | parse "setenv {name} {value};"
+    | transpose -r
+    | into record
+    | load-env
