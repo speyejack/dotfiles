@@ -1,5 +1,5 @@
 # Nushell Config File
-use ~/.config/nushell/solarized.nu [create_theme change_theme]
+use ~/.config/nushell/theme.nu [create_theme change_theme]
 
 # External completer example
 let carapace_completer = {|spans|
