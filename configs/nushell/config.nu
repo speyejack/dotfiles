@@ -1,5 +1,5 @@
 # Nushell Config File
-use ~/.config/nushell/solarized.nu [solarized_theme]
+use ~/.config/nushell/solarized.nu [create_theme change_theme]
 
 # External completer example
 let carapace_completer = {|spans|
@@ -111,7 +111,7 @@ $env.config = {
     vi_insert: block # block, underscore, line (block is the default)
     vi_normal: underscore # block, underscore, line  (underscore is the default)
   }
-  color_config: (solarized_theme "dark")   # if you want a light theme, replace `$dark_theme` to `$light_theme`
+  color_config: (create_theme)   # if you want a light theme, replace `$dark_theme` to `$light_theme`
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
   float_precision: 2 # the precision for displaying floats in tables
@@ -366,11 +366,11 @@ $env.config = {
 def tdark [] {
 	alacritty msg config colors.primary.foreground="\"#839496\"";
 	alacritty msg config colors.primary.background="\"#002b36\"";
-	$env.config.color_config = (solarized_theme "dark")
+	(change_theme "dark")
 }
 
 def tlight [] {
 	alacritty msg config colors.primary.foreground="\"#586e75\"";
 	alacritty msg config colors.primary.background="\"#fdf6e3\"";
-	$env.config.color_config = (solarized_theme "light")
+	(change_theme "light")
 }
