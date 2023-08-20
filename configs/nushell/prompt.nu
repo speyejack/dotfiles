@@ -4,8 +4,8 @@ def create_left_prompt [] {
 	[
 		" "
 		(create_path_prompt $env.PWD)
-		(ansi $colors.red)
-		(create_time_prompt ($env.CMD_DURATION_MS | into int))
+		(ansi $colors.yellow)
+		(create_prompt_time )
 		(ansi reset)
 	] | str join
 }
@@ -68,15 +68,19 @@ def shorten_path [long_dir: string] {
 
 }
 
-def create_time_prompt [time_ms: int] {
-	let divs = [86400000, 3600000,60000,1000]
-	let mods = [10000,24,60,60]
+def create_prompt_time [] {
+	(format_time ([$env.CMD_DURATION_MS, "ms"] | str join | into duration))
+}
+
+def format_time [time: duration] {
+	let divs = [1day, 1hr, 1min, 1sec] | each {|x| into duration}
+	let mods = [0, 24, 60, 60]
 	let unit = ["d","h","m","s"]
 
-	if $time_ms > 1000 {
+	if $time > 1sec {
 		$divs |
 		zip $mods |
-		each {|x| $time_ms // $x.0 mod $x.1} |
+		each {|x| if $x.1 != 0 {$time // $x.0 mod $x.1} else {$time // $x.0}} |
 		zip $unit |
 		filter {|x| $x.0 > 0} |
 		flatten |
@@ -110,6 +114,10 @@ def create_prompt_color [] {
 		$colors.red
 	}
 
+}
+
+def create_prompt_taskwarrior [] {
+	
 }
 
 # Use nushell functions to define your right and left prompt
