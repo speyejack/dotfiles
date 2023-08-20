@@ -4,8 +4,10 @@ def create_left_prompt [] {
 	[
 		" "
 		(create_path_prompt $env.PWD)
-		(ansi $colors.yellow)
-		(create_prompt_time )
+		(create_prompt_git)
+		(create_prompt_taskwarrior)
+		(create_prompt_bubbles)
+		(create_prompt_duration)
 		(ansi reset)
 	] | str join
 }
@@ -68,7 +70,7 @@ def shorten_path [long_dir: string] {
 
 }
 
-def create_prompt_time [] {
+def create_prompt_duration [] {
 	(format_time ([$env.CMD_DURATION_MS, "ms"] | str join | into duration))
 }
 
@@ -102,7 +104,7 @@ def create_right_prompt [] {
         (date now | date format '%R')
     ] | str join | str replace --all "([/:])" $"(ansi $colors.cyan)${1}(ansi $time_color)")
 
-    ([$time_segment] | str join)
+    ([$time_segment, (ansi reset)] | str join)
 }
 
 def create_prompt_color [] {
@@ -117,9 +119,66 @@ def create_prompt_color [] {
 }
 
 def create_prompt_taskwarrior [] {
-	
+	let colors = $env.themecolors.curr
+
+	let out = try  {
+	   let count = task +in +PENDING count | into int
+	   if ($count > 0) {
+	   	  " ∴"
+	   } else {
+	   	  ""
+	   }
+	} catch {
+	  ""
+	}
+	[(ansi $colors.yellow), $out] | str join
 }
 
+def create_prompt_bubbles [] {
+	let colors = $env.themecolors.curr
+
+	let out = try {
+	   let count = bubbles count | into int
+	   if ($count > 0) {
+	   	  " ○"
+	   } else {
+	   	  ""
+	   }
+	} catch {
+	  ""
+	}
+	[(ansi $colors.yellow), $out] | str join
+}
+
+def create_prompt_git [] {
+	let colors = $env.themecolors.curr
+
+	let not_git_repo = (do {git rev-parse --is-inside-work-tree} | complete).exit_code != 0
+	if $not_git_repo {
+	   return ""
+	}
+
+	let branch_name = try {
+		do{git symbolic-ref --short HEAD err> /dev/null} | complete
+		#do{git name-rev --name-only HEAD err> /dev/null} | complete
+	}
+
+	let is_dirty = (do {git diff --ignore-submodules --no-ext-diff --quiet --exit-code out+err> /dev/null} | complete).exit_code != 0
+
+	let sym = if branch_name == "main" or branch_name == "master" {
+	   ""
+	} else {
+	   ""
+	} 
+
+	let color = if $is_dirty {
+		$colors.blue	
+	} else {
+		$colors.comment	
+	}
+
+	[(ansi $color), $sym] | str join
+}
 # Use nushell functions to define your right and left prompt
 $env.PROMPT_COMMAND = {|| create_left_prompt }
 $env.PROMPT_COMMAND_RIGHT = {|| create_right_prompt }
