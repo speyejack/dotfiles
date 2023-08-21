@@ -198,14 +198,15 @@ def create_prompt_git [] {
 	   return ""
 	}
 
-	let branch_name = try {
-		(git symbolic-ref --short HEAD err> /dev/null)
+	let branch_name = (git symbolic-ref --short HEAD)
+	#try {
+		#(git symbolic-ref --short HEAD err> /dev/null)
 		#do{git name-rev --name-only HEAD err> /dev/null} | complete
-	}
+	#}
 
 	let is_dirty = (do {git diff --ignore-submodules --no-ext-diff --quiet --exit-code out+err> /dev/null} | complete).exit_code != 0
 
-	let sym = if branch_name == "main" or branch_name == "master" {
+	let sym = if $branch_name == "main" or $branch_name == "master" {
 	   ""
 	} else {
 	   ""
