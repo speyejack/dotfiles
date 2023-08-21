@@ -449,6 +449,6 @@ main = do
                         , ppUrgent = xmobarColor "#C45500" "" . wrap "!" "!"            -- Urgent workspace
                         , ppExtras  = [windowCount]                                     -- # of windows current workspace
                         , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]
-                        } ) 
+                        }
         } `additionalKeysP` myKeys
         --}
