@@ -6,7 +6,6 @@ let carapace_completer = {|spans|
   carapace $spans.0 nushell $spans | from json
 }
 
-
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
   ls: {
@@ -33,10 +32,10 @@ $env.config = {
     help_banner: false
     exit_esc: true
 
-    command_bar_text: '#C4C9C6'
+    command_bar_text: $env.themecolors.curr.body
     # command_bar: {fg: '#C4C9C6' bg: '#223311' }
 
-    status_bar_background: {fg: '#1D1F21' bg: '#C4C9C6' }
+    status_bar_background: {fg: $env.themecolors.curr.backg bg:$env.themecolors.curr.emph  }
     # status_bar_text: {fg: '#C4C9C6' bg: '#223311' }
 
     highlight: {bg: 'yellow' fg: 'black' }
@@ -55,7 +54,7 @@ $env.config = {
     }
 
     table: {
-      split_line: '#404040'
+      split_line: $env.themecolors.curr.backg
 
       cursor: true
 
@@ -152,11 +151,7 @@ $env.config = {
             col_width: 20   # Optional value. If missing all the screen width is used to calculate column width
             col_padding: 2
         }
-        style: {
-            text: green
-            selected_text: green_reverse
-            description_text: yellow
-        }
+        style: $env.jag.menu-style
       }
       {
         name: history_menu
@@ -166,11 +161,7 @@ $env.config = {
             layout: list
             page_size: 10
         }
-        style: {
-            text: green
-            selected_text: green_reverse
-            description_text: yellow
-        }
+        style: $env.jag.menu-style
       }
       {
         name: help_menu
@@ -184,11 +175,7 @@ $env.config = {
             selection_rows: 4
             description_rows: 10
         }
-        style: {
-            text: green
-            selected_text: green_reverse
-            description_text: yellow
-        }
+        style: $env.jag.menu-style
       }
       # Example of extra menus created using a nushell source
       # Use the source field to create a list of records that populates
@@ -203,11 +190,7 @@ $env.config = {
             col_width: 20
             col_padding: 2
         }
-        style: {
-            text: green
-            selected_text: green_reverse
-            description_text: yellow
-        }
+        style: $env.jag.menu-style
         source: { |buffer, position|
             $nu.scope.commands
             | where name =~ $buffer
@@ -222,11 +205,7 @@ $env.config = {
             layout: list
             page_size: 10
         }
-        style: {
-            text: green
-            selected_text: green_reverse
-            description_text: yellow
-        }
+        style: $env.jag.menu-style
         source: { |buffer, position|
             $nu.scope.vars
             | where name =~ $buffer
