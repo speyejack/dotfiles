@@ -118,6 +118,46 @@ def create_prompt_color [] {
 
 }
 
+def create_prompt_ssh [] {
+	let is_ssh = $env | columns | find SSH_CONNECTION | is-empty 
+	if not $is_ssh {
+	   return ""
+	}
+
+	let colors = $env.themecolors.curr
+
+	let username = (id -u -n)
+	let hostname = (hostname)
+
+	let username_color = if $username == "root" {
+		$colors.red				   
+	} else {
+		$colors.cyan				   
+	}
+	let hostname_color = $colors.cyan
+	let at_color = $colors.green
+
+	[
+		(ansi $username_color)
+		$username
+		(ansi $at_color)
+		"@"
+		(ansi $hostname_color)
+		$hostname
+	] | str join
+
+}
+
+def ssh_connection [] {
+	
+	let is_ssh = $env | columns | find SSH_CONNECTION | is-empty 
+	if not $is_ssh {
+	   return ""
+	}
+
+	$env.SSH_CONNECTION | parse "{in_ip} {in_port} {host_ip} {host_port}" | into record 
+}
+
 def create_prompt_taskwarrior [] {
 	let colors = $env.themecolors.curr
 
@@ -159,7 +199,7 @@ def create_prompt_git [] {
 	}
 
 	let branch_name = try {
-		do{git symbolic-ref --short HEAD err> /dev/null} | complete
+		(git symbolic-ref --short HEAD err> /dev/null)
 		#do{git name-rev --name-only HEAD err> /dev/null} | complete
 	}
 
