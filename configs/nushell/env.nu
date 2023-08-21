@@ -2,6 +2,7 @@
 #
 # version = 0.82.1
 source ~/.config/nushell/prompt.nu
+source ~/.config/nushell/theme_vals.nu
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
