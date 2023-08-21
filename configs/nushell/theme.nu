@@ -59,7 +59,7 @@ export def create_theme [] {
 	return $theme;
 }
 
-export def change_theme [theme_type: string] {
+export def-env change_theme [theme_type: string] {
 	let is_dark = $theme_type == "dark"
 
 	$env.themecolors.curr = if $is_dark {$env.themecolors.dark} else {$env.themecolors.light}

@@ -342,13 +342,13 @@ $env.config = {
 }
 
 # Theme setup
-def tdark [] {
+def-env tdark [] {
 	alacritty msg config colors.primary.foreground="\"#839496\"";
 	alacritty msg config colors.primary.background="\"#002b36\"";
 	(change_theme "dark")
 }
 
-def tlight [] {
+def-env tlight [] {
 	alacritty msg config colors.primary.foreground="\"#586e75\"";
 	alacritty msg config colors.primary.background="\"#fdf6e3\"";
 	(change_theme "light")
