@@ -45,13 +45,15 @@ def shorten_path [long_dir: string] {
 	# - Replace long dirs with ..s (ex. ~/Doc../project/src)
 	# - Replace middle dirs with first letter (ex. ~/D/p/src) (or 3 letters)
 	# - Remove middle dirs completely (ex. ~/Documents/../src)
+	# - Make sure last dir is full (ex. ~/Documents/../src)
 
 	let max_len = $env.jag.path.max-path
 	let sub_len = $env.jag.path.sub-len
 
 	if ($long_dir | str length) > $max_len {
-		$long_dir |
-		split row (char path_sep) |
+	   let dirs = $long_dir | split row (char path_sep)
+
+	   $dirs | first (($dirs | length) - 1) |
 		each {
 			|x| if ($x | str length) < $sub_len {
 				$x
@@ -63,7 +65,7 @@ def shorten_path [long_dir: string] {
 				] | str join
 
 			}
-		} | str join (char path_sep)
+		} | append ($dirs | last) | str join (char path_sep)
 	} else {
 		$long_dir
 	}
