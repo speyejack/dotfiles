@@ -31,6 +31,7 @@ $env.NU_PLUGIN_DIRS = [
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin' | prepend '~/.local/bin' | prepend '~/.bin/local' )
+$env.LS_COLORS = $env.themecolors.curr.ls_colors
 
 $env.jag = {
 	path: {

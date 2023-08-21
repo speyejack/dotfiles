@@ -64,5 +64,6 @@ export def change_theme [theme_type: string] {
 
 	$env.themecolors.curr = if $is_dark {$env.themecolors.dark} else {$env.themecolors.light}
 	$env.config.color_config = (create_theme)
+	$env.LS_COLORS = $env.themecolors.curr.ls_colors
 }
 

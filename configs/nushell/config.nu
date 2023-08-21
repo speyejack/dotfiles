@@ -9,7 +9,7 @@ let carapace_completer = {|spans|
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
   ls: {
-    use_ls_colors: false # use the LS_COLORS environment variable to colorize output
+    use_ls_colors: true # use the LS_COLORS environment variable to colorize output
     clickable_links: true # enable or disable clickable links. Your terminal has to support links.
   }
   rm: {
