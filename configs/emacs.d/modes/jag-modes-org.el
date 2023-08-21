@@ -447,15 +447,15 @@
 ;; A simple org-mode based journaling mode
 ;;
 ;; Source: https://github.com/bastibe/org-journal
-(use-package org-journal
-  :commands 'org-journal-new-entry
-  :custom
-  (org-journal-dir jag-notes-library-dir)
-  (org-journal-file-type 'weekly)
-  (org-journal-file-header "#+title: %F")
-  (org-journal-date-prefix "* ")
-  (org-journal-file-format "%Y-%m-%d.org")
-  (org-journal-date-format "%A, %B %e %Y"))
+;; (use-package org-journal
+;;   :commands 'org-journal-new-entry
+;;   :custom
+;;   (org-journal-dir jag-notes-library-dir)
+;;   (org-journal-file-type 'weekly)
+;;   (org-journal-file-header "#+title: %F")
+;;   (org-journal-date-prefix "* ")
+;;   (org-journal-file-format "%Y-%m-%d.org")
+;;   (org-journal-date-format "%A, %B %e %Y"))
 
 ;; org-roam
 ;;
