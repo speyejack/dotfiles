@@ -30,7 +30,7 @@ alias in='task add +in'
 
 function tickle
 		 set -l deadline $argv[1]
-		 in +tickle wait:$deadline $argv[2..]
+		 in +tickle wait:$deadline schedule:$deadline+1d $argv[2..]
 end
 alias tick=tickle
 alias think='tickle +1d'
