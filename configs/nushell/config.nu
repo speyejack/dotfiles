@@ -382,3 +382,18 @@ ssh-agent -c
     | transpose -r
     | into record
     | load-env
+
+alias in = task add +in
+def tickle [deadline: string, ...extra: string] {
+	in +tickle wait:$deadline $extra
+}
+
+alias tick = tickle
+alias think = tickle +1d
+alias today = task add +today due:8am
+alias todo = task add +today +optional until:8am
+alias soon = task add +soon
+alias someday = task add +someday
+alias overhead = task add +overhead +soon
+
+		
