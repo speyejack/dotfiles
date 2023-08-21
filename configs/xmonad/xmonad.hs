@@ -127,7 +127,7 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 myStartupHook :: X ()
 myStartupHook = do
           -- spawnOnce "lxsession &"
-          spawnOnce "setxkbmap -option caps:super"
+          spawnOnce "autorandr --change work"
           spawnOnce "feh --bg-center ~/.dotfiles/images/bg.jpg"
           spawnOnce "nitrogen --restore &"
           spawnOnce "syncthing --no-browser &"
@@ -191,8 +191,8 @@ tabs     = renamed [Replace "tabs"]
            -- I cannot add spacing to this layout because it will
            -- add spacing between window and tabs which looks bad.
            $ tabbed shrinkText myTabTheme
-threecol     = mySpacing 8
-           $ ThreeCol 1 (3/100) (1/2)
+-- grid     = mySpacing 8
+--            $ ThreeCol 1 (3/100) (1/2)
 
 -- Theme for showWName which prints current workspace when you change workspaces.
 myShowWNameTheme :: SWNConfig
@@ -285,14 +285,14 @@ makeLayoutList = map (\x -> (x, sendMessage $ JumpToLayout $ map toLower x))
 
 selectLayout conf layouts = runSelectedAction conf $ makeLayoutList layouts
 
-gridPrograms = ["emacs", "firefox", "thunar", "arduino", "xournalpp", "gtkwave", "discord","steam"]
+gridPrograms = ["emacs", "firefox", "thunar", "arduino", "xournalpp", "gtkwave", "discord", "steam", "waveforms"]
 
 myKeys :: [(String, X ())]
 myKeys = [
-  ("M-h", prevScreen),
+  ("M-l", nextScreen),
   ("M-k", windows W.focusDown),
   ("M-j", windows W.focusUp),
-  ("M-l", nextScreen),
+  ("M-h", prevScreen),
   ("M-;", shellPrompt dtXPConfig),
   ("M-[", withFocused $ windows . W.sink),
   -- ("M-]", withFocused $ windows . W.float . windowset),
@@ -419,7 +419,8 @@ myEventHook = serverModeEventHookCmd
 
 main :: IO ()
 main = do
-    xmproc0 <- spawnPipe "xmobar ~/.config/xmobar/xmobarrc0"
+    -- Launching three instances of xmobar on their monitors.
+    xmproc0 <- spawnPipe "xmobar -x 1 ~/.config/xmobar/xmobarrc0"
     -- the xmonad, ya know...what the WM is named after!
     xmonad $ ewmh def
         { manageHook = ( isFullscreen --> doFullFloat ) <+> myManageHook <+> manageDocks

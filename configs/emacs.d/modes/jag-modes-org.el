@@ -347,12 +347,12 @@
 
   (require 'jag-modes-org-babel))
 
-(use-package org-transclusion
-  :straight (org-transclusion
-			 :type git :host github :branch "main"
-			 :repo "nobiot/org-transclusion")
-  :diminish
-  :after org)
+;; (use-package org-transclusion
+;;   :straight (org-transclusion
+;; 			 :type git :host github :branch "main"
+;; 			 :repo "nobiot/org-transclusion")
+;;   :diminish
+;;   :after org)
 
 
 ;; org-bullets

@@ -90,11 +90,11 @@
 ;;
 ;; Source: https://github.com/alphapapa/magit-todos
 
-(use-package magit-todos
-  :diminish
-  :after magit
-  :config
-  (magit-todos-mode))
+;; (use-package magit-todos
+;;   :diminish
+;;   :after (magit org)
+;;   :config
+;;   (magit-todos-mode))
 
 (provide 'jag-modules-git)
 ;;; jag-modules-git.el ends here
