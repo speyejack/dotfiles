@@ -46,6 +46,7 @@ def shorten_path [long_dir: string] {
 	# - Replace middle dirs with first letter (ex. ~/D/p/src) (or 3 letters)
 	# - Remove middle dirs completely (ex. ~/Documents/../src)
 	# - Make sure last dir is full (ex. ~/Documents/../src)
+	# - Partial truncate (ex. ~/Docu../src)
 
 	let max_len = $env.jag.path.max-path
 	let sub_len = $env.jag.path.sub-len
