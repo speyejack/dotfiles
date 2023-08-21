@@ -39,4 +39,3 @@ alias todo='task add +today +optional until:8am'
 alias soon='task add +soon'
 alias someday='task add +someday'
 alias overhead='task add +overhead +soon'
-		
