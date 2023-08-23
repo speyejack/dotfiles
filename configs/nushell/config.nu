@@ -374,6 +374,12 @@ def tickle [deadline: string, ...extra: string] {
 	in +tickle wait:$deadline $extra
 }
 
+def cl [loc: string] {
+	cd $loc
+	ls
+}
+
+
 alias tick = tickle
 alias think = tickle +1d
 alias today = task add +today due:8am
