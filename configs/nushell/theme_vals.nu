@@ -20,11 +20,11 @@ export-env {
 	}
 
 	let light = {
-		backg   : $base.base3
-		backhl  : $base.base2
-		comment : $base.base1
-		body    : $base.base00
-		emph    : $base.base01
+		backg   : $base.base3  # "#fdf6e3"
+		backhl  : $base.base2  # "#eee8d5" 
+		comment : $base.base1  # "#93a1a1"
+		body    : $base.base00 # "#657b83"
+		emph    : $base.base01 # "#586e75"
 
 		yellow   : $base.yellow
 		orange   : $base.orange   
