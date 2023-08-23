@@ -5,6 +5,7 @@ def create_left_prompt [] {
 		" "
 		(create_path_prompt $env.PWD)
 		(create_prompt_git)
+		(create_prompt_pyvenv)
 		(create_prompt_taskwarrior)
 		(create_prompt_bubbles)
 		(create_prompt_duration)
@@ -191,6 +192,20 @@ def create_prompt_bubbles [] {
 	  ""
 	}
 	[(ansi $colors.yellow), $out] | str join
+}
+
+def create_prompt_pyvenv [] {
+	let active_venv = $env | columns | any {|x| $x == "VIRTUAL_ENV"} 
+
+	if not $active_venv {
+	   return ""
+	}
+
+	let colors = $env.themecolors.curr
+	let color = $colors.comment
+	let sym = ""
+
+	[" ", (ansi $color), $sym] | str join
 }
 
 def create_prompt_git [] {
