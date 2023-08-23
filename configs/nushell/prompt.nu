@@ -194,13 +194,12 @@ def create_prompt_bubbles [] {
 }
 
 def create_prompt_git [] {
-	let colors = $env.themecolors.curr
-
 	let not_git_repo = (do {git rev-parse --is-inside-work-tree} | complete).exit_code != 0
 	if $not_git_repo {
 	   return ""
 	}
 
+	let colors = $env.themecolors.curr
 	let branch_name = (git symbolic-ref --short HEAD)
 	#try {
 		#(git symbolic-ref --short HEAD err> /dev/null)
@@ -221,7 +220,7 @@ def create_prompt_git [] {
 		$colors.comment	
 	}
 
-	[(ansi $color), $sym] | str join
+	[" ", (ansi $color), $sym] | str join
 }
 # Use nushell functions to define your right and left prompt
 $env.PROMPT_COMMAND = {|| create_left_prompt }
