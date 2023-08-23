@@ -63,6 +63,12 @@ export def-env change_theme [theme_type: string] {
 	let is_dark = $theme_type == "dark"
 
 	$env.themecolors.curr = if $is_dark {$env.themecolors.dark} else {$env.themecolors.light}
+
+	$env.jag.menu-style = {
+		text: $env.themecolors.curr.comment
+		selected_text: $env.themecolors.curr.emph
+		description_text: $env.themecolors.curr.yellow
+	}
 	$env.config.color_config = (create_theme)
 	$env.LS_COLORS = $env.themecolors.curr.ls_colors
 	$env.TASK_THEME = $env.themecolors.curr.task_colors
