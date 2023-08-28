@@ -3,6 +3,7 @@ def create_left_prompt [] {
 	let colors = $env.themecolors.curr
 	[
 		" "
+		(create_prompt_ssh)
 		(create_path_prompt $env.PWD)
 		(create_prompt_git)
 		(create_prompt_pyvenv)
@@ -123,8 +124,8 @@ def create_prompt_color [] {
 }
 
 def create_prompt_ssh [] {
-	let is_ssh = $env | columns | find SSH_CONNECTION | is-empty 
-	if not $is_ssh {
+	let is_not_ssh = $env | columns | find SSH_CONNECTION | is-empty 
+	if $is_not_ssh {
 	   return ""
 	}
 
@@ -139,7 +140,7 @@ def create_prompt_ssh [] {
 		$colors.cyan				   
 	}
 	let hostname_color = $colors.cyan
-	let at_color = $colors.green
+	let at_color = $colors.comment
 
 	[
 		(ansi $username_color)
@@ -148,6 +149,7 @@ def create_prompt_ssh [] {
 		"@"
 		(ansi $hostname_color)
 		$hostname
+		" "
 	] | str join
 
 }
