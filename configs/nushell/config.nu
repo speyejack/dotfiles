@@ -374,7 +374,7 @@ def tickle [deadline: string, ...extra: string] {
 	in +tickle wait:$deadline $extra
 }
 
-def cl [loc: string] {
+def-env cl [loc: string] {
 	cd $loc
 	ls
 }
