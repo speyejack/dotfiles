@@ -27,7 +27,7 @@ def create_path_prompt [pwd] {
     }
 
     let long_dir = ([
-        ($pwd | str substring 0..($home | str length) | str replace --string $home "~"),
+        ($pwd | str substring 0..($home | str length) | str replace $home "~"),
         ($pwd | str substring ($home | str length)..)
     ] | str join)
 
@@ -37,7 +37,7 @@ def create_path_prompt [pwd] {
     let separator_color = (if (is-admin) { ansi $colors.red } else { ansi {fg: $colors.cyan attr: n}})
     let path_segment = $"($path_color)($dir)"
 
-    let path = $path_segment | str replace --all --string (char path_sep) $"($separator_color)(char path_sep)($path_color)"
+    let path = $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
 
 	$path
 }
@@ -106,7 +106,7 @@ def create_right_prompt [] {
     let time_segment = ([
         (ansi reset)
         (ansi $time_color)
-        (date now | date format '%R')
+        (date now | format date '%R')
     ] | str join | str replace --all "([/:])" $"(ansi $colors.cyan)${1}(ansi $time_color)")
 
     ([$time_segment, (ansi reset)] | str join)
@@ -210,6 +210,11 @@ def create_prompt_pyvenv [] {
 	[" ", (ansi $color), $sym] | str join
 }
 
+# def get_branch_name {
+# 	let branch_name = (do { git symbolic-ref --short HEAD err> /dev/null } | complete)
+	
+# }
+
 def create_prompt_git [] {
 	let not_git_repo = (do {git rev-parse --is-inside-work-tree} | complete).exit_code != 0
 	if $not_git_repo {
@@ -217,7 +222,7 @@ def create_prompt_git [] {
 	}
 
 	let colors = $env.themecolors.curr
-	let branch_name = (git symbolic-ref --short HEAD)
+	let branch_name = (do { git symbolic-ref --short HEAD err> /dev/null } | complete)
 	#try {
 		#(git symbolic-ref --short HEAD err> /dev/null)
 		#do{git name-rev --name-only HEAD err> /dev/null} | complete
@@ -227,6 +232,8 @@ def create_prompt_git [] {
 
 	let sym = if $branch_name == "main" or $branch_name == "master" {
 	   ""
+	} else if $branch_name == "undefined" {
+	   ""
 	} else {
 	   ""
 	} 
