@@ -362,14 +362,6 @@ def-env tlight [] {
 	$env.config = (create_config)
 }
 
-ssh-agent -c
-    | lines
-    | first 2
-    | parse "setenv {name} {value};"
-    | transpose -r
-    | into record
-    | load-env
-
 alias in = task add +in
 def tickle [deadline: string, ...extra: string] {
 	in +tickle wait:$deadline $extra
