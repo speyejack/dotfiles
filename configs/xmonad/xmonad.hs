@@ -373,6 +373,14 @@ myKeys = [
   ("<XF86AudioNext>", spawn $ musicProg ++ " next"),
   ("<XF86AudioPrev>", spawn $ musicProg ++ " previous"),
 
+  ("M-z", modalmap . M.fromList $
+    [ ((0, xK_t),  spawn $ touchProg ++ " enable")
+    , ((0, xK_m),  spawn $ mouseProg ++ " enable")
+    , ((0, xK_x),  spawn $ "alacritty -e \"xev\"")
+    , ((shiftMask, xK_t),  spawn $ touchProg ++ " disable")
+    , ((shiftMask, xK_m),  spawn $ soundProg ++ " disable")
+    ]),
+
   ("M-m", modalmap . M.fromList $
     [ ((0, xK_j),  spawn $ soundProg ++ " decrease 10")
     , ((0, xK_k),  spawn $ soundProg ++ " increase 10")
@@ -401,6 +409,8 @@ myKeys = [
   where
     soundProg = "~/.dotfiles/configs/i3/i3volume"
     musicProg = "~/.dotfiles/configs/i3/i3music"
+    mouseProg = "~/.dotfiles/configs/i3/i3mouse"
+    touchProg = "~/.dotfiles/configs/i3/i3touch"
 
 myEventHook = serverModeEventHookCmd
             <+> serverModeEventHook
