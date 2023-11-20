@@ -285,7 +285,7 @@ makeLayoutList = map (\x -> (x, sendMessage $ JumpToLayout $ map toLower x))
 
 selectLayout conf layouts = runSelectedAction conf $ makeLayoutList layouts
 
-gridPrograms = ["emacs", "firefox", "thunar", "arduino", "xournalpp", "gtkwave", "discord","steam"]
+gridPrograms = ["emacs", "firefox", "thunar", "arduino", "logseq", "vmplayer", "discord","xournalpp", "gtkwave","steam"]
 
 myKeys :: [(String, X ())]
 myKeys = [
