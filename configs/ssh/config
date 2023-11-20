@@ -36,3 +36,10 @@ Host athena
 	HostName 10.100.99.5
 	Port 2222
 	ForwardX11 yes
+
+Host simpathena
+	User jack
+	HostName 10.100.99.5
+	Port 2222
+	RemoteCommand bash -l
+	RequestTTY force
