@@ -315,6 +315,7 @@ myKeys = [
 
   ("M-f", sendMessage $ MT.Toggle NBFULL),
   ("M-S-m", sendMessage $ MT.Toggle MIRROR),
+  ("M-/", sendMessage $ MT.Toggle MIRROR),
   ("M-S-<Up>", sendMessage (IncMasterN 1)),
   ("M-S-<Down>", sendMessage (IncMasterN (-1))),
   ("M-C-<Up>", increaseLimit),
