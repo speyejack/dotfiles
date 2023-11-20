@@ -37,7 +37,7 @@ Host athena
 	Port 2222
 	ForwardX11 yes
 
-Host simpathena
+Host simpleathena
 	User jack
 	HostName 10.100.99.5
 	Port 2222
