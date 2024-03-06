@@ -370,6 +370,9 @@ def --env cl [loc: string] {
 }
 
 
+# Change this to use NU_LIB_PATH
+source zoxide.nu
+
 alias tick = tickle
 alias think = tickle +1d
 alias today = task add +today due:8am
@@ -377,5 +380,6 @@ alias todo = task add +today +optional until:8am
 alias soon = task add +soon
 alias someday = task add +someday
 alias overhead = task add +overhead +soon
-
+alias cd = z
+alias cdi = zi
 		
