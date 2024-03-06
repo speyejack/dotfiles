@@ -3,7 +3,7 @@ use ~/.config/nushell/theme.nu [create_theme change_theme]
 
 # External completer example
 let carapace_completer = {|spans|
-  carapace $spans.0 nushell $spans | from json
+  carapace $spans.0 nushell ...$spans | from json
 }
 
 # The default config record. This is where much of your global configuration is setup.
@@ -345,14 +345,14 @@ def create_config [] {
 
 $env.config = (create_config)
 # Theme setup
-def-env tdark [] {
+def --env tdark [] {
 	alacritty msg config colors.primary.foreground="\"#839496\"";
 	alacritty msg config colors.primary.background="\"#002b36\"";
 	(change_theme "dark")
 	$env.config = (create_config)
 }
 
-def-env tlight [] {
+def --env tlight [] {
 	alacritty msg config colors.primary.foreground="\"#586e75\"";
 	alacritty msg config colors.primary.background="\"#fdf6e3\"";
 	(change_theme "light")
@@ -364,7 +364,7 @@ def tickle [deadline: string, ...extra: string] {
 	in +tickle wait:$deadline $extra
 }
 
-def-env cl [loc: string] {
+def --env cl [loc: string] {
 	cd $loc
 	ls
 }
