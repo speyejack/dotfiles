@@ -1,12 +1,11 @@
 # Nushell Config File
 use ~/.config/nushell/theme.nu [create_theme change_theme]
-
-# External completer example
-let carapace_completer = {|spans|
-  carapace $spans.0 nushell $spans | from json
-}
+use ~/.config/nushell/scripts/completer.nu [external_completer]
 
 # The default config record. This is where much of your global configuration is setup.
+
+let completer = {|spans| external_completer $spans}
+
 
 def create_config [] {
 {
@@ -16,9 +15,6 @@ def create_config [] {
 	}
 	rm: {
 		always_trash: false # always act as if -t was given. Can be overridden with -p
-	}
-	cd: {
-		abbreviations: true # allows `cd s/o/f` to expand to `cd some/other/folder`
 	}
 	table: {
 		mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
@@ -91,6 +87,7 @@ def create_config [] {
 		max_size: 10000 # Session has to be reloaded for this to take effect
 		sync_on_enter: true # Enable to share history between multiple sessions, else you have to close the session to write history to file
 		file_format: "sqlite" # "sqlite" or "plaintext"
+		isolation: true
 	}
 	completions: {
 		case_sensitive: false # set to true to enable case-sensitive completions
@@ -100,7 +97,7 @@ def create_config [] {
 		external: {
 		enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up my be very slow
 		max_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
-		completer: $carapace_completer # check 'carapace_completer' above as an example
+		completer: $completer # check 'external_completer' in completer.nu
 		}
 	}
 	filesize: {
@@ -347,38 +344,31 @@ def create_config [] {
 
 $env.config = (create_config)
 # Theme setup
-def-env tdark [] {
+def --env tdark [] {
 	alacritty msg config colors.primary.foreground="\"#839496\"";
 	alacritty msg config colors.primary.background="\"#002b36\"";
 	(change_theme "dark")
 	$env.config = (create_config)
 }
 
-def-env tlight [] {
+def --env tlight [] {
 	alacritty msg config colors.primary.foreground="\"#586e75\"";
 	alacritty msg config colors.primary.background="\"#fdf6e3\"";
 	(change_theme "light")
 	$env.config = (create_config)
 }
 
-ssh-agent -c
-    | lines
-    | first 2
-    | parse "setenv {name} {value};"
-    | transpose -r
-    | into record
-    | load-env
-
 alias in = task add +in
 def tickle [deadline: string, ...extra: string] {
 	in +tickle wait:$deadline $extra
 }
 
-def cl [loc: string] {
+def --env cl [loc: string] {
 	cd $loc
-	ls
+	ls .
 }
 
+source zoxide.nu
 
 alias tick = tickle
 alias think = tickle +1d
@@ -388,4 +378,10 @@ alias soon = task add +soon
 alias someday = task add +someday
 alias overhead = task add +overhead +soon
 
-		
+alias cd = z
+alias cdi = zi
+
+def ergoflash [] { ls ~/Downloads/ | find .hex | sort-by modified | last | $in.name | ansi strip | wally-cli $in }
+def llusb [] = {^lsusb | lines | parse "Bus {bus} Device {dev}: ID {pid}:{vid} {name}" | str trim}
+def lst [] = {ls | sort-by type name -i}
+def lsg [] = {ls | sort-by type name -i | grid -c | str trim}

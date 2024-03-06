@@ -222,13 +222,20 @@ def create_prompt_git [] {
 	}
 
 	let colors = $env.themecolors.curr
-	let branch_name = (do { git symbolic-ref --short HEAD err> /dev/null } | complete)
-	#try {
-		#(git symbolic-ref --short HEAD err> /dev/null)
-		#do{git name-rev --name-only HEAD err> /dev/null} | complete
-	#}
+	let proc_values = do { git symbolic-ref --short HEAD } | complete
+	let branch_name = if $proc_values.exit_code != 0 {
+	  let new_vals = do {git name-rev --name-only HEAD} | complete
+	  if $new_vals.exit_code == 0 {
+	     "undefined"
+	  } else {
+	  	 $new_vals.stdout
+	  }
+	} else {
+	  $proc_values.stdout
+	}
 
-	let is_dirty = (do {git diff --ignore-submodules --no-ext-diff --quiet --exit-code out+err> /dev/null} | complete).exit_code != 0
+	# let is_dirty = (do {git diff --ignore-submodules --no-ext-diff --quiet --exit-code out+err> /dev/null} | complete).exit_code != 0
+	let is_dirty = false;
 
 	let sym = if $branch_name == "main" or $branch_name == "master" {
 	   ""
