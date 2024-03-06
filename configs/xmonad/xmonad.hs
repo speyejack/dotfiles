@@ -345,6 +345,19 @@ myKeys = [
   , ((0, xK_e), io exitSuccess )
   ]),
 
+  -- ("M-s", spawn "xdg-open obsidian://advanced-uri?vault=Library&commandid=omnisearch%253Ashow-modal &"),
+  ("M-s", submap . M.fromList $
+  [ ((0, xK_s), spawn "/home/jack/.local/bin/marvin quickAdd &")
+  , ((mod4Mask, xK_s), spawn "/home/jack/.local/bin/marvin quickAdd &")
+  , ((0, xK_t), spawn "/home/jack/.local/bin/marvin quickAdd &")
+  , ((0, xK_a), spawn "xdg-open obsidian://advanced-uri?vault=Library&commandid=quickadd%253ArunQuickAdd &")
+  , ((0, xK_n), spawn "xdg-open obsidian://advanced-uri?vault=Library&daily=true &")
+  , ((0, xK_d), spawn "xdg-open obsidian://advanced-uri?vault=Library&daily=true &")
+  , ((0, xK_f), spawn "xdg-open obsidian://advanced-uri?vault=Library&commandid=omnisearch%253Ashow-modal &")
+  , ((0, xK_c), spawn "xdg-open obsidian://advanced-uri?vault=Library&commandid=command-palette%253Aopen &")
+  ]),
+
+
 
   ("M-b", modalmap . M.fromList $
     [ ((0, xK_j),  spawn "light -U 10")
