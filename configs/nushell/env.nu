@@ -34,7 +34,7 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin' | prepen
 $env.LS_COLORS = $env.themecolors.curr.ls_colors
 $env.EDITOR = vim
 $env.TASK_THEME = $env.themecolors.curr.task_colors
-$env.SSH_AUTH_SOCK = ($env.XDG_RUNTIME_DIR | append '/ssh-agent.socket' | str join)
+#$env.SSH_AUTH_SOCK = ($env.XDG_RUNTIME_DIR | append '/ssh-agent.socket' | str join)
 
 $env.jag = {
 	path: {
