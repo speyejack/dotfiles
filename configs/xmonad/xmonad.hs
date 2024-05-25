@@ -80,7 +80,7 @@ import Control.Arrow (first)
    -- Utilities
 import XMonad.Util.EZConfig (additionalKeysP, mkKeymap)
 import XMonad.Util.NamedScratchpad
-import XMonad.Util.Run (runProcessWithInput, safeSpawn, spawnPipe)
+import XMonad.Util.Run (runProcessWithInput, safeSpawn, spawnPipe, unsafeSpawn)
 import XMonad.Util.SpawnOnce
 
 
@@ -326,13 +326,12 @@ myKeys = [
   -- ("M-6", viewWorkscreen 6),
   -- ("M-2", viewWorkscreen " sys "),
 
-  ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10%"),
-  ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10%"),
 
   ("M-p", spawn "xmonad --recompile && xmonad --restart"),
-  ("M-o", spawn "/home/jack/.dotfiles/configs/i3/i3clip"),
-  ("M-S-s", spawn "/home/jack/.dotfiles/configs/i3/i3clip"), -- Reflects windows
-  ("M-S-o", spawn "/home/jack/.dotfiles/configs/i3/i3clip ~/snip.png"),
+  ("M-o", unsafeSpawn clipProg),
+  ("M-S-s", unsafeSpawn clipProg), -- Reflects windows
+  -- ("M-S-o", unsafeSpawn clipSaveProg),
+  ("M-S-o", spawn "hacksaw"),
   ("M-t", modalmap . M.fromList $
   [ ((shiftMask, xK_b), sendMessage ToggleStruts)
 
@@ -358,6 +357,8 @@ myKeys = [
   ]),
 
 
+  ("<XF86MonBrightnessDown>", spawn "light -U 10"),
+  ("<XF86MonBrightnessUp>", spawn "light -A 10"),
 
   ("M-b", modalmap . M.fromList $
     [ ((0, xK_j),  spawn "light -U 10")
@@ -378,9 +379,10 @@ myKeys = [
     , ((0, xK_h),  incScreenSpacing 4)
     ]),
 
-  ("<XF86AudioMute>", spawn $ soundProg ++ " toggle"),
-  ("<XF86AudioLowerVolume>", spawn $ soundProg ++ " decrease 10"),
-  ("<XF86AudioRaiseVolume>", spawn $ soundProg ++ " increase 10"),
+  ("<XF86AudioMute>", spawn $ muteVolume ++ "toggle"),
+  ("<XF86AudioMicMute>", spawn $ "wpctl set-mute @DEFAULT_SOURCE@ toggle"),
+  ("<XF86AudioLowerVolume>", spawn $ setVolume ++ "0.1-"),
+  ("<XF86AudioRaiseVolume>", spawn $ setVolume ++ "0.1+"),
 
   ("<XF86AudioPlay>", spawn $ musicProg ++ " toggle"),
   ("<XF86AudioStop>", spawn $ musicProg ++ " pause"),
@@ -392,17 +394,17 @@ myKeys = [
     , ((0, xK_m),  spawn $ mouseProg ++ " enable")
     , ((0, xK_x),  spawn $ "alacritty -e \"xev\"")
     , ((shiftMask, xK_t),  spawn $ touchProg ++ " disable")
-    , ((shiftMask, xK_m),  spawn $ soundProg ++ " disable")
     ]),
 
   ("M-m", modalmap . M.fromList $
-    [ ((0, xK_j),  spawn $ soundProg ++ " decrease 10")
-    , ((0, xK_k),  spawn $ soundProg ++ " increase 10")
-    , ((shiftMask, xK_j),  spawn $ soundProg ++ " decrease 2")
-    , ((shiftMask, xK_k),  spawn $ soundProg ++ " increase 2")
-    , ((0, xK_l),  spawn $ soundProg ++ " nomute")
-    , ((0, xK_h),  spawn $ soundProg ++ " mute")
-    , ((0, xK_t),  spawn $ soundProg ++ " toggle")
+    [ ((0, xK_j),  spawn $ setVolume ++ "0.1-")
+    , ((0, xK_k),  spawn $ setVolume ++ "0.1+")
+    , ((shiftMask, xK_j),  spawn $ setVolume ++ "0.02-")
+    , ((shiftMask, xK_k),  spawn $ setVolume ++ "0.02+")
+    , ((0, xK_l),  spawn $ muteVolume ++ "1")
+    , ((0, xK_h),  spawn $ muteVolume ++ "0")
+    , ((shiftMask, xK_h),  spawn $ setVolume ++ "0.1")
+    , ((0, xK_t),  spawn $ muteVolume ++ "toggle")
     ]),
 
   ("M-y", modalmap . M.fromList $
@@ -421,10 +423,13 @@ myKeys = [
     ])
   ] -- ++ zip (map (\x -> (++) "M-" $ show x) [1..10]) (map W.greedyView [1..10])
   where
-    soundProg = "~/.dotfiles/configs/i3/i3volume"
-    musicProg = "~/.dotfiles/configs/i3/i3music"
-    mouseProg = "~/.dotfiles/configs/i3/i3mouse"
-    touchProg = "~/.dotfiles/configs/i3/i3touch"
+    setVolume    = "wpctl set-volume @DEFAULT_SINK@ "
+    muteVolume   = "wpctl set-mute @DEFAULT_SINK@ "
+    musicProg    = "~/.dotfiles/configs/i3/i3music"
+    mouseProg    = "~/.dotfiles/configs/i3/i3mouse"
+    touchProg    = "~/.dotfiles/configs/i3/i3touch"
+    clipProg     = "shotgun $(hacksaw -f '-i %i -g %g') - | xclip -t 'image/png' -selection clipboard"
+    clipSaveProg = "shotgun $(hacksaw -f '-i %i -g %g') ~/snip.png"
 
 myEventHook = serverModeEventHookCmd
             <+> serverModeEventHook
