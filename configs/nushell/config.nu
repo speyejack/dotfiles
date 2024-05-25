@@ -359,27 +359,34 @@ def --env tlight [] {
 	$env.config = (create_config)
 }
 
-alias in = task add +in
-def tickle [deadline: string, ...extra: string] {
-	in +tickle wait:$deadline $extra
-}
-
 def --env cl [loc: string] {
 	cd $loc
 	ls
 }
 
+alias shl = nix-shell --command nu
 
-# Change this to use NU_LIB_PATH
-source zoxide.nu
+def getFlakeName [host?:string] {
+	let compname = if ($host == null) {
+		uname | get nodename | str downcase  
+	} else {
+		$host
+	}
+	let flakename = ["/home/jack/.config/nixos/#" $compname] | str join
+	return $flakename
+}
 
-alias tick = tickle
-alias think = tickle +1d
-alias today = task add +today due:8am
-alias todo = task add +today +optional until:8am
-alias soon = task add +soon
-alias someday = task add +someday
-alias overhead = task add +overhead +soon
-alias cd = z
-alias cdi = zi
-		
+def homem [--host:string, ...extra: string] {
+	let flakename = getFlakeName $host
+	home-manager --flake $flakename ...$extra
+}
+
+def nos [--host:string, ...extra: string] {
+	let flakename = getFlakeName $host
+	sudo nixos-rebuild --flake $flakename ...$extra
+}
+
+alias hmrb = homem switch
+alias norb = nos switch
+
+
