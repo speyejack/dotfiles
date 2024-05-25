@@ -6,6 +6,7 @@ def create_left_prompt [] {
 		(create_prompt_ssh)
 		(create_path_prompt $env.PWD)
 		(create_prompt_git)
+		(create_prompt_nix_shell)
 		(create_prompt_pyvenv)
 		(create_prompt_taskwarrior)
 		(create_prompt_bubbles)
@@ -253,6 +254,16 @@ def create_prompt_git [] {
 
 	[" ", (ansi $color), $sym] | str join
 }
+
+def create_prompt_nix_shell [] {
+	if not ("IN_NIX_SHELL" in $env) {
+	  return ""
+	}
+
+	let colors = $env.themecolors.curr
+	[" ", (ansi $colors.blue), ""] | str join
+}
+
 # Use nushell functions to define your right and left prompt
 $env.PROMPT_COMMAND = {|| create_left_prompt }
 $env.PROMPT_COMMAND_RIGHT = {|| create_right_prompt }
