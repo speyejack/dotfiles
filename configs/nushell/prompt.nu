@@ -234,7 +234,8 @@ def create_prompt_git [] {
       $proc_values.stdout
     }
 
-	let is_dirty = (do {git diff --ignore-submodules --no-ext-diff --quiet --exit-code out+err> /dev/null} | complete).exit_code != 0
+	# let is_dirty = (do {git diff --ignore-submodules --no-ext-diff --quiet --exit-code out+err> /dev/null} | complete).exit_code != 0
+	let is_dirty = false
 
 	let sym = if $branch_name == "main" or $branch_name == "master" {
 	   ""
