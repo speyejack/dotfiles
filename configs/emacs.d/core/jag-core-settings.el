@@ -52,7 +52,7 @@
 ;; Save more recent files
 (setq recentf-max-saved-items 50)
 
-(setq shell-file-name "/bin/bash")
+(setq shell-file-name "/bin/sh")
 
 (setenv "SSH_AUTH_SOCK" (concat (getenv "XDG_RUNTIME_DIR") "/ssh-agent.socket"))
 
