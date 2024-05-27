@@ -32,9 +32,10 @@
 			  indent-tabs-mode t)
 
 ;; Configure where auto saves go and several backup settings
-(make-directory "~/.emacs.d/autosaves/" t)
-(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
-(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
+
+(make-directory (expand-file-name "autosaves/" user-emacs-directory) t)
+(setq auto-save-file-name-transforms `((".*" ,(expand-file-name "autosaves/\\1" user-emacs-directory) t)))
+(setq backup-directory-alist `(("." . ,(expand-file-name "backups" user-emacs-directory))))
 (setq backup-by-copying t)
 (setq delete-old-versions t
 	  kept-new-versions 6
